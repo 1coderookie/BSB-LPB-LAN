@@ -33,6 +33,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Brötje WBS 22E [LMS14] (Gasbrenner) {BSB}
 - Brötje WGB 15 E [LMS14] (Gasbrenner) {BSB}
 - Brötje WGB 20C [LMU74] (Gasbrenner) {BSB}
+- Brötje WGB-C 20/24H [LMS14] (Gasbrenner) {BSB}
 - Brötje WGB EVO 20H [LMS15] (Gasbrenner) {BSB}
 - Brötje WGB Pro EVO 20C [LMU75] (Gasbrenner) {BSB}
 - Brötje WGB S 17/20 E EcoTherm Plus [LMS14] (Gasbrenner) {BSB}
