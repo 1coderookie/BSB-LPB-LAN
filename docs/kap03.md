@@ -1,1 +1,525 @@
+# 3. Unterstützte Heizungssysteme und Regler #
 
+Prinzipiell unterstützt BSB-LAN von der Firma Siemens hergestellte
+(Heizungs-)Regler, die einen BSB und/oder LPB aufweisen. Diese werden
+von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
+
+***ACHTUNG:  
+Aus aktuellem Anlass sei hier darauf hingewiesen, dass die
+Heizungshersteller offensichtlich eine neue Heizungs- und
+Reglergeneration auf den Markt gebracht haben, die nach bisherigem
+Wissensstand NICHT kompatibel mit BSB-LAN ist!  
+Siehe hierzu Kapitel 3.3 Hinweis: Neue Modellgeneration - NICHT
+unterstützter Regler von Brötje.***
+
+## 3.1 Erfolgreich getestete Heizungssysteme ##
+
+Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
+Regler, bei denen von einem erfolgreichen Einsatz des Adapters berichtet
+wurde. Da jedoch nicht jeder sein Heizungssystem, den verbauten Regler
+und die Ausgabe der Parameterabfrage http://\<IP-Adresse\>/6220-6228
+meldet, ist davon auszugehen, dass in der Praxis noch weitere Systeme
+erfolgreich mit dem BSB-LPB-LAN-Adapter und der BSB-LAN-Software
+betrieben werden (können).
+
+Bei den (aktuelleren) Reglern kann i.d.R. grundsätzlich zwischen zwei
+Reglertypen unterschieden werden: Regler des Typs RVS und LMx. Diese
+zwei Typen unterscheiden sich u.a. in der Anschlussvielfalt und einigen
+verfügbaren Parametern. Weitere Angaben sind im entsprechenden Kapitel
+zu finden.
+
+___
+***Hinweis und Bitte:***  
+Um die Liste vervollständigen zu können und anderen möglichen Nutzern
+den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
+Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
+einen noch nicht aufgeführten Regler unter Angabe der genauen
+Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
+http://\<IP-Adresse\>/6220-6228 (via Adapter!) und der verwendeten
+Anschlussart (BSB/LPB/PPS) zu melden.\
+Danke!
+
+Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
+26C":
+
+6220 Konfiguration - Software- Version: 1.3 6221 Konfiguration -
+Entwicklungs-Index: error 7 (parameter not supported) 6222 Konfiguration
+- Gerätebetriebsstunden: 12345 h\
+6223 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type
+000014\
+6224 Konfiguration - Geräte-Identifikation: RVS43.222/100\
+6225 Konfiguration - Gerätefamilie: 96\
+6226 Konfiguration - Gerätevariante: 100\
+6227 Konfiguration - Objektverzeichnis-Version: 1.0\
+6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type
+000014
+___
+### 3.1.1 Brötje ###
+
+-   Brötje BBK 22E \[LMS14\] (Gasbrenner)
+
+-   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner)
+
+-   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner)
+
+-   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner)
+
+-   Brötje EcoCondens BBS EVO 20 G \[LMS15\] (Gasbrenner)
+
+-   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner)
+
+-   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner)
+
+-   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler)
+
+-   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler)
+
+-   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner)
+
+-   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner)
+
+-   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner)
+
+-   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner)
+
+-   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner) + EWM
+    \[RVS75.390\]
+
+-   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner)
+
+-   Brötje SensoTherm BLW 12 B \[RVS21.825\] (Wärmepumpe)
+
+-   Brötje SensoTherm BLW 15 B \[RVS21.825\] (Wärmepumpe)
+
+-   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe)
+
+-   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner)
+
+-   Brötje WBS 14D \[LMU74\] (Gasbrenner)
+
+-   Brötje WBS 22E \[LMS14\] (Gasbrenner)
+
+-   Brötje WGB 15 E \[LMS14\] (Gasbrenner)
+
+-   Brötje WGB 20C \[LMU74\] (Gasbrenner)
+
+-   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner)
+
+-   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner)
+
+-   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner)
+
+-   Brötje WGB S 17/20 E EcoTherm Plus \[LMS14\] (Gasbrenner)
+
+-   Brötje WGB-U 15H \[LMS14\] (Gasbrenner)
+
+***ACHTUNG:  
+Die neuen Modellreihen Brötje WLS/WLC und
+BOK sind NICHT mit BSB-LAN kompatibel!***
+
+### 3.1.2 Elco ###
+
+-   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe)
+
+-   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe)
+
+-   Elco Aquatop 8es \[RVS51.843\] (entspricht CTA Optihead OH1-8es)
+    (Wärmepumpe)
+
+-   Elco Straton 21 \[RVS63.283\] (Ölbrenner)
+
+-   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner)
+
+-   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner)
+
+-   Elco Thision S17.1 \[LMU74\] (Gasbrenner)
+
+-   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner)
+
+-   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\]
+
+### 3.1.3 Weitere Hersteller ###
+
+-   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)
+
+-   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner)
+
+-   CTC 380 IC \[RVS43.143\] (Ölbrenner)
+
+-   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)
+
+-   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
+
+-   MHG Procon E 25 HS \[LMS14\] (Gasbrenner)
+
+-   Sieger TG11 \[RVP54.100\] (Ölbrenner)
+
+-   Weishaupt WTU-25 G mit WRS-CPU B2/E \[RVS23.220\] (Ölbrenner)
+
+## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler ##
+
+Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
+Überblick über die bereits von BSB-LAN unterstützten Geräte und deren
+rudimentären Unterschiede geben. Auf die unterschiedliche
+reglerspezifische Verfügbarkeit von speziellen Parametern wird nicht
+weiter eingegangen. Es sei jedoch darauf hingewiesen, dass mittels
+BSB-LAN grundsätzlich etliche Parameter verfügbar sind, die mittels
+integrierter Bedieneinheit nicht verfügbar sind.
+
+Die folgende Übersicht beinhaltet Angaben der Konfigurationsparameter
+6220-6228.\
+Diese Parameter können i.d.R. nur via Adapter abgefragt werden!
+
+Eine Ausnahme bei der nachfolgenden Auflistung der Reglertypen stellt
+das Modell AVS75.390 dar. Hierbei handelt es sich um ein
+Erweiterungsmodul (EWM) für den RVS-Reglertyp, an dem sich weitere
+Fühler und Verbraucher anschließen und somit im System integrieren
+lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.\
+Die Parametrierung und Einbindung erfolgt über den eigentlichen
+RVS-Regler bzw. die eigentliche Bedieneinheit des RVS-Reglers.
+
+Die Verbindung zwischen RVS-Regler und EWM erfolgt über den Anschluss
+‚Bus EM', das EWM selbst hat keinen zusätzlichen LPB- oder
+BSB-Anschluss.
+
+Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils
+spezifischen Parameter möglich, die die Einstellungen und Funktionen des
+EWMs definieren und beschreiben.
+
+Tabelle 1: Erweiterungsmodul AVS75.390
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Ger | **Ger | **Ger | **Obj | **Sof | **Nut |       |       |       |
+| äte-I | äte-F | äte-V | .Verz | tware | zbare |       |       |       |
+| denti | amili | arian | .-    | -Vers | r     |       |       |       |
+| fikat | e\    | te    | Versi | ion\  | Busty |       |       |       |
+| ion   | \[/62 | \[/62 | on    | \[/62 | p**   |       |       |       |
+| \[/62 | 25\]* | 26\]* | \[/62 | 20\]* |       |       |       |       |
+| 24\]* | *     | *     | 27\]* | *     |       |       |       |       |
+| *     |       |       | *     |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Reg | **Kun |       |       |       |       | **BSB | **LPB | **PPS |
+| lerty | denva |       |       |       |       | **    | **    | **    |
+| p**   | riant |       |       |       |       |       |       |       |
+|       | e**   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| AVS75 | /100  | \-    | \-    | \-    | \-    | \-    | \-    | \-    |
+| .390  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /109  |       |       |       |       |       |       |       |
+|       | (Siem |       |       |       |       |       |       |       |
+|       | ens)  |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /260  |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+***Hinweis:  
+Im Folgenden nicht aufgeführte Regler bitte wie in Kapitel 10 beschrieben auslesen und melden.
+Danke!***
+
+### 3.2.1 LMx-Regler ###
+
+Im Folgenden werden die Regler des Typs LMS und LMU aufgeführt. Diese
+sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
+
+Regler der Serie LMS scheinen die Nachfolger der LMU-Serie und somit die
+aktuelle Reglergeneration zu sein.\
+Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15[^13]
+scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
+Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
+aufweisen.
+
+Der LMx-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
+Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.\
+Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
+Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
+
+Tabelle 2: LMS- und LMU-Regler[^14]
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Ger | **Ger | **Ger | **Obj | **Sof | **Nut |       |       |       |
+| äte-I | äte-F | äte-V | .Verz | tware | zbare |       |       |       |
+| denti | amili | arian | .-    | -Vers | r     |       |       |       |
+| fikat | e\    | te    | Versi | ion\  | Busty |       |       |       |
+| ion   | \[/62 | \[/62 | on    | \[/62 | p**   |       |       |       |
+| \[/62 | 25\]* | 26\]* | \[/62 | 20\]* |       |       |       |       |
+| 24\]* | *     | *     | 27\]* | *     |       |       |       |       |
+| *     |       |       | *     |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Reg | **Kun |       |       |       |       | **BSB | **LPB | **PPS |
+| lerty | denva |       |       |       |       | **    | **    | **    |
+| p**   | riant |       |       |       |       |       |       |       |
+|       | e**   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| LMS14 | .001A | 162   | 14    | 0.1   | 2.3   |      | \-    | \-    |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt | 162   | 16    | 0.2   | 2.3   |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       | 162   | 16    | 0.3   | 2.3   |       |       |       |
+|       | .001A |       |       |       |       |       |       |       |
+|       | 100   | 162   | 17    | 0.2   | 2.3   |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 162   | 15    | 1.4   | 4.2   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .001A | 162   | 5     | 1.7   | 3.5   |       |       |       |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt | 195   | 1     | 0.9   | 4.3   |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .001A |       |       |       |       |       |       |       |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .001B |       |       |       |       |       |       |       |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .002A |       |       |       |       |       |       |       |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .167B |       |       |       |       |       |       |       |
+|       | 109   |       |       |       |       |       |       |       |
+|       | (MHG) |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+|       | .002A | 203   | ?     | ?     | ?     |      | \-    | \-    |
+|       | 167   |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| LMS15 | .000A | 123   | 1     | 0.1   | 4.2   |      | \-    | \-    |
+|       | 349   |       |       |       |       |       |       |       |
+|       | (Bröt | 163   | ?     | ?     | ?     |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       | 163   | 16    | 0.6   | 3.8   |       |       |       |
+|       | .000A |       |       |       |       |       |       |       |
+|       | 349   |       |       |       |       |       |       |       |
+|       | (Baxi |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .001A |       |       |       |       |       |       |       |
+|       | 100   |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| LMU74 | ?     | 97    | 100   | 2.5   | 11.0  |      | \-    | \-    |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 97    | 100   | 2.9   | 11.0  |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | ?     | 97    | 136   | 0.2   | 11.1  |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 97    | 136   | 0.4   | 11.2  |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | ?     |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | .100A |       |       |       |       |       |       |       |
+|       | 136   |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| LMU75 | ?     | 98    | ?     | ?     | ?     |      | \-    | \-    |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+### 3.2.2 RVx-Regler ###
+
+Im Folgenden werden die Regler des Typs RVA, RVP und RVS (aktueller
+Reglertyp) aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
+Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
+Solarsystemregler) zum Einsatz zu kommen.
+
+#### 3.2.2.1 RVA- und RVP-Regler ####
+
+Regler des Typs RVA gehören anscheinend zur vorherigen Reglergeneration
+und weisen je nach Modell nur einen LPB- und/oder PPS-Anschluss auf
+(keinen BSB).  
+Als Bedieneinheit ist meist eine Variante der Eurocontrol-Steuerung
+(Brötje) verbaut.  
+Eine Bedienung mittels BSB-LAN ist nur in deutlich geringerem Umfang als
+bei der aktuellen Reglergeneration RVS möglich.
+
+Regler des Typs RVP scheinen noch älter als RVA-Regler zu sein und
+weisen lediglich eine PPS-Schnittstelle auf.  
+Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
+sehr eingeschränktem Umfang möglich.
+
+Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)[^15]
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Ger | **Ger | **Ger | **Obj | **Sof | **Nut |       |       |       |
+| äte-I | äte-F | äte-V | .Verz | tware | zbare |       |       |       |
+| denti | amili | arian | .-    | -Vers | r     |       |       |       |
+| fikat | e\    | te    | Versi | ion\  | Busty |       |       |       |
+| ion   | \[/62 | \[/62 | on    | \[/62 | p**   |       |       |       |
+| \[/62 | 25\]* | 26\]* | \[/62 | 20\]* |       |       |       |       |
+| 24\]* | *     | *     | 27\]* | *     |       |       |       |       |
+| *     |       |       | *     |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Reg | **Kun |       |       |       |       | **BSB | **LPB | **PPS |
+| lerty | denva |       |       |       |       | **    | **    | **    |
+| p**   | riant |       |       |       |       |       |       |       |
+|       | e**   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVA63 | ?     | 28    | 100   | 302.0 | 2.5   | \-    |      | \-    |
+| .242  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 28    | 109   | 302.0 | 3.6   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | ?     |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVP54 | ?     | ?     | ?     | ?     | ?     | \-    | \-    |      |
+| .100  | (Sieg |       |       |       |       |       |       |       |
+|       | er)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+#### 3.2.2.1 RVS-Regler ####
+
+Regler des Typs RVS scheinen die ‚aktuelle' Reglergeneration
+darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt[^16].
+Sie weisen häufig sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
+auf.  
+Eine Ausnahme scheinen die Regler der Reihe RVS21 zu sein, die bei
+Fujitsu-Wärmepumpen zum Einsatz kommen: Diese scheinen nur einen BSB
+aufzuweisen.  
+Bei Gasgeräten kommen RVS-Regler anscheinend nur zum Einsatz, wenn bspw.
+ein Solarthermie-Paket mitinstalliert wurde (Beispiel bei einer „Elco
+Thision S17.1": LMU74-Regler bei Installation ohne Solarthermie,
+RVS63.283-Regler bei Installation mit Solarthermie).  
+Als Bedieneinheit kommt dabei i.d.R. eine Variante des Siemens AVS37.294
+zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
+
+Tabelle 4: RVS-Regler (aktuelle Reglergeneration)[^17]
+
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Ger | **Ger | **Ger | **Obj | **Sof | **Nut |       |       |       |
+| äte-I | äte-F | äte-V | .Verz | tware | zbare |       |       |       |
+| denti | amili | arian | .-    | -Vers | r     |       |       |       |
+| fikat | e\    | te    | Versi | ion\  | Busty |       |       |       |
+| ion   | \[/62 | \[/62 | on    | \[/62 | p**   |       |       |       |
+| \[/62 | 25\]* | 26\]* | \[/62 | 20\]* |       |       |       |       |
+| 24\]* | *     | *     | 27\]* | *     |       |       |       |       |
+| *     |       |       | *     |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| **Reg | **Kun |       |       |       |       | **BSB | **LPB | **PPS |
+| lerty | denva |       |       |       |       | **    | **    | **    |
+| p**   | riant |       |       |       |       |       |       |       |
+|       | e**   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS21 | E/100 | 205   | 100   | 301.2 | 7.2   |      | \-    | \-    |
+| .825  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS21 | /127  | 170   | ?     | ?     | ?     |      | \-    | \-    |
+| .827  | (Fuji |       |       |       |       |       |       |       |
+|       | tsu)  |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS21 | F/127 | 211   | 127   | 402.1 | 8.3   |      | \-    | \-    |
+| .831  | (Fuji |       |       |       |       |       |       |       |
+|       | tsu)  | 211   | 127   | 402.4 | 8.5   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | F/127 |       |       |       |       |       |       |       |
+|       | (Atla |       |       |       |       |       |       |       |
+|       | ntic  |       |       |       |       |       |       |       |
+|       | Fujit |       |       |       |       |       |       |       |
+|       | su)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS23 | /320  | 50    | ?     | ?     | ?     | \-    |      | \-    |
+| .220  | (Weis |       |       |       |       |       |       |       |
+|       | haupt |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS43 | ?     | 95    | ?     | ?     | ?     |      |      | \-    |
+| .122  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS43 | /110  | 103   | 110   | 100.5 | 3.4   |      |      | \-    |
+| .143  | (CTC) |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS43 | /100  | 96    | 100   | 1.0   | 1.3   |      |      | \-    |
+| .222  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS43 | /100  | 138   | 100   | 100.0 | 2.3   |      |      | \-    |
+| .325  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS46 | /100  | 107   | 100   | 100.5 | 3.4   | \-    |      | \-    |
+| .530  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS51 | /169  | 85    | ?     | ?     | ?     |      |      | \-    |
+| .843  | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS61 | E/100 | 108   | 100   | 301.0 | 7.2   |      |      | \-    |
+| .843  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 108   | 160   | 2.5   | 2.7   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | E/160 | 108   | 217   | 301.2 | 7.4   |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | E/560 |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS63 | /100  | 90    | ?     | ?     | ?     |      |      | \-    |
+| .283  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   | 90    | 109   | 101.4 | 3.4   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /109  | 90    | 160   | 101.6 | 3.5   |       |       |       |
+|       | (Siem |       |       |       |       |       |       |       |
+|       | ens)  | 90    | 239   | 101.4 | 3.4   |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /160  | 90    | 234   | 101.6 | 3.5   |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     | 90    | ?     | ?     | ?     |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /200  |       |       |       |       |       |       |       |
+|       | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /360  |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
+|       |       |       |       |       |       |       |       |       |
+|       | /460  |       |       |       |       |       |       |       |
+|       | (Elco |       |       |       |       |       |       |       |
+|       | )     |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| RVS65 | /200  | 116   | 239   | 101.4 | 3.3   |      |      | \-    |
+| .583  | (Bröt |       |       |       |       |       |       |       |
+|       | je)   |       |       |       |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje ##
+
+Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
+genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
+haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
+kompatibel sind.
+
+Bei Brötje handelt es sich hierbei um die Modellreihe WLS/WLC und BOK.\
+Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut,
+die weder einen LPB noch einen BSB aufweisen.
+
+Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
+Anschlüsse.
+
+Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
+weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.\
+Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
+(On/Off), ein entsprechendes QAA-Raumgerät oder das neue ‚smarte'
+Raumgerät „Brötje IDA" angeschlossen werden.
+
+***ACHTUNG: An keinem dieser Anschlüsse ist BSB-LAN anschließbar!***
