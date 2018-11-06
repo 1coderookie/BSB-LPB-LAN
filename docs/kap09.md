@@ -7,8 +7,7 @@ einschaltest.\
 Aktiviere vor dem Flashen das Definement \#define LOGGER in der Datei
 *BSB\_lan\_config.h*, füge die zu loggenden Parameter zur Variable
 log\_parameters hinzu und bestimme das Logintervall mit der Variable
-log\_interval. Bitte beachte auch die entsprechenden Punkte in Kapitel
-8.1 Auflistung und Beschreibung der URL-Befehle.\
+log\_interval. Bitte beachte auch die entsprechenden Punkte in Kap. 8.1.\
 Später können während der Laufzeit sowohl das Intervall als auch die
 Logging-Parameter mittels des Befehls
 \"/L=\[Intervall\],\[Parameter1\],\...,\[Parameter20\]\" geändert
@@ -39,9 +38,7 @@ Neben dem Einsatz komplexer Systeme wie bspw. FHEM und den spezifischen
 Log-Lösungen kann bspw. folgender Befehl[^24] periodisch ausgeführt
 werden (z.B. per cron job):
 
-DATE=\`date +%Y%m%d%H%M%S\`; wget -qO-
-http://192.168.178.88/8310/720/710 \| egrep \"(8310\|720\|710)\" \| sed
-\"s/\^/\$DATE /\" \>\> log.txt
+DATE=\`date +%Y%m%d%H%M%S\`; wget -qO- http://192.168.178.88/8310/720/710 \| egrep \"(8310\|720\|710)\" \| sed \"s/\^/\$DATE /\" \>\> log.txt
 
 Das aus diesem Beispiel resultierende Logfile \'*log.txt*\' enthält die
 aufgezeichneten Werte der Parameter 8310, 720 und 710.\
