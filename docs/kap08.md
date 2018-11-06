@@ -340,8 +340,7 @@ große Fenster in Südlage etc.) befindet.
 
 Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
 und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
-genannten Parameter müssen schreibbar sein (siehe Kapitel 5.
-Einstellungsrelevante Parameter der BSB-LAN-Software).
+genannten Parameter müssen schreibbar sein (s. Kap. 5).
 
 Bei aktivem Automatikprogramm ist dabei http://\<IP-Adresse\>/S701=1 für
 den Wechsel auf ‚Betriebsart Reduziert' und http://\<IP-Adresse\>/S701=0
@@ -362,8 +361,7 @@ entsprechende Meldung erscheint.
 
 Bei einigen Reglern kann diese Funktion mittels eines SET-Befehls
 erfolgen. Dieser lautet http://\<IP-Adresse\>/S1601=1 -- der
-Spezialparameter 1601 muss dazu schreibbar sein (siehe Kapitel 5.
-Einstellungsrelevante Parameter der BSB-LAN-Software).
+Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. 5).
 
 ### 8.2.4 Abrufen und Steuern mittels JSON ###
 
@@ -396,8 +394,8 @@ JSON erfolgen.
     Zahl, 1 = ENUM, 2 = Wochentag, 3 = Stunde/Minute, 4 = Datum/Uhrzeit,
     5 = Tag/Monat, 6 = String)
 
-    http://\<IP-Adresse\>/JS*\
-    *Senden: \"Parameter\", \"Value\" (nur numerisch), \"Type\" (0 =
+    http://\<IP-Adresse\>/JS\
+    Senden: \"Parameter\", \"Value\" (nur numerisch), \"Type\" (0 =
     INF, 1 = SET)\
     Empfangen: \"Parameter\", \"Status\" (0 = Fehler, 1 = OK, 2 =
     Parameter read-only)
