@@ -54,8 +54,8 @@ Beispiel angeschlossen ist, müssen
 1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und
 2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden.
-___
+jeweiligen Anfragen des Adapters geschickt werden.  
+___  
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
@@ -137,8 +137,8 @@ Der Anschluss der Leitungen an die jeweiligen Kontakte sollte
 prinzipiell immer mit den spezifischen Steckern erfolgen.\
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können
 im Ausnahmefall (vorübergehend) auch isolierte 6,3mm-Kabelschuhe
-verwendet werden.
-___
+verwendet werden.  
+___  
 
 
 ## 2.2 PPS-Schnittstelle ##
