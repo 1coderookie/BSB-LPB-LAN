@@ -171,25 +171,25 @@ Der Funktionsumfang ist hierbei nur rudimentär und beschränkt sich
 derzeit mittels BSB-LAN auf etwa ein Dutzend Parameter, die man
 lesen/schreiben kann:
 
-Raumtemperatur Ist\
-Raumtemperatur Soll\
-Außentemperatur (read-only)\
-Außentemperatur gemischt (read-only)\
-Position Drehknopf\
-Kesselvorlauftemperatur (read-only)\
-Mischervorlauftemperatur (read-only)\
-Status Trinkwasserbetrieb (read-only)\
-Trinkwassertemperatur Ist (read-only)\
-Trinkwassertemperatur Soll\
-Betriebsart\
-Anwesenheit
+- Raumtemperatur Ist  
+- Raumtemperatur Soll  
+- Außentemperatur (read-only)  
+- Außentemperatur gemischt (read-only)  
+- Position Drehknopf  
+- Kesselvorlauftemperatur (read-only)  
+- Mischervorlauftemperatur (read-only)  
+- Status Trinkwasserbetrieb (read-only)  
+- Trinkwassertemperatur Ist (read-only)  
+- Trinkwassertemperatur Soll  
+- Betriebsart  
+- Anwesenheit
 
 Immerhin lassen sich damit aber die wichtigsten Funktionen einer
 intelligenten Heizungssteuerung umsetzen, indem man z.B. gewichtete
 Raumtemperaturen sendet und die Solltemperaturen nach vielfältigeren
 Kriterien steuern kann.
 
-*Hinweis:*\
+***Hinweis:***  
 Noch offen ist, ob wegen des Punkt-zu-Punkt-Designs ein QAA mit dem
 Adapter friedlich koexistieren kann oder ob man sich am Ende für eine
 Variante entscheiden muss.
