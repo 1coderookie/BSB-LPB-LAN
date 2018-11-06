@@ -13,15 +13,14 @@ Einsatzmöglichkeiten mehr als nur ‚interessant' ist.
 Wärmepumpen-Regler***[^1] ***einen BSB***[^2] ***oder LPB***[^3]
 ***aufweisen!*** Dies ist i.d.R. bei (aktuelleren[^4]) Reglern der Fall,
 die von der Firma SIEMENS hergestellt wurden. Solche Regler werden bspw.
-von Heizungsherstellern wie Brötje oder Elco verbaut. ***Ob dein
-Heizungssystem über einen solchen Bus verfügt, ist den spezifischen
-technischen Unterlagen zu entnehmen.***\
-Diesbezügliche Anfragen können von den Autoren nicht beantwortet werden.
+von Heizungsherstellern wie Brötje oder Elco verbaut.  
+***Ob dein Heizungssystem über einen solchen Bus verfügt, ist den spezifischen
+technischen Unterlagen zu entnehmen.***
 
 Ältere Heizungsregler der o.g. Hersteller weisen u.U. eine sog.
 PPS-Schnittstelle auf, meist in Verbindung mit einer
 QAA70-Bedieneinheit. Der BSB-LPB-LAN-Adapter ist auch hier einsetzbar,
-allerdings ist der Funktionsumfang der BSB-LAN-Software hersteller- und
+allerdings ist der Funktionsumfang der BSB-LAN-Software 
 reglerbedingt in diesem Fall sehr eingeschränkt.
 
 Die hier vorgestellte und beschriebene Kombination aus Hard- und
@@ -58,8 +57,7 @@ Holst (bsb \[ät\] code-it.de) kontaktieren.
 
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
-[bsb_gateway](https://github.com/loehnertj/bsbgateway) von J. Loehnert. 
-
+[bsb_gateway](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
 Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
 kontaktiere bitte direkt den Autor von bsb_gateway.
 
