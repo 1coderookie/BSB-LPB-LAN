@@ -1,3 +1,4 @@
+# 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software ##
 Der BSB-LPB-LAN-Adapter und die dazugehörige BSB-LAN-Software wurden
 entwickelt, um eine Anbindung von Heizungssystemen bzw. -reglern ans LAN
 und somit auch einen entsprechenden Fernzugriff zu ermöglichen.\
@@ -10,8 +11,8 @@ Kostenfaktors, sondern auch in Bezug auf die vielfältigen
 Einsatzmöglichkeiten mehr als nur ‚interessant' ist.
 
 ***Für den Einsatz des Adapters müssen die Kessel-, Solar- oder auch
-Wärmepumpen-Regler***[^1] ***einen BSB***[^2] ***oder LPB***[^3]
-***aufweisen!*** Dies ist i.d.R. bei (aktuelleren[^4]) Reglern der Fall,
+Wärmepumpen-Regler einen BSB (Boiler System Bus) oder LPB (Local Process Bus) 
+aufweisen!*** Dies ist i.d.R. bei (aktuelleren[^4]) Reglern der Fall,
 die von der Firma SIEMENS hergestellt wurden. Solche Regler werden bspw.
 von Heizungsherstellern wie Brötje oder Elco verbaut.  
 ***Ob dein Heizungssystem über einen solchen Bus verfügt, ist den spezifischen
@@ -53,15 +54,12 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im Forum[^6] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-*Hinweis:*
-
+***Hinweis:***
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
 [bsb_gateway](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
 Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
 kontaktiere bitte direkt den Autor von bsb_gateway.
-
-***Hier kann kein Support für bsb_gateway gegeben werden!***
 
 Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
