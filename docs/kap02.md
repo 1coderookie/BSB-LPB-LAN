@@ -25,8 +25,8 @@ Parametrierung der jeweiligen Regler sollte im Normalfall bereits bei
 der Installation der Anlage durch den Heizungsinstallateur erfolgt
 sein.
 
-*Beispiel:*
-
+___
+***Beispiel:***  
 Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
 wasserführender Kamin und eine thermische Solaranlage zur Unterstützung
 des Heizkreises oder der Warmwasserbereitung.
@@ -55,6 +55,7 @@ Beispiel angeschlossen ist, müssen
 LPB-Konfigurationsanforderungen eingestellt werden, und
 2. beim Adapter eine Zieladresse eingestellt werden, an die die
 jeweiligen Anfragen des Adapters geschickt werden.
+___
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
@@ -116,7 +117,8 @@ die via BSB verfügbar wären. Die Software wird zwar stetig weiter
 entwickelt, derzeit bietet es sich jedoch noch an, als Anschluss den BSB
 zu präferieren, wenn dieser vorhanden ist.
 
-*Tipps:*
+___
+***Tipps:***  
 
 Um vor Störeinflüssen möglichst geschützt zu sein, sollten die
 Anschlusskabel für den LPB-Anschluss gemäß
@@ -136,6 +138,8 @@ prinzipiell immer mit den spezifischen Steckern erfolgen.\
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können
 im Ausnahmefall (vorübergehend) auch isolierte 6,3mm-Kabelschuhe
 verwendet werden.
+___
+
 
 ## 2.2 PPS-Schnittstelle ##
 
