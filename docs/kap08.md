@@ -61,8 +61,7 @@ Programme grundsätzlich möglich.
     *Hinweis: Voreingestellt ist nur der Lesezugriff erlaubt, ein
     Verändern von Einstellungen ist per default nicht möglich. Um dies
     zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu
-    gewähren. Siehe hierzu den entsprechenden Punkt in Kapitel* *5.
-    Einstellungsrelevante Parameter der BSB-LAN-Software. *
+    gewähren. Siehe hierzu den entsprechenden Punkt in Kap. 5.*
 
     *ACHTUNG: Diese Funktion ist nicht ausgiebig getestet! Bitte sei
     vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein
