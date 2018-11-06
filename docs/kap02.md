@@ -55,7 +55,7 @@ Beispiel angeschlossen ist, müssen
 LPB-Konfigurationsanforderungen eingestellt werden, und
 2. beim Adapter eine Zieladresse eingestellt werden, an die die
 jeweiligen Anfragen des Adapters geschickt werden.  
-___  
+_ _ _  
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
@@ -124,21 +124,20 @@ Um vor Störeinflüssen möglichst geschützt zu sein, sollten die
 Anschlusskabel für den LPB-Anschluss gemäß
 LPB-Projektierungsgrundlagen[^9] einen Querschnitt von 1,5mm² aufweisen,
 zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro
-Busteilnehmer, max. Gesamtlänge 1000m).\
+Busteilnehmer, max. Gesamtlänge 1000m).  
 Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m)
 Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen
 bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt
-werden[^10].\
+werden[^10].  
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden
 (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer
 vorzuziehen.
 
 Der Anschluss der Leitungen an die jeweiligen Kontakte sollte
-prinzipiell immer mit den spezifischen Steckern erfolgen.\
+prinzipiell immer mit den spezifischen Steckern erfolgen.  
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können
-im Ausnahmefall (vorübergehend) auch isolierte 6,3mm-Kabelschuhe
-verwendet werden.  
-___  
+auch isolierte 6,3mm-Kabelschuhe verwendet werden.  
+_ _ _  
 
 
 ## 2.2 PPS-Schnittstelle ##
