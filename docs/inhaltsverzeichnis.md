@@ -1,7 +1,7 @@
 [1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software](kap01.md)  
 [2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle](kap02.md)  
 2.1 BSB und LPB  
-2.2 PPS-Schnittstelle
+2.2 PPS-Schnittstelle  
 [3. Unterstützte Heizungssysteme und Regler](kap03.md)  
 3.1 Erfolgreich getestete Heizungssysteme  
 3.1.1 Brötje  
