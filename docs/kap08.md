@@ -58,16 +58,17 @@ Programme grundsätzlich möglich.
     lediglich ein leerer Wert eingefügt werden:
     http://\<IP-Adresse\>/S\<x\>=\
     \
-    *Hinweis: Voreingestellt ist nur der Lesezugriff erlaubt, ein
+    *Hinweis:  
+    Voreingestellt ist nur der Lesezugriff erlaubt, ein
     Verändern von Einstellungen ist per default nicht möglich. Um dies
     zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu
     gewähren. Siehe hierzu den entsprechenden Punkt in Kap. 5.*
 
-    *ACHTUNG: Diese Funktion ist nicht ausgiebig getestet! Bitte sei
+    *ACHTUNG:  
+    Diese Funktion ist nicht ausgiebig getestet! Bitte sei
     vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein
     eigenes Risiko hin. Das Format des Wertes hängt von seinem Typ ab.
-    Einige Parameter können abgeschaltet werden.\
-    *
+    Einige Parameter können abgeschaltet werden.*\
 
 -   **Sende eine INF-Nachricht für den Parameter \<x\> mit dem Wert
     \<v\>:**
@@ -88,7 +89,7 @@ Programme grundsätzlich möglich.
     *BSB\_lan\_config.h* entsprechend angepasst werden.
 
 -   **Zusätzlich die eigene oder die Zieladresse mittels URL-Befehl
-    wechseln: **
+    wechseln:**
 
     Dazu muss der Befehl\
     http://\<IP-Adresse\>/P\<x,y,z\>\
@@ -202,9 +203,7 @@ Programme grundsätzlich möglich.
     \
     Sollen die Brennerstarts und -laufzeiten von zweistufigen
     (Öl-)Brennern geloggt werden, beachte bitte den entsprechenden
-    Hinweis in Kapitel* *5. Einstellungsrelevante Parameter der
-    BSB-LAN-Software.\
-    *
+    Hinweis in Kap. 5.*\
 
 -   **Aktivieren/Deaktivieren des Loggens auf die microSD-Karte:**
 
@@ -219,9 +218,10 @@ Programme grundsätzlich möglich.
     eine dauerhafte Umstellung der Logging-Parameter sollte also dort
     erfolgen.
 
-    *Hinweis:* Der per default aktivierte Verbositäts-Modus sollte im
+    *Hinweis:  
+    Der per default aktivierte Verbositäts-Modus sollte im
     Fall eines dauerhaften Loggens auf die microSD-Karte in der
-    Konfiguration deaktiviert werden (s.o.).
+    Konfiguration deaktiviert werden (s.o.).*
 
 -   **Konfiguration des Logfiles:**
 
@@ -265,26 +265,27 @@ Programme grundsätzlich möglich.
     einen Graphen angezeigt zu bekommen.\
     \
     *Hinweis:*\
-    Für /DG muss bei Javascript-Blockern die Domain d3js.org freigegeben
+    *Für /DG muss bei Javascript-Blockern die Domain d3js.org freigegeben
     werden, da der Arduino weiterhin nur die CSV-Datei in den Browser
     lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird.\
     Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige
     Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische
-    Darstellung.
+    Darstellung.*
 
--   **Resetten/Restarten des Arduino: **
+-   **Resetten/Restarten des Arduino:**
 
     http://\<IP-Adresse\>/N\
     Reset und anschließender Restart des Arduino nach einem Pausieren
     für ca. 15 Sekunden (Voraussetzung: \#define RESET in
     *BSB\_lan\_config.h*, s.o.).\
     \
-    *Hinweis:* Hierbei wird gleichzeitig auch noch das EEPROM des
+    *Hinweis:*  
+    *Hierbei wird gleichzeitig auch noch das EEPROM des
     Arduino mit Nullen überschrieben. Dies hat z.Z. jedoch nur
     Auswirkung für PPS bzw. MAX!-Nutzer: Bei PPS werden damit die
     zwischengespeicherten Werte gelöscht, bei MAX! die registrierten
     Geräte (diese müssen sich dann durch einen Druck auf die Anlerntaste
-    gegenüber BSB-LAN neu identifizieren).
+    gegenüber BSB-LAN neu identifizieren).*
 
 -   **Abfrage von MAX!-Thermostaten:**
 
@@ -293,11 +294,12 @@ Programme grundsätzlich möglich.
     wieder. Diese sind zuvor in der Datei *BSB\_lan\_config.h* zu
     definieren.\
     \
-    *Hinweis:* Bei MAX!-Geräten, die in BSB-LAN aufgenommen werden
+    *Hinweis:*  
+    *Bei MAX!-Geräten, die in BSB-LAN aufgenommen werden
     sollen, muss jeweils einmal die Anlern-Taste gedrückt werden (zu
     Erkennen an dem anschließenden 30-Sekunden-Countdown). Ein
     bestehendes Pairing zwischen den Geräten und einem Max!Cube bzw. CUL
-    wird dabei nicht gestört und kann parallel betrieben werden.
+    wird dabei nicht gestört und kann parallel betrieben werden (s. Kap. 12.2).*
 
 -   **Ausgabe einer Parameterabfrage im JSON-Format:**
 
@@ -327,13 +329,13 @@ HK2[^21] der Parameter 10001 zu nutzen.
 19.5°C zu übermitteln, lautet: http://\<IP-Adresse\>/I10000=19.5
 
 *Hinweis:*\
-Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
+*Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
 Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
 (Parameter 750 für HK1, Parameter 1050 für HK2).\
 Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
 ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
-große Fenster in Südlage etc.) befindet.
+große Fenster in Südlage etc.) befindet.*
 
 ### 8.2.2 Präsenztaste simulieren ###
 
@@ -364,7 +366,8 @@ Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. 5).
 
 ### 8.2.4 Abrufen und Steuern mittels JSON ###
 
-*Hinweis: Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
+*Hinweis:  
+Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
 es kann also noch Veränderungen hinsichtlich der Befehle und/oder
 Funktionen geben!*
 
