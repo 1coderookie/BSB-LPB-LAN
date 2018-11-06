@@ -37,7 +37,8 @@ Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.
 
 *Basierend auf dem Code und der Mitarbeit von vielen anderen
 Entwicklern! Vielen Dank!*
-
+  
+  
 
 **BSB-LPB-LAN - ein kurzer Überblick**  
 
