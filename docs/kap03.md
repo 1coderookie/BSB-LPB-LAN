@@ -8,9 +8,7 @@ von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
 Aus aktuellem Anlass sei hier darauf hingewiesen, dass die
 Heizungshersteller offensichtlich eine neue Heizungs- und
 Reglergeneration auf den Markt gebracht haben, die nach bisherigem
-Wissensstand NICHT kompatibel mit BSB-LAN ist!  
-Siehe hierzu Kapitel 3.3 Hinweis: Neue Modellgeneration - NICHT
-unterstützter Regler von Brötje.***
+Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. 3.3)!***
 
 ## 3.1 Erfolgreich getestete Heizungssysteme ##
 
@@ -36,24 +34,24 @@ Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
 einen noch nicht aufgeführten Regler unter Angabe der genauen
 Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
 http://\<IP-Adresse\>/6220-6228 (via Adapter!) und der verwendeten
-Anschlussart (BSB/LPB/PPS) zu melden.\
+Anschlussart (BSB/LPB/PPS) zu melden.  
 Danke!
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 26C":
 
-6220 Konfiguration - Software- Version: 1.3 6221 Konfiguration -
-Entwicklungs-Index: error 7 (parameter not supported) 6222 Konfiguration
-- Gerätebetriebsstunden: 12345 h\
-6223 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type
-000014\
-6224 Konfiguration - Geräte-Identifikation: RVS43.222/100\
-6225 Konfiguration - Gerätefamilie: 96\
-6226 Konfiguration - Gerätevariante: 100\
-6227 Konfiguration - Objektverzeichnis-Version: 1.0\
-6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type
-000014
-___
+6220 Konfiguration - Software- Version: 1.3  
+6221 Konfiguration - Entwicklungs-Index: error 7 (parameter not supported)  
+6222 Konfiguration - Gerätebetriebsstunden: 12345 h  
+6223 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
+6224 Konfiguration - Geräte-Identifikation: RVS43.222/100  
+6225 Konfiguration - Gerätefamilie: 96  
+6226 Konfiguration - Gerätevariante: 100  
+6227 Konfiguration - Objektverzeichnis-Version: 1.0  
+6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014
+___  
+
+
 ### 3.1.1 Brötje ###
 
 -   Brötje BBK 22E \[LMS14\] (Gasbrenner)
@@ -167,14 +165,14 @@ BSB-LAN grundsätzlich etliche Parameter verfügbar sind, die mittels
 integrierter Bedieneinheit nicht verfügbar sind.
 
 Die folgende Übersicht beinhaltet Angaben der Konfigurationsparameter
-6220-6228.\
+6220-6228.  
 Diese Parameter können i.d.R. nur via Adapter abgefragt werden!
 
 Eine Ausnahme bei der nachfolgenden Auflistung der Reglertypen stellt
 das Modell AVS75.390 dar. Hierbei handelt es sich um ein
 Erweiterungsmodul (EWM) für den RVS-Reglertyp, an dem sich weitere
 Fühler und Verbraucher anschließen und somit im System integrieren
-lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.\
+lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.  
 Die Parametrierung und Einbindung erfolgt über den eigentlichen
 RVS-Regler bzw. die eigentliche Bedieneinheit des RVS-Reglers.
 
@@ -217,7 +215,7 @@ Tabelle 1: Erweiterungsmodul AVS75.390
 +-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 ***Hinweis:  
-Im Folgenden nicht aufgeführte Regler bitte wie in Kapitel 10 beschrieben auslesen und melden.
+Im Folgenden nicht aufgeführte Regler bitte wie in Kap. 10 beschrieben auslesen und melden.
 Danke!***
 
 ### 3.2.1 LMx-Regler ###
@@ -509,7 +507,7 @@ genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
 haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
 kompatibel sind.
 
-Bei Brötje handelt es sich hierbei um die Modellreihe WLS/WLC und BOK.\
+Bei Brötje handelt es sich hierbei um die Modellreihe WLS/WLC und BOK.  
 Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut,
 die weder einen LPB noch einen BSB aufweisen.
 
@@ -517,7 +515,7 @@ Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
 Anschlüsse.
 
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
-weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.\
+weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.  
 Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
 (On/Off), ein entsprechendes QAA-Raumgerät oder das neue ‚smarte'
 Raumgerät „Brötje IDA" angeschlossen werden.
