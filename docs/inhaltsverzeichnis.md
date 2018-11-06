@@ -98,7 +98,7 @@
 15.24 Ich habe weitere Fragen, an wen kann ich mich wenden?  
 [16. Offene Punkte](kap16.md)  
 [17. Weiterführende Informationen und Quellen](kap17.md)  
-[Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md]  
+[Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md)  
 [Anhang A2: Anmerkungen zum Schaltplan](anhang_a2.md)  
 A2.1 Kurze Legende zum Schaltplan  
 A2.2 Teileliste  
