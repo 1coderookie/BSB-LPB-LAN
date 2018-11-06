@@ -1,4 +1,4 @@
-# 6. Funktionsüberprüfung und erste Nutzung des Adapters** #
+# 6. Funktionsüberprüfung und erste Nutzung des Adapters #
 
 Um zu überprüfen, ob der angeschlossene Regler korrekt erkannt wird,
 sollte bei der Ersteinrichtung eine Funktionsüberprüfung vorgenommen
@@ -7,6 +7,7 @@ Dazu bietet sich folgende Vorgehensweise an:
 
 1.  Den Regler ausschalten und *polrichtig* mit dem Adapter via BSB
     verbinden.  
+    
     *Hinweis:*  
     Wenn (später) der LPB genutzt werden soll, muss sowohl der Bus-Typ
     in der Datei *BSB\_lan\_config.h* als auch der Anschluss am Regler
