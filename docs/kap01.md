@@ -37,7 +37,7 @@ Software in vollem Umfang nutzen zu können (siehe u.a. Kapitel 10).
 Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield des
 Typs W5100[^5] lauffähig, erfahrungsgemäß ‚out of the box'. Aufgrund des
 geringeren Speichers ist die Verwendung von bspw. Arduino UNO, Arduino
-Nano o.ä. nicht möglich.\
+Nano o.ä. nicht möglich.
 Grundsätzlich ist die Verwendung von original Arduino-Komponenten zu
 empfehlen, da es bei dem Einsatz von günstigen Clones u.U. zu diffusen
 Problemen kommen kann.
