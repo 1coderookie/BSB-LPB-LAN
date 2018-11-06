@@ -54,7 +54,7 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im Forum[^6] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-***Hinweis:***/
+***Hinweis:***\
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
 [bsb_gateway](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
