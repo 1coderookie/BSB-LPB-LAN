@@ -17,7 +17,7 @@
 [5. Einstellungsrelevante Parameter der BSB-LAN-Software](kap05.md)  
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
 [7. BSB-LAN Web - das Webinterface des Adapters](kap07.md)  
-[8. URL-Befehle und Spezialfunktionen](kap08.md]  
+[8. URL-Befehle und Spezialfunktionen](kap08.md)  
 8.1 Auflistung und Beschreibung der URL-Befehle  
 8.2 Spezialfunktionen  
 8.2.1 Raumtemperatur übermitteln  
