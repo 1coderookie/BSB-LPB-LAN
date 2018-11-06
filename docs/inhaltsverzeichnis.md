@@ -7,7 +7,7 @@
 3.1.1 Brötje  
 3.1.2 Elco  
 3.1.3 Weitere Hersteller  
-3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler
+3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler  
 3.2.1 LMx-Regler  
 3.2.2 RVx-Regler  
 3.2.2.1 RVA- und RVP-Regler  
