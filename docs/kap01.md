@@ -76,9 +76,9 @@ Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***  
 
-¹: Im Folgenden nur als „Regler" bezeichnet.
-²: BSB = Boiler System Bus
-³: LPB = Local Process Bus
-⁴: Ausnahme: Siehe Kap. [3.3](kap03.md)  
-⁵: Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md).  
-⁶: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
+¹ Im Folgenden nur als „Regler" bezeichnet.  
+² BSB = Boiler System Bus  
+³ LPB = Local Process Bus  
+⁴ Ausnahme: Siehe Kap. [3.3](kap03.md)    
+⁵ Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md).  
+⁶ [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
