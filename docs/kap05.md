@@ -60,8 +60,8 @@ vor der Verwendung des Adapters angepasst werden:
     `#define USER_PASS_B64 "YXRhcmk6ODAweGw="`
 
 -   Konfiguration des Heizungssystems:  
-    `const int fixed_device_family = 0;  
-    const int fixed_device_variant = 0;`
+    `const int fixed_device_family = 0;`  
+    `const int fixed_device_variant = 0;`
     
     Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung
     des angeschlossenen Reglers beim Starten des Arduino aktiviert.\
