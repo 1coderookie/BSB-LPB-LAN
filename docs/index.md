@@ -1,46 +1,28 @@
 **IM AUFBAU**  
 
-Das BSB-LPB-LAN-Handbuch als GitHub-Page..  
-
-# Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-**ACHTUNG:**  
-**Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art,**
-**dass dieser Adapter dein Heizungssystem NICHT beschädigt!**
-**Jegliche Umsetzung der hier beschriebenen Schritte,**
-**jeder Nachbau des Adapters sowie jede Verwendung**
-**der beschriebenen Hard- und Software erfolgt**
-**auf eigene Verantwortung und eigenes Risiko!**
-**Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher**
-**Art haftbar gemacht werden!**
+# BSB-LPB-LAN-Handbuch (Onlineversion) #  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
 BSB-LPB-LAN-Adapters und der dazugehörigen Software zu vereinfachen und
 um als Nachschlagewerk zu dienen.  
 
-Es wird empfohlen, dieses Handbuch vor einer initialen
-Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.  
+***Es wird empfohlen, dieses Handbuch vor einer initialen
+Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***  
+
+## Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ##  
+
+### ACHTUNG: ###  
+### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, ###  
+### dass dieser Adapter dein Heizungssystem NICHT beschädigt! ###  
+### Jegliche Umsetzung der hier beschriebenen Schritte, ###  
+### jeder Nachbau des Adapters sowie jede Verwendung ###  
+### der beschriebenen Hard- und Software erfolgt ###  
+### auf eigene Verantwortung und eigenes Risiko! ###  
+### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher ###  
+### Art haftbar gemacht werden! ###   
 
 
-**Autoren:**
-
--   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support 
-    bis v0.16:  
-    *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
-
--   Software, Platinenlayout v1 & v2, Dokumentationen EN, Ideenfindung,
-    Support ab v0.17:  
-    *Frederik Holst (bsb \[ät\] code-it.de)*
-
--   Debugging, Handbuch, Übersetzung EN-DE, Ideenfindung, Support
-    ab v0.17:  
-    *Ulf Dieckmann (adapter \[ät\] quantentunnel.de)*
-
-*Basierend auf dem Code und der Mitarbeit von vielen anderen
-Entwicklern! Vielen Dank!*
-  
-  
-
-**BSB-LPB-LAN - ein kurzer Überblick**  
+## BSB-LPB-LAN - ein kurzer Überblick ##  
 
 Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann ein entsprechender Wärmeerzeuger mit einem Boiler-System-Bus (BSB), einem Local-Process-Bus (LPB) oder einer Punkt-zu-Punkt-Schnittstelle (PPS) ins heimische Netzwerk eingebunden werden. Dies sind i.d.R. Systeme, bei denen ein (gebrandeter) Siemens-Regler zum Einsatz kommt.
 
@@ -94,4 +76,22 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Sieger TG11 [RVP54.100] (Ölbrenner) {PPS mit eingeschränkter Funktionalität}
 - Weishaupt WTU-25 G mit WRS-CPU B2/E [RVS23.220] (Ölbrenner) {LPB}
 
-Die Software und weitere Informationen (sowie das hier verfügbare Handbuch) sind [hier](https://github.com/fredlcore/bsb_lan) zu finden. 
+Die Software und weitere Informationen (sowie das hier verfügbare Handbuch) sind [hier](https://github.com/fredlcore/bsb_lan) zu finden.  
+
+
+## Autoren: ##  
+
+-   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support 
+    bis v0.16:  
+    *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
+
+-   Software, Platinenlayout v1 & v2, Dokumentationen EN, Ideenfindung,
+    Support ab v0.17:  
+    *Frederik Holst (bsb \[ät\] code-it.de)*
+
+-   Debugging, Handbuch, Übersetzung EN-DE, Ideenfindung, Support
+    ab v0.17:  
+    *Ulf Dieckmann (adapter \[ät\] quantentunnel.de)*
+
+*Basierend auf dem Code und der Mitarbeit von vielen anderen
+Entwicklern! Vielen Dank!*
