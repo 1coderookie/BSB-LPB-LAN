@@ -1,10 +1,10 @@
 # 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software ##
 Der BSB-LPB-LAN-Adapter und die dazugehörige BSB-LAN-Software wurden
 entwickelt, um eine Anbindung von Heizungssystemen bzw. -reglern ans LAN
-und somit auch einen entsprechenden Fernzugriff zu ermöglichen.\
+und somit auch einen entsprechenden Fernzugriff zu ermöglichen.  
 Darüber hinaus ist es u.a. möglich, Parameter (bspw. Laufzeiten,
 Temperaturen) auf eine microSD-Karte zu loggen und sowohl DS18B20- als
-auch DHT22-Sensoren zusätzlich am Adapter anzuschließen.\
+auch DHT22-Sensoren zusätzlich am Adapter anzuschließen.  
 Die hier vorgestellte Lösung stellt eine Alternative zu den bisherigen
 kommerziellen Lösungen dar, die nicht nur hinsichtlich des
 Kostenfaktors, sondern auch in Bezug auf die vielfältigen
@@ -33,7 +33,7 @@ Bus-Typen aufweisen. Eine Auflistung der bisher erfolgreich getesteten
 Systeme ist u.a. im nachfolgenden Kapitel zu finden, dennoch kann
 niemals ein voller Funktionsumfang garantiert werden. Bei nicht
 gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
-Software in vollem Umfang nutzen zu können (siehe u.a. Kapitel 10).
+Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
 
 Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield des
 Typs W5100[^5] lauffähig, erfahrungsgemäß ‚out of the box'. Aufgrund des
@@ -47,7 +47,7 @@ Da es teilweise unterschiedliche Pinbelegungen bei den verschiedenen
 LAN-Shield-Clones gibt, ist es u.U. nötig, den BSB-LPB-LAN-Adapter an
 andere Pins anzuschließen und die entsprechenden Änderungen hinsichtlich
 der Pinbelegung in der Software (Datei *BSB\_lan\_config.h*) anzupassen
-(siehe Kapitel 4 & 5).
+(s. Kap. [4](kap04.md) & [5](kap05.md)).
 
 Der Schaltplan des Adapters ist im Anhang zu finden. Außerdem wurden in
 der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
