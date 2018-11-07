@@ -1,18 +1,18 @@
 [1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software](kap01.md)  
 [2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle](kap02.md)  
-2.1 BSB und LPB  
-2.2 PPS-Schnittstelle  
+[2.1 BSB und LPB](kap02.md#21-bsb-und-lpb)  
+[2.2 PPS-Schnittstelle](kap02.md#22-pps-schnittstelle)  
 [3. Unterstützte Heizungssysteme und Regler](kap03.md)  
-3.1 Erfolgreich getestete Heizungssysteme  
-3.1.1 Brötje  
-3.1.2 Elco  
-3.1.3 Weitere Hersteller  
-3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler  
-3.2.1 LMx-Regler  
-3.2.2 RVx-Regler  
-3.2.2.1 RVA- und RVP-Regler  
-3.2.2.1 RVS-Regler  
-3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje  
+[3.1 Erfolgreich getestete Heizungssysteme](kap03.md#31-erfolgreich-getestete-heizungssysteme)  
+[3.1.1 Brötje](kap03.md#311-br%C3%B6tje)  
+[3.1.2 Elco](kap03.md#312-elco)  
+[3.1.3 Weitere Hersteller](kap03.md#313-weitere-hersteller)  
+[3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler](kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterst%C3%BCtzten-regler)  
+[3.2.1 LMx-Regler](kap03.md#321-lmx-regler)  
+[3.2.2 RVx-Regler](kap03.md#322-rvx-regler)  
+[3.2.2.1 RVA- und RVP-Regler](kap03.md#3221-rva--und-rvp-regler)  
+[3.2.2.2 RVS-Regler](kap03.md#3222-rvs-regler)  
+[3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje)  
 [4. Installation der Arduino IDE und Konfiguration des Adapters](kap04.md)  
 [5. Einstellungsrelevante Parameter der BSB-LAN-Software](kap05.md)  
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
