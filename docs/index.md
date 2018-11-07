@@ -10,7 +10,8 @@ um als Nachschlagewerk zu dienen.
 Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***  
 
 ## Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ##  
-
+  
+---  
 ### ACHTUNG: ###  
 ### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! ###  
 ### Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko! ###  
