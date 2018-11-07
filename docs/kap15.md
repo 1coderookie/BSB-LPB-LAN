@@ -306,4 +306,4 @@ als zu wenige.
 Fragen, deren Antworten sich aus dem gründlichen Lesen dieses Handbuchs
 ergeben, werden ab einem gewissen Punkt lediglich mit einem Verweis
 hierauf beantwortet. Bitte bedenke, dass dies für jeden von uns nur ein
-Hobby-Projekt ist und wir keinerlei Geld damit verdienen.
+Hobby-Projekt ist.
