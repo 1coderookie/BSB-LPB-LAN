@@ -54,4 +54,4 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Sieger TG11 [RVP54.100] (Ölbrenner) {PPS mit eingeschränkter Funktionalität}
 - Weishaupt WTU-25 G mit WRS-CPU B2/E [RVS23.220] (Ölbrenner) {LPB}
 
-Die Software und weitere Informationen (sowie das hier verfügbare Handbuch) sind hier zu finden: https://github.com/fredlcore/bsb_lan 
+Die Software ist hier zu finden: https://github.com/fredlcore/bsb_lan 
