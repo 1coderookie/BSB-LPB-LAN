@@ -148,7 +148,7 @@ vor der Verwendung des Adapters angepasst werden:
 
     ***Tipp:***  
     *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese hier
-    standardmäßig mit angezeigt (http://\<IP-Adresse\>/ipwe.cgi). Dabei
+    standardmäßig mit angezeigt (URL: `http://<IP-Adresse>/ipwe.cgi`). Dabei
     wird neben den gemessenen Werten auch die jeweils spezifische
     Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei
     einer Ersteinrichtung für eine eindeutige Unterscheidung der
@@ -161,7 +161,7 @@ vor der Verwendung des Adapters angepasst werden:
     angepasst werden.  
     Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. Kap. [12.2](kap12.md).  
 
--   Soll der Arduino per URL-Befehl mittels `http://\<IP-Adresse\>/N`
+-   Soll der Arduino per URL-Befehl mittels `http://<IP-Adresse>/N`
     resettet werden können, muss das entsprechende Definement aktiviert
     werden:  
     `#define RESET`
