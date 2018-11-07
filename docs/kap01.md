@@ -76,6 +76,7 @@ Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***  
 
+---
 ¹ Im Folgenden nur als „Regler" bezeichnet.  
 ² BSB = Boiler System Bus  
 ³ LPB = Local Process Bus  
