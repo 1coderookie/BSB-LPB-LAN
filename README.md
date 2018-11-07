@@ -1,7 +1,7 @@
 # BSB-LPB-LAN
 Hier findet sich das umfassende Handbuch zum Projekt "BSB-LPB-LAN" als PDF-Dokument zum Herunterladen und Ausdrucken. Die online-Version des Handbuchs ist [hier](https://1coderookie.github.io/BSB-LPB-LAN) verfügbar.
 
-**Ein kurzer Überblick**  
+## BSB-LPB-LAN - Ein kurzer Überblick ##  
 Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann ein entsprechender Wärmeerzeuger mit einem Boiler-System-Bus (BSB), einem Local-Process-Bus (LPB) oder einer Punkt-zu-Punkt-Schnittstelle (PPS) ins heimische Netzwerk eingebunden werden. Dies sind i.d.R. Systeme, bei denen ein (gebrandeter) Siemens-Regler zum Einsatz kommt.
 
 Mit Hilfe des Adapters und der BSB-LAN-Software können verschiedene Funktionen, Werte und Parameter beobachtet, geloggt und bei Bedarf web-basiert gesteuert und geändert werden.
