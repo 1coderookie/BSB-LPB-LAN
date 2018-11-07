@@ -64,7 +64,7 @@ vor der Verwendung des Adapters angepasst werden:
     `const int fixed_device_variant = 0;`
     
     Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung
-    des angeschlossenen Reglers beim Starten des Arduino aktiviert.\
+    des angeschlossenen Reglers beim Starten des Arduino aktiviert.  
     Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226`
     eingetragen werden (6225 = Gerätefamilie / device family & 6226 =
     Gerätevariante / device variant).  
