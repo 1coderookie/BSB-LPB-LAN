@@ -1,6 +1,6 @@
 **IM AUFBAU**  
 
-# Onlineversion des Handbuchs für den BSB-LPB-LAN-Adapter v2 (Arduino-Version) und die BSB-LAN-Software #  
+## Onlineversion des Handbuchs für den BSB-LPB-LAN-Adapter v2 (Arduino-Version) und die BSB-LAN-Software ##  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
 BSB-LPB-LAN-Adapters und der dazugehörigen Software zu vereinfachen und
@@ -9,16 +9,18 @@ um als Nachschlagewerk zu dienen.
 ***Es wird empfohlen, dieses Handbuch vor einer initialen
 Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***  
 
-## Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ##  
+### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ###  
+  
   
 ---  
-### ACHTUNG: ###  
-### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! ###  
-### Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko! ###  
-### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden! ###   
+#### ACHTUNG: ####  
+#### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! ####  
+#### Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko! ####  
+#### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden! ####   
 ---
   
-## BSB-LPB-LAN - ein kurzer Überblick ##  
+  
+### BSB-LPB-LAN - ein kurzer Überblick ###  
 
 Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann ein entsprechender Wärmeerzeuger mit einem Boiler-System-Bus (BSB), einem Local-Process-Bus (LPB) oder einer Punkt-zu-Punkt-Schnittstelle (PPS) ins heimische Netzwerk eingebunden werden. Dies sind i.d.R. Systeme, bei denen ein (gebrandeter) Siemens-Regler zum Einsatz kommt.
 
@@ -75,7 +77,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 Die Software und weitere Informationen (sowie das hier verfügbare Handbuch) sind [hier](https://github.com/fredlcore/bsb_lan) zu finden.  
 
 
-## Autoren: ##  
+### Autoren: ###  
 
 -   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support 
     bis v0.16:  
