@@ -11,7 +11,6 @@ Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***
 
 ### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ###  
   
-  
 ---  
 
 ***ACHTUNG:  
@@ -20,7 +19,6 @@ Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters s
 Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden!***   
 
 ---
-  
   
 ### BSB-LPB-LAN - ein kurzer Überblick ###  
 
@@ -76,7 +74,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Sieger TG11 [RVP54.100] (Ölbrenner) {PPS mit eingeschränkter Funktionalität}
 - Weishaupt WTU-25 G mit WRS-CPU B2/E [RVS23.220] (Ölbrenner) {LPB}
 
-### Die Software und weitere Informationen (sowie das hier verfügbare Handbuch) sind [hier](https://github.com/fredlcore/bsb_lan) zu finden. ###  
+### Die Software ist [hier](https://github.com/fredlcore/bsb_lan) zu finden. ###  
 
 ---  
 
