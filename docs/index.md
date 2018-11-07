@@ -20,8 +20,8 @@ Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***
 ### auf eigene Verantwortung und eigenes Risiko! ###  
 ### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher ###  
 ### Art haftbar gemacht werden! ###   
-
-
+---
+  
 ## BSB-LPB-LAN - ein kurzer Überblick ##  
 
 Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann ein entsprechender Wärmeerzeuger mit einem Boiler-System-Bus (BSB), einem Local-Process-Bus (LPB) oder einer Punkt-zu-Punkt-Schnittstelle (PPS) ins heimische Netzwerk eingebunden werden. Dies sind i.d.R. Systeme, bei denen ein (gebrandeter) Siemens-Regler zum Einsatz kommt.
