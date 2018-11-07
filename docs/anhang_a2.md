@@ -34,7 +34,7 @@ Anschlussklemmen, Pinheader etc. für die Leitungen.
 
 ## A2.3 Generelle Hinweise ##
 
-*Vor dem Löten gilt: Bitte den Schaltplan aufmerksam studieren!*
+***Vor dem Löten gilt: Bitte den Schaltplan aufmerksam studieren!***
 
 Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem
 ***Arduino*** zwingend die Verbindung SJ1 herzustellen!\
