@@ -123,13 +123,11 @@ vor der Verwendung des Adapters angepasst werden:
     Wenn mehrere DS18B20- oder DHT22-Sensoren geloggt werden sollen,
     müssen diese bei den Log-Parametern entsprechend einzeln
     untereinander aufgeführt werden, bspw.:  
-    \[\...\]  
     ```
     20200, // Spezialparameter 20200-20299: DS18B20-Sensoren 1-100 (/T)  
     20201,  
     20202, 
     ```
-    \[\...\]  
     loggt die Werte der DS18B20-Sensoren 1-3.
 
     ***Hinweis:***  
@@ -189,7 +187,7 @@ vor der Verwendung des Adapters angepasst werden:
     Wenn bereits ein Raumgerät (RGT1) vorhanden ist, kann bzw. sollte
     der Adapter u.U. als RGT2 am angeschlossenen Regler angemeldet
     werden, um etwaige Adresskollisionen[^19] zu vermeiden:  
-    BSB bus(68,69,7);
+    `BSB bus(68,69,7);`
 
     ***Hinweis:***  
     *Bitte beachte, dass ein als RGT1 angemeldeter Adapter eventuell
@@ -235,7 +233,6 @@ vor der Verwendung des Adapters angepasst werden:
     → das „DEFAULT_FLAG" wurde durch „0" (Null, ohne Anführungszeichen)
     ersetzt
     
-
 -   Definement `#define DEBUG`:  
     Soll BSB-LAN auf nicht-freigebene
     reglerspezifische CommandIDs überprüft werden (s. Kap. [8.2.5](kap08.md)),
