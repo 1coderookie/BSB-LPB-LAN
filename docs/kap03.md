@@ -380,7 +380,7 @@ Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)[^15]
 |       | er)   |       |       |       |       |       |       |       |
 +-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
-#### 3.2.2.1 RVS-Regler ####
+#### 3.2.2.2 RVS-Regler ####
 
 Regler des Typs RVS scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt[^16].
