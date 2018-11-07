@@ -36,7 +36,7 @@ gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
 Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
 
 Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield des
-Typs W5100[^5] lauffähig, erfahrungsgemäß ‚out of the box'. Aufgrund des
+Typs W5100[⁵] lauffähig, erfahrungsgemäß ‚out of the box'. Aufgrund des
 geringeren Speichers ist die Verwendung von bspw. Arduino UNO, Arduino
 Nano o.ä. nicht möglich.
 Grundsätzlich ist die Verwendung von original Arduino-Komponenten zu
@@ -51,7 +51,7 @@ der Pinbelegung in der Software (Datei *BSB\_lan\_config.h*) anzupassen
 
 Der Schaltplan des Adapters ist im Anhang zu finden. Außerdem wurden in
 der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
-bei Interesse kann man sich im Forum[^6] melden oder direkt Frederik
+bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
 ***2DO: ABBILDUNG***  
@@ -79,4 +79,6 @@ Arduino-Version!***
 [¹]: Im Folgenden nur als „Regler" bezeichnet.
 [²]: BSB = Boiler System Bus
 [³]: LPB = Local Process Bus
-[⁴]: Ausnahme: Siehe Kap. [3.3](kap03.md)
+[⁴]: Ausnahme: Siehe Kap. [3.3](kap03.md)  
+[⁵]: Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md).  
+[⁶]: [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
