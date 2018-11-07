@@ -25,7 +25,6 @@ Parametrierung der jeweiligen Regler sollte im Normalfall bereits bei
 der Installation der Anlage durch den Heizungsinstallateur erfolgt
 sein.
 
-___
 ***Beispiel:***  
 Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
 wasserführender Kamin und eine thermische Solaranlage zur Unterstützung
@@ -54,15 +53,14 @@ Beispiel angeschlossen ist, müssen
 1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und
 2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden.  
-_ _ _  
+jeweiligen Anfragen des Adapters geschickt werden.    
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
 Geräte- und Segmentadressen sind den jeweiligen technischen
 Dokumentationen der Hersteller zu entnehmen. Hinsichtlich des LPB seien
-insbesondere die Dokumentationen „LPB Systemgrundlagen"[^7] und „LPB
-Projektierungsgrundlagen"[^8] empfohlen.
+insbesondere die Dokumentationen „LPB Systemgrundlagen"⁷ und „LPB
+Projektierungsgrundlagen"⁸ empfohlen.
 
 Bei einigen Reglern sind die entsprechenden Anschlüsse teilweise
 unterschiedlich gekennzeichnet:
@@ -117,18 +115,17 @@ die via BSB verfügbar wären. Die Software wird zwar stetig weiter
 entwickelt, derzeit bietet es sich jedoch noch an, als Anschluss den BSB
 zu präferieren, wenn dieser vorhanden ist.
 
-___
 ***Tipps:***  
 
 Um vor Störeinflüssen möglichst geschützt zu sein, sollten die
 Anschlusskabel für den LPB-Anschluss gemäß
-LPB-Projektierungsgrundlagen[^9] einen Querschnitt von 1,5mm² aufweisen,
+LPB-Projektierungsgrundlagen einen Querschnitt von 1,5mm² aufweisen,
 zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro
 Busteilnehmer, max. Gesamtlänge 1000m).  
 Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m)
 Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen
 bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt
-werden[^10].  
+werden⁹.  
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden
 (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer
 vorzuziehen.
@@ -137,8 +134,13 @@ Der Anschluss der Leitungen an die jeweiligen Kontakte sollte
 prinzipiell immer mit den spezifischen Steckern erfolgen.  
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können
 auch isolierte 6,3mm-Kabelschuhe verwendet werden.  
-_ _ _  
 
+---
+⁷ Siemens Building Technologies - Landis & Staefa Division: CE1N2030D  
+⁸ Siemens Building Technologies - Landis & Staefa Division: CE1N2032D  
+⁹ Siehe „Brötje Montageanleitung für Raumgerät RGT/RGTK"  
+
+---
 
 ## 2.2 PPS-Schnittstelle ##
 
