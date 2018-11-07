@@ -11,10 +11,10 @@ Kostenfaktors, sondern auch in Bezug auf die vielfältigen
 Einsatzmöglichkeiten mehr als nur ‚interessant' ist.
 
 ***Für den Einsatz des Adapters müssen die Kessel-, Solar- oder auch
-Wärmepumpen-Regler einen BSB (Boiler System Bus) oder LPB (Local Process Bus) 
-aufweisen!*** Dies ist i.d.R. bei (aktuelleren[^4]) Reglern der Fall,
+Wärmepumpen-Regler[¹] einen BSB[²] oder LPB[³] aufweisen!***  
+Dies ist i.d.R. bei (aktuelleren[⁴]) Reglern der Fall,
 die von der Firma SIEMENS hergestellt wurden. Solche Regler werden bspw.
-von Heizungsherstellern wie Brötje oder Elco verbaut.  
+von Heizungsherstellern wie Brötje oder Elco verbaut.   
 ***Ob dein Heizungssystem über einen solchen Bus verfügt, ist den spezifischen
 technischen Unterlagen zu entnehmen.***
 
@@ -74,4 +74,9 @@ das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D
 Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
 
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
-Arduino-Version!***
+Arduino-Version!***  
+
+[¹]: Im Folgenden nur als „Regler" bezeichnet.
+[²]: BSB = Boiler System Bus
+[³]: LPB = Local Process Bus
+[⁴]: Ausnahme: Siehe Kap. [3.3](kap03.md)
