@@ -189,13 +189,11 @@ Wird im weiteren Verlauf bspw. mittels FHEM[^28] die jeweilige
 Temperatur mehrerer Wand- und Heizkörperthermostate erfasst, so lässt
 sich daraus eine gemittelte Ist- und Soll-Temperatur bilden. Diese kann
 dann dem Heizungsregler übermittelt werden, um den Wärmeerzeuger
-bedarfsgerechter zu steuern. Eine solche Lösung lässt sich hier
-nachlesen:
-[https://forum.fhem.de/index.php/topic,60900.0.html](https://forum.fhem.de/index.php/topic,60900.0.html)\
+bedarfsgerechter zu steuern. Eine solche Lösung lässt sich [hier](https://forum.fhem.de/index.php/topic,60900.0.html)
+nachlesen.  
 FHEM-Forumsmitglied „Andreas29" hat dieses Anwendungsbeispiel ohne FHEM
 umgesetzt. Eine ausführliche Beschreibung samt der benötigten
-angepassten Datei *BSB\_lan\_custom.h* findet sich hier:
-[https://forum.fhem.de/index.php/topic,29762.msg851382.html\#msg851382](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382)\
+angepassten Datei *BSB\_lan\_custom.h* findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382).  
 Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät"
 ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.
     
@@ -234,9 +232,9 @@ Das Innenleben des Raumgeräteersatzes.
 Das Display des Raumgeräteersatzes.  
     
 
-Eine ausführliche Beschreibung samt Schaltplan und Software ist hier zu
-finden: <https://forum.fhem.de/index.php/topic,91867.0.html>
-    
+Eine ausführliche Beschreibung samt Schaltplan und Software ist [hier](https://forum.fhem.de/index.php/topic,91867.0.html) zu
+finden.  
+        
     
 ### 12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
 
@@ -245,5 +243,4 @@ mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
 Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
 angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
-Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist unter
-[https://github.com/DaddySun/Smart_Home_DIY](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
+Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
