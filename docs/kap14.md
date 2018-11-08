@@ -24,7 +24,7 @@ aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - → Testweise Reset-Knopf des Arduino bzw. LAN-Shields drücken
 - LAN-Shield mit W5100-Chip bestückt? Sollte ein W5500 zum Einsatz
 kommen, sind die entspr. Punkte bei der Installation zu berücksichtigen (s. Kap. [5](kap05.md)
-& [14.10](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden)
+& [14.10](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden))
 - Adapter und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen ‚China'-Arduinos)
 
@@ -77,7 +77,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 - Es ist keine microSD-Karte eingelegt
 - Das Loggen auf microSD-Karte war oder ist deaktiviert
 - Die Logdatei ist sehr groß, die (graphische) Darstellung dauert entsprechend länger  
-- Die grafische Darstellung (`URL/DG`) der Logdatei kann aufgrund von javascript-Blockern nicht erfolgen
+- Die grafische Darstellung (`http://<IP-Adresse>/DG`) der Logdatei kann aufgrund von javascript-Blockern nicht erfolgen
 
 ## 14.13 Es werden keine 24h-Durchschnittswerte angezeigt ##
 
