@@ -1,3 +1,6 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+    
+
 # 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software ##
 Der BSB-LPB-LAN-Adapter und die dazugehörige BSB-LAN-Software wurden
 entwickelt, um eine Anbindung von Heizungssystemen bzw. -reglern ans LAN
@@ -89,3 +92,8 @@ Arduino-Version!***
 ⁴ Ausnahme: Siehe Kap. [3.3](kap03.md)    
 ⁵ Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md#1511-ich-nutze-ein-w5500-lan-shield-was-muss-ich-tun).  
 ⁶ [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
+    
+     
+     
+[Weiter zu Kapitel 2](kap02.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
