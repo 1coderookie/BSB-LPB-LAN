@@ -49,10 +49,10 @@
 [12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster)  
 [12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)](kap12.md#1232-raumtemperaturfühler-wemos-d1-mini-dht22-display)  
 [13. Etwaige Fehlermeldungen und deren mögliche Ursachen](kap13.md)  
-13.1 Fehlermeldung "unknown type xxxxxxxx"  
-13.2 Fehlermeldung "error 7 (parameter not supported)"  
-13.3 Fehlermeldung "query failed"  
-13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"  
+[13.1 Fehlermeldung "unknown type xxxxxxxx"](kap13.md#131-fehlermeldung-unknown-type-xxxxxxxx)  
+[13.2 Fehlermeldung "error 7 (parameter not supported)"](kap13.md#132-fehlermeldung-error-7-parameter-not-supported)  
+[13.3 Fehlermeldung "query failed"](kap13.md#133-fehlermeldung-query-failed)  
+[13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"](kap13.md#134-fehlermeldung-fehler-setzen-fehlgeschlagen-parameter-ist-nur-lesbar)  
 [14. Etwaige Probleme und deren mögliche Ursachen](kap14.md)  
 14.1 Die rote LED des Adapters leuchtet nicht  
 14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich  
