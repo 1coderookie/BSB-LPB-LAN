@@ -94,7 +94,7 @@
 [15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?](kap15.md#1521-warum-ist-der-adapter-nach-einem-stromausfall-nicht-mehr-erreichbar)  
 [15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar?](kap15.md#1522-warum-ist-der-adapter-ohne-stromausfall-manchmal-nicht-mehr-erreichbar)  
 [15.23 Warum kommen beim Senden manchmal ‚query failed‘-Meldungen?](kap15.md#1523-warum-kommen-beim-senden-manchmal-query-failed-meldungen)  
-[15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!](kap15.md#1524-ich-finde-keinen-lpb-oder-bsb-anschluss-nur-l-bus-und-r-bus)  
+[15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!](kap15.md#1524-ich-finde-keinen-lpb--oder-bsb-anschluss-nur-l-bus-und-r-bus)  
 [15.25 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1525-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
 [16. Offene Punkte](kap16.md)  
 [17. Weiterführende Informationen und Quellen](kap17.md)  
