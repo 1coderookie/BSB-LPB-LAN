@@ -224,7 +224,7 @@ Weitere Beispielscripte von ihm sind [hier](https://forum.fhem.de/index.php/topi
 Beispielscript für die Anbindung geschrieben, welches [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden
 ist.*
     
-*Vielen Dank! *
+*Vielen Dank!*
     
 Zur Einbindung in HomeMatic bietet sich die Verwendung von CuxD und wget
 an.
