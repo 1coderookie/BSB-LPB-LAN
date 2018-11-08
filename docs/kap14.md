@@ -1,3 +1,6 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 13](kap13.md)  
+    
 # 14. Etwaige Probleme und deren mögliche Ursachen #
 
 ## 14.1 Die rote LED des Adapters leuchtet nicht ##
@@ -102,3 +105,7 @@ Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)
 - Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
 - Falsche Baudrate eingestellt → auf 115200 Baud einstellen
 - Adapter nicht am Regler angeschlossen, Regler ist ausgeschaltet → siehe o.g. Punkte
+     
+     
+[Weiter zu Kapitel 15](kap15.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
