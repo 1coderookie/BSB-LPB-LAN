@@ -73,7 +73,7 @@
 [15. FAQ](kap15.md)  
 [15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?](kap15.md#151-kann-ich-adapter-software-mit-einem-raspberry-pi-nutzen)  
 [15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen?](kap15.md#152-kann-ich-einen-adapter-gleichzeitig-an-zwei-regler-anschließen)  
-[15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?](kap15.md#153-kann-ich-einen-adapter-via-lpb- anschließen-und-mehrere-regler-abfragen)  
+[15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?](kap15.md#153-kann-ich-einen-adapter-via-lpb-anschließen-und-mehrere-regler-abfragen)  
 [15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar?](kap15.md#154-ist-ein-multifunktionaler-eingang-des-reglers-direkt-via-adapter-schaltbar)  
 [15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?](kap15.md#155-ist-zusätzlich-ein-relaisboard-am-arduino-anschließ--und-steuerbar)  
 [15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen?](kap15.md#156-kann-ich-bspw-den-zustand-eines-angeschlossenen-koppelrelais-abfragen)  
