@@ -4,15 +4,15 @@
 [2.2 PPS-Schnittstelle](kap02.md#22-pps-schnittstelle)  
 [3. Unterstützte Heizungssysteme und Regler](kap03.md)  
 [3.1 Erfolgreich getestete Heizungssysteme](kap03.md#31-erfolgreich-getestete-heizungssysteme)  
-[3.1.1 Brötje](kap03.md#311-br%C3%B6tje)  
+[3.1.1 Brötje](kap03.md#311-brötje)  
 [3.1.2 Elco](kap03.md#312-elco)  
 [3.1.3 Weitere Hersteller](kap03.md#313-weitere-hersteller)  
-[3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler](kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterst%C3%BCtzten-regler)  
+[3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler](kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler)  
 [3.2.1 LMx-Regler](kap03.md#321-lmx-regler)  
 [3.2.2 RVx-Regler](kap03.md#322-rvx-regler)  
 [3.2.2.1 RVA- und RVP-Regler](kap03.md#3221-rva--und-rvp-regler)  
 [3.2.2.2 RVS-Regler](kap03.md#3222-rvs-regler)  
-[3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje)  
+[3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje)  
 [4. Installation der Arduino IDE und Konfiguration des Adapters](kap04.md)  
 [5. Einstellungsrelevante Parameter der BSB-LAN-Software](kap05.md)  
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
@@ -41,13 +41,13 @@
 [11.3 HomeMatic (EQ3)](kap11.md#113-homematic-eq3)  
 [11.4 ioBroker](kap11.md#114-iobroker)  
 [12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter](kap12.md)  
-12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20  
-12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren  
-12.1.2 Hinweise zu DS18B20-Temperatursensoren  
-12.2 MAX!-Komponenten  
-12.3 Eigene Hardwarelösungen  
-12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)  
-12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)  
+[12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20](kap12.md#121-verwendung-optionaler-sensoren-dht22-und-ds18b20)  
+[12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren](kap12.md#1211-hinweise-zu-dht22-temperatur-feuchtigkeitssensoren)  
+[12.1.2 Hinweise zu DS18B20-Temperatursensoren](kap12.md#1212-hinweise-zu-ds18b20-temperatursensoren)  
+[12.2 MAX!-Komponenten](kap12.md#122-max-komponenten)  
+[12.3 Eigene Hardwarelösungen](kap12.md#123-eigene-hardwarelösungen)  
+[12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster)  
+[12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)](kap12.md#1232-raumtemperaturfühler-wemos-d1-mini-dht22-display)  
 [13. Etwaige Fehlermeldungen und deren mögliche Ursachen](kap13.md)  
 13.1 Fehlermeldung "unknown type xxxxxxxx"  
 13.2 Fehlermeldung "error 7 (parameter not supported)"  
