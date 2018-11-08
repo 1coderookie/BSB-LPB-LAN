@@ -64,7 +64,7 @@
 [14.8 HK2 kann nicht bedient werden](kap14.md#148-hk2-kann-nicht-bedient-werden)  
 [14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden](kap14.md#149-es-kann-keine-raumtemperatur-an-einen-hk2-gesendet-werden)  
 [14.10 Einstellungen des Reglers können nicht via Adapter verändert werden](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden)  
-[14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle](kap14.md#1411-der-adapter-reagiert-manchmal-nicht-auf-abfragen-oder-set-Befehle)  
+[14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle](kap14.md#1411-der-adapter-reagiert-manchmal-nicht-auf-abfragen-oder-set-befehle)  
 [14.12 Bei der Abfrage der Logdatei passiert ‚nichts‘](kap14.md#1412-bei-der-abfrage-der-logdatei-passiert-nichts)  
 [14.13 Es werden keine 24h-Durchschnittswerte angezeigt](kap14.md#1413-es-werden-keine-24h-durchschnittswerte-angezeigt)  
 [14.14 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts‘](kap14.md#1414-bei-der-abfrage-der-daten-von-ds18b20-dht22-sensoren-passiert-nichts)  
