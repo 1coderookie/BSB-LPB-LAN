@@ -1,5 +1,5 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 8](kap8.md)  
+[Zurück zu Kapitel 8](kap08.md)  
     
 # 9. Loggen von Daten # 
 ## 9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN ##
