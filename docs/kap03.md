@@ -220,7 +220,8 @@ Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-Tabelle 2: LMS- und LMU-Regler[^14]  
+Tabelle 2: LMS- und LMU-Regler[^14]
+
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | LMS14.001A100 (Brötje)         | 162                     | 14                       | 0.1                        | 2.3                     | x   | \-  | \-  |
