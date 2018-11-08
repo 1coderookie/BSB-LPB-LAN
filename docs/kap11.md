@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 10](kap10.md)  
+    
+
 # 11. Nutzung von externen Programmen #
 
 Da der Adapter lediglich eine Schnittstelle darstellt, mittels derer man
@@ -214,7 +218,7 @@ end
     
 *Die folgenden abgedruckten HomeMatic-Beispielscripte stammen vom
 FHEM-Forumsmitglied „PaulM".  
-Weitere Beispielscripte von ihm sind [hier](https://forum.fhem.de/index.php/topic,29762.msg769167.html#msg769167) im FHEM-Forum zu finden.
+Weitere Beispielscripte von ihm sind [hier](https://forum.fhem.de/index.php/topic,29762.msg769167.html#msg769167) im FHEM-Forum zu finden.*
     
 *Darüber hinaus hat auch FHEM-Forumsmitglied „Bratmaxe" ein
 Beispielscript für die Anbindung geschrieben, welches [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden
@@ -473,3 +477,9 @@ Unter ‚RegEx' folgende Syntax angeben:
 
 ![](media/image31.png){width="6.6305555555555555in"
 height="2.227777777777778in"}
+    
+    
+     
+     
+[Weiter zu Kapitel 12](kap12.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
