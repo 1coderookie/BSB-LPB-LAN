@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 1](kap01.md)  
+    
+
 # 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle #
 
 ## 2.1 BSB und LPB
@@ -26,23 +30,23 @@ der Installation der Anlage durch den Heizungsinstallateur erfolgt
 sein.
 
 ***Beispiel:***  
-Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
+*Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
 wasserführender Kamin und eine thermische Solaranlage zur Unterstützung
 des Heizkreises oder der Warmwasserbereitung.
 Alle drei Wärmeerzeuger sind hydraulisch an einem Pufferspeicher
 angeschlossen.
-Die Wärme für den Heizkreis soll vom Pufferspeicher bezogen werden.
+Die Wärme für den Heizkreis soll vom Pufferspeicher bezogen werden.*
 
-Die Regelung der Solaranlage und des Feststoffkessels übernimmt ein
+*Die Regelung der Solaranlage und des Feststoffkessels übernimmt ein
 Solarsystemregler (SSR), die Kesselsteuerung der Heizung übernimmt in
 diesem Beispiel der interne Heizungsregler. Alle Sensoren, Pumpen,
 Mischer etc. sind am SSR angeschlossen, welcher jedoch via LPB mit dem
 Heizungsregler verbunden ist. Durch diese Verbindung der beiden Regler
 kann somit bspw. eine Pufferspeicherladung geregelt werden, bei der die
 Heizung nur aktiv wird, wenn weder Solar noch Feststoffkessel den Puffer
-laden / geladen haben.
+laden / geladen haben.*
 
-Wenn ein Adapter via BSB an einem der beiden Regler aus oben genanntem
+*Wenn ein Adapter via BSB an einem der beiden Regler aus oben genanntem
 Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
 Regler \'lokal\' zugreifen, an dem er angeschlossen ist (also bspw.
 Heizungsregler oder SSR). Ebenso verhält es sich mit den jeweiligen
@@ -53,7 +57,7 @@ Beispiel angeschlossen ist, müssen
 1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und
 2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden.    
+jeweiligen Anfragen des Adapters geschickt werden.*    
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
@@ -211,3 +215,9 @@ Kriterien steuern kann.
 Noch offen ist, ob wegen des Punkt-zu-Punkt-Designs ein QAA mit dem
 Adapter friedlich koexistieren kann oder ob man sich am Ende für eine
 Variante entscheiden muss.
+    
+     
+     
+[Weiter zu Kapitel 3](kap03.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+
