@@ -2,17 +2,17 @@
 
 ## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen? ##
 
-Ja und nein.\
+Ja und nein.  
 Der Adapter kann mit einem Raspberry Pi 2 verwendet werden, wenn andere
 Pinheader genutzt werden (weibliche statt männliche) und die Platine
 entsprechend mit den Komponenten für die RPi-Nutzung bestückt ist
 (R11-13, Q11+12, SJ2+3).
 
 Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
-ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!\
+ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!  
 Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
 Software genutzt werden. Weitere Informationen diesbezüglich sind am
-Ende von Kap.1 zu finden.
+Ende von Kap. [1](kap01.md) zu finden.
 
 ## 15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen? ##
 
@@ -20,7 +20,7 @@ Nein, das geht leider nicht.
 
 Derzeit benötigt man für jeden Regler einen Adapter bzw. ein komplettes
 Hardware-Setup (Arduino, Ethernet-Shield, Adapter), um die jeweiligen
-reglerspezifischen Parameter via BSB abrufen zu können.\
+reglerspezifischen Parameter via BSB abrufen zu können.  
 Sollten jedoch mehrere Regler vorhanden und bereits miteinander via LPB
 verbunden sein, beachte bitte die folgende FAQ.
 
@@ -28,11 +28,10 @@ verbunden sein, beachte bitte die folgende FAQ.
 
 Ja, wenn die vorhandenen Regler bereits korrekt via LPB miteinander
 verbunden und entsprechend konfiguriert sind (korrekte
-LPB-Adressvergabe).\
+LPB-Adressvergabe).  
 Die Möglichkeit, Abfragen fallweise an unterschiedliche Regler zu
 senden, ist mittlerweile gegeben, jedoch ist diese Funktion noch nicht
-ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel 8.1
-Auflistung und Beschreibung der URL-Befehle.
+ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
 
 ## 15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar? ##
 
@@ -59,23 +58,23 @@ falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!
 
 ## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar? ##
 
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. 8.1.
+Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
 
 ## 15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen? ##
 
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. 8.1.
+Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
 
 ## 15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen? ##
 
 Ja! Wenn dein Heizungssystem über Parameter verfügt, die von der
 Software bisher nicht unterstützt werden, würden wir uns sehr freuen,
 wenn du uns unterstützt! Genauere Informationen zur Vorgehensweise sind
-in Kap. 10 zu finden.
+in Kap. [10](kap10.md) zu finden.
 
 ## 15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt? ##
 
-Wenn du eine Komplettabfrage aller Parameter via URL-Befehl machst\
-(http://\<IP-Adresse\>/0-10000) kann es sein, dass sich einige Parameter
+Wenn du eine Komplettabfrage aller Parameter via URL-Befehl machst  
+(`http://<IP-Adresse>/0-10000`) kann es sein, dass sich einige Parameter
 bzw. Programmnummern in der Auflistung wiederholen. Dies kommt daher,
 dass es es zwar unterschiedliche Parameter sind, diese aber die gleiche
 Command ID haben. Dies stellt nur einen ‚optischen Mangel' dar, der die
@@ -86,12 +85,12 @@ Funktionalität nicht negativ beeinflusst.
 Wenn der Regler nach erfolgtem Adapteranschluss angeschaltet wird und
 der Arduino zu diesem Zeitpunkt bereits lief, funktioniert die
 automatische Reglererkennung nicht. Der Arduino muss dann lediglich
-resettet bzw. aus- und wieder angeschaltet werden.\
-\
+resettet bzw. aus- und wieder angeschaltet werden.  
+  
 Sollten dann bestimmte Parameter noch immer nicht erscheinen, so sollte
 bitte einmal /Q ausgeführt und die Webausgabe zusammen mit der Ausgabe
-von\
-http://\<IP-Adresse\>/6220-6228\
+von  
+`http://<IP-Adresse>/6220-6228`
 gemeldet werden.
 
 ## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich? ##
@@ -100,13 +99,13 @@ Wenn du DHT22- und/oder DS18B20-Sensoren korrekt am Arduino/Adapter
 angeschlossen hast, die entsprechenden Menüs im Webinterface jedoch
 nicht anwählbar sind, hast du vermutlich die betreffenden Einträge in
 der Datei *BSB\_lan\_config.h* nicht entsprechend angepasst.  
-Siehe hierzu auch die Kapitel. 5, 11 & 13.
+Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).
 
 ## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun? ##
 
 Prinzipiell ist die Nutzung eines Shields mit dem Chip-Typ W5100 zu
-empfehlen, da die entsprechenden Bibliotheken bereits eingebunden sind.\
-Sollte dennoch ein W5500 zum Einsatz kommen, ist\
+empfehlen, da die entsprechenden Bibliotheken bereits eingebunden sind.  
+Sollte dennoch ein W5500 zum Einsatz kommen, ist  
 1. die Datei *BSB\_lan\_config.h* entsprechend anzupassen (s. Kap. 5)
 und\
 2. die Datei *Ethernet2.zip* im Unterverzeichnis *src* entpacken.
@@ -165,7 +164,7 @@ verfügen; zweistufige Brenner kommen meist nur bei Ölbrennern zum
 Einsatz. Die Unterscheidung der Brennerstufen wird mittels spezifischer
 Broadcasts vorgenommen, die jedoch nicht jeder Regler sendet. In dem
 Fall werden die Brennerstarts und -laufzeiten kumuliert unter Stufe 1
-dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. 8.1.
+dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
 
 ## 15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt. ##
 
@@ -182,7 +181,7 @@ Verbositäts-Modus.
 
 Mit aktivierter Monitor-Funktion (/M1) werden alle Daten, die über den
 Bus gehen und nicht von BSB-LAN aus initiiert wurden, „roh" auf dem
-seriellen Monitor ausgegeben.\
+seriellen Monitor ausgegeben.  
 Dies kann sinnvoll sein, um Fehlfunktionen in der Datenübertragung
 ausfindig zu machen, da ansonsten nur Meldungen von BSB-LAN verarbeitet
 werden, die von ihrem Aufbau her korrekt sind. Das schließt auch die
@@ -200,7 +199,7 @@ Mit (seit v0.41 per default) aktiviertem Verbositäts-Modus (/V1) werden
 zu jedem von BSB-LAN initiierten Aufruf und der entsprechenden Antwort
 neben dem Klartext auch die entsprechenden Rohdaten auf dem seriellen
 Monitor ausgegeben, wenn die Nachricht von ihrem Aufbau her korrekt sind
-und fehlerfrei übertragen wurden.\
+und fehlerfrei übertragen wurden.  
 Eine Auswertung von (fehlerfreien) Broadcasts findet hier weiterhin
 statt. Es werden hier beim Senden aber nur die Daten ausgegeben, die
 BSB-LAN vorbereitet hat. Dies muss nicht bedeuten, dass diese Daten -
@@ -232,13 +231,13 @@ Datei *BSB\_lan\_config.h* aktivieren und anpassen. Mittels
 entsprechender Modifikationen in der Datei *BSB\_lan\_custom.h* können
 weitere Funktionen realisiert werden, mit der derzeitigen Programmierung
 ist eine eigenständige Raum-Ist-Wert-Übermittlung (ohne FHEM) möglich.
-Siehe auch die jeweiligen Punkte in den Kapiteln 5, 8.1 sowie 12.2.
+Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), 8.1(kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie 12.2(kap12.md#122-max-komponenten).
 
 ## 15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar? ##
 
 Dieses Verhalten wurde des Öfteren bei den günstigen LAN-Shield-Clones
 beobachtet, mit einem originalen Arduino-LAN-Shield scheint dieses
-Problem nicht aufzutreten.\
+Problem nicht aufzutreten.  
 Nach Drücken des Reset-Knopfes am Arduino ist der Adapter wieder wie
 gewohnt erreichbar. Abhilfe könnte eine kleine USV für den Arduino
 schaffen, so dass der Arduino nicht stromlos wird. Andere Lösungen sind
@@ -277,9 +276,9 @@ dies kommuniziert und im Platinenlayout berücksichtigt werden.
 
 ## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?! ##
 
-In diesem Fall schließe bitte den Adapter NICHT an und beachte das Kap. 3.3.
+In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).
 
-## 15.24 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
+## 15.25 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum
 ([https://forum.fhem.de/](https://forum.fhem.de/))
@@ -297,7 +296,7 @@ des verwendeten Bus-Typs etc.
 
 Wenn du den Adapter bereits erfolgreich angeschlossen und in Verwendung
 hast, frage bitte außerdem die Parameter 6220-6228
-(http://\<IP-Adresse\>/6220-6228) ab und schreibe die Ausgaben
+(`http://<IP-Adresse>/6220-6228`) ab und schreibe die Ausgaben
 zusätzlich mit in deine Beschreibung.
 
 Prinzipiell kann man sagen: Lieber erst einmal zu viele Informationen,
