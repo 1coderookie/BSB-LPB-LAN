@@ -15,7 +15,7 @@ PullUp-Widerstände) stattfinden.
 Zur Nutzung dieser Sensoren muss lediglich die Konfiguration in der
 Datei *BSB\_lan\_config.h* entsprechend angepasst werden: Es sind die
 jeweiligen Definements zu aktivieren und die für DATA genutzten
-Digitaleingänge bzw. Pins festzulegen. (s. hierzu auch Kap. 5).
+Digitaleingänge bzw. Pins festzulegen. (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
 Webinterface (jeweilige Links im oberen Bereich) oder mittels der
@@ -28,14 +28,14 @@ werden.
 
 *Tipp:
 Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
-http://\<IP-Adresse\>/ipwe.cgi\
-standardmäßig mit angezeigt.\
+`http://<IP-Adresse>/ipwe.cgi`
+standardmäßig mit angezeigt.  
 Dabei wird neben den gemessenen Werten auch die jeweils spezifische
 Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
-Sensoren hilfreich.\
+Sensoren hilfreich.  
 Voraussetzung ist, dass das ipwe-Definement in der Datei
-\*BSB\_lan\_config.h\* aktiviert ist (s. Kap. 5).*
+\*BSB\_lan\_config.h\* aktiviert ist (s. Kap. [5](kap05.md)).*
 
 Auf die näheren Spezifikationen und die elektrische Installation dieser
 beliebten Messkomponenten wird an dieser Stelle nicht weiter
@@ -71,8 +71,8 @@ Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC
 (+5V) ist für einen problemlosen Betrieb u.U. kleiner als die
 üblicherweise empfohlenen 4,7kΩ zu wählen.
 
-Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.\
-Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen.\
+Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.  
+Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen.  
 Um etwaige von der Versorgungsspannung des Arduino-Netzteils ausgehende
 Störeinflüsse zu minimieren, kann die Zuleitung der Stromversorgung
 arduinoseitig etwa vier bis fünfmal durch einen Ferritring geführt
@@ -82,15 +82,15 @@ werden.
 
 Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
 (bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
-für den Kontaktbereich zu verwenden.\
+für den Kontaktbereich zu verwenden.  
 Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einem
 Knick an der Außenseite eines Rohres ideal zu sein scheint, da hier die
 Kerntemperatur des Strömungsmediums aufgrund der auftretenden
-Verwirbelungen nah an die Rohrwand gelangt.\
+Verwirbelungen nah an die Rohrwand gelangt.  
 Die Metallhülse der gekapselten Bauform sollte möglichst mit einer
 metallenen Rohrschelle am Rohr fixiert werden. Das Kabel selbst sollte
 zusätzlich mit einem Kabelbinder fixiert werden, um Zugkräfte an der
-Fühlerhülse sowie ein Verrutschen des Fühlers zu vermeiden.\
+Fühlerhülse sowie ein Verrutschen des Fühlers zu vermeiden.  
 Die Rohrdämmung sollte nach Anbringen des Fühlers (unter der Dämmung)
 wieder gewissenhaft verschlossen werden. Löcher, Einschnitte o.ä. in
 Fühlernähe sind zu vermeiden. Werden Fühler an bisher ungedämmten Rohren
@@ -139,19 +139,19 @@ Darüber hinaus stehen alle globalen Variablen aus der Datei
 *BSB\_lan.ino* zur Verfügung. Hinsichtlich der MAX!-Funktionalität sind
 das insbesondere:
 
-- `max_devices[]`
+- `max_devices[]`  
 Dieses Array enthält die DeviceID des jeweiligen MAX!-Gerätes, das sich
 angemeldet hat. Hiermit kann man ggf. bei Bereichnunngen bestimmte
 Thermostate ausblenden.
 
-- `max_cur_temp[]`
+- `max_cur_temp[]`  
 Dieses Array enthält die aktuell gemessene Temperatur des Thermostats.
 Sinnvoll für Berechnungen sind bei MAX!-Geräten nur die Wandthermostate,
 weil diese kontinuierlich die Temperatur übermitteln.
 Heizkörperthermostate tun dies nur bei Ventiländerungen oder
 Schaltzeitwechseln.
 
-- `max_dst_temp[]`
+- `max_dst_temp[]`  
 Dieses Array enthält die Soll-Temperatur des Thermostats.
 
 - `max_valve[]`  
@@ -166,11 +166,11 @@ ist `max_cur_temp[3]` die momentane Temperatur im Wohnzimmer und
     
 Die Reihenfolge innerhalb `max_devices[]` richtet sich danach, wie
 sich diese angemeldet haben, bleibt dann aber auch über Neustarts hinweg
-konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://IP-Adresse/N`
+konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://<IP-Adresse>/N`
 gelöscht werden). Dennoch sollte man sich nicht darauf verlassen,
 sondern im Zweifelsfall, z.B. beim Ausklammern von bestimmten
 Thermostaten, immer mit der in `max_device[]` hinterlegten ID
-vergleichen (diese kann man der zweiten Spalte der Auflistung unter `http://IP-Adresse/X`
+vergleichen (diese kann man der zweiten Spalte der Auflistung unter `http://<IP-Adresse>/X`
 entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten
 ID).
 
