@@ -1,5 +1,5 @@
-[Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Kapitel 11](kap11.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 11](kap11.md)  
     
 
 # 12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter #
@@ -250,5 +250,5 @@ angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
      
      
-[Kapitel 13](kap13.md)      
-[Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Weiter zu Kapitel 13](kap13.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
