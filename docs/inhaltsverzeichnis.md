@@ -60,8 +60,8 @@
 [14.4 Keine Parameterabfrage möglich](kap14.md#144-keine-parameterabfrage-möglich)  
 [14.5 Regler wird nicht korrekt erkannt](kap14.md#145-regler-wird-nicht-korrekt-erkannt)  
 [14.6 HK1 kann nicht bedient werden](kap14.md#146-hk1-kann-nicht-bedient-werden)  
-[14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden](kap14.md#147-Es kann keine Raumtemperatur an einen HK1 gesendet werden  
-[14.8 HK2 kann nicht bedient werden](kap14.md#148-HK2 kann nicht bedient werden  
+[14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden](kap14.md#147-es-kann-keine-raumtemperatur-an-einen-hk1-gesendet-werden)  
+[14.8 HK2 kann nicht bedient werden](kap14.md#148-hk2-kann-nicht-bedient-werden)  
 [14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden](kap14.md#149-es-kann-keine-raumtemperatur-an-einen-hk2-gesendet-werden)  
 [14.10 Einstellungen des Reglers können nicht via Adapter verändert werden](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden)  
 [14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle](kap14.md#1411-der-adapter-reagiert-manchmal-nicht-auf-abfragen-oder-set-Befehle)  
