@@ -1,3 +1,7 @@
+[Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Kapitel 11](kap11.md)  
+    
+
 # 12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter #
 
 ## 12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20 ##
@@ -244,3 +248,7 @@ Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
 angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
 Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
+     
+     
+[Kapitel 13](kap13.md)      
+[Inhaltsverzeichnis](inhaltsverzeichnis.md)  
