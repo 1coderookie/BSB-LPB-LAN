@@ -26,8 +26,8 @@ Sollen die gemessenen Werte geloggt werden oder sind
 Anpassungen in der Datei *BSB\_lan\_config.h* ganz einfach realisiert
 werden.
 
-*Tipp:
-Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
+***Tipp:***  
+*Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
 `http://<IP-Adresse>/ipwe.cgi`
 standardmäßig mit angezeigt.  
 Dabei wird neben den gemessenen Werten auch die jeweils spezifische
@@ -35,7 +35,7 @@ Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
 Sensoren hilfreich.  
 Voraussetzung ist, dass das ipwe-Definement in der Datei
-\*BSB\_lan\_config.h\* aktiviert ist (s. Kap. [5](kap05.md)).*
+BSB\_lan\_config.h aktiviert ist (s. Kap. [5](kap05.md)).*
 
 Auf die näheren Spezifikationen und die elektrische Installation dieser
 beliebten Messkomponenten wird an dieser Stelle nicht weiter
@@ -46,10 +46,10 @@ gestalten.
 
 ### 12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
 
-*Bitte beachte:  
-Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
+***Bitte beachte:***    
+*Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-\*BSB\_lan\_config.h\* definiert werden.*
+BSB\_lan\_config.h definiert werden.*
 
 ### 12.1.2 Hinweise zu DS18B20-Temperatursensoren ###
 
@@ -106,8 +106,8 @@ Im Allgemeinen sollten die Fühler etwa ein bis zwei Meter von einer
 zusätzlichen Wärmequelle (wie bspw. Heizkessel, Pufferspeicher o.ä.)
 entfernt montiert werden.
 
-*Bitte beachte:  
-Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
+***Bitte beachte:***  
+*Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
 Pufferspeichern etc.), die bereits an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
@@ -194,7 +194,7 @@ nachlesen.
 FHEM-Forumsmitglied „Andreas29" hat dieses Anwendungsbeispiel ohne FHEM
 umgesetzt. Eine ausführliche Beschreibung samt der benötigten
 angepassten Datei *BSB\_lan\_custom.h* findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382).  
-Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät"
+Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät light"
 ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.
     
     
