@@ -52,7 +52,7 @@
 [13.1 Fehlermeldung "unknown type xxxxxxxx"](kap13.md#131-fehlermeldung-unknown-type-xxxxxxxx)  
 [13.2 Fehlermeldung "error 7 (parameter not supported)"](kap13.md#132-fehlermeldung-error-7-parameter-not-supported)  
 [13.3 Fehlermeldung "query failed"](kap13.md#133-fehlermeldung-query-failed)  
-[13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"](kap13.md#134-fehlermeldung-fehler-setzen-fehlgeschlagen--parameter-ist-nur-lesbar)  
+[13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"](kap13.md#134-fehlermeldung-fehler-setzen-fehlgeschlagen---parameter-ist-nur-lesbar)  
 [14. Etwaige Probleme und deren mögliche Ursachen](kap14.md)  
 [14.1 Die rote LED des Adapters leuchtet nicht](kap14.md#141-die-rote-led-des-adapters-leuchtet-nicht)  
 [14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)  
