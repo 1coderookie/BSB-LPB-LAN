@@ -1,3 +1,6 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 14](kap14.md)  
+    
 # 15. FAQ #
 
 ## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen? ##
@@ -306,3 +309,7 @@ Fragen, deren Antworten sich aus dem gründlichen Lesen dieses Handbuchs
 ergeben, werden ab einem gewissen Punkt lediglich mit einem Verweis
 hierauf beantwortet. Bitte bedenke, dass dies für jeden von uns nur ein
 Hobby-Projekt ist.
+     
+     
+[Weiter zu Kapitel 16](kap16.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
