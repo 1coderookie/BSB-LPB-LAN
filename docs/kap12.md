@@ -118,7 +118,7 @@ eine zusätzliche Montage von DS18B20-Sensoren leiden!*
 BSB-LAN ist bereits für die Einbindung und Nutzung von MAX!-Komponenten
 vorbereitet. MAX-Thermostate, die von BSB-LAN verwendet werden sollen,
 müssen anhand der aufgedruckten Seriennummer in der Datei
-*BSB\_lan\_config.h* in das Array `max_device_list[ ]` eingetragen
+*BSB\_lan\_config.h* in das Array `max_device_list[]` eingetragen
 werden. Nach dem Start von BSB-LAN muss dann an diesen Thermostaten die
 Pairing-Taste gedrückt werden, um die Verbindung zwischen BSB-LAN und
 den Thermostaten herzustellen.
