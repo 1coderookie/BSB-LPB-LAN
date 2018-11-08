@@ -19,7 +19,7 @@
 - Adapter hat keine Stromversorgung
 - Adapter ist nicht mit dem LAN verbunden
 - IP- und/oder MAC-Adresse des Adapters ist nicht korrekt
-- Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED\_IP`](kap05.md) und/oder [`USER\_PASS\_B64`](kap05.md)
+- Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
 aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - → Testweise Reset-Knopf des Arduino bzw. LAN-Shields drücken
 - LAN-Shield mit W5100-Chip bestückt? Sollte ein W5500 zum Einsatz
