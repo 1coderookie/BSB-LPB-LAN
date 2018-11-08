@@ -52,50 +52,50 @@
 [13.1 Fehlermeldung "unknown type xxxxxxxx"](kap13.md#131-fehlermeldung-unknown-type-xxxxxxxx)  
 [13.2 Fehlermeldung "error 7 (parameter not supported)"](kap13.md#132-fehlermeldung-error-7-parameter-not-supported)  
 [13.3 Fehlermeldung "query failed"](kap13.md#133-fehlermeldung-query-failed)  
-[13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"](kap13.md#134-fehlermeldung-fehler-setzen-fehlgeschlagen-parameter-ist-nur-lesbar)  
+[13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"](kap13.md#134-fehlermeldung-fehler-setzen-fehlgeschlagen--parameter-ist-nur-lesbar)  
 [14. Etwaige Probleme und deren mögliche Ursachen](kap14.md)  
-14.1 Die rote LED des Adapters leuchtet nicht  
-14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich  
-14.3 Zugriff auf das Webinterface nicht möglich  
-14.4 Keine Parameterabfrage möglich  
-14.5 Regler wird nicht korrekt erkannt  
-14.6 HK1 kann nicht bedient werden  
-14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden  
-14.8 HK2 kann nicht bedient werden  
-14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden  
-14.10 Einstellungen des Reglers können nicht via Adapter verändert werden  
-14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle  
-14.12 Bei der Abfrage der Logdatei passiert ‚nichts‘  
-14.13 Es werden keine 24h-Durchschnittswerte angezeigt  
-14.14 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts‘  
-14.15 Die DS18B20-Sensoren zeigen falsche Werte an  
-14.16 Der ‚Serielle Monitor‘ der Arduino IDE liefert keine Daten  
+[14.1 Die rote LED des Adapters leuchtet nicht](kap14.md#141-die-rote-led-des-adapters-leuchtet-nicht)  
+[14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)  
+[14.3 Zugriff auf das Webinterface nicht möglich](kap14.md#143-zugriff-auf-das-webinterface-nicht-möglich)  
+[14.4 Keine Parameterabfrage möglich](kap14.md#144-keine-parameterabfrage-möglich)  
+[14.5 Regler wird nicht korrekt erkannt](kap14.md#145-regler-wird-nicht-korrekt-erkannt)  
+[14.6 HK1 kann nicht bedient werden](kap14.md#146-hk1-kann-nicht-bedient-werden)  
+[14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden](kap14.md#147-Es kann keine Raumtemperatur an einen HK1 gesendet werden  
+[14.8 HK2 kann nicht bedient werden](kap14.md#148-HK2 kann nicht bedient werden  
+[14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden](kap14.md#149-es-kann-keine-raumtemperatur-an-einen-hk2-gesendet-werden)  
+[14.10 Einstellungen des Reglers können nicht via Adapter verändert werden](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden)  
+[14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle](kap14.md#1411-der-adapter-reagiert-manchmal-nicht-auf-abfragen-oder-set-Befehle)  
+[14.12 Bei der Abfrage der Logdatei passiert ‚nichts‘](kap14.md#1412-bei-der-abfrage-der-logdatei-passiert-nichts)  
+[14.13 Es werden keine 24h-Durchschnittswerte angezeigt](kap14.md#1413-es-werden-keine-24h-durchschnittswerte-angezeigt)  
+[14.14 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts‘](kap14.md#1414-bei-der-abfrage-der-daten-von-ds18b20-dht22-sensoren-passiert-nichts)  
+[14.15 Die DS18B20-Sensoren zeigen falsche Werte an](kap14.md#1415-die-ds18b20-sensoren-zeigen-falsche-werte-an)  
+[14.16 Der ‚Serielle Monitor‘ der Arduino IDE liefert keine Daten](kap14.md#1416-der-serielle-monitor-der-arduino-ide-liefert-keine-daten)  
 [15. FAQ](kap15.md)  
-15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?  
-15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen?  
-15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?  
-15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar?  
-15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?  
-15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen?  
-15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen?  
-15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt?  
-15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt?  
-15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?  
-15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun?  
-15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?  
-15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen‘?  
-15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM?  
-15.15 Gibt es ein Modul für FHEM?  
-15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt?  
-15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt.  
-15.18 Was ist der genaue Unterschied zwischen /M1 und /V1?  
-15.19 Kann ich eigenen Code in BSB-LAN einbinden?  
-15.20 Kann ich MAX!-Thermostate einbinden?  
-15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?  
-15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar?  
-15.23 Warum kommen beim Senden manchmal ‚query failed‘-Meldungen?  
-15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!  
-15.24 Ich habe weitere Fragen, an wen kann ich mich wenden?  
+[15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?](kap15.md#151-kann-ich-adapter-software-mit-einem-raspberry-pi-nutzen)  
+[15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen?](kap15.md#152-kann-ich-einen-adapter-gleichzeitig-an-zwei-regler-anschließen)  
+[15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?](kap15.md#153-kann-ich-einen-adapter-via-lpb- anschließen-und-mehrere-regler-abfragen)  
+[15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar?](kap15.md#154-ist-ein-multifunktionaler-eingang-des-reglers-direkt-via-adapter-schaltbar)  
+[15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?](kap15.md#155-ist-zusätzlich-ein-relaisboard-am-arduino-anschließ--und-steuerbar)  
+[15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen?](kap15.md#156-kann-ich-bspw-den-zustand-eines-angeschlossenen-koppelrelais-abfragen)  
+[15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen?](kap15.md#157-kann-ich-behilflich-sein-um-bisher-nicht-unterstützte-parameter-hinzuzufügen)  
+[15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt?](kap15.md#158-warum-erscheinen-bei-einer-komplettabfrage-einige-parameter-doppelt)  
+[15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt?](kap15.md#159-warum-werden-manchmal-bestimmte-parameter-nicht-angezeigt)  
+[15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?](kap15.md#1510-warum-ist-kein-zugriff-auf-angeschlossene-sensoren-möglich)  
+[15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun?](kap15.md#1511-ich-nutze-ein-w5500-lan-shield-was-muss-ich-tun)  
+[15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?](kap15.md#1512-können-stati-oder-werte-als-push--mitteilungen-abgesetzt-werden)  
+[15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen‘?](kap15.md#1513-kann-bspw-fhem-auf-bestimmte-broadcasts-lauschen)  
+[15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM?](kap15.md#1514-warum-kommt-es-manchmal-zu-timeout-problemen-bei-fhem)  
+[15.15 Gibt es ein Modul für FHEM?](kap15.md#1515-gibt-es-ein-modul-für-fhem)  
+[15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt?](kap15.md#1516-warum-werden-unter-b-bei-stufe-2-keine-werte-angezeigt)  
+[15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt.](kap15.md#1517-ich-habe-den-eindruck-die-angezeigten-werte-bei-b-sind-nicht-korrekt)  
+[15.18 Was ist der genaue Unterschied zwischen /M1 und /V1?](kap15.md#1518-was-ist-der-genaue-unterschied-zwischen-m1-und-v1)  
+[15.19 Kann ich eigenen Code in BSB-LAN einbinden?](kap15.md#1519-kann-ich-eigenen-code-in-bsb-lan-einbinden)  
+[15.20 Kann ich MAX!-Thermostate einbinden?](kap15.md#1520-kann-ich-max-thermostate-einbinden)  
+[15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?](kap15.md#1521-warum-ist-der-adapter-nach-einem-stromausfall-nicht-mehr-erreichbar)  
+[15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar?](kap15.md#1522-warum-ist-der-adapter-ohne-stromausfall-manchmal-nicht-mehr-erreichbar)  
+[15.23 Warum kommen beim Senden manchmal ‚query failed‘-Meldungen?](kap15.md#1523-warum-kommen-beim-senden-manchmal-query-failed-meldungen)  
+[15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!](kap15.md#1524-ich-finde-keinen-lpb-oder-bsb-anschluss-nur-l-bus-und-r-bus)  
+[15.25 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1525-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
 [16. Offene Punkte](kap16.md)  
 [17. Weiterführende Informationen und Quellen](kap17.md)  
 [Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md)  
