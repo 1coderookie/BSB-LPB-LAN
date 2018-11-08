@@ -208,9 +208,9 @@ aufzeigen und als Inspiration für eigene Projekte dienen sollen.
 
 Wenn du ein eigenes interessantes Projekt erfolgreich umgesetzt hast,
 was auch für andere Nutzer hilfreich sein könnte, so würde ich mich
-freuen, wenn du dich mit mir (Ulf) in Verbindung setzt. Eventuell kann
+freuen, wenn du dich mit mir in Verbindung setzt. Eventuell kann
 auch dein Beispiel an dieser Stelle mit aufgeführt werden. Schicke mir
-dazu gerne eine Email an „adapter \[ät\] quantentunnel.de".\
+dazu gerne eine Email an `adapter [ät] quantentunnel.de`.  
 Vielen Dank!
     
     
