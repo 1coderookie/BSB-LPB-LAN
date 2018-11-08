@@ -54,17 +54,16 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">  
+    
 Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.  
-
-
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true"> 
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true">  
+    
 Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.  
-
-
-  
-  
+    
+    
 ***Hinweis:***  
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
@@ -76,8 +75,10 @@ Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.svg?sanitize=true">  
-Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
-
+    
+Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.  
+    
+    
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***  
 
