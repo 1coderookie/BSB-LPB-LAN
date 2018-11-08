@@ -78,7 +78,7 @@ das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D
     
 Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.  
     
-    
+     
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***  
 
