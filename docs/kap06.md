@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 5](kap05.md)  
+    
+
 # 6. Funktionsüberprüfung und erste Nutzung des Adapters #
 
 Um zu überprüfen, ob der angeschlossene Regler korrekt erkannt wird,
@@ -8,10 +12,10 @@ Dazu bietet sich folgende Vorgehensweise an:
 1.  Den Regler ausschalten und *polrichtig* mit dem Adapter via BSB
     verbinden.  
     
-    *Hinweis:*  
-    Wenn (später) der LPB genutzt werden soll, muss sowohl der Bus-Typ
+    ***Hinweis:***  
+    *Wenn (später) der LPB genutzt werden soll, muss sowohl der Bus-Typ
     in der Datei *BSB\_lan\_config.h* als auch der Anschluss am Regler
-    geändert werden!
+    geändert werden!*
 
 2.  Den Regler einschalten und überprüfen, ob die rote LED auf dem
     Adapter leuchtet.  
@@ -28,22 +32,25 @@ Dazu bietet sich folgende Vorgehensweise an:
 5.  a\) Wird der angeschlossene Regler automatisch korrekt erkannt, steht am
     Anfang der Ausgabe des seriellen Monitors bei „Device family" und
     „Device variant" jeweils ein Wert, der nicht „0" ist.  
-    *Beispiel:*  
+    ***Beispiel:***  
+    ```
     \[...\]  
     Device family: 96  
     Device variant: 100  
-    \[...\]
+    \[...\]  
+    ```
 
     Nun sollte die Verwendung von BSB-LAN möglich sein.
 
-    *Hinweis:*  
-    Sollte ein bisher nicht in Kap. 3 aufgeführter Regler zum Einsatz kommen, bitte  
-    die entsprechenden Daten wie beschrieben auslesen und melden.
+    ***Hinweis:***  
+    *Sollte ein bisher nicht in Kap. [3](kap03.md) aufgeführter Regler zum Einsatz kommen, bitte  
+    die entsprechenden Daten wie beschrieben auslesen und melden.*
 
     b\) Wird der angeschlossene Regler nicht automatisch korrekt erkannt,
     steht bei „Device family" und „Device variant" jeweils eine „0",
     zusätzlich stehen vor „Device family" sechs Zeilen „query failed".  
-    *Beispiel:*  
+    ***Beispiel:***  
+    ```
     \[...\]  
     query failed  
     query failed  
@@ -54,8 +61,13 @@ Dazu bietet sich folgende Vorgehensweise an:
     Device family: 0  
     Device variant: 0  
     \[...\]
+    ```
 
     Meist liegt der Grund hierfür dann in einem Problem des
     Hardware-Setups oder der Verkabelung. Weitere Hinweise zur
-    Fehlersuche finden sich im Kapitel 14. Etwaige Probleme und deren
-    mögliche Ursachen.
+    Fehlersuche finden sich im Kapitel [14](kap14.md).
+
+     
+     
+[Weiter zu Kapitel 7](kap07.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
