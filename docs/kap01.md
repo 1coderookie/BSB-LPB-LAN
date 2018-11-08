@@ -54,10 +54,10 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-***2DO: ABBILDUNG***  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">  
 Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.
 
-***2DO: ABBILDUNG***  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true">   
 Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.
 
 ***Hinweis:***  
@@ -70,7 +70,7 @@ kontaktiere bitte direkt den Autor von bsb_gateway.
 Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
 
-***2DO: ABBILDUNG***  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.svg?sanitize=true">  
 Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
 
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
@@ -81,5 +81,5 @@ Arduino-Version!***
 ² BSB = Boiler System Bus  
 ³ LPB = Local Process Bus  
 ⁴ Ausnahme: Siehe Kap. [3.3](kap03.md)    
-⁵ Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md).  
+⁵ Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md#1511-ich-nutze-ein-w5500-lan-shield-was-muss-ich-tun).  
 ⁶ [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
