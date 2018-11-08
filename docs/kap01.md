@@ -74,7 +74,7 @@ kontaktiere bitte direkt den Autor von bsb_gateway.
 Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.svg?sanitize=true">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
     
 Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.  
     
