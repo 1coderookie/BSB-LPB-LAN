@@ -22,17 +22,17 @@ dementsprechend nicht verfügbar sind).
 Fehlermeldungen dieses Typs werden seit v0.41 der Übersichtlichkeit
 halber per default ausgeblendet (die entsprechenden Parameter bspw. bei
 einer Komplettabfrage aber dennoch abgefragt). Möchtest du sie dennoch
-angezeigt bekommen, so ist das entsprechende Definement \#define
-HIDE\_UNKNOWN in der Datei *BSB\_lan\_config.h* auszukommentieren
-(//\#define HIDE\_UNKNOWN).
+angezeigt bekommen, so ist das entsprechende Definement `#define
+HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
+(`//#define HIDE_UNKNOWN`).
 
 Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
 wird, jedoch für diese Gerätefamilie nicht freigegeben ist, aktiviere
-bitte vorübergehend das Definement \#define DEBUG in der Datei
-*BSB\_lan\_config.h* und führe dann den Befehl /Q aus (s. hierzu auch Kap. 8.2.5).\
+bitte vorübergehend das Definement `#define DEBUG` in der Datei
+*BSB\_lan\_config.h* und führe dann den Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)).\
 Bei diesem Befehl werden trotz aktivem ‚HIDE\_UNKNOWN'-Definement etwaige error7-Fehlermeldungen angezeigt.
 
-## 13.3 Fehlermeldung „query failed"##
+## 13.3 Fehlermeldung „query failed" ##
 
 Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
 (sinnvolle) Antwort des Reglers kommt.
@@ -50,4 +50,4 @@ während der Zugriff des Adapters nur auf Lesen beschränkt ist
 („FL\_RONLY").\
 Der gewünschte Parameter (oder auch generell alle Parameter) muss in
 diesem Fall als schreibbar definiert werden. Die hierfür notwendige
-Vorgehensweise ist in Kap. 5 beschrieben.
+Vorgehensweise ist in Kap. [5](kap05.md) beschrieben.
