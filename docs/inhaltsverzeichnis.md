@@ -38,7 +38,7 @@
 [11.1.1 Einbindung mittels BSB-LAN-Modul](kap11.md#1111-einbindung-mittels-bsb-lan-modul)  
 [11.1.2 Einbindung mittels HTTPMOD-Modul](kap11.md#1112-einbindung-mittels-httpmod-modul)  
 [11.2 openHAB](kap11.md#112-openhab)  
-[11.3 HomeMatic (EQ3)](kap11.md#113-homematic-(eq3))  
+[11.3 HomeMatic (EQ3)](kap11.md#113-homematic-eq3)  
 [11.4 ioBroker](kap11.md#114-iobroker)  
 [12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter](kap12.md)  
 12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20  
