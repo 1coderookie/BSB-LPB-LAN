@@ -26,13 +26,13 @@
 [8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuer-mittels-json)  
 [8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
 [9. Loggen von Daten](kap09.md)  
-9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN  
-9.2 Verwendung des Adapters als Remote-Logger  
+[9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan)  
+[9.2 Verwendung des Adapters als Remote-Logger](kap09.md#92-verwendung-des-adapters-als-remote-logger)  
 [10. Auslesen neuer Parameter-Telegramme](kap10.md)  
-10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger)  
-10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer)  
-10.3 Implementieren neuer Command IDs (für Programmierer)  
-10.4 Beispiel für eine ‚Meldedatei‘  
+[10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger)](kap10.md#101-ausführliche-beschreibung-des-auslesens-neuer-telegramme-für-einsteiger)    
+[10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer)](kap10.md#102-kurze-beschreibung-des-auslesens-neuer-telegramme-für-erfahrene-nutzer)  
+[10.3 Implementieren neuer Command IDs (für Programmierer)](kap10.md#103-implementieren-neuer-command-ids-für-programmierer)  
+[10.4 Beispiel für eine ‚Meldedatei‘](kap10.md#104-beispiel-für-eine-meldedatei)  
 [11. Nutzung von externen Programmen](kap11.md)  
 [11.1 FHEM](kap11.md#111-fhem)  
 [11.1.1 Einbindung mittels BSB-LAN-Modul](kap11.md#1111-einbindung-mittels-bsb-lan-modul)  
