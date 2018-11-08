@@ -20,7 +20,7 @@
 [8. URL-Befehle und Spezialfunktionen](kap08.md)  
 [8.1 Auflistung und Beschreibung der URL-Befehle](kap08.md#81-auflistung-und-beschreibung-der-url-befehle)  
 [8.2 Spezialfunktionen](kap08.md#82-spezialfunktionen)  
-[8.2.1 Raumtemperatur übermitteln](kap08m.d#821-raumtemperatur-übermitteln)  
+[8.2.1 Raumtemperatur übermitteln](kap08.md#821-raumtemperatur-übermitteln)  
 [8.2.2 Präsenztaste simulieren](kap08.md#822-präsenztaste-simulieren)  
 [8.2.3 Manuellen TWW-Push ausführen](kap08.md#823-manuellen-tww-push-ausführen)  
 [8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuer-mittels-json)  
