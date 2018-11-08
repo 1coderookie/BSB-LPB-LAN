@@ -23,7 +23,7 @@
 [8.2.1 Raumtemperatur übermitteln](kap08.md#821-raumtemperatur-übermitteln)  
 [8.2.2 Präsenztaste simulieren](kap08.md#822-präsenztaste-simulieren)  
 [8.2.3 Manuellen TWW-Push ausführen](kap08.md#823-manuellen-tww-push-ausführen)  
-[8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuer-mittels-json)  
+[8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuern-mittels-json)  
 [8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
 [9. Loggen von Daten](kap09.md)  
 [9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan)  
