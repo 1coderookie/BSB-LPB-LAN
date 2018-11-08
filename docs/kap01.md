@@ -55,11 +55,13 @@ bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">  
-Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.
-
+Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.  
+  
+  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true">   
 Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.
-
+  
+  
 ***Hinweis:***  
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
