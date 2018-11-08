@@ -54,12 +54,12 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">  
-    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.svg?sanitize=true">
+
 Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.  
     
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.svg?sanitize=true">
     
 Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.  
     
