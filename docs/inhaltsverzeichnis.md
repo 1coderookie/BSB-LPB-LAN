@@ -18,13 +18,13 @@
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
 [7. BSB-LAN Web - das Webinterface des Adapters](kap07.md)  
 [8. URL-Befehle und Spezialfunktionen](kap08.md)  
-8.1 Auflistung und Beschreibung der URL-Befehle  
-8.2 Spezialfunktionen  
-8.2.1 Raumtemperatur übermitteln  
-8.2.2 Präsenztaste simulieren  
-8.2.3 Manuellen TWW-Push ausführen  
-8.2.4 Abrufen und Steuern mittels JSON  
-8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs  
+[8.1 Auflistung und Beschreibung der URL-Befehle](kap08.md#81-auflistung-und-beschreibung-der-url-befehle)  
+[8.2 Spezialfunktionen](kap08.md#82-spezialfunktionen)  
+[8.2.1 Raumtemperatur übermitteln](kap08m.d#821-raumtemperatur-übermitteln)  
+[8.2.2 Präsenztaste simulieren](kap08.md#822-präsenztaste-simulieren)  
+[8.2.3 Manuellen TWW-Push ausführen](kap08.md#823-manuellen-tww-push-ausführen)  
+[8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuer-mittels-json)  
+[8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
 [9. Loggen von Daten](kap09.md)  
 9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN  
 9.2 Verwendung des Adapters als Remote-Logger  
