@@ -112,13 +112,13 @@ Pufferspeichern etc.), die bereits an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
 eine zusätzliche Montage von DS18B20-Sensoren leiden!*
-
+    
 ## 12.2 MAX!-Komponenten ##
 
 BSB-LAN ist bereits für die Einbindung und Nutzung von MAX!-Komponenten
 vorbereitet. MAX-Thermostate, die von BSB-LAN verwendet werden sollen,
 müssen anhand der aufgedruckten Seriennummer in der Datei
-*BSB\_lan\_config.h* in das Array ‚max\_device\_list\[ \]' eingetragen
+*BSB\_lan\_config.h* in das Array `max_device_list[ ]` eingetragen
 werden. Nach dem Start von BSB-LAN muss dann an diesen Thermostaten die
 Pairing-Taste gedrückt werden, um die Verbindung zwischen BSB-LAN und
 den Thermostaten herzustellen.
@@ -126,56 +126,56 @@ den Thermostaten herzustellen.
 In der Datei *BSB\_lan\_custom.h* werden für die MAX!-Einbindung
 folgende Variablen bereit gestellt:
 
-\- custom\_timer:\
+- `custom_timer`  
 Diese Variable wird bei jedem Durchlauf der loop Funktion des
 Hauptprogramms auf den Wert von millis() gesetzt.
 
-\- custom\_timer\_compare:\
+- `custom_timer_compare`  
 Diese Variable kann verwendet werden, um im Zusammenhang mit
-custom\_timer zeitabhängige Ausführungen zu realisieren, z.B., um eine
+`custom_timer` zeitabhängige Ausführungen zu realisieren, z.B., um eine
 Aufgabe (Werte abrufen, vergleichen etc.) periodisch auszuführen.
 
 Darüber hinaus stehen alle globalen Variablen aus der Datei
 *BSB\_lan.ino* zur Verfügung. Hinsichtlich der MAX!-Funktionalität sind
 das insbesondere:
 
-\- max\_devices\[ \]:\
+- `max_devices[]`
 Dieses Array enthält die DeviceID des jeweiligen MAX!-Gerätes, das sich
 angemeldet hat. Hiermit kann man ggf. bei Bereichnunngen bestimmte
 Thermostate ausblenden.
 
-\- max\_cur\_temp\[ \]:\
+- `max_cur_temp[]`
 Dieses Array enthält die aktuell gemessene Temperatur des Thermostats.
 Sinnvoll für Berechnungen sind bei MAX!-Geräten nur die Wandthermostate,
 weil diese kontinuierlich die Temperatur übermitteln.
 Heizkörperthermostate tun dies nur bei Ventiländerungen oder
 Schaltzeitwechseln.
 
-\- max\_dst\_temp\[ \]:\
+- `max_dst_temp[]`
 Dieses Array enthält die Soll-Temperatur des Thermostats.
 
-\- max\_valve\[ \]:\
+- `max_valve[]`  
 Dieses Array enthält die momentane Ventilöffnung des
 Heizkörperthermostats (bei Wandthermostaten nur verfügbar, wenn diese
-entsprechend mit einem Heizkörperthermostat gekoppelt sind).\
-\
+entsprechend mit einem Heizkörperthermostat gekoppelt sind).  
+    
 Die Reihenfolge zwischen den Arrays ist immer gleich, d.h., wenn
-max\_devices\[3\] der Wandthermostat im Wohnzimmer mit ID xyz ist, dann
-ist max\_cur\_temp\[3\] die momentane Temperatur im Wohnzimmer und
-max\_dst\_temp\[3\] die entsprechende Solltemperatur usw.\
-\
-Die Reihenfolge innerhalb max\_devices\[ \] richtet sich danach, wie
+`max_devices[3]` der Wandthermostat im Wohnzimmer mit ID xyz ist, dann
+ist `max_cur_temp[3]` die momentane Temperatur im Wohnzimmer und
+`max_dst_temp[3]` die entsprechende Solltemperatur usw.  
+    
+Die Reihenfolge innerhalb `max_devices[]` richtet sich danach, wie
 sich diese angemeldet haben, bleibt dann aber auch über Neustarts hinweg
-konstant, da diese im EEPROM abgespeichert werden (bis diese mit /N
+konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://IP-Adresse/N`
 gelöscht werden). Dennoch sollte man sich nicht darauf verlassen,
 sondern im Zweifelsfall, z.B. beim Ausklammern von bestimmten
-Thermostaten, immer mit der in max\_device\[ \] hinterlegten ID
-vergleichen (diese kann man der zweiten Spalte der Auflistung unter /X
+Thermostaten, immer mit der in `max_device[]` hinterlegten ID
+vergleichen (diese kann man der zweiten Spalte der Auflistung unter `http://IP-Adresse/X`
 entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten
 ID).
 
 Wichtiger Hinweis für diejenigen, die die MAX!-Thermostate über einen
-zum CUL/CUNO geflashten Max!Cube[^27] verwenden:\
+zum CUL/CUNO geflashten Max!Cube[^27] verwenden:  
 Wenn bei der Einrichtung des CUNO BSB-LAN nicht lief (oder anderweitig
 beschäftigt war), muss an den betreffenden Geräten nochmals die
 Pairing-Taste gedrückt werden. Denn nur bei *diesem* Pairing-Prozess
@@ -183,8 +183,8 @@ wird die auf den Geräten aufgedruckte Seriennummer zusammen mit der
 sonst intern verwendeten ID (die auch u.a. auch FHEM verwendet)
 übermittelt und BSB-LAN kann die entsprechende Zuordnung vornehmen.
 Ansonsten weiß BSB-LAN bei den anderen Telegrammen des Cube nämlich
-nicht, um welche MAX!-Geräte es geht.\
-\
+nicht, um welche MAX!-Geräte es geht.  
+    
 Wird im weiteren Verlauf bspw. mittels FHEM[^28] die jeweilige
 Temperatur mehrerer Wand- und Heizkörperthermostate erfasst, so lässt
 sich daraus eine gemittelte Ist- und Soll-Temperatur bilden. Diese kann
@@ -197,8 +197,9 @@ umgesetzt. Eine ausführliche Beschreibung samt der benötigten
 angepassten Datei *BSB\_lan\_custom.h* findet sich hier:
 [https://forum.fhem.de/index.php/topic,29762.msg851382.html\#msg851382](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382)\
 Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät"
-ist in Kap. 12.3.1 vorgestellt.
-
+ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.
+    
+    
 ## 12.3 Eigene Hardwarelösungen ##
 
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
@@ -211,7 +212,8 @@ freuen, wenn du dich mit mir (Ulf) in Verbindung setzt. Eventuell kann
 auch dein Beispiel an dieser Stelle mit aufgeführt werden. Schicke mir
 dazu gerne eine Email an „adapter \[ät\] quantentunnel.de".\
 Vielen Dank!
-
+    
+    
 ### 12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
 
 FHEM-Forumsmitglied „Andreas29" hat basierend auf einem Arduino Uno
@@ -220,21 +222,28 @@ Fehlerstatus des Wärmeerzeugers sowie die aktuellen Daten eines
 DHT22-Sensors werden auf einem 4x20-LCD dargestellt. Mittels eines
 Tasters wird die Funktion der Präsenztaste eines echten Raumgerätes
 nachgebildet.
-
-![](media/image32.jpeg){width="6.642361111111111in"
-height="3.68125in"}![](media/image33.jpeg){width="3.53125in"
-height="1.4090277777777778in"}
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Raumgerät_light_innen.jpg">
+    
+Das Innenleben des Raumgeräteersatzes.  
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Raumgerät_light_Display.jpg">
+    
+Das Display des Raumgeräteersatzes.  
+    
 
 Eine ausführliche Beschreibung samt Schaltplan und Software ist hier zu
 finden: <https://forum.fhem.de/index.php/topic,91867.0.html>
-
+    
+    
 ### 12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
 
 FHEM-Forumsmitglied „Gizmo\_the\_great" hat basierend auf einem Wemos D1
 mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
 Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
-angezeigt.\
-Auf dem Wemos D1 läuft ESPeasy.
+angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
 Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist unter
 [https://github.com/DaddySun/Smart_Home_DIY](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
