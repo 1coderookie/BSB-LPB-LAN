@@ -34,12 +34,12 @@
 10.3 Implementieren neuer Command IDs (für Programmierer)  
 10.4 Beispiel für eine ‚Meldedatei‘  
 [11. Nutzung von externen Programmen](kap11.md)  
-11.1 FHEM  
-11.1.1 Einbindung mittels BSB-LAN-Modul  
-11.1.2 Einbindung mittels HTTPMOD-Modul  
-11.2 openHAB  
-11.3 HomeMatic (EQ3)  
-11.4 ioBroker  
+[11.1 FHEM](kap11.md#111-fhem)  
+[11.1.1 Einbindung mittels BSB-LAN-Modul](kap11.md#1111-einbindung-mittels-bsb-lan-modul)  
+[11.1.2 Einbindung mittels HTTPMOD-Modul](kap11.md#1112-einbindung-mittels-httpmod-modul)  
+[11.2 openHAB](kap11.md#112-openhab)  
+[11.3 HomeMatic (EQ3)](kap11.md#113-homematic-(eq3))  
+[11.4 ioBroker](kap11.md#114-iobroker)  
 [12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter](kap12.md)  
 12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20  
 12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren  
@@ -100,8 +100,8 @@
 [17. Weiterführende Informationen und Quellen](kap17.md)  
 [Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md)  
 [Anhang A2: Anmerkungen zum Schaltplan](anhang_a2.md)  
-A2.1 Kurze Legende zum Schaltplan  
-A2.2 Teileliste  
-A2.3 Generelle Hinweise  
+[A2.1 Kurze Legende zum Schaltplan](anhang_a2.md#a21-kurze-legende-zum-schaltplan)  
+[A2.2 Teileliste](anhang_a2.md#a22-teileliste)  
+[A2.3 Generelle Hinweise](anhang_a2.md#a23-generelle-hinweise)  
 [Anhang B: Cheatsheet URL-Befehle](anhang_b.md)  
 [Anhang C: Changelog BSB-LAN-Software](anhang_c.md)  
