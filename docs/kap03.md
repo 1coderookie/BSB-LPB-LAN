@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 2](kap02.md)  
+    
+
 # 3. Unterstützte Heizungssysteme und Regler #
 
 Prinzipiell unterstützt BSB-LAN von der Firma Siemens hergestellte
@@ -5,10 +9,10 @@ Prinzipiell unterstützt BSB-LAN von der Firma Siemens hergestellte
 von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
 
 ***ACHTUNG:  
-Aus aktuellem Anlass sei hier darauf hingewiesen, dass die
+Aus aktuellem Anlass sei bereits hier darauf hingewiesen, dass die
 Heizungshersteller offensichtlich eine neue Heizungs- und
 Reglergeneration auf den Markt gebracht haben, die nach bisherigem
-Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. 3.3)!***
+Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje))!***
 
 ## 3.1 Erfolgreich getestete Heizungssysteme ##
 
@@ -25,21 +29,21 @@ Reglertypen unterschieden werden: Regler des Typs RVS und LMx. Diese
 zwei Typen unterscheiden sich u.a. in der Anschlussvielfalt und einigen
 verfügbaren Parametern. Weitere Angaben sind im entsprechenden Kapitel
 zu finden.
-
-___
+    
 ***Hinweis und Bitte:***  
-Um die Liste vervollständigen zu können und anderen möglichen Nutzern
+*Um die Liste vervollständigen zu können und anderen möglichen Nutzern
 den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
 Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
 einen noch nicht aufgeführten Regler unter Angabe der genauen
 Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
 `http://<IP-Adresse>/6220-6228` (via Adapter!) und der verwendeten
 Anschlussart (BSB/LPB/PPS) zu melden.  
-Danke!
+Danke!*
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 26C":
-
+    
+```
 6220 Konfiguration - Software- Version: 1.3  
 6221 Konfiguration - Entwicklungs-Index: error 7 (parameter not supported)  
 6222 Konfiguration - Gerätebetriebsstunden: 12345 h  
@@ -49,9 +53,9 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 6226 Konfiguration - Gerätevariante: 100  
 6227 Konfiguration - Objektverzeichnis-Version: 1.0  
 6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014
-___  
-
-
+```
+     
+    
 ### 3.1.1 Brötje ###
 
 -   Brötje BBK 22E \[LMS14\] (Gasbrenner)
@@ -507,3 +511,8 @@ Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
 Raumgerät „Brötje IDA" angeschlossen werden.
 
 ***ACHTUNG: An keinem dieser Anschlüsse ist BSB-LAN anschließbar!***
+
+     
+     
+[Weiter zu Kapitel 4](kap04.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
