@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 4](kap04.md)  
+    
+
 # 5. Einstellungsrelevante Parameter der BSB-LAN-Software #
 
 Folgende Parameter in der Datei *BSB\_lan\_config.h* können bzw. sollten
@@ -239,3 +243,9 @@ vor der Verwendung des Adapters angepasst werden:
     muss das Definement vorübergehend aktiviert werden. Nach Abfrage von
     `http://<IP-Adresse>/Q` sowie für den Normalbetrieb kann das
     Definement wieder auskommentiert werden.
+
+
+     
+     
+[Weiter zu Kapitel 6](kap06.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
