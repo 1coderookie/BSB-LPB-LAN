@@ -82,7 +82,7 @@
 [15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt?](kap15.md#159-warum-werden-manchmal-bestimmte-parameter-nicht-angezeigt)  
 [15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?](kap15.md#1510-warum-ist-kein-zugriff-auf-angeschlossene-sensoren-möglich)  
 [15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun?](kap15.md#1511-ich-nutze-ein-w5500-lan-shield-was-muss-ich-tun)  
-[15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?](kap15.md#1512-können-stati-oder-werte-als-push--mitteilungen-abgesetzt-werden)  
+[15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?](kap15.md#1512-können-stati-oder-werte-als-push-mitteilungen-abgesetzt-werden)  
 [15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen‘?](kap15.md#1513-kann-bspw-fhem-auf-bestimmte-broadcasts-lauschen)  
 [15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM?](kap15.md#1514-warum-kommt-es-manchmal-zu-timeout-problemen-bei-fhem)  
 [15.15 Gibt es ein Modul für FHEM?](kap15.md#1515-gibt-es-ein-modul-für-fhem)  
