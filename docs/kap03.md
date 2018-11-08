@@ -15,7 +15,7 @@ Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. 3.3)!***
 Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
 Regler, bei denen von einem erfolgreichen Einsatz des Adapters berichtet
 wurde. Da jedoch nicht jeder sein Heizungssystem, den verbauten Regler
-und die Ausgabe der Parameterabfrage http://\<IP-Adresse\>/6220-6228
+und die Ausgabe der Parameterabfrage `http://<IP-Adresse>/6220-6228`
 meldet, ist davon auszugehen, dass in der Praxis noch weitere Systeme
 erfolgreich mit dem BSB-LPB-LAN-Adapter und der BSB-LAN-Software
 betrieben werden (können).
@@ -33,7 +33,7 @@ den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
 Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
 einen noch nicht aufgeführten Regler unter Angabe der genauen
 Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
-http://\<IP-Adresse\>/6220-6228 (via Adapter!) und der verwendeten
+`http://<IP-Adresse>/6220-6228` (via Adapter!) und der verwendeten
 Anschlussart (BSB/LPB/PPS) zu melden.  
 Danke!
 
@@ -512,8 +512,13 @@ Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut,
 die weder einen LPB noch einen BSB aufweisen.
 
 Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
-Anschlüsse.
-
+Anschlüsse.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg">
+    
+Anschlüsse des neuen Reglertyps einer Brötje WLC24 - inkompatibel mit BSB-LAN!     
+    
+    
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
 weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.  
 Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
