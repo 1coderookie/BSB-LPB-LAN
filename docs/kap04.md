@@ -1,3 +1,7 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 3](kap03.md)  
+    
+
 # 4. Installation der Arduino IDE und Konfiguration des Adapters #
 
 -   Downloade und installiere die aktuelle Version der Arduino IDE von
@@ -23,16 +27,17 @@
     geladen.
 
 -   Konfiguriere die IP-Adresse in *BSB\_lan\_config.h* deinem Netzwerk
-    entsprechend.\
+    entsprechend.  
     Die voreingestellte IP 192.168.178.88 funktioniert mit den meisten
     Standard-Routern wie bspw. Fritz!Box, aber prüfe, ob die IP bereits
     anderweitig vergeben ist, damit es nicht zu einer Adresskollision
     kommt.
 
--   ***Wichtig:***  Passe nun die weiteren Einstellungen in der Datei
-    *BSB\_lan\_config.h* deinen Wünschen und Hardwaregegebenheiten
+-   ***Wichtig:***  
+    *Passe nun die weiteren Einstellungen in der Datei
+    BSB\_lan\_config.h deinen Wünschen und Hardwaregegebenheiten
     (Pinbelegungen, angeschlossene DS18B20- und/oder DHT22-Sensoren, zu
-    loggende Parameter etc.) entsprechend an!
+    loggende Parameter etc.) entsprechend an!*
 
 -   Wähle \"Arduino/Genuino Mega or Mega 2560\" unter Tools/Board bzw.
     Werkzeuge/Board.
@@ -51,18 +56,23 @@
     Stelle dabei sicher, dass eine Stromversorgung für den Arduino via
     USB oder externem Netzteil besteht!
 
--   Öffne die Seite http://\<IP-Adresse\>/ (oder
-    http://\<IP-Adresse\>/\<passkey\>/ wenn die Passkey-Funktion (s.u.)
+-   Öffne die Seite `http://<IP-Adresse>/` (oder
+    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s.u.)
     genutzt wird) um zu sehen, ob alles korrekt kompiliert und
     hochgeladen wurde.  
     Die Startseite des Webinterface des Adapters sollte erscheinen.  
     Sollte sie nicht erscheinen, drücke einmal kurz auf den Reset-Knopf
     des Arduino und rufe die Startseite erneut auf.  
-    Unter http://\<IP-Adresse\>/C (bzw. Menüpunkt „Konfiguration" im
+    Unter `http://<IP-Adresse>/C` (bzw. Menüpunkt „Konfiguration" im
     Webinterface) kannst du deine Konfiguration überprüfen.  
     
     *Wenn alle einstellungsrelevanten Parameter in der Datei
     BSB\_lan\_config.h angepasst sind (siehe nächstes Kapitel) und der
     Zugriff auf das Webinterface möglich ist, fahre mit der
     Funktionsüberprüfung des Adapters fort.*
+
+     
+     
+[Weiter zu Kapitel 5](kap05.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
 
