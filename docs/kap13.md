@@ -1,3 +1,6 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Kapitel 12](kap12.md)  
+    
 # 13. Etwaige Fehlermeldungen und deren mögliche Ursachen #
 
 ## 13.1 Fehlermeldung „unknown type \<xxxxxxxx\>" ##
@@ -47,7 +50,11 @@ Reglers).
 Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
 übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
 während der Zugriff des Adapters nur auf Lesen beschränkt ist
-(„FL\_RONLY").\
+(`FL_RONLY`).  
 Der gewünschte Parameter (oder auch generell alle Parameter) muss in
 diesem Fall als schreibbar definiert werden. Die hierfür notwendige
 Vorgehensweise ist in Kap. [5](kap05.md) beschrieben.
+     
+     
+[Weiter zu Kapitel 14](kap14.md)      
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
