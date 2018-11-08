@@ -186,36 +186,17 @@ EWMs definieren und beschreiben.
 
 Tabelle 1: Erweiterungsmodul AVS75.390
 
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| **Ger | **Ger | **Ger | **Obj | **Sof | **Nut |       |       |       |
-| äte-I | äte-F | äte-V | .Verz | tware | zbare |       |       |       |
-| denti | amili | arian | .-    | -Vers | r     |       |       |       |
-| fikat | e\    | te    | Versi | ion\  | Busty |       |       |       |
-| ion   | \[/62 | \[/62 | on    | \[/62 | p**   |       |       |       |
-| \[/62 | 25\]* | 26\]* | \[/62 | 20\]* |       |       |       |       |
-| 24\]* | *     | *     | 27\]* | *     |       |       |       |       |
-| *     |       |       | *     |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| **Reg | **Kun |       |       |       |       | **BSB | **LPB | **PPS |
-| lerty | denva |       |       |       |       | **    | **    | **    |
-| p**   | riant |       |       |       |       |       |       |       |
-|       | e**   |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+
-| AVS75 | /100  | \-    | \-    | \-    | \-    | \-    | \-    | \-    |
-| .390  | (Bröt |       |       |       |       |       |       |       |
-|       | je)   |       |       |       |       |       |       |       |
-|       |       |       |       |       |       |       |       |       |
-|       | /109  |       |       |       |       |       |       |       |
-|       | (Siem |       |       |       |       |       |       |       |
-|       | ens)  |       |       |       |       |       |       |       |
-|       |       |       |       |       |       |       |       |       |
-|       | /260  |       |       |       |       |       |       |       |
-|       | (Elco |       |       |       |       |       |       |       |
-|       | )     |       |       |       |       |       |       |       |
-+-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
+|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
+| AVS75.390      | /100 (Brötje) | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
+|                | /109 (Siemens)| \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
+|                | /260 (Elco)   | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 
+    
+    
+    
 ***Hinweis:  
-Im Folgenden nicht aufgeführte Regler bitte wie in Kap. 10 beschrieben auslesen und melden.
+Im Folgenden nicht aufgeführte Regler bitte wie in Kap. [10](kap10.md) beschrieben auslesen und melden.
 Danke!***
 
 ### 3.2.1 LMx-Regler ###
