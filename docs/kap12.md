@@ -218,7 +218,7 @@ Vielen Dank!
     
 ### 12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
 
-FHEM-Forumsmitglied „Andreas29" hat basierend auf einem Arduino Uno
+FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno
 einen Raumgeräteersatz realisiert. Der jeweilige Betriebs- und
 Fehlerstatus des Wärmeerzeugers sowie die aktuellen Daten eines
 DHT22-Sensors werden auf einem 4x20-LCD dargestellt. Mittels eines
@@ -242,7 +242,7 @@ finden.
     
 ### 12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
 
-FHEM-Forumsmitglied „Gizmo\_the\_great" hat basierend auf einem Wemos D1
+FHEM-Forumsmitglied *„Gizmo\_the\_great"* hat basierend auf einem Wemos D1
 mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
 Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
 angezeigt. Auf dem Wemos D1 läuft ESPeasy.
