@@ -1016,8 +1016,7 @@ string wort = "28ffff85901604d6"; !T_Innentemperatur_Esszimmer
 
 WriteLine("Hallo Welt!");
 ```
-    
----    
+        
     
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
 Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
@@ -1189,7 +1188,7 @@ if (stdout != null && stdout != "")
     
 ***Skript zum Setzen von Parametern:***  
 
-Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.
+Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.  
 Beispiel: 
    
 ```
