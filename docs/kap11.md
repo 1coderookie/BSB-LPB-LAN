@@ -218,6 +218,7 @@ end
     
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „PaulM".  
 Sie sind ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg769167.html#msg769167) im FHEM-Forum zu finden.  
+Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "Bratmaxe" aufgeführt.  
 Vielen Dank!***  
     
 Zur Einbindung in HomeMatic bietet sich die Verwendung von CuxD und wget
