@@ -11,7 +11,7 @@ Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***
 
 ### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ###  
     
-### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###
+### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###
 ---  
 
 ***ACHTUNG:  
