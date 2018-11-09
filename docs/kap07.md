@@ -57,7 +57,7 @@ der URL-Befehle.
 Grau hinterlegte Zeilen zeigen an, dass der Befehl nicht verfügbar ist.
 Im nachfolgend gezeigten Beispiel betrifft dies die nicht-installierten
 DHT22-Sensoren, die fehlenden MAX!-Komponenten sowie die Befehle für die 
-Loggingfunktionen der mSD-Karte.
+hier deaktivierte Loggingfunktion auf eine mSD-Karte.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_url-befehle.png">
     
