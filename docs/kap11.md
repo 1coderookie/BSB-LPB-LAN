@@ -440,8 +440,7 @@ angeben:
     
 Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
 
-Damit der Schalterzustand durch     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
+Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
  oder 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
  entsprechend visualisiert wird, müssen
