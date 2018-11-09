@@ -14,7 +14,10 @@ Passkey-Verwendung bspw.:
 `http://<IP-Adresse>/<passkey>/`
 
 *Bitte den Slash hinter dem Passkey nicht vergessen!*
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_home.png">
+    
+    
 Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
 im Display dargestellten Untermenükategorien entsprechen, wenn auf den
 Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen
@@ -22,11 +25,15 @@ wird.
 
 Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
 Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_funktionen.png">
+    
 Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet
 eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
 in dieser Kategorie verfügbar sind.
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-hk1.png">
+    
 Unter der URL  
 `http://<IP-Adresse>/C`  
 wird eine Übersicht der Konfiguration dargestellt. Dort sind u.a. der
@@ -39,17 +46,21 @@ Eine schwarze Schrift bei den Schaltflächen für DS18B20- und
 DHT22-Sensoren zeigt an, dass diese nicht definiert sind.
 
 Bei dem folgenden abgebildeten Beispiel sind lediglich DS18B20-Sensoren
-definiert und es werden keinerlei 24h-Mittelwerte berechnet. Alle zehn
-Minuten (→ 600 Sekunden) werden Temperaturwerte von insgesamt sechs
-DS18B20-Sensoren geloggt.
-
+definiert. Es werden keinerlei 24h-Mittelwerte berechnet und keinerlei 
+Parameter oder Werte auf die interne mSD-Karte geloggt.
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfiguration.png">
+    
 Der Menüpunkt „URL-Befehle" zeigt eine Auflistung und kurze Erklärung
 der URL-Befehle.
 
 Grau hinterlegte Zeilen zeigen an, dass der Befehl nicht verfügbar ist.
 Im nachfolgend gezeigten Beispiel betrifft dies die nicht-installierten
-DHT22-Sensoren.
-
+DHT22-Sensoren, die fehlenden MAX!-Komponenten sowie die Befehle für die 
+Loggingfunktionen der mSD-Karte.
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_url-befehle.png">
+    
 Zusätzlich zum Webinterface kann somit auf alle Funktionen mittels
 Eingabe des entsprechenden Befehls direkt zugegriffen werden. Dies ist
 nützlich, wenn der Adapter in Verbindung mit Heimautomationssystemen wie
@@ -66,8 +77,11 @@ Einige Zeilen sind \'virtuell\' und wurden hinzugefügt, um bspw. den
 Zugang zu komplexen Einstellungen wie den Tagesprogrammen zu
 erleichtern.
 
-Eine grafische Darstellung des Logfiles erfolgt bei Klick auf „Anzeige
-Logdatei".
+Eine grafische Darstellung des optional erstellbaren Logfiles auf einer 
+mSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log.jpg">
+    
 
 ***Hinweis:***  
 *Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue
