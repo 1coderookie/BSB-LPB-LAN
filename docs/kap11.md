@@ -24,7 +24,7 @@ Konfigurationsmöglichkeiten auftreten, so ist bitte von diesbezüglichen
 Anfragen an mich abzusehen - die Fragen sollten mittels
 entsprechender Literatur oder in spezifischen Foren geklärt werden.
 
-****Hinweis:***  
+***Hinweis:***  
 *Selbstverständlich müssen stets sowohl die IP als auch -falls
 aktiviert- die optionalen Sicherheitsfunktionen bei den folgenden
 Beispielen entsprechend angepasst werden. Ebenso müssen Parameter, die
