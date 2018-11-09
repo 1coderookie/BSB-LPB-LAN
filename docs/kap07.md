@@ -48,7 +48,7 @@ DHT22-Sensoren zeigt an, dass diese nicht definiert sind.
 Bei dem folgenden abgebildeten Beispiel sind lediglich DS18B20-Sensoren
 definiert. Es werden keinerlei 24h-Mittelwerte berechnet und keinerlei 
 Parameter oder Werte auf die interne mSD-Karte geloggt.  
-Darüber hinaus ist zu sehen, dass das Bus-System für den Adapteranschluss 
+Darüber hinaus ist zu sehen, dass als Bus-System für den Adapteranschluss 
 der BSB und der Adapter selbst als RGT2 definiert ist ("Bus-System: BSB (7, 0)").
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfiguration.png">
