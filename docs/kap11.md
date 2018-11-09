@@ -342,54 +342,54 @@ Vielen Dank!*
 
 ***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
 Solltemperatur'):***  
-
-![](media/image14.png){width="5.439583333333333in"
-height="1.2583333333333333in"}![](media/image14.png){width="5.439583333333333in"
-height="1.2583333333333333in"}
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro1.jpg">
+        
 Unter ‚ioBroker Admin → Adapter' eine ‚Parser'-Instanz hinzufügen:
-
-![](media/image15.png){width="6.659722222222222in"
-height="0.26944444444444443in"}
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro2.jpg">
+    
 Danach unter ‚ioBroker Admin → Instanzen' die hinzugefügten
 Adapterinstanz ‚parser.0' zum Konfigurieren öffnen:
-
-![](media/image16.png){width="6.6506944444444445in"
-height="0.30694444444444446in"}
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro3.jpg">
+    
+    
 Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
 ‚TWW\_Nennsollwert' vergeben. Unter ‚URL oder Dateiname' die IP des
 BSB-LAN-Adapters samt Parameternummer angeben. Anschließend auf das
 ‚Bearbeiten'-Icon klicken.
 
-![](media/image17.png){width="6.6506944444444445in"
-height="2.426388888888889in"}
-
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro4.jpg">
+    
 Es öffnet sich die Eingabemaske, in der unter ‚RegEx' folgende
 Zeichenfolge eingegeben werden muß:
 
 `asser\s+-\s+TWW Nennsollwert\:\s+(\d{2}.\d)`
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro5.jpg">
+    
+    
 Danach kann die Eingabemaske mit ‚Speichern' geschlossen werden.
-
+    
 Das Abfrageintervall kann man nach Bedarf einstellen, danach auf
 ‚Speichern und Schließen' klicken. Damit ist die Adapterkonfiguration
 abgeschlossen.
-
-![](media/image18.png){width="6.622222222222222in" height="2.3125in"}
-
+    
 Unter ‚ioBroker Admin → Objekte' findet sich nun der Ordner ‚parser.0'
 und die unter der Instanz ‚parser.0' angelegten Datennamen und deren
 Werte:
 
-![](media/image19.png){width="6.669444444444444in"
-height="2.057638888888889in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro6.jpg">
+    
 
 Die Werte können unter VIS mittels eines ‚Basic-Number'-Widgets mit
 folgenden Einstellungen angezeigt werden:
 
-![](media/image20.png){width="4.075694444444444in" height="2.14375in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro7.jpg">
+    
 
 Widgetcode zum Importieren:
     
@@ -400,19 +400,21 @@ Widgetcode zum Importieren:
 
 ***Schalter anlegen (exemplarisch ‚Heizung Automatik (AN)'-Schalter):***
 
-![](media/image21.png){width="5.439583333333333in"
-height="1.2784722222222222in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro8.jpg">
+    
 
 Zunächst ein leeres Script ‚Heizung Automatik Schalter' anlegen:
-
-![](media/image22.png){width="6.659722222222222in"
-height="2.6173611111111112in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro9.jpg">
+    
 
 Dann ein Blocky-Script ‚Heizung Automatik script' mit folgendem Inhalt
 anlegen (der nachfolgende Code kann in Blocky importiert werden):
 
-![](media/image23.png){width="6.6506944444444445in"
-height="3.2270833333333333in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro10.jpg">
+    
     
 ```
 on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, function (obj) {
@@ -427,30 +429,32 @@ on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, 
 });
 ```
     
-
-![](media/image24.png){width="1.8284722222222223in"
-height="0.4013888888888889in"}
-
 Dann ein ‚jqui -- Button State'-Widget in VIS anlegen:
-
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro11.jpg">
+    
 In den Eigenschaften unter ‚Schalter' das anfangs angelegte leere Script
-angeben:![](media/image25.png){width="3.3965277777777776in"
-height="1.8020833333333333in"}
-
+angeben:  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro12.jpg">
+    
 Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
 
-Damit der Schalterzustand durch ![](media/image26.png){width="0.16875in"
-height="0.19166666666666668in"} oder
-![](media/image27.png){width="0.21388888888888888in"
-height="0.25555555555555554in"} entsprechend visualisiert wird, müssen
+Damit der Schalterzustand durch     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
+ oder 
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
+ entsprechend visualisiert wird, müssen
 noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die
 Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
 abgespeichert werden müssen.
 
-![](media/image28.png){width="2.401388888888889in"
-height="2.8409722222222222in"}
-![](media/image29.png){width="2.6597222222222223in"
-height="2.8409722222222222in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro13.jpg">
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro14.jpg">
+    
 
 Widgetcode zum Importieren:
     
@@ -468,15 +472,17 @@ Heizungsschalters):***
 Bei der Adapterkonfiguration für ‚parser.0' eine Regel mit der
 Bezeichung ‚Betriebsart' erstellen, dann die IP (samt Parameternummer)
 des BSB-LAN-Adapters angeben und zum Bearbeiten öffnen.
-
-![](media/image30.png){width="6.63125in" height="1.2194444444444446in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro15.jpg">
+    
 
 Unter ‚RegEx' folgende Syntax angeben:
 
 `(\w+:\s+\d\s+-\s+\w+)`
 
-![](media/image31.png){width="6.6305555555555555in"
-height="2.227777777777778in"}
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro16.jpg">
+    
     
     
      
