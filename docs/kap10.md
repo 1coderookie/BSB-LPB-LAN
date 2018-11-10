@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 9](kap09.md)  
+[Zurück zu Kapitel 9](kap09.md)    
+    
+---
+    
+
     
 
 # 10. Auslesen neuer Parameter-Telegramme #
@@ -337,6 +341,10 @@ HEIZ->RGT1 ANS 253D08A3 00 0F 00
 DC 80 06 0E 07 25 3D 08 A3 00 0F 00 0D 90  
 ```        
      
-     
+       
+    
+---
+    
+
 [Weiter zu Kapitel 11](kap11.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
