@@ -33,21 +33,28 @@ gesetzt werden sollen, schreibbar sein (s. Kap. [5](kap05.md)).*
 *Solltest du ein anderes System als die im Folgenden aufgeführten
 verwenden, so würde ich mich über die Zusendung eines Beispielscripts
 zur Anbindung des Adapters freuen! Sende es mir dazu einfach als
-.txt-Datei an `adapter [ät] quantentunnel.de` - danke!*
-
+.txt-Datei an `adapter [ät] quantentunnel.de` - danke!*  
+    
+    
+---
+    
 ## 11.1 FHEM ##
-
+    
+---
+    
 ### 11.1.1 Einbindung mittels BSB-LAN-Modul ###
 
-*Derzeit wird vom FHEM-Forumsmitglied „justme1968" ein BSB-LAN-Modul für
+***Derzeit wird vom FHEM-Forumsmitglied „justme1968" ein BSB-LAN-Modul für
 FHEM entwickelt:
 [https://forum.fhem.de/index.php/topic,84381.0.html](https://forum.fhem.de/index.php/topic,84381.0.html)  
-Vielen Dank!*
+Vielen Dank!***
 
-*UPDATE:  
+UPDATE:  
 Eine erste (Test-)Version ist bereits verfügbar, ein stabiler
-und problemloser Betrieb kann aber noch nicht garantiert werden!*
-
+und problemloser Betrieb kann jedoch noch nicht garantiert werden!  
+    
+---
+    
 ### 11.1.2 Einbindung mittels HTTPMOD-Modul ###
 
 ***Die FHEM-Beispielscripte stammen vom FHEM-Forumsmitglied „freetz".  
@@ -123,6 +130,8 @@ attr EthRelais setParseResponse 1
 attr EthRelais setRegex GPIO[0-9]+:[ \t](\d)
 attr EthRelais timeout 5
 ```
+    
+---
     
 
 ## 11.2 openHAB ##
@@ -212,7 +221,10 @@ when
 then
 	sendHttpGetRequest("http://192.168.178.88/I10000=" + iSet_temp.state.toString)
 end
-```
+```  
+    
+---
+    
     
 ## 11.3 HomeMatic (EQ3) ##  
     
@@ -622,8 +634,8 @@ string wort = "8830"; !Trinkwassertemperatur
 WriteLine("Hallo Welt!");
 ```
     
-***Anweisungen zum Ändern des Betriebs von Heizung und Trinkwasser:***  
-Damit Syntax-sichere Anweisungen von CCU an BSB gegeben werden können (wichtig z.B. auch wenn via VPN kein direkter Zugang zum BSB-Adapter möglich ist).  
+***Anweisungen zum Ändern des Betriebszustands der Heizung:***  
+Damit syntax-sichere Anweisungen von CCU an BSB gegeben werden können (wichtig z.B. auch wenn via VPN kein direkter Zugang zum BSB-Adapter möglich ist).  
 
 *Heizung AUS (= Frostschutzbetrieb):*  
     
@@ -1387,7 +1399,9 @@ if (!svObject)
 }
 
 if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
-```
+```  
+    
+---
     
 
 ## 11.4 ioBroker ##  
