@@ -1,4 +1,8 @@
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)    
+    
+---
+    
+
     
 
 # 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software ##
@@ -82,7 +86,11 @@ Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
     
      
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
-Arduino-Version!***  
+Arduino-Version!***    
+    
+---
+    
+
     
      
      
