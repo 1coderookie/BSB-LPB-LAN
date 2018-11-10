@@ -166,11 +166,12 @@ auch isolierte 6,3mm-Kabelschuhe verwendet werden.
 
 Die PPS-Schnittstelle findet sich bei älteren Reglern und stellt eine
 Punkt-zu-Punkt-Schnittstelle dar, mittels derer
-Bedieneinheiten/Raumgeräte wie das QAA70[^11] angeschlossen werden
+Bedieneinheiten/Raumgeräte wie das QAA70 angeschlossen werden
 können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
 angeschlossen.
 
-PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein[^12]: RVP
+PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
+„Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
 digital Serie D, RVP54..., ALBATROS RVA..., LGM11...; bzw. u.a. bei
 folgenden Heizungen: Brötje WGB 15 / WGB 20, Weishaupt WRD 0.2 / 1.1,
 Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
