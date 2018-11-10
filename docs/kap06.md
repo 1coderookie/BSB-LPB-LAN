@@ -44,13 +44,29 @@ Dazu bietet sich folgende Vorgehensweise an:
     Device variant: 100  
     \[...\]  
     ```
-
+    
+    Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen 
+    Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist als 
+    RGT2 konfiguriert und fragt zur automatischen Erkennung beim 
+    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab. 
+    Die darauf folgenden Zeilen sind bereits empfangene Telegramme. 
+    Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
+    Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
+    
+    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
+        
     Nun sollte die Verwendung von BSB-LAN möglich sein.
 
-    ***Hinweis:***  
+    ***Hinweise:***  
+    
+    *Sollten in der Ausgabe nur kryptische Zeichenfolgen erscheinen, so ist 
+    die eingestellte Baudrate zu überprüfen (unten rechts). Diese sollte auf
+    115200 Baud eingestellt sein.*  
+    
     *Sollte ein bisher nicht in Kap. [3](kap03.md) aufgeführter Regler zum Einsatz kommen, bitte  
-    die entsprechenden Daten wie beschrieben auslesen und melden.*
-
+    die entsprechenden Daten wie beschrieben auslesen und melden.*  
+    
+    
     b\) Wird der angeschlossene Regler nicht automatisch korrekt erkannt,
     steht bei „Device family" und „Device variant" jeweils eine „0",
     zusätzlich stehen vor „Device family" sechs Zeilen „query failed".  
@@ -72,21 +88,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     Meist liegt der Grund hierfür dann in einem Problem des
     Hardware-Setups oder der Verkabelung. Weitere Hinweise zur
     Fehlersuche finden sich im Kapitel [14](kap14.md).  
-    
-    Die folgende Abbildung zeigt exemplarisch eine Ausgabe des 'Seriellen 
-    Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist als 
-    'RGT2' konfiguriert und fragt zur automatischen Erkennung beim 
-    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ('HEIZ') ab. 
-    Die darauf folgenden Zeilen sind bereits empfangene Telegramme. 
-    Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
-    Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
-    
-    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
-        
-    Sollten in der Ausgabe nur kryptische Zeichenfolgen erscheinen, so ist 
-    die eingestellte Baudrate zu überprüfen (unten rechts). Diese sollte auf
-    115200 Baud eingestellt sein.
-       
+
     
 ---
     
