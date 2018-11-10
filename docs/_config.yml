@@ -3,7 +3,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 title: Handbuch zum BSB-LPB-LAN-Adapter
-description: Online-Version des Handbuchs für die Verwendung des LAN-Adapters für Heizungssysteme mit BSB, LPB und PPS-Schnittstelle und der BSB-LAN-Software. 
+// description: Online-Version des Handbuchs für die Verwendung des LAN-Adapters für Heizungssysteme mit BSB, LPB und PPS-Schnittstelle und der BSB-LAN-Software. 
 url: https://1coderookie.github.io/BSB-LPB-LAN
 author: Ulf Dieckmann
 lang: de-DE
