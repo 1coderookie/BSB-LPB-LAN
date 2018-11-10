@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 4](kap04.md)  
+[Zurück zu Kapitel 4](kap04.md)    
+    
+---
+    
+
     
 
 # 5. Einstellungsrelevante Parameter der BSB-LAN-Software #
@@ -251,7 +255,11 @@ vor der Verwendung des Adapters angepasst werden:
     Definement wieder auskommentiert werden.
 
 
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 6](kap06.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
