@@ -88,7 +88,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     Meist liegt der Grund hierfür dann in einem Problem des
     Hardware-Setups oder der Verkabelung, da die Parameter 
     6225 und 6226 nicht erfolgreich abgerufen werden konnten 
-    ("[query failed](kap13.md#133-fehlermeldung-query-failed)"). 
+    ([Fehlermeldung "query failed"](kap13.md#133-fehlermeldung-query-failed)"). 
     Weitere Hinweise zur Fehlersuche finden sich im Kapitel [14](kap14.md).  
 
     
