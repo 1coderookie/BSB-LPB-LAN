@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 7](kap07.md)  
+[Zurück zu Kapitel 7](kap07.md)    
+    
+---
+    
+
     
 
 # 8. URL-Befehle und Spezialfunktionen #
@@ -491,7 +495,11 @@ Test Ende.
 In diesem Fall sollte die Webausgabe bitte kopiert und gemeldet werden,
 damit eine entsprechende Anpassung vorgenommen werden kann.  
     
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
