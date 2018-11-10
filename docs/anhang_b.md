@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Anhang A2](anhang_a2.md)  
+[Zurück zu Anhang A2](anhang_a2.md)    
+    
+---
+    
+
     
 
 # Anhang B: Cheatsheet URL-Befehle #
@@ -41,7 +45,11 @@
 |  /V\<x\>              | Verbositäts-Modus aktivieren (\<x\> = 1) oder deaktivieren (\<x\> = 0)  
 |  /X                   | Abfrage optional eingebundener MAX!-Thermostate  
 
-     
+       
+    
+---
+    
+
      
 [Weiter zu Anhang C](anhang_c.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
