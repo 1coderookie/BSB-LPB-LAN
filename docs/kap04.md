@@ -49,7 +49,7 @@
     Werkzeuge/Programmer.
 
 -   Passe die Datei *BSB\_lan\_config.h* deinen Wünschen entsprechend an
-    (siehe nächstes Kapitel) und lade den Sketch mittels Sketch/Upload
+    (s. Kap. [5](kap05.md)) und lade den Sketch mittels Sketch/Upload
     bzw. Sketch/Hochladen auf den Arduino.
 
 -   Verbinde den Arduino mittels LAN-Kabel mit deinem Router/Switch.
@@ -67,7 +67,7 @@
     Webinterface) kannst du deine Konfiguration überprüfen.  
     
     *Wenn alle einstellungsrelevanten Parameter in der Datei
-    BSB\_lan\_config.h angepasst sind (siehe nächstes Kapitel) und der
+    BSB\_lan\_config.h angepasst sind (s. Kap. [5](kap05.md)) und der
     Zugriff auf das Webinterface möglich ist, fahre mit der
     Funktionsüberprüfung des Adapters fort.*
 
