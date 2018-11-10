@@ -74,9 +74,11 @@ Dazu bietet sich folgende Vorgehensweise an:
     Fehlersuche finden sich im Kapitel [14](kap14.md).  
     
     Die folgende Abbildung zeigt exemplarisch eine Ausgabe des 'Seriellen 
-    Monitors' der Arduino IDE direkt nach dem Start mit einem automatisch
-    erkannten Regler. Die darauf folgenden Zeilen sind bereits empfangene
-    Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
+    Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist als 
+    'RGT2' konfiguriert und fragt zur automatischen Erkennung beim 
+    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ('HZG') ab. 
+    Die darauf folgenden Zeilen sind bereits empfangene Telegramme. 
+    Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
     Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
     
     <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
