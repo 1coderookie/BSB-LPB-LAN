@@ -18,7 +18,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     
     ***Hinweis:***  
     *Wenn (später) der LPB genutzt werden soll, muss sowohl der Bus-Typ
-    in der Datei *BSB\_lan\_config.h* als auch der Anschluss am Regler
+    in der Datei BSB\_lan\_config.h als auch der Anschluss am Regler
     geändert werden!*
 
 2.  Den Regler einschalten und überprüfen, ob die rote LED auf dem
@@ -36,6 +36,7 @@ Dazu bietet sich folgende Vorgehensweise an:
 5.  a\) Wird der angeschlossene Regler automatisch korrekt erkannt, steht am
     Anfang der Ausgabe des seriellen Monitors bei „Device family" und
     „Device variant" jeweils ein Wert, der nicht „0" ist.  
+    
     ***Beispiel:***  
     ```
     \[...\]  
@@ -53,6 +54,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     b\) Wird der angeschlossene Regler nicht automatisch korrekt erkannt,
     steht bei „Device family" und „Device variant" jeweils eine „0",
     zusätzlich stehen vor „Device family" sechs Zeilen „query failed".  
+    
     ***Beispiel:***  
     ```
     \[...\]  
