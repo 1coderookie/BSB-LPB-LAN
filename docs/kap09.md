@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 8](kap08.md)  
+[Zurück zu Kapitel 8](kap08.md)    
+    
+---
+    
+
     
 # 9. Loggen von Daten #  
     
@@ -74,7 +78,11 @@ sortieren, nutze hierfür den Befehl \'sort\':
 *Die IP, ggf. aktivierte optionale Sicherheitsfunktionen, die gewünschten 
 Parameter etc. sind im obigen Beispiel anzupassen.*  
     
-     
+       
+    
+---
+    
+
 [Weiter zu Kapitel 10](kap10.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
 
