@@ -140,7 +140,7 @@ vor der Verwendung des Adapters angepasst werden:
     Beschreibung in der Datei BSB\_lan\_config.h). Bei einem
     zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts
     schickt und bei dem eine Differenzierung der Brennerstufen möglich
-    ist*[^18] *müssen hier zusätzlich 2003 und 2004 mit aufgeführt
+    ist (derzeit nur RVS43.325), müssen hier zusätzlich 2003 und 2004 mit aufgeführt
     werden!*
 
 -   Soll die IPWE-Erweiterung aktiviert werden, ist das entsprechende
