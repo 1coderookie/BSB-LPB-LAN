@@ -76,7 +76,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     Die folgende Abbildung zeigt exemplarisch eine Ausgabe des 'Seriellen 
     Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist als 
     'RGT2' konfiguriert und fragt zur automatischen Erkennung beim 
-    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ('HZG') ab. 
+    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ('HEIZ') ab. 
     Die darauf folgenden Zeilen sind bereits empfangene Telegramme. 
     Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
     Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
