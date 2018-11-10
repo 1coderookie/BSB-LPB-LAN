@@ -1,7 +1,13 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
 [Zurück zu Kapitel 14](kap14.md)  
     
-# 15. FAQ #
+---
+    
+    
+# 15. FAQ #  
+    
+---
+    
 
 ## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen? ##
 
@@ -15,7 +21,10 @@ Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
 ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!  
 Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
 Software genutzt werden. Weitere Informationen diesbezüglich sind am
-Ende von Kap. [1](kap01.md) zu finden.
+Ende von Kap. [1](kap01.md) zu finden.  
+    
+---
+    
 
 ## 15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen? ##
 
@@ -25,7 +34,10 @@ Derzeit benötigt man für jeden Regler einen Adapter bzw. ein komplettes
 Hardware-Setup (Arduino, Ethernet-Shield, Adapter), um die jeweiligen
 reglerspezifischen Parameter via BSB abrufen zu können.  
 Sollten jedoch mehrere Regler vorhanden und bereits miteinander via LPB
-verbunden sein, beachte bitte die folgende FAQ.
+verbunden sein, beachte bitte die folgende FAQ.  
+    
+---
+    
 
 ## 15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen? ##
 
@@ -34,7 +46,10 @@ verbunden und entsprechend konfiguriert sind (korrekte
 LPB-Adressvergabe).  
 Die Möglichkeit, Abfragen fallweise an unterschiedliche Regler zu
 senden, ist mittlerweile gegeben, jedoch ist diese Funktion noch nicht
-ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
+ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+    
+---
+    
 
 ## 15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar? ##
 
@@ -57,22 +72,34 @@ gesteuert werden (bspw. mittels eines Relaisboards).
 
 Entsprechende Relais findest du im Internet, bei Unsicherheiten solltest
 du deinen Elektriker und/oder Heizungsinstallateur zu Rate ziehen. Eine
-falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!
+falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!  
+    
+---
+    
 
 ## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar? ##
 
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
+Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+    
+---
+    
 
 ## 15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen? ##
 
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
+Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+    
+---
+    
 
 ## 15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen? ##
 
 Ja! Wenn dein Heizungssystem über Parameter verfügt, die von der
 Software bisher nicht unterstützt werden, würden wir uns sehr freuen,
 wenn du uns unterstützt! Genauere Informationen zur Vorgehensweise sind
-in Kap. [10](kap10.md) zu finden.
+in Kap. [10](kap10.md) zu finden.  
+    
+---
+    
 
 ## 15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt? ##
 
@@ -81,7 +108,10 @@ Wenn du eine Komplettabfrage aller Parameter via URL-Befehl machst
 bzw. Programmnummern in der Auflistung wiederholen. Dies kommt daher,
 dass es es zwar unterschiedliche Parameter sind, diese aber die gleiche
 Command ID haben. Dies stellt nur einen ‚optischen Mangel' dar, der die
-Funktionalität nicht negativ beeinflusst.
+Funktionalität nicht negativ beeinflusst.  
+    
+---
+    
 
 ## 15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt? ##
 
@@ -94,7 +124,10 @@ Sollten dann bestimmte Parameter noch immer nicht erscheinen, so sollte
 bitte einmal /Q ausgeführt und die Webausgabe zusammen mit der Ausgabe
 von  
 `http://<IP-Adresse>/6220-6228`
-gemeldet werden.
+gemeldet werden.  
+    
+---
+    
 
 ## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich? ##
 
@@ -102,16 +135,22 @@ Wenn du DHT22- und/oder DS18B20-Sensoren korrekt am Arduino/Adapter
 angeschlossen hast, die entsprechenden Menüs im Webinterface jedoch
 nicht anwählbar sind, hast du vermutlich die betreffenden Einträge in
 der Datei *BSB\_lan\_config.h* nicht entsprechend angepasst.  
-Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).
+Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).  
+    
+---
+    
 
 ## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun? ##
 
 Prinzipiell ist die Nutzung eines Shields mit dem Chip-Typ W5100 zu
 empfehlen, da die entsprechenden Bibliotheken bereits eingebunden sind.  
 Sollte dennoch ein W5500 zum Einsatz kommen, ist  
-1. die Datei *BSB\_lan\_config.h* entsprechend anzupassen (s. Kap. 5)
+1. die Datei *BSB\_lan\_config.h* entsprechend anzupassen (s. Kap. [5](kap05.md))
 und\
-2. die Datei *Ethernet2.zip* im Unterverzeichnis *src* entpacken.
+2. die Datei *Ethernet2.zip* im Unterverzeichnis *src* entpacken.  
+    
+---
+    
 
 ## 15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden? ##
 
@@ -119,8 +158,11 @@ Nein, nicht ohne weitere Software wie z.B. FHEM. Dafür müsste ansonsten
 die Therme ständig abgefragt werden, was den Bus (und die Erreichbarkeit
 des Arduino) stark belasten würde. Die sinnvollere Variante wäre,
 bestimmte Werte z.B. alle 60 Sekunden abzurufen und dann anhand
-bestimmter Kriterien weitere Aktionen auszulösen.\
-Bei FHEM wäre das mit DOIF oder NOTIFY möglich.
+bestimmter Kriterien weitere Aktionen auszulösen.  
+Bei FHEM wäre das mit DOIF oder NOTIFY möglich.  
+    
+---
+    
 
 ## 15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen'? ##
 
@@ -130,7 +172,10 @@ auflaufenden Broadcast-Meldungen anhand konfigurierbarer Schwellenwerte
 auswerten und über einen HTTP-Client-Aufruf an eine definierbare
 Zieladresse absetzen. Ob dies mit dem begrenzten Speicherplatz des
 Arduino noch umsetzbar ist, wäre fraglich. Wer sich aber daran probieren
-möchte, ist herzlich eingeladen, dies zu tun!
+möchte, ist herzlich eingeladen, dies zu tun!  
+    
+---
+    
 
 ## 15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM? ##
 
@@ -145,19 +190,26 @@ vorkommen, dass es zu Kollisionen kommt und sie sich somit gegenseitig
 Abhilfe können hier entweder unterschiedliche Abfrageintervalle gewählt
 oder alle Abfragen in eine HTTPMOD-Abfrage gelegt werden.
 
-FHEM-Forumsmitglied „frank" hat den Tipp gegeben, bei der Einbindung in
-FHEM ‚attr alignTime' zu nutzen, um Kollisionen bei den Abfragen zu
-verhindern:
-[https://forum.fhem.de/index.php/topic,29762.msg841039.html\#msg841039](https://forum.fhem.de/index.php/topic,29762.msg841039.html#msg841039)
+FHEM-Forumsmitglied *„frank"* hat den [Tipp](https://forum.fhem.de/index.php/topic,29762.msg841039.html#msg841039) 
+gegeben, bei der Einbindung in FHEM ‚attr alignTime' zu nutzen, 
+um Kollisionen bei den Abfragen zu verhindern.   
+    
+---
+    
+
 
 ## 15.15 Gibt es ein Modul für FHEM? ##
 
-Jein. Ein Modul wird gerade vom FHEM-Forumsmitglied „justme1968"
+Jein. Ein Modul wird gerade vom FHEM-Forumsmitglied *„justme1968"*
 entwickelt:
 [https://forum.fhem.de/index.php/topic,84381.0.html](https://forum.fhem.de/index.php/topic,84381.0.html)  
 Die Entwicklung ist jedoch noch nicht abgeschlossen, so dass ein
 zuverlässiger und problemloser Einsatz bisher noch nicht garantiert
-werden kann.
+werden kann.  
+    
+---
+    
+
 
 ## 15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt? ##
 
@@ -167,7 +219,11 @@ verfügen; zweistufige Brenner kommen meist nur bei Ölbrennern zum
 Einsatz. Die Unterscheidung der Brennerstufen wird mittels spezifischer
 Broadcasts vorgenommen, die jedoch nicht jeder Regler sendet. In dem
 Fall werden die Brennerstarts und -laufzeiten kumuliert unter Stufe 1
-dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).
+dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+    
+---
+    
+
 
 ## 15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt. ##
 
@@ -175,7 +231,11 @@ Das kann durchaus sein. Die jeweiligen Starts und Laufzeiten werden
 anhand von Broadcasts ermittelt, die automatisch vom Regler gesendet
 werden. Manchmal kann es vorkommen, dass einzelne BCs nicht ankommen,
 bspw. wenn zeitgleich eine Abfrage gestartet wird oder der Arduino das
-Logfile lädt.
+Logfile lädt.  
+    
+---
+    
+
 
 ## 15.18 Was ist der genaue Unterschied zwischen /M1 und /V1? ##
 
@@ -215,7 +275,11 @@ Eine Kombination aus beiden Parametern ist möglich und führt dazu, dass
 im Monitor-Modus auch bei von BSB-LAN initiierten Nachrichten die
 Rohdaten ausgegeben werden - mit den bereits erwähnten Einschränkungen
 des Verbositäts-Modus bezüglich des Verwerfens von nicht korrekt
-aufgebauten Nachrichten.
+aufgebauten Nachrichten.  
+    
+---
+    
+
 
 ## 15.19 Kann ich eigenen Code in BSB-LAN einbinden? ##
 
@@ -225,7 +289,11 @@ Programmteile geschrieben werden, die bei jedem Schleifendurchlauf
 Home-Automations-Systemen Sensoren auswerten und/oder Relais schalten.  
 Die Beispieldatei wertet z.B. zwei DHT22-Feuchtigkeits-/Temperatursensoren 
 aus und schaltet beim Unter- bzw. Überschreiten ein Relais, das an einem 
-digitalen Ausgang angeschlossen ist.
+digitalen Ausgang angeschlossen ist.  
+    
+---
+    
+
 
 ## 15.20 Kann ich MAX!-Thermostate einbinden? ##
 
@@ -234,7 +302,11 @@ Datei *BSB\_lan\_config.h* aktivieren und anpassen. Mittels
 entsprechender Modifikationen in der Datei *BSB\_lan\_custom.h* können
 weitere Funktionen realisiert werden, mit der derzeitigen Programmierung
 ist eine eigenständige Raum-Ist-Wert-Übermittlung (ohne FHEM) möglich.
-Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), 8.1(kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie 12.2(kap12.md#122-max-komponenten).
+Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), 8.1(kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie 12.2(kap12.md#122-max-komponenten).  
+    
+---
+    
+
 
 ## 15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar? ##
 
@@ -244,7 +316,11 @@ Problem nicht aufzutreten.
 Nach Drücken des Reset-Knopfes am Arduino ist der Adapter wieder wie
 gewohnt erreichbar. Abhilfe könnte eine kleine USV für den Arduino
 schaffen, so dass der Arduino nicht stromlos wird. Andere Lösungen sind
-bisher nicht bekannt.
+bisher nicht bekannt.  
+    
+---
+    
+
 
 ## 15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar? ##
 
@@ -257,7 +333,11 @@ war nicht mehr erreichbar. Abhilfe schaffte nur ein Reset. Sollte dieses
 Verhalten auftreten, ist das Testen eines weiteren LAN-Shields zu
 empfehlen, da Hardwareprobleme des betroffenen LAN-Shields nicht
 auszuschließen sind. Der Einsatz eines originalen Arduino-LAN-Shields
-ist selbstverständlich eine weitere Option.
+ist selbstverständlich eine weitere Option.  
+    
+---
+    
+
 
 ## 15.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen? ##
 
@@ -275,11 +355,19 @@ Adapter-Hardware selbst, die er zur Eingrenzung des Problems vornahm.
 Dieses Problem wird aktuell verfolgt und es wird aktiv nach einer Lösung
 gesucht. Sollte sich der Austausch von Hardwarekomponenten des Adapters
 bei solchen ‚Problem-Clones' als dauerhaft erfolgreich zeigen, so wird
-dies kommuniziert und im Platinenlayout berücksichtigt werden.
+dies kommuniziert und im Platinenlayout berücksichtigt werden.  
+    
+---
+    
+
 
 ## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?! ##
 
-In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).
+In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).  
+    
+---
+    
+
 
 ## 15.25 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
 
@@ -308,7 +396,11 @@ als zu wenige.
 Fragen, deren Antworten sich aus dem gründlichen Lesen dieses Handbuchs
 ergeben, werden ab einem gewissen Punkt lediglich mit einem Verweis
 hierauf beantwortet. Bitte bedenke, dass dies für jeden von uns nur ein
-Hobby-Projekt ist.
+Hobby-Projekt ist.  
+    
+---
+    
+
      
      
 [Weiter zu Kapitel 16](kap16.md)      
