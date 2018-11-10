@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 3](kap03.md)  
+[Zurück zu Kapitel 3](kap03.md)    
+    
+---
+    
+
     
 
 # 4. Installation der Arduino IDE und Konfiguration des Adapters #
@@ -71,7 +75,11 @@
     Zugriff auf das Webinterface möglich ist, fahre mit der
     Funktionsüberprüfung des Adapters fort.*
 
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 5](kap05.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
