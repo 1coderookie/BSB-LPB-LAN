@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 6](kap06.md)  
+[Zurück zu Kapitel 6](kap06.md)    
+    
+---
+    
+
     
 
 # 7. BSB-LAN Web - das Webinterface des Adapters #
@@ -98,7 +102,11 @@ beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
 oder auch des SD-Logfiles kann u.U. eine längere Zeit in Anspruch
 nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 8](kap08.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
