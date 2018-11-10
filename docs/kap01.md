@@ -14,8 +14,8 @@ Kostenfaktors, sondern auch in Bezug auf die vielfältigen
 Einsatzmöglichkeiten mehr als nur ‚interessant' ist.
 
 ***Für den Einsatz des Adapters müssen die Kessel-, Solar- oder auch
-Wärmepumpen-Regler¹ einen BSB² oder LPB³ aufweisen!***  
-Dies ist i.d.R. bei (aktuelleren⁴) Reglern der Fall,
+Wärmepumpen-Regler einen BSB (Boiler System Bus) oder LPB (Local Process Bus) aufweisen!***  
+Dies ist i.d.R. bei (aktuelleren) Reglern der Fall,
 die von der Firma SIEMENS hergestellt wurden. Solche Regler werden bspw.
 von Heizungsherstellern wie Brötje oder Elco verbaut.   
 ***Ob dein Heizungssystem über einen solchen Bus verfügt, ist den spezifischen
@@ -38,10 +38,9 @@ niemals ein voller Funktionsumfang garantiert werden. Bei nicht
 gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
 Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
 
-Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield des
-Typs W5100⁵ lauffähig, erfahrungsgemäß ‚out of the box'. Aufgrund des
-geringeren Speichers ist die Verwendung von bspw. Arduino UNO, Arduino
-Nano o.ä. nicht möglich.
+Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield lauffähig, 
+erfahrungsgemäß ‚out of the box'. Aufgrund des geringeren Speichers ist 
+die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.
 Grundsätzlich ist die Verwendung von original Arduino-Komponenten zu
 empfehlen, da es bei dem Einsatz von günstigen Clones u.U. zu diffusen
 Problemen kommen kann.
@@ -54,7 +53,7 @@ der Pinbelegung in der Software (Datei *BSB\_lan\_config.h*) anzupassen
 
 Der Schaltplan des Adapters ist im Anhang zu finden. Außerdem wurden in
 der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
-bei Interesse kann man sich im Forum[⁶] melden oder direkt Frederik
+bei Interesse kann man sich im [FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
@@ -84,14 +83,6 @@ Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
      
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***  
-
----
-¹ Im Folgenden nur als „Regler" bezeichnet.  
-² BSB = Boiler System Bus  
-³ LPB = Local Process Bus  
-⁴ Ausnahme: Siehe Kap. [3.3](kap03.md)    
-⁵ Der Chip-Typ W5100 wird ohne Probleme unterstützt und wurde ausgiebig getestet, er ist einem W5500 daher immer vorzuziehen. Bzgl. Verwendung eines W5500-Boards s. Kap. [5](kap05.md) & [15.11](kap15.md#1511-ich-nutze-ein-w5500-lan-shield-was-muss-ich-tun).  
-⁶ [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)
     
      
      
