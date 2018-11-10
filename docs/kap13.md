@@ -1,7 +1,12 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
 [Zurück zu Kapitel 12](kap12.md)  
     
-# 13. Etwaige Fehlermeldungen und deren mögliche Ursachen #
+---
+    
+# 13. Etwaige Fehlermeldungen und deren mögliche Ursachen #  
+    
+---
+    
 
 ## 13.1 Fehlermeldung „unknown type \<xxxxxxxx\>" ##
 
@@ -13,7 +18,10 @@ Um den Fehler zu beheben, sollte das jeweilige Telegramm / die Command
 ID des betreffenden Parameters sowie der zugehörige Wert ausgelesen und
 gemeldet werden. Sollten mehrere Einstellungsoptionen für einen
 Parameter verfügbar sein, muss zusätzlich jede Option ausgelesen werden,
-damit eine eindeutige Zuordnung stattfinden kann.
+damit eine eindeutige Zuordnung stattfinden kann.  
+    
+---
+    
 
 ## 13.2 Fehlermeldung „error 7 (parameter not supported)" ##
 
@@ -33,7 +41,10 @@ Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
 wird, jedoch für diese Gerätefamilie nicht freigegeben ist, aktiviere
 bitte vorübergehend das Definement `#define DEBUG` in der Datei
 *BSB\_lan\_config.h* und führe dann den Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)).\
-Bei diesem Befehl werden trotz aktivem ‚HIDE\_UNKNOWN'-Definement etwaige error7-Fehlermeldungen angezeigt.
+Bei diesem Befehl werden trotz aktivem ‚HIDE\_UNKNOWN'-Definement etwaige error7-Fehlermeldungen angezeigt.  
+    
+---
+    
 
 ## 13.3 Fehlermeldung „query failed" ##
 
@@ -43,7 +54,10 @@ Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
 Mögliche Ursachen sind meist hardwareseitig zu suchen (bspw. fehlerhafte
 RX- und/oder TX-Verbindung, falsch verbaute Komponenten oder auch ein
 timeout aufgrund eines ausgeschalteten oder nicht angeschlossenen
-Reglers).
+Reglers).  
+    
+---
+    
 
 ## 13.4 Fehlermeldung „FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar" ##
 
@@ -55,6 +69,9 @@ Der gewünschte Parameter (oder auch generell alle Parameter) muss in
 diesem Fall als schreibbar definiert werden. Die hierfür notwendige
 Vorgehensweise ist in Kap. [5](kap05.md) beschrieben.
      
+    
+---
+    
      
 [Weiter zu Kapitel 14](kap14.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
