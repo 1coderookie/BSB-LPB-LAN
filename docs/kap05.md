@@ -190,10 +190,16 @@ vor der Verwendung des Adapters angepasst werden:
 
     Wenn bereits ein Raumgerät (RGT1) vorhanden ist, kann bzw. sollte
     der Adapter u.U. als RGT2 am angeschlossenen Regler angemeldet
-    werden, um etwaige Adresskollisionen[^19] zu vermeiden:  
+    werden, um etwaige Adresskollisionen zu vermeiden:  
     `BSB bus(68,69,7);`
 
-    ***Hinweis:***  
+    ***Hinweise:***  
+    *Eine Adresskollision wurde bisher nur bei einem RGB (QAA55) 
+    und einem Adapter festgestellt, die beide gleichzeitig als 
+    Raumgerät 1 angemeldet waren. Ein RGT (QAA75) und ein Adapter 
+    mit gleichzeitiger Anmeldung als Raumgerät 1 verursachte im 
+    Testbetrieb hingegen keine Adresskollision.*  
+    
     *Bitte beachte, dass ein als RGT1 angemeldeter Adapter eventuell
     keine Temperaturen an einen HK2 senden kann, und ein als RGT2
     angemeldeter Adapter eventuell keine Temperaturen an einen HK1
