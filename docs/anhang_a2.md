@@ -1,7 +1,15 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Anhang A1](anhang_a1.md)  
+[Zurück zu Anhang A1](anhang_a1.md)    
     
-# Anhang A2: Anmerkungen zum Schaltplan #
+---
+    
+
+    
+# Anhang A2: Anmerkungen zum Schaltplan #  
+    
+---
+    
+
 
 ## A2.1 Kurze Legende zum Schaltplan ##
 
@@ -15,7 +23,11 @@ RPI = Raspberry Pi
 CL+/- = BSB-Anschluss  
 DB/MB = LPB-Anschluss  
 TXD = Digitalpin Senden  
-RXD = Digitalpin Empfangen  
+RXD = Digitalpin Empfangen    
+    
+---
+    
+
     
     
 ## A2.2 Teileliste ##
@@ -34,20 +46,26 @@ Für den Einsatz des Adapters an einem ***Raspberry*** *zusätzlich*:
 1x Transistor BC547A (→ Q12)  
     
 Optional:  
-Anschlussklemmen, Pinheader etc. für die Leitungen.
+Anschlussklemmen, Pinheader etc. für die Leitungen.  
+    
+---
+    
+
 
 ## A2.3 Generelle Hinweise ##
 
 ***Vor dem Löten gilt: Bitte den Schaltplan aufmerksam studieren!***
 
-Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem
-***Arduino*** zwingend die Verbindung SJ1 herzustellen!  
+***Wichtig:***  
+
+*Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem
+***Arduino*** *zwingend die Verbindung SJ1 herzustellen!*  
 *Die Bestückung von R11-13 sowie Q11&12 ist nicht nötig!*
 
-Für den Einsatz an einem ***Raspberry*** sind jedoch SJ2 und SJ3 zu
-setzen!  
-Ebenso sind in diesem Verwendungsfall die Komponenten R11-13 und Q11&12
-zwingend erforderlich!  
+*Für den Einsatz an einem ***Raspberry*** sind jedoch SJ2 und SJ3 zu
+setzen!*  
+*Ebenso sind in diesem Verwendungsfall die Komponenten R11-13 und Q11&12
+zwingend erforderlich!*  
     
 Die folgenden Hinweise ersetzen kein grundsätzliches
 Elektronik-Vorwissen, könnten aber vielleicht doch dem einen oder
@@ -76,7 +94,11 @@ nicht-gesetzte Lötverbindungen („SJ" bei der fertigen Platine) etc.
 können ein unerklärliches und schwer zu diagnostizierendes Fehlverhalten
 des Adpaters bis hin zu einem eventuellen Reglerdefekt nach sich ziehen!
 
-Viel Erfolg!
+Viel Erfolg!  
+    
+---
+    
+
 
      
      
