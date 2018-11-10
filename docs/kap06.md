@@ -33,7 +33,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     Mega 2560 auswählen (COM-Port) und dann unter ‚Werkzeuge' den
     ‚Seriellen Monitor' starten.
 
-5.  a\) Wird der angeschlossene Regler automatisch korrekt erkannt, steht am
+5.  Wird der angeschlossene Regler automatisch korrekt erkannt, steht am
     Anfang der Ausgabe des seriellen Monitors bei „Device family" und
     „Device variant" jeweils ein Wert, der nicht „0" ist.  
     
@@ -67,7 +67,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     die entsprechenden Daten wie beschrieben auslesen und melden.*  
     
     
-    b\) Wird der angeschlossene Regler nicht automatisch korrekt erkannt,
+    Wird der angeschlossene Regler *nicht* automatisch korrekt erkannt,
     steht bei „Device family" und „Device variant" jeweils eine „0",
     zusätzlich stehen vor „Device family" sechs Zeilen „query failed".  
     
@@ -86,8 +86,10 @@ Dazu bietet sich folgende Vorgehensweise an:
     ```
 
     Meist liegt der Grund hierfür dann in einem Problem des
-    Hardware-Setups oder der Verkabelung. Weitere Hinweise zur
-    Fehlersuche finden sich im Kapitel [14](kap14.md).  
+    Hardware-Setups oder der Verkabelung, da die Parameter 
+    6225 und 6226 nicht erfolgreich abgerufen werden konnten 
+    ("[query failed](kap13.md#133-fehlermeldung-query-failed)"). 
+    Weitere Hinweise zur Fehlersuche finden sich im Kapitel [14](kap14.md).  
 
     
 ---
