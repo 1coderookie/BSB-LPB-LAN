@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 2](kap02.md)  
+[Zurück zu Kapitel 2](kap02.md)    
+    
+---
+    
+
     
 
 # 3. Unterstützte Heizungssysteme und Regler #
@@ -358,7 +362,11 @@ Raumgerät „Brötje IDA" angeschlossen werden.
 
 ***ACHTUNG: An keinem dieser Anschlüsse ist BSB-LAN anschließbar!***
 
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 4](kap04.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
