@@ -4,7 +4,7 @@
 
 # 3. Unterstützte Heizungssysteme und Regler #
 
-Prinzipiell unterstützt BSB-LAN von der Firma Siemens hergestellte
+Prinzipiell unterstützt BSB-LAN von der Firma SIEMENS hergestellte
 (Heizungs-)Regler, die einen BSB und/oder LPB aufweisen. Diese werden
 von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
 
@@ -13,7 +13,9 @@ Aus aktuellem Anlass sei bereits hier darauf hingewiesen, dass die
 Heizungshersteller offensichtlich eine neue Heizungs- und
 Reglergeneration auf den Markt gebracht haben, die nach bisherigem
 Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje))!***
-
+    
+---
+    
 ## 3.1 Erfolgreich getestete Heizungssysteme ##
 
 Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
@@ -54,7 +56,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 6227 Konfiguration - Objektverzeichnis-Version: 1.0  
 6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014
 ```
-     
+    
+---
     
 ### 3.1.1 Brötje ###
 
@@ -118,7 +121,9 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 ***ACHTUNG:  
 Die neuen Modellreihen Brötje WLS/WLC und
 BOK sind NICHT mit BSB-LAN kompatibel!***
-
+    
+---
+    
 ### 3.1.2 Elco ###
 
 -   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe)
@@ -139,7 +144,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner)
 
 -   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\]
-
+    
+---
+    
 ### 3.1.3 Weitere Hersteller ###
 
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)
@@ -157,7 +164,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner)
 
 -   Weishaupt WTU-25 G mit WRS-CPU B2/E \[RVS23.220\] (Ölbrenner)
-
+    
+---
+    
 ## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler ##
 
 Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
@@ -188,7 +197,7 @@ Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils
 spezifischen Parameter möglich, die die Einstellungen und Funktionen des
 EWMs definieren und beschreiben.
 
-Tabelle 1: Erweiterungsmodul AVS75.390
+*Tabelle 1: Erweiterungsmodul AVS75.390*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
@@ -197,12 +206,12 @@ Tabelle 1: Erweiterungsmodul AVS75.390
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 
     
-    
-    
 ***Hinweis:  
 Im Folgenden nicht aufgeführte Regler bitte wie in Kap. [10](kap10.md) beschrieben auslesen und melden.
 Danke!***
-
+    
+---
+    
 ### 3.2.1 LMx-Regler ###
 
 Im Folgenden werden die Regler des Typs LMS und LMU aufgeführt. Diese
@@ -210,7 +219,7 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 
 Regler der Serie LMS scheinen die Nachfolger der LMU-Serie und somit die
 aktuelle Reglergeneration zu sein.  
-Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15[^13]
+Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
 scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
 Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
 aufweisen.
@@ -220,7 +229,7 @@ Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-Tabelle 2: LMS- und LMU-Regler[^14]
+*Tabelle 2: LMS- und LMU-Regler*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -240,15 +249,18 @@ Tabelle 2: LMS- und LMU-Regler[^14]
 | LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | x   | \-  | \-  |
 | LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | x   | \-  | \-  |
 | LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | x   | \-  | \-  |
-       
-
+    
+---
+    
 ### 3.2.2 RVx-Regler ###
 
 Im Folgenden werden die Regler des Typs RVA, RVP und RVS (aktueller
 Reglertyp) aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
 Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
 Solarsystemregler) zum Einsatz zu kommen.
-
+    
+---
+    
 #### 3.2.2.1 RVA- und RVP-Regler ####
 
 Regler des Typs RVA gehören anscheinend zur vorherigen Reglergeneration
@@ -264,7 +276,7 @@ weisen lediglich eine PPS-Schnittstelle auf.
 Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
 sehr eingeschränktem Umfang möglich.
 
-Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)[^15]
+*Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -273,10 +285,12 @@ Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)[^15]
 | RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | x   | \-  | \-  |
 
     
+---
+    
 #### 3.2.2.2 RVS-Regler ####
 
 Regler des Typs RVS scheinen die ‚aktuelle' Reglergeneration
-darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt[^16].
+darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen häufig sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
 Eine Ausnahme scheinen die Regler der Reihe RVS21 zu sein, die bei
@@ -289,7 +303,7 @@ RVS63.283-Regler bei Installation mit Solarthermie).
 Als Bedieneinheit kommt dabei i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-Tabelle 4: RVS-Regler (aktuelle Reglergeneration)[^17]
+*Tabelle 4: RVS-Regler (aktuelle Reglergeneration)*  
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -315,7 +329,8 @@ Tabelle 4: RVS-Regler (aktuelle Reglergeneration)[^17]
 | RVS63.283/460 (Elco)             | 90                      | ?                        | ?                          | ?                       | x   | x   | \-  |
 | RVS65.583/200 (Brötje)           | 116                     | 239                      | 101.4                      | 3.3                     | x   | x   | \-  |
     
-
+---
+    
 ## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje ##
 
 Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
@@ -332,7 +347,7 @@ Anschlüsse.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg">
     
-Anschlüsse des neuen Reglertyps einer Brötje WLC24 - inkompatibel mit BSB-LAN!     
+*Anschlüsse des neuen Reglertyps einer Brötje WLC24 - inkompatibel mit BSB-LAN!*     
     
     
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
