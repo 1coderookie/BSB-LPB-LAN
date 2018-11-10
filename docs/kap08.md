@@ -8,7 +8,9 @@ Da das Webinterface prinzipiell nur ‚aufgesetzt' ist, um eine Bedienung
 ohne weitere Programme wie bspw. FHEM zu ermöglichen, ist ein direkter
 Zugriff auf die einzelnen Funktionen und Parameter mittels anderer
 Programme grundsätzlich möglich.
-
+    
+---
+    
 ## 8.1 Auflistung und Beschreibung der URL-Befehle ##
 
 -   **Alle Kategorien auflisten:**
@@ -203,7 +205,7 @@ Programme grundsätzlich möglich.
     gezählten Starts und Betriebsstunden der beiden Stufen nach wie vor
     abgerufen werden.*  
         
-    Sollen die Brennerstarts und -laufzeiten von zweistufigen
+    *Sollen die Brennerstarts und -laufzeiten von zweistufigen
     (Öl-)Brennern geloggt werden, beachte bitte den entsprechenden
     Hinweis in Kap. [5](kap05.md).*  
 
@@ -311,13 +313,17 @@ Programme grundsätzlich möglich.
     CommandIDs:**
 
     Siehe hierzu den entsprechenden Punkt unter 8.2 Spezialfunktionen.
-
+    
+---
+    
 ## 8.2 Spezialfunktionen ##
 
 Der Übersichtlichkeit halber sind im Folgenden nochmals einige
 ausgewählte Spezialfunktionen bzw. spezielle URL-Befehle gesondert
 aufgeführt und beschrieben.
-
+    
+---
+    
 ### 8.2.1 Raumtemperatur übermitteln ###
 
 Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
@@ -339,7 +345,9 @@ Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
 ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
 große Fenster in Südlage etc.) befindet.*
-
+    
+---
+    
 ### 8.2.2 Präsenztaste simulieren ###
 
 Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
@@ -354,7 +362,9 @@ Zeitprogramm gültig. Die Präsenztaste wirkt nur im Automatikbetrieb!
 
 Es ist jedoch bisher noch nicht umfangreich getestet, ob diese Funktion
 bei jedem Regler Wirkung zeigt oder nicht.
-
+    
+---
+    
 ### 8.2.3 Manuellen TWW-Push ausführen ###
 
 Bei einigen Reglern ist die (nahezu undokumentierte) Funktion eines
@@ -366,7 +376,9 @@ entsprechende Meldung erscheint.
 Bei einigen Reglern kann diese Funktion mittels eines SET-Befehls
 erfolgen. Dieser lautet `http://<IP-Adresse>/S1601=1` - der
 Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
-
+    
+---
+    
 ### 8.2.4 Abrufen und Steuern mittels JSON ###
 
 ***Hinweis:***    
@@ -402,7 +414,9 @@ JSON erfolgen.
     Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
     Empfangen: "Parameter", "Status" (0 = Fehler, 1 = OK, 2 = Parameter read-only)  
     ```
-
+    
+---
+    
 ### 8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs ###
 
 *Hinweis: Es ist empfehlenswert, diese Abfrage einmalig auszuführen.*
