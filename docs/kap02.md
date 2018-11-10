@@ -3,7 +3,9 @@
     
 
 # 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle #
-
+    
+---
+    
 ## 2.1 BSB und LPB
 
 BSB (Boiler System Bus) und LPB (Local Process Bus) sind zwei
@@ -63,8 +65,9 @@ Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
 Geräte- und Segmentadressen sind den jeweiligen technischen
 Dokumentationen der Hersteller zu entnehmen. Hinsichtlich des LPB seien
-insbesondere die Dokumentationen „LPB Systemgrundlagen"⁷ und „LPB
-Projektierungsgrundlagen"⁸ empfohlen.
+insbesondere die Dokumentationen „LPB Systemgrundlagen" (Siemens Building 
+Technologies - Landis & Staefa Division: CE1N2030D) und „LPB Projektierungsgrundlagen" 
+(Siemens Building Technologies - Landis & Staefa Division: CE1N2032D) empfohlen.
 
 Bei einigen Reglern sind die entsprechenden Anschlüsse teilweise
 unterschiedlich gekennzeichnet:
@@ -111,8 +114,8 @@ Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder
 Adapters zur Folge haben!***
 
 Die entsprechende Polung bzw. Bezeichnung der Anschlüsse ist auf der
-Adapterplatine gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu
-beachten.
+Adapterplatine gekennzeichnet. Bei einem Nachbau sind der [Schaltplan](anhang_a1.md) 
+und die [Hinweise](anhang_a2.md) dazu zu beachten.
 
 Wenn mehrere Regler (bspw. wie im obigen Beispiel) vorhanden sind,
 bietet es sich derzeit noch an, pro Regler jeweils einen Adapter via BSB
@@ -121,9 +124,9 @@ anzuschließen, um den jeweiligen Zugriff zu realisieren. Eine
 Regler im LPB-Verbund via Adapter kann mittlerweile zwar erfolgen, doch
 ist diese Funktion noch nicht ausgiebig getestet worden. Um mit einem
 Adapter via LPB auf verschiedene Regler zuzugreifen, ist die jeweilige
-Angabe der reglerspezifischen Geräteadresse als Zieladresse nötig (siehe
-Kapitel 8. URL-Befehle und Spezialfunktionen). Alle Geräte (Regler und
-Adapter) müssen sich dabei im selben Segment befinden und grundsätzlich
+Angabe der reglerspezifischen Geräteadresse als Zieladresse nötig 
+(s. Kap. [8](kap08.md)). Alle Geräte (Regler und Adapter) müssen sich 
+dabei im selben Segment befinden und grundsätzlich
 gemäß den LPB-Projektierungsgrundlagen konfiguriert sein.
 
 Gewisse Funktionen scheinen im Übrigen nicht via LPB unterstützt zu
@@ -146,7 +149,7 @@ Busteilnehmer, max. Gesamtlänge 1000m).
 Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m)
 Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen
 bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt
-werden⁹.  
+werden (siehe „Brötje Montageanleitung für Raumgerät RGT/RGTK").  
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden
 (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer
 vorzuziehen.
@@ -156,13 +159,9 @@ prinzipiell immer mit den spezifischen Steckern erfolgen.
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können
 auch isolierte 6,3mm-Kabelschuhe verwendet werden.  
 
+    
 ---
-⁷ Siemens Building Technologies - Landis & Staefa Division: CE1N2030D  
-⁸ Siemens Building Technologies - Landis & Staefa Division: CE1N2032D  
-⁹ Siehe „Brötje Montageanleitung für Raumgerät RGT/RGTK"  
-
----
-
+    
 ## 2.2 PPS-Schnittstelle ##
 
 Die PPS-Schnittstelle findet sich bei älteren Reglern und stellt eine
