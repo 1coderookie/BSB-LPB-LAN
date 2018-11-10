@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 10](kap10.md)  
+[Zurück zu Kapitel 10](kap10.md)    
+    
+---
+    
+
     
 
 # 11. Nutzung von externen Programmen #
@@ -1551,9 +1555,10 @@ Unter ‚RegEx' folgende Syntax angeben:
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro16.jpg">
     
+  
     
+---
     
-     
      
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
