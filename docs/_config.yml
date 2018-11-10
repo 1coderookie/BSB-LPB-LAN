@@ -2,3 +2,8 @@ theme: jekyll-theme-hacker
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+title: Online-Version des Handbuchs für den BSB-LPB-LAN-Adapter
+description: Online-Version des Handbuchs für den BSB-LPB-LAN-Adapter 
+url: https://1coderookie.github.io/BSB-LPB-LAN
+author: Ulf Dieckmann
+lang: de-DE
