@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 5](kap05.md)  
+[Zurück zu Kapitel 5](kap05.md)    
+    
+---
+    
+
     
 
 # 6. Funktionsüberprüfung und erste Nutzung des Adapters #
@@ -78,7 +82,11 @@ Dazu bietet sich folgende Vorgehensweise an:
     Sollten in der Ausgabe nur kryptische Zeichenfolgen erscheinen, so ist 
     die eingestellte Baudrate zu überprüfen (unten rechts). Diese sollte auf
     115200 Baud eingestellt sein.
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 7](kap07.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
