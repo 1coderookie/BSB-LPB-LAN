@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Anhang B](anhang_b.md)  
+[Zurück zu Anhang B](anhang_b.md)    
+    
+---
+    
+
     
 # Anhang C: Changelog BSB-LAN-Software #
 
@@ -373,6 +377,10 @@ Version 0.5 -- 02.02.2015
 - added some images of the BSB adapter
 
 Version 0.1 -- 21.01.2015 -- initial version
+      
     
+---
+    
+
     
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
