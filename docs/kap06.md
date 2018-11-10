@@ -65,8 +65,19 @@ Dazu bietet sich folgende Vorgehensweise an:
 
     Meist liegt der Grund hierfür dann in einem Problem des
     Hardware-Setups oder der Verkabelung. Weitere Hinweise zur
-    Fehlersuche finden sich im Kapitel [14](kap14.md).
-
+    Fehlersuche finden sich im Kapitel [14](kap14.md).  
+    
+    Die folgende Abbildung zeigt exemplarisch eine Ausgabe des 'Seriellen 
+    Monitors' der Arduino IDE direkt nach dem Start mit einem automatisch
+    erkannten Regler. Die darauf folgenden Zeilen sind bereits empfangene
+    Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
+    Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
+    
+    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
+        
+    Sollten in der Ausgabe nur kryptische Zeichenfolgen erscheinen, so ist 
+    die eingestellte Baudrate zu überprüfen (unten rechts). Diese sollte auf
+    115200 Baud eingestellt sein.
      
      
 [Weiter zu Kapitel 7](kap07.md)      
