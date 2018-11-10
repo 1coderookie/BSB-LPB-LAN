@@ -2,8 +2,10 @@
 [Zurück zu Kapitel 11](kap11.md)  
     
 
-# 12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter #
-
+# 12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter #  
+    
+---
+    
 ## 12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20 ##
 
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
@@ -46,14 +48,22 @@ beliebten Messkomponenten wird an dieser Stelle nicht weiter
 eingegangen, es wird hiermit lediglich auf die üblichen
 Informationsquellen verwiesen. Dennoch seien im Folgenden ein paar
 hilfreiche Tipps erwähnt, die den Einsatz und Betrieb zuverlässiger
-gestalten.
+gestalten.  
+    
+    
+---
+    
 
 ### 12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
 
 ***Bitte beachte:***    
 *Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-BSB\_lan\_config.h definiert werden.*
+BSB\_lan\_config.h definiert werden.*  
+    
+    
+---
+    
 
 ### 12.1.2 Hinweise zu DS18B20-Temperatursensoren ###
 
@@ -115,7 +125,11 @@ entfernt montiert werden.
 Pufferspeichern etc.), die bereits an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
-eine zusätzliche Montage von DS18B20-Sensoren leiden!*
+eine zusätzliche Montage von DS18B20-Sensoren leiden!*  
+    
+    
+---
+    
     
 ## 12.2 MAX!-Komponenten ##
 
@@ -179,7 +193,7 @@ entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten
 ID).
 
 Wichtiger Hinweis für diejenigen, die die MAX!-Thermostate über einen
-zum CUL/CUNO geflashten Max!Cube[^27] verwenden:  
+zum CUL/CUNO geflashten Max!Cube (Informationen diesbzgl. s. [hier](https://forum.fhem.de/index.php/topic,38404.0.html)) verwenden:  
 Wenn bei der Einrichtung des CUNO BSB-LAN nicht lief (oder anderweitig
 beschäftigt war), muss an den betreffenden Geräten nochmals die
 Pairing-Taste gedrückt werden. Denn nur bei *diesem* Pairing-Prozess
@@ -189,18 +203,20 @@ sonst intern verwendeten ID (die auch u.a. auch FHEM verwendet)
 Ansonsten weiß BSB-LAN bei den anderen Telegrammen des Cube nämlich
 nicht, um welche MAX!-Geräte es geht.  
     
-Wird im weiteren Verlauf bspw. mittels FHEM[^28] die jeweilige
+Wird im weiteren Verlauf bspw. mittels FHEM (Hinweise zur Konfiguration 
+des MAX-Moduls unter FHEM siehe [hier](https://wiki.fhem.de/wiki/MAX)) die jeweilige
 Temperatur mehrerer Wand- und Heizkörperthermostate erfasst, so lässt
 sich daraus eine gemittelte Ist- und Soll-Temperatur bilden. Diese kann
 dann dem Heizungsregler übermittelt werden, um den Wärmeerzeuger
 bedarfsgerechter zu steuern. Eine solche Lösung lässt sich [hier](https://forum.fhem.de/index.php/topic,60900.0.html)
 nachlesen.  
-FHEM-Forumsmitglied „Andreas29" hat dieses Anwendungsbeispiel ohne FHEM
+FHEM-Forumsmitglied *„Andreas29"* hat dieses Anwendungsbeispiel ohne FHEM
 umgesetzt. Eine ausführliche Beschreibung samt der benötigten
 angepassten Datei *BSB\_lan\_custom.h* findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382).  
 Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät light"
-ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.
+ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.  
     
+---
     
 ## 12.3 Eigene Hardwarelösungen ##
 
@@ -213,8 +229,9 @@ was auch für andere Nutzer hilfreich sein könnte, so würde ich mich
 freuen, wenn du dich mit mir in Verbindung setzt. Eventuell kann
 auch dein Beispiel an dieser Stelle mit aufgeführt werden. Schicke mir
 dazu gerne eine Email an `adapter [ät] quantentunnel.de`.  
-Vielen Dank!
+Vielen Dank!  
     
+---
     
 ### 12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
 
@@ -228,17 +245,19 @@ nachgebildet.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Raumgerät_light_innen.jpg">
     
-Das Innenleben des Raumgeräteersatzes.  
+*Das Innenleben des Raumgeräteersatzes.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Raumgerät_light_Display.jpg">
     
-Das Display des Raumgeräteersatzes.  
+*Das Display des Raumgeräteersatzes.*  
     
 
 Eine ausführliche Beschreibung samt Schaltplan und Software ist [hier](https://forum.fhem.de/index.php/topic,91867.0.html) zu
 finden.  
-        
+    
+---
+    
     
 ### 12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
 
