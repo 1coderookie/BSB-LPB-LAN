@@ -90,18 +90,18 @@ Anschlüsse.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
 
-BSB & FB (CL+/CL-) und LPB (DB/MB) bei einem Brötje ISR-RVS43.222-Regler.  
+*BSB (FB & CL+/CL-) und LPB (DB/MB) bei einem Brötje ISR-RVS43.222-Regler.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
     
-b = BSB (CL+/CL-) und a = LPB (DB/MB) bei einem Siemens RVS63.283-Regler.  
+*Anschlüsse b = BSB (CL+/CL-) und a = LPB (DB/MB) bei einem Siemens RVS63.283-Regler.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
     
-BSB (CL+/CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
-→ Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.  
+*BSB (CL+/CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
+→ Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
     
 
