@@ -44,7 +44,9 @@ einfache .txt-Datei. Schicke die Datei nun entweder an `bsb [ät]
 code-it.de` oder melde dich [hier](https://forum.fhem.de/index.php/topic,29762.0.html) im FHEM-Forum.
 
 Vielen Dank für deine Unterstützung!
-
+    
+---
+    
 ## 10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger) ##
 
 ***Achtung:***  
@@ -139,12 +141,12 @@ handelt.*
 ***WICHTIG:***  
 *Schreibe nun **zusätzlich** zum Telegramm die entsprechende
 Parameternummer, die genaue Parameterbezeichnung sowie ggf. die
-jeweilige Werte-Einheit hinzu!*
+jeweilige Werte-Einheit hinzu!*  
 
-Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
+*Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
 den im Moment der Abfrage angezeigten Wert!  
-*Dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
-Informationen das reine Telegramm nutzlos ist! *
+Dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
+Informationen das reine Telegramm nutzlos ist! *  
 
 Wenn du einen weiteren Parameter auslesen möchtest, wiederhole das
 beschriebene Procedere entsprechend. Es bietet sich an, vorher wieder
@@ -153,7 +155,10 @@ Parameter aufgerufen hast.
 
 Wenn du sämtliche neuen Parameter (und/oder Einstellungsoptionen neuer
 Parameter) samt Telegrammen und Beschreibungen etc. notiert und das
-Auslesen somit beendet hast, kannst du den seriellen Monitor schließen.
+Auslesen somit beendet hast, kannst du den seriellen Monitor schließen.  
+    
+---
+    
 
 ## 10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer) ##
 
@@ -170,13 +175,17 @@ Textdatei kopieren.
 ***WICHTIG:***  
 *Schreibe nun **zusätzlich** zum Telegramm die entsprechende
 Parameternummer, die genaue Parameterbezeichnung sowie ggf. die
-jeweilige Werte-Einheit hinzu!  
-Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
+jeweilige Werte-Einheit hinzu!*  
+
+*Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
 den im Moment der Abfrage angezeigten Wert!  
 Dies ist zwingend notwendig, da das reine Telegramm ohne die
 aufgezählten zusätzlichen Informationen nutzlos ist!*
 
-Fahre so für jeden weiteren Parameter fort.
+Fahre so für jeden weiteren Parameter fort.  
+    
+---
+    
 
 ## 10.3 Implementieren neuer Command IDs (für Programmierer) ##
 
@@ -278,8 +287,11 @@ Letzte zwei Bytes: CRC-Checksumme
     Erstellen nochmals, ob du wirklich die aktuelle *BSB\_lan\_defs.h*
     des GitHub-Repositoriums heruntergeladen hast, da manchmal die
     Dateien aktualisiert werden, ohne dass direkt eine neue Version
-    veröffentlicht wird.
-
+    veröffentlicht wird.  
+    
+---
+    
+    
 ## 10.4 Beispiel für eine ‚Meldedatei' ##
 
 Hier ein Beispiel für eine erstellte ‚Meldedatei', die alle notwendigen
