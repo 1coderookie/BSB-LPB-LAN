@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 15](kap15.md)  
+[Zurück zu Kapitel 15](kap15.md)    
+    
+---
+    
+
     
 # 16. Offene Punkte #
 
@@ -32,7 +36,11 @@
 
 -   Unterstützung für heizungsseitige Fehlermeldungen hinzufügen.
 
--   Weitere Beispiele für die Einbindung in verschiedene SmartHome-Systeme erstellen.
+-   Weitere Beispiele für die Einbindung in verschiedene SmartHome-Systeme erstellen.  
+    
+---
+    
+
      
      
 [Weiter zu Kapitel 17](kap17.md)      
