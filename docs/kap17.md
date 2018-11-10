@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 16](kap16.md)  
+[Zurück zu Kapitel 16](kap16.md)    
+    
+---
+    
+
     
 # 17. Weiterführende Informationen und Quellen #
 
@@ -43,7 +47,11 @@ Beispielinstallationen und Skripte.
 Bei Problemen mit einer umfangreicheren OneWire-Installation sei ein
 Blick auf die technischen Anforderungen von OneWire (speziell
 hinsichtlich der Bus-Typologie und der Leitungslängen) und auf die
-Hinweise im entsprechenden Kapitel empfohlen.  
+Hinweise im entsprechenden Kapitel empfohlen.    
+    
+---
+    
+
      
      
 [Weiter zu Anhang A1](anhang_a1.md)      
