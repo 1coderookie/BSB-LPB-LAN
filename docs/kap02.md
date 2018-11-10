@@ -1,5 +1,9 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zu Kapitel 1](kap01.md)  
+[Zurück zu Kapitel 1](kap01.md)    
+    
+---
+    
+
     
 
 # 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle #
@@ -216,7 +220,11 @@ Noch offen ist, ob wegen des Punkt-zu-Punkt-Designs ein QAA mit dem
 Adapter friedlich koexistieren kann oder ob man sich am Ende für eine
 Variante entscheiden muss.
     
-     
+       
+    
+---
+    
+
      
 [Weiter zu Kapitel 3](kap03.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
