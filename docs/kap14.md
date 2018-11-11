@@ -164,4 +164,7 @@ Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)
      
      
 [Weiter zu Kapitel 15](kap15.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
