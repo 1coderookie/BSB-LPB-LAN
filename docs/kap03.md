@@ -360,7 +360,7 @@ Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
 (On/Off), ein entsprechendes QAA-Raumgerät oder das neue ‚smarte'
 Raumgerät „Brötje IDA" angeschlossen werden.
 
-***ACHTUNG: An keinem dieser Anschlüsse ist BSB-LAN anschließbar!***
+***ACHTUNG: An keinem dieser Anschlüsse ist der BSB-LPB-LAN-Adapter anschließbar!***
 
        
     
