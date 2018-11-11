@@ -84,7 +84,7 @@ Zugang zu komplexen Einstellungen wie den Tagesprogrammen zu
 erleichtern.
 
 Eine grafische Darstellung des optional erstellbaren Logfiles auf einer 
-mSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
+microSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log.jpg">
     
