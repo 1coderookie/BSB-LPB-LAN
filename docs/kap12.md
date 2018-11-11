@@ -274,4 +274,7 @@ Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](http
      
      
 [Weiter zu Kapitel 13](kap13.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
