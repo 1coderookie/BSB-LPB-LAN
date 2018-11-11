@@ -84,6 +84,9 @@ Parameter etc. sind im obigen Beispiel anzupassen.*
     
 
 [Weiter zu Kapitel 10](kap10.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
 
 
