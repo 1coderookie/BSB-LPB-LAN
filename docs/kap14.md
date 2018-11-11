@@ -43,6 +43,7 @@ kommen, sind die entspr. Punkte bei der Installation zu berücksichtigen (s. Kap
 & [14.10](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden))
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones)  
+- Router- und/oder Firewall-Einstellungen überprüfen
     
 ---
     
