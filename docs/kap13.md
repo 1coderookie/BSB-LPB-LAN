@@ -74,4 +74,7 @@ Vorgehensweise ist in Kap. [5](kap05.md) beschrieben.
     
      
 [Weiter zu Kapitel 14](kap14.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
