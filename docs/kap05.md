@@ -262,4 +262,7 @@ vor der Verwendung des Adapters angepasst werden:
 
      
 [Weiter zu Kapitel 6](kap06.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
