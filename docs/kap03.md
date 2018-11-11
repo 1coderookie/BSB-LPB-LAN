@@ -369,4 +369,7 @@ Raumgerät „Brötje IDA" angeschlossen werden.
 
      
 [Weiter zu Kapitel 4](kap04.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
