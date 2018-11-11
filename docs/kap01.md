@@ -5,7 +5,7 @@
 
     
 
-# 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software ##
+# 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software  
 Der BSB-LPB-LAN-Adapter und die dazugehörige BSB-LAN-Software wurden
 entwickelt, um eine Anbindung von Heizungssystemen bzw. -reglern ans LAN
 und somit auch einen entsprechenden Fernzugriff zu ermöglichen.  
@@ -96,3 +96,5 @@ Arduino-Version!***
      
 [Weiter zu Kapitel 2](kap02.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+    
+###### *&copy; Ulf Dieckmann*
