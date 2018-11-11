@@ -1602,4 +1602,7 @@ Unter ‚RegEx' folgende Syntax angeben:
     
      
 [Weiter zu Kapitel 12](kap12.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
