@@ -82,5 +82,8 @@
 
      
 [Weiter zu Kapitel 5](kap05.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
 
