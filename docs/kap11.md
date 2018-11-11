@@ -84,7 +84,7 @@ und \"Rücklauftemperatur\" und weist diese Differenz dem Reading
 \"Spreizung\" zu.
 
 ***Bitte beachte:***  
-*Die Regex-Bedingungen müssen vom Beginn des Strings an
+*Die RegEx-Bedingungen müssen vom Beginn des Strings an
 (also der Parameternummer wie bspw. 8700) matchen und nicht erst ab
 einem späteren Teil des Strings.*  
     
@@ -104,6 +104,47 @@ attr THISION set0URL http://192.168.178.88/I10000=$val
 attr THISION timeout 5
 attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorlauftemperatur",0)-ReadingsVal("THISION","Ruecklauftemperatur",0));; }
 ```  
+    
+Bei dem obigen Beispiel erfolgt die Darstellung der jeweiligen 
+Readings als numerischer Wert.  
+Soll die Darstellung wie bei den PullDown-Menüs im Webinterface 
+im Klartext erfolgen, so müssen die regulären Ausdrücke entsprechend 
+angepasst werden.  
+Im Folgenden ein Beispiel für die Parameter '700 - Betriebsart' und 
+'8000 - Status Heizkreis 1'. 
+    
+```
+attr THISION reading3Name Betriebsart
+attr THISION reading3Regex 700 .*-[ \t]+(.*)
+attr THISION reading4Name Status Heizkreis 1
+attr THISION reading4Regex 8000 .*-[ \t]+(.*)
+```
+    
+Die Nummerierung der zuvor aufgeführten Readings wird hierbei weitergeführt, 
+die Readings sind in der Zeile 'attr THISION userattr' hinzuzufügen.  
+Außerdem ist die URL dabei um die Parameter 700 und 8000 zu ergänzen.  
+Zusammengefasst sieht das Ganze dann so aus:
+    
+```
+define THISION HTTPMOD http://192.168.178.88/8700/8743/8314/700/8000 300
+attr THISION userattr reading0Name reading0Regex reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex reading4Name reading4Regex readingOExpr set0Name set0URL
+attr THISION event-on-change-reading .*
+attr THISION reading0Name Aussentemperatur
+attr THISION reading0Regex 8700 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading1Name Vorlauftemperatur
+attr THISION reading1Regex 8743 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading2Name Ruecklauftemperatur
+attr THISION reading2Regex 8314 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading3Name Betriebsart
+attr THISION reading3Regex 700 .*-[ \t]+(.*)
+attr THISION reading4Name Status Heizkreis 1
+attr THISION reading4Regex 8000 .*-[ \t]+(.*)
+attr THISION readingOExpr $val=~s/[\r\n]//g;;$val
+attr THISION set0Name Istwert
+attr THISION set0URL http://192.168.178.88/I10000=$val
+attr THISION timeout 5
+attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorlauftemperatur",0)-ReadingsVal("THISION","Ruecklauftemperatur",0));; }
+```
     
     
 ***Beispielscript für die Abfrage und Ansteuerung eines Relaisboards:***
