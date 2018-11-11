@@ -227,5 +227,7 @@ Variante entscheiden muss.
 
      
 [Weiter zu Kapitel 3](kap03.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
 
