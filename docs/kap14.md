@@ -24,7 +24,7 @@
 - Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
 - Evtl. falsche Pinbelegung (Rx/Tx)
 - Evtl. kalte Lötstellen
-- *Arduino: Kontakt SJ1 nicht hergestellt*
+- *Arduino-Version des Adapters: Kontakt SJ1 auf der Platine evtl. nicht hergestellt*
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
     
 ---
@@ -33,16 +33,16 @@
 ## 14.3 Zugriff auf das Webinterface nicht möglich ##
 
 - Adapter hat keine Stromversorgung
-- Adapter ist nicht mit dem LAN verbunden
+- Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden
 - IP- und/oder MAC-Adresse des Adapters ist nicht korrekt
 - Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
 aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
-- → Testweise Reset-Knopf des Arduino bzw. LAN-Shields drücken
+- Zugriff nach Stromausfall nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
 - LAN-Shield mit W5100-Chip bestückt? Sollte ein W5500 zum Einsatz
 kommen, sind die entspr. Punkte bei der Installation zu berücksichtigen (s. Kap. [5](kap05.md)
 & [14.10](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden))
-- Adapter und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
-Problemen bei der Verwendung von günstigen ‚China'-Arduinos)  
+- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
+Problemen bei der Verwendung von günstigen Clones)  
     
 ---
     
@@ -53,7 +53,7 @@ Problemen bei der Verwendung von günstigen ‚China'-Arduinos)
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
 - Siehe Punkt [„Zugriff auf das Webinterface nicht möglich"](kap14.md#143-zugriff-auf-das-webinterface-nicht-möglich)
 - Rx- und/oder Tx-Belegung nicht korrekt, Pinbelegung und/oder Adapteranschluss
-stimmt nicht mit der Angabe in der Datei *BSB\_lan\_config.h* überein
+stimmt nicht mit der Angabe in der Datei *BSB_lan_config.h* überein
 - Falscher Bus-Typ (BSB/LPB)  
     
 ---
@@ -79,7 +79,7 @@ stimmt nicht mit der Angabe in der Datei *BSB\_lan\_config.h* überein
 ## 14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden ##
 
 - Adapter ist evtl. als RGT2 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY`)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
@@ -94,14 +94,14 @@ stimmt nicht mit der Angabe in der Datei *BSB\_lan\_config.h* überein
 ## 14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden ##
 
 - Adapter ist evtl. als RGT1 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY`)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
 
 ## 14.10 Einstellungen des Reglers können nicht via Adapter verändert werden ##
 
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY`)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
     
 ---
     
@@ -119,8 +119,8 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 
 - Es ist keine microSD-Karte eingelegt
 - Das Loggen auf microSD-Karte war oder ist deaktiviert
-- Die Logdatei ist sehr groß, die (graphische) Darstellung dauert entsprechend länger  
-- Die grafische Darstellung (`http://<IP-Adresse>/DG`) der Logdatei kann aufgrund von javascript-Blockern nicht erfolgen  
+- Die Logdatei ist sehr groß, jegliche Darstellung dauert entsprechend länger  
+- Die grafische Darstellung (`http://<IP-Adresse>/DG`) der Logdatei kann aufgrund von JavaScript-Blockern nicht erfolgen  
     
 ---
     
