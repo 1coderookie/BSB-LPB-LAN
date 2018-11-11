@@ -1554,9 +1554,9 @@ angeben:
     
 Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
 
-Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
+Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
  oder 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
  entsprechend visualisiert wird, müssen
 noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die
 Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
