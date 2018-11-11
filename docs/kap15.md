@@ -404,4 +404,7 @@ Hobby-Projekt ist.
      
      
 [Weiter zu Kapitel 16](kap16.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
