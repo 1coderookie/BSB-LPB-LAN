@@ -58,11 +58,11 @@ Anschlussklemmen, Pinheader etc. für die Leitungen.
 
 ***Wichtig:***  
 
-*Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem
+*Bei Verwendung der vorgefertigten Platine ist für den Einsatz an einem*
 ***Arduino*** *zwingend die Verbindung SJ1 herzustellen!*  
 *Die Bestückung von R11-13 sowie Q11&12 ist nicht nötig!*
 
-*Für den Einsatz an einem ***Raspberry*** sind jedoch SJ2 und SJ3 zu
+*Für den Einsatz an einem* ***Raspberry*** *sind jedoch SJ2 und SJ3 zu
 setzen!*  
 *Ebenso sind in diesem Verwendungsfall die Komponenten R11-13 und Q11&12
 zwingend erforderlich!*  
