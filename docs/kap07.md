@@ -109,4 +109,7 @@ nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 
      
 [Weiter zu Kapitel 8](kap08.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
