@@ -502,5 +502,8 @@ damit eine entsprechende Anpassung vorgenommen werden kann.
 
      
 [Weiter zu Kapitel 9](kap09.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
 
