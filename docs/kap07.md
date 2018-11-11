@@ -51,7 +51,7 @@ DHT22-Sensoren zeigt an, dass diese nicht definiert sind.
 
 Bei dem folgenden abgebildeten Beispiel sind lediglich DS18B20-Sensoren
 definiert. Es werden keinerlei 24h-Mittelwerte berechnet und keinerlei 
-Parameter oder Werte auf die interne mSD-Karte geloggt.  
+Parameter oder Werte auf die interne microSD-Karte geloggt.  
 Darüber hinaus ist zu sehen, dass als Bus-System für den Adapteranschluss 
 der BSB und der Adapter selbst als RGT2 definiert ist ("Bus-System: BSB (7, 0)").
     
@@ -63,7 +63,7 @@ der URL-Befehle.
 Grau hinterlegte Zeilen zeigen an, dass der Befehl nicht verfügbar ist.
 Im nachfolgend gezeigten Beispiel betrifft dies die nicht-installierten
 DHT22-Sensoren, die fehlenden MAX!-Komponenten sowie die Befehle für die 
-hier deaktivierte Loggingfunktion auf eine mSD-Karte.
+hier deaktivierte Loggingfunktion auf eine microSD-Karte.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_url-befehle.png">
     
