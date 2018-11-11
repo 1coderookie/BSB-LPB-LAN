@@ -97,4 +97,7 @@ Dazu bietet sich folgende Vorgehensweise an:
 
      
 [Weiter zu Kapitel 7](kap07.md)      
-[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
+    
+###### *&copy; Ulf Dieckmann*
+
