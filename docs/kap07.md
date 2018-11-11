@@ -99,7 +99,7 @@ bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird.
 *Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue
 Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett
 beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
-oder auch des SD-Logfiles kann u.U. eine längere Zeit in Anspruch
+oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch
 nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 
        
