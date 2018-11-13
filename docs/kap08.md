@@ -395,7 +395,7 @@ JSON erfolgen.
 
 -   **Abfrage von Kategorien:**
 
-    `http://<IP-Adresse>/JK=<xx>`
+    `http://<IP-Adresse>/JK=<xx>`  
     Abfrage einer spezifischen Kategorie (\<xx\>=Kategorienummer)
 
     `http://<IP-Adresse>/JK=ALL`  
