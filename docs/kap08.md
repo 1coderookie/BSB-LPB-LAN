@@ -403,8 +403,8 @@ JSON erfolgen.
 
 -   **Abfragen und Setzen von Parametern per HTTP POST:**
 
-    Hierbei ist der Aufruf der URL\
-    `http://<IP-Adresse>/JQ` für eine Abfrage und  
+    Hierbei ist der Aufruf der URL  
+    `http://<IP-Adresse>/JQ` für eine Abfrage und   
     `http://<IP-Adresse>/JS` für das Setzen von Parametern zu verwenden.
 
     Folgende Parameter sind dabei möglich:
