@@ -1601,7 +1601,7 @@ Unter ‚RegEx' folgende Syntax angeben:
 ---
     
     
-## 11.4 Loxone ##  
+## 11.5 Loxone ##  
 
 ***Die Loxone-Beispiele stammen vom FHEM-Forumsmitglied „Loxonaut".  
 Vielen Dank!***
