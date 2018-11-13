@@ -186,7 +186,7 @@ attr EthRelais timeout 5
 Vielen Dank!***
 
 Es existiert derzeit kein komplettes Binding fuer BSB-LAN. Mit dem HTTP
-Binding[^25] und der Javascript Transformation[^26] ist es allerdings
+Binding und der Javascript Transformation ist es allerdings
 durchaus möglich, Werte auszulesen und auch zu schreiben.
 
 Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die
@@ -1451,8 +1451,8 @@ if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis)
 
 ## 11.4 ioBroker ##  
 
-*Die ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas\_B".  
-Vielen Dank!*
+***Die ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
+Vielen Dank!***
 
 ***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
 Solltemperatur'):***  
@@ -1600,6 +1600,58 @@ Unter ‚RegEx' folgende Syntax angeben:
     
 ---
     
+    
+## 11.4 Loxone ##  
+
+***Die Loxone-Beispiele stammen vom FHEM-Forumsmitglied „Loxonaut".  
+Vielen Dank!***
+ 
+***Abfrage von Parametern:***  
+Die Abfrage von Parametern erfolgt in Loxone mittels virtuellen HTTP Eingängen und der JSON-Funktion von BSB-LAN (URL-Befehl `/JQ=`). Eine detailliertere Beschreibung der virtuellen HTTP Eingänge und der Befehle ist in den Dokumentationen zu Loxone und im Loxone-Wiki zu finden.  
+
+*Achtung: Die Entwicklung der JSON-Funktion in BSB-LAN ist noch nicht endgültig abgeschlossen, es kann jederzeit zu Änderungen kommen. Die Konfiguration ist dann entsprechend anzupassen.*  
+
+Das folgende Beispiel zeigt die Einrichtung anhand des Parameters "8700 Außentemperatur". 
+
+Zum Hinzufügen eines virtuellen HTTP Eingangs muss zunächst im Fenster "Peripherie" die Zeile "Virtuelle Eingänge" markiert werden. Nun klickt man auf die oben erschienene Schaltfläche "Virtueller HTTP Eingang":  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Eingang_icon.JPG">
+     
+Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl `/JQ=8700` für die Abfrage der Außentemperatur zu erweitern. :  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang.JPG">
+     
+Anschließend fügt man dem vituellen HTTP Eingang noch einen virtuellen HTTP Eingang Befehl hinzu:  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Befehl_icon.JPG">
+     
+Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Export ist wie folgt aufgebaut:  
+    
+```  
+{
+"8700": {
+"name": "Aussentemperatur","value": "16.6",
+"unit": "&deg;C",
+"desc": "",
+"dataType": 0
+}
+}
+```  
+    
+Mittels Loxone-Befehlserkennung `value": "\v` wird der Wert bei "value" des JSON-Exports ausgelesen:  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
+     
+Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" jeweils eine Bezeichnung eingetragen werden, damit die spätere Darstellung in der Loxone-App entsprechend funktioniert (hier: Außenbereich, Wetter). Die nun ausgelesenen Werte des Außentemperaturfühlers können dann in der Loxone-App angezeigt und die Statistik per Graph visualisiert werden.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Screenshot_Loxone_smartphone.jpg">
+         
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
+     
+
+    
+---
+
      
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
