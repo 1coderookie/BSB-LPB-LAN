@@ -40,6 +40,7 @@
 [11.2 openHAB](kap11.md#112-openhab)  
 [11.3 HomeMatic (EQ3)](kap11.md#113-homematic-eq3)  
 [11.4 ioBroker](kap11.md#114-iobroker)  
+[11.5 Loxone](kap11.md#115-loxone)  
 [12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter](kap12.md)  
 [12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20](kap12.md#121-verwendung-optionaler-sensoren-dht22-und-ds18b20)  
 [12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren](kap12.md#1211-hinweise-zu-dht22-temperatur-feuchtigkeitssensoren)  
