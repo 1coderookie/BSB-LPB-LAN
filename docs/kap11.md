@@ -1653,7 +1653,7 @@ Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" j
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
      
 *Hinweis:  
-Das Setzen von Parametern/Werten sollte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
+Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
     
 ---
 
