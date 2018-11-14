@@ -1617,7 +1617,9 @@ Zum Hinzufügen eines virtuellen HTTP Eingangs muss zunächst im Fenster "Periph
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Eingang_icon.JPG">
      
-Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl `/JQ=8700` für die Abfrage der Außentemperatur zu erweitern. :  
+Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl  
+`/JQ=8700`  
+für die Abfrage der Außentemperatur zu erweitern:    
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang.JPG">
      
@@ -1638,7 +1640,9 @@ Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Exp
 }
 ```  
     
-Mittels Loxone-Befehlserkennung `value": "\v` wird der Wert bei "value" des JSON-Exports ausgelesen:  
+Mittels Loxone-Befehlserkennung  
+`value": "\v`  
+wird der Wert bei "value" des JSON-Exports ausgelesen:  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
      
@@ -1649,7 +1653,7 @@ Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" j
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
      
 *Hinweis:  
-Das Setzen von Parametern/Werten sollte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` möglich sein, wurde allerdings noch nicht gestestet.*
+Das Setzen von Parametern/Werten sollte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
     
 ---
 
