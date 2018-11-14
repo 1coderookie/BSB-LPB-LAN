@@ -1,7 +1,7 @@
 ## Handbuch zum BSB-LPB-LAN-Adapter   
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
-BSB-LPB-LAN-Adapters (v2, Arduino-Version) und der dazugehörigen BSB-LAN-Software 
+BSB-LPB-LAN-Adapters (Platinenlayout v2, Arduino-Version) und der dazugehörigen BSB-LAN-Software 
 zu vereinfachen und um als Nachschlagewerk zu dienen.  
 
 ***Es wird empfohlen, dieses Handbuch vor einer initialen
@@ -28,10 +28,10 @@ Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art ha
 Im weiteren Verlauf wäre es dann wünschenswert, Daten auszulesen, sie weiter zu verarbeiten (z.B. loggen und grafisch darstellen) oder gar Einfluss auf die Steuerung/Regelung nehmen zu können und das System in bestehende SmartHome-Systeme einzubinden.  
     
 All dies ist mittlerweile umgesetzt worden:  
-Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann nun ein entsprechender Wärmeerzeuger mit einem Boiler-System-Bus (BSB), einem Local-Process-Bus (LPB) oder einer Punkt-zu-Punkt-Schnittstelle (PPS) kostengünstig ins heimische Netzwerk eingebunden werden. Dies sind in diesem Fall i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
+Mittels eines eigenbaufähigen Adapters, eines Arduino Mega 2560 und eines LAN-Shields kann nun ein entsprechender Wärmeerzeuger mit einem "Boiler System Bus" (BSB), einem "Local Process Bus" (LPB) oder einer "Punkt-zu-Punkt-Schnittstelle" (PPS) kostengünstig ins heimische Netzwerk eingebunden werden. Dies sind i.d.R. Systeme, bei denen ein  SIEMENS-Regler zum Einsatz kommt (je nach Heizungshersteller meist eine gebrandete OEM-Version).
 
 Mit Hilfe des Adapters und der BSB-LAN-Software können nun unkompliziert verschiedene Funktionen, Werte und Parameter beobachtet, geloggt und bei Bedarf web-basiert gesteuert und geändert werden.
-Eine optionale Einbindung in bestehende Smart-Home-Systeme wie bspw. FHEM, openHab oder HomeMatic kann mittels HTTPMOD oder JSON erfolgen. 
+Eine optionale Einbindung in bestehende Smart-Home-Systeme wie bspw. FHEM, openHab, HomeMatic oder Loxone kann mittels HTTPMOD oder JSON erfolgen. 
 Darüber hinaus ist der Einsatz des Adapters als Standalone-Logger ohne LAN- oder Internetanbindung bei Verwendung einer microSD-Karte ebenfalls möglich.  
 Zusätzlich können Temperatur- und Feuchtigkeitssensoren angeschlossen und deren Daten ebenso geloggt und ausgewertet werden. Durch die Verwendung eines Arduino und die Möglichkeit, eigenen Code in die BSB-LAN-Software zu integrieren, bietet sich darüber hinaus ein weites Spektrum an Erweiterungsmöglichkeiten. 
 
@@ -87,15 +87,15 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 
 ### Autoren: ###  
 
--   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support 
+-   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support  
     bis v0.16:  
     *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
 
--   Software, Platinenlayout v1 & v2, Dokumentationen EN, Ideenfindung,
-    Support ab v0.17:  
+-   Software, Platinenlayout v1 & v2, Dokumentationen EN, Ideenfindung, Support  
+    ab v0.17:  
     *Frederik Holst (bsb \[ät\] code-it.de)*
 
--   Debugging, Handbuch, Übersetzung EN-DE, Ideenfindung, Support
+-   Debugging, Handbuch, Übersetzung EN-DE, Ideenfindung, Support  
     ab v0.17:  
     *Ulf Dieckmann (adapter \[ät\] quantentunnel.de)*
 
