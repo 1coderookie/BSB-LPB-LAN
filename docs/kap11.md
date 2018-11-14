@@ -1644,11 +1644,12 @@ Mittels Loxone-Befehlserkennung `value": "\v` wird der Wert bei "value" des JSON
      
 Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" jeweils eine Bezeichnung eingetragen werden, damit die spätere Darstellung in der Loxone-App entsprechend funktioniert (hier: Außenbereich, Wetter). Die nun ausgelesenen Werte des Außentemperaturfühlers können dann in der Loxone-App angezeigt und die Statistik per Graph visualisiert werden.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Screenshot_Loxone_smartphone.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_raeume.jpg">
          
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
      
-
+*Hinweis:  
+Das Setzen von Parametern/Werten sollte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` möglich sein, wurde allerdings noch nicht gestestet.*
     
 ---
 
