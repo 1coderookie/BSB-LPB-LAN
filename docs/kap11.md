@@ -205,7 +205,7 @@ Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
 *transformations* abzulegen.
 
 ***Beispielscript für Abfragen von Parametern, bei denen ein Wert
-ausgegeben wird:***  
+ausgegeben wird (bsbinput.js):***  
     
 ```javascript
 (function(i) {
@@ -230,7 +230,7 @@ ausgegeben wird:***
 })(input)
 ```
     
-***Beispielscript für direkte Abfragen von enum-Werten:***  
+***Beispielscript für direkte Abfragen von enum-Werten (bsbinput_string.js):***  
     
 ```javascript
 (function(i) {
@@ -256,7 +256,7 @@ ausgegeben wird:***
 })(input)
 ```
     
-Das Schreiben von Daten erfolgt über Rules:  
+***Das Schreiben von Daten erfolgt über Rules:***  
     
 ```
 rule "RoomTemp"
