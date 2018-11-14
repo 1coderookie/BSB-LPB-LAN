@@ -273,7 +273,7 @@ Programme grundsätzlich möglich.
     einen Graphen angezeigt zu bekommen.  
         
     ***Hinweis:***  
-    *Für /DG muss bei Javascript-Blockern die Domain d3js.org freigegeben
+    *Für `/DG` muss bei Javascript-Blockern die Domain d3js.org freigegeben
     werden, da der Arduino weiterhin nur die CSV-Datei in den Browser
     lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird.  
     Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige
@@ -372,7 +372,7 @@ bei jedem Regler Wirkung zeigt oder nicht.
 ### 8.2.3 Manuellen TWW-Push ausführen ###
 
 Bei einigen Reglern ist die (nahezu undokumentierte) Funktion eines
-manuellen Trinkwasser-Pushs[^22] verfügbar. Um einen manuellen TWW-Push
+manuellen Trinkwasser-Pushs verfügbar. Um einen manuellen TWW-Push
 auszulösen, muss dazu die TWW-Taste an der ISR-Bedieneinheit gedrückt
 und für etwa drei Sekunden gehalten werden, bis im Display eine
 entsprechende Meldung erscheint.
