@@ -142,12 +142,8 @@ Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).
 
 ## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun? ##
 
-Prinzipiell ist die Nutzung eines Shields mit dem Chip-Typ W5100 zu
-empfehlen, da die entsprechenden Bibliotheken bereits eingebunden sind.  
-Sollte dennoch ein W5500 zum Einsatz kommen, ist  
-1. die Datei *BSB\_lan\_config.h* entsprechend anzupassen (s. Kap. [5](kap05.md))
-und\
-2. die Datei *Ethernet2.zip* im Unterverzeichnis *src* entpacken.  
+Darauf achten, dass die aktuelle Version der Ethernet Bibliothek 
+(mindestens Version 2.0) in der Arduino IDE vorhanden ist.   
     
 ---
     
