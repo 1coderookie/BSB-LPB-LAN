@@ -10,17 +10,7 @@
 
 Folgende Parameter in der Datei *BSB\_lan\_config.h* können bzw. sollten
 vor der Verwendung des Adapters angepasst werden:
-
--   Typ des LAN-Shield-Chips (W5100 oder W5500):  
-    Standardmäßig wird die Verwendung eines LAN-Shields mit dem Chip des
-    Typs W5100 vorausgesetzt (s. Aufkleber auf der LAN-Buchse des
-    Shields). Soll aber ein Shield mit Chip-Typ W5500 verwendet werden,
-    ist das entsprechende Definement zu aktivieren:  
-    `#define ETHERNET_W5500`
-
-    Zusätzlich muss die Datei *Ethernet2.zip* im Unterverzeichnis *src*
-    entpackt werden.
-
+    
 -   IP-Adresse:  
     `#define IPAddr 192,168,178,88`
 
