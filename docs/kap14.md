@@ -38,9 +38,8 @@
 - Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
 aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - Zugriff nach Stromausfall nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
-- LAN-Shield mit W5100-Chip bestückt? Sollte ein W5500 zum Einsatz
-kommen, sind die entspr. Punkte bei der Installation zu berücksichtigen (s. Kap. [5](kap05.md)
-& [14.10](kap14.md#1410-einstellungen-des-reglers-können-nicht-via-adapter-verändert-werden))
+- LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
+Ethernet Bibliothek installiert sein (mindestens Version 2.0)! 
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones)  
 - Router- und/oder Firewall-Einstellungen überprüfen
