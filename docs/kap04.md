@@ -23,7 +23,10 @@
     ***BSB\_lan*** um!
 
 -   Benenne die Datei *BSB\_lan\_config.h.default* in
-    ***BSB\_lan\_config.h*** um!
+    ***BSB\_lan\_config.h*** um!  
+    
+-   Wenn du eigenen Code implementieren willst, benenne die Datei 
+    *BSB_lan_custom.h.default* in ***BSB_lan_custom.h*** um!  
 
 -   Öffne den BSB\_lan-Sketch mittels eines Doppelklicks auf die Datei
     *BSB\_lan.ino* im BSB\_lan-Ordner. Die dazugehörigen Dateien
@@ -42,7 +45,13 @@
     BSB\_lan\_config.h deinen Wünschen und Hardwaregegebenheiten
     (Pinbelegungen, angeschlossene DS18B20- und/oder DHT22-Sensoren, zu
     loggende Parameter etc.) entsprechend an!*
-
+    
+-   Stelle sicher, dass du die aktuelle Ethernet-Bibliothek verwendest 
+    (mindestens v2.0). Rufe dazu unter dem Menüpunkt „Sketch“ → 
+    „Bibliothek einbinden“ → „Bibliotheken verwalten“ auf und überprüfe, 
+    ob ein Update bzw. eine aktuellere Version der „Ethernet Bibliothek“ 
+    verfügbar ist. Falls ja, führe ein Update aus bzw. installiere die Version.  
+    
 -   Wähle \"Arduino/Genuino Mega or Mega 2560\" unter Tools/Board bzw.
     Werkzeuge/Board.
 
