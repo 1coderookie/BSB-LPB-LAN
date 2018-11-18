@@ -494,10 +494,43 @@ Test Ende.
     
 In diesem Fall sollte die Webausgabe bitte kopiert und gemeldet werden,
 damit eine entsprechende Anpassung vorgenommen werden kann.  
-    
-       
-    
+        
 ---
+    
+### 8.2.6 Gasthermen: Interne Gasenergiezählung (falls vorhanden) aktivieren ###  
+    
+Bei einigen Gasthermen-Modellen (vermutlich nur mit Reglertyp LMS14 und LMS15) ist eine interne (überschlägige) Gasenergiezählung unter den Parametern 8378-8383 verfügbar. Diese ist jedoch i.d.R. ab Werk nicht aktiviert.  
+Eine Aktivierung muss bei *Parameter 2550* (Menü "Kessel", Fachmann-Ebene) vorgenommen werden. (Wie immer bei Parametern in der Fachmann-Ebene sollte dies nur von einem Heizungsfachmann durchgeführt werden.)  
+      
+Des Weiteren kann die interne Gasenergiezählung mit einem Korrekturfaktor an die Messung des Gaszählers angepasst werden. Dieser Faktor steht ab Werk auf 1,0 ist unter *Parameter 2551* einzustellen. 
+Der Faktor ist wie folgt (in etwa) zu errechnen:  
+
+*Angezeigter Verbrauch des internen Zählers zu hoch*  
+Angezeigter Verbrauch des Gaszählers (a): 5000kWh  
+Angezeigter Verbrauch der internen Zählung (b): 5500kWh  
+Berechnung: `a/b = Korrekturfaktor`  
+Diesem Beispiel folgend: 5000kWh/5500kWh=0,90909. Einzustellen ist also 0,9 oder 0,91.  
+
+*Angezeigter Verbrauch des internen Zählers zu niedrig*  
+Angezeigter Verbrauch des Gaszählers (a): 1300kWh  
+Angezeigter Verbrauch der internen Zählung (b): 1000kWh  
+Berechnung: `b/a = Korrekturfaktor`  
+Diesem Beispiel folgend: 1300kWh/1000kWh=1,3. Einzustellen ist also 1,3.  
+    
+Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" auf 'absolut' eingestellt werden, da ansonsten bei einer TWW-Ladung mit gleichzeitiger Heizbetriebsanforderung der Verbrauch nur für den Zähler des Heizbetriebs berücksichtigt wird.  
+    
+***Hinweise:***  
+    
+*Bei der heizungsseitigen, internen Gasenergiezählung handelt es sich um eine überschlägige Berechnung, sie ist also nich so genau wie der angezeigte Verbrauch auf dem Gaszähler. Für einen Vergleich der beiden Verbrauchswerte und die daraus resultierende Einstellung des Korrekturfaktors sollte der Messzeitraum mindestens vier Wochen betragen. Auch danach sollten die Werte immer mal wieder verglichen und der Korrekturfaktor ggf. angepasst werden.*  
+    
+*Der Verbrauch des Gaszählers wird üblicherweise in Kubikmetern (m³) angezeigt, nicht in Kilowattstunden (kWh). Zur Berechnung der kWh aus den verbrauchten m³ muss folgende Formel angewendet werden:*  
+`kWh = m³ x Brennwert x Zustandszahl`  
+*Die m³ werden vom Gaszähler abgelesen, der Brennwert sowie die Zustandszahl sind i.d.R. auf der Gasrechnung vermerkt oder beim Energieversorger zu erfragen.*  
+    
+*Bisher haben nur zwei User von der Verwendung der reglerinternen Gasenergiezählung berichtet. 
+Bei einem Reglertyp (LMS14, MHG) weicht die Zählung so weit ab, dass kein passender Korrekturfaktor eingestellt werden konnte. Bei einem anderen Nutzer (Reglertyp LMS15, Brötje) scheint die überschlägige Berechnung nach einigen Anpassungen des Korrekturfaktors einigermaßen zu passen.*  
+    
+--- 
     
 
      
