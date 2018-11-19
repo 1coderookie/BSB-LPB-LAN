@@ -273,9 +273,381 @@ end
     
 ## 11.3 HomeMatic (EQ3) ##  
     
+***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
+Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
+Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "PaulM" aufgeführt.
+Vielen Dank!***  
+    
+***Beispielscript für die Abfrage des Adapters:***  
+
+Es müssen lediglich 6 Parameter eingegeben werden.  
+CuxGeraetAbfrage = GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt  
+CuxGeraetLogging = GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt (leer==deaktiviert)  
+IPAdresseBSB = IP-Adresse des BSB-Adapters  
+Wort = Parameternummer: Beispiel Außentemperatur = 8700 oder Betriebsmodus = 700  
+Variablename = Name der Systemvariable in der CCU  
+Durchschnitt24h = true == Durchschnittswert 24h holen, false == aktuellen Wert holen  
+
+Es muss keine Variable vorher angelegt werden, das erledigt das Skript.  
+Der Variabeltyp (Zahl, Bool, Werteliste) wird automatisch an den abgefragten Parameter angepasst.  
+    
+```
+! BSB-Adapter Wert abfragen by Bratmaxe
+! 29.10.2018 - V0.1 - Erste Version
+
+string CuxGeraetAbfrage = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt
+string CuxGeraetLogging = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt, Leer ("") lassen, wenn kein Cuxd-Highcharts Logging gewünscht
+string IPAdresseBSB = "192.168.178.100"; !IP_Adresse des BSB-Adapters
+string Wort = "8700"; !Parameternummer: Beispiel Außentemperatur = 8700, Betriebsmodus = 700
+string Variablename = "Wetter_Temperatur_Heizung"; ! Name der Systemvariable
+boolean Durchschnitt24h = false; ! true = Durchschnittswert holen, false = aktuellen Wert holen - diese muss vorher in der BSB_lan_config.h konfiguriert wurden sein!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! URL Zusammenführen
+string url="";
+if (Durchschnitt24h) { url="http://" # IPAdresseBSB # "/A" # Wort; }
+else { url="http://" # IPAdresseBSB # "/" # Wort; }
+! Variable anlegen, wenn nicht vorhanden:
+object svObject = dom.GetObject(Variablename);
+object svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+if (!svObject)
+{
+    svObject = dom.CreateObject(OT_VARDP);
+    svObjectlist.Add(svObject.ID());
+	svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+    svObject.Name(Variablename);   
+    svObject.Internal(false);
+    svObject.Visible(true);
+}
+
+! Werte holen
+dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
+dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+var stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+
+! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
+if (stdout != null && stdout != "")
+{
+	! Ausgabe filtern
+	integer pos = (stdout.Find(Wort# " "));	
+	if (pos == -1)
+	{
+		WriteLine("Position vom Wort '" # Wort # "' konnte nicht ermittelt werden");
+	}
+	
+	stdout = stdout.Substr(pos, stdout.Length());
+	pos = stdout.Find("/td");
+	stdout = stdout.Substr(0, pos);
+	
+	! Sonderzeichen ersetzen
+	if (stdout.Contains("&deg;")){ stdout = stdout.Replace("&deg;","°"); }
+	if (stdout.Contains("&#037;")){ stdout = stdout.Replace("&#037;","%"); }
+	stdout = stdout.ToLatin();
+	!WriteLine("Nach Sonderzeichenumwandlung: " # stdout); !Debug: Welchen Wert hat stdout aktuell
+
+	! Systemvariabel Info ermitteln
+	string Info = stdout.Substr(0,stdout.Find(":"));
+	!Info = Info.Substr(Wort.Length(), stdout.Length()); !Parameterzahl vor der Info entfernen
+	!WriteLine("DPInfo = " # Info); !Debug: Welcher DPInfo-Wert wurde gefunden
+	
+	! Systemvariabel Wert ermitteln
+	string Wert = stdout.Substr(stdout.Find(": ") + 2,stdout.Length());
+	Wert = Wert.Substr(0,Wert.Find(" "));
+	!WriteLine("Wert = " # Wert); !Debug: Welcher Wert wurde gefunden
+
+	! Systemvariabel Einheit ermitteln
+	string Einheit = stdout.Substr(stdout.Find(Info) + Info.Length() + 1, stdout.Length());
+	Einheit = Einheit.Substr(Einheit.Find(Wert) + Wert.Length() + 1,Einheit.Length());
+	Einheit = Einheit.RTrim();
+	if (Einheit.Contains("- "))	{ Einheit = ""; }
+	!WriteLine("Einheit = " # Einheit); !Debug: Welche Einheit wurde gefunden
+
+	! Systemvariable Typ und Werte setzen
+	svObject.DPInfo(Info);
+	svObject.ValueUnit(Einheit);
+	
+	! Enums des Parameters ermitteln, wenn vorhanden
+	url="http://" # IPAdresseBSB # "/E" # Wort;
+
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+	stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+	! Prüfe, ob es sich um einen Parameter mit Enum-Werten handelt.
+	if (!stdout.Contains("FEHLER: Falscher Typ!"))
+	{
+		! Setzen des Systemvariabel Wertetyp und Ermitteln der Enum-Werte des Parameters
+		stdout = (stdout.Substr(stdout.Find("0 - "), stdout.Length())).ToLatin();
+		string value = "";
+		string newvalues = "";
+		integer inewvalues=0;
+		foreach (value, stdout.Split("\r"))
+		{
+			if (value.Contains(" - "))
+			{
+				if (newvalues == "") { newvalues = newvalues # value.Substr(value.Find(" - ") + 3,value.Length()); }
+				else { newvalues = newvalues # ";" # value.Substr(value.Find(" - ") + 3,value.Length()); }
+				inewvalues = inewvalues + 1;
+			}
+		}
+		
+		svObject.ValueType(ivtInteger);
+		svObject.ValueSubType(istEnum);
+		svObject.ValueList(newvalues);
+		!prüft, ob der ermittelte Wert innerhalbe der möglichen Werte liegt
+		if (Wert < inewvalues) { if (Wert != svObject.Value()) { svObject.State(Wert); } }
+		else { WriteLine("Der ermittelte Wert entspricht keinem gültigen Enum-Wert. Bitte Ausgabe prüfen!") }
+	}
+	elseif (Einheit.Contains("- Aus") || Einheit.Contains("- Ein"))
+	{
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtBinary);
+		svObject.ValueSubType(istBool);
+		svObject.ValueName0("Aus");
+		svObject.ValueName1("Ein");
+		if (Wert != svObject.Value()) {	svObject.State(Wert); }
+	}
+	elseif (Einheit.Contains("°"))
+	{
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		svObject.ValueMin(-50);
+		svObject.ValueMax(100);
+		if (Wert != svObject.Value()) {	svObject.State(Wert); }
+	}
+	elseif (Einheit.Contains("%"))
+	{
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		svObject.ValueMin(0);
+		svObject.ValueMax(100);
+		if (Wert != svObject.Value()) {	svObject.State(Wert); }
+	}
+	else
+	{
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		if (Wert != svObject.Value()) {	svObject.State(Wert); }
+	}
+	dom.RTUpdate(0); ! Interne Aktualisierung der Systemvariabelen
+
+	! Logging
+	if (CuxGeraetLogging != "")	{ dom.GetObject("CUxD."#CuxGeraetLogging#".LOGIT").State(dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Name()#";"#dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Value());	}
+}
+
+```
+    
+***Skript zum Setzen von Parametern:***  
+
+Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.  
+Beispiel: 
+   
+```
+WENN Variablename größer oder gleich 0 "bei Aktualisierung auslösen"
+DANN Dieses SKRIPT sofort ausführen
+```
+    
+Die Variable muss in der Info zuerst den ParameterWert enthalten (wird vom obigen Auslese-Skript automatisch so benannt).   Beispiel: 700 Heizkreis 1 - Betriebsart  
+Die Parameternummer wird dann automatisch aus der Systemvariable Info ermittelt.  
+Wird die Variable geändert, so wird der geänderte Wert automatisch an den BSB-Adapter übermittelt und aktualisiert!  
+    
+```
+! BSB-Adapter Wert setzen by Bratmaxe
+! 29.10.2018 - V0.1 - Erste Version
+
+! Funktionsbeschreibung:
+! Ein Programm, wo alle Systemvariabeln die Überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und  "bei Aktualisierung auslösen" , anlegen.
+! Beispiel:
+! WENN Variablename größer oder gleich 0 "bei Aktualisierung auslösen"
+! DANN Dieses SKRIPT sofort ausführen
+! die Variable muss in der Info zuerst den Parameter-Wert enthalten (wird von meinem Auslese Skript automatisch so benannt. Beispiel: 700 Heizkreis 1 - Betriebsart
+! Die Parameternummer wird dann automatisch aus der Systemvariable Info ermittelt.
+! Wird die Variable geändert, so wird der geänderte Wert automatisch an den BSB-Adapter übermittelt und aktualisiert!
+
+string CuxGeraetSetzen = "CUX2801001:12"; ! GeräteAdresse des CuxD Execute Gerätes
+string IPAdresseBSB = "192.168.2.200"; !IP_Adresse des BSB-Adapters
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Hole Auslösende Variabel
+var source = dom.GetObject("$src$"); !Funktioniert nur beim automatischen Aufruf
+! Zum manuellen Aufruf/testen nächste Zeile einkommentieren
+!source = dom.GetObject(ID_SYSTEM_VARIABLES).Get("VARIABLENAMEN");
+
+if (source)
+{
+	! Wort ermitteln
+	string Wort = source.DPInfo().ToString().Substr(0,source.DPInfo().Find(" "));
+	!WriteLine("Wort: "#Wort);
+	if (Wort != null && Wort != "")
+	{		
+		string Wert = source.Value().ToString();
+		!WriteLine("Wert: "#Wert);
+		if (Wert != null && Wert != "")
+		{
+			! Anweisung senden
+			string urlset="http://" # IPAdresseBSB # "/S" # Wort # "=" # Wert;
+			dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_SETS").State("wget -t 5 -T 20 -q -O - '"# urlset #"'");
+			dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_QUERY_RET").State(1);
+			var stdout = dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_RETS").State();
+			if (stdout != null && stdout != "")
+			{
+				if (stdout.Contains("FEHLER: "))
+				{
+					stdout = stdout.Substr(stdout.Find("FEHLER: "), stdout.Length());
+					stdout = stdout.Substr(0, stdout.Find("/td"));
+					WriteLine("Fehlermeldung: "# stdout);
+					WriteLine("Wurde der BSB-Adapter zum Schreiben berechtigt? Handbuch Seite 26 beachten...");
+				}
+				else
+				{
+					! Kontrollabfrage
+					string url="http://" # IPAdresseBSB # "/" # Wort;
+					dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_SETS").State("wget -t 5 -T 20 -q -O - '"# url #"'");
+					dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_QUERY_RET").State(1);
+					stdout = dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_RETS").State();
+
+					! Ausgabe filtern
+					integer pos = (stdout.Find("tr  td \r\n" # Wort # " ") + 9);
+					stdout = stdout.Substr(pos, stdout.Length());
+					pos = stdout.Find("/td");
+					stdout = stdout.Substr(0, pos);
+					
+					! Sonderzeichen ersetzen
+					if (stdout.Contains("&deg;")){ stdout = stdout.Replace("&deg;","°"); }
+					if (stdout.Contains("&#037;")){ stdout = stdout.Replace("&#037;","%"); }
+					!WriteLine("Nach Sonderzeichenumwandlung: " # stdout); !Debug: Welchen Wert hat stdout aktuell
+					
+					! Systemvariabel oldWert ermitteln
+					string oldWert = stdout.Substr(stdout.Find(": ") + 2,stdout.Length());
+					oldWert = oldWert.Substr(0,oldWert.Find(" "));
+					!WriteLine("oldWert = " # oldWert.ToFloat()); !Debug: Welcher oldWert wurde gefunden
+					!WriteLine("newWert = " # Wert.ToFloat()); !Debug: Welcher oldWert wurde gefunden
+					
+					if (Wert.ToFloat() != oldWert.ToFloat()) { WriteLine("Fehler: Werte stimmen nach setzen nicht überein!"); }	
+					else { WriteLine("Wert wurde erfolgreich gesetzt");	}
+				}
+			}
+			else { WriteLine("Keine Ausgabe gefunden. IP-Adresse und Verkabelung prüfen.");	}
+		}
+		else { WriteLine("Der neue Wert konnte nicht ermittelt werden.");	}
+	}
+	else { WriteLine("Wort konnte nicht ermittelt werden, Steht der Wert in der SystemvariableInfo am Anfang gefolgt von einem Leerzeichen?");	}
+}
+else { WriteLine("Auslösende Variable nicht erkannt! - Skript wird nicht ausgeführt.");	}
+
+```
+    
+***Abfrage von heizungsseitigen Fehlermeldungen zwecks Benachrichtigung im Störungsfall:***  
+    
+```
+! BSB-Adapter Wert abfragen Fehlercodes by Bratmaxe
+! 05.11.2018 - V0.1 - Erste Version
+
+string CuxGeraetAbfrage = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt
+string IPAdresseBSB = "192.168.178.100"; !IP_Adresse des BSB-Adapters
+string Variablename = "Heizung_Fehlercodes"; ! Name der Systemvariable
+integer AnzahlFehler = 10;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Parameter Zusammenbauen
+integer i =0;
+string Woerter ="";
+while (i < AnzahlFehler)
+{
+	if (Woerter != "")
+	{
+		Woerter = Woerter + "," + ((6801) + (10 * i)).ToString();
+	}
+	else { Woerter = Woerter + ((6801) + (10 * i)).ToString(); }
+	i = i + 1;
+}
+
+! URL Zusammenführen
+string Ergebnis = "";
+string Wort = "";
+
+foreach(Wort, Woerter.Split(","))
+{
+	string url="http://" # IPAdresseBSB # "/" # ((Wort.ToInteger() - 1).ToString());
+	
+	! Werte holen
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+	var stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+	
+	! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
+	if (stdout != null && stdout != "")
+	{
+		! Ausgabe filtern
+		integer pos = (stdout.Find((Wort.ToInteger() - 1).ToString() #  " "));	
+		stdout = stdout.Substr(pos, stdout.Length());
+		pos = stdout.Find("/td");
+		stdout = stdout.Substr(0, pos);
+		
+		! Sonderzeichen ersetzen
+		if (stdout.Contains("°")){ stdout = stdout.Replace("°","°"); }
+		if (stdout.Contains("%")){ stdout = stdout.Replace("%","%"); }
+		stdout = stdout.ToLatin();
+		Ergebnis = Ergebnis # stdout.RTrim() # "\n\r";
+	}
+
+	url="http://" # IPAdresseBSB # "/" # Wort;	
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+	stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+
+	! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
+	if (stdout != null && stdout != "")
+	{
+		! Ausgabe filtern
+		integer pos = (stdout.Find(Wort# " "));	
+		stdout = stdout.Substr(pos, stdout.Length());
+		pos = stdout.Find("/td");
+		stdout = stdout.Substr(0, pos);
+		
+		! Sonderzeichen ersetzen
+		if (stdout.Contains("°")){ stdout = stdout.Replace("°","°"); }
+		if (stdout.Contains("%")){ stdout = stdout.Replace("%","%"); }
+		stdout = stdout.ToLatin();
+		Ergebnis = Ergebnis # stdout.RTrim() # "\n\r\n\r";
+	}
+}
+
+!Wenn noch keine Systemvarible vorhanden, diese anlegen
+object svObject = dom.GetObject(Variablename);
+object svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+if (!svObject)
+{   
+    svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+    svObject = dom.CreateObject(OT_VARDP);
+    svObjectlist.Add(svObject.ID());
+    svObject.Name(Variablename);   
+    svObject.ValueType(ivtString);
+    svObject.ValueSubType(istChar8859);
+    svObject.DPInfo("Die letzen 20 Fehlercodes der Heizung");
+    svObject.Internal(false);
+    svObject.Visible(true);
+    dom.RTUpdate(0);
+}
+
+if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
+```  
+    
+---    
+    
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „PaulM".  
 Sie sind ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg769167.html#msg769167) im FHEM-Forum zu finden.  
-Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "Bratmaxe" aufgeführt.  
 Vielen Dank!***  
     
 Zur Einbindung in HomeMatic bietet sich die Verwendung von CuxD und wget
@@ -294,8 +666,7 @@ string url='http://192.168.178.88/8326'; !IP anpassen
 ! siehe CUxD-Handbuch 5.8.2 System.Exec
 ! dom.GetObject("CUxD.CUX2801001:1.CMD_SETS").State
 ! ("wget -t 5 -T 20 -q -O - '"# url #"'");  ! abgekürzte Wget Syntax
-dom.GetObject("CUxD.CUX2801001:1.CMD_SETS").State("wget --tries=5 
---timeout=20 --quiet --output-document=- '"# url #"'");  
+dom.GetObject("CUxD.CUX2801001:1.CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'");  
 ! ausführliche Wget Syntax
 dom.GetObject("CUxD.CUX2801001:1.CMD_QUERY_RET").State(1);
 var stdout = dom.GetObject("CUxD.CUX2801001:1.CMD_RETS").State();
@@ -1074,381 +1445,9 @@ string wort = "28ffff85901604d6"; !T_Innentemperatur_Esszimmer
 
 WriteLine("Hallo Welt!");
 ```
-        
-    
-***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
-Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
-Vielen Dank!***  
-    
-***Beispielscript für die Abfrage des Adapters:***  
-
-Es müssen lediglich 6 Parameter eingegeben werden.  
-CuxGeraetAbfrage = GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt  
-CuxGeraetLogging = GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt (leer==deaktiviert)  
-IPAdresseBSB = IP-Adresse des BSB-Adapters  
-Wort = Parameternummer: Beispiel Außentemperatur = 8700 oder Betriebsmodus = 700  
-Variablename = Name der Systemvariable in der CCU  
-Durchschnitt24h = true == Durchschnittswert 24h holen, false == aktuellen Wert holen  
-
-Es muss keine Variable vorher angelegt werden, das erledigt das Skript.  
-Der Variabeltyp (Zahl, Bool, Werteliste) wird automatisch an den abgefragten Parameter angepasst.  
-    
-```
-! BSB-Adapter Wert abfragen by Bratmaxe
-! 29.10.2018 - V0.1 - Erste Version
-
-string CuxGeraetAbfrage = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt
-string CuxGeraetLogging = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt, Leer ("") lassen, wenn kein Cuxd-Highcharts Logging gewünscht
-string IPAdresseBSB = "192.168.178.100"; !IP_Adresse des BSB-Adapters
-string Wort = "8700"; !Parameternummer: Beispiel Außentemperatur = 8700, Betriebsmodus = 700
-string Variablename = "Wetter_Temperatur_Heizung"; ! Name der Systemvariable
-boolean Durchschnitt24h = false; ! true = Durchschnittswert holen, false = aktuellen Wert holen - diese muss vorher in der BSB_lan_config.h konfiguriert wurden sein!!!
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! URL Zusammenführen
-string url="";
-if (Durchschnitt24h) { url="http://" # IPAdresseBSB # "/A" # Wort; }
-else { url="http://" # IPAdresseBSB # "/" # Wort; }
-! Variable anlegen, wenn nicht vorhanden:
-object svObject = dom.GetObject(Variablename);
-object svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
-if (!svObject)
-{
-    svObject = dom.CreateObject(OT_VARDP);
-    svObjectlist.Add(svObject.ID());
-	svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
-    svObject.Name(Variablename);   
-    svObject.Internal(false);
-    svObject.Visible(true);
-}
-
-! Werte holen
-dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
-dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
-var stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
-
-! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
-if (stdout != null && stdout != "")
-{
-	! Ausgabe filtern
-	integer pos = (stdout.Find(Wort# " "));	
-	if (pos == -1)
-	{
-		WriteLine("Position vom Wort '" # Wort # "' konnte nicht ermittelt werden");
-	}
-	
-	stdout = stdout.Substr(pos, stdout.Length());
-	pos = stdout.Find("/td");
-	stdout = stdout.Substr(0, pos);
-	
-	! Sonderzeichen ersetzen
-	if (stdout.Contains("&deg;")){ stdout = stdout.Replace("&deg;","°"); }
-	if (stdout.Contains("&#037;")){ stdout = stdout.Replace("&#037;","%"); }
-	stdout = stdout.ToLatin();
-	!WriteLine("Nach Sonderzeichenumwandlung: " # stdout); !Debug: Welchen Wert hat stdout aktuell
-
-	! Systemvariabel Info ermitteln
-	string Info = stdout.Substr(0,stdout.Find(":"));
-	!Info = Info.Substr(Wort.Length(), stdout.Length()); !Parameterzahl vor der Info entfernen
-	!WriteLine("DPInfo = " # Info); !Debug: Welcher DPInfo-Wert wurde gefunden
-	
-	! Systemvariabel Wert ermitteln
-	string Wert = stdout.Substr(stdout.Find(": ") + 2,stdout.Length());
-	Wert = Wert.Substr(0,Wert.Find(" "));
-	!WriteLine("Wert = " # Wert); !Debug: Welcher Wert wurde gefunden
-
-	! Systemvariabel Einheit ermitteln
-	string Einheit = stdout.Substr(stdout.Find(Info) + Info.Length() + 1, stdout.Length());
-	Einheit = Einheit.Substr(Einheit.Find(Wert) + Wert.Length() + 1,Einheit.Length());
-	Einheit = Einheit.RTrim();
-	if (Einheit.Contains("- "))	{ Einheit = ""; }
-	!WriteLine("Einheit = " # Einheit); !Debug: Welche Einheit wurde gefunden
-
-	! Systemvariable Typ und Werte setzen
-	svObject.DPInfo(Info);
-	svObject.ValueUnit(Einheit);
-	
-	! Enums des Parameters ermitteln, wenn vorhanden
-	url="http://" # IPAdresseBSB # "/E" # Wort;
-
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
-	stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
-	! Prüfe, ob es sich um einen Parameter mit Enum-Werten handelt.
-	if (!stdout.Contains("FEHLER: Falscher Typ!"))
-	{
-		! Setzen des Systemvariabel Wertetyp und Ermitteln der Enum-Werte des Parameters
-		stdout = (stdout.Substr(stdout.Find("0 - "), stdout.Length())).ToLatin();
-		string value = "";
-		string newvalues = "";
-		integer inewvalues=0;
-		foreach (value, stdout.Split("\r"))
-		{
-			if (value.Contains(" - "))
-			{
-				if (newvalues == "") { newvalues = newvalues # value.Substr(value.Find(" - ") + 3,value.Length()); }
-				else { newvalues = newvalues # ";" # value.Substr(value.Find(" - ") + 3,value.Length()); }
-				inewvalues = inewvalues + 1;
-			}
-		}
-		
-		svObject.ValueType(ivtInteger);
-		svObject.ValueSubType(istEnum);
-		svObject.ValueList(newvalues);
-		!prüft, ob der ermittelte Wert innerhalbe der möglichen Werte liegt
-		if (Wert < inewvalues) { if (Wert != svObject.Value()) { svObject.State(Wert); } }
-		else { WriteLine("Der ermittelte Wert entspricht keinem gültigen Enum-Wert. Bitte Ausgabe prüfen!") }
-	}
-	elseif (Einheit.Contains("- Aus") || Einheit.Contains("- Ein"))
-	{
-		! Setzen des Systemvariabel Wertetyp
-		svObject.ValueType(ivtBinary);
-		svObject.ValueSubType(istBool);
-		svObject.ValueName0("Aus");
-		svObject.ValueName1("Ein");
-		if (Wert != svObject.Value()) {	svObject.State(Wert); }
-	}
-	elseif (Einheit.Contains("°"))
-	{
-		! Setzen des Systemvariabel Wertetyp
-		svObject.ValueType(ivtFloat);
-		svObject.ValueSubType(istGeneric);
-		svObject.ValueMin(-50);
-		svObject.ValueMax(100);
-		if (Wert != svObject.Value()) {	svObject.State(Wert); }
-	}
-	elseif (Einheit.Contains("%"))
-	{
-		! Setzen des Systemvariabel Wertetyp
-		svObject.ValueType(ivtFloat);
-		svObject.ValueSubType(istGeneric);
-		svObject.ValueMin(0);
-		svObject.ValueMax(100);
-		if (Wert != svObject.Value()) {	svObject.State(Wert); }
-	}
-	else
-	{
-		! Setzen des Systemvariabel Wertetyp
-		svObject.ValueType(ivtFloat);
-		svObject.ValueSubType(istGeneric);
-		if (Wert != svObject.Value()) {	svObject.State(Wert); }
-	}
-	dom.RTUpdate(0); ! Interne Aktualisierung der Systemvariabelen
-
-	! Logging
-	if (CuxGeraetLogging != "")	{ dom.GetObject("CUxD."#CuxGeraetLogging#".LOGIT").State(dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Name()#";"#dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Value());	}
-}
-
-```
-    
-***Skript zum Setzen von Parametern:***  
-
-Ein Programm, wo alle Systemvariabeln die überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und "bei Aktualisierung auslösen", anlegen.  
-Beispiel: 
-   
-```
-WENN Variablename größer oder gleich 0 "bei Aktualisierung auslösen"
-DANN Dieses SKRIPT sofort ausführen
-```
-    
-Die Variable muss in der Info zuerst den ParameterWert enthalten (wird vom obigen Auslese-Skript automatisch so benannt).   Beispiel: 700 Heizkreis 1 - Betriebsart  
-Die Parameternummer wird dann automatisch aus der Systemvariable Info ermittelt.  
-Wird die Variable geändert, so wird der geänderte Wert automatisch an den BSB-Adapter übermittelt und aktualisiert!  
-    
-```
-! BSB-Adapter Wert setzen by Bratmaxe
-! 29.10.2018 - V0.1 - Erste Version
-
-! Funktionsbeschreibung:
-! Ein Programm, wo alle Systemvariabeln die Überwacht werden sollen mit ODER Verknüpft und größer oder gleich 0 und  "bei Aktualisierung auslösen" , anlegen.
-! Beispiel:
-! WENN Variablename größer oder gleich 0 "bei Aktualisierung auslösen"
-! DANN Dieses SKRIPT sofort ausführen
-! die Variable muss in der Info zuerst den Parameter-Wert enthalten (wird von meinem Auslese Skript automatisch so benannt. Beispiel: 700 Heizkreis 1 - Betriebsart
-! Die Parameternummer wird dann automatisch aus der Systemvariable Info ermittelt.
-! Wird die Variable geändert, so wird der geänderte Wert automatisch an den BSB-Adapter übermittelt und aktualisiert!
-
-string CuxGeraetSetzen = "CUX2801001:12"; ! GeräteAdresse des CuxD Execute Gerätes
-string IPAdresseBSB = "192.168.2.200"; !IP_Adresse des BSB-Adapters
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! Hole Auslösende Variabel
-var source = dom.GetObject("$src$"); !Funktioniert nur beim automatischen Aufruf
-! Zum manuellen Aufruf/testen nächste Zeile einkommentieren
-!source = dom.GetObject(ID_SYSTEM_VARIABLES).Get("VARIABLENAMEN");
-
-if (source)
-{
-	! Wort ermitteln
-	string Wort = source.DPInfo().ToString().Substr(0,source.DPInfo().Find(" "));
-	!WriteLine("Wort: "#Wort);
-	if (Wort != null && Wort != "")
-	{		
-		string Wert = source.Value().ToString();
-		!WriteLine("Wert: "#Wert);
-		if (Wert != null && Wert != "")
-		{
-			! Anweisung senden
-			string urlset="http://" # IPAdresseBSB # "/S" # Wort # "=" # Wert;
-			dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_SETS").State("wget -t 5 -T 20 -q -O - '"# urlset #"'");
-			dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_QUERY_RET").State(1);
-			var stdout = dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_RETS").State();
-			if (stdout != null && stdout != "")
-			{
-				if (stdout.Contains("FEHLER: "))
-				{
-					stdout = stdout.Substr(stdout.Find("FEHLER: "), stdout.Length());
-					stdout = stdout.Substr(0, stdout.Find("/td"));
-					WriteLine("Fehlermeldung: "# stdout);
-					WriteLine("Wurde der BSB-Adapter zum Schreiben berechtigt? Handbuch Seite 26 beachten...");
-				}
-				else
-				{
-					! Kontrollabfrage
-					string url="http://" # IPAdresseBSB # "/" # Wort;
-					dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_SETS").State("wget -t 5 -T 20 -q -O - '"# url #"'");
-					dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_QUERY_RET").State(1);
-					stdout = dom.GetObject("CUxD." # CuxGeraetSetzen # ".CMD_RETS").State();
-
-					! Ausgabe filtern
-					integer pos = (stdout.Find("tr  td \r\n" # Wort # " ") + 9);
-					stdout = stdout.Substr(pos, stdout.Length());
-					pos = stdout.Find("/td");
-					stdout = stdout.Substr(0, pos);
-					
-					! Sonderzeichen ersetzen
-					if (stdout.Contains("&deg;")){ stdout = stdout.Replace("&deg;","°"); }
-					if (stdout.Contains("&#037;")){ stdout = stdout.Replace("&#037;","%"); }
-					!WriteLine("Nach Sonderzeichenumwandlung: " # stdout); !Debug: Welchen Wert hat stdout aktuell
-					
-					! Systemvariabel oldWert ermitteln
-					string oldWert = stdout.Substr(stdout.Find(": ") + 2,stdout.Length());
-					oldWert = oldWert.Substr(0,oldWert.Find(" "));
-					!WriteLine("oldWert = " # oldWert.ToFloat()); !Debug: Welcher oldWert wurde gefunden
-					!WriteLine("newWert = " # Wert.ToFloat()); !Debug: Welcher oldWert wurde gefunden
-					
-					if (Wert.ToFloat() != oldWert.ToFloat()) { WriteLine("Fehler: Werte stimmen nach setzen nicht überein!"); }	
-					else { WriteLine("Wert wurde erfolgreich gesetzt");	}
-				}
-			}
-			else { WriteLine("Keine Ausgabe gefunden. IP-Adresse und Verkabelung prüfen.");	}
-		}
-		else { WriteLine("Der neue Wert konnte nicht ermittelt werden.");	}
-	}
-	else { WriteLine("Wort konnte nicht ermittelt werden, Steht der Wert in der SystemvariableInfo am Anfang gefolgt von einem Leerzeichen?");	}
-}
-else { WriteLine("Auslösende Variable nicht erkannt! - Skript wird nicht ausgeführt.");	}
-
-```
-    
-***Abfrage von heizungsseitigen Fehlermeldungen zwecks Benachrichtigung im Störungsfall:***  
-    
-```
-! BSB-Adapter Wert abfragen Fehlercodes by Bratmaxe
-! 05.11.2018 - V0.1 - Erste Version
-
-string CuxGeraetAbfrage = "CUX2801001:1"; ! GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt
-string IPAdresseBSB = "192.168.178.100"; !IP_Adresse des BSB-Adapters
-string Variablename = "Heizung_Fehlercodes"; ! Name der Systemvariable
-integer AnzahlFehler = 10;
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-! Parameter Zusammenbauen
-integer i =0;
-string Woerter ="";
-while (i < AnzahlFehler)
-{
-	if (Woerter != "")
-	{
-		Woerter = Woerter + "," + ((6801) + (10 * i)).ToString();
-	}
-	else { Woerter = Woerter + ((6801) + (10 * i)).ToString(); }
-	i = i + 1;
-}
-
-! URL Zusammenführen
-string Ergebnis = "";
-string Wort = "";
-
-foreach(Wort, Woerter.Split(","))
-{
-	string url="http://" # IPAdresseBSB # "/" # ((Wort.ToInteger() - 1).ToString());
-	
-	! Werte holen
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
-	var stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
-	
-	! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
-	if (stdout != null && stdout != "")
-	{
-		! Ausgabe filtern
-		integer pos = (stdout.Find((Wort.ToInteger() - 1).ToString() #  " "));	
-		stdout = stdout.Substr(pos, stdout.Length());
-		pos = stdout.Find("/td");
-		stdout = stdout.Substr(0, pos);
-		
-		! Sonderzeichen ersetzen
-		if (stdout.Contains("°")){ stdout = stdout.Replace("°","°"); }
-		if (stdout.Contains("%")){ stdout = stdout.Replace("%","%"); }
-		stdout = stdout.ToLatin();
-		Ergebnis = Ergebnis # stdout.RTrim() # "\n\r";
-	}
-
-	url="http://" # IPAdresseBSB # "/" # Wort;	
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'"); 
-	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
-	stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
-
-	! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
-	if (stdout != null && stdout != "")
-	{
-		! Ausgabe filtern
-		integer pos = (stdout.Find(Wort# " "));	
-		stdout = stdout.Substr(pos, stdout.Length());
-		pos = stdout.Find("/td");
-		stdout = stdout.Substr(0, pos);
-		
-		! Sonderzeichen ersetzen
-		if (stdout.Contains("°")){ stdout = stdout.Replace("°","°"); }
-		if (stdout.Contains("%")){ stdout = stdout.Replace("%","%"); }
-		stdout = stdout.ToLatin();
-		Ergebnis = Ergebnis # stdout.RTrim() # "\n\r\n\r";
-	}
-}
-
-!Wenn noch keine Systemvarible vorhanden, diese anlegen
-object svObject = dom.GetObject(Variablename);
-object svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
-if (!svObject)
-{   
-    svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
-    svObject = dom.CreateObject(OT_VARDP);
-    svObjectlist.Add(svObject.ID());
-    svObject.Name(Variablename);   
-    svObject.ValueType(ivtString);
-    svObject.ValueSubType(istChar8859);
-    svObject.DPInfo("Die letzen 20 Fehlercodes der Heizung");
-    svObject.Internal(false);
-    svObject.Visible(true);
-    dom.RTUpdate(0);
-}
-
-if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
-```  
     
 ---
     
-
 ## 11.4 ioBroker ##  
 
 ***Die ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
