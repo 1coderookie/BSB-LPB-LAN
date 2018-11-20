@@ -32,17 +32,22 @@
 
 ## 14.3 Zugriff auf das Webinterface nicht möglich ##
 
-- Adapter hat keine Stromversorgung
-- Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden
-- IP- und/oder MAC-Adresse des Adapters ist nicht korrekt
+- Adapter hat keine, keine ausreichende oder eine unzuverlässige Stromversorgung 
+(→ eine Stromversorgung über ein externes Netzteil ist zu empfehlen, 9V-Steckernetzteile 
+haben sich hier bewährt; eine Stromversorgung via USB *kann* u.U. zu Problemen führen) 
+- Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden 
+- IP- und/oder MAC-Adresse des Adapters ist nicht korrekt 
 - Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
 aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
-- Zugriff nach Stromausfall nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
+- Router- und/oder Firewall-Einstellungen überprüfen 
+- Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
+- Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
+evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan) 
+- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
+Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist zunächst ein Test mit einem anderen LAN-Shield wird empfohlen)  
 - LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
 Ethernet Bibliothek installiert sein (mindestens Version 2.0)! 
-- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
-Problemen bei der Verwendung von günstigen Clones)  
-- Router- und/oder Firewall-Einstellungen überprüfen
+
     
 ---
     
