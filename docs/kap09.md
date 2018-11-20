@@ -14,14 +14,7 @@
 Stecke eine FAT32-formatierte microSD-Karte in den
 Speicherkartenplatz des Ethernet-Shields, bevor du den Arduino
 einschaltest.  
-    
-***Hinweis:***  
-*Vereinzelt kann es vorkommen, dass bestimmte mSD-Karten nicht 
-problemlos vom LAN-Shield erkannt werden. Sollte dieses 
-Problem auftreten, so ist die Verwendung von Karten mit Speichergrößen 
-von 1GB, 2GB bis max. 4GB zu empfehlen. Sollten auch diese Probleme 
-bereiten, versuche es mit einer Formatierung als FAT16.*  
-    
+        
 Aktiviere vor dem Flashen das Definement `#define LOGGER` in der Datei
 *BSB\_lan\_config.h*, füge die zu loggenden Parameter zur Variable
 `log_parameters` hinzu und bestimme das Logintervall mit der Variable
@@ -41,10 +34,17 @@ graphische Darstellung der Logdateien erfolgt mittels `/DG`.
 Um die Datei *datalog.txt* zu löschen und neu zu erstellen, benutze den
 Befehl `/D0`.  
     
-***Hinweise:***
-*Die Ausführung des URL-Befehls `/D0` sollte ebenfalls bei der ersten Benutzung erfolgen,
-da hierdurch die Datei mit dem passenden CSV-Header initiiert wird.*
-
+**Die Ausführung des URL-Befehls `/D0` sollte außerdem bei der ersten Benutzung erfolgen,
+da hierdurch die Datei mit dem passenden CSV-Header initiiert wird.**  
+    
+***Hinweise:***  
+    
+*Vereinzelt kann es vorkommen, dass bestimmte mSD-Karten nicht 
+problemlos vom LAN-Shield erkannt werden. Sollte dieses 
+Problem auftreten, so ist die Verwendung von Karten mit Speichergrößen 
+von 1GB, 2GB bis max. 4GB zu empfehlen. Sollten auch diese Probleme 
+bereiten, versuche es mit einer Formatierung als FAT16.*  
+    
 *Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw.
 das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei
 dargestellte Zeit (welche von der Heizungssteuerung empfangen wird)
