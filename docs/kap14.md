@@ -44,7 +44,7 @@ aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
 evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan) 
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
-Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist zunächst ein Test mit einem anderen LAN-Shield wird empfohlen)  
+Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
 - LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
 Ethernet Bibliothek installiert sein (mindestens Version 2.0)! 
 
