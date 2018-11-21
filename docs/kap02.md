@@ -168,18 +168,25 @@ auch isolierte 6,3mm-Kabelschuhe verwendet werden.
     
 ## 2.2 PPS-Schnittstelle ##
 
-Die PPS-Schnittstelle findet sich bei älteren Reglern und stellt eine
-Punkt-zu-Punkt-Schnittstelle dar, mittels derer
+Die PPS-Schnittstelle findet sich bei *älteren* Reglern und stellt eine
+Punkt-zu-Punkt-Schnittstelle dar, mittels derer digitale 
 Bedieneinheiten/Raumgeräte wie das QAA70 angeschlossen werden
 können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
-angeschlossen.
+angeschlossen. Die Anschlüsse sind dem jeweiligen Handbuch zu entnehmen, 
+häufig sind dies jedoch die Pins A6 & M (manchmal auch als R-BUS bezeichnet) 
+an der Fühlerkontaktleiste X14 (in dem Fall dann A6→CL+ und M→CL-).
 
 PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
 „Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
 digital Serie D, RVP54..., ALBATROS RVA..., LGM11...; bzw. u.a. bei
 folgenden Heizungen: Brötje WGB 15 / WGB 20, Weishaupt WRD 0.2 / 1.1,
 Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
-(mit DomoCommand DC 225).
+(mit DomoCommand DC 225).  
+Bei den ‚Bedieneinheiten‘/Reglern handelt es sich (bei Brötje) vermutlich 
+meist um Eurocontrol-Varianten, manchmal auch um Eurotronic-Varianten 
+(anscheinend NICHT Eurotronic A, nur Eurotronic D aufwärts). Als Hinweis 
+kann die Anschlussmöglichkeit einer QAA70-Raumeinheit überprüft werden - 
+ist diese anschließbar, so sollte auch der Anschluss des Adapters möglich sein.
 
 Die beiden Geräte (Raumgerät und Regler) sprechen nur bedingt
 miteinander. Der Regler sendet Infos, schickt dann später mit einem
@@ -220,7 +227,7 @@ Noch offen ist, ob wegen des Punkt-zu-Punkt-Designs ein QAA mit dem
 Adapter friedlich koexistieren kann oder ob man sich am Ende für eine
 Variante entscheiden muss.
     
-       
+*Die PPS-Funktionalität ist zur Zeit in der Weiterentwicklung, Neuigkeiten diesbezüglich sind in Kürze zu erwarten!*        
     
 ---
     
