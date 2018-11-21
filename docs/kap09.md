@@ -39,7 +39,7 @@ da hierdurch die Datei mit dem passenden CSV-Header initiiert wird.**
     
 ***Hinweise:***  
     
-*Vereinzelt kann es vorkommen, dass bestimmte mSD-Karten nicht 
+*Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht 
 problemlos vom LAN-Shield erkannt werden. Sollte dieses 
 Problem auftreten, so ist die Verwendung von Karten mit Speichergrößen 
 von 1GB, 2GB bis max. 4GB zu empfehlen. Sollten auch diese Probleme 
