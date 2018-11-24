@@ -24,6 +24,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Brötje BBS Pro Evo 15C [LMU74] (Gasbrenner) {BSB}
 - Brötje EcoCondens BBS 15E [LMS14] (Gasbrenner) {BSB}
 - Brötje EcoCondens BBS 20E [LMS14] (Gasbrenner) {BSB}
+- Brötje EcoCondens BBS 28C [LMU7] (Gasbrenner) {BSB}
 - Brötje EcoCondens BBS EVO 20 G [LMS15] (Gasbrenner) {BSB}
 - Brötje EcoTherm Kompakt WMS 12 [LMS 15] (Gasbrenner) {BSB}
 - Brötje EcoTherm Kompakt WMS 24 [LMS 15] (Gasbrenner) {BSB}
