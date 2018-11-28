@@ -236,11 +236,13 @@ Programme grundsätzlich möglich.
     `http://<IP-Adresse>/L=<x>[,<parameter1>,<...>,<parameter20>]`  
     Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden
     und (optional) die Logging-Parameter auf \[parameter1\],
-    \[parameter2\] etc.  
+    \[parameter2\] etc. Dabei sind stets alle zu loggenden Parameter 
+    anzugeben (also auch diejenigen, die evtl. bereits in der Datei 
+    *BSB_lan_config.h* aufgeführt wurden). 
         
-    Das Logging muss durch das Definement \#define LOGGING in der Datei
+    Das Logging muss durch das Definement `#define LOGGING` in der Datei
     *BSB\_lan\_config.h* aktiviert werden und kann initial anhand der
-    Variablen log\_parameters und log\_interval konfiguriert werden
+    Variablen `log_parameters` und `log_interval` konfiguriert werden
     (s.o.).
 
 -   **Konfiguration des Loggens von Bus-Telegrammen:**
