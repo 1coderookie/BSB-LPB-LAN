@@ -240,7 +240,7 @@ Programme grundsätzlich möglich.
     Dabei sind stets alle zu loggenden Parameter anzugeben - also auch (falls gewünscht) 
     diejenigen, die evtl. bereits in der Datei *BSB_lan_config.h* definiert 
     wurden. Nach einem Neustart werden dann wieder nur die Parameter geloggt, 
-    die in der Datei *BSB_lan_config.h* definiert sind.
+    die in der Datei *BSB_lan_config.h* definiert wurden.
         
     Das Logging muss durch das Definement `#define LOGGING` in der Datei
     *BSB\_lan\_config.h* aktiviert werden und kann initial anhand der
