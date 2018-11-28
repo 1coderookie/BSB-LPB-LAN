@@ -237,9 +237,10 @@ Programme grundsätzlich möglich.
     Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden
     und (optional) die Logging-Parameter auf \[parameter1\],
     \[parameter2\] etc.  
-    Dabei sind stets alle zu loggenden Parameter 
-    anzugeben (also auch diejenigen, die evtl. bereits in der Datei 
-    *BSB_lan_config.h* aufgeführt wurden). 
+    Dabei sind stets alle zu loggenden Parameter anzugeben - also auch (falls gewünscht) 
+    diejenigen, die evtl. bereits in der Datei *BSB_lan_config.h* definiert 
+    wurden. Nach einem Neustart werden dann wieder nur die Parameter geloggt, 
+    die in der Datei *BSB_lan_config.h* definiert sind.
         
     Das Logging muss durch das Definement `#define LOGGING` in der Datei
     *BSB\_lan\_config.h* aktiviert werden und kann initial anhand der
