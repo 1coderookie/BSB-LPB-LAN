@@ -236,7 +236,8 @@ Programme grundsätzlich möglich.
     `http://<IP-Adresse>/L=<x>[,<parameter1>,<...>,<parameter20>]`  
     Setzt während der Laufzeit das Logging-Intervall auf \<x\> Sekunden
     und (optional) die Logging-Parameter auf \[parameter1\],
-    \[parameter2\] etc. Dabei sind stets alle zu loggenden Parameter 
+    \[parameter2\] etc.  
+    Dabei sind stets alle zu loggenden Parameter 
     anzugeben (also auch diejenigen, die evtl. bereits in der Datei 
     *BSB_lan_config.h* aufgeführt wurden). 
         
