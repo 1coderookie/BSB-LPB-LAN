@@ -48,7 +48,7 @@ Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßna
 
 Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
 
-***Hinweis:***
+***Hinweis:***  
 *Als Netzwerkkabel sollten möglichst geschirmte Ausführungen zum Einsatz kommen.* 
     
 ---
