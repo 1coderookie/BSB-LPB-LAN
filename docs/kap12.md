@@ -284,7 +284,7 @@ Generell empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohls
     
 ---
     
-### 12.4.2 Clones des W5100-LAN-Shields ### 
+### 12.4.2 Clones des LAN-Shields (W5100) ### 
 Bei den günstigen Nachbauten des W5100-LAN-Shields sollte darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
     
 Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
