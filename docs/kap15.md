@@ -68,7 +68,7 @@ dem Fall lediglich die Aufgabe, den Kontakt zu schließen (oder zu
 öffnen).
 
 Das Relais wiederum kann jedoch unter bestimmten Umständen vom Arduino
-gesteuert werden (bspw. mittels eines Relaisboards).
+gesteuert werden (bspw. mittels eines Relaisboards). Siehe hierzu auch Kap. [12.4](kap12.md#124-relais-und-relaisboards).
 
 Entsprechende Relais findest du im Internet, bei Unsicherheiten solltest
 du deinen Elektriker und/oder Heizungsinstallateur zu Rate ziehen. Eine
@@ -79,7 +79,7 @@ falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!
 
 ## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar? ##
 
-Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
+Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie Kap. [12.4](kap12.md#124-relais-und-relaisboards).  
     
 ---
     
@@ -298,7 +298,7 @@ Datei *BSB\_lan\_config.h* aktivieren und anpassen. Mittels
 entsprechender Modifikationen in der Datei *BSB\_lan\_custom.h* können
 weitere Funktionen realisiert werden, mit der derzeitigen Programmierung
 ist eine eigenständige Raum-Ist-Wert-Übermittlung (ohne FHEM) möglich.
-Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), 8.1(kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie 12.2(kap12.md#122-max-komponenten).  
+Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie [12.5](kap12.md#125-max-komponenten).  
     
 ---
     
@@ -330,7 +330,10 @@ Verhalten auftreten, ist das Testen eines weiteren LAN-Shields zu
 empfehlen, da Hardwareprobleme des betroffenen LAN-Shields nicht
 auszuschließen sind. Der Einsatz eines originalen Arduino-LAN-Shields
 ist selbstverständlich eine weitere Option.  
-    
+
+Des Weiteren kann es bei Clones mit einem W5100-Chip aufgrund fehlerhafter Bauteilbestückung zu diffusen Problemen kommen. Siehe hierzu Kap. [12.2](kap12.md#122-das-lan-shield).  
+
+
 ---
     
 
