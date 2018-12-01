@@ -45,7 +45,8 @@ niemals ein voller Funktionsumfang garantiert werden. Bei nicht
 gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
 Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
 
-Die Software ist auf einem Arduino Mega2560 samt Ethernet-Shield lauffähig, 
+Die Software ist auf einem [Arduino Mega2560](kap12.md#121-der-arduino-mega-2560) 
+samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
 erfahrungsgemäß ‚out of the box'. Aufgrund des geringeren Speichers ist 
 die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.
 Grundsätzlich ist die Verwendung von original Arduino-Komponenten zu
