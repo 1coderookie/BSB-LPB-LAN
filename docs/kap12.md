@@ -31,6 +31,7 @@ Bei diesen Clones sollte prinzipiell darauf geachtet werden, ob in den Produktbe
 Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
 
 Des Weiteren scheint es bei LAN-Shields des Typs W5100 häufig (wenn nicht sogar immer) der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse. (Neben dem SMD-Widerstandsnetzwerk befinden sich noch zwei weitere SMD-Widerstände, deren Werte ebenfalls vom original Schaltplan abweichen, diese scheinen jedoch bei diesem Problem und der nachfolgend aufgezeigten Lösungsmöglichkeit keine Berücksichtigung zu finden.)  
+
 Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
@@ -40,6 +41,7 @@ Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
 
 Diversen Internetquellen zufolge kommt es gerade bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") häufig zu Problemen. Diese äußern sich u.a. in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Geschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit. Teilweise scheinen die Probleme verstärkt aufzutreten, wenn bestimmte Router oder Switches genutzt werden - beim Einsatz an anderen Geräten funktionieren die selben Shields dann wiederum einwandfrei.  
+
 Abhilfe soll hier das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) schaffen. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
