@@ -272,6 +272,42 @@ Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](http
      
 ---
      
+## 12.4 Hinweise zum Arduino & LAN-Shield ## 
+Die folgenden Hinweise beziehen sich auf Nachbauten/Clones der originalen Arduino-Komponenten. Generell kann es bei den günstigen Clones zu Qualitätsschwankungen und Abweichungen von den originalen Arduino-Schaltplänen kommen, woraus sich teilweise diffuse Fehlerproblematiken ergeben können.  
+    
+---
+    
+### 12.4.1 Clones des Arduino Mega 2560 ### 
+Bei den günstigen Nachbauten des Arduino Mega 2560 sollte darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
+
+Generell empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.  
+    
+---
+    
+### 12.4.2 Clones des W5100-LAN-Shields ### 
+Bei den günstigen Nachbauten des W5100-LAN-Shields sollte darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
+    
+Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
+
+Des Weiteren scheint es bei LAN-Shields des Typs W5100 häufig (wenn nicht sogar immer) der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse. (Neben dem SMD-Widerstandsnetzwerk befinden sich noch zwei weitere SMD-Widerstände, deren Werte ebenfalls vom original Schaltplan abweichen, diese scheinen jedoch bei diesem Problem und der nachfolgend aufgezeigten Lösungsmöglichkeit keine Berücksichtigung zu finden.) Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510"), dann ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_510.jpg">
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
+
+Diversen Internetquellen zufolge kommt es gerade bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") häufig zu Problemen. Diese äußern sich u.a. in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Geschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit. Teilweise scheinen die Probleme verstärkt aufzutreten, wenn bestimmte Router oder Switches genutzt werden - beim Einsatz an anderen Geräten funktionieren die selben Shields dann wiederum einwandfrei.  
+Abhilfe soll hier das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) schaffen. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
+    
+Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßnahme nicht mehr auftraten.  
+
+Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.
+    
+---
+    
      
 [Weiter zu Kapitel 13](kap13.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
