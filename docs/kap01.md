@@ -2,17 +2,20 @@
     
 ---
     
-
-    
-
 # 1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software  
 Der BSB-LPB-LAN-Adapter und die dazugehörige BSB-LAN-Software wurden
 entwickelt, um eine Anbindung von Heizungssystemen bzw. -reglern ans LAN
 und somit auch einen entsprechenden Fernzugriff zu ermöglichen.  
+
 Darüber hinaus ist es u.a. möglich, Parameter (bspw. Laufzeiten,
 Temperaturen) auf eine microSD-Karte zu loggen und sowohl DS18B20- als
-auch DHT22-Sensoren zusätzlich am Adapter anzuschließen.  
-Die hier vorgestellte Lösung stellt eine Alternative zu den bisherigen
+auch DHT22-Sensoren zusätzlich am Adapter anzuschließen. Ebenso können 
+MAX!-Komponenten bequem eingebunden, Relaisboards angeschlossen und die 
+Funktionalität durch das Hinzufügen von eigenem Code den individuellen 
+Gegebenheiten angepasst werden. Eine optionale Einbindung in bestehende 
+SmartHome-Systeme ist durch die VErwendung von HTTPMOD und JSON ebenfalls möglich.
+
+Die hier vorgestellte Lösung stellt somit eine Alternative zu den bisherigen
 kommerziellen Lösungen dar, die nicht nur hinsichtlich des
 Kostenfaktors, sondern auch in Bezug auf die vielfältigen
 Einsatzmöglichkeiten mehr als nur ‚interessant' ist.
@@ -87,12 +90,8 @@ Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.
      
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
 Arduino-Version!***    
-    
----
-    
-
-    
-     
+        
+---      
      
 [Weiter zu Kapitel 2](kap02.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
