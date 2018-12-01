@@ -46,7 +46,8 @@ evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
 - LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
-Ethernet Bibliothek installiert sein (mindestens Version 2.0)! 
+Ethernet Bibliothek installiert sein (mindestens Version 2.0)!  
+- Probleme mit (temporärer) Nicht-Erreichbarkeit via LAN? → s. Kap. [12.2](kap12#122-das-lan-shield)
 
     
 ---
