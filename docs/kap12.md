@@ -49,7 +49,7 @@ Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßna
 Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
 
 ***Hinweis:***  
-*Als Netzwerkkabel sollten möglichst geschirmte Ausführungen zum Einsatz kommen.* 
+*Als Netzwerkkabel sollten möglichst geschirmte Ausführungen mit einer Mindestlänge von 1m zum Einsatz kommen.* 
     
 ---
    
@@ -175,7 +175,12 @@ eine zusätzliche Montage von DS18B20-Sensoren leiden!*
 ---
     
 ## 12.4 Relais und Relaisboards ##  
-(Kapitel noch in Arbeit)
+Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziellen URL-Befehlen auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
+    
+Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Aus diesem Grund ist die Verwendung von Koppelrelais oder Solid-State-Relais überlegenswert, bei denen die Schaltkreise galvanisch von einander getrennt sind. Auf diese Weise ist es dann auch bspw. möglich, die Umwälpumpe einer Solarthermieanlage, deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist, parallel anzuschließen und den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) abzufragen.  
+    
+***ACHTUNG:***
+***Es sollte jedoch beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! Es ist empfehlenswert, den Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen. ***  
 
 ---
      
