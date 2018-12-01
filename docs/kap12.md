@@ -4,11 +4,56 @@
 ---
     
 
-# 12. Zusätzliche Hardware in Verbindung mit dem BSB-LAN-Adapter #  
+# 12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter #  
+    
     
 ---
     
-## 12.1 Verwendung optionaler Sensoren: DHT22 und DS18B20 ##
+## 12.1 Der Arduino Mega 2560 ## 
+Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen. Sollte dieser jedoch nicht erhältlich oder zu teuer sein, so können auch die preislich günstigeren Nachbauten (sog. Clones) verwendet werden.  
+
+Bei den Clones sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
+
+***Hinweis:***  
+*Generell empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
+Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.*  
+    
+---
+    
+## 12.2 Das LAN-Shield ## 
+Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shield zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann. Diese LAN-Shields gibt bzw. gab es in zwei verschiedenen Ausführungen. Zum einen mit einem W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
+Grundsätzlich sind beide Modelle mit BSB-LAN verwendbar, es sollte jedoch bei Installation der Arduino IDE darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird (insbesondere bei Verwendung der W5500-Shields).  
+
+Leider scheinen die originalen v1-Shields (W5100) nicht mehr erhältlich zu sein, auch die v2-Shields (W5500) sind offenbar nur noch vereinzelt verfügbar. Im Arduino-Shop selbst werden beide Modelle nicht mehr angeboten. Daher kann es u.U. unausweichlich sein, einen günstigen Nachbau (sog. Clone) des originalen Arduino LAN-Shields zu verwenden.
+
+Bei diesen Clones sollte prinzipiell darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
+    
+Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
+
+Des Weiteren scheint es bei LAN-Shields des Typs W5100 häufig (wenn nicht sogar immer) der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse. (Neben dem SMD-Widerstandsnetzwerk befinden sich noch zwei weitere SMD-Widerstände, deren Werte ebenfalls vom original Schaltplan abweichen, diese scheinen jedoch bei diesem Problem und der nachfolgend aufgezeigten Lösungsmöglichkeit keine Berücksichtigung zu finden.)  
+Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_510.jpg">
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
+
+Diversen Internetquellen zufolge kommt es gerade bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") häufig zu Problemen. Diese äußern sich u.a. in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Geschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit. Teilweise scheinen die Probleme verstärkt aufzutreten, wenn bestimmte Router oder Switches genutzt werden - beim Einsatz an anderen Geräten funktionieren die selben Shields dann wiederum einwandfrei.  
+Abhilfe soll hier das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) schaffen. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
+    
+Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßnahme nicht mehr auftraten.  
+
+Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
+
+***Hinweis:***
+*Als Netzwerkkabel sollten möglichst geschirmte Ausführungen zum Einsatz kommen.* 
+    
+---
+   
+## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20 ##
 
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
 (OneWire-Temperatursensor) und DHT22 (Temperatur- und
@@ -56,18 +101,16 @@ gestalten.
 ---
     
 
-### 12.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
+### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
 
 ***Bitte beachte:***    
 *Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
 BSB\_lan\_config.h definiert werden.*  
-    
-    
+        
 ---
     
-
-### 12.1.2 Hinweise zu DS18B20-Temperatursensoren ###
+### 12.3.2 Hinweise zu DS18B20-Temperatursensoren ###
 
 DS18B20-Sensoren sind (neben der üblichen Bauart) auch in wasserdicht
 gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich. Diese
@@ -128,12 +171,15 @@ Pufferspeichern etc.), die bereits an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
 eine zusätzliche Montage von DS18B20-Sensoren leiden!*  
-    
-    
+        
 ---
     
-    
-## 12.2 MAX!-Komponenten ##
+## 12.4 Relais und Relaisboards ##  
+(Kapitel noch in Arbeit)
+
+---
+     
+## 12.5 MAX!-Komponenten ##
 
 BSB-LAN ist bereits für die Einbindung und Nutzung von MAX!-Komponenten
 vorbereitet. MAX-Thermostate, die von BSB-LAN verwendet werden sollen,
@@ -220,7 +266,7 @@ ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht2
     
 ---
     
-## 12.3 Eigene Hardwarelösungen ##
+## 12.6 Eigene Hardwarelösungen ##
 
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
 Nachbau anregen, sondern weitere Nutzungsmöglichkeiten von BSB-LAN
@@ -235,7 +281,7 @@ Vielen Dank!
     
 ---
     
-### 12.3.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
+### 12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
 
 FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno
 einen Raumgeräteersatz realisiert. Der jeweilige Betriebs- und
@@ -261,7 +307,7 @@ finden.
 ---
     
     
-### 12.3.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
+### 12.6.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
 
 FHEM-Forumsmitglied *„Gizmo\_the\_great"* hat basierend auf einem Wemos D1
 mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
@@ -270,43 +316,7 @@ angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
 Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
      
----
-     
-## 12.4 Hinweise zum Arduino & LAN-Shield ## 
-Die folgenden Hinweise beziehen sich auf Nachbauten/Clones der originalen Arduino-Komponenten. Generell kann es bei den günstigen Clones zu Qualitätsschwankungen und Abweichungen von den originalen Arduino-Schaltplänen kommen, woraus sich teilweise diffuse Fehlerproblematiken ergeben können.  
-    
----
-    
-### 12.4.1 Clones des Arduino Mega 2560 ### 
-Bei den günstigen Nachbauten des Arduino Mega 2560 sollte darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
 
-Generell empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.  
-    
----
-    
-### 12.4.2 Clones des LAN-Shields (W5100) ### 
-Bei den günstigen Nachbauten des LAN-Shields (die 'großen' Modelle des Typs W5100, die direkt auf den Arduino Mega/Uno etc. aufgesteckt werden können) sollte darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
-    
-Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
-
-Des Weiteren scheint es bei LAN-Shields des Typs W5100 häufig (wenn nicht sogar immer) der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse. (Neben dem SMD-Widerstandsnetzwerk befinden sich noch zwei weitere SMD-Widerstände, deren Werte ebenfalls vom original Schaltplan abweichen, diese scheinen jedoch bei diesem Problem und der nachfolgend aufgezeigten Lösungsmöglichkeit keine Berücksichtigung zu finden.)  
-Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_510.jpg">
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
-
-Diversen Internetquellen zufolge kommt es gerade bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") häufig zu Problemen. Diese äußern sich u.a. in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Geschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit. Teilweise scheinen die Probleme verstärkt aufzutreten, wenn bestimmte Router oder Switches genutzt werden - beim Einsatz an anderen Geräten funktionieren die selben Shields dann wiederum einwandfrei.  
-Abhilfe soll hier das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) schaffen. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
-    
-Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßnahme nicht mehr auftraten.  
-
-Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.
-    
 ---
     
      
