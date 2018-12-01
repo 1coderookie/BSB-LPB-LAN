@@ -179,8 +179,10 @@ Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziel
     
 Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Aus diesem Grund ist die Verwendung von Koppelrelais oder Solid-State-Relais überlegenswert, bei denen die Schaltkreise galvanisch von einander getrennt sind. Auf diese Weise ist es dann auch bspw. möglich, die Umwälpumpe einer Solarthermieanlage, deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist, parallel anzuschließen und den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) abzufragen.  
     
-***ACHTUNG:***
-***Es sollte jedoch beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! Es ist empfehlenswert, den Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen. ***  
+***ACHTUNG:***  
+***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen!  
+230V können tödlich sein!  
+Es ist daher empfehlenswert, den Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.***  
 
 ---
      
