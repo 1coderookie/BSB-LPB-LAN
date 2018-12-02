@@ -13,7 +13,12 @@ auch DHT22-Sensoren zusätzlich am Adapter anzuschließen. Ebenso können
 MAX!-Komponenten bequem eingebunden, Relaisboards angeschlossen und die 
 Funktionalität durch das Hinzufügen von eigenem Code den individuellen 
 Gegebenheiten angepasst werden. Eine optionale Einbindung in bestehende 
-SmartHome-Systeme ist durch die VErwendung von HTTPMOD und JSON ebenfalls möglich.
+SmartHome-Systeme ist durch die Verwendung von HTTPMOD und JSON ebenfalls möglich.  
+
+Die Software ist auf einem [Arduino Mega2560](kap12.md#121-der-arduino-mega-2560) 
+samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
+erfahrungsgemäß ‚out of the box'. Aufgrund des geringeren Speichers ist 
+die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.  
 
 Die hier vorgestellte Lösung stellt somit eine Alternative zu den bisherigen
 kommerziellen Lösungen dar, die nicht nur hinsichtlich des
@@ -34,7 +39,7 @@ QAA70-Bedieneinheit. Der BSB-LPB-LAN-Adapter ist auch hier einsetzbar,
 allerdings ist der Funktionsumfang der BSB-LAN-Software 
 reglerbedingt in diesem Fall sehr eingeschränkt.
 
-Die hier vorgestellte und beschriebene Kombination aus Hard- und
+Die beschriebene Kombination aus Hard- und
 Software wurde u.a. an verschiedenen Heizungssystemen von Brötje und
 Elco ausgiebig getestet, der Einsatz an Heizungssystemen weiterer
 Hersteller war ebenfalls erfolgreich. Die Kommunikation sollte
@@ -44,20 +49,6 @@ Systeme ist u.a. im nachfolgenden Kapitel zu finden, dennoch kann
 niemals ein voller Funktionsumfang garantiert werden. Bei nicht
 gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
 Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
-
-Die Software ist auf einem [Arduino Mega2560](kap12.md#121-der-arduino-mega-2560) 
-samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
-erfahrungsgemäß ‚out of the box'. Aufgrund des geringeren Speichers ist 
-die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.
-Grundsätzlich ist die Verwendung von original Arduino-Komponenten zu
-empfehlen, da es bei dem Einsatz von günstigen Clones u.U. zu diffusen
-Problemen kommen kann.
-
-Da es teilweise unterschiedliche Pinbelegungen bei den verschiedenen
-LAN-Shield-Clones gibt, ist es u.U. nötig, den BSB-LPB-LAN-Adapter an
-andere Pins anzuschließen und die entsprechenden Änderungen hinsichtlich
-der Pinbelegung in der Software (Datei *BSB\_lan\_config.h*) anzupassen
-(s. Kap. [4](kap04.md) & [5](kap05.md)).
 
 Der Schaltplan des Adapters ist im Anhang zu finden. Außerdem wurden in
 der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
