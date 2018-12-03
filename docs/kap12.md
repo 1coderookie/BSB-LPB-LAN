@@ -22,7 +22,7 @@ Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspa
     
 ## 12.2 Das LAN-Shield ## 
 Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shield zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann. Diese LAN-Shields gibt bzw. gab es in zwei verschiedenen Ausführungen. Zum einen mit einem W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
-Grundsätzlich sind beide Modelle mit BSB-LAN verwendbar, es sollte jedoch bei Installation der Arduino IDE darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird (insbesondere bei Verwendung der W5500-Shields).  
+Prinzipiell sind beide Modelle mit BSB-LAN verwendbar, es sollte jedoch bei Installation der Arduino IDE darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird (insbesondere bei Verwendung der W5500-Shields).  
 
 Leider scheinen die originalen v1-Shields (W5100) nicht mehr erhältlich zu sein, auch die v2-Shields (W5500) sind offenbar nur noch vereinzelt verfügbar. Im Arduino-Shop selbst werden beide Modelle nicht mehr angeboten. Daher kann es u.U. unausweichlich sein, einen günstigen Nachbau (sog. Clone) des originalen Arduino LAN-Shields zu verwenden.
 
@@ -30,8 +30,7 @@ Bei diesen Clones sollte prinzipiell darauf geachtet werden, ob in den Produktbe
     
 Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
 
-Des Weiteren scheint es bei LAN-Shields des Typs W5100 häufig (wenn nicht sogar immer) der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse. (Neben dem SMD-Widerstandsnetzwerk befinden sich noch zwei weitere SMD-Widerstände, deren Werte ebenfalls vom original Schaltplan abweichen, diese scheinen jedoch bei diesem Problem und der nachfolgend aufgezeigten Lösungsmöglichkeit keine Berücksichtigung zu finden.)  
-
+Des Weiteren scheint es bei LAN-Shields-Clones des Typs W5100 der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei u.a. um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse.  
 Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
@@ -40,14 +39,11 @@ Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
 
-Diversen Internetquellen zufolge kommt es gerade bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") häufig zu Problemen. Diese äußern sich u.a. in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Geschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit. Teilweise scheinen die Probleme verstärkt aufzutreten, wenn bestimmte Router oder Switches genutzt werden - beim Einsatz an anderen Geräten funktionieren die selben Shields dann wiederum einwandfrei.  
-
-Abhilfe soll hier das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) schaffen. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
+Diversen Internetquellen zufolge scheinen dabei Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") in Einzelfällen problemanfälliger zu sein. Dies kann sich in einer instabilen Verbindung, unzuverlässiger Erreichbarkeit, verringerten Netzwerkgeschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit äußern. Inwiefern die beschriebenen Probleme letztlich wirklich der geänderten Widerstandsgruppe oder anderen Faktoren wie einer mangelhaften Stromversorgung des Arduino oder einer fehlerbehafteten Netzwerkinfrastruktur (Kabel, Switches etc.) geschuldet sind, ist allerdings nicht immer nachvollziehbar. 
+Es wird jedoch berichtet, dass das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) Abhilfe schaffen soll. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
     
-Etliche Benutzer haben berichtet, dass die genannten Probleme nach dieser Maßnahme nicht mehr auftraten.  
-
 Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
 
 ***Hinweis:***  
