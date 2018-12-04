@@ -10,27 +10,25 @@
 ---
     
 ## 12.1 Der Arduino Mega 2560 ## 
-Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen. Sollte dieser jedoch nicht erhältlich oder zu teuer sein, so können auch die preislich günstigeren Nachbauten (sog. Clones) verwendet werden.  
+*Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen.*  
+Des Weiteren empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
+Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.
 
-Bei den Clones sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
-
-***Hinweis:***  
-*Generell empfiehlt es sich, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
-Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (ca. 500-1000mA) stellte sich bisher als zuverlässige Lösung dar.*  
+Es können jedoch auch günstige Nachbauten des Arduino Mega 2560 verwendet werden. Bei diesen sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpasssungen vorzunehmen.  
     
 ---
     
 ## 12.2 Das LAN-Shield ## 
-Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shield zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann. Diese LAN-Shields gibt bzw. gab es in zwei verschiedenen Ausführungen. Zum einen mit einem W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
-Prinzipiell sind beide Modelle mit BSB-LAN verwendbar, es sollte jedoch bei Installation der Arduino IDE darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird (insbesondere bei Verwendung der W5500-Shields).  
+*Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shields zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann.*  
+Diese LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum einen mit einem W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2). Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
+Bei der Installation der Arduino IDE sollte darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird.  
+Als LAN-Label sollte möglichst eine geschirmte Ausführung mit einer Mindestlänge von 1m verwendet werden.
 
-Leider scheinen die originalen v1-Shields (W5100) nicht mehr erhältlich zu sein, auch die v2-Shields (W5500) sind offenbar nur noch vereinzelt verfügbar. Im Arduino-Shop selbst werden beide Modelle nicht mehr angeboten. Daher kann es u.U. unausweichlich sein, einen günstigen Nachbau (sog. Clone) des originalen Arduino LAN-Shields zu verwenden.
-
-Bei diesen Clones sollte prinzipiell darauf geachtet werden, ob in den Produktbeschreibungen bereits auf ein verändertes Platinenlayout o.ä. hingewiesen wird. Teilweise werden Pins anders belegt oder für Sonderfunktionen hinzugefügt. Sollte dies der Fall sein, so ist von einem Kauf eher abzuraten - es sei denn, man ist fähig und gewillt, im Code von BSB-LAN ggf. Anpassungen diesbezüglich vorzunehmen.  
+Darüber hinaus gibt es günstige Nachbauten der originalen Shields, sog. Clones. Bei diesen sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpasssungen vorzunehmen.  
     
-Bei einigen Modellen scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
+Bei einigen Clones scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein erstes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
 
-Des Weiteren scheint es bei LAN-Shields-Clones des Typs W5100 der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei u.a. um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse.  
+Des Weiteren scheint es bei LAN-Shield-Clones des Typs W5100 häufig der Fall zu sein, dass bestimmte Bauteile anders dimensioniert sind, als im original Arduino-Schaltplan spezifiziert. Konkret handelt es sich dabei u.a. um ein SMD-Widerstandsnetzwerk nahe der RJ45-Buchse.  
 Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten achtpoligen 49.9 Ohm Widerstandsnetzwerk (gekennzeichnet mit "49R9"), dann ein Clone-Shield mit einem 51 Ohm Widerstandsnetzwerk (gekennzeichnet mit "510") und nachfolgend ein Clone-Shield mit einem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511").  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_original.png">
@@ -39,15 +37,14 @@ Die folgenden Bilder zeigen zuerst ein original Arduino-Shield mit dem korrekten
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Widerstandsreihe_511.jpg">
 
-Diversen Internetquellen zufolge scheinen dabei Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") in Einzelfällen problemanfälliger zu sein. Dies kann sich in einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Netzwerkgeschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit äußern. Inwiefern die beschriebenen Probleme letztlich wirklich der geänderten Widerstandsgruppe oder anderen Faktoren wie einer mangelhaften Stromversorgung des Arduino oder einer fehlerbehafteten Netzwerkinfrastruktur (Kabel, Switches etc.) geschuldet sind, ist allerdings nicht immer nachvollziehbar.  
+Normalerweise ist der Einsatz dieser Clones ohne Probleme möglich.  
+Diversen Internetquellen zufolge kann es allerdings in Einzelfällen bei den Clone-Shields mit dem 510 Ohm Widerstandsnetzwerk (gekennzeichnet mit "511") zu Problemen wie einer instabilen Verbindung, unzuverlässigen Erreichbarkeit, verringerten Netzwerkgeschwindigkeit bis hin zur kompletten Nicht-Erreichbarkeit kommen. Inwiefern die beschriebenen Probleme letztlich wirklich der geänderten Widerstandsgruppe oder anderen Faktoren wie einer mangelhaften Stromversorgung des Arduino oder einer fehlerbehafteten Netzwerkinfrastruktur (Kabel, Switches etc.) geschuldet sind, ist allerdings nicht immer nachvollziehbar.  
 Es wird jedoch berichtet, dass das zusätzliche Bestücken mit zwei 100 Ohm Widerständen (1/4 W) Abhilfe schaffen soll. Diese seien auf der Unterseite des Shields an den Pins 1+2 (Tx+/Tx-) sowie 3+6 (Rx+/Rx-) der RJ45-Buchse anzulöten.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
     
 Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
 
-***Hinweis:***  
-*Als Netzwerkkabel sollten möglichst geschirmte Ausführungen mit einer Mindestlänge von 1m zum Einsatz kommen.* 
     
 ---
    
