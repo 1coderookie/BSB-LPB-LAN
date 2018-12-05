@@ -320,10 +320,79 @@ angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
 Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
      
-
 ---
     
-     
+### 12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter ###  
+Obwohl für die Netzwerkanbindung des Adapters definitv die kabelgebundene Variante zu empfehlen ist, kann es in Einzelfällen jedoch nötig sein, eine alternative LAN-Anbindung für den Adapter zu schaffen, da eine Kabelinstallation (LAN oder Busleitung) bis zum Wärmeerzeuger nicht realisierbar ist. Dafür gibt es mehrere Möglichkeiten, die im Folgenden kurz vorgestellt werden.  
+    
+---
+    
+#### 12.7.1 Nutzung eines PowerLANs / dLANs ####  
+Die Nutzung von Powerline-Adaptern, bei denen das 230V-Netz als LAN 'missbraucht' wird, ist eine Option, die im Idealfall zuverlässiger arbeitet als eine WLAN-Lösung.  
+
+Probleme können hierbei jedoch von Steckernetzteilen ausgelöst werden, bei denen bestimmte Frequenzen auf die Stromleitung übertragen werden.  
+Außerdem müssen sich die Powerline-Adapter bzw. die verwendeten Steckdosen an der gleichen Phase des Stromnetzes befinden. Bei Elektroinstallationen, die bspw. über mehrere Stockwerke gehen und jeweils an einen eigenständigen Sicherungskasten angeschlossen sind, kann es daher zu Problemen kommen. Abhilfe können hier sog. Phasenkoppler schaffen, die jedoch zusätzlich angeschafft und vom Elektriker installiert werden müssen.  
+    
+---
+    
+#### 12.7.2 WLAN: Nutzung eines extra Routers ####  
+Eine Möglichkeit für eine WLAN-Anbindung ist, den Adapter via LAN an einen ausgemusterten Router (bspw. eine alte Fritz!Box) anzuschließen, welcher sich wiederum als Client im bestehenden WLAN-Netz anmeldet. Die Übertragungsraten und Latenzen sind normalerweise für die Nutzung von BSB-LAN absolut ausreichend. Sollte das WLAN-Signal am Aufstellort grenzwertig sein, so könnte der Router mit stärkeren Antennen ausgerüstet werden.  
+
+Neben dem Einsatz eines 'normalen' Routers können auch kleine 'Minirouter' verwendet werden, wenn sie denn den Client-Modus unterstützen. Als Beispiel sei hier der "Phicomm M1" genannt, der mittlerweile (meist gebraucht) für unter zehn Euro in Online-Auktionshäusern oder diversen Kleinanzeigen zu finden ist. Geräte dieser Art sind aber auch neu und mit höheren Übertragungsgeschwindigkeiten bei diversen Anbietern für ca. 15-20€ (neu) zu finden.  
+
+In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden - insbesondere dann, wenn via FHEM o.ä. Logdateien erstellt oder mit zusätzlicher Hardware (HK-Thermostate o.ä.) der Wärmeerzeuger gesteuert oder dessen Verhalten beeinflusst werden soll.  
+    
+---
+    
+#### 12.7.3 WLAN: Nutzung eines zusätzlichen ESP oder eines 'WLAN-Arduino' ####  
+Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ESP-WLAN-Moduls anstelle des LAN-Shields dar. Hierbei ist jedoch ein gewisser Konfigurations- und Bastelaufwand (zusätzlicher Levelshifter etc.) nötig. Der ESP muss dabei mit der ursprünglichen AT-Firmware von Espressif geflasht sein (weitere Infos s.u.). Durch den Wegfall des LAN-Shields kann dann jedoch die microSD-Karten-Loggingfunktion nicht mehr genutzt werden.  
+
+Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden. Bei diesen Boards können mittels DIP-Schaltern verschiedene Konfigurationen eingestellt werden (bspw. Arduino<->USB, Arduino<->ESP, ESP<->USB), was bei der Installation und der Verwendung berücksichtigt werden muss.  
+Anzumerken ist auch hier, dass durch den Wegfall des LAN-Shields das microSD-Karten-Logging nicht mehr verwendet werden kann.  Außerdem sinken sowohl die Übertragungsrate als auch die Latenzzeit deutlich im Vergleich zum Aufbau mit dem regulären kabelgebundenen LAN-Shield, da die Daten seitens des ATmega zum ESP lediglich mit 115200 Baud über die serielle Schnittstelle übertragen werden.  
+Im Folgenden als (nicht gekennzeichnetes) Zitat die Installationsbeschreibung von FHEM-Forumsmitglied "freetz" (original FHEM-Forumsbeitrag [hier](https://forum.fhem.de/index.php/topic,29762.msg867911.html#msg867911)):  
+
+**Installation der AT-Firmware**
+
+- Download der Firmware von Espressif:  
+https://www.espressif.com/en/support/download/at  
+Die weiteren Installationshinweise beziehen sich auf die Version 1.7.
+
+- Flashen der Firmware  
+Ich zeige das hier unter der Verwendung von esptool.py, da dieses für alle Systeme verfügbar sein sollte. Lediglich der COM-Port (hier: /dev/tty.wchusbserial1420) muss entsprechend angepasst werden.  
+Zuerst müssen die DIP-Schalter von links nach rechts auf die Positionen  
+OFF OFF OFF OFF ON ON ON (ON)  
+gesetzt werden.  
+
+- Dann wechseln in das entpackte Firmwareverzeichnis und dort  
+`esptool.py -p /dev/tty.wchusbserial1420 erase_flash`  
+und dann  
+`esptool.py -p /dev/tty.wchusbserial1420 --chip esp8266 write_flash -fm dio -ff 26m --flash_size 2MB-c1 0x00000 ./bin/boot_v1.7.bin 0x01000 ./bin/at/1024+1024/user1.2048.new.5.bin 0x1fc000 ./bin/esp_init_data_default_v08.bin 0xfe000 ./bin/blank.bin 0x1fe000 ./bin/blank.bin 0x1fb000 ./bin/blank.bin`  
+eingeben.  
+
+**Testen der Firmware**  
+
+- Hierzu zuerst die DIP-Schalter auf  
+OFF OFF OFF OFF ON ON OFF (ON)  
+stellen.  
+
+- Dann mit einem Terminalprogramm (115200,8N1) auf den Port zugreifen und z.B. ATI eingeben. Wenn man dann eine lesbare Fehlermeldung erhält, ist die Firmware korrekt eingestellt.  
+
+- Wer experimentierfreudig ist, kann hier über das Kommando AT+UART_CUR=230400,8,1,0,1 die Übertragungsrate verdoppeln und könnte dann die 230400 Baud auch in der .ino in der setup()-Funktion eintragen. Ich würde das aber erst machen, wenn klar ist, dass die 115200 sicher und zuverlässig laufen.  
+
+**Flashen der BSB-LAN Software**  
+
+- Jetzt, wo der ESP entsprechend geflasht und konfiguriert ist, stellt man die DIP-Schalter auf  
+ON ON ON ON OFF OFF OFF (ON)  
+und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".  
+
+- Nun sieht der Wemos Mega nach außen hin aus wie ein klassischer ATMega2560 und kommuniziert intern und von außen nicht sichtbar mit dem ESP8266 über seine Serial3-Schnittstelle.  
+
+**Konfiguration von BSB-LAN**  
+
+- In der BSB_lan_config.h muss nun das Definement WIFI mit `#define WIFI` gesetzt werden. Darüber hinaus müssen in den Variablen `ssid` und `pass` die Zugangsdaten für das WLAN eingetragen werden. Wenn die Variable `IPAddr` gesetzt ist, wird diese als statische IP verwendet. Im Gegensatz zur LAN-Anbindung kann man diese Variable aber auch auskommentieren, dann bekommt man vom Router per DHCP eine IP-Adresse zugewiesen. Die Angabe eines Gateways wird von der WiFiEsp-Library nicht unterstützt und dieses wird dann entsprechend ignoriert.  
+    
+---
+         
 [Weiter zu Kapitel 13](kap13.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
