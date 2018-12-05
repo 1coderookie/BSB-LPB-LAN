@@ -366,7 +366,9 @@ gesetzt werden.
 - Dann wechseln in das entpackte Firmwareverzeichnis und dort  
 `esptool.py -p /dev/tty.wchusbserial1420 erase_flash`  
 und dann  
-```esptool.py -p /dev/tty.wchusbserial1420 --chip esp8266 write_flash -fm dio -ff 26m --flash_size 2MB-c1 0x00000 ./bin/boot_v1.7.bin 0x01000 ./bin/at/1024+1024/user1.2048.new.5.bin 0x1fc000 ./bin/esp_init_data_default_v08.bin 0xfe000 ./bin/blank.bin 0x1fe000 ./bin/blank.bin 0x1fb000 ./bin/blank.bin```  
+```
+esptool.py -p /dev/tty.wchusbserial1420 --chip esp8266 write_flash -fm dio -ff 26m --flash_size 2MB-c1 0x00000 ./bin/boot_v1.7.bin 0x01000 ./bin/at/1024+1024/user1.2048.new.5.bin 0x1fc000 ./bin/esp_init_data_default_v08.bin 0xfe000 ./bin/blank.bin 0x1fe000 ./bin/blank.bin 0x1fb000 ./bin/blank.bin
+```  
 eingeben.  
 
 **Testen der Firmware**  
