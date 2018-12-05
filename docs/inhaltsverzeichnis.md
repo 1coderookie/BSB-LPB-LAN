@@ -48,7 +48,7 @@
 [12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)  
 [12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren](kap12.md#1231-hinweise-zu-dht22-temperatur-feuchtigkeitssensoren)  
 [12.3.2 Hinweise zu DS18B20-Temperatursensoren](kap12.md#1232-hinweise-zu-ds18b20-temperatursensoren)  
-[12.4 Relais und Relaisboards](kap12.md#124-relais-und-relaisboards)
+[12.4 Relais und Relaisboards](kap12.md#124-relais-und-relaisboards)  
 [12.5 MAX!-Komponenten](kap12.md#125-max-komponenten)  
 [12.6 Eigene Hardwarelösungen](kap12.md#126-eigene-hardwarelösungen)  
 [12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)](kap12.md#1261-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster)  
