@@ -354,7 +354,7 @@ Im Folgenden als (nicht gekennzeichnetes) Zitat die Installationsbeschreibung vo
 **Installation der AT-Firmware**
 
 - Download der Firmware von Espressif:  
-[https://www.espressif.com/en/support/download/at]  
+(https://www.espressif.com/en/support/download/at)  
 Die weiteren Installationshinweise beziehen sich auf die Version 1.7.
 
 - Flashen der Firmware  
