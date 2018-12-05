@@ -266,7 +266,7 @@ FHEM-Forumsmitglied *„Andreas29"* hat dieses Anwendungsbeispiel ohne FHEM
 umgesetzt. Eine ausführliche Beschreibung samt der benötigten
 angepassten Datei *BSB\_lan\_custom.h* findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg851382.html#msg851382).  
 Das in dem Zusammenhang dort erwähnte und verwendete „Arduino-Raumgerät light"
-ist in Kap. [12.3.1](kap12.md#1231-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster) vorgestellt.  
+ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-display) vorgestellt.  
     
 ---
     
