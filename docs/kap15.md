@@ -366,9 +366,11 @@ In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3]
     
 ---
     
+## 15.25 Gibt es eine (W)LAN-Option für den Adapter? ##
 
+Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
 
-## 15.25 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
+## 15.26 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum
 ([https://forum.fhem.de/](https://forum.fhem.de/))
