@@ -167,7 +167,7 @@ entfernt montiert werden.
 
 ***Bitte beachte:***  
 *Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
-Pufferspeichern etc.), die bereits an einen Heizungs- oder
+Pufferspeichern etc.), die an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
 eine zusätzliche Montage von DS18B20-Sensoren leiden!*  
@@ -182,9 +182,8 @@ Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais be
 Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen Koppelrelais (sofern deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist), wäre es bspw. möglich, den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) und somit den Betriebsstatus der Pumpe abzufragen.  
     
 ***ACHTUNG:***  
-***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen!  
-230V können tödlich sein!  
-Es ist daher empfehlenswert, den Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.***  
+***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!***  
+*Es ist empfehlenswert, den Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.*  
 
 ---
      
