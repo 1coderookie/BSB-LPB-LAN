@@ -77,7 +77,7 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner)
 
--   Brötje EcoCondens BBS EVO 20 G \[LMS15\] (Gasbrenner)
+-   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner)
 
 -   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner)
 
@@ -100,9 +100,9 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner)
 
--   Brötje SensoTherm BLW 12 B \[RVS21.825\] (Wärmepumpe)
+-   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe)
 
--   Brötje SensoTherm BLW 15 B \[RVS21.825\] (Wärmepumpe)
+-   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe)
 
 -   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe)
 
@@ -114,7 +114,7 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WBS 22E \[LMS14\] (Gasbrenner)
 
--   Brötje WGB 15 E \[LMS14\] (Gasbrenner)
+-   Brötje WGB 15E \[LMS14\] (Gasbrenner)
 
 -   Brötje WGB 20C \[LMU74\] (Gasbrenner)
 
@@ -124,7 +124,7 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner)
 
--   Brötje WGB S 17/20 E EcoTherm Plus \[LMS14\] (Gasbrenner)
+-   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner)
 
 -   Brötje WGB-U 15H \[LMS14\] (Gasbrenner)
 
