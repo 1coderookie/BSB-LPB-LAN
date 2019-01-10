@@ -541,7 +541,7 @@ Bei einem Reglertyp (LMS14, MHG) weicht die Zählung so weit ab, dass kein passe
 Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
   
 *Datum und Uhrzeit verändern*  
-Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15:00 Uhr:  
+Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
 `/S0=04.01.2019_20:15:00`  
    
 *Zeitprogramme verändern*
