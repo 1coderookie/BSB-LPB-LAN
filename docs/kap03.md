@@ -67,11 +67,15 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje BBK 22E \[LMS14\] (Gasbrenner)
 
+-   Brötje BBK 22F \[LMS14\] (Gasbrenner)
+
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner)
 
 -   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner)
 
 -   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner)
+
+-   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner)
 
 -   Brötje EcoCondens BBS EVO 20 G \[LMS15\] (Gasbrenner)
 
@@ -105,6 +109,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner)
 
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner)
+
+-   Brötje WBS 14F \[LMS14\] (Gasbrenner)
 
 -   Brötje WBS 22E \[LMS14\] (Gasbrenner)
 
