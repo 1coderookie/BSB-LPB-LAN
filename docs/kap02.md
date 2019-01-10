@@ -57,11 +57,11 @@ Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
 Regler \'lokal\' zugreifen, an dem er angeschlossen ist (also bspw.
 Heizungsregler oder SSR). Ebenso verhält es sich mit den jeweiligen
 Bedieneinheiten der Regler, die über den ‚Bus BE' (Bus Bedieneinheit)
-angeschlossen sind.*
+angeschlossen sind.*  
 *Wenn ein Adapter via LPB an einem der beiden Regler aus oben genanntem
-Beispiel angeschlossen ist, müssen*
+Beispiel angeschlossen ist, müssen*  
 *1. die Geräte- und Segmentadressen entsprechend der
-LPB-Konfigurationsanforderungen eingestellt werden, und*
+LPB-Konfigurationsanforderungen eingestellt werden, und*  
 *2. beim Adapter eine Zieladresse eingestellt werden, an die die
 jeweiligen Anfragen des Adapters geschickt werden.*    
 
