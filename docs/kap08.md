@@ -338,8 +338,8 @@ Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
 gesendet werden, um einen Raumeinfluss bei der Berechnung der
 VL-Temperatur geltend zu machen.
 
-Für die Raumtemperatur HK1[^20] ist der Spezialparameter 10000, für den
-HK2[^21] der Parameter 10001 zu nutzen.
+Für die Raumtemperatur HK1 ist der Spezialparameter 10000, für den
+HK2 der Parameter 10001 zu nutzen.
 
 ***Beispiel:***  
 *Der URL-Befehl für den HK1, um eine Raumtemperatur von
@@ -536,7 +536,20 @@ Bei einem Reglertyp (LMS14, MHG) weicht die Zählung so weit ab, dass kein passe
     
 --- 
     
-
+### 8.2.7 Datum, Uhrzeit und Zeitprogramme verändern ###  
+   
+Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
+  
+*Datum und Uhrzeit verändern*  
+Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
+`/S0=04.01.2019_20:15:00`  
+   
+*Zeitprogramme verändern*
+Der folgende Befehl setzt das Zeitprogramm für Mittwoch beim Heizkreis 1 auf 05:00-22:00Uhr:  
+`/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx` 
+     
+---  
+   
      
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
