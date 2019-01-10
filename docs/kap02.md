@@ -57,12 +57,12 @@ Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
 Regler \'lokal\' zugreifen, an dem er angeschlossen ist (also bspw.
 Heizungsregler oder SSR). Ebenso verhält es sich mit den jeweiligen
 Bedieneinheiten der Regler, die über den ‚Bus BE' (Bus Bedieneinheit)
-angeschlossen sind.
-Wenn ein Adapter via LPB an einem der beiden Regler aus oben genanntem
-Beispiel angeschlossen ist, müssen
-1. die Geräte- und Segmentadressen entsprechend der
-LPB-Konfigurationsanforderungen eingestellt werden, und
-2. beim Adapter eine Zieladresse eingestellt werden, an die die
+angeschlossen sind.*
+*Wenn ein Adapter via LPB an einem der beiden Regler aus oben genanntem
+Beispiel angeschlossen ist, müssen*
+*1. die Geräte- und Segmentadressen entsprechend der
+LPB-Konfigurationsanforderungen eingestellt werden, und*
+*2. beim Adapter eine Zieladresse eingestellt werden, an die die
 jeweiligen Anfragen des Adapters geschickt werden.*    
 
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
@@ -173,8 +173,7 @@ Punkt-zu-Punkt-Schnittstelle dar, mittels derer digitale
 Bedieneinheiten/Raumgeräte wie das QAA70 angeschlossen werden
 können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
 angeschlossen. Die Anschlüsse sind dem jeweiligen Handbuch zu entnehmen, 
-häufig sind dies jedoch die Pins A6 & M (manchmal auch als R-BUS bezeichnet) 
-an der Fühlerkontaktleiste X14 (in dem Fall dann A6→CL+ und M→CL-).
+häufig sind dies jedoch die Pins A6 & M (in dem Fall dann A6→CL+ und M→CL-).
 
 PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
 „Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
@@ -184,11 +183,11 @@ Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
 (mit DomoCommand DC 225).  
 Bei den ‚Bedieneinheiten‘/Reglern handelt es sich (bei Brötje) vermutlich 
 meist um Eurocontrol-Varianten, manchmal auch um Eurotronic-Varianten 
-(anscheinend NICHT Eurotronic A, nur Eurotronic D aufwärts). Als Hinweis 
+(anscheinend NICHT Eurotronic A, nur Eurotronic D aufwärts). *Als Hinweis 
 kann die Anschlussmöglichkeit einer QAA70-Raumeinheit überprüft werden - 
-ist diese anschließbar, so sollte auch der Anschluss des Adapters möglich sein.
+ist diese anschließbar, so sollte auch der Anschluss des Adapters möglich sein.*
 
-Die beiden Geräte (Raumgerät und Regler) sprechen nur bedingt
+Die beiden Geräte (Raumgerät und Regler) kommunizieren nur bedingt
 miteinander. Der Regler sendet Infos, schickt dann später mit einem
 einzigen Byte (0x17) eine Anforderung an das Raumgerät, das dann
 teilweise auf vorhergehende Regler-Infos reagiert, andererseits aber
@@ -201,7 +200,7 @@ richtige Antwort, wird angenommen, dass es kein Raumgerät mehr gibt und
 der Regler verfällt wieder in einen Suchmodus.
 
 Der Funktionsumfang ist hierbei nur rudimentär und beschränkt sich
-derzeit mittels BSB-LAN auf etwa ein Dutzend Parameter, die man
+derzeit mittels BSB-LAN derzeit auf etwa ein Dutzend Parameter, die man
 lesen/schreiben kann:
 
 - Raumtemperatur Ist  
@@ -223,9 +222,7 @@ Raumtemperaturen sendet und die Solltemperaturen nach vielfältigeren
 Kriterien steuern kann.
 
 ***Hinweis:***  
-Noch offen ist, ob wegen des Punkt-zu-Punkt-Designs ein QAA mit dem
-Adapter friedlich koexistieren kann oder ob man sich am Ende für eine
-Variante entscheiden muss.
+Sollte bereits ein QAA70 angeschlossen sein, so ist der Zugriff mittels BSB-LAN nur lesend möglich.
     
 *Die PPS-Funktionalität ist zur Zeit in der Weiterentwicklung, Neuigkeiten diesbezüglich sind in Kürze zu erwarten!*        
     
