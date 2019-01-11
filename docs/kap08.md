@@ -545,7 +545,7 @@ Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:1
 `/S0=04.01.2019_20:15:00`  
    
 *Zeitprogramme verändern*  
-Der folgende Befehl setzt das Zeitprogramm für Mittwoch beim Heizkreis 1 auf 05:00-22:00 Uhr:  
+Der folgende Befehl setzt das Zeitprogramm für Mittwoch beim Heizkreis 1 (Parameter 502) auf 05:00-22:00 Uhr:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx` 
      
 ---  
