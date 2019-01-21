@@ -421,7 +421,15 @@ JSON erfolgen.
     http://<IP-Adresse>/JS  
     Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
     Empfangen: "Parameter", "Status" (0 = Fehler, 1 = OK, 2 = Parameter read-only)  
-    ```
+    ```   
+-   **Setzen von Parametern per Linux-Kommandozeile oder „Curl for Windows“**   
+    Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
+    
+    Linux-Kommandozeile:   
+    `curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<IP-Adresse>/JS`
+
+    Curl for Windows:   
+    `curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS`
     
 ---
     
