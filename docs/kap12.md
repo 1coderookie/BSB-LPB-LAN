@@ -103,6 +103,12 @@ gestalten.
 
 ### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
 
+DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
+sich hierbei NICHT um den OneWire-Bus von Maxim oder eine andere Form 
+eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse aufweist! 
+Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
+Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
+   
 ***Bitte beachte:***    
 *Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
