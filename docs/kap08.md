@@ -426,10 +426,14 @@ JSON erfolgen.
     Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
     
     Linux-Kommandozeile:   
-    ```curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<IP-Adresse>/JS```
+    ```
+    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<IP-Adresse>/JS
+    ```
 
     Curl for Windows:   
-    ```curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS```
+    ```
+    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS
+    ```
     
 ---
     
