@@ -1664,7 +1664,14 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
       
 ---   
     
+## 11.7 MQTT ##   
+   
+***Ein gut dokumentiertes Beispiel für eine MQTT-Verwendung bei BSB-LAN vom FHEM-Forumsmitglied „cubase" findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace). Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet. 
+Vielen Dank!***
     
+---   
+   
+   
      
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
