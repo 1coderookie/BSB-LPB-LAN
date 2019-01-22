@@ -422,7 +422,7 @@ JSON erfolgen.
     Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
     Empfangen: "Parameter", "Status" (0 = Fehler, 1 = OK, 2 = Parameter read-only)  
     ```   
--   **Setzen von Parametern per Linux-Kommandozeile oder „Curl for Windows“**   
+-   **Setzen von Parametern per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“**   
     Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
     
     Linux-Kommandozeile:   
