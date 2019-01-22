@@ -1656,6 +1656,15 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
     
 ---
 
+## 11.6 IP-Symcon ##   
+   
+***Die IP-Symcon-Beispiele stammen vom BSB-LAN-User Joachim. Vielen Dank!***   
+   
+   ..in Arbeit..   
+      
+---   
+    
+    
      
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
