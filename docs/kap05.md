@@ -146,16 +146,15 @@ vor der Verwendung des Adapters angepasst werden:
     `unsigned long log_interval = 3600;`  
     in Sekunden einzustellen.
     
--   Soll **MQTT** zum Einsatz kommen, so sind die entspr. Definements zu aktivieren und anzupassen:  
-    Die gewünschten Parameter werden oben bei den zu loggenden Parametern für die microSD-Karten-Verwendung eingestellt, ebenso 
+-   Soll **MQTT** zum Einsatz kommen, so sind die entspr. Definements zu aktivieren und anzupassen:   
     `#define MQTTBrokerIP 192,168,1,20` → IP des MQTT-Brokers  
     
-    Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:  
+    Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:   
     `#define MQTTUsername "User"` → Username  
     `#define MQTTPassword "Pass"` → Passwort  
    
-   Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):
-   `#define MQTTTopicPrefix "BSB-LAN"` 
+   Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):    `#define MQTTTopicPrefix "BSB-LAN"`  
+   Die MQTT-Nachrichten haben dann das Topic-Format „BSB-LAN/<Parametername>“ und den entsprechenden Wert dann in der Payload.  
     
    ***Hinweis:**  
    *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*  
