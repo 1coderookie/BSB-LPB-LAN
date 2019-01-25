@@ -151,18 +151,18 @@ vor der Verwendung des Adapters angepasst werden:
     
     Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:   
     `#define MQTTUsername "User"` → Username  
-    `#define MQTTPassword "Pass"` → Passwort  
-   
-   Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):    `#define MQTTTopicPrefix "BSB-LAN"`  
-   Die MQTT-Nachrichten haben dann das Topic-Format „BSB-LAN/<Parametername>“ und den entsprechenden Wert dann in der Payload.  
+    `#define MQTTPassword "Pass"` → Passwort   
+    Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):   
+    `#define MQTTTopicPrefix "BSB-LAN"`   
+    Die MQTT-Nachrichten haben dann das Topic-Format „BSB-LAN/\<Parametername\>“ und den entsprechenden Wert dann in der Payload.  
     
-   ***Hinweis:**  
-   *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*  
+    ***Hinweis:***   
+    *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
     `//#define LOGGER`   
    
 -   Soll die **IPWE-Erweiterung** aktiviert werden, ist das entsprechende
     Definement  
-    `#define IPWE`
+    `#define IPWE`   
     zu aktivieren, die gewünschten Parameter sind wie gewohnt
     einzutragen.
 
@@ -211,21 +211,23 @@ vor der Verwendung des Adapters angepasst werden:
     *Ob eine Bedienung eines HK1 mit einem als RGT2 (oder HK2 mit einem als RGT1) angemeldeten Adapter in vollem Umfang möglich ist, wurde bisher noch nicht ausgiebig getestet.*  
        
     ***→ LPB:***  
-    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen. Dabei ist der oben einzustellende Wert immer um den Wert 1 kleiner als die eigentliche Adresse. Bsp.: Einstellungswert 1 = Adresse 2.   
+    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen. Dabei ist der oben einzustellende Wert immer um den Wert 1 kleiner als die eigentliche Adresse. Bsp.: Einstellungswert 1 = Adresse 2.*   
     
     ***→ PPS:***  
-    *Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als <my_addr> bezeichnet) zusätzlich eine `1` zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll: `BSB bus(68,69,1);`.  
-    *Soll der Adapter nur lesend wirken, ist nichts einzustellen: `BSB bus(68,69);`.*  
+    *Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als <my_addr> bezeichnet) zusätzlich eine `1` zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll:   
+    `BSB bus(68,69,1);`*  
+    *Soll der Adapter nur lesend wirken, ist nichts einzustellen:   
+    `BSB bus(68,69);`*  
     
 
--   Verwendetes **Bus-Protokoll** festlegen (bereits mit Booten des Arduino wirksam):     
-    `uint8_t bus_type = bus.setBusType(0);`
+-   Verwendetes **Bus-Protokoll** festlegen (bereits nach Booten des Arduino wirksam):     
+    `uint8_t bus_type = bus.setBusType(0);`   
     Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
     hingegen 2.  
  
--   *Nur bei PPS-Verwendung:* Den Typ des zu 'imitierenden' QAA-Raumgerätes durch Aktivieren und Anpassen des folgenden Definements festlegen:
-    `#define QAA_TYPE 0x53`  
-    0x53 → QAA70 (Standardeinstellung)
+-   *Nur bei PPS-Verwendung:* Den **Typ des zu 'imitierenden' QAA-Raumgerätes** durch Aktivieren und Anpassen des folgenden Definements festlegen:   
+    `#define QAA_TYPE 0x53`   
+    0x53 → QAA70 (Standardeinstellung)   
     0x52 → QAA50
 
 -   In der Voreinstellung ist der **Zugriff des Adapters auf den Regler**
