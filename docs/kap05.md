@@ -10,17 +10,29 @@
 
 Folgende Parameter in der Datei *BSB_lan_config.h* können bzw. sollten
 vor der Verwendung des Adapters angepasst werden:
-    
+
+
+-   **Ethernet-Port:**  
+    `#define Port 80` (default für HTTP)  
+
 -   **IP-Adresse:**  
     `#define IPAddr 192,168,178,88`
 
 -   **GatewayIP:** Durch Aktivierung des Definements und Anpassung der IP
     kann hier optional die IP eines (nicht-Standard-)Gateways definiert
     werden:  
-    `#define GatewayIP 192,168,178,1`
+    `#define GatewayIP 192,168,178,1`  
+    
+-   **SubnetIP:**  Durch Aktivierung des Definements und Anpassung der IP 
+    kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
+    `#define SubnetIP 255,255,255,0`
 
--   **Ethernet-Port:**  
-    `#define Port 80`
+-   **WIFI-Einstellungen:** Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
+    WiFi-Modul zum Einsatz kommt, muss das Definement  
+    `#define WIFI`  
+    aktiviert und die SSID sowie das WLAN-PAsswort hinterlegt werden:  
+    `char ssid[] = "SSID_hier_eingeben"`  
+    `char pass[] = "WLAN-Passwort_hier_eingeben"`
 
 -   Um das System vor einem ungewollten Zugriff von außen zu schützen,
     kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** aktiviert
@@ -125,12 +137,29 @@ vor der Verwendung des Adapters angepasst werden:
     loggt die Werte der DS18B20-Sensoren 1-3.
 
     ***Hinweis:***  
-    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 2001 und 2002 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB\_lan\_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 2003 und 2004 mit aufgeführt werden!*
-
+    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 2001 und 2002 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_lan_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 2003 und 2004 mit aufgeführt werden!*  
+    
+-   Das **Logintervall** ist bei  
+    `unsigned long log_interval = 3600;`  
+    in Sekunden einzustellen.
+    
+-   Soll **MQTT** zum Einsatz kommen, so sind die entspr. Definements zu aktivieren und anzupassen:  
+    Die gewünschten Parameter werden oben bei den zu loggenden Parametern für die microSD-Karten-Verwendung eingestellt, ebenso 
+    `#define MQTTBrokerIP 192,168,1,20` → IP des MQTT-Brokers  
+    
+    Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:  
+    `#define MQTTUsername "User"` → Username  
+    `#define MQTTPassword "Pass"` → Passwort  
+   
+   Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):
+   `#define MQTTTopicPrefix "BSB-LAN"` 
+    
+   ***Hinweis:**  
+   *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben!**   
+   
 -   Soll die **IPWE-Erweiterung** aktiviert werden, ist das entsprechende
     Definement  
     `#define IPWE`
-
     zu aktivieren, die gewünschten Parameter sind wie gewohnt
     einzutragen.
 
@@ -161,29 +190,40 @@ vor der Verwendung des Adapters angepasst werden:
 -   **Konfiguration des Adapters:**  
     `BSB bus(68,69,<my_addr>,<dest_addr>);`
 
-    RX-Pin, TX-Pin, eigene Bus-Adresse (voreingestellt auf 0x06=RGT1),
-    Bus-Adresse des Zielsystems (voreingestellt auf 0x00=Heizungsregler).
+    - RX-Pin (68)  
+    - TX-Pin (69)  
+    - eigene Bus-Adresse, voreingestellt auf 0x06 → dies entspricht RGT1 bei BSB bzw. der Geräteadresse 7 bei LPB  
+    - Bus-Adresse des Zielsystems, voreingestellt auf 0x00 → dies entspricht dem direkt angeschlossenen Heizungsregler bei BSB bzw. der Ziel-Geräteadresse 1 beim LPB
 
-    Voreingestellt wird der Adapter mit `BSB bus(68,69)` am via BSB 
-    angeschlossenen Regler als RGT1 angemeldet.
-
-    Wenn bereits ein Raumgerät (RGT1) vorhanden ist, kann bzw. sollte
-    der Adapter u.U. als RGT2 angemeldet
-    werden, um etwaige Adresskollisionen zu vermeiden:  
-    `BSB bus(68,69,7);`
-
-    ***Hinweise:***  
-    *Eine Adresskollision wurde bisher nur bei einem RGB (QAA55) und einem Adapter festgestellt, die beide gleichzeitig als Raumgerät 1 angemeldet waren. Ein RGT (QAA75) und ein Adapter mit gleichzeitiger Anmeldung als Raumgerät 1 verursachte im Testbetrieb hingegen keine Adresskollision.*  
+    ***Wichtige Hinweise:***  
+    ***→ BSB:***  
+    *Eine Adresskollision bei zwei gleichzeitig als RGT1 (Raumgerät 1) angemeldeten Geräten (bspw. Raumgerät und BSB-LAN-Adapter) wurde bisher nur bei einem RGB (QAA55) beobachtet. Ein RGT (QAA75) und ein Adapter mit gleichzeitiger Anmeldung als RGT1 verursachte im Testbetrieb hingegen keine Adresskollision.*  
+    *Um generell das Risiko einer Adresskollision zu vermeiden, sollte -wenn möglich- bei Vorhandensein eines bereits als RGT1-angemeldeten Raumgerätes der Adapter trotzdem direkt als RGT2 angemeldet werden.*  
+    *Zusätzlich besteht die Möglichkeit, den Adapter auch als "Raumgerät P", "Bedieneinheit 1 / 2" (Achtung: Adresskollision mit der kesselseitigen Bedieneinheit!) und "Servicegerät" anzumelden. Die entspr. Werte sind wie folgt:*  
+    `BSB bus(68,69);` = RGT1  
+    `BSB bus(68,69,7);` = RGT2  
     
     *Bitte beachte, dass ein als RGT1 angemeldeter Adapter eventuell keine Temperaturen an einen HK2 senden kann, und ein als RGT2 angemeldeter Adapter eventuell keine Temperaturen an einen HK1 senden kann!*  
     *Vereinzelt kam es schon vor, dass Raumtemperaturen kurioserweise nur von einem als RGT2 angemeldeten Adapter vom HK1 berücksichtigt wurden.*  
     *Ob eine Bedienung eines HK1 mit einem als RGT2 (oder HK2 mit einem als RGT1) angemeldeten Adapter in vollem Umfang möglich ist, wurde bisher noch nicht ausgiebig getestet.*  
+       
+    ***→ LPB:***  
+    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen. Dabei ist der oben einzustellende Wert immer um den Wert 1 kleiner als die eigentliche Adresse. Bsp.: Einstellungswert 1 = Adresse 2.   
+    
+    ***→ PPS:***  
+    *Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als <my_addr> bezeichnet) zusätzlich eine `1` zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll: `BSB bus(68,69,1);`.  
+    *Soll der Adapter nur lesend wirken, ist nichts einzustellen: `BSB bus(68,69);`.*  
+    
 
--   **Bus-Protokoll:**  
+-   Verwendetes **Bus-Protokoll** festlegen (bereits mit Booten des Arduino wirksam):     
     `uint8_t bus_type = bus.setBusType(0);`
-
     Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
-    hingegen 2.
+    hingegen 2.  
+ 
+-   *Nur bei PPS-Verwendung:* Den Typ des zu 'imitierenden' QAA-Raumgerätes durch Aktivieren und Anpassen des folgenden Definements festlegen:
+    `#define QAA_TYPE 0x53`  
+    0x53 → QAA70 (Standardeinstellung)
+    0x52 → QAA50
 
 -   In der Voreinstellung ist der **Zugriff des Adapters auf den Regler**
     auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern
@@ -199,7 +239,7 @@ vor der Verwendung des Adapters angepasst werden:
     Ist diese Funktion nur bei *ausgewählten* Parametern (z.B. 10000
     oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
     das genannte Flag generell auf `FL_RONLY` gesetzt sein und dann in
-    der Datei *BSB\_lan\_defs.h* das `DEFAULT_FLAG` des gewünschten
+    der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
     Parameters durch 0 (Null) ersetzt werden.  
     
     Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
