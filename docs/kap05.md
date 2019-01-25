@@ -18,16 +18,19 @@ vor der Verwendung des Adapters angepasst werden:
 -   **IP-Adresse:**  
     `#define IPAddr 192,168,178,88`
 
--   **GatewayIP:** Durch Aktivierung des Definements und Anpassung der IP
+-   **GatewayIP:**  
+    Durch Aktivierung des Definements und Anpassung der IP
     kann hier optional die IP eines (nicht-Standard-)Gateways definiert
     werden:  
     `#define GatewayIP 192,168,178,1`  
     
--   **SubnetIP:**  Durch Aktivierung des Definements und Anpassung der IP 
+-   **SubnetIP:**  
+    Durch Aktivierung des Definements und Anpassung der IP 
     kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
     `#define SubnetIP 255,255,255,0`
 
--   **WIFI-Einstellungen:** Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
+-   **WIFI-Einstellungen:**  
+    Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
     WiFi-Modul zum Einsatz kommt, muss das Definement  
     `#define WIFI`  
     aktiviert und die SSID sowie das WLAN-PAsswort hinterlegt werden:  
