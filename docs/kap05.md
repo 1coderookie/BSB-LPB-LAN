@@ -158,7 +158,8 @@ vor der Verwendung des Adapters angepasst werden:
    `#define MQTTTopicPrefix "BSB-LAN"` 
     
    ***Hinweis:**  
-   *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben!**   
+   *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*  
+    `//#define LOGGER`   
    
 -   Soll die **IPWE-Erweiterung** aktiviert werden, ist das entsprechende
     Definement  
@@ -167,7 +168,7 @@ vor der Verwendung des Adapters angepasst werden:
     einzutragen.
 
     ***Tipp:***  
-    *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese hier standardmäßig mit angezeigt (URL: `http://<IP-Adresse>/ipwe.cgi`). Dabei wird neben den gemessenen Werten auch die jeweils spezifische Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen Sensoren hilfreich.*
+    *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese hier standardmäßig mit angezeigt (URL: `http://<IP-Adresse>/ipwe.cgi`). Dabei wird neben den gemessenen Werten auch die jeweils spezifische Hardwarekennung der OneWire-Sensoren (DS18B20) aufgeführt. Dies ist besonders bei einer Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen Sensoren hilfreich.*
 
 -   Sollen optionale **MAX!-Thermostate** zum Einsatz kommen, muss das
     entsprechende Definement  
