@@ -33,7 +33,7 @@ vor der Verwendung des Adapters angepasst werden:
     Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
     WiFi-Modul zum Einsatz kommt, muss das Definement  
     `#define WIFI`  
-    aktiviert und die SSID sowie das WLAN-PAsswort hinterlegt werden:  
+    aktiviert und die SSID sowie das WLAN-Passwort hinterlegt werden:  
     `char ssid[] = "SSID_hier_eingeben"`  
     `char pass[] = "WLAN-Passwort_hier_eingeben"`
 
