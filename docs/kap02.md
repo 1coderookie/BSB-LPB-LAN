@@ -178,7 +178,7 @@ häufig sind dies jedoch die Pins A6 & M (in dem Fall dann A6→CL+ und M→CL-)
 PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
 „Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
 digital Serie D, RVP54..., ALBATROS RVA..., LGM11...; bzw. u.a. bei
-folgenden Heizungen: Brötje WGB 15 / WGB 20, Weishaupt WRD 0.2 / 1.1,
+folgenden Heizungen: Brötje BBS/WGB 2N, Weishaupt WRD 0.2 / 1.1,
 Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
 (mit DomoCommand DC 225).  
 Bei den ‚Bedieneinheiten‘/Reglern handelt es sich (bei Brötje) vermutlich 
@@ -221,11 +221,11 @@ intelligenten Heizungssteuerung umsetzen, indem man z.B. gewichtete
 Raumtemperaturen sendet und die Solltemperaturen nach vielfältigeren
 Kriterien steuern kann.
 
-***Hinweis:***  
-Sollte bereits ein QAA70 angeschlossen sein, so ist der Zugriff mittels BSB-LAN nur lesend möglich.
-    
-*Die PPS-Funktionalität ist zur Zeit in der Weiterentwicklung, Neuigkeiten diesbezüglich sind in Kürze zu erwarten!*        
-    
+***Hinweise:***  
+Sollte bereits ein QAA70 angeschlossen sein, so ist der Zugriff mittels BSB-LAN nur lesend möglich! Soll BSB-LAN schreibend einwirken, also aktiv Werte und Einstellungen verändern, so muss ein vorhandenes QAA70 dauerhaft deinstalliert werden, da es ansonsten mit den eigenen Werten alles wieder überschreibt!
+
+Über PPS tauschen Heizung und Raumgerät bzw. BSB-LAN permanent Daten aus. Das Protokoll ist sehr zeitkritisch. Das Aufrufen von längeren Webseiten führt dazu, dass der Arduino nicht rechtzeitig auf entsprechende Anfragen der Heizung reagieren kann, weswegen die Heizung dann denkt, dass die Gegenseite ausgefallen ist. Das ist an sich kein Problem, nach ca. 10-20 Sekunden, nachdem der Arduino wieder „ansprechbar“ ist, haben sich beide wieder verständigt. Bis dann aber wieder alle Werte ausgetauscht bzw. aktualisiert sind, kann es noch mal 1-2 Minuten dauern, so dass sich Änderungen dann erst entsprechend verzögert zeigen. Von zu vielen Anfragen auf den Arduino sollte daher bei PPS abgesehen werden und etwaige Sensoren etc. dann ggf. auf einen zweiten Arduino ausgelagert werden.
+        
 ---
     
 
