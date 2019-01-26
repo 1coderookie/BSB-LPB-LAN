@@ -309,22 +309,10 @@ Programme grundsätzlich möglich.
     bestehendes Pairing zwischen den Geräten und einem Max!Cube bzw. CUL
     wird dabei nicht gestört und kann parallel betrieben werden (s. Kap. [12.2](kap12.md#122-max-komponenten)).*
 
--   **Ausgabe einer Parameterabfrage im JSON-Format:**
-
-    Siehe hierzu den entsprechenden Punkt unter 8.2 Spezialfunktionen.
-
--   **Überprüfen von BSB-LAN auf nicht-freigegebene reglerspezifische
-    CommandIDs:**
-
-    Siehe hierzu den entsprechenden Punkt unter 8.2 Spezialfunktionen.
     
 ---
     
 ## 8.2 Spezialfunktionen ##
-
-Der Übersichtlichkeit halber sind im Folgenden nochmals einige
-ausgewählte Spezialfunktionen bzw. spezielle URL-Befehle gesondert
-aufgeführt und beschrieben.
     
 ---
     
@@ -348,7 +336,7 @@ Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
 Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
 ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
-große Fenster in Südlage etc.) befindet.*
+große Fenster in Südlage etc.) befindet.*  
     
 ---
     
@@ -356,16 +344,14 @@ große Fenster in Südlage etc.) befindet.*
 
 Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
 und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
-genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)).
+genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)). Der Parameter (701) ist NICHT abrufbar.
 
 Bei aktivem Automatikprogramm ist dabei `http://<IP-Adresse>/S701=1` für
 den Wechsel auf ‚Betriebsart Reduziert' und `http://<IP-Adresse>/S701=0`
 für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
 Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut
-Zeitprogramm gültig. Die Präsenztaste wirkt nur im Automatikbetrieb!
+Zeitprogramm gültig. ***Die Präsenztaste ist nur im Automatikbetrieb wirksam!***
 
-Es ist jedoch bisher noch nicht umfangreich getestet, ob diese Funktion
-bei jedem Regler Wirkung zeigt oder nicht.
     
 ---
     
