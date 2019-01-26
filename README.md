@@ -1,9 +1,15 @@
-# BSB-LPB-LAN  
+# Handbuch zum BSB-LPB-LAN-Adapter #   
 
 Hier findet sich das umfassende Handbuch zum Projekt "BSB-LPB-LAN" als [PDF-Dokument zum Herunterladen](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) und Ausdrucken.  
 
 ***Die online-Version des Handbuchs ist [hier](https://1coderookie.github.io/BSB-LPB-LAN) verfügbar.***
-
+   
+---  
+  
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz</a>.  
+  
+---  
+   
 ## BSB-LPB-LAN - Ein kurzer Überblick ##  
 
 "BSB-LPB-LAN" ist ein gemeinschaftliches Hard- und Softwareprojekt, welches ursprünglich zum Ziel hatte, mittels PC/Laptop/Tablet/Smartphone Zugriff auf die Steuerungen bzw. Regler von verschiedenen Wärmeerzeugern (Öl- und Gasheizungen, Wärmepumpen, Solarthermie etc.) bestimmter Hersteller (bspw. Brötje und Elco) zu erlangen.  
