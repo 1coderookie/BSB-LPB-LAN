@@ -87,7 +87,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Fujitsu Waterstage WSYK 160 DC 9 [RVS21.827] (Wärmepumpe) {BSB}
 - Fujitsu Waterstage WSYP 100 DG 6 [RVS21.831] (Wärmepumpe) {BSB}
 - MHG Procon E 25 HS [LMS14] (Gasbrenner) {BSB}
-- Sieger TG11 [RVP54.100] (Ölbrenner) {PPS mit eingeschränkter Funktionalität}
+- Sieger TG11 [RVP54.100] (Ölbrenner) {PPS}
 - Weishaupt WTU-25 G mit WRS-CPU B2/E [RVS23.220] (Ölbrenner) {LPB}
 
 ### Die Software ist [hier](https://github.com/fredlcore/bsb_lan) zu finden. ###  
