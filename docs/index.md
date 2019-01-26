@@ -1,4 +1,4 @@
-## Handbuch zum BSB-LPB-LAN-Adapter   
+## Handbuch zum BSB-LPB-LAN-Adapter ##  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
 BSB-LPB-LAN-Adapters (Platinenlayout v2, Arduino-Version) und der dazugehörigen BSB-LAN-Software 
