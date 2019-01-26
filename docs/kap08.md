@@ -19,7 +19,7 @@ Programme grundsätzlich möglich.
 
 -   **Alle Kategorien auflisten:**
 
-    `http://<IP-Adresse>/K`
+    `http://<IP-Adresse>/K`  
     Bei diesem Befehl kommuniziert der Adapter nicht mit dem
     Heizungssystem.  
     Es ist eine softwareseitige, interne Funktion.
@@ -50,7 +50,7 @@ Programme grundsätzlich möglich.
 
 -   **Frage den Reset-Wert für Parameter \<x\> ab:**
 
-    `http://<IP-Adresse>/R<x>`
+    `http://<IP-Adresse>/R<x>`  
     Im Display der integrierten Heizungssteuerung gibt es für einige
     Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das
     System nach dem Reset-Wert gefragt wird und dieser anschließend
@@ -59,7 +59,7 @@ Programme grundsätzlich möglich.
 -   **Setze Wert \<v\> (value) für den Parameter \<x\> mit optionalem
     Ziel \<z\>:**
 
-    `http://<IP-Adresse>/S<x>=<v!z>`
+    `http://<IP-Adresse>/S<x>=<v!z>`  
     Die gewünschte Gerätezieladresse ist als \<z\> einzufügen, wenn
     \<!z\> nicht eingegeben wird, wird die Standardzieladresse
     verwendet.
@@ -69,21 +69,15 @@ Programme grundsätzlich möglich.
     `http://<IP-Adresse>/S<x>=`
         
     ***Hinweis:***  
-    *Voreingestellt ist nur der Lesezugriff erlaubt, ein
-    Verändern von Einstellungen ist per default nicht möglich. Um dies
-    zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu
-    gewähren. Siehe hierzu den entsprechenden Punkt in Kap. [5](kap05.md).*
+    *Voreingestellt ist nur der Lesezugriff erlaubt, ein Verändern von Einstellungen ist per default nicht möglich. Um dies zu ändern, ist Schreibzugriff für den entsprechenden Parameter zu gewähren. Siehe hierzu den entsprechenden Punkt in Kap. [5](kap05.md).*
 
     ***ACHTUNG:***  
-    *Diese Funktion ist nicht ausgiebig getestet! Bitte sei
-    vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein
-    eigenes Risiko hin. Das Format des Wertes hängt von seinem Typ ab.
-    Einige Parameter können abgeschaltet werden.*  
+    *Diese Funktion ist nicht ausgiebig getestet! Bitte sei vorsichtig mit dieser Funktion und nutze sie ausschließlich auf dein eigenes Risiko hin. Das Format des Wertes hängt von seinem Typ ab. Einige Parameter können abgeschaltet werden.*  
 
 -   **Sende eine INF-Nachricht für den Parameter \<x\> mit dem Wert
     \<v\>:**
 
-    `http://<IP-Adresse>/I<x>=<v>`
+    `http://<IP-Adresse>/I<x>=<v>`  
     Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem
     wird mit einer TYPE\_INF-Nachricht informiert, bspw. bei der
     Raumtemperatur:  
@@ -96,13 +90,15 @@ Programme grundsätzlich möglich.
     Nach einem Reset/Neustart des Arduino wird die Einstellung aus der
     Datei *BSB\_lan\_config.h* verwendet. Um den Bus-Typ dauerhaft
     festzulegen, sollte die Option setBusType config in der Datei
-    *BSB\_lan\_config.h* entsprechend angepasst werden.
+    *BSB\_lan\_config.h* entsprechend angepasst werden.  
+    *Hinweis für PPS-Nutzer:*  
+    *Wenn ein QAA-Raumgerät vorhanden ist, so ist der BSB-LAN-Zugriff nur lesen möglich. In dem Fall muss für den temporären 'on-the-fly-Bus-Typ-Wechsel `/P2,0` eingegeben werden. Ist kein QAA-Raumgerät vorhanden, so kann BSB-LAN auch schreibend zugreifen und der Wechsel muss mit `/P2,1` erfolgen.*  
 
 -   **Zusätzlich die eigene oder die Zieladresse mittels URL-Befehl
     wechseln:**
 
     Dazu muss der Befehl  
-    `http://<IP-Adresse>/P<x,y,z>`
+    `http://<IP-Adresse>/P<x,y,z>`  
     genutzt werden, wobei  
     \<x\> = Bus (0 = BSB, 1 = LPB, 2 = PPS),  
     \<y\> = eigene Adresse (default 0x06 = RGT1) und  
@@ -112,7 +108,7 @@ Programme grundsätzlich möglich.
 
 -   **Setze den Verbositäts-Level auf \<n\>:**
 
-    `http://<IP-Adresse>/V<n>`
+    `http://<IP-Adresse>/V<n>`  
     Der voreingestellte Verbositäts-Level ist 1. Somit wird
     standardmäßig der Bus überwacht und alle Daten werden zusätzlich im
     Raw-Hex-Format dargestellt.  
@@ -129,7 +125,7 @@ Programme grundsätzlich möglich.
 
 -   **Bus-Monitor aktivieren:**
 
-    `http://<IP-Adresse>/M<n>`
+    `http://<IP-Adresse>/M<n>`  
     Standardmäßig ist der Monitor-Modus deaktiviert (\<n\>=0).  
     Wenn \<n\> auf 1 gesetzt wird, werden alle Bytes auf dem Bus
     überwacht. Telegramme werden durch Umbruchzeichen als solche
@@ -153,7 +149,7 @@ Programme grundsätzlich möglich.
 
 -   **Abfragen der GPIO-Pins (GPIO wird als INPUT genutzt):**
 
-    `http://<IP-Adresse>/G<xx>,I`
+    `http://<IP-Adresse>/G<xx>,I`  
     Für die reine Abfrage eines externes Gerätes, das an einen GPIO
     angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per
     default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl
@@ -190,7 +186,7 @@ Programme grundsätzlich möglich.
     (in Sekunden) des Trinkwasserspeichers ab, die anhand von
     Broadcast-Nachrichten ermittelt wurden.
 
-    `http://<IP-Adresse>/B0` setzt den Zähler zurück.
+    Der Befehl `http://<IP-Adresse>/B0` setzt den Zähler zurück.
 
     Bei zweistufigen Ölbrennern wird zudem *eventuell* zwischen Stufe 1
     und 2 differenziert und die jeweiligen Starts und Laufzeiten werden
@@ -219,7 +215,7 @@ Programme grundsätzlich möglich.
     durch das entsprechende Definement in der Datei *BSB\_lan\_config.h*
     vor dem Flashen. Während des Betriebes kann jedoch das Loggen
     deaktiviert werden, indem man folgende Parameter definiert:  
-    `http://<IP-Adresse>/L=0,0`
+    `http://<IP-Adresse>/L=0,0`  
     Zum Aktivieren werden dann wieder das Intervall und die gewünschten
     Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden
     die Einstellungen aus der Datei *BSB\_lan\_config.h* verwendet --
@@ -249,24 +245,24 @@ Programme grundsätzlich möglich.
 
 -   **Konfiguration des Loggens von Bus-Telegrammen:**
 
-    `http://<IP-Adresse>/LU=<x>`
+    `http://<IP-Adresse>/LU=<x>`  
     Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
     Parameter loggen), logge nur die unbekannten Command IDs (\<x\>=1)
     oder alle (\<x\>=0) Telegramme.
 
-    `http://<IP-Adresse>/LB=<x>`
+    `http://<IP-Adresse>/LB=<x>`  
     Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen
     Parameter loggen), logge nur die Broadcasts (\<x\>=1) oder alle
     (\<x\>=0) Telegramme.
 
 -   **Darstellung des Logfiles:**
 
-    `http://<IP-Adresse>/D`
+    `http://<IP-Adresse>/D`  
     Zeigt den Inhalt der Datei *datalog.txt*, die sich auf der
     microSD-Karte im Slot des Ethernet-Shields befindet.
 
     Mittels  
-    `http://<IP-Adresse>/D0`
+    `http://<IP-Adresse>/D0`  
     kann die Datei *datalog.txt* zurückgesetzt werden, gleichzeitig wird
     eine korrekte CSV-Header-Datei generiert (*dieser Schritt wird zudem
     für die erste Benutzung empfohlen, bevor das Loggen gestartet wird*).
@@ -286,7 +282,7 @@ Programme grundsätzlich möglich.
 
 -   **Resetten/Restarten des Arduino:**
 
-    `http://<IP-Adresse>/N`
+    `http://<IP-Adresse>/N`  
     Reset und anschließender Restart des Arduino nach einem Pausieren
     für ca. 15 Sekunden (Voraussetzung: `#define RESET` in
     *BSB\_lan\_config.h*, s.o.).  
@@ -444,7 +440,7 @@ JSON erfolgen.
 Diese Funktion ist nur bei aktiviertem Debug-Definement `#define DEBUG`
 in der Datei *BSB\_lan\_config.h* verfügbar!
 
-`http://<IP-Adresse>/Q`
+`http://<IP-Adresse>/Q`  
 
 Diese Funktion geht alle Command IDs durch, die in der Datei
 *BSB\_lan\_defs.h* hinterlegt sind und schickt diejenigen, die nicht für
@@ -543,8 +539,6 @@ Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" a
 `kWh = m³ x Brennwert x Zustandszahl`  
 *Die m³ werden vom Gaszähler abgelesen, der Brennwert sowie die Zustandszahl sind i.d.R. auf der Gasrechnung vermerkt oder beim Energieversorger zu erfragen.*  
     
-*Bisher haben nur zwei User von der Verwendung der reglerinternen Gasenergiezählung berichtet. 
-Bei einem Reglertyp (LMS14, MHG) weicht die Zählung so weit ab, dass kein passender Korrekturfaktor eingestellt werden konnte. Bei einem anderen Nutzer (Reglertyp LMS15, Brötje) scheint die überschlägige Berechnung nach einigen Anpassungen des Korrekturfaktors einigermaßen zu passen.*  
     
 --- 
     
@@ -558,7 +552,7 @@ Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:1
    
 *Zeitprogramme verändern*  
 Der folgende Befehl setzt das Zeitprogramm für Mittwoch beim Heizkreis 1 (Parameter 502) auf 05:00-22:00 Uhr:  
-`/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx` 
+`/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
      
 ---  
    
