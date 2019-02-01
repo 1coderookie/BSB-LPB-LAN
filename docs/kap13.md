@@ -67,7 +67,7 @@ während der Zugriff des Adapters nur auf Lesen beschränkt ist
 (`FL_RONLY`).  
 Der gewünschte Parameter (oder auch generell alle Parameter) muss in
 diesem Fall als schreibbar definiert werden. Die hierfür notwendige
-Vorgehensweise ist in Kap. [5](kap05.md) beschrieben.
+Vorgehensweise ist in Kap. [5](kap05.md) (vorletzter Punkt) ausführlich beschrieben.
      
     
 ---
