@@ -1664,14 +1664,19 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
       
 ---   
     
-## 11.7 MQTT, InfluxDB und Grafana ##   
+## 11.7 MQTT, InfluxDB, Telegram und Grafana ##   
    
-***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB, Telegram und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
 ***Vielen Dank!***
     
 ---   
    
-   
+## 11.8 MQTT und FHEM ##  
+  
+---  
+
+  
+  
      
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
