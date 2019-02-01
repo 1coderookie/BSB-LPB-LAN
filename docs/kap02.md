@@ -78,7 +78,7 @@ unterschiedlich gekennzeichnet:
 
 -   Der BSB ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind: „BSB & M" , „CL+ & CL-" sowie „FB" (Fernbedienung) und „BSB" (bei FB und BSB i.d.R. zusätzlich mit Nennung der Pole „CL+ & CL-"). Bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-.  
 
-    In jedem Fall sollte eine Anschlussmöglichkeit in den Bedienungsunterlagen zum Wärmeerezuger gefunden werden können, indem man nach der Anschlussmöglichkeit für Raumgeräte sucht. Dieses sind bei den BSB-kompatiblen Systemen die (ursprünglichen Siemens-)Modelle QAA55 (Brötje RGB) und QAA75 (Brötje RGT), sowie dessen Funkvariante QAA78 (Brötje RGTF).  
+    In jedem Fall sollte eine Anschlussmöglichkeit in den Bedienungsunterlagen zum Wärmeerzeuger gefunden werden können, indem man nach der Anschlussmöglichkeit für Raumgeräte sucht. Dieses sind bei den BSB-kompatiblen Systemen die (ursprünglichen Siemens-)Modelle QAA55 (Brötje RGB) und QAA75 (Brötje RGT), sowie dessen Funkvariante QAA78 (Brötje RGTF).  
 Der Anschluss des Adapters erfolgt analog zum Anschluss des Raumgerätes. Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumepen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät angeschlossen werden.  
 
     Der zusätzliche Anschluss „G+" führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen.
