@@ -54,7 +54,7 @@ laden / geladen haben.*
 
 *Wenn ein Adapter via BSB an einem der beiden Regler aus oben genanntem
 Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
-Regler \'lokal\' zugreifen, an dem er angeschlossen ist (also bspw.
+Regler 'lokal' zugreifen, an dem er angeschlossen ist (also bspw.
 Heizungsregler oder SSR). Ebenso verhält es sich mit den jeweiligen
 Bedieneinheiten der Regler, die über den ‚Bus BE' (Bus Bedieneinheit)
 angeschlossen sind.*  
@@ -80,6 +80,7 @@ unterschiedlich gekennzeichnet:
 
     In jedem Fall sollte eine Anschlussmöglichkeit in den Bedienungsunterlagen zum Wärmeerezuger gefunden werden können, indem man nach der Anschlussmöglichkeit für Raumgeräte sucht. Dieses sind bei den BSB-kompatiblen Systemen die (ursprünglichen Siemens-)Modelle QAA55 (Brötje RGB) und QAA75 (Brötje RGT), sowie dessen Funkvariante QAA78 (Brötje RGTF).  
 Der Anschluss des Adapters erfolgt analog zum Anschluss des Raumgerätes. Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumepen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät angeschlossen werden.  
+
     Der zusätzliche Anschluss „G+" führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen.
     Dieser ist für den Anschluss des Adapters NICHT zu verwenden! (Sollte der Adapter irrtümlicherweise an G+ statt an CL+
     angeschlossen werden, so leuchtet zwar die LED (jedoch dauerhaft!), allerdings ist keinerlei Funktion gegeben.)  
