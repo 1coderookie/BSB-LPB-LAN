@@ -76,15 +76,13 @@ Technologies - Landis & Staefa Division: CE1N2030D) und „LPB Projektierungsgru
 Bei einigen Reglern sind die entsprechenden Anschlüsse teilweise
 unterschiedlich gekennzeichnet:
 
--   Der BSB ist nicht auf allen Reglern als solcher bezeichnet, weitere
-    Bezeichnungen sind „FB" (Fernbedienung) sowie „CL+" und „CL-".
+-   Der BSB ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind: „BSB & M" , „CL+ & CL-" sowie „FB" (Fernbedienung) und „BSB" (bei FB und BSB i.d.R. zusätzlich mit Nennung der Pole „CL+ & CL-"). Bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-.  
 
-    Der zusätzliche Anschluss „G+" führt 12V und ist für die
-    Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen.
-    Dieser ist für den Anschluss des Adapters NICHT zu verwenden!\
-    (Sollte der Adapter irrtümlicherweise an G+ statt an CL+
-    angeschlossen werden, so leuchtet zwar die LED, allerdings ist
-    keinerlei Funktion gegeben.)
+    In jedem Fall sollte eine Anschlussmöglichkeit in den Bedienungsunterlagen zum Wärmeerezuger gefunden werden können, indem man nach der Anschlussmöglichkeit für Raumgeräte sucht. Dieses sind bei den BSB-kompatiblen Systemen die (ursprünglichen Siemens-)Modelle QAA55 (Brötje RGB) und QAA75 (Brötje RGT), sowie dessen Funkvariante QAA78 (Brötje RGTF).  
+Der Anschluss des Adapters erfolgt analog zum Anschluss des Raumgerätes. Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumepen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät angeschlossen werden.  
+    Der zusätzliche Anschluss „G+" führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen.
+    Dieser ist für den Anschluss des Adapters NICHT zu verwenden! (Sollte der Adapter irrtümlicherweise an G+ statt an CL+
+    angeschlossen werden, so leuchtet zwar die LED (jedoch dauerhaft!), allerdings ist keinerlei Funktion gegeben.)  
 
 -   Der LPB ist bei einigen Reglern mit „DB"(+) und „MB"(-)
     gekennzeichnet.
@@ -94,19 +92,24 @@ Anschlüsse.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
 
-*BSB (FB & CL+/CL-) und LPB (DB/MB) bei einem Brötje ISR-RVS43.222-Regler.*  
+*BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
     
-*Anschlüsse b = BSB (CL+/CL-) und a = LPB (DB/MB) bei einem Siemens RVS63.283-Regler.*  
+*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
     
-*BSB (CL+/CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
+*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
 → Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
+**ANSCHLUSS DES ADAPTERS:**  
+***Der Anschluss des Adapters erfolgt an den oben beschriebenen jeweiligen Pins des BSB oder LPB, mit 'Plus an Plus' und 'Minus an Minus':   
+→ BSB: Adapter-CL+ an Regler-CL+ sowie Adapter-CL- an Regler-CL-  
+→ LPB: Adapter-DB an Regler-DB sowie Adapter-MB an Regler-MB  
+Die Anschlusskennzeichnung auf dem Adapter (bzw. Schaltplan) lautet CL+/DB sowie CL-/MB.
     
 
 ***Bei Anschluss des Adapters sollte der betreffende Regler stets
