@@ -1658,16 +1658,18 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 
 ## 11.6 IP-Symcon ##   
    
-***Die IP-Symcon-Beispiele stammen vom BSB-LAN-User Joachim. Vielen Dank!***   
-   
-   ..in Arbeit..   
+***Ein vom BSB-LAN-User Joachim sehr gut dokumentiertes Beispiel für die Integration in IP-Symcon ist [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS) im Symcon-Forum zu finden.***  
+*(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Vielen Dank!***   
+ 
       
 ---   
     
-## 11.7 MQTT ##   
+## 11.7 MQTT, InfluxDB und Grafana ##   
    
-***Ein gut dokumentiertes Beispiel für eine MQTT-Verwendung bei BSB-LAN vom FHEM-Forumsmitglied „cubase" findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace). Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet. 
-Vielen Dank!***
+***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).***  
+*(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Vielen Dank!***
     
 ---   
    
