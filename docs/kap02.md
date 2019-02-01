@@ -107,10 +107,10 @@ Anschlüsse.
 → Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
 **ANSCHLUSS DES ADAPTERS:**  
-***Der Anschluss des Adapters erfolgt an den oben beschriebenen jeweiligen Pins des BSB oder LPB, mit 'Plus an Plus' und 'Minus an Minus':   
-→ BSB: Adapter-CL+ an Regler-CL+ sowie Adapter-CL- an Regler-CL-  
-→ LPB: Adapter-DB an Regler-DB sowie Adapter-MB an Regler-MB  
-Die Anschlusskennzeichnung auf dem Adapter (bzw. Schaltplan) lautet CL+/DB sowie CL-/MB.
+***Der Anschluss des Adapters erfolgt an den oben beschriebenen jeweiligen Pins des BSB oder LPB, mit 'Plus an Plus' und 'Minus an Minus':***   
+***→ BSB: Adapter-CL+ an Regler-CL+ sowie Adapter-CL- an Regler-CL-***  
+***→ LPB: Adapter-DB an Regler-DB sowie Adapter-MB an Regler-MB***  
+***Die Anschlusskennzeichnung auf dem Adapter (bzw. Schaltplan) lautet CL+/DB sowie CL-/MB.***
     
 
 ***Bei Anschluss des Adapters sollte der betreffende Regler stets
