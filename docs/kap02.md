@@ -205,20 +205,23 @@ der Regler verfällt wieder in einen Suchmodus.
 
 Der Funktionsumfang ist hierbei nur rudimentär und beschränkt sich
 derzeit mittels BSB-LAN derzeit auf etwa ein Dutzend Parameter, die man
-lesen/schreiben kann:
+lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - ausschlaggebend ist Kategorie 42 "PPS-Bus" im Webinterface und die von Regler unterstützten Parameter!*):
 
 - Raumtemperatur Ist  
 - Raumtemperatur Soll  
 - Außentemperatur (read-only)  
 - Außentemperatur gemischt (read-only)  
 - Position Drehknopf  
-- Kesselvorlauftemperatur (read-only)  
+- Kesselvorlauftemperatur (read-only) 
 - Mischervorlauftemperatur (read-only)  
 - Status Trinkwasserbetrieb (read-only)  
 - Trinkwassertemperatur Ist (read-only)  
 - Trinkwassertemperatur Soll  
 - Betriebsart  
 - Anwesenheit
+  
+***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus!"***  
+**Aus den anderen Kategorien sind keinerlei Parameter abrufbar! Somit entfällt auch die Abfrage von `URL/6220-6228` und die Kontrolle via `URL/Q` auf nicht-freigegebene Parameter!**
 
 Immerhin lassen sich damit aber die wichtigsten Funktionen einer
 intelligenten Heizungssteuerung umsetzen, indem man z.B. gewichtete
@@ -230,8 +233,10 @@ Sollte bereits ein QAA70 angeschlossen sein, so ist der Zugriff mittels BSB-LAN 
    
 Bzgl. der spezifischen Bus-Einstellungen in der Datei *BSB_lan_config.h* beachte die dortigen Hinweise in [Kap. 5](kap05.md#5-einstellungsrelevante-parameter-der-bsb-lan-software).   
    
-Über PPS tauschen Heizung und Raumgerät bzw. BSB-LAN permanent Daten aus. Das Protokoll ist sehr zeitkritisch. Das Aufrufen von längeren Webseiten führt dazu, dass der Arduino nicht rechtzeitig auf entsprechende Anfragen der Heizung reagieren kann, weswegen die Heizung dann denkt, dass die Gegenseite ausgefallen ist. Das ist an sich kein Problem, nach ca. 10-20 Sekunden, nachdem der Arduino wieder „ansprechbar“ ist, haben sich beide wieder verständigt. Bis dann aber wieder alle Werte ausgetauscht bzw. aktualisiert sind, kann es noch mal 1-2 Minuten dauern, so dass sich Änderungen dann erst entsprechend verzögert zeigen. Von zu vielen Anfragen auf den Arduino sollte daher bei PPS abgesehen werden und etwaige Sensoren etc. dann ggf. auf einen zweiten Arduino ausgelagert werden.
-        
+Über PPS tauschen Heizung und Raumgerät bzw. BSB-LAN permanent Daten aus. Das Protokoll ist sehr zeitkritisch. Das Aufrufen von längeren Webseiten führt dazu, dass der Arduino nicht rechtzeitig auf entsprechende Anfragen der Heizung reagieren kann, weswegen die Heizung dann denkt, dass die Gegenseite ausgefallen ist. Das ist an sich kein Problem, nach ca. 10-20 Sekunden, nachdem der Arduino wieder „ansprechbar“ ist, haben sich beide wieder verständigt. Bis dann aber wieder alle Werte ausgetauscht bzw. aktualisiert sind, kann es noch mal 1-2 Minuten dauern, so dass sich Änderungen dann erst entsprechend verzögert zeigen. Von zu vielen Anfragen auf den Arduino sollte daher bei PPS abgesehen werden und etwaige Sensoren etc. dann ggf. auf einen zweiten Arduino ausgelagert werden.  
+
+Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders als bspw. beim BSB) einige Zeit abwarten, bis die Parameter abrufbar/verfügbar sind.  
+
 ---
     
 
