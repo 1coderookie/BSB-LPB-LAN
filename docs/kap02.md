@@ -220,7 +220,7 @@ lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - a
 - Betriebsart  
 - Anwesenheit
   
-***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus!"***  
+***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus"!***  
 **Aus den anderen Kategorien sind keinerlei Parameter abrufbar! Somit entfällt auch die Abfrage von `URL/6220-6228` und die Kontrolle via `URL/Q` auf nicht-freigegebene Parameter!**
 
 Immerhin lassen sich damit aber die wichtigsten Funktionen einer
