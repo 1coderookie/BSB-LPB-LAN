@@ -213,8 +213,7 @@ vor der Verwendung des Adapters angepasst werden:
     ***→ LPB:***  
     *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen. Dabei ist der oben einzustellende Wert immer um den Wert 1 kleiner als die eigentliche Adresse. Bsp.: Einstellungswert 1 = Adresse 2.*   
     
-    ***→ PPS:***  
-*Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als <my_addr> bezeichnet) zusätzlich eine 1 zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll:*   
+    ***→ PPS:****Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als <my_addr> bezeichnet) zusätzlich eine 1 zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll:*   
     `BSB bus(68,69,1);`   
     *Soll der Adapter nur lesend wirken, ist nichts einzustellen:*    
     `BSB bus(68,69);`   
