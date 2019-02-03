@@ -220,7 +220,6 @@ vor der Verwendung des Adapters angepasst werden:
     `BSB bus(68,69);`  
     *Sollen via BSB-LAN aktiv Einstellungen geändert werden, so muss selbstverständlich das etwas weiter unten aufgeführte Definement bzgl. Schreibzugriff des Adapters zusätzlich entspr. angepasst werden!*
     
-
 -   Verwendetes **Bus-Protokoll** festlegen (bereits nach Booten des Arduino wirksam):     
     `uint8_t bus_type = bus.setBusType(0);`   
     Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
