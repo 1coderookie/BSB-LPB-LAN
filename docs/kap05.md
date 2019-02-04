@@ -211,7 +211,8 @@ vor der Verwendung des Adapters angepasst werden:
     *Ob eine Bedienung eines HK1 mit einem als RGT2 (oder HK2 mit einem als RGT1) angemeldeten Adapter in vollem Umfang möglich ist, wurde bisher noch nicht ausgiebig getestet.*  
        
     ***→ LPB:***  
-    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen. Dabei ist der oben einzustellende Wert immer um den Wert 1 kleiner als die eigentliche Adresse. Bsp.: Einstellungswert 1 = Adresse 2.*   
+    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen!*  
+    *Beispiel: Adressen 1, 2, 3 (alle im gleichen Segment mit der Segmentadresse 0) sind im bestehenden Geräteverbund bereits vorhanden. Wenn der Adapter nun die Adresse 4 erhalten und das Gerät mit der Geräteadresse 2 abgefragt werden soll, dann ist `BSB bus(68,69,4,2);` einzugeben.*    
     
     ***→ PPS:***  
     *Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als \<my_addr\> bezeichnet) zusätzlich eine 1 zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll:*  
