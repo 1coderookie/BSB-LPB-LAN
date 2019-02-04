@@ -1673,7 +1673,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
    
 ## 11.8 MQTT und FHEM ##  
   
-***Das folgende Beispiel stammt vom FHEM-Forumsmitglied "mifh", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg899597.html#msg899597) zu finden.  
+***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „mifh", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg899597.html#msg899597) zu finden.  
 Vielen Dank!***
   
 Das folgende Beispiel nutzt den FHEM-eigenen MQTT-Server und ist für eine Gastherme samt Heizleistungsberechnung konzipiert. Letzteres ist bei Ölbrennern und Wärmepumpen hinfällig.  
