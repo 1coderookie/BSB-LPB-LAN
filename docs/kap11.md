@@ -1679,7 +1679,7 @@ Vielen Dank!***
 Das folgende Beispiel nutzt den FHEM-eigenen MQTT-Server und ist für eine Gastherme samt Heizleistungsberechnung konzipiert. Letzteres ist bei Ölbrennern und Wärmepumpen hinfällig.  
 *Bitte beachte die Anmerkungen im originalen FHEM-Forumsbeitrag (s.o.).*  
 
-*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle icht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](#kap05.md)!*  
+*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle nicht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](#kap05.md)!*  
   
 **Parametrierung MQTT-Server in FHEM:**   
   
