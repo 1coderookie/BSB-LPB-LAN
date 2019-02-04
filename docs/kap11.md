@@ -1673,6 +1673,64 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
    
 ## 11.8 MQTT und FHEM ##  
   
+***Das folgende Beispiel stammt vom FHEM-Forumsmitglied "mifh", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg899597.html#msg899597) zu finden.  
+Vielen Dank!***
+  
+Das folgende Beispiel nutzt den FHEM-eigenen MQTT-Server und ist für eine Gastherme samt Heizleistungsberechnung konzipiert. Letzteres ist bei Ölbrennern und Wärmepumpen hinfällig.  
+*Bitte beachte die Anmerkungen im originalen FHEM-Forumsbeitrag (s.o.).*  
+
+*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle icht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](#kap05.md)!*  
+  
+**Parametrierung MQTT-Server in FHEM:**   
+  
+´´´
+define MQTT_TST MQTT2_SERVER 1883 global
+define MQTT_2 MQTT <IP-Adresse>:1883
+´´´
+  
+**Heizung als MQTT-Device in FHEM darstellen:**  
+  
+´´´
+define Hzg_Therme MQTT_DEVICE
+attr Hzg_Therme IODev MQTT_2
+attr Hzg_Therme alias Brötje Heizung
+attr Hzg_Therme group Heizung
+attr Hzg_Therme room Heizung
+attr Hzg_Therme subscribeReading_Kesseltemperatur Zuhause/Heizungsraum/BSB-LAN/8310
+attr Hzg_Therme subscribeReading_Ruecklauftemperatur Zuhause/Heizungsraum/BSB-LAN/8314
+attr Hzg_Therme subscribeReading_Geblaesedrehzahl Zuhause/Heizungsraum/BSB-LAN/8323
+attr Hzg_Therme subscribeReading_Brennermodulation Zuhause/Heizungsraum/BSB-LAN/8326
+attr Hzg_Therme subscribeReading_BetriebsstundenStufe1 Zuhause/Heizungsraum/BSB-LAN/8330
+attr Hzg_Therme subscribeReading_StartzaehlerBrenner Zuhause/Heizungsraum/BSB-LAN/8331
+attr Hzg_Therme subscribeReading_BetriebsstundenHeizbetrieb Zuhause/Heizungsraum/BSB-LAN/8338
+attr Hzg_Therme subscribeReading_BetriebsstundenTWW Zuhause/Heizungsraum/BSB-LAN/8339
+attr Hzg_Therme subscribeReading_Gesamt_Gasenergie_Heizen Zuhause/Heizungsraum/BSB-LAN/8378
+attr Hzg_Therme subscribeReading_Gesamt_Gasenergie_TWW Zuhause/Heizungsraum/BSB-LAN/8379
+
+attr Hzg_Therme subscribeReading_Aussentemperatur Zuhause/Heizungsraum/BSB-LAN/8700
+attr Hzg_Therme subscribeReading_DrehzahlHeizkreispumpe Zuhause/Heizungsraum/BSB-LAN/8735
+
+attr Hzg_Therme stateFormat {sprintf("Leistung: %.1f kW",ReadingsVal($name,"Leistung",0))}
+attr Hzg_Therme verbose 3 Hzg_Therme
+
+define Hzg_Therme_NF1 notify Hzg_Therme:Geblaesedrehzahl.* {setHzgLeistung()}
+´´´  
+Das Notify setzt mit einer Perl-Funktion in 99_myUtils.pm das Reading Leistung:  
+´´´
+sub setHzgLeistung{
+	my $drehzahl=ReadingsVal("Hzg_Therme", "Geblaesedrehzahl",0);
+	my $leistung;
+	if ($drehzahl > 0) {
+		$leistung = ($drehzahl- 1039.1)/383.1; # Heizungspezifische Parameter
+		}
+	else {
+		$leistung = 0;
+		}
+	fhem("setreading Hzg_Therme Leistung $leistung");
+}
+´´´  
+  
+
 ---  
 
   
