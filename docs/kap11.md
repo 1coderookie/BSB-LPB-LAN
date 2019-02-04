@@ -1683,14 +1683,14 @@ Das folgende Beispiel nutzt den FHEM-eigenen MQTT-Server und ist für eine Gasth
   
 **Parametrierung MQTT-Server in FHEM:**   
   
-´´´
-define MQTT_TST MQTT2_SERVER 1883 global
-define MQTT_2 MQTT <IP-Adresse>:1883
-´´´
+```  
+define MQTT_TST MQTT2_SERVER 1883 global  
+define MQTT_2 MQTT <IP-Adresse>:1883  
+```  
   
 **Heizung als MQTT-Device in FHEM darstellen:**  
   
-´´´
+```  
 define Hzg_Therme MQTT_DEVICE
 attr Hzg_Therme IODev MQTT_2
 attr Hzg_Therme alias Brötje Heizung
@@ -1706,17 +1706,19 @@ attr Hzg_Therme subscribeReading_BetriebsstundenHeizbetrieb Zuhause/Heizungsraum
 attr Hzg_Therme subscribeReading_BetriebsstundenTWW Zuhause/Heizungsraum/BSB-LAN/8339
 attr Hzg_Therme subscribeReading_Gesamt_Gasenergie_Heizen Zuhause/Heizungsraum/BSB-LAN/8378
 attr Hzg_Therme subscribeReading_Gesamt_Gasenergie_TWW Zuhause/Heizungsraum/BSB-LAN/8379
-
+  
 attr Hzg_Therme subscribeReading_Aussentemperatur Zuhause/Heizungsraum/BSB-LAN/8700
 attr Hzg_Therme subscribeReading_DrehzahlHeizkreispumpe Zuhause/Heizungsraum/BSB-LAN/8735
-
+  
 attr Hzg_Therme stateFormat {sprintf("Leistung: %.1f kW",ReadingsVal($name,"Leistung",0))}
 attr Hzg_Therme verbose 3 Hzg_Therme
-
-define Hzg_Therme_NF1 notify Hzg_Therme:Geblaesedrehzahl.* {setHzgLeistung()}
-´´´  
+  
+define Hzg_Therme_NF1 notify Hzg_Therme:Geblaesedrehzahl.* {setHzgLeistung()}  
+```  
+  
 Das Notify setzt mit einer Perl-Funktion in 99_myUtils.pm das Reading Leistung:  
-´´´
+  
+```  
 sub setHzgLeistung{
 	my $drehzahl=ReadingsVal("Hzg_Therme", "Geblaesedrehzahl",0);
 	my $leistung;
@@ -1727,8 +1729,8 @@ sub setHzgLeistung{
 		$leistung = 0;
 		}
 	fhem("setreading Hzg_Therme Leistung $leistung");
-}
-´´´  
+}  
+```  
   
 
 ---  
