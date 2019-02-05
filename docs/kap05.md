@@ -140,7 +140,8 @@ vor der Verwendung des Adapters angepasst werden:
     loggt die Werte der DS18B20-Sensoren 1-3.
 
     ***Hinweis:***  
-    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 2001 und 2002 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_lan_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 2003 und 2004 mit aufgeführt werden!*  
+    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_lan_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden!*  
+    *TWW-Laufzeit und TWW-Takte sind die Spezialparameter 20004 und 20005, 24h-Durchschnittswerte ist der Spezialparameter 20006, DHT22-Sensoren sind die Spezialparameter 20100-20199, DS18B20-Sensoren sind die Spezialparameter 20200-20299.*  
     
 -   Das **Logintervall** ist bei  
     `unsigned long log_interval = 3600;`  
