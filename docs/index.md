@@ -46,6 +46,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Brötje BBK 22E [LMS14] (Gasbrenner) {BSB}
 - Brötje BBK 22F [LMS14] (Gasbrenner) {BSB}  
 - Brötje BBS Pro Evo 15C [LMU74] (Gasbrenner) {BSB}
+- Brötje BSK 20 [LMS14] (Gasbrenner)  
 - Brötje EcoCondens BBS 15E [LMS14] (Gasbrenner) {BSB}
 - Brötje EcoCondens BBS 20E [LMS14] (Gasbrenner) {BSB}  
 - Brötje EcoCondens BBS 28C [LMU7] (Gasbrenner) {BSB}  
@@ -79,6 +80,7 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - CTC 380 IC [RVS43.143] (Ölbrenner) {BSB}
 - Deville 9981 [RVA53.140] (Ölbrenner) {PPS}
 - Elco Aerotop G07-14 [RVS61.843] (Wärmepumpe) {BSB}
+- Elco Aerotop T07-16 [RVS61.843] (Wärmepumpe) {BSB}
 - Elco Aerotop T10C [RVS61.843] (Wärmepumpe) {BSB}
 - Elco Aquatop 8es [RVS51.843] (entspricht CTA Optihead OH1-8es) (Wärmepumpe) {BSB}
 - Elco Straton 21 [RVS63.283] (Ölbrenner) {BSB}
