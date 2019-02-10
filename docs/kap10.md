@@ -35,8 +35,8 @@ Nachdem das Auslesen der neuen Telegramme abgeschlossen ist, kann bei
 Bedarf (bspw. wenn Daten auf die microSD-Karte geloggt werden) der
 Verbositäts-Modus wieder deaktiviert werden (`http://<IP-Adresse>/V0`).
 
-Rufe nun bitte zusätzlich einmal die Parameter 6220-6228 im Webinterface
-auf (`http://<IP-Adresse>/6220-6228`) und füge sie zu deinen Notizen
+Rufe nun bitte zusätzlich einmal die Parameter 6220-6235 im Webinterface
+auf (`http://<IP-Adresse>/6220-6235`) und füge sie zu deinen Notizen
 hinzu, ebenso wie den Hersteller, die genaue Modellbezeichnung des
 Heizungssystems sowie den von dir verwendeten Bustyp (BSB/LPB/PPS).
 
@@ -278,7 +278,7 @@ Letzte zwei Bytes: CRC-Checksumme
     Heizungssystemen existieren. Sollte es passieren, dass eine Command
     ID nun doppelt in der Datei *BSB\_lan\_defs.h* existiert, markiere
     diese bitte deutlich bevor du uns das Update schickst und teile uns
-    bitte mit, welches Heizungssystem genau du verwendest (/6220-6228).
+    bitte mit, welches Heizungssystem genau du verwendest (/6220-6235).
     Wir werden dann bedingungsabhängige Compiler-Flags hinzufügen, so
     dass das Heizungssystem X anders kompiliert wird als Heizungssystem
     Y und somit letztlich beide Systeme die mehrdeutigen Command IDs für
