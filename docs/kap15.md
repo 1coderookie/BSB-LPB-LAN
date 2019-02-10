@@ -123,7 +123,7 @@ resettet bzw. aus- und wieder angeschaltet werden.
 Sollten dann bestimmte Parameter noch immer nicht erscheinen, so sollte
 bitte einmal /Q ausgeführt und die Webausgabe zusammen mit der Ausgabe
 von  
-`http://<IP-Adresse>/6220-6228`
+`http://<IP-Adresse>/6220-6235`
 gemeldet werden.  
     
 ---
@@ -387,8 +387,8 @@ Informationen bzgl. des von dir verwendeten Heizungstyps, des Reglers,
 des verwendeten Bus-Typs etc.
 
 Wenn du den Adapter bereits erfolgreich angeschlossen und in Verwendung
-hast, frage bitte außerdem die Parameter 6220-6228
-(`http://<IP-Adresse>/6220-6228`) ab und schreibe die Ausgaben
+hast, frage bitte außerdem die Parameter 6220-6235
+(`http://<IP-Adresse>/6220-6235`) ab und schreibe die Ausgaben
 zusätzlich mit in deine Beschreibung.
 
 Prinzipiell kann man sagen: Lieber erst einmal zu viele Informationen,
