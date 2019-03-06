@@ -44,7 +44,7 @@
 [11.4 ioBroker](kap11.md#114-iobroker)  
 [11.5 Loxone](kap11.md#115-loxone)  
 [11.6 IP-Symcon](kap11.md#116-ip-symcon)   
-[11.7 MQTT, InfluxDB, Telegram und Grafana](kap11.md#117-mqtt-influxdb-telegram-und-grafana)   
+[11.7 MQTT, InfluxDB, Telegraf und Grafana](kap11.md#117-mqtt-influxdb-telegraf-und-grafana)   
 [11.8 MQTT und FHEM](kap11.md#118-mqtt-und-fhem)  
 [12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter](kap12.md)  
 [12.1 Der Arduino Mega 2560](kap12.md#121-der-arduino-mega-2560)  
