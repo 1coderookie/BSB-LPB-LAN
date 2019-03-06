@@ -84,6 +84,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 -   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner)
 
 -   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner)
+-   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)
+-   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)
 
 -   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler)
 
@@ -164,11 +166,14 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ### 3.1.3 Weitere Hersteller ###
 
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)
+-   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe)
 
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner)
 
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner)
 
+-   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe)
+-   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe)
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
