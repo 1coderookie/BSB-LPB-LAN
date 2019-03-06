@@ -1735,9 +1735,38 @@ sub setHzgLeistung{
 
 ---  
 
+## 11.9 MQTT2 und FHEM ##  
   
+***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „FunkOdyssey", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg904464.html#msg904464) zu finden.  
+Vielen Dank!***
   
+Das folgende Beispiel nutzt den FHEM-eigenen MQTT2-Server, die Readings erscheinen nach der korrekten Einrichtung automatisch.  
+
+*Auf die notwendigen Anpassungen in der Datei BSB_lan_config.h wird an dieser Stelle nicht weiter eingegangen, bitte beachte dazu die entspr. Punkte in Kap. [5](kap05.md)!*  
+  
+**Einrichten des MQTT2-Server in FHEM gemäß CommandRef:**   
+  
+```  
+defmod mqtt2Server MQTT2_SERVER 1883 global
+attr mqtt2Server autocreate 1  
+```    
+  
+Sobald man in der Datei *BSB_lan_config.h* die IP des FHEM-Servers angegeben hat, erscheint das MQTT2-Device mitsamt aller Readings:  
      
+```  
+defmod MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN
+attr MQTT2_BSB_LAN IODev mqtt2Server
+attr MQTT2_BSB_LAN readingList BSB_LAN:BSB/8314:.* Kesselruecklauftemperatur\
+BSB_LAN:BSB/8700:.* Aussentemperatur\
+BSB_LAN:BSB/8323:.* Geblaesedrehzahl\
+BSB_LAN:BSB/8324:.* Brennergeblaesesollwert\
+BSB_LAN:BSB/700:.* Betriebsart\
+...
+```  
+  
+---  
+  
+  
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
