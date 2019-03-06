@@ -148,7 +148,7 @@ vor der Verwendung des Adapters angepasst werden:
     in Sekunden einzustellen.
     
 -   Soll **MQTT** zum Einsatz kommen, so sind die entspr. Definements zu aktivieren und anzupassen:   
-    `#define MQTTBrokerIP 192,168,1,20` → IP des MQTT-Brokers  
+    `#define MQTTBrokerIP 192,168,1,20` → IP des MQTT-Brokers. Der Standardport ist 1883 und muss nicht extra definiert werden.  
     
     Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:   
     `#define MQTTUsername "User"` → Username  
