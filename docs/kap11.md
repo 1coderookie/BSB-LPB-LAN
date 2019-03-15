@@ -213,7 +213,7 @@ ausgegeben wird (bsbinput.js):***
 	var results = [];
 	value1 = i;
 	// define regex to search for the line in the http response
-	var regEx = '<input type=text id=\'value1\' VALUE=\'[-]*[0-9]+\.[0-9]+';
+	var regEx = 'input type=text id=\'value[0-9]+\' VALUE=\'[-]*[0-9]+\.[0-9]+';
 	var re = new RegExp(regEx, 'gim');
   
  do {
@@ -264,8 +264,19 @@ rule "RoomTemp"
 when
 	Item iSet_temp changed
 then
-	sendHttpGetRequest("http://192.168.178.88/I10000=" + iSet_temp.state.toString)
+	sendHttpGetRequest("http://192.168.178.88/I10000="+iSet_temp.state.toString)
 end
+```  
+
+***Anzeigen der Werte in einer Sitemap (BasicUI, ClassicUI, iOS und Android App:***  
+    
+```
+sitemap demo label="Mein BSB LAN" {
+    Frame label="Heizung" {
+		Text item=hz_aussentemp
+		Text item=hz_700
+    }
+}
 ```  
     
 ---
