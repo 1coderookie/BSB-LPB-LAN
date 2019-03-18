@@ -8,8 +8,8 @@
 
 # Anhang B: Cheatsheet URL-Befehle #
 
-| URL-Befehl                | Auswirkung                                                                |
-|:--------------------------|:--------------------------------------------------------------------------|
+| URL-Befehl                | Auswirkung                                                                    |
+|:--------------------------|:------------------------------------------------------------------------------|
 |  /\<x\>                   | Wert/Einstellung von Parameter \<x\> anzeigen  
 |  /\<x\>,\<y\>,\<z\>       | Werte/Einstellungen der Parameter \<x\>, \<y\> und \<z\> anzeigen  
 |  /\<x\>-\<y\>             | Werte/Einstellungen der Parameter \<x\> bis \<y\> anzeigen  
