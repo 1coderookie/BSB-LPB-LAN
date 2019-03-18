@@ -313,7 +313,7 @@ then
 	sendHttpGetRequest("http://192.168.178.88/S701=1")
 end
 
-rule "SetPartyMode" //ONLY if Parameter 48 is NOT available on your controller: extends heating Komfort time for 1-5 hours
+rule "SetPartyMode1" //ONLY if Parameter 48 is NOT available on your controller: extends heating Komfort time for 1-5 hours
 when
 	Item hz_status changed
 then
@@ -389,7 +389,7 @@ then
 	}
 end
 
-rule "SetPartyMode" //ONLY if Parameter 48 is available on your controller: extends heating Komfort time for 1-5 hours
+rule "SetPartyMode2" //ONLY if Parameter 48 is available on your controller: extends heating Komfort time for 1-5 hours
 when
 	Item hz_status changed
 then
