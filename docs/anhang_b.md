@@ -39,7 +39,7 @@
 |  /LU=\<x\>            | Loggen von Bus-Telegrammen: Nur unbekannte (\<x\>=1) oder alle (\<x\>=0)  
 |  /M\<x\>              | Monitor-Modus aktivieren (\<x\> = 1) oder deaktivieren (\<x\> = 0)  
 |  /N                   | Reset und Neustart des Arduino (Dauer ca. 15Sek)  
-|  /NE                  | Reset und Neustart des Arduino (Dauer ca. 15Sek) und lösche EEPROM 
+|  /NE                  | Reset und Neustart des Arduino (Dauer ca. 15Sek) und lösche EEPROM  
 |  /O                   | Übersicht der URL-Befehle  
 |  /P\<x\>              | Busprotokoll / Bustyp setzen: \<x\> = 0 → BSB \| 1 → LPB \| 2 → PPS  
 |  /P\<x\>,\<s\>,\<d\>  | Busprotokoll/-typ \<x\>, eigene Adresse \<s\>, Zieladresse \<d\> setzen  
