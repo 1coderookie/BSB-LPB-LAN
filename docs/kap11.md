@@ -192,7 +192,7 @@ durchaus möglich, Werte auszulesen und auch zu schreiben.
 Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die
 Visualisierung mit Grafana.  
 Selbstverständlich sind die notwendigen Addons wie bspw. die Javascript
-Transformation, MQTT, Network, Expire vorhergehend zu installieren.
+Transformation, MQTT, Network und Expire vorhergehend zu installieren.
 Auf das Anlegen der ggf. notwendigen Things über PaperUI wird ebenfalls nicht
 näher eingegangen.
 
