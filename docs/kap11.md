@@ -192,17 +192,34 @@ durchaus möglich, Werte auszulesen und auch zu schreiben.
 Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die
 Visualisierung mit Grafana.  
 Selbstverständlich sind die notwendigen Addons wie bspw. die Javascript
-Transformation vorhergehend zu installieren.
+Transformation, MQTT, Network, Expire vorhergehend zu installieren.
+Auf das Anlegen der ggf. notwendigen Things über PaperUI wird ebenfalls nicht
+näher eingegangen.
 
 ***Beispiel einer Item-Konfiguration:***  
     
 ```
-Number hz_aussentemp "Aussentemperatur [%.1f °C]" <temperature> (Heizunglog) { http="<[http://192.168.178.88/8700:60000:JS(bsbinput.js)]" }
-String hz_700 "Heizkreis 1 Betriebsart [%s]" <temperature> (Heizunglog){ http="<[http://192.168.178.88/700:1000:JS(bsbinput_string.js)]" }
+Number hz_mode_cmd <heating> //change heating mode
+String hz_mode_state <heating> { http="<[http://192.168.178.88/700:10000:JS(bsbinput_string.js)]" } //read heating mode from BSB LAN Adapter
+Number hz_temperature_cmd <temperature> //change target temperature
+Number hz_temperature_state <temperature> { http="<[http://192.168.178.88/8741:15000:JS(bsbinput.js)]" } //read current target temperature from BSB LAN Adapter
+String hz_status <heating> { http="<[http://192.168.178.88/8000:20000:JS(bsbinput_string.js)]" } //read current heating status from BSB LAN Adapter
+String hz_status_water <water> { http="<[http://192.168.178.88/8003:25000:JS(bsbinput_string.js)]" } //read current hot water status from BSB LAN Adapter
+Switch hz_mode_komfort <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Komfort state during Automatik mode, switch item to OFF after one second (momentary switch)
+Switch hz_mode_reduziert <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Reduziert state during Automatik mode, switch item to OFF after one second (momentary switch)
+Number hz_temperature_rgt <temperature> { http="<[http://192.168.178.88/8740:25000:JS(bsbinput.js)]" } //read current room temperature for remote RGT from BSB LAN Adapter
+Number hz_fan_speed <temperature> { http="<[http://192.168.178.88/8323:30000:JS(bsbinput.js)]" } //read current fan speed from BSB LAN Adapter
+Number hz_aussentemp <temperature> { http="<[http://192.168.178.88/8700:20000:JS(bsbinput.js)]" } //read current outside temperature from BSB LAN Adapter via Javascript Transformation (not used here)
+Number hz_kitchen_maxActual "MAX! Küche [%.1f °C]" {channel="max:thermostat:KEQ0565026:KEQ0648949:actual_temp"} //read temperature from MAX!
+Number BSBLAN_Aussentemp <temperature> { channel="mqtt:topic:bsblan:aussentemp" } //read current outside temperature from BSB LAN Adapter via MQTT2
+Number BSBLAN_Vorlauftemp <temperature> { channel="mqtt:topic:bsblan:vorlauftemp" } //read current flow temperature from BSB LAN Adapter via MQTT2
+Number BSBLAN_Ruecklauftemp <temperature> { channel="mqtt:topic:bsblan:ruecklauftemp" } //read current return temperature from BSB LAN Adapter via MQTT2
+Switch bsb_lan_presence <presence> { channel="network:pingdevice:192_168_178_88:online" } //check online status of BSB LAN through Network binding
+Number hz_mode_party <party> //enable or disable Party mode for 1-5 hours
 ```
     
 Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
-*transformations* abzulegen.
+*transform* abzulegen.
 
 ***Beispielscript für Abfragen von Parametern, bei denen ein Wert
 ausgegeben wird (bsbinput.js):***  
@@ -256,27 +273,239 @@ ausgegeben wird (bsbinput.js):***
 })(input)
 ```
     
-***Das Schreiben von Daten erfolgt über Rules:***  
+***Das Schreiben und Auslesen von Daten erfolgt über Rules:***  
     
 ```
-rule "RoomTemp"
+var Timer PartyModeTimer = null //initialize a timer for party mode
+
+rule "HeatingTempTarget" //change target temperature
+when
+	Item hz_temperature_cmd changed
+then
+	sendHttpGetRequest("http://192.168.178.88/S710="+hz_temperature_cmd.state.toString)
+end
+
+rule "HeatingMode" //change heating mode
+when
+	Item hz_mode_cmd changed
+then
+	sendHttpGetRequest("http://192.168.178.88/S700="+hz_mode_cmd.state.toString)
+end
+
+rule "UpdateHeatingMode" //reflect manual RGT remote changes on UI
+when
+	Item hz_mode_state changed
+then
+	hz_mode_cmd.postUpdate(transform("MAP","heatingmode.map",hz_mode_state.state.toString))
+end
+
+rule "SetModeKomfort" //set mode temporary to Komfort during Automatik mode
+when
+	Item hz_mode_komfort changed to ON
+then
+	sendHttpGetRequest("http://192.168.178.88/S701=0")
+end
+
+rule "SetModeReduziert" //set mode temporary to Reduziert during Automatik mode
+when
+	Item hz_mode_reduziert changed to ON
+then
+	sendHttpGetRequest("http://192.168.178.88/S701=1")
+end
+
+rule "SetPartyMode" //ONLY if Parameter 48 is NOT available on your controller: extends heating Komfort time for 1-5 hours
+when
+	Item hz_status changed
+then
+	// to do: read shutdown times for Absenkung Reduziert dynamically from BSB LAN Adapter
+	if (hz_status.state.toString=="Absenkung Reduziert" && (now.getHourOfDay()>=22 && (now.getHourOfDay()<=23))) { //only trigger rule content during normal Reduziert shutdown times
+		switch (hz_mode_party.state) {
+				case 1: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(1)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 1h")
+				}		
+				case 2: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(2)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 2h")
+				}
+				case 3: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(3)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 3h")
+				}	
+				case 4: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(4)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 4h")
+				}
+				case 5: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(5)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 5h")
+				}
+			}
+	}
+end
+
+rule "SetPartyMode" //ONLY if Parameter 48 is available on your controller: extends heating Komfort time for 1-5 hours
+when
+	Item hz_status changed
+then
+	// to do: read shutdown times for Absenkung Reduziert dynamically from BSB LAN Adapter
+	if (hz_status.state.toString=="Absenkung Reduziert" && (now.getHourOfDay()>=22 && (now.getHourOfDay()<=23))) { //only trigger rule content during normal Reduziert shutdown times
+		switch (hz_mode_party.state) {
+ 				case 1: {
+ 				if(PartyModeTimer!==null) {
+            		PartyModeTimer.cancel
+            		PartyModeTimer = null
+         		}
+ 					PartyModeTimer = createTimer(now.plusHours(1)) [ |
+ 					hz_mode_reduziert.sendCommand(ON)
+ 					logInfo("BSBLAN","Party Mode disabled")
+ 					]
+ 				hz_mode_komfort.sendCommand(ON)
+ 				hz_mode_party.postUpdate(0)
+ 				logInfo("BSBLAN","Party Mode 1h")
+ 				}		
+ 				case 2: {
+ 				if(PartyModeTimer!==null) {
+            		PartyModeTimer.cancel
+            		PartyModeTimer = null
+         		}
+ 					PartyModeTimer = createTimer(now.plusHours(2)) [ |
+ 					hz_mode_reduziert.sendCommand(ON)
+ 					logInfo("BSBLAN","Party Mode disabled")
+ 					]
+ 				hz_mode_komfort.sendCommand(ON)
+ 				hz_mode_party.postUpdate(0)
+ 				logInfo("BSBLAN","Party Mode 2h")
+ 				}
+ 				case 3: {
+ 				if(PartyModeTimer!==null) {
+            		PartyModeTimer.cancel
+            		PartyModeTimer = null
+         		}
+ 					PartyModeTimer = createTimer(now.plusHours(3)) [ |
+ 					hz_mode_reduziert.sendCommand(ON)
+ 					logInfo("BSBLAN","Party Mode disabled")
+ 					]
+ 				hz_mode_komfort.sendCommand(ON)
+ 				hz_mode_party.postUpdate(0)
+ 				logInfo("BSBLAN","Party Mode 3h")
+ 				}	
+ 				case 4: {
+ 				if(PartyModeTimer!==null) {
+            		PartyModeTimer.cancel
+            		PartyModeTimer = null
+         		}
+ 					PartyModeTimer = createTimer(now.plusHours(4)) [ |
+ 					hz_mode_reduziert.sendCommand(ON)
+ 					logInfo("BSBLAN","Party Mode disabled")
+ 					]
+ 				hz_mode_komfort.sendCommand(ON)
+ 				hz_mode_party.postUpdate(0)
+ 				logInfo("BSBLAN","Party Mode 4h")
+ 				}
+ 				case 5: {
+ 				if(PartyModeTimer!==null) {
+            		PartyModeTimer.cancel
+            		PartyModeTimer = null
+         		}
+ 					PartyModeTimer = createTimer(now.plusHours(5)) [ |
+ 					hz_mode_reduziert.sendCommand(ON)
+ 					logInfo("BSBLAN","Party Mode disabled")
+ 					]
+ 				hz_mode_komfort.sendCommand(ON)
+ 				hz_mode_party.postUpdate(0)
+ 				logInfo("BSBLAN","Party Mode 5h")
+ 				}
+ 			}
+ 	}
+end
+
+rule "ConsiderRoomTempFromKitchen" //feed external temperatures to controller, for example MAX!
 
 when
-	Item iSet_temp changed
+	Item hz_kitchen_maxActual changed
 then
-	sendHttpGetRequest("http://192.168.178.88/I10000="+iSet_temp.state.toString)
+	sendHttpGetRequest("http://192.168.178.88/I10000="+hz_kitchen_maxActual.state.toString)
 end
 ```  
     
 ***Anzeigen der Werte in einer Sitemap (BasicUI, ClassicUI, iOS und Android App):***  
 
 ```
-sitemap demo label="Mein BSB LAN" {
-    Frame label="Heizung" {
-		Text item=hz_aussentemp
-		Text item=hz_700
-    }
+sitemap bsblan label="Mein BSB LAN"
+{
+Frame	{
+			Text label="Heizung" icon="heating"
+				{
+				Text item=hz_mode_state label="IST Betriebsart [%s]"
+				Selection item=hz_mode_cmd label="SOLL Betriebsart [%s]" mappings=[1="Automatik",3="Komfort",2="Reduziert"]
+				Text item=hz_temperature_state label="Gesetzte Temperatur [%.1f °C]"
+				Setpoint item=hz_temperature_cmd label="SOLL Temperatur [%.1f °C]" minValue=16 maxValue=24 step=0.5
+				Text item=hz_status label="Status Heizung [%s]"
+				Text item=hz_status_water label="Status Wasser [%s]"
+				Switch item=hz_mode_komfort label="Präsenz Komfort"
+				Switch item=hz_mode_reduziert label="Präsenz Reduziert"
+				Selection item=hz_mode_party label="Partymodus [%s]" mappings=[0="Aus",1="1h",2="2h",3="3h",4="4h",5="5h"]
+				Text item=hz_temperature_rgt label="Raumtemperatur RGT [%.1f °C]"
+				Text item=hz_kitchen_maxActual label="MAX! Küche [%.1f °C]"
+				Text item=BSBLAN_Aussentemp label="Aussentemperatur [%.1f °C]"
+				Text item=BSBLAN_Vorlauftemp label="Vorlauftemperatur [%.1f °C]"
+				Text item=BSBLAN_Ruecklauftemp label="Rücklauftemperatur [%.1f °C]"
+				Text item=bsb_lan_presence label="BSB LAN Online Status [%s]"
+				Text item=hz_fan_speed label="Gebläsedrehzahl [%s]"
+				}
+		}
 }
+
+Das obige Beispiel wird als Sitemap in BasicUI wie folgt angzeigt:
+
+(Bild einfügen)
+
 ```  
     
 ---
