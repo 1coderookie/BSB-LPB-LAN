@@ -196,7 +196,7 @@ Transformation, MQTT, Network, Expire vorhergehend zu installieren.
 Auf das Anlegen der ggf. notwendigen Things über PaperUI wird ebenfalls nicht
 näher eingegangen.
 
-***Beispiel einer Item-Konfiguration:***  
+***Beispiel einer Item-Konfiguration (/items/bsblan.items):***  
     
 ```
 Number hz_mode_cmd <heating> //change heating mode
@@ -222,7 +222,7 @@ Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
 *transform* abzulegen.
 
 ***Beispielscript für Abfragen von Parametern, bei denen ein Wert
-ausgegeben wird (bsbinput.js):***  
+ausgegeben wird (/transform/bsbinput.js):***  
     
 ```javascript
 (function(i) {
@@ -247,7 +247,7 @@ ausgegeben wird (bsbinput.js):***
 })(input)
 ```
     
-***Beispielscript für direkte Abfragen von enum-Werten (bsbinput_string.js):***  
+***Beispielscript für direkte Abfragen von enum-Werten (/transform/bsbinput_string.js):***  
     
 ```javascript
 (function(i) {
@@ -273,7 +273,7 @@ ausgegeben wird (bsbinput.js):***
 })(input)
 ```
     
-***Das Schreiben und Auslesen von Daten erfolgt über Rules:***  
+***Das Schreiben und Auslesen von Daten erfolgt über Rules (/rules/bsblan.rules):***  
     
 ```
 var Timer PartyModeTimer = null //initialize a timer for party mode
@@ -473,8 +473,17 @@ then
 	sendHttpGetRequest("http://192.168.178.88/I10000="+hz_kitchen_maxActual.state.toString)
 end
 ```  
-    
-***Anzeigen der Werte in einer Sitemap (BasicUI, ClassicUI, iOS und Android App):***  
+
+***Transformation von Zahlenwerten zu besser lesbaren Texten (/transform/heatingmode.map):***  
+
+```
+Automatik=1
+Reduziert=2
+Komfort=3
+Schutzbetrieb=0
+```
+
+***Anzeigen der Werte in einer Sitemap (/sitemaps/bsblan.sitemap, z.B. für BasicUI, ClassicUI, iOS und Android App):***  
 
 ```
 sitemap bsblan label="Mein BSB LAN"
@@ -501,13 +510,12 @@ Frame	{
 				}
 		}
 }
-
-Das obige Beispiel wird als Sitemap in BasicUI wie folgt angzeigt:
-
-(Bild einfügen)
-
 ```  
-    
+
+***Das obige Beispiel wird als Sitemap in BasicUI wie in folgendem Screenshot angezeigt:***
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">
+  
 ---
     
     
