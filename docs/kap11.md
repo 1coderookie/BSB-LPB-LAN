@@ -208,7 +208,7 @@ String hz_700 "Heizkreis 1 Betriebsart [%s]" <temperature> (Heizunglog){ http="<
 ```
     
 Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
-*transformations* abzulegen.
+*transform* abzulegen.
 
 ***Beispielscript für Abfragen von Parametern, bei denen ein Wert
 ausgegeben wird (bsbinput.js):***  
