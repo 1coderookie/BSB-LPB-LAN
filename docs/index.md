@@ -13,7 +13,7 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
   
 ---  
     
-### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md) ###  
+### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md). ###  
     
 ### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
   
