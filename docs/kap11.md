@@ -301,7 +301,7 @@ näher eingegangen.
 *Hinweis:*  
 Das folgende Beispiel muss selbstverständlich individuell angepasst werden. Dabei ist insbesondere darauf zu achten, dass gewisse heizungsseitige Parameter/Funktionen nicht bei jedem Gerät verfügbar sind!  
 Des Weiteren kann eine Anzeige der Raumtemperatur nur dann erfolgen, wenn diese auch übermittelt wird (bspw. durch ein entspr. Raumgerät).  
-Die Präsenztastenfunktion kann u.U. bei einigen Reglertypen nicht gegeben sein (s. [Hinweis](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#822-pr%C3%A4senztaste-simulieren)) und sollte daher im Vorfeld überprüft werden.  
+Die Präsenztastenfunktion kann u.U. bei einigen Reglertypen nicht gegeben sein (s. [entspr. Kap.](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#822-pr%C3%A4senztaste-simulieren)) und sollte daher im Vorfeld überprüft werden.  
 MAX!-Komponenten können selbstverständlich ebenfalls nur genutzt werden, wenn sie vorhandenen und entspr. eingebunden sind (s. [entspr. Kap.](https://1coderookie.github.io/BSB-LPB-LAN/kap12.html#125-max-komponenten)).  
   
 ***Das folgende Beispiel wird als Sitemap in BasicUI wie in folgendem Screenshot angezeigt:***
