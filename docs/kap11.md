@@ -180,19 +180,25 @@ attr EthRelais timeout 5
     
 
 ## 11.2 openHAB ##
-
-***Die openHAB-Beispielscripte stammen vom FHEM-Forumsmitglied
-„acfischer42", zwei Korrekturen/Änderungsvorschläge sowie das Skript zum Anzeigen der Werte in einer Sitemap von „sihui".  
-Vielen Dank!***
-
+  
 Es existiert derzeit kein komplettes Binding fuer BSB-LAN. Mit dem HTTP
 Binding und der Javascript Transformation ist es allerdings
 durchaus möglich, Werte auszulesen und auch zu schreiben.
 
 Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die
-Visualisierung mit Grafana.  
-Selbstverständlich sind die notwendigen Addons wie bspw. die Javascript
-Transformation vorhergehend zu installieren.
+Visualisierung mit Grafana.   
+  
+---  
+  
+### 11.2.1 openHAB mit Javascript Transformation ###  
+
+***Die openHAB-Beispielscripte stammen vom FHEM-Forumsmitglied
+„acfischer42", zwei Korrekturen/Änderungsvorschläge sowie das Skript zum Anzeigen der Werte in einer Sitemap von „sihui".  
+Vielen Dank!***
+
+*ACHTUNG:*  
+Die notwendigen Addons wie bspw. die Javascript
+Transformation sind vorhergehend zu installieren!
 
 ***Beispiel einer Item-Konfiguration:***  
     
@@ -281,6 +287,265 @@ sitemap demo label="Mein BSB LAN" {
     
 ---
     
+### 11.2.2 openHAB mit Javascript Transformation, MQTT, Network und Expire ###
+  
+***Basierend auf dem vorhergehenden Beispiel hat FHEM-Forumsmitglied „sihui" (GitHub: [sihui62](https://github.com/sihui62)) ein erweitertes Beispiel erstellt.  
+Vielen Dank!***  
+  
+*ACHTUNG:*  
+Die notwendigen Addons wie bspw. die Javascript
+Transformation, MQTT, Network und Expire sind vorhergehend zu installieren!
+Auf das Anlegen der ggf. notwendigen Things über PaperUI wird ebenfalls nicht
+näher eingegangen.
+
+*Hinweis:*  
+Das folgende Beispiel muss selbstverständlich individuell angepasst werden. Dabei ist insbesondere darauf zu achten, dass gewisse heizungsseitige Parameter/Funktionen nicht bei jedem Gerät verfügbar sind! Des Weiteren kann eine Anzeige der Raumtemperatur nur dann erfolgen, wenn diese auch übermittelt wird (bspw. durch ein entspr. Raumgerät). Die Präsenztastenfunktion kann u.U. bei einigen Reglertypen nicht gegeben sein (s. [Hinweis](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#822-pr%C3%A4senztaste-simulieren)).
+  
+***Das folgende Beispiel wird als Sitemap in BasicUI wie in folgendem Screenshot angezeigt:***
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">  
+  
+  
+***Beispiel einer Item-Konfiguration (/items/bsblan.items):***  
+    
+```
+Number hz_mode_cmd <heating> //change heating mode
+String hz_mode_state <heating> { http="<[http://192.168.178.88/700:10000:JS(bsbinput_string.js)]" } //read heating mode from BSB LAN Adapter
+Number hz_temperature_cmd <temperature> //change target temperature
+Number hz_temperature_state <temperature> { http="<[http://192.168.178.88/8741:15000:JS(bsbinput.js)]" } //read current target temperature from BSB LAN Adapter
+String hz_status <heating> { http="<[http://192.168.178.88/8000:20000:JS(bsbinput_string.js)]" } //read current heating status from BSB LAN Adapter
+String hz_status_water <water> { http="<[http://192.168.178.88/8003:25000:JS(bsbinput_string.js)]" } //read current hot water status from BSB LAN Adapter
+Switch hz_mode_komfort <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Komfort state during Automatik mode, switch item to OFF after one second (momentary switch)
+Switch hz_mode_reduziert <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Reduziert state during Automatik mode, switch item to OFF after one second (momentary switch)
+Number hz_temperature_rgt <temperature> { http="<[http://192.168.178.88/8740:25000:JS(bsbinput.js)]" } //read current room temperature for remote RGT from BSB LAN Adapter
+Number hz_fan_speed <temperature> { http="<[http://192.168.178.88/8323:30000:JS(bsbinput.js)]" } //read current fan speed from BSB LAN Adapter
+Number hz_aussentemp <temperature> { http="<[http://192.168.178.88/8700:20000:JS(bsbinput.js)]" } //read current outside temperature from BSB LAN Adapter via Javascript Transformation (not used here)
+Number hz_kitchen_maxActual "MAX! Küche [%.1f °C]" {channel="max:thermostat:KEQ0565026:KEQ0648949:actual_temp"} //read temperature from MAX!
+Number BSBLAN_Aussentemp <temperature> { channel="mqtt:topic:bsblan:aussentemp" } //read current outside temperature from BSB LAN Adapter via MQTT2
+Number BSBLAN_Vorlauftemp <temperature> { channel="mqtt:topic:bsblan:vorlauftemp" } //read current flow temperature from BSB LAN Adapter via MQTT2
+Number BSBLAN_Ruecklauftemp <temperature> { channel="mqtt:topic:bsblan:ruecklauftemp" } //read current return temperature from BSB LAN Adapter via MQTT2
+Switch bsb_lan_presence <presence> { channel="network:pingdevice:192_168_178_88:online" } //check online status of BSB LAN through Network binding
+Number hz_mode_party <party> //enable or disable Party mode for 1-5 hours
+```
+    
+Das folgende Javascript ist als *bsbinput.js* im Verzeichnis
+*transform* abzulegen.
+
+***Beispielscript für Abfragen von Parametern, bei denen ein Wert
+ausgegeben wird (/transform/bsbinput.js):***  
+    
+```javascript
+(function(i) {
+    var outputres;
+	var results = [];
+	value1 = i;
+	// define regex to search for the line in the http response
+	var regEx = 'input type=text id=\'value[0-9]+\' VALUE=\'[-]*[0-9]+\.[0-9]+';
+	var re = new RegExp(regEx, 'gim');
+  
+ do {
+    match = re.exec(value1);
+    if (match){
+        results.push(match[0]);
+    }
+} while (match);
+    
+	outputres = results[0]
+	//extract actual value from the output
+	var output=outputres.substr(outputres.indexOf("VALUE='")+7,outputres.length);
+	return output;
+})(input)
+```
+    
+***Beispielscript für direkte Abfragen von enum-Werten (/transform/bsbinput_string.js):***  
+    
+```javascript
+(function(i) {
+        var outputres;
+	var results = [];
+	value1 = i;
+	// define regex to search for the line in the http response
+	var regEx = '<option value=\'[0-9]+\' SELECTED>.*</option>';
+	var re = new RegExp(regEx, 'gim');
+  
+ do {
+    match = re.exec(value1);
+    if (match){
+        results.push(match[0]);
+    }
+} while (match);
+    
+	outputres = results[0]
+	//extract actual value from the output
+	var l=outputres.indexOf("</o")-outputres.indexOf(">")-1
+	var output=outputres.substr(outputres.indexOf(">")+1,l);
+		return output;
+})(input)
+```
+    
+***Das Schreiben und Auslesen von Daten erfolgt über Rules (/rules/bsblan.rules):***  
+    
+```
+var Timer PartyModeTimer = null //initialize a timer for party mode
+
+rule "HeatingTempTarget" //change target temperature
+when
+	Item hz_temperature_cmd changed
+then
+	sendHttpGetRequest("http://192.168.178.88/S710="+hz_temperature_cmd.state.toString)
+end
+
+rule "HeatingMode" //change heating mode
+when
+	Item hz_mode_cmd changed
+then
+	sendHttpGetRequest("http://192.168.178.88/S700="+hz_mode_cmd.state.toString)
+end
+
+rule "UpdateHeatingMode" //reflect manual RGT remote changes on UI
+when
+	Item hz_mode_state changed
+then
+	hz_mode_cmd.postUpdate(transform("MAP","heatingmode.map",hz_mode_state.state.toString))
+end
+
+rule "SetModeKomfort" //set mode temporary to Komfort during Automatik mode
+when
+	Item hz_mode_komfort changed to ON
+then
+	sendHttpGetRequest("http://192.168.178.88/S701=0")
+end
+
+rule "SetModeReduziert" //set mode temporary to Reduziert during Automatik mode
+when
+	Item hz_mode_reduziert changed to ON
+then
+	sendHttpGetRequest("http://192.168.178.88/S701=1")
+end
+
+rule "SetPartyMode" //extends heating Komfort time for 1-5 hours
+when
+	Item hz_status changed
+then
+	// to do: read shutdown times for Absenkung Reduziert dynamically from BSB LAN Adapter
+	if (hz_status.state.toString=="Absenkung Reduziert" && (now.getHourOfDay()>=22 && (now.getHourOfDay()<=23))) { //only trigger rule content during normal Reduziert shutdown times
+		switch (hz_mode_party.state) {
+				case 1: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(1)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 1h")
+				}		
+				case 2: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(2)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 2h")
+				}
+				case 3: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(3)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 3h")
+				}	
+				case 4: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(4)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 4h")
+				}
+				case 5: {
+				if(PartyModeTimer!==null) {
+           		PartyModeTimer.cancel
+           		PartyModeTimer = null
+        		}
+					PartyModeTimer = createTimer(now.plusHours(5)) [ |
+					hz_mode_cmd.sendCommand(1)
+					logInfo("BSBLAN","Party Mode disabled")
+					]
+				hz_mode_cmd.sendCommand(3)
+				hz_mode_party.postUpdate(0)
+				logInfo("BSBLAN","Party Mode 5h")
+				}
+			}
+	}
+end
+
+rule "ConsiderRoomTempFromKitchen" //feed external temperatures to controller, for example MAX!
+when
+	Item hz_kitchen_maxActual changed
+then
+	sendHttpGetRequest("http://192.168.178.88/I10000="+hz_kitchen_maxActual.state.toString)
+end
+```  
+
+***Transformation von Zahlenwerten zu besser lesbaren Texten (/transform/heatingmode.map):***  
+
+```
+Automatik=1
+Reduziert=2
+Komfort=3
+Schutzbetrieb=0
+```
+
+***Anzeigen der Werte in einer Sitemap (/sitemaps/bsblan.sitemap, z.B. für BasicUI, ClassicUI, iOS und Android App):***  
+
+```
+sitemap bsblan label="Mein BSB LAN"
+{
+Frame	{
+			Text label="Heizung" icon="heating"
+				{
+				Text item=hz_mode_state label="IST Betriebsart [%s]"
+				Selection item=hz_mode_cmd label="SOLL Betriebsart [%s]" mappings=[1="Automatik",3="Komfort",2="Reduziert"]
+				Text item=hz_temperature_state label="Gesetzte Temperatur [%.1f °C]"
+				Setpoint item=hz_temperature_cmd label="SOLL Temperatur [%.1f °C]" minValue=16 maxValue=24 step=0.5
+				Text item=hz_status label="Status Heizung [%s]"
+				Text item=hz_status_water label="Status Wasser [%s]"
+				Switch item=hz_mode_komfort label="Präsenz Komfort"
+				Switch item=hz_mode_reduziert label="Präsenz Reduziert"
+				Selection item=hz_mode_party label="Partymodus [%s]" mappings=[0="Aus",1="1h",2="2h",3="3h",4="4h",5="5h"]
+				Text item=hz_temperature_rgt label="Raumtemperatur RGT [%.1f °C]"
+				Text item=hz_kitchen_maxActual label="MAX! Küche [%.1f °C]"
+				Text item=BSBLAN_Aussentemp label="Aussentemperatur [%.1f °C]"
+				Text item=BSBLAN_Vorlauftemp label="Vorlauftemperatur [%.1f °C]"
+				Text item=BSBLAN_Ruecklauftemp label="Rücklauftemperatur [%.1f °C]"
+				Text item=bsb_lan_presence label="BSB LAN Online Status [%s]"
+				Text item=hz_fan_speed label="Gebläsedrehzahl [%s]"
+				}
+		}
+}
+```  
+  
+---
     
 ## 11.3 HomeMatic (EQ3) ##  
     
