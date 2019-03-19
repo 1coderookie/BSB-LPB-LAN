@@ -313,7 +313,7 @@ then
 	sendHttpGetRequest("http://192.168.178.88/S701=1")
 end
 
-rule "SetPartyMode1" //ONLY if Parameter 48 is NOT available on your controller: extends heating Komfort time for 1-5 hours
+rule "SetPartyMode" //extends heating Komfort time for 1-5 hours
 when
 	Item hz_status changed
 then
@@ -389,84 +389,7 @@ then
 	}
 end
 
-rule "SetPartyMode2" //ONLY if Parameter 48 is available on your controller: extends heating Komfort time for 1-5 hours
-when
-	Item hz_status changed
-then
-	// to do: read shutdown times for Absenkung Reduziert dynamically from BSB LAN Adapter
-	if (hz_status.state.toString=="Absenkung Reduziert" && (now.getHourOfDay()>=22 && (now.getHourOfDay()<=23))) { //only trigger rule content during normal Reduziert shutdown times
-		switch (hz_mode_party.state) {
- 				case 1: {
- 				if(PartyModeTimer!==null) {
-            		PartyModeTimer.cancel
-            		PartyModeTimer = null
-         		}
- 					PartyModeTimer = createTimer(now.plusHours(1)) [ |
- 					hz_mode_reduziert.sendCommand(ON)
- 					logInfo("BSBLAN","Party Mode disabled")
- 					]
- 				hz_mode_komfort.sendCommand(ON)
- 				hz_mode_party.postUpdate(0)
- 				logInfo("BSBLAN","Party Mode 1h")
- 				}		
- 				case 2: {
- 				if(PartyModeTimer!==null) {
-            		PartyModeTimer.cancel
-            		PartyModeTimer = null
-         		}
- 					PartyModeTimer = createTimer(now.plusHours(2)) [ |
- 					hz_mode_reduziert.sendCommand(ON)
- 					logInfo("BSBLAN","Party Mode disabled")
- 					]
- 				hz_mode_komfort.sendCommand(ON)
- 				hz_mode_party.postUpdate(0)
- 				logInfo("BSBLAN","Party Mode 2h")
- 				}
- 				case 3: {
- 				if(PartyModeTimer!==null) {
-            		PartyModeTimer.cancel
-            		PartyModeTimer = null
-         		}
- 					PartyModeTimer = createTimer(now.plusHours(3)) [ |
- 					hz_mode_reduziert.sendCommand(ON)
- 					logInfo("BSBLAN","Party Mode disabled")
- 					]
- 				hz_mode_komfort.sendCommand(ON)
- 				hz_mode_party.postUpdate(0)
- 				logInfo("BSBLAN","Party Mode 3h")
- 				}	
- 				case 4: {
- 				if(PartyModeTimer!==null) {
-            		PartyModeTimer.cancel
-            		PartyModeTimer = null
-         		}
- 					PartyModeTimer = createTimer(now.plusHours(4)) [ |
- 					hz_mode_reduziert.sendCommand(ON)
- 					logInfo("BSBLAN","Party Mode disabled")
- 					]
- 				hz_mode_komfort.sendCommand(ON)
- 				hz_mode_party.postUpdate(0)
- 				logInfo("BSBLAN","Party Mode 4h")
- 				}
- 				case 5: {
- 				if(PartyModeTimer!==null) {
-            		PartyModeTimer.cancel
-            		PartyModeTimer = null
-         		}
- 					PartyModeTimer = createTimer(now.plusHours(5)) [ |
- 					hz_mode_reduziert.sendCommand(ON)
- 					logInfo("BSBLAN","Party Mode disabled")
- 					]
- 				hz_mode_komfort.sendCommand(ON)
- 				hz_mode_party.postUpdate(0)
- 				logInfo("BSBLAN","Party Mode 5h")
- 				}
- 			}
- 	}
-end
-
 rule "ConsiderRoomTempFromKitchen" //feed external temperatures to controller, for example MAX!
-
 when
 	Item hz_kitchen_maxActual changed
 then
