@@ -27,7 +27,25 @@ vor der Verwendung des Adapters angepasst werden:
 -   **SubnetIP:**  
     Durch Aktivierung des Definements und Anpassung der IP 
     kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
-    `#define SubnetIP 255,255,255,0`
+    `#define SubnetIP 255,255,255,0`  
+    
+-   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters sowie der Kategorie- und Parameterbezeichnungen muss
+    *zwingend* ausgewählt bzw. definiert werden. Für "Deutsch" ist dabei das folgende Definement zu wählen:  
+    `#define LANG DE;`  
+    Ab v.042 ist es nun möglich, BSB-LAN auch in anderen Sprachen zu nutzen, wobei prinzipiell ab sofort jede Sprache unterstützt werden kann (es müssen dann 'nur' die entspr. Übersetzungen erstellt werden).  
+Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch (EN), Spanisch (ES), Finnisch (FI), Französisch (FR), Griechisch (GR), Ungarisch (HU), Italienisch (IT), Niederländisch (NL), Polnisch (PL), Russisch (RU), Schwedisch (SE), Slovenisch (SI) und Türkisch (TR). Wenn gewisse Ausdrücke nicht in der spezifischen Sprache vorliegen, wird automatisch der englische Ausdruck angezeigt. Sollte auch dieser nicht vorhanden sein, wird schließlich der deutsche Ausdruck dargestellt. 
+
+    *Um eine Sprache hinzuzufügen oder zu erweitern, ist Folgendes zu tun:*  
+    - Sprachdatei LANG_<ISO-CODE>.h im Verzeichnis "localization" anlegen oder bestehende Datei öffnen.
+    - Aus einer bestehenden Sprachendatei (Deutsch ist zu 100% komplett) den entsprechenden Eintrag kopieren, also z.B.
+    #define ENUM5970_01_TEXT "Raumthermostat"
+    - Den Text zwischen den Anführungszeichen übersetzen, den Rest nicht anrühren, und auch die Anführungszeichen nicht aus Versehen löschen, also für Englisch dann:   
+    #define ENUM5970_01_TEXT "Room thermostat"
+    - Wenn man mit allen Einträgen, die man übersetzen will, fertig ist: Datei abspeichern, und wer kann, das Script "create-undefs.pl" ausführen. Dies ist nicht zwingend notwendig, verhindert aber unnötige Compiler-Warnungen.
+
+    Jedes allein stehende Wort ist nur einmal vorhanden, auch wenn es an mehreren Stellen vorkommt, allerdings trifft das nicht auf zusammengesetzte Begriffe zu; um im obigen Beispiel zu bleiben: Alle weiteren Vorkommen von "Raumthermostat" alleine sind mit der einen Zeile übersetzt, allerdings nicht Parameter oder Optionen, die "Raumthermostat 1" heißen. Diese sind extra aufgeführt und müssen auch extra übersetzt werden. Nicht übersetzte Einträge einer Sprache werden im nächsten Schritt im Englischen nachgeschlagen, und falls da nicht vorhanden, wird der deutsche Begriff verwendet. Es gibt also auch bei kleinen Sprachdateien keine "Leerstellen".
+
+    Die deutsche und englische Sprachdatei sind schon nach "Wichtigkeit" sortiert, also zuerst die Webinterface-Texte, dann die Kategorien, dann die Parameternamen und dann die Parameteroptionen.  
 
 -   **WIFI-Einstellungen:**  
     Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
@@ -83,11 +101,6 @@ vor der Verwendung des Adapters angepasst werden:
     Regler erst nach dem Starten des Arduino eingeschaltet wird (da in
     dem Fall die automatische Erkennung des angeschlossenen Reglers
     nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).
-
--   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters ist
-    auf Deutsch voreingestellt. Möchte man die Sprache auf Englisch
-    umstellen, muss das entsprechende Definement deaktiviert werden:  
-    `//#define LANG_DE;`
 
 -   Sollen bei einer Abfrage via Webinterface auch die **unbekannten Parameter** (Fehlermeldung „error 7 (parameter not supportet)")
     angezeigt werden, so muss das Definement  
