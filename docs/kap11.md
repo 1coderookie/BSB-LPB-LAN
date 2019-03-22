@@ -321,7 +321,7 @@ String hz_status_water <water> { http="<[http://192.168.178.88/8003:25000:JS(bsb
 Switch hz_mode_komfort <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Komfort state during Automatik mode, switch item to OFF after one second (momentary switch)
 Switch hz_mode_reduziert <switch> { expire="1s,command=OFF" } //ONLY if Parameter 48 is available on your controller: set temporary Reduziert state during Automatik mode, switch item to OFF after one second (momentary switch)
 Number hz_temperature_rgt <temperature> { http="<[http://192.168.178.88/8740:25000:JS(bsbinput.js)]" } //read current room temperature for remote RGT from BSB LAN Adapter
-Number hz_fan_speed <temperature> { http="<[http://192.168.178.88/8323:30000:JS(bsbinput.js)]" } //read current fan speed from BSB LAN Adapter
+Number hz_fan_speed <fan> { http="<[http://192.168.178.88/8323:30000:JS(bsbinput.js)]" } //read current fan speed from BSB LAN Adapter
 Number hz_aussentemp <temperature> { http="<[http://192.168.178.88/8700:20000:JS(bsbinput.js)]" } //read current outside temperature from BSB LAN Adapter via Javascript Transformation (not used here)
 Number hz_kitchen_maxActual "MAX! Küche [%.1f °C]" {channel="max:thermostat:KEQ0565026:KEQ0648949:actual_temp"} //read temperature from MAX!
 Number BSBLAN_Aussentemp <temperature> { channel="mqtt:topic:bsblan:aussentemp" } //read current outside temperature from BSB LAN Adapter via MQTT2
@@ -542,7 +542,7 @@ Frame	{
 				Text item=BSBLAN_Vorlauftemp label="Vorlauftemperatur [%.1f °C]"
 				Text item=BSBLAN_Ruecklauftemp label="Rücklauftemperatur [%.1f °C]"
 				Text item=bsb_lan_presence label="BSB LAN Online Status [%s]"
-				Text item=hz_fan_speed label="Gebläsedrehzahl [%s]"
+				Text item=hz_fan_speed label="Gebläsedrehzahl [%d U/min]"
 				}
 		}
 }
