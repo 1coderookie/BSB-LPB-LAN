@@ -79,12 +79,16 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner)
 
--   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner)
+-   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner)  
+
+-   Brötje EcoSolar Kompakt BMR 20/24 [LMS15] (Gasbrenner + Solar)  
 
 -   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner)
 
--   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner)
--   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)
+-   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner)  
+
+-   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)  
+
 -   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)
 
 -   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler)
