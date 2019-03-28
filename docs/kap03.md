@@ -25,7 +25,7 @@ Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis
 Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
 Regler, bei denen von einem erfolgreichen Einsatz des Adapters berichtet
 wurde. Da jedoch nicht jeder sein Heizungssystem, den verbauten Regler
-und die Ausgabe der Parameterabfrage `http://<IP-Adresse>/6220-6235`
+und die Ausgabe der Parameterabfrage `http://<IP-Adresse>/Q`
 meldet, ist davon auszugehen, dass in der Praxis noch weitere Systeme
 erfolgreich mit dem BSB-LPB-LAN-Adapter und der BSB-LAN-Software
 betrieben werden (können).
@@ -42,12 +42,12 @@ den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
 Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
 einen noch nicht aufgeführten Regler unter Angabe der genauen
 Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
-`http://<IP-Adresse>/6220-6235` (via Adapter!) und der verwendeten
+`http://<IP-Adresse>/Q` (via Adapter!) und der verwendeten
 Anschlussart (BSB/LPB/PPS) zu melden.  
 Danke!*
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
-26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /6220-6235 abfragen und rückmelden!):
+26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q abfragen und rückmelden!):
     
 ```
 6220 Konfiguration - Software- Version: 1.3  
