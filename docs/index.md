@@ -17,7 +17,7 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
     
 ### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
   
-### Eine druckerfreundliche Übersicht aller URL-Befehle gibt es hier: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-Befehle.pdf). ###  
+### Eine druckerfreundliche Übersicht aller URL-Befehle gibt es hier: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf). ###  
 ### The cheatsheet of the URL-commands is also available as an [english version](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf). ### 
 
 ---  
