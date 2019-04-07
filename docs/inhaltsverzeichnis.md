@@ -2,6 +2,7 @@
 [2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle](kap02.md)  
 [2.1 BSB und LPB](kap02.md#21-bsb-und-lpb)  
 [2.2 PPS-Schnittstelle](kap02.md#22-pps-schnittstelle)  
+[2.3 Anschluss des Adapters](kap02.md#23-anschluss-des-adapters)  
 [3. Unterstützte Heizungssysteme und Regler](kap03.md)  
 [3.1 Erfolgreich getestete Heizungssysteme](kap03.md#31-erfolgreich-getestete-heizungssysteme)  
 [3.1.1 Brötje](kap03.md#311-brötje)  
