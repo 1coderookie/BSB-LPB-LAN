@@ -442,7 +442,7 @@ Eine interessante Analyse des Datenverkehrs wurde [hier](https://forum.fhem.de/i
   
 Für den Anschluss am BSB des Kesselreglers muss ein BSB-Interface (GTW17) angeschlossen werden. Interessenten müssen in diesem Fall nach „ISR IDA“ Ausschau halten, damit das GTW17 im Paket enthalten ist.  
 Bei Reglern mit dem Kommunikationsprotokoll OpenTherm (bspw. die ältere Reglergeneration Brötje LMU6x) muss das OT-Interface (GTW16) verwendet werden.  
-IWR-CAN-basierte Regler (s. [Kap. 3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje) werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
+IWR-CAN-basierte Regler (s. [Kap. 3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje)) werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
   
 Der genaue Funktionsumfang und die Installationsschritte von IDA sind bitte den entsprechenden Anleitungen des Herstellers zu entnehmen. Eine Übersicht ist bspw. unter der URL https://www.broetje.de/de/produkte/regelung-und-vernetzte-heizung/isr/raumgeraet-isr-ida verfügbar.  
   
