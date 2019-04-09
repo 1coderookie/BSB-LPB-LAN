@@ -394,7 +394,7 @@ Auf Parameter wie Außentemperatur, Kesseltemperatur, TWW-Temperatur, Vorlauftem
   
 Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, der für den Kauf eines LPB-ClipIn-Moduls des Typs OCI420 zusätzlich geleistet werden muss, u.U. nicht ‚lohnt‘. Dies ist jedoch abhängig vom verfolgten Ziel. Will man nur Temperaturen loggen um einen groben Überblick über den Ist-Zustand des Heizungssystems zu erhalten, so ist u.U. eine günstigere Lösung mit einer entsprechenden DS18B20-Temperatursensoren-Installation ausreichend.  
   
-Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.8]() zu finden.  
+Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul) zu finden.  
   
 ---  
   
@@ -442,7 +442,7 @@ Eine interessante Analyse des Datenverkehrs wurde [hier](https://forum.fhem.de/i
   
 Für den Anschluss am BSB des Kesselreglers muss ein BSB-Interface (GTW17) angeschlossen werden. Interessenten müssen in diesem Fall nach „ISR IDA“ Ausschau halten, damit das GTW17 im Paket enthalten ist.  
 Bei Reglern mit dem Kommunikationsprotokoll OpenTherm (bspw. die ältere Reglergeneration Brötje LMU6x) muss das OT-Interface (GTW16) verwendet werden.  
-IWR-CAN-basierte Regler (s. [Kap. 3.3]() werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
+IWR-CAN-basierte Regler (s. [Kap. 3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterst%C3%BCtzter-regler-von-br%C3%B6tje) werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
   
 Der genaue Funktionsumfang und die Installationsschritte von IDA sind bitte den entsprechenden Anleitungen des Herstellers zu entnehmen. Eine Übersicht ist bspw. unter der URL https://www.broetje.de/de/produkte/regelung-und-vernetzte-heizung/isr/raumgeraet-isr-ida verfügbar.  
   
@@ -475,7 +475,7 @@ Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anlei
 ## 3.7 Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur ##  
   
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
-Seinen Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
+Sein Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
   
 Im Folgenden ein Auszug aus seinem Beitrag:  
   
@@ -514,20 +514,20 @@ Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinli
 Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch.  
 Bei der LMU64 hat der betreffende Parameter die Nummer 604 (bei LMU74: Parameternummer 6006). Hier sind acht Bits (604.0 bis 604.7) verfügbar, die wie folgt einzustellen sind (dabei bedeutet „0“=AUS und „1“=EIN):  
   
-604.0 = 0 → Uhrzeitmaster
-604.1 = 1 → Uhrzeitmaster
-**604.2 = 1 → Verteilte Busspeisung AUTOMATIK**
-604.3 = 1 → Status LPB-Busspeisung: 1 = aktiv
-604.4 = 1 → Ereignisverhalten erlaubt
-604.5 = 0 → Brauchwasserzuordnung lokal
-604.6 = 0 → Brauchwasserzuordnung lokal
+604.0 = 0 → Uhrzeitmaster  
+604.1 = 1 → Uhrzeitmaster  
+**604.2 = 1 → Verteilte Busspeisung AUTOMATIK**  
+604.3 = 1 → Status LPB-Busspeisung: 1 = aktiv  
+604.4 = 1 → Ereignisverhalten erlaubt  
+604.5 = 0 → Brauchwasserzuordnung lokal  
+604.6 = 0 → Brauchwasserzuordnung lokal  
 604.7 = 0 → Kein Vorrang LMU-Anforderung vor externer Leistungsvorgabe  
   
 Ruft man die ‚Übersicht‘ der LPBKonfig0-Einstellungen auf, so wird dort jedoch die Bit-Reihenfolge von hinten nach vorne (also von Bit 7 bis Bit 0!) dargestellt und sollte nach erfolgreicher Einstellung folgendermaßen lauten: 00011110.
 Des Weiteren sind folgende Einstellungen vorzunehmen:  
   
-605 LPB-Geräteadresse = 1
-606 LPB-Segmentadresse = 0
+605 LPB-Geräteadresse = 1  
+606 LPB-Segmentadresse = 0  
   
 Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die grüne LED am OCI420 in regelmäßigen Abständen blinken.  
       
