@@ -70,7 +70,7 @@ Beispiel angeschlossen ist, müssen*
 *1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und*  
 *2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2]() und [Kap. 8]().*   
+jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2](kap02.md#212-adressierung-beim-lpb) und [Kap. 8](kap08.md).*   
   
 Eine übergreifende Abfrage von Werten oder Parametern zweier oder mehrerer Regler im LPB-Verbund via Adapter kann zwar erfolgen, doch ist diese Funktion noch nicht ausgiebig getestet worden.  
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
@@ -107,7 +107,7 @@ Anschlüsse.
 *BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
 → Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
-*Bezüglich des Anschlusses des Adapters s. [Kap. 2.3]().*
+*Bezüglich des Anschlusses des Adapters s. [Kap. 2.3](kap02.md#23-anschluss-des-adapters).*
     
 ---  
   
@@ -124,7 +124,7 @@ Bus-Adresse 0x08 =     8 = OCI700 Servicetool („CNTR“)
 Bus-Adresse 0x0A =   10 = reglerseitige Bedieneinheit / Display („DISP“)  
 Bus-Adresse 0x0B =   11 = Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“)  
 Bus-Adresse 0x31 =   49 = OZW672 Webserver  
-Bus-Adresse 0x42 =   66 = BSB-LPB-LAN-Adapter („LAN“)  
+*Bus-Adresse 0x42 =   66 = BSB-LPB-LAN-Adapter („LAN“)*  
 Bus-Adresse 0x7F = 127 = Broadcast („INF“-Meldungen)    
    
 ---  
