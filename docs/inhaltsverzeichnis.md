@@ -1,7 +1,7 @@
 [1. Der BSB-LPB-LAN-Adapter und die BSB-LAN-Software](kap01.md)  
 [2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle](kap02.md)  
 [2.1 BSB und LPB](kap02.md#21-bsb-und-lpb)  
-[2.1.1 Adressierung beim BSB](kap02md#211-adressierung-beim-bsb)  
+[2.1.1 Adressierung beim BSB](kap02.md#211-adressierung-beim-bsb)  
 [2.1.2 Adressierung beim LPB](kap02.md#212-adressierung-beim-lpb)  
 [2.2 PPS-Schnittstelle](kap02.md#22-pps-schnittstelle)  
 [2.3 Anschluss des Adapters](kap02.md#23-anschluss-des-adapters)  
