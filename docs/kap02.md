@@ -11,7 +11,7 @@
 Bei BSB (Boiler System Bus), LPB (Local Process Bus) und PPS (Point-to-Point Schnittstelle) handelt es sich um jeweils verschiedene und untereinander nicht kompatible Bus-Systeme bzw. Schnittstellen. Es können also jeweils nur Geräte angeschlossen werden, die den gleichen Bus- bzw. Schnittstellen-Typ aufweisen.  
   
 Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS und LMU ist ein BSB-Anschluss am Regler zu finden. 
-Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar.  
+Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar (s. [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul)).  
 PPS ist nur bei alten Reglern vorzufinden und wird heutzutage nicht mehr verbaut.  
   
 Im folgenden Kapitel wird etwas näher auf die Unterschiede der beiden Bustypen BSB und LPB eingegangen. Die PPS-Schnittstelle wird in einem eigenen Kapitel kurz vorgestellt, da sie bei aktuellen Geräten nicht mehr vorhanden ist.  
@@ -63,16 +63,16 @@ laden / geladen haben.*
 *Wenn ein Adapter via BSB an einem der beiden Regler aus oben genanntem
 Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
 Regler 'lokal' zugreifen, an dem er angeschlossen ist (also bspw.
-Heizungsregler oder SSR). Ebenso verhält es sich mit den jeweiligen
-Bedieneinheiten der Regler, die über den ‚Bus BE' (Bus Bedieneinheit)
-angeschlossen sind.*  
+Heizungsregler oder SSR). Pro Regler muss in dem Fall ein Adapter am jeweiligen BSB angeschlossen werden, wenn Zugriff gewünscht ist.*  
+  
 *Wenn ein Adapter via LPB an einem der beiden Regler aus oben genanntem
 Beispiel angeschlossen ist, müssen*  
 *1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und*  
 *2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden.*    
-
+jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2]() und [Kap. 8]().*   
+  
+Eine übergreifende Abfrage von Werten oder Parametern zweier oder mehrerer Regler im LPB-Verbund via Adapter kann zwar erfolgen, doch ist diese Funktion noch nicht ausgiebig getestet worden.  
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
 an entsprechende Installationen und Parametrierungen hinsichtlich der
 Geräte- und Segmentadressen sind den jeweiligen technischen
@@ -85,16 +85,9 @@ Bei einigen Reglern sind die entsprechenden Anschlüsse teilweise
 unterschiedlich gekennzeichnet:
 
 -   Der BSB ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.: „CL+ & CL-", „FB" (Fernbedienung) oder „BSB" (bei FB und BSB i.d.R. zusätzlich mit Nennung der Pole „CL+ & CL-") sowie „BSB & M". Bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-.  
-
-    In jedem Fall sollte eine Anschlussmöglichkeit in den Bedienungsunterlagen zum Wärmeerzeuger gefunden werden können, indem man nach der Anschlussmöglichkeit für Raumgeräte sucht. Dieses sind bei den BSB-kompatiblen Systemen die (ursprünglichen Siemens-) Modelle QAA55 (Brötje RGB) und QAA75 (Brötje RGT), sowie dessen Funkvariante QAA78 (Brötje RGTF).  
-Der Anschluss des Adapters erfolgt analog zum Anschluss des Raumgerätes. Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
-
-    Der zusätzliche Anschluss „G+" führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen.
-    Dieser ist für den Anschluss des Adapters NICHT zu verwenden! (Sollte der Adapter irrtümlicherweise an G+ statt an CL+
-    angeschlossen werden, so leuchtet zwar die LED (jedoch dauerhaft!), allerdings ist keinerlei Funktion gegeben.)  
-
+  
 -   Der LPB ist bei einigen Reglern mit „DB"(+) und „MB"(-)
-    gekennzeichnet.
+    gekennzeichnet.  
 
 Die folgenden Abbildungen zeigen exemplarisch die verschiedenen
 Anschlüsse.  
@@ -114,8 +107,39 @@ Anschlüsse.
 *BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
 → Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
+*Bezüglich des Anschlusses des Adapters s. [Kap. 2.3]().*
     
----
+---  
+  
+### 2.1.1 Adressierung beim BSB ###  
+  
+Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits reserviert und werden eigenständig vom System so vergeben, dem BSB-LPB-LAN-Adapter wird in der Voreinstellung (s. Datei BSB_lan_config.h.default) die Adresse 66 zugeteilt:  
+
+Bus-Adresse 0x00 =     0 = Heizungsregler („HEIZ“)  
+Bus-Adresse 0x03 =     3 = Erweiterungsmodul 1 („EM1“) / Mischer-ClipIn AGU  
+Bus-Adresse 0x04 =     4 = Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU  
+Bus-Adresse 0x06 =     6 = Raumgerät 1 („RGT1“)  
+Bus-Adresse 0x07 =     7 = Raumgerät 2 („RGT2“)  
+Bus-Adresse 0x08 =     8 = OCI700 Servicetool („CNTR“)  
+Bus-Adresse 0x0A =   10 = reglerseitige Bedieneinheit / Display („DISP“)  
+Bus-Adresse 0x0B =   11 = Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“)  
+Bus-Adresse 0x31 =   49 = OZW672 Webserver  
+Bus-Adresse 0x42 =   66 = BSB-LPB-LAN-Adapter („LAN“)  
+Bus-Adresse 0x7F = 127 = Broadcast („INF“-Meldungen)    
+   
+---  
+  
+### 2.1.2 Adressierung beim LPB ###  
+  
+Beim LPB ist die Adressierung anders als beim BSB. Prinzipiell gibt es verschiedene Segmente (bzw. Segmentadressen) und Geräteadressen. Den Segmentadressen kommt eine andere Bedeutung zu, als den Geräteadressen. Da die doch recht komplexe Installation i.d.R. bereits bei der Installation vom jeweiligen Monteur vorgenommen wird, wird an dieser Stelle nicht auf weitere Besonderheiten eingegangen.  
+Dem interessierten Anwender seinen an dieser Stelle insbesondere zwei Dokumente von „Siemens Building Technologies - Landis & Staefa Division“ empfohlen:  
+- CE1N2030D Local Process Bus LPB Systemgrundlagen  
+- CE1N2032D Local Process Bus LPB Projektierungsgrundlagen   
+  
+*Hinweis:*  
+Die voreingestellte Adresse 66 (0x42) des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.  
+  
+---  
     
 ## 2.2 PPS-Schnittstelle ##
 
@@ -189,28 +213,35 @@ Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders al
 ## 2.3 Anschluss des Adapters ##  
   
 Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.  
-
+  
+Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
+  
 **Adapterplatine:**  
 Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
   
 **BSB:**  
-Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus': Adapter-CL+ an Regler-CL+ sowie Adapter-CL- an Regler-CL-.  
+Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus':  
+Adapter-CL+ an Regler-CL+ sowie  
+Adapter-CL- an Regler-CL-.  
+  
+Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
+(Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
   
 **LPB:**  
-Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet: Adapter-DB an Regler-DB sowie Adapter-MB an Regler-MB.  
+Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet:  
+Adapter-DB an Regler-DB sowie  
+Adapter-MB an Regler-MB.  
   
 **PPS:**  
-Hier sind es häufig die die Anschlüsse A6 und M, wobei A6 dann an CL+ und M an CL- des Adapters anzuschließen ist.  
+Hier sind es häufig die die Anschlüsse A6 und M, wobei dann  
+A6 an CL+ und  
+M an CL-  
+des Adapters anzuschließen ist.  
   
 *Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
 
 *Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird! 
 Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
-  
-Wenn mehrere Regler (bspw. wie im obigen Beispiel) vorhanden sind, bietet es sich derzeit noch an, pro Regler jeweils einen Adapter via BSB anzuschließen, um den jeweiligen Zugriff zu realisieren.  
-Eine übergreifende Abfrage von Werten oder Parametern zweier oder mehrerer Regler im LPB-Verbund via Adapter kann mittlerweile zwar erfolgen, doch ist diese Funktion noch nicht ausgiebig getestet worden. Um mit einem Adapter via LPB auf verschiedene, in einem LPB-Verbund befindliche Regler zuzugreifen, ist die jeweilige Angabe der reglerspezifischen Geräteadresse als Zieladresse nötig (s. [Kap. 8](kap08.md)). Alle Geräte (Regler und Adapter) müssen sich dabei im selben Segment befinden und grundsätzlich gemäß den LPB-Projektierungsgrundlagen konfiguriert sein. 
-Gewisse Funktionen scheinen im Übrigen nicht via LPB unterstützt zu werden, bspw. das Senden einer Raumtemperatur an einen Regler, da diese Information vom Regler auf dem BSB erwartet wird. Da die Software ursprünglich für die Nutzung des Adapters via BSB geschrieben und erst nachträglich von Frederik um die LPB-Funktionalität erweitert wurde, ist es außerdem möglich, dass via LPB nicht alle Parameter verfügbar sind, die via BSB verfügbar wären. Die Software wird zwar stetig weiter entwickelt, derzeit bietet es sich jedoch noch an, als Anschluss den BSB zu präferieren, wenn dieser vorhanden ist.
-  
   
 ***Tipps:***
   
