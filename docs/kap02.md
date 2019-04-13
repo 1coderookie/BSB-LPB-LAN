@@ -137,7 +137,7 @@ Dem interessierten Anwender seinen an dieser Stelle insbesondere zwei Dokumente 
 - CE1N2032D Local Process Bus LPB Projektierungsgrundlagen   
   
 *Hinweis:*  
-Die voreingestellte Adresse 66 (0x42) des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.  
+Die voreingestellte Adresse 0x42 des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.  
   
 ---  
     
