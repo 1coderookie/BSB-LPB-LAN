@@ -163,7 +163,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   Soll **MQTT** zum Einsatz kommen, so sind die entspr. Definements zu aktivieren und anzupassen:   
     `#define MQTTBrokerIP 192,168,1,20` → IP des MQTT-Brokers. Der Standardport ist 1883 und muss nicht extra definiert werden.  
     
-    Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. definements ebenaflls zu aktivieren und die Angaben hier zu hinterlegen:   
+    Wenn beim MQTT-Broker Username und Passwort verwendet werden, so sind die entspr. Definements ebenfalls zu aktivieren und die Angaben hier zu hinterlegen:   
     `#define MQTTUsername "User"` → Username  
     `#define MQTTPassword "Pass"` → Passwort   
     Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):   
@@ -209,24 +209,17 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
     - RX-Pin (68)  
     - TX-Pin (69)  
-    - eigene Bus-Adresse, voreingestellt auf 0x06 → dies entspricht RGT1 bei BSB bzw. der Geräteadresse 7 bei LPB  
+    - eigene Bus-Adresse, voreingestellt auf 0x42 (→ BSB: entspricht der Geräteadresse 66; LPB: entspricht der Segmentadresse 4 mit Geräteadresse 3)  
     - Bus-Adresse des Zielsystems, voreingestellt auf 0x00 → dies entspricht dem direkt angeschlossenen Heizungsregler bei BSB bzw. der Ziel-Geräteadresse 1 beim LPB
 
     ***Wichtige Hinweise:***  
     ***→ BSB:***  
-    *Eine Adresskollision bei zwei gleichzeitig als RGT1 (Raumgerät 1) angemeldeten Geräten (bspw. Raumgerät und BSB-LAN-Adapter) wurde bisher nur bei einem RGB (QAA55) beobachtet. Ein RGT (QAA75) und ein Adapter mit gleichzeitiger Anmeldung als RGT1 verursachte im Testbetrieb hingegen keine Adresskollision.*  
-    *Um generell das Risiko einer Adresskollision zu vermeiden, sollte -wenn möglich- bei Vorhandensein eines bereits als RGT1-angemeldeten Raumgerätes der Adapter trotzdem direkt als RGT2 angemeldet werden.*  
-    *Zusätzlich besteht die Möglichkeit, den Adapter auch als "Raumgerät P", "Bedieneinheit 1 / 2" (Achtung: Adresskollision mit der kesselseitigen Bedieneinheit!) und "Servicegerät" anzumelden. Die entspr. Werte sind wie folgt:*  
-    `BSB bus(68,69);` = RGT1  
-    `BSB bus(68,69,7);` = RGT2  
-    
-    *Bitte beachte, dass ein als RGT1 angemeldeter Adapter eventuell keine Temperaturen an einen HK2 senden kann, und ein als RGT2 angemeldeter Adapter eventuell keine Temperaturen an einen HK1 senden kann!*  
-    *Vereinzelt kam es schon vor, dass Raumtemperaturen kurioserweise nur von einem als RGT2 angemeldeten Adapter vom HK1 berücksichtigt wurden.*  
-    *Ob eine Bedienung eines HK1 mit einem als RGT2 (oder HK2 mit einem als RGT1) angemeldeten Adapter in vollem Umfang möglich ist, wurde bisher noch nicht ausgiebig getestet.*  
-       
+    *Dem BSB-LAN-Adapter wird ab v0.42 standardmäßig die Adresse 0x42 zugeteilt. Dies entspricht beim BSB der Geräteadresse 66. Im seriellen Monitor der ArduinoIDE wird der Adapter als „LAN“ aufgeführt. Somit ist eine eindeutige Zuordnung gegeben und eine Adresskollision bei bereits vorhandenen Raumgeräten wird vermieden. Nach unserem bisherigen Kenntnisstand wird der Funktionsumfang dadurch nicht eingeschränkt (speziell hinsichtlich der Sonderfunktionen wie Raumtemperaturen übermitteln, Präsenztaste simulieren etc.). Sollten unerwartet dennoch darauf zurückführende Einschränkungen auffallen, bitten wir um Rückmeldung.*
+*Die Möglichkeit, den Adapter auch mit einer anderen Adresse am Bus anzumelden (bspw. als Raumgerät 1 oder 2) besteht weiterhin. Für die jeweiligen Adressen s. [Kap. 2.1.1](kap02.md#211-adressierung-beim-bsb).*  
+
     ***→ LPB:***  
-    *Wenn als Anschluss die LPB-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so sind u.U. die eigene Geräteadresse und die gewünschte Ziel-Geräteadresse der vorhandenen LPB-Adressierung des Heizungssystems anzupassen!*  
-    *Dabei muss der oben einzustellende Wert immer um den Wert 1 kleiner gewählt werden als die eigentliche Adresse!*  
+    *Dem BSB-LAN-Adapter wird ab v0.42 standardmäßig die Adresse 0x42 zugeteilt, dies entspricht im LPB-Verbund der Segmentadresse 4 mit der Geräte-Adresse 3 und ist u.U. einer bestehenden LPB-Installation des Heizungssystems anzupassen. Im seriellen Monitor der ArduinoIDE wird der Adapter als „LAN“ aufgeführt.*   
+    *Soll die Bus-Adresse geändert werden, so muss der oben einzustellende Wert immer um den Wert 1 kleiner gewählt werden als die eigentliche Adresse.*  
 *Beispiel: Adressen 1, 2, 3 (alle im gleichen Segment mit der Segmentadresse 0) sind im bestehenden Geräteverbund bereits vorhanden. Wenn der Adapter nun die Adresse 4 erhalten und das Gerät mit der Geräteadresse 2 abgefragt werden soll, dann ist `BSB bus(68,69,3,1);` einzugeben.*    
     
     ***→ PPS:***  
