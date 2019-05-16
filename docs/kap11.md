@@ -2072,7 +2072,13 @@ A5 = Verkettung von A1 bis A4
 *Die Werte A1 bis A5 können dann über andere Bausteine weiterverarbeitet werden.  In diesem Beispiel wird die Außentemperatur in ein internes Kommunikationsobjekt geschrieben, um den Inhalt z.B. in der Visu auszugeben oder die Werte für die Betriebszeit in ein Datenarchiv gespeichert, um daraus später Laufzeiten der Heizung zu ermitteln.*   
   
 ---  
+
+## 11.11 Home Assistant ##  
   
+***BSB-LAN-User Liudger hat seine Lösung für die Einbindung in Home Assistant in [seinem GitHub-Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant) zur Verfügung gestellt.***  
+***Vielen Dank!***
+  
+---  
   
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
