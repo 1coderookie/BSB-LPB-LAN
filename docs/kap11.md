@@ -2044,6 +2044,34 @@ BSB_LAN:BSB/700:.* Betriebsart\
 ```  
   
 ---  
+
+## 11.10 EDOMI ##  
+  
+***Das folgende Beispiel stammt vom BSB-LAN-User Lutz.***  
+***Vielen Dank!***
+  
+*Die Abfrage von Werten aus BSB-LAN erfolgt mittels des erstellten [Logikbausteins 19001820](https://service.knx-user-forum.de/?comm=download&id=19001820).*
+
+Der Baustein greift über die JSON Schnittstelle von BSB LAN auf das Gateway zu und liefert je nach angegebenem Parameter die entsprechenden Werte.  
+
+Dabei sind folgende Eingangswerte  einzutragen:  
+E1 = Trigger, nicht gleich Null  
+E2 = IP Adresse BSB-LAN Gateway  
+E3 = Parameter, z.B. Wert 8700 für Außentemperatur  
+E4 = Log Level  
+  
+Als Ergebnis erhält EDOMI folgende Werte zurück:  
+A1 = Name des Parameters, z.B. "Aussentemperatur"  
+A2 = Wert des Parameters, z.B. "10,5"  
+A3 = Einheit des Parameters z.B. "°C"  
+A4 = Beschreibung von A2, wenn als Code ausgegeben.  
+A5 = Verkettung von A1 bis A4   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/edomi.png">
+  
+*Die Werte A1 bis A5 können dann über andere Bausteine weiterverarbeitet werden.  In diesem Beispiel wird die Außentemperatur in ein internes Kommunikationsobjekt geschrieben, um den Inhalt z.B. in der Visu auszugeben oder die Werte für die Betriebszeit in ein Datenarchiv gespeichert, um daraus später Laufzeiten der Heizung zu ermitteln.*   
+  
+---  
   
   
 [Weiter zu Kapitel 12](kap12.md)      
