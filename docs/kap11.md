@@ -2075,7 +2075,7 @@ A5 = Verkettung von A1 bis A4
 
 ## 11.11 Home Assistant ##  
   
-***BSB-LAN-User Liudger hat seine Lösung für die Einbindung in Home Assistant in [seinem GitHub-Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant) zur Verfügung gestellt.***  
+***BSB-LAN-User Willem-Jan hat seine Lösung für die Einbindung in Home Assistant [in seinem GitHub-Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant) zur Verfügung gestellt.***  
 ***Vielen Dank!***
   
 ---  
