@@ -80,7 +80,8 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 - Fujitsu Waterstage WSHA 050 DA [RVS41.813] (Wärmepumpe) {BSB}
 - Fujitsu Waterstage WSYK 160 DC 9 [RVS21.827] (Wärmepumpe) {BSB}
 - Fujitsu Waterstage WSYP 100 DG 6 [RVS21.831] (Wärmepumpe) {BSB}
-- MHG Procon E 25 HS [LMS14] (Gasbrenner) {BSB}
+- MHG Procon E 25 HS [LMS14] (Gasbrenner) {BSB}  
+- Olymp WHS-500 [AVS75.370] (Wärmepumpe) {BSB}  
 - Sieger TG11 [RVP54.100] (Ölbrenner) {PPS}
 - Weishaupt WTU-25 G mit WRS-CPU B2/E [RVS23.220] (Ölbrenner) {LPB}
   
