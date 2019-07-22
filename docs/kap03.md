@@ -182,7 +182,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
 
--   MHG Procon E 25 HS \[LMS14\] (Gasbrenner)
+-   MHG Procon E 25 HS \[LMS14\] (Gasbrenner)  
+
+-   Olymp WHS-500 \[AVS75.370\] (Wärmepumpe)  
 
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner)
 
