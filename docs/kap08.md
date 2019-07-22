@@ -542,8 +542,7 @@ Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen 
   
 *Datum und Uhrzeit verändern*  
 Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
-`/I0=04.01.2019_20:15:00!127`  
-Der Befehl sendet eine INF-Nachricht als Broadcast an alle Busteilnehmer, so dass die Einstellungen auch von angeschlossenen (QAA75-) Raumgeräten und der kesselseitigen Bedieneinheit übernommen werden.  
+`/S0=04.01.2019_20:15:00`  
 Mit dieser Funktion ist es möglich, die Uhrzeit- und Datumseinstellungen bspw. mit einem NTP Zeitserver abzugleichen. 
    
 *Zeitprogramme verändern*  
