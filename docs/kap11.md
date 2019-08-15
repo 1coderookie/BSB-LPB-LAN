@@ -1937,7 +1937,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 
 ## 11.6 IP-Symcon ##   
    
-***Zwei BSB-LAN-User haben ihre IPS-Skripte samt Screenshots im Symcon-Forum vorgestellt: [Hier](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) und [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS)*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Die BSB-LAN-User „sokkederheld" und „Joachim" haben ihre IPS-Skripte samt Screenshots im Symcon-Forum vorgestellt: [Hier](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) und [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS).*** *Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.*  
 ***Vielen Dank!***   
  
       
@@ -1945,7 +1945,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
     
 ## 11.7 MQTT, InfluxDB, Telegraf und Grafana ##   
    
-***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB, Telegraf und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB, Telegraf und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).*** *Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.*  
 ***Vielen Dank!***
     
 ---   
