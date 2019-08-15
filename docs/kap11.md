@@ -1937,7 +1937,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
 
 ## 11.6 IP-Symcon ##   
    
-***Ein vom BSB-LAN-User Joachim sehr gut dokumentiertes Beispiel für die Integration in IP-Symcon ist [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS) im Symcon-Forum zu finden.*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
+***Zwei BSB-LAN-User haben ihre IPS-Skripte samt Screenshots im Symcon-Forum vorgestellt: [Hier](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) und [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS)*** *(Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.)*  
 ***Vielen Dank!***   
  
       
