@@ -35,8 +35,8 @@ Nachdem das Auslesen der neuen Telegramme abgeschlossen ist, kann bei
 Bedarf (bspw. wenn Daten auf die microSD-Karte geloggt werden) der
 Verbositäts-Modus wieder deaktiviert werden (`http://<IP-Adresse>/V0`).
 
-Rufe nun bitte zusätzlich einmal /Q im Webinterface
-auf (`http://<IP-Adresse>/Q`) und füge sie zu deinen Notizen
+Rufe nun bitte zusätzlich einmal /Q (`http://<IP-Adresse>/Q`) und /6220-6236 (`http://<IP-Adresse>/6220-6236`) im Webinterface
+auf und füge sie zu deinen Notizen
 hinzu, ebenso wie den Hersteller, die genaue Modellbezeichnung des
 Heizungssystems sowie den von dir verwendeten Bustyp (BSB/LPB/PPS).
 
@@ -300,7 +300,7 @@ Letzte zwei Bytes: CRC-Checksumme
 
 Hier ein Beispiel für eine erstellte ‚Meldedatei', die alle notwendigen
 Informationen für eine weitere Verarbeitung und Implementierung der
-neuen Parameter enthält (*Achtung: Dies ist noch ein altes Beispiel, aktuell bitte /Q anstelle von /6220-6228 ausführen!*):  
+neuen Parameter enthält (*Achtung: Dies ist noch ein altes Beispiel, aktuell rufe bitte /Q sowie /6220-6236 auf! Ein aktuelles Beispiel folgt!*):  
     
 ```
 Brötje NovoCondens SOB 26 C (Öl)  
