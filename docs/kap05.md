@@ -278,14 +278,6 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     → das „DEFAULT_FLAG" wurde durch „0" (Null, ohne Anführungszeichen)
     ersetzt
     
--   **Debug-Definement:**   
-`#define DEBUG`  
-    Soll BSB-LAN auf nicht-freigebene
-    reglerspezifische CommandIDs überprüft werden (s. Kap. [8.2.5](kap08.md)),
-    muss das Definement vorübergehend aktiviert werden. Nach Abfrage von
-    `http://<IP-Adresse>/Q` sowie für den Normalbetrieb kann das
-    Definement wieder auskommentiert werden.
-
 
        
     
