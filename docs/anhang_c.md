@@ -7,27 +7,50 @@
     
 # Anhang C: Changelog BSB-LAN-Software #
 
-Version 0.41 -- 19.03.2018
-- Added further PPS-Bus commands
-- Default PPS mode now \"listening\". Use third parameter of bus
-definition to switch between listening and controlling, 1 stands for
-controlling, everything else for listening, i.e. BSB bus(68,67,1) sends
-data to the heater, BSB bus(68,67) only receives data from heater / room
-controller. You can switch between modes at run-time with URL command
-/P2,x where x is either 1 (for controlling) or not 1 (for listening
-only)
+Version 0.43
+- Bugfix: DHCP (ethernet) implementation
+- Moved all sensors to /T , /H is now no longer used
+- New virtual parameters 702/703 for Weishaupt room controller
+- New data types VT_CUSTOM_ENUM and VT_CUSTOM_BYTE to extract information from non-standard telegrams (such as 702/703)
+- Added text descriptions for error phases (6706 ff.)
+
+Version 0.42
+- Added localization! Now you can help translate BSB-LAN into your language! Simply copy one of the language files from the localization folder (LANG_DE.h is the most complete) and translate whatever you can. Non-translated items will be displayed in German.
+Attention: Language definition in BSB_lan_config.h is now #define LANG <ISO-CODE> 
+For example: #define LANG DE
+- Added export to MQTT broker, use log_parameters[] in BSB_lan_config.h to define parameters and activate MQTTBrokerIP definement.
+- Added support for WiFi modules such as an ESP8266 or a Wemos Mega connected to Serial3 (RX:15/TX:14) of the Arduino. 
+The ESP8266 has to be flashed with the AT firmware from Espressif to work.
+Please take note that WiFi over serial is by design much slower (only 115kpbs) than "pure" TCP/IP connections.
+- Added new category "34 - Konfiguration / Erweiterungsmodule". All subsequent categories move one number up!
+- Lots of new parameters coming from device family 123, please run /Q to see if some parameters also work for your heater!
+- Lots of new yet unknown parameters through brute force querying :) (parameter numbers 10200 and above)
+- Added further PPS-Bus commands, moved parameter numbers to 15000 and above
+- Default PPS mode now "listening". 
+Use third parameter of bus definition to switch between listening and controlling, 1 stands for controlling, everything else for listening, 
+i.e. BSB bus(68,67,1) sends data to the heater, BSB bus(68,67) only receives data from heater / room controller.
+You can switch between modes at run-time with URL command /P2,x where x is either 1 (for controlling) or not 1 (for listening only)
 - Fixed bug that crashed PPS bus queries
 - Stability improvements for PPS bus
 - Improved graph legend when plotting several parameters
-- Added JSON export; query with /J=a,b,c,d\... or push queries to /JQ or
-push set commands to /JS
+- Added JSON export; query with /JQ=a,b,c,d... or push queries to /JQ or push set commands to /JS
 - Logging of MAX! parameters now possible with logging parameter 20007
+- Added Waterstage WP device family (119)
+- Added WHG Procon device family (195)
 - Added unit to log file as well as average output
-- Rewrote device matching in cmd\_tbl to accomodate also device variant
-(Gerätevariante). Run /Q with activated \"\#definde DEBUG\" to see if
-transition has worked for your device!
+- Rewrote device matching in cmd_tbl to accomodate also device variant (Gerätevariante). Run /Q to see if transition has worked for your device!
+- Added BSB_lan_custom_setup.h and BSB_lan_custom_global.h for you to add individual code (best used in conjunction with BSB_lan_custom.h)
+- Marked all (known) OEM parameters with flag FL_OEM. OEM parameters are set by default as read-only. To make them writeable, change FL_OEM from 5 to 4 in BSB_lan_defs.h
+- Increased performance for querying several parameters at once (similar to category query)
+- Added config option to define subnet.
+- /Q no longer needs #define DEBUG
 - Bugfix ENUM memory adressing
-- Bugfix in reset function (/N)
+- Bugfix in reset function (/N), clear EEPROM during reset with /NE
+- Added favicon.ico
+- Split of cmdtbl into cmdtbl1 and cmdtbl2 due to Arduino's(?) limit of 32kB size of struct, opening up more space for new parameters.
+    
+Version 0.41
+- Interim release containing all changes from 0.42 above, except locaization, i.e. all text fragments are still part of the main code.
 
 Version 0.40 -- 21.01.2018
 - Implemented polling of MAX! heating thermostats, display with URL
