@@ -289,7 +289,7 @@ Solarsystemregler) zum Einsatz zu kommen.
 #### 3.2.2.1 RVA- und RVP-Regler ####
 
 Regler des Typs RVA gehören anscheinend zur vorherigen Reglergeneration
-und weisen je nach Modell nur einen LPB- und/oder PPS-Anschluss auf
+und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
 (keinen BSB).  
 Als Bedieneinheit ist meist eine Variante der Eurocontrol-Steuerung
 (Brötje) verbaut.  
@@ -305,9 +305,10 @@ sehr eingeschränktem Umfang möglich.
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
-| RVA63.242/? (Brötje)           | 28                      | 100                      | 302.0                      | 2.5                     | &#10003;   | \-  | \-  |
-| RVA63.242/? (Brötje)           | 28                      | 109                      | 302.0                      | 3.6                     | &#10003;   | \-  | \-  |
-| RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | &#10003;   | \-  | \-  |
+| RVA53.140/100 (Brötje)           | ?                      | ?                      | ?                      | ?                     | \-   | \-  | &#10003;  |
+| RVA63.242/? (Brötje)           | 28                      | 100                      | 302.0                      | 2.5                     | \-   | &#10003;  | &#10003;  |
+| RVA63.242/? (Brötje)           | 28                      | 109                      | 302.0                      | 3.6                     | \-   | &#10003;  | &#10003;  |
+| RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | \-   | \-  | &#10003;  |
 
     
 ---
@@ -404,6 +405,8 @@ Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.
   
 Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
 An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
+
+Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinheit eine Servicebuchse zu geben, bei der von den vier vorgesehenen Pins zwei belegt und herausgeführt sind. Laut der Aussage eines Weishaupt-Nutzers (*Danke an BSB-LAN-User Philippe!*) scheint hier der obere der beiden Pins MB und der untere der beiden Pins DB zu sein.  
   
 ---  
   
@@ -412,6 +415,8 @@ An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in
 Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
   
 Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler, die auch von BSB-LAN voll unterstützt werden (ISR).  
+
+Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und weiteres Zubehör ergänzt wurde. Bei Gelegenheit werde ich die m.E. relevanten Produkte hier hinzufügen.
   
 ---  
   
@@ -428,10 +433,9 @@ Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und
 Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Taste ausgelöst werden.  
   
 Das QAA75 heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
-*Achtung: Das „RGT“ ist die Variante für die Gas- und Ölheizungen, Nutzer von Wärmepumpen müssen nach der Modellbezeichnung „RGTK“ Ausschau halten.*   
 Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss für die optional nutzbare Hintergrundbeleuchtung vorhanden ist (Klemme „G+“ am Regler).  
   
-Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempfänger (Frequenz 868 MHz) muss wiederum per Kabel am BSB des Kesselreglers angeschlossen werden. Die oben genannten Bezeichnungen werden bei Brötje um ein „F“ erweitert, also „RGTF“ bzw. „RGTKF“.  
+Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempfänger (Frequenz 868 MHz) muss wiederum per Kabel am BSB des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“. 
   
 ---  
   
