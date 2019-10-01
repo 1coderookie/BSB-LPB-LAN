@@ -111,15 +111,15 @@ Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher a
 
 ### Autoren: ###  
 
--   Software, Schaltplan v1, Dokumentationen EN, Ideenfindung, Support  
+-   Software, Schaltplan v1, urspr. Dokumentation EN, Ideenfindung, Support  
     bis v0.16:  
     *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
 
--   Software, Platinenlayout v1 & v2, Dokumentationen EN, Ideenfindung, Support  
+-   Software, Platinenlayout v1 & v2, urspr. Dokumentation EN, Ideenfindung, Support  
     ab v0.17:  
     *Frederik Holst (bsb \[ät\] code-it.de)*
 
--   Debugging, Handbuch, Übersetzung EN-DE, Ideenfindung, Support  
+-   Debugging, Handbuch, Übersetzungen, Ideenfindung, Support  
     ab v0.17:  
     *Ulf Dieckmann (adapter \[ät\] quantentunnel.de)*
 
