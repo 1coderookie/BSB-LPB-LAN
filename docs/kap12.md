@@ -73,8 +73,8 @@ jeweiligen Definements zu aktivieren und die für DATA genutzten
 Digitaleingänge bzw. Pins festzulegen. (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
-Webinterface (jeweilige Links im oberen Bereich) oder mittels der
-URL-Befehle /T (für DS18B20) und /H (für DHT22) zugegriffen werden.
+Webinterface (jeweilige Links im oberen Bereich) oder mittels des
+URL-Befehls /T zugegriffen werden.
 
 Sollen die gemessenen Werte geloggt werden oder sind
 24h-Mittelwertsberechnungen gewünscht, so kann dies mit den jeweiligen
@@ -86,7 +86,7 @@ werden.
 `http://<IP-Adresse>/ipwe.cgi`
 standardmäßig mit angezeigt.  
 Dabei wird neben den gemessenen Werten auch die jeweils spezifische
-Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer
+Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer komplexeren 
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
 Sensoren hilfreich.  
 Voraussetzung ist, dass das ipwe-Definement in der Datei
