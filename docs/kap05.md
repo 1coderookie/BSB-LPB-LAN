@@ -24,6 +24,12 @@ vor der Verwendung des Adapters angepasst werden:
     werden:  
     `#define GatewayIP 192,168,178,1`  
     
+-   **DNSIP:**  
+    Durch Aktivierung des Definements und Anpassung der IP 
+    kann hier optional die IP eines (nicht-Standard-)DNS definiert 
+    werden, wenn die IP nicht mit der des Routers übereinstimmt:  
+    `#define DNSIP 192,168,178,1`    
+    
 -   **SubnetIP:**  
     Durch Aktivierung des Definements und Anpassung der IP 
     kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
@@ -31,7 +37,7 @@ vor der Verwendung des Adapters angepasst werden:
     
 -   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters sowie der Kategorie- und Parameterbezeichnungen muss
     *zwingend* ausgewählt bzw. definiert werden. Für "Deutsch" ist dabei das folgende Definement zu wählen:  
-    `#define LANG DE;`  
+    `#define LANG DE`  
     Ab v.042 ist es nun möglich, BSB-LAN auch in anderen Sprachen zu nutzen, wobei prinzipiell ab sofort jede Sprache unterstützt werden kann (es müssen dann 'nur' die entspr. Übersetzungen erstellt werden).  
 Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch (EN), Spanisch (ES), Finnisch (FI), Französisch (FR), Griechisch (GR), Ungarisch (HU), Italienisch (IT), Niederländisch (NL), Polnisch (PL), Russisch (RU), Schwedisch (SE), Slovenisch (SI) und Türkisch (TR). Wenn gewisse Ausdrücke nicht in der spezifischen Sprache vorliegen, wird automatisch der englische Ausdruck angezeigt. Sollte auch dieser nicht vorhanden sein, wird schließlich der deutsche Ausdruck dargestellt. 
 
