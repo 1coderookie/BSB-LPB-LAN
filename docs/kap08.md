@@ -425,9 +425,6 @@ JSON erfolgen.
 
 *Hinweis: Es ist empfehlenswert, diese Abfrage einmalig auszuführen.*
 
-Diese Funktion ist nur bei aktiviertem Debug-Definement `#define DEBUG`
-in der Datei *BSB\_lan\_config.h* verfügbar!
-
 `http://<IP-Adresse>/Q`  
 
 Diese Funktion geht alle Command IDs durch, die in der Datei
