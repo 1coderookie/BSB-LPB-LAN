@@ -169,17 +169,11 @@ Programme grundsätzlich möglich.
     Während der Laufzeit kann `/A=[parameter1],...,[parameter20]` 
     verwendet werden, um (bis zu 20) neue Parameter zu definieren.
 
--   **Abfrage von DS18B20-Temperatursensoren:**
+-   **Abfragen zusätzlich angeschlossener Sensoren (DS18B20/DHT22):**
 
     `http://<IP-Adresse>/T`  
-    Gibt die Temperaturwerte von optional angeschlossenen
-    DS18B20-Sensoren aus.
-
--   **Abfrage von DHT22-Feuchtigkeits-/Temperatursensoren:**
-
-    `http://<IP-Adresse>/H`  
-    Gibt die Temperatur- & Feuchtigkeitswerte von optional
-    angeschlossenen DHT22-Sensoren aus.
+    Gibt die jeweiligen Werte von optional angeschlossenen Sensoren aus.  
+    Bei DS18B20-Sensoren wird die Temperatur angezeigt, bei DHT22-Sensoren Temperatur und Luftfeuchtigkeit.
 
 -   **Akkumulierte Brennerlaufzeit anzeigen:**
 
@@ -467,7 +461,7 @@ nicht!*
 
 Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben
 sind, sieht die auf `http://<IP-Adresse>/Q`
-folgende Webausgabe exemplarisch so aus:
+folgende Webausgabe exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
     
 ```
 Gerätefamilie: 90  
@@ -477,7 +471,7 @@ Test Ende.
 ```
     
 Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern
-für den spezifischen Regler hingegen sieht exemplarisch so aus:
+für den spezifischen Regler hingegen sieht exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
     
 ```
 Gerätefamilie: 90  
@@ -498,7 +492,7 @@ DC 80 06 0E 07 11 3D 05 1A 01 00 00 91 09
 Test Ende.  
 ```  
     
-In diesem Fall sollte die Webausgabe bitte kopiert und gemeldet werden,
+In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik oder mich (Ulf) gemeldet werden,
 damit eine entsprechende Anpassung vorgenommen werden kann.  
         
 ---
