@@ -41,7 +41,7 @@
 |  /X                   | Interroge les thermostats de type MAX! (facultatifs)   										|
 
 
-[Aide-mémoire en PDF](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/commandref/Cheatsheet_URL-commands_FR.pdf)
+[Aide-mémoire en PDF](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_FR.pdf)
 
 
 
