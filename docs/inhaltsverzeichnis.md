@@ -40,7 +40,7 @@
 [8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
 [8.2.6 Gasthermen: Interne Gasenergiezählung (falls vorhanden) aktivieren](kap08.md#826-gasthermen-interne-gasenergiezählung-falls-vorhanden-aktivieren)  
 [8.2.7 Datum, Uhrzeit und Zeitprogramme verändern](kap08.md#827-datum-uhrzeit-und-zeitprogramme-verändern)  
-[8.2.8 Übermitteln einer alternativen Außentemperatur](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap08.md#828-übermitteln-einer-alternativen-außentemperatur)  
+[8.2.8 Übermitteln einer alternativen Außentemperatur](kap08.md#828-übermitteln-einer-alternativen-außentemperatur)  
 [9. Loggen von Daten](kap09.md)  
 [9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan)  
 [9.2 Verwendung des Adapters als Remote-Logger](kap09.md#92-verwendung-des-adapters-als-remote-logger)  
