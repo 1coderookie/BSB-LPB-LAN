@@ -542,6 +542,31 @@ Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Par
      
 ---  
    
+### 8.2.8 Übermitteln einer alternativen Außentemperatur ###  
+   
+Bei bestimmten Reglermodellen ist es möglich, diverse Funkkomponenten anzuschließen, u.a. auch einen Funk-Außentemperaturfühler. Mittels BSB-LAN ist es bei diesen kompatiblen Reglern möglich, dem Heizungsregler eine anderweitig ermittelte Außentemperatur (AT) zu übermitteln. Dies ist insbesondere für Nutzer komplexerer Hausautomationsinstallationen interessant, die bspw. eine Wetterstation an einem günstigeren Standort als dem des heizungsseitigen Außentemperaturfühlers installiert haben.  
+   
+Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#321-lmx-regler) und [RVS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. LMU oder RVA sind anscheinend nicht kompatibel.  
+   
+Um zu testen, ob der eigene Regler kompatibel ist, kann -zusätzlich neben der Überprüfung des Reglertyps- im Vorfeld <ip>/Q oder gezielt ein Abruf der Parameter <ip>/10003/10004 ausgeführt werden.  
+Wenn als Rückmeldung bei mindestens einem der beiden Parameter die Außentemperatur (oder "---") angezeigt wird, so ist die Funktion höchstwahrscheinlich verfügbar.  
+Wenn hingegen ein "error 7" gemeldet wird, so ist die Funktion leider nicht verfügbar.  
+Im Zweifelsfall sollte einfach versucht werden, eine alternative AT wie nachfolgend beschrieben zu senden. Ein nachfolgender Abruf des Parameters 8700 gibt Aufschluss darüber, ob der zuvor gesendete Wert übernommen wurde.   
+      
+Für die Verwendung der Funktion der alternativen Außentemperaturübermittlung mittels BSB-LAN muss der kabelgebundene Außentemperaturfühler der Heizung zwingend vom Regler getrennt werden (da der Regler die alternative AT ansonsten scheinbar nicht annimmt). Die darauf folgende Fehlermeldung des Heizungsreglers "Fehler 10: Aussenfühler" scheint den Betrieb zwar nicht zu stören, kann/sollte aber abgeschaltet werden. Dazu führt man den Parameter 6200 "Fühler speichern" einmal aus (auf JA stellen und bestätigen). Soll der kabelgebundene Fühler irgendwann wieder zum Einsatz kommen, so sollte nach erfolgtem Anschluss erneut Parameter 6200 "Fühler speichern" (-> JA -> bestätigen) ausgeführt werden. Somit ist der kabelgebundene AT-Fühler wieder im Heizungsregler registriert.  
+    
+Der Funk-Außentemperaturfühler scheint die gemessene AT ca. minütlich zu übermitteln. Bleibt diese Meldung aus, so scheint der Regler nach etwa 10-11 Minuten auf einen intern hinterlegten Wert zurückzugreifen. Zusätzlich erscheint die o.g. Fehlermeldung erneut. Es ist also empfehlenswert, die alternative AT via BSB-LAN etwa alle ein bis zwei Minuten zu übertragen.  
+   
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)) und die AT mit dem Befehl  
+`<ip>/I10003=xx`  
+übermittelt werden, wobei xx die betreffende AT in °C ist. Nachkommawerte sind möglich, als Komma ist ein Punkt einzufügen.  
+   
+*Beispiel:*  
+Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT.  
+   
+   
+---
+   
      
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
