@@ -1741,6 +1741,7 @@ WriteLine("Hallo Welt!");
 ***BSB-LAN-User „hacki11“ hat einen Adapter für ioBroker entwickelt, den er freundlicherweise in seinem [GitHub-Repo](https://github.com/hacki11/ioBroker.bsblan) zur Verfügung stellt.  
 Vielen Dank!***  
    
+---
    
 ***Die folgenden ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
 Vielen Dank!***
