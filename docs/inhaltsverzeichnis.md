@@ -56,6 +56,7 @@
 [11.2 openHAB](kap11.md#112-openhab)  
 [11.2.1 openHAB mit Javascript Transformation](kap11.md#1121-openhab-mit-javascript-transformation)  
 [11.2.2 openHAB mit Javascript Transformation, MQTT, Network und Expire](kap11.md#1122-openhab-mit-javascript-transformation-mqtt-network-und-expire)  
+[11.2.3 openHAB2-Binding](kap11.md#1123-openhab2-binding)
 [11.3 HomeMatic (EQ3)](kap11.md#113-homematic-eq3)  
 [11.4 ioBroker](kap11.md#114-iobroker)  
 [11.5 Loxone](kap11.md#115-loxone)  
