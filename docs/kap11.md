@@ -549,6 +549,15 @@ Frame	{
 ```  
   
 ---
+   
+### 11.2.3 openHAB2-Binding ###
+   
+***BSB-LAN-User „hypetsch“ hat ein Binding für openHAB2 entwickelt, das er freundlicherweise in seinem [GitHub-Repo](https://github.com/hypetsch/openhab2-addons/tree/add-bsb-lan-binding/bundles/org.openhab.binding.bsblan) zur Verfügung stellt.***  
+***Vielen Dank!***
+   
+   
+---
+   
     
 ## 11.3 HomeMatic (EQ3) ##  
     
@@ -1728,8 +1737,12 @@ WriteLine("Hallo Welt!");
 ---
     
 ## 11.4 ioBroker ##  
-
-***Die ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
+   
+***BSB-LAN-User „hacki11“ hat einen Adapter für ioBroker entwickelt, den er freundlicherweise in seinem [GitHub-Repo](https://github.com/hacki11/ioBroker.bsblan) zur Verfügung stellt.  
+Vielen Dank!***  
+   
+   
+***Die folgenden ioBroker-Beispiele stammen vom FHEM-Forumsmitglied „Thomas_B".  
 Vielen Dank!***
 
 ***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
