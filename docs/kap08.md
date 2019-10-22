@@ -318,7 +318,7 @@ Programme grundsätzlich möglich.
 Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
 gesendet werden, um einen Raumeinfluss bei der Berechnung der
 VL-Temperatur geltend zu machen.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)) werden.  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
    
 Für die Raumtemperatur HK1 ist der Spezialparameter 10000, für den
 HK2 der Parameter 10001 zu nutzen.
@@ -531,7 +531,7 @@ Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" a
 ### 8.2.7 Datum, Uhrzeit und Zeitprogramme verändern ###  
    
 Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)) werden.  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
   
 *Datum und Uhrzeit verändern*  
 Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
