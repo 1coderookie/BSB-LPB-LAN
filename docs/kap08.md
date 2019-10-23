@@ -531,7 +531,7 @@ Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" a
 ### 8.2.7 Datum, Uhrzeit und Zeitprogramme verändern ###  
    
 Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. Kap. [5](kap05.md)).  
   
 *Datum und Uhrzeit verändern*  
 Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
@@ -548,7 +548,7 @@ Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Par
    
 Bei bestimmten Reglermodellen ist es möglich, diverse Funkkomponenten anzuschließen, u.a. auch einen Funk-Außentemperaturfühler. Mittels BSB-LAN ist es bei diesen kompatiblen Reglern möglich, dem Heizungsregler eine anderweitig ermittelte Außentemperatur (AT) zu übermitteln. Dies ist insbesondere für Nutzer komplexerer Hausautomationsinstallationen interessant, die bspw. eine Wetterstation an einem günstigeren Standort als dem des heizungsseitigen Außentemperaturfühlers installiert haben.  
    
-Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3212-lms-regler) und [RVS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. LMU oder RVA sind anscheinend nicht kompatibel.  
+Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](kap03.md#3212-lms-regler) und [RVS](kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. [LMU](kap03.md#3211-lmu-regler) oder [RVA](kap03.md#3221-rva--und-rvp--regler) sind anscheinend nicht kompatibel.  
    
 Um zu testen, ob der eigene Regler kompatibel ist, kann -zusätzlich neben der Überprüfung des Reglertyps- im Vorfeld <ip>/Q oder gezielt ein Abruf der Parameter <ip>/10003/10004 ausgeführt werden.  
 Wenn als Rückmeldung bei mindestens einem der beiden Parameter die Außentemperatur (oder "---") angezeigt wird, so ist die Funktion höchstwahrscheinlich verfügbar.  
@@ -559,7 +559,7 @@ Für die Verwendung der Funktion der alternativen Außentemperaturübermittlung 
     
 Der Funk-Außentemperaturfühler scheint die gemessene AT ca. minütlich zu übermitteln. Bleibt diese Meldung aus, so scheint der Regler nach etwa 10-11 Minuten auf einen intern hinterlegten Wert zurückzugreifen. Zusätzlich erscheint die o.g. Fehlermeldung erneut. Es ist also empfehlenswert, die alternative AT via BSB-LAN etwa alle ein bis zwei Minuten zu übertragen.  
    
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)) und die AT mit dem Befehl  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. Kap. [5](kap05.md)) und die AT mit dem Befehl  
 `<ip>/I10003=xx`  
 übermittelt werden, wobei xx die betreffende AT in °C ist. Nachkommawerte sind möglich, als Komma ist ein Punkt einzufügen.  
    
