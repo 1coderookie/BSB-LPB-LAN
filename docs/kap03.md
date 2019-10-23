@@ -195,7 +195,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler ##
 
 Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
-Überblick über die bereits von BSB-LAN unterstützten Geräte und deren
+Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
 rudimentären Unterschiede geben. Auf die unterschiedliche
 reglerspezifische Verfügbarkeit von speziellen Parametern wird nicht
 weiter eingegangen. Es sei jedoch darauf hingewiesen, dass mittels
@@ -239,22 +239,50 @@ Danke!***
     
 ### 3.2.1 LMx-Regler ###
 
-Im Folgenden werden die Regler des Typs LMS und LMU aufgeführt. Diese
+Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
 sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
+   
+#### 3.2.1.1 LMU-Regler ####  
+  
+Regler der Serie LMU54/LMU64 sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](#kap03.md) zu finden.  
+   
+Regler der Serie LMU74/LMU75 scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
+   
+Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
+Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
+Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
+Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
+   
+*Tabelle 2: LMU-Regler*
 
+| Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
+|:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
+| LMU54   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
+| LMU64   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
+| LMU74   (Brötje)               | 97                      | 100                      | 2.5                        | 11.0                     | &#10003;   | \-  | \-  |
+| LMU74   (Brötje)               | 97                      | 100                      | 2.9                        | 11.0                     | &#10003;   | \-  | \-  |
+| LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | &#10003;   | \-  | \-  |
+| LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
+| LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
+   
+   
+#### 3.2.1.2 LMS-Regler ####   
+   
 Regler der Serie LMS scheinen die Nachfolger der LMU-Serie und somit die
-aktuelle Reglergeneration zu sein.  
+aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
+   
 Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
 scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
 Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
 aufweisen.
 
-Der LMx-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
+Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-*Tabelle 2: LMS- und LMU-Regler*
+*Tabelle 3: LMS-Regler*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -269,11 +297,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | LMS15.000A349 (Brötje)         | 123                     | 1                        | 0.1                        | 4.2                     | &#10003;   | \-  | \-  |
 | LMS15.000A349 (Baxi)           | 163                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
 | LMS15.001A100 (Brötje)         | 163                     | 16                       | 0.6                        | 3.8                     | &#10003;   | \-  | \-  |
-| LMU74   (Brötje)               | 97                      | 100                      | 2.5                        | 11.0                     | &#10003;   | \-  | \-  |
-| LMU74   (Brötje)               | 97                      | 100                      | 2.9                        | 11.0                     | &#10003;   | \-  | \-  |
-| LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | &#10003;   | \-  | \-  |
-| LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
-| LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
+
     
 ---
     
@@ -299,9 +323,9 @@ bei der aktuellen Reglergeneration RVS möglich.
 Regler des Typs RVP scheinen noch älter als RVA-Regler zu sein und
 weisen lediglich eine PPS-Schnittstelle auf.  
 Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
-sehr eingeschränktem Umfang möglich.
+eingeschränktem Umfang möglich.
 
-*Tabelle 3: RVA- und RVP-Regler (alte Reglergenerationen)*
+*Tabelle 4: RVA- und RVP-Regler (alte Reglergenerationen)*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -317,19 +341,16 @@ sehr eingeschränktem Umfang möglich.
 
 Regler des Typs RVS scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
-Sie weisen häufig sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
+Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
-Eine Ausnahme scheinen die Regler der Reihe RVS21 zu sein, die bei
-Fujitsu-Wärmepumpen zum Einsatz kommen: Diese scheinen nur einen BSB
-aufzuweisen.  
-Bei Gasgeräten kommen RVS-Regler anscheinend nur zum Einsatz, wenn bspw.
-ein Solarthermie-Paket mitinstalliert wurde (Beispiel bei einer „Elco
-Thision S17.1": LMU74-Regler bei Installation ohne Solarthermie,
-RVS63.283-Regler bei Installation mit Solarthermie).  
-Als Bedieneinheit kommt dabei i.d.R. eine Variante des Siemens AVS37.294
+Ausnahmen scheinen die Regler der Reihe RVS21 und RVS23 zu sein.  
+RVS21-Regler kommen bei Fujitsu-Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
+RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](#kap03.md).  
+     
+Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-*Tabelle 4: RVS-Regler (aktuelle Reglergeneration)*  
+*Tabelle 5: RVS-Regler (aktuelle Reglergeneration)*  
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
