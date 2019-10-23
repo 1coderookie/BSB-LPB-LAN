@@ -245,7 +245,7 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 #### 3.2.1.1 LMU-Regler ####  
   
 Regler der Serie LMU54/LMU64 sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
-Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](#kap03.md) zu finden.  
+Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
    
 Regler der Serie LMU74/LMU75 scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
    
@@ -345,7 +345,7 @@ Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
 Ausnahmen scheinen die Regler der Reihe RVS21 und RVS23 zu sein.  
 RVS21-Regler kommen bei Fujitsu-Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
-RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](#kap03.md).  
+RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
