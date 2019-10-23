@@ -12,6 +12,8 @@
 [3.1.3 Weitere Hersteller](kap03.md#313-weitere-hersteller)  
 [3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler](kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler)  
 [3.2.1 LMx-Regler](kap03.md#321-lmx-regler)  
+[3.2.1.1 LMU-Regler](kap03.md#3211-lmu-regler)  
+[3.2.1.2 LMS-Regler](kap03.md#3212-lms-regler)  
 [3.2.2 RVx-Regler](kap03.md#322-rvx-regler)  
 [3.2.2.1 RVA- und RVP-Regler](kap03.md#3221-rva--und-rvp-regler)  
 [3.2.2.2 RVS-Regler](kap03.md#3222-rvs-regler)  
