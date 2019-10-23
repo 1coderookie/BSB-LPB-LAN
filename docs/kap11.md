@@ -2090,6 +2090,11 @@ A5 = Verkettung von A1 bis A4
 ## 11.11 Home Assistant ##  
   
 ***BSB-LAN-User Willem-Jan hat seine Lösung für die Einbindung in Home Assistant [in seinem GitHub-Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant) zur Verfügung gestellt.***  
+***Vielen Dank!***  
+  
+---  
+   
+***BSB-LAN-User Florian hat die o.g. Lösung erweitert, so dass zwei Regler mit insgesamt vier Heizkreisen bedient werden können. [Hier](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant) hat er seine Lösung zur Verfügung gestellt.***  
 ***Vielen Dank!***
   
 ---  
