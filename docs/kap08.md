@@ -548,7 +548,7 @@ Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Par
    
 Bei bestimmten Reglermodellen ist es möglich, diverse Funkkomponenten anzuschließen, u.a. auch einen Funk-Außentemperaturfühler. Mittels BSB-LAN ist es bei diesen kompatiblen Reglern möglich, dem Heizungsregler eine anderweitig ermittelte Außentemperatur (AT) zu übermitteln. Dies ist insbesondere für Nutzer komplexerer Hausautomationsinstallationen interessant, die bspw. eine Wetterstation an einem günstigeren Standort als dem des heizungsseitigen Außentemperaturfühlers installiert haben.  
    
-Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#321-lmx-regler) und [RVS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. LMU oder RVA sind anscheinend nicht kompatibel.  
+Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3211-lms-regler) und [RVS](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. LMU oder RVA sind anscheinend nicht kompatibel.  
    
 Um zu testen, ob der eigene Regler kompatibel ist, kann -zusätzlich neben der Überprüfung des Reglertyps- im Vorfeld <ip>/Q oder gezielt ein Abruf der Parameter <ip>/10003/10004 ausgeführt werden.  
 Wenn als Rückmeldung bei mindestens einem der beiden Parameter die Außentemperatur (oder "---") angezeigt wird, so ist die Funktion höchstwahrscheinlich verfügbar.  
