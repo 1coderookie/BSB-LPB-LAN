@@ -407,6 +407,27 @@ und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".
 
 - In der BSB_lan_config.h muss nun das Definement WIFI mit `#define WIFI` gesetzt werden. Darüber hinaus müssen in den Variablen `ssid` und `pass` die Zugangsdaten für das WLAN eingetragen werden. Wenn die Variable `IPAddr` gesetzt ist, wird diese als statische IP verwendet. Im Gegensatz zur LAN-Anbindung kann man diese Variable aber auch auskommentieren, dann bekommt man vom Router per DHCP eine IP-Adresse zugewiesen. Die Angabe eines Gateways wird von der WiFiEsp-Library nicht unterstützt und dieses wird dann entsprechend ignoriert.  
     
+---  
+   
+## 12.8 Gehäuse ##  
+      
+Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
+Gehäuse, die nur den Arduino Mega 2560 aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
+Sämtliche Gehäuse für den Arduino Uno sind aufgrund des Größenunterschiedes nicht geeignet.  
+   
+Als günstige Variante für den Arduino samt LAN-Shield und Adapterplatine kann das im Folgenden abgebildete Gehäuse empfohlen werden. Es bietet ausreichend Platz, die obere Hälfte ist nur aufgesteckt und bietet mit der zusätzlichen Öffnung bereits eine schnelle Möglichkeit, die Anschlusskabel für den Regler herauszuführen. Platz für ein zusätzlich aufgestecktes Relaisboard bietet es allerdings nicht.  
+   
+Neben kreativen Selbstbau- und Bastellösungen bietet sich für Besitzer eines 3D-Druckers noch die Möglichkeit, ein entsprechendes Gehäuse selbst herzustellen.  
+**FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
+**Vielen Dank!**  
+Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen Arduino samt LAN-Shield und Adapterplatine aufnimmt und eines, bei dem ein zusätzlich aufgestecktes Relaisboard ebenfalls untergebracht werden kann. Optional kann bei beiden Gehäusen am Rand ein passender Neodymmagnet in der dafür vorgesehenen Aussparung angebracht werden, so dass das Gehäuse ganz einfach am metallenen Heizungsgehäuse angebracht werden kann.   
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB.jpg">  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB-H.jpg">  
+   
+Die 'flache' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN im Ordner "[schematics](https://github.com/fredlcore/bsb_lan/tree/master/schematics)" enthalten. Daneben ist die 'höhere'  Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File zum direkten Download verfügbar.  
+   
 ---
          
 [Weiter zu Kapitel 13](kap13.md)      
