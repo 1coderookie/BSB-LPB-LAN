@@ -426,7 +426,8 @@ Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen 
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB-H.jpg">  
    
-Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten. Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergladen werden.  
+Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
+Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergladen werden.  
    
 ---
          
