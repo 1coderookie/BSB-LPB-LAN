@@ -415,9 +415,7 @@ Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shie
 Gehäuse, die nur den Arduino Mega 2560 aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
 Sämtliche Gehäuse für den Arduino Uno sind aufgrund des Größenunterschiedes nicht geeignet.  
    
-Als günstige Variante für den Arduino samt LAN-Shield und Adapterplatine kann das im Folgenden abgebildete Gehäuse empfohlen werden. Es bietet ausreichend Platz, die obere Hälfte ist nur aufgesteckt und bietet mit der zusätzlichen Öffnung bereits eine schnelle Möglichkeit, die Anschlusskabel für den Regler herauszuführen. Platz für ein zusätzlich aufgestecktes Relaisboard bietet es allerdings nicht.  
-   
-Neben kreativen Selbstbau- und Bastellösungen bietet sich für Besitzer eines 3D-Druckers noch die Möglichkeit, ein entsprechendes Gehäuse selbst herzustellen.  
+Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen bietet sich für Besitzer eines 3D-Druckers noch die Möglichkeit, ein entsprechendes Gehäuse selbst herzustellen.  
 **FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
 **Vielen Dank!**  
 Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen Arduino samt LAN-Shield und Adapterplatine aufnimmt und eines, bei dem ein zusätzlich aufgestecktes Relaisboard ebenfalls untergebracht werden kann. Optional kann bei beiden Gehäusen am Rand ein passender Neodymmagnet in der dafür vorgesehenen Aussparung angebracht werden, so dass das Gehäuse ganz einfach am metallenen Heizungsgehäuse angebracht werden kann.   
@@ -427,7 +425,7 @@ Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB-H.jpg">  
    
 Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
-Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergladen werden.  
+Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
    
 ---
          
