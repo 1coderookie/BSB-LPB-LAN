@@ -30,7 +30,7 @@ Genauen Aufschluss bietet letztlich aber immer nur die eigentliche Reglerbezeich
 Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je nach Typ des Wärmeerzeugers (Öl, Gas, WP etc.) normalerweise verbaut sind (bzw. waren) und die mittels BSB-LAN bedient werden können. Gewisse Einzel- und Spezialfälle (wie bspw. ein RVS-Regler bei einem Gasgerät) sind hier nicht berücksichtigt. Für genauere Informationen bzgl der [Reglertypen](docs/kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler) und der zu verwendenden [Anschlüsse](docs/kap02.md#23-anschluss-des-adapters) lies bitte im BSB-LPB-LAN-Handbuch nach.
 
 Gasregler:  
-- [LMU74/LMU75](docs/kap03.md#3211-lmu-regler) und (aktuell) [LMS14/LMS15](docs/kap03.md#3212-lms-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [LMU74/LMU75](docs/kap03.md#3211-lmu-regler) und (aktuelle Generation) [LMS14/LMS15](docs/kap03.md#3212-lms-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
 - [LMU54/LMU64](docs/kap03.md#3211-lmu-regler), Anschluss via PPS, eingeschränkt steuer- und bedienbar   
    
 Öl-/Solar-/Zonenregler:  
