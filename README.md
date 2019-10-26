@@ -27,24 +27,24 @@ Als erste grobe Orientierung, ob das eigene Heizungssystem komaptibel ist oder n
 Sollten andere Raumgeräte aufgeführt sein, so kann im Kapitel "[Raumgeräte](docs/kap03.md#36-konventionelle-raumgeräte-für-die-aufgeführten-reglertypen)" im BSB-LPB-LAN-Handbuch nachgesehen werden.  
 Genauen Aufschluss bietet letztlich aber immer nur die eigentliche Reglerbezeichnung.  
    
-Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je nach Typ des Wärmeerzeugers (Öl, Gas, WP etc.) normalerweise verbaut sind (bzw. waren) und die mittels BSB-LAN bedient werden können. Gewisse Einzel- und Spezialfälle (wie bspw. ein RVS-Regler bei einem Gasgerät) sind hier nicht berücksichtigt. Für genauere Informationen bzgl der [Reglertypen](docs/kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler) und der zu verwendenden [Anschlüsse](docs/kap02.md#23-anschluss-des-adapters) lies bitte im BSB-LPB-LAN-Handbuch nach.
+Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je nach Typ des Wärmeerzeugers (Öl, Gas, WP etc.) normalerweise verbaut sind (bzw. waren) und die mittels BSB-LAN bedient werden können. Gewisse Einzel- und Spezialfälle (wie bspw. ein RVS-Regler bei einem Gasgerät) sind hier nicht berücksichtigt. Für genauere Informationen bzgl der [Reglertypen](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler) und der zu verwendenden [Anschlüsse](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#23-anschluss-des-adapters) lies bitte im [BSB-LPB-LAN-Handbuch](https://1coderookie.github.io/BSB-LPB-LAN) nach.
 
 Gasregler:  
-- [LMU74/LMU75](docs/kap03.md#3211-lmu-regler) und (aktuelle Generation) [LMS14/LMS15](docs/kap03.md#3212-lms-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
-- [LMU54/LMU64](docs/kap03.md#3211-lmu-regler), Anschluss via PPS, eingeschränkt steuer- und bedienbar   
+- [LMU74/LMU75](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3211-lmu-regler) und (aktuelle Generation) [LMS14/LMS15](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3212-lms-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [LMU54/LMU64](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3211-lmu-regler), Anschluss via PPS, eingeschränkt steuer- und bedienbar   
    
 Öl-/Solar-/Zonenregler:  
-- [RVS43/RVS63/RVS46](docs/kap03.md#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
-- [RVA/RVP](docs/kap03.md#3221-rva--und-rvp-regler), Anschluss via PPS (modellspezifisch vereinzelt auch LPB), eingeschränkt steuer- und bedienbar  
+- [RVS43/RVS63/RVS46](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [RVA/RVP](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3221-rva--und-rvp-regler), Anschluss via PPS (modellspezifisch vereinzelt auch LPB), eingeschränkt steuer- und bedienbar  
    
 Wärmepumpenregler:  
-- [RVS21/RVS61](docs/kap03.md#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [RVS21/RVS61](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
    
 Weishaupt (Modell WTU):  
-- [RVS23](docs/kap03.md#3222-rvs-regler), Anschluss via LPB, (nahezu) vollumfänglich steuer- und bedienbar   
+- [RVS23](https://1coderookie.github.io/BSB-LPB-LAN/kap03.html#3222-rvs-regler), Anschluss via LPB, (nahezu) vollumfänglich steuer- und bedienbar    
    
     
-Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher als lauffähig gemeldet:
+**Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher als lauffähig gemeldet:**
 - Atlantic Alféa Extensa + [RVS21.831F] (Wärmepumpe) {BSB}
 - Austria Email LWPK 8 [RVS21.831] (Wärmepumpe) {BSB}
 - Baxi Luna Platinum + [LMS15] (Gasbrenner) {BSB}
