@@ -22,7 +22,28 @@ Mit Hilfe des Adapters und der BSB-LAN-Software können nun unkompliziert versch
 Eine optionale Einbindung in bestehende Smart-Home-Systeme wie bspw. FHEM, openHab oder HomeMatic kann mittels HTTPMOD oder JSON erfolgen. 
 Darüber hinaus ist der Einsatz des Adapters als Standalone-Logger ohne LAN- oder Internetanbindung bei Verwendung einer microSD-Karte ebenfalls möglich.  
 Zusätzlich können Temperatur- und Feuchtigkeitssensoren angeschlossen und deren Daten ebenso geloggt und ausgewertet werden. Durch die Verwendung eines Arduino und die Möglichkeit, eigenen Code in die BSB-LAN-Software zu integrieren, bietet sich darüber hinaus ein weites Spektrum an Erweiterungsmöglichkeiten. 
+    
+Als erste grobe Orientierung, ob das eigene Heizungssystem komaptibel ist oder nicht, kann in der Bedienungsanleitung der Heizung nach einer Anschlussmöglichkeit für optionale Raumgeräte gesucht werden. Sind dort Raumgeräte des Typs QAA55/QAA75 als kompatibel aufgeführt (bei Brötje werden diese u.a. auch als "RGB Basic" und "RGT B Top" bezeichnet), so ist erfahrungsgemäß der Anschluss des Adapters via BSB möglich und der volle Funktionsumfang von BSB-LAN gegeben. Dies ist bei den meisten Öl-, Gas- und Wärmepumpensystemen der letzten Jahre der Fall.  
+Sollten andere Raumgeräte aufgeführt sein, so kann im Kapitel "[Raumgeräte](docs/kap03.md#36-konventionelle-raumgeräte-für-die-aufgeführten-reglertypen)" im BSB-LPB-LAN-Handbuch nachgesehen werden.  
+Genauen Aufschluss bietet letztlich aber immer nur die eigentliche Reglerbezeichnung.  
+   
+Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je nach Typ des Wärmeerzeugers (Öl, Gas, WP etc.) normalerweise verbaut sind (bzw. waren) und die mittels BSB-LAN bedient werden können. Gewisse Einzel- und Spezialfälle (wie bspw. ein RVS-Regler bei einem Gasgerät) sind hier nicht berücksichtigt. Für genauere Informationen bzgl der [Reglertypen](docs/kap03.md#32-detailliertere-auflistung-und-beschreibung-der-unterstützten-regler) und der zu verwendenden [Anschlüsse](docs/kap02.md#23-anschluss-des-adapters) lies bitte im BSB-LPB-LAN-Handbuch nach.
 
+Gasregler:  
+- [LMU74/LMU75](docs/kap03.md#3211-lmu-regler) und (aktuell) [LMS14/LMS15](docs/kap03.md#3212-lms-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [LMU54/LMU64](docs/kap03.md#3211-lmu-regler), Anschluss via PPS, eingeschränkt steuer- und bedienbar   
+   
+Öl-/Solar-/Zonenregler:  
+- [RVS43/RVS63/RVS46](docs/kap03.md#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+- [RVA/RVP](docs/kap03.md#3221-rva--und-rvp-regler), Anschluss via PPS (modellspezifisch vereinzelt auch LPB), eingeschränkt steuer- und bedienbar  
+   
+Wärmepumpenregler:  
+- [RVS21/RVS61](docs/kap03.md#3222-rvs-regler), Anschluss via BSB, vollumfänglich steuer- und bedienbar  
+   
+Weishaupt (Modell WTU):  
+- [RVS23](docs/kap03.md#3222-rvs-regler), Anschluss via LPB, (nahezu) vollumfänglich steuer- und bedienbar   
+   
+    
 Folgende Systeme in Kombination mit dem Adapter und der Software wurden bisher als lauffähig gemeldet:
 - Atlantic Alféa Extensa + [RVS21.831F] (Wärmepumpe) {BSB}
 - Austria Email LWPK 8 [RVS21.831] (Wärmepumpe) {BSB}
