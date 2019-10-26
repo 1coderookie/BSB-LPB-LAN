@@ -343,8 +343,8 @@ Regler des Typs RVS scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
-Ausnahmen scheinen die Regler der Reihe RVS21 und RVS23 zu sein.  
-RVS21-Regler kommen bei Fujitsu-Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
+Ausnahmen scheinen die Regler der Reihen RVS21, RVS51, RVS61 und RVS23 zu sein.  
+RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
 RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
