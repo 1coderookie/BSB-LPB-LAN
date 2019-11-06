@@ -116,6 +116,13 @@ Maxim-OneWire-Sensoren/-Komponenten kompatibel.
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
 BSB\_lan\_config.h definiert werden.*  
         
+Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Oberseite des Sensors) nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden.  
+Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AM2302.jpg">  
+
+   
+        
 ---
     
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren ###
