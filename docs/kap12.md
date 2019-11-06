@@ -70,7 +70,7 @@ PullUp-Widerstände) stattfinden.
 Zur Nutzung dieser Sensoren muss lediglich die Konfiguration in der
 Datei *BSB\_lan\_config.h* entsprechend angepasst werden: Es sind die
 jeweiligen Definements zu aktivieren und die für DATA genutzten
-Digitaleingänge bzw. Pins festzulegen. (s. hierzu auch Kap. [5](kap05.md)).
+Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
 Webinterface (jeweilige Links im oberen Bereich) oder mittels des
@@ -86,7 +86,7 @@ werden.
 `http://<IP-Adresse>/ipwe.cgi`
 standardmäßig mit angezeigt.  
 Dabei wird neben den gemessenen Werten auch die jeweils spezifische
-Hardwarekennung der Sensoren aufgeführt. Dies ist besonders bei einer komplexeren 
+Hardwarekennung der DS18B20-Sensoren aufgeführt. Dies ist besonders bei einer komplexeren 
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
 Sensoren hilfreich.  
 Voraussetzung ist, dass das ipwe-Definement in der Datei
