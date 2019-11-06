@@ -106,7 +106,7 @@ gestalten.
 ### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
 
 DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
-sich hierbei NICHT um den OneWire-Bus von Maxim oder eine andere Form 
+sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
 eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse aufweist! 
 Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
 Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
@@ -120,33 +120,43 @@ BSB\_lan\_config.h definiert werden.*
     
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren ###
 
-DS18B20-Sensoren sind (neben der üblichen Bauart) auch in wasserdicht
+DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor). Jeder Sensor weist eine spezifische Sensor-ID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren (sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat).  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20.jpg">  
+
+Neben der üblichen Bauart sind die Sensoren auch in wasserdicht
 gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich. Diese
 Ausführung macht den Einsatz gerade im Bereich der Heizungssteuerung
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
-Installation für diverse Temperaturmessungen realisiert werden kann.
-
+Installation für diverse Temperaturmessungen realisiert werden kann.  
+   
 ***Tipps für die elektrische Installation:***
 
 Kommen mehrere DS18B20-Sensoren und/oder größere Leitungslängen zum
-Einsatz, hat es sich bewährt, je einen 100nF-Keramikkondensator (und
+Einsatz, hat es sich bewährt, pro Sensor je einen 100nF-Keramikkondensator (und
 ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
 Sensor in die Leitung zwischen GND und VCC (+5V) zu positionieren, um
-einen Spannungsabfall bei der Abfrage zu kompensieren.
+einen Spannungsabfall bei der Abfrage zu kompensieren.  
+*Anmerkung: Kommen die üblichen gekapselten und verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen sind - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.  
 
 Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC
 (+5V) ist für einen problemlosen Betrieb u.U. kleiner als die
-üblicherweise empfohlenen 4,7kΩ zu wählen.
+üblicherweise empfohlenen 4,7kΩ zu wählen. 
 
 Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.  
-Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen.  
+Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen. Die Schirmung sollte dabei einseitig an Masse (GND) angeschlossen werden.  
 Um etwaige von der Versorgungsspannung des Arduino-Netzteils ausgehende
 Störeinflüsse zu minimieren, kann die Zuleitung der Stromversorgung
 arduinoseitig etwa vier bis fünfmal durch einen Ferritring geführt
 werden.
-
+   
+Kommen *große* Kabellängen zum Einsatz, so ist insbesondere auf eine korrekte Netzwerktopologie zu achten. Hier ist die Lektüre des vom Hersteller herausgegebenen Tutorials "[Guidelines for Reliable Long Line 1-Wire Networks](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/148.html)" zu empfehlen. Zusätzlich ist eine Internetrecherche empfehlenswert - es gibt unzählige Tutorials, Leitfäden und Anwendungsbeispiele zum Thema 1-Wire/OneWire/DS18B20.  
+   
+   
 ***Tipps für die Verwendung im Bereich der Heizungsinstallation:***
-
+   
+Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
+   
 Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
 (bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
 für den Kontaktbereich zu verwenden.  
@@ -179,6 +189,15 @@ Pufferspeichern etc.), die an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
 eine zusätzliche Montage von DS18B20-Sensoren leiden!*  
+        
+***Bauvorschlag:***  
+Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Arduino geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Verteiler_klein.jpg">  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Verteiler_groß.jpg">  
+
+
         
 ---
     
