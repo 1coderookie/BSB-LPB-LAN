@@ -135,13 +135,12 @@ Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf ei
     
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren ###
 
-DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor). Jeder Sensor weist eine spezifische Sensor-ID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren (sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat).  
+DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor). Jeder Sensor weist eine spezifische Sensor-ID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren (sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat). Neben der üblichen Bauart sind die Sensoren auch in wasserdicht
+gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20.jpg">  
 
-Neben der üblichen Bauart sind die Sensoren auch in wasserdicht
-gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich. Diese
-Ausführung macht den Einsatz gerade im Bereich der Heizungssteuerung
+Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteuerung
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
    
