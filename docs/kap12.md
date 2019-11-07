@@ -152,9 +152,10 @@ Einsatz, hat es sich bewährt, pro Sensor je einen 100nF-Keramikkondensator (und
 ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
 Sensor in die Leitung zwischen GND und VCC (+5V) zu positionieren, um
 einen Spannungsabfall bei der Abfrage zu kompensieren.  
+   
 *Anmerkungen:*  
-*Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.  
-Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten!*  
+*- Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.  
+- Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten!*  
 
 Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC
 (+5V) ist für einen problemlosen Betrieb u.U. kleiner als die
@@ -182,9 +183,9 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
 - optional: Schraublemmen o.ä., Streifen-/Lochrasterplatine, Gehäuse, ...   
    
 ***Tipps für die Verwendung im Bereich der Heizungsinstallation:***  
-Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
+- Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
    
-Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
+- Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
 (bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
 für den Kontaktbereich zu verwenden.  
 Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einem
@@ -202,11 +203,11 @@ montiert, so ist zumindest für den Bereich des Fühlers eine zusätzliche
 Rohrisolierung empfehlenswert, um Messwertverfälschungen durch bspw.
 Raum- oder Zugluft zu vermeiden.
 
-Kommen die Fühler in Tauchhülsen oder Klemmschienen zum Einsatz, ist
+- Kommen die Fühler in Tauchhülsen oder Klemmschienen zum Einsatz, ist
 ggf. auch hier die Verwendung von zusätzlicher Wärmeleitpaste zu
 empfehlen.
 
-Im Allgemeinen sollten die Fühler etwa ein bis zwei Meter von einer
+- Im Allgemeinen sollten die Fühler etwa ein bis zwei Meter von einer
 zusätzlichen Wärmequelle (wie bspw. Heizkessel, Pufferspeicher o.ä.)
 entfernt montiert werden.
 
