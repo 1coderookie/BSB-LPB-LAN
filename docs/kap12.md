@@ -63,12 +63,12 @@ Feuchtigkeitssensor) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
 bereits im Softwarepaket des Adapters integriert.
 
-Der Anschluss der Sensoren kann i.d.R. an GND und +5V des Adapters
+Der Anschluss der Sensoren kann i.d.R. an GND und +5V des Adapters / Arduino
 (unter zusätzlicher Verwendung der fühlerspezifischen
-PullUp-Widerstände) stattfinden.
+PullUp-Widerstände!) stattfinden.
 
-Zur Nutzung dieser Sensoren muss lediglich die Konfiguration in der
-Datei *BSB\_lan\_config.h* entsprechend angepasst werden: Es sind die
+Zur Nutzung dieser Sensoren muss lediglich die *Konfiguration in der
+Datei BSB\_lan\_config.h entsprechend angepasst werden*: Es sind die
 jeweiligen Definements zu aktivieren und die für DATA genutzten
 Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
@@ -84,21 +84,15 @@ werden.
 ***Tipp:***  
 *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
 `http://<IP-Adresse>/ipwe.cgi`
-standardmäßig mit angezeigt.  
-Dabei wird neben den gemessenen Werten auch die jeweils spezifische
-Hardwarekennung der DS18B20-Sensoren aufgeführt. Dies ist besonders bei einer komplexeren 
+standardmäßig mit angezeigt. Voraussetzung ist, dass das ipwe-Definement in der Datei
+BSB\_lan\_config.h aktiviert (s. Kap. [5](kap05.md)) die Installation der Sensoren abgeschlossen ist sowie die notwendigen Anpassungen in der Datei BSB\_lan\_config.h vorgenommen wurden.   
+Bei Aufruf der ipwe.cgi-Seite werden dann neben den gemessenen Werten auch die jeweils **spezifischen internen 
+Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Dies ist besonders bei einer komplexeren 
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
 Sensoren hilfreich.  
-Voraussetzung ist, dass das ipwe-Definement in der Datei
-BSB\_lan\_config.h aktiviert ist (s. Kap. [5](kap05.md)).*
+Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von `<URL>/ipwe.cgi` anhand der Temperaturschwankung identifiziert werden.  
+Bei einer späteren Einbindung in Hausautomationssysteme wie bspw. FHEM ist es ratsam, die Sensoren anhand der jeweiligen SensorID abzufragen.*
 
-Auf die näheren Spezifikationen und die elektrische Installation dieser
-beliebten Messkomponenten wird an dieser Stelle nicht weiter
-eingegangen, es wird hiermit lediglich auf die üblichen
-Informationsquellen verwiesen. Dennoch seien im Folgenden ein paar
-hilfreiche Tipps erwähnt, die den Einsatz und Betrieb zuverlässiger
-gestalten.  
-    
     
 ---
     
@@ -111,10 +105,10 @@ eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse auf
 Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
 Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
    
-Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Oberseite des Sensors) nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden. Die Belegung der Pins ist normalerweise wie folgt:  
+Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Oberseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden. Die Belegung der Pins ist normalerweise wie folgt:  
 Pin 1 = VCC (+)  
 Pin 2 = DATA  
-Pin 3 = nicht belegt  
+Pin 3 = i.d.R. nicht belegt  
 Pin 4 = GND (-)  
 
 Bei Anschluss der Sensoren muss ein PullUp-Widerstand zwischen VCC (Pin 1) und DATA (Pin 2) in der Größe von etwa 4,7kΩ bis 10kΩ hinzugefügt werden. Meist werden 10kΩ empfohlen, die richtige Größe muss im Zweifelsfall ermittelt werden.  
@@ -145,7 +139,12 @@ sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
    
 ***Tipps für die elektrische Installation:***
-
+Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
+Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
+Rot = VCC (+5V)  
+Gelb = DATA  
+Schwarz = GND (-)  
+   
 Kommen mehrere DS18B20-Sensoren und/oder größere Leitungslängen zum
 Einsatz, hat es sich bewährt, pro Sensor je einen 100nF-Keramikkondensator (und
 ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
@@ -173,9 +172,14 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
 *Tipp:*  
 *Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele zum Thema 1-Wire/OneWire/DS18B20.*  
    
+***Zusammenfassung benötigter Bauteile für eine Installation:***  
+- Dreiadriges Kabel, idealerweise geschirmt (Schirmung ist dann einseitig an GND anzuschließen)  
+- PullUp-Widerstand 4,7kΩ oder ggf. kleiner, nur einer notwendig, adapter-/arduinoseitig zwischen VCC und DATA positionieren   
+- Keramikkondensator 100nF, pro Sensor einer, zwischen VCC und GND nahe am Sensor positionieren  
+- optional: Tantalkondensator 10µF, pro Sensor einer (zusätzlich zum Keramikkondensator!), zwischen VCC und GND nahe am Sensor positionieren (bei Tantalkondensatoren bitte die Polarität beachten!)  
+- optional: Schraublemmen o.ä., Streifen-/Lochrasterplatine, Gehäuse, ...   
    
 ***Tipps für die Verwendung im Bereich der Heizungsinstallation:***
-   
 Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
    
 Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
@@ -205,11 +209,11 @@ zusätzlichen Wärmequelle (wie bspw. Heizkessel, Pufferspeicher o.ä.)
 entfernt montiert werden.
 
 ***Bitte beachte:***  
-*Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
+***Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, 
 Pufferspeichern etc.), die an einen Heizungs- oder
 Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte
 deren Installation oder der Kontakt mit dem zu messenden Element durch
-eine zusätzliche Montage von DS18B20-Sensoren leiden!*  
+eine zusätzliche Montage von DS18B20-Sensoren leiden!***  
         
 ***Bauvorschlag:***  
 Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Arduino geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
