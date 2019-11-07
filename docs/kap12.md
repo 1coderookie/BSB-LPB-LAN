@@ -85,7 +85,7 @@ werden.
 *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
 `http://<IP-Adresse>/ipwe.cgi`
 standardmäßig mit angezeigt. Voraussetzung ist, dass das ipwe-Definement in der Datei
-BSB\_lan\_config.h aktiviert (s. Kap. [5](kap05.md)) die Installation der Sensoren abgeschlossen ist sowie die notwendigen Anpassungen in der Datei BSB\_lan\_config.h vorgenommen wurden.   
+BSB\_lan\_config.h aktiviert (s. Kap. [5](kap05.md)) und die Installation der Sensoren abgeschlossen ist sowie die notwendigen Anpassungen in der Datei BSB\_lan\_config.h vorgenommen wurden.   
 Bei Aufruf der ipwe.cgi-Seite werden dann neben den gemessenen Werten auch die jeweils **spezifischen internen 
 Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Dies ist besonders bei einer komplexeren 
 Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
