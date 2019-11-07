@@ -138,7 +138,7 @@ Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteue
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
    
-***Tipps für die elektrische Installation:***
+***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
 Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
 Rot = VCC (+5V)  
@@ -179,7 +179,7 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
 - optional: Tantalkondensator 10µF, pro Sensor einer (zusätzlich zum Keramikkondensator!), zwischen VCC und GND nahe am Sensor positionieren (bei Tantalkondensatoren bitte die Polarität beachten!)  
 - optional: Schraublemmen o.ä., Streifen-/Lochrasterplatine, Gehäuse, ...   
    
-***Tipps für die Verwendung im Bereich der Heizungsinstallation:***
+***Tipps für die Verwendung im Bereich der Heizungsinstallation:***  
 Werden die gekapselten und bereits mit einem Kabel versehenen Sensoren eingesetzt, so kann es sich bei größeren und verzweigteren Heizungsanlagen lohnen, die Versionen mit 3m anstatt 1m Kabellänge zu nehmen. Sie kosten zwar etwas mehr, bieten jedoch deutlich mehr Spielraum und Bewegungsfreiheit bei der Platzierung der Sensoren.  
    
 Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
