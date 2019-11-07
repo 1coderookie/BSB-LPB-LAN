@@ -184,7 +184,25 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Definement  
     `#define IPWE`   
     zu aktivieren, die gewünschten Parameter sind wie gewohnt
-    einzutragen.
+    einzutragen:  
+    ```  
+    // Activate IPWE extension (http://xxx.xxx.xxx.xxx/ipwe.cgi)  
+    #define IPWE  
+    // Parameters to be displayed in IPWE extension  
+    const int ipwe_parameters[] = {  
+    8700,                   // Außentemperatur  
+    8743,                   // Vorlauftemperatur  
+    8314,                   // Rücklauftemperatur  
+    8750,                   // Gebläsedrehzahl  
+    8830,                   // Warmwassertemperatur  
+    8740,                   // Raumtemperatur Ist  
+    8741,                   // Raumtemperatur Soll  
+    8326,                   // Brenner-Modulation  
+    8337,                   // Startzähler Brenner  
+    8703,                   // Aussentemperatur gedämpft  
+    8704                    // Aussentemperatur gemischt  
+    };  
+    ```
 
     ***Tipp:***  
     *Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese hier standardmäßig mit angezeigt (URL: `http://<IP-Adresse>/ipwe.cgi`). Dabei wird neben den gemessenen Werten auch die jeweils spezifische Hardwarekennung der OneWire-Sensoren (DS18B20) aufgeführt. Dies ist besonders bei einer Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen Sensoren hilfreich.*
