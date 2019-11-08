@@ -21,7 +21,7 @@
 [3.4 Hinweis: Spezialfall LMU54/LMU64-Regler](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler)  
 [3.5 Hinweis: Spezialfall Weishaupt-Geräte](kap03.md#35-hinweis-spezialfall-weishaupt-geräte)  
 [3.6 Konventionelle Raumgeräte für die aufgeführten Reglertypen](kap03.md#36-konventionelle-raumgeräte-für-die-aufgeführten-reglertypen)  
-[3.6.1 QAA55](kap03.md#361-qaa55)  
+[3.6.1 QAA55 / QAA58](kap03.md#361-qaa55--qaa58)  
 [3.6.2 QAA75 / QAA78](kap03.md#362-qaa75--qaa78)  
 [3.6.3 Brötje IDA](kap03.md#363-brötje-ida)  
 [3.6.4 QAA53 / QAA73](kap03.md#364-qaa53--qaa73)  
