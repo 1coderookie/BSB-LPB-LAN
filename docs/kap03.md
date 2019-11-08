@@ -170,7 +170,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.3 Weitere Hersteller ###
 
--   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)
+-   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)  
+
 -   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe)
 
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner)
@@ -180,6 +181,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe)  
 
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe)  
+
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)  
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
