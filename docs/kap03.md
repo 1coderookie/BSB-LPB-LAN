@@ -65,134 +65,139 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
     
 ### 3.1.1 Brötje ###
 
--   Brötje BBK 22E \[LMS14\] (Gasbrenner)
+-   Brötje BBK 22E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje BBK 22F \[LMS14\] (Gasbrenner)
+-   Brötje BBK 22F \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner)
+-   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje BSK 20 \[LMS14\] (Gasbrenner)
+-   Brötje BSK 20 \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner)
+-   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner)
+-   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner)
+-   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner)  
+-   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
--   Brötje EcoSolar Kompakt BMR 20/24 [LMS15] (Gasbrenner + Solar)  
+-   Brötje EcoSolar Kompakt BMR 20/24 [LMS15] (Gasbrenner + Solar / gas fired + solar) {BSB}  
 
--   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner)
+-   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner)  
+-   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner / gas fired) {BSB}  
 
--   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)  
+-   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner / gas fired) {+ OCI420 via LPB}  
 
--   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) (mittels OCI420 via LPB!)
+-   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner / gas fired) {+ OCI420 via LPB}
 
--   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler)
+-   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler / solar system controller) {BSB}
 
--   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler)
+-   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler / zone controller) {BSB}
 
--   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner)
+-   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner / oil fired) {BSB}
 
--   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner)
+-   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
 
--   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner)
+-   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner / oil fired) {BSB}
 
--   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner)
+-   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner / oil fired) {BSB}
 
--   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner) + EWM
-    \[RVS75.390\]
+-   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner / oil fired) + EWM
+    \[RVS75.390\] {BSB}
 
--   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner)
+-   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
 
--   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe)
+-   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
 
--   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe)
+-   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
 
--   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe)
+-   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
 
--   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner)
+-   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WBS 14D \[LMU74\] (Gasbrenner)
+-   Brötje WBS 14D \[LMU74\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WBS 14F \[LMS14\] (Gasbrenner)
+-   Brötje WBS 14F \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WBS 22E \[LMS14\] (Gasbrenner)
+-   Brötje WBS 22E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB 15E \[LMS14\] (Gasbrenner)
+-   Brötje WGB 15E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB 20C \[LMU74\] (Gasbrenner)
+-   Brötje WGB 20C \[LMU74\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner)
+-   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner)
--   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner)
+-   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
--   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner)
+-   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner)
+-   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB-U 15H \[LMS14\] (Gasbrenner)
+-   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
-***ACHTUNG:  
-Die neuen Modellreihen Brötje WLS/WLC und
-BOK sind NICHT mit BSB-LAN kompatibel!***
+-   Brötje WGB-U 15H \[LMS14\] (Gasbrenner / gas fired) {BSB}
+
+***ACHTUNG:***  
+***Die neuen Modellreihen Brötje WLS/WLC und
+BOK sind NICHT mit BSB-LAN kompatibel!***  
+***The new models WLS/WLC and BOK by Brötje are NOT compatible with BSB-LAN!***
     
 ---
     
 ### 3.1.2 Elco ###
 
--   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe)  
+-   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}  
    
--   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe)
+-   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
 
--   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe)
+-   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
 
--   Elco Aquatop 8es \[RVS51.843\] (entspricht CTA Optiheat OH1-8es)
-    (Wärmepumpe)
+-   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe / heat pump) {BSB}
 
--   Elco Straton 21 \[RVS63.283\] (Ölbrenner)
+-   Elco Straton 21 \[RVS63.283\] (Ölbrenner / oil fired) {BSB}
 
--   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner)
+-   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner)
+-   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner / gas fired) {BSB}
 
--   Elco Thision S17.1 \[LMU74\] (Gasbrenner)
+-   Elco Thision S17.1 \[LMU74\] (Gasbrenner / gas fired) {BSB}
 
--   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner)
+-   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner / gas fired) {BSB}
 
--   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\]
+-   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner / gas fired) + MM \[AVS75.390\] {BSB}
     
 ---
     
 ### 3.1.3 Weitere Hersteller ###
 
--   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe)  
+-   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}  
 
--   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe)
+-   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
 
--   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner)
+-   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner / gas fired) {BSB}
 
--   CTC 380 IC \[RVS43.143\] (Ölbrenner)
+-   CTC 380 IC \[RVS43.143\] (Ölbrenner / oil fired) {BSB}  
 
--   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe)  
+-   Deville 9981 \[RVA53.140\] (Ölbrenner / oil fired) {PPS}
 
--   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe)  
+-   Fröling Rendagas Plus \[RVA63.244\] (Gasbrenner / gas fired) {LPB}
 
--   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)  
+-   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe / heat pump) {BSB}  
 
--   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
+-   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe / heat pump) {BSB}  
 
--   MHG Procon E 25 HS \[LMS14\] (Gasbrenner)  
+-   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe / heat pump) {BSB}  
 
--   Olymp WHS-500 \[AVS75.370\] (Wärmepumpe)  
+-   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
 
--   Sieger TG11 \[RVP54.100\] (Ölbrenner)
+-   MHG Procon E 25 HS \[LMS14\] (Gasbrenner / gas fired) {BSB}  
 
--   Weishaupt WTU-25 G mit WRS-CPU B2/E \[RVS23.220\] (Ölbrenner)
+-   Olymp WHS-500 \[AVS75.370\] (Wärmepumpe / heat pump) {BSB}  
+
+-   Sieger TG11 \[RVP54.100\] (Ölbrenner / oil fired) {PPS}  
+
+-   Weishaupt WTU-25 G mit WRS-CPU B2/E \[RVS23.220\] (Ölbrenner / oil fired) {LPB}  
     
 ---
     
