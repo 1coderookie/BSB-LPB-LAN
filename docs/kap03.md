@@ -145,7 +145,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.2 Elco ###
 
--   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe)
+-   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe)  
+   
 -   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe)
 
 -   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe)
@@ -176,9 +177,10 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner)
 
--   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe)
--   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe)
--   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)
+-   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe)  
+
+-   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe)  
+-   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe)  
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe)
 
