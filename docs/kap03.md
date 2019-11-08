@@ -450,7 +450,7 @@ Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und wei
   
 ---  
   
-### 3.6.1 QAA55 ###  
+### 3.6.1 QAA55 / QAA58 ###  
   
 Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit zusätzlichen Bedienoptionen anzusehen.  
    
@@ -458,6 +458,8 @@ Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brö
 
    
 Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
+   
+Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden.
   
 ---  
   
@@ -471,7 +473,7 @@ Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten T
 Das QAA75 heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
 Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss für die optional nutzbare Hintergrundbeleuchtung vorhanden ist (Klemme „G+“ am Regler).  
   
-Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempfänger (Frequenz 868 MHz) muss wiederum per Kabel am BSB des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“. 
+Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“. 
   
 ---  
   
