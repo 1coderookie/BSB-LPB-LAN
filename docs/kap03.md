@@ -151,7 +151,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe)
 
--   Elco Aquatop 8es \[RVS51.843\] (entspricht CTA Optihead OH1-8es)
+-   Elco Aquatop 8es \[RVS51.843\] (entspricht CTA Optiheat OH1-8es)
     (Wärmepumpe)
 
 -   Elco Straton 21 \[RVS63.283\] (Ölbrenner)
