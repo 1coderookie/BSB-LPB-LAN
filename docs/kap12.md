@@ -82,16 +82,20 @@ Anpassungen in der Datei *BSB\_lan\_config.h* ganz einfach realisiert
 werden.
 
 ***Tipp:***  
-*Werden DS18B20- und/oder DHT22-Sensoren verwendet, werden diese unter
-`http://<IP-Adresse>/ipwe.cgi`
-standardmäßig mit angezeigt. Voraussetzung ist, dass das ipwe-Definement in der Datei
-BSB\_lan\_config.h aktiviert (s. Kap. [5](kap05.md)) und die Installation der Sensoren abgeschlossen ist sowie die notwendigen Anpassungen in der Datei BSB\_lan\_config.h vorgenommen wurden.   
-Bei Aufruf der ipwe.cgi-Seite werden dann neben den gemessenen Werten auch die jeweils **spezifischen internen 
-Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Dies ist besonders bei einer komplexeren 
-Ersteinrichtung für eine eindeutige Unterscheidung der einzelnen
-Sensoren hilfreich.  
-Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von `<URL>/ipwe.cgi` anhand der Temperaturschwankung identifiziert werden.  
-Bei einer späteren Einbindung in Hausautomationssysteme wie bspw. FHEM ist es ratsam, die Sensoren anhand der jeweiligen SensorID abzufragen.*
+*Werden DS18B20-Sensoren verwendet, so werden unter /T (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
+Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von /T anhand der Temperaturschwankung identifiziert werden.  
+Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie unter /T angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie bei /T angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
+Die folgenden Screenshots verdeutlichen das Geschilderte.*  
+
+*Ausgabe von /T mit zwei installierten Sensoren:*  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
+   
+*Nach dem Hinzufügen eines dritten Sensors und erfolgtem Neustart des Arduino ändert sich die dargestellte Reihenfolge:*     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_3sensoren_T.jpg">  
+   
+*Hinweis:  
+Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden.*  
+
 
     
 ---
