@@ -74,11 +74,13 @@ Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
 Webinterface (jeweilige Links im oberen Bereich) oder mittels des
-URL-Befehls /T zugegriffen werden.
-
+URL-Befehls /T zugegriffen werden.  
+   
+Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_lan\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
+   
 Sollen die gemessenen Werte geloggt werden oder sind
 24h-Mittelwertsberechnungen gewünscht, so kann dies mit den jeweiligen
-Anpassungen in der Datei *BSB\_lan\_config.h* ganz einfach realisiert
+Anpassungen in der Datei *BSB\_lan\_config.h* (s. Kap. [5](kap05.md)) ganz einfach realisiert
 werden.
 
 ***Tipp:***  
