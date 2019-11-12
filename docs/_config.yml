@@ -1,4 +1,4 @@
-theme: pmarsceill/just-the-docs
+theme: just-the-docs
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
