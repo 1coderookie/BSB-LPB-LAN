@@ -40,14 +40,16 @@ zu finden.
 *Um die Liste vervollständigen zu können und anderen möglichen Nutzern
 den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
 Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
-einen noch nicht aufgeführten Regler unter Angabe der genauen
-Herstellerbezeichnung sowie der Ausgabe der Parameterabfrage
-`http://<IP-Adresse>/Q` (via Adapter!) und der verwendeten
-Anschlussart (BSB/LPB/PPS) zu melden.  
+einen noch nicht aufgeführten Regler unter Angabe  
+- der genauen Hersteller- und Modellbezeichnung,  
+- *des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
+- *der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
+- *der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` sowie `http://<IP-Adresse>/6220-6236` (via Adapter!) zu melden.  
+*Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
 Danke!*
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
-26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q abfragen und rückmelden!):
+26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q und /6220-6236 abfragen und rückmelden!):
     
 ```
 6220 Konfiguration - Software- Version: 1.3  
@@ -91,6 +93,12 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner / gas fired) {+ OCI420 via LPB}
 
+-   Brötje EcoTherm Plus WGB 15-38H \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+
+-   Brötje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+
+-   Brötje EuroCondens BBS EVO 15H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+
 -   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler / solar system controller) {BSB}
 
 -   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler / zone controller) {BSB}
@@ -98,6 +106,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 -   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner / oil fired) {BSB}
 
 -   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
+
+-   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner / oil fired) {BSB}  
 
 -   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner / oil fired) {BSB}
 
@@ -108,11 +118,15 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
 
+-   Brötje SensoTherm BLW Split B \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+
 -   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
 
 -   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
 
 -   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
+
+-   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe / heat pump) {BSB}  
 
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
@@ -124,19 +138,29 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB 15E \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
--   Brötje WGB 20C \[LMU74\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB 20C \[LMU74\] (Gasbrenner / gas fired) {BSB}  
+
+-   Brötje WGB 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+
+-   Brötje WGB 28E \[LMS14\] (Gasbrenner / gas fired) {BSB}  
 
 -   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner / gas fired) {BSB}
+
+-   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
 -   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
 -   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner / gas fired) {BSB}
+
+-   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
 -   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner / gas fired) {BSB}
 
 -   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner / gas fired) {BSB}
 
 -   Brötje WGB-U 15H \[LMS14\] (Gasbrenner / gas fired) {BSB}
+
+-   Brötje WMC \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
 ***ACHTUNG:***  
 ***Die neuen Modellreihen Brötje WLS/WLC und
@@ -155,9 +179,19 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe / heat pump) {BSB}
 
+-   Elco Straton 17 \[RVS63\] (Ölbrenner / oil fired) {BSB}  
+
 -   Elco Straton 21 \[RVS63.283\] (Ölbrenner / oil fired) {BSB}
 
+-   Elco Straton S \[RVS63\] (Ölbrenner / oil fired) {BSB}  
+
+-   Elco Thision 25S \[RVS63\] \] (Gasbrenner / gas fired) {BSB}  
+
 -   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner / gas fired) {BSB}
+
+-   Elco Thision S Plus 19 \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+
+-   Elco Thision S Plus 24 Compact \[?\] {BSB}  
 
 -   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner / gas fired) {BSB}
 
@@ -171,13 +205,23 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.3 Weitere Hersteller ###
 
+-   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}  
+
+-   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
 
 -   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
 
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner / gas fired) {BSB}
 
+-   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+
+-   Bösch (unbekanntes Modell / unknown model) \[RVS63\] (Wärmepumpe / heat pump] {BSB}  
+
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner / oil fired) {BSB}  
+
+-   Deville 9942 \[RVA53\] (?) (PPS)  
 
 -   Deville 9981 \[RVA53.140\] (Ölbrenner / oil fired) {PPS}
 
@@ -191,13 +235,25 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
 
+-   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe / heat pump) \[+ RVA46\] {PPS/LPB}  
+
+-   MHG Procon E25 \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+
 -   MHG Procon E 25 HS \[LMS14\] (Gasbrenner / gas fired) {BSB}  
 
--   Olymp WHS-500 \[AVS75.370\] (Wärmepumpe / heat pump) {BSB}  
+-   Olymp WHS-500 \[RVS61\] (Wärmepumpe / heat pump) {BSB}  
+
+-   Olymp SHS 730 \[RVS63\] (Ölbrenner / oil fired) {BSB}  
 
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner / oil fired) {PPS}  
 
--   Weishaupt WTU-25 G mit WRS-CPU B2/E \[RVS23.220\] (Ölbrenner / oil fired) {LPB}  
+-   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
+
+-   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner / oil fired) {LPB}  
+    
+-   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner / oil fired) {LPB}  
+    
+-   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner / oil fired) {LPB}  
     
 ---
     
