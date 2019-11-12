@@ -3,7 +3,14 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 title: Handbuch zum BSB-LPB-LAN-Adapter
-description: Online-Version des Handbuchs für den LAN-Adapter für Heizungssysteme mit BSB, LPB und PPS-Schnittstelle und die BSB-LAN-Software. 
+description: Das Handbuch zum LAN-Adapter für Heizungssysteme mit BSB, LPB und PPS-Schnittstelle und zur BSB-LAN-Software. 
 url: https://1coderookie.github.io/BSB-LPB-LAN
+
+# Enable or disable heading anchors
+heading_anchors: true
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "Copyright &copy; Ulf Dieckmann
+
 author: Ulf Dieckmann
 lang: de-DE
