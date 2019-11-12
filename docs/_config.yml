@@ -1,4 +1,4 @@
-theme: jekyll-theme-hacker
+remote-theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
