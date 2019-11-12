@@ -137,7 +137,7 @@ Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf ei
 
 DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
 Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
-Neben der üblichen Bauart sind die Sensoren auch in wasserdicht
+Neben der üblichen Bauart TO-92 sind die Sensoren auch in wasserdicht
 gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20.jpg">  
@@ -149,7 +149,7 @@ Installation für diverse Temperaturmessungen realisiert werden kann.
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
 Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
-Rot = VCC (+5V)  
+Rot oder Weiß = VCC (+5V)  
 Gelb = DATA  
 Schwarz = GND (-)  
    
