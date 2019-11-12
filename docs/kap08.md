@@ -396,7 +396,7 @@ JSON erfolgen.
     ```
     http://<IP-Adresse>/JQ
     Senden: "Parameter"
-    Empfangen: "Parameter", "Value", "Unit", "DataType" (0 = Zahl, 1 = ENUM, 2 = Wochentag, 3 = Stunde/Minute, 4 = Datum/Uhrzeit, 5 = Tag/Monat, 6 = String)  
+    Empfangen: "Parameter", "Value", "Unit", "DataType" (0 = Zahl, 1 = ENUM, 2 = Bit-Wert (Dezimalwert gefolgt von Bitmaske gefolgt von ausgewählter Option), 3 = Wochentag, 4 = Stunde/Minute, 5 = Datum/Uhrzeit, 6 = Tag/Monat, 7 = String, 8 = PPS-Uhrzeit (Wochentag, Stunde:Minute))  
     
     http://<IP-Adresse>/JS  
     Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
