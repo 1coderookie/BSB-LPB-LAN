@@ -150,6 +150,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
+-   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+
 -   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner / gas fired) {BSB}
 
 -   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner / gas fired) {BSB}  
@@ -207,6 +209,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
 
+-   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}  
 
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
@@ -218,6 +222,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner / gas fired) {BSB}  
 
 -   Bösch (unbekanntes Modell / unknown model) \[RVS63\] (Wärmepumpe / heat pump] {BSB}  
+
+-   CTA Optiheat 1-5es \[RVS61\] (Wäärmepumpe / heat pump) {BSB}  
 
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner / oil fired) {BSB}  
 
@@ -249,9 +255,13 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
+-   Thermital TBox Clima TOP \[RVS63\] (?) {BSB/LPB}  
+
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner / oil fired) {LPB}  
     
 -   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner / oil fired) {LPB}  
+    
+-   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner / oil fired) {LPB}  
     
 -   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner / oil fired) {LPB}  
     
