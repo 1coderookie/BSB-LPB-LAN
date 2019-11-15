@@ -933,7 +933,7 @@ if (!svObject)
 if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
 ```  
     
-***Abfrage von Parametern und zusätzlich angeschlossenen DA18B20-Sensoren mittels spezifischer SensorID und der Ausgabe von /T:***
+***Abfrage von Parametern und zusätzlich angeschlossenen DS18B20-Sensoren mittels spezifischer SensorID und der Ausgabe von /T:***
 ```
 ! BSB-Adapter Wert abfragen by Bratmaxe
 ! 29.10.2018 - V0.1 - Erste Version
