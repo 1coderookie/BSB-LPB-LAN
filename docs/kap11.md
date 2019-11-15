@@ -563,6 +563,7 @@ Frame	{
     
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
 Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
+***Das letzte Beispiel beinhaltet die Abfrage optional angeschlossener DS18B20-Temperatursensoren mittels der spezifischen SensorIDs und der Ausgabe von /T.  
 Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "PaulM" aufgeführt.
 Vielen Dank!***  
     
@@ -931,6 +932,181 @@ if (!svObject)
 
 if (Ergebnis.ToLatin() != svObject.Value().ToLatin()) { svObject.State(Ergebnis); }
 ```  
+    
+***Abfrage von Parametern und zusätzlich angeschlossenen DA18B20-Sensoren mittels spezifischer SensorID und der Ausgabe von /T:***
+```
+! BSB-Adapter Wert abfragen by Bratmaxe
+! 29.10.2018 - V0.1 - Erste Version
+! 11.11.2019 - V0.2 - Auslesen von Temperatursensoren hinzugefügt
+! 15.11.2019 - V0.3 - Änderung der Ausleseart der Temperatursensoren mithilfe der ID 
+
+string CuxGeraetAbfrage = "CUX2801001:11"; ! GeräteAdresse des CuxD Execute Gerätes, welches die Abfragen ausführt
+string CuxGeraetLogging = "CUX2801001:10"; ! GeräteAdresse des CuxD Execute Gerätes, welches das Logging ausführt, Leer ("") lassen, wenn kein Cuxd-Highcharts Logging gewünscht
+string IPAdresseBSB = "192.168.178.88"; !IP_Adresse des BSB-Adapters
+string Wort = "T"; !Parameternummer: Beispiel Außentemperatur = 8700, Betriebsmodus = 700, eigene Temperatursensoren = T
+string TemperatursensorID = "28aa44085414010b"; !Wenn Wort = "T", dann hier die ID des auszulesenden Temperatursensors eingeben, wird sonst ignoriert!
+string Variablename = "Wetter_Temperatur"; ! Name der Systemvariable
+boolean Durchschnitt24h = false; ! true = Durchschnittswert holen, false = aktuellen Wert holen - diese muss vorher in der BSB_lan_config.h konfiguriert wurden sein!!! (Bei Wort = T wird dieser Parameter ignoriert)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!Ab hier keine Anpassungen mehr notwendig!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! URL Zusammenführen
+string url="";
+if (Durchschnitt24h && Wort != "T") 
+{ 
+	url="http://" # IPAdresseBSB # "/A" # Wort; 
+}
+else 
+{ 
+	url="http://" # IPAdresseBSB # "/" # Wort; 
+}
+
+! Variable anlegen, wenn nicht vorhanden:
+object svObject = dom.GetObject(Variablename);
+object svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+if (!svObject)
+{
+    svObject = dom.CreateObject(OT_VARDP);
+    svObjectlist.Add(svObject.ID());
+	svObjectlist = dom.GetObject(ID_SYSTEM_VARIABLES);
+    svObject.Name(Variablename);   
+    svObject.Internal(false);
+    svObject.Visible(true);
+}
+
+! Werte holen
+dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'");  
+dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+var stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+
+! Prüfe, ob eine Ausgabe vorhanden ist, sonst z.B. IP-Adresse falsch, oder Netzwerkfehler
+if (stdout != null && stdout != "")
+{
+	integer pos = (stdout.Find(Wort# " "));	
+	
+	! Ausgabe filtern
+	if (Wort == "T")
+	{
+		pos = (stdout.Find(TemperatursensorID # ": "));	
+	}
+
+	if (pos == -1)
+	{
+		WriteLine("Position vom Wort '" # Wort # "' konnte nicht ermittelt werden");
+	}
+	
+	stdout = stdout.Substr(pos, stdout.Length());
+	pos = stdout.Find("/td");
+	stdout = stdout.Substr(0, pos);
+	
+	! Sonderzeichen ersetzen
+	if (stdout.Contains("&deg;")){ stdout = stdout.Replace("&deg;","°"); } !& d e g ; ohne Leerzeichen
+	if (stdout.Contains("%")){ stdout = stdout.Replace("%","%"); } !& # 0 3 7 ; ohne Leerzeichen
+	!WriteLine("Nach Sonderzeichenumwandlung: " # stdout); !Debug: Welchen Wert hat stdout aktuell
+
+	! Systemvariabel Info ermitteln
+	string Info = "";
+	if (Wort == "T")
+	{
+		Info = "SensorID: " + TemperatursensorID;
+	}
+	else
+	{
+		Info = stdout.Substr(0,stdout.Find(":"));
+	}
+	!Info = Info.Substr(Wort.Length(), stdout.Length());
+	!WriteLine("DPInfo = " # Info); !Debug: Welcher DPInfo-Wert wurde gefunden
+	
+	! Systemvariabel Wert ermitteln
+	string Wert = stdout.Substr(stdout.Find(": ") + 2,stdout.Length());
+	Wert = Wert.Substr(0,Wert.Find(" "));
+	!WriteLine("Wert = " # Wert); !Debug: Welcher Wert wurde gefunden
+
+	! Systemvariabel Einheit ermitteln
+	string Einheit = stdout.Substr(stdout.Find(Info) + Info.Length() + 1, stdout.Length());
+	Einheit = Einheit.Substr(Einheit.Find(Wert) + Wert.Length() + 1,Einheit.Length());
+	Einheit = Einheit.RTrim();
+	if (Einheit.Contains("- "))	{ Einheit = ""; }
+	!WriteLine("Einheit = " # Einheit); !Debug: Welche Einheit wurde gefunden
+
+	! Systemvariable Typ und Werte setzen
+	svObject.DPInfo(Info);
+	svObject.ValueUnit(Einheit);
+	
+	! Enums des Parameters ermitteln, wenn vorhanden
+	url="http://" # IPAdresseBSB # "/E" # Wort;
+
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_SETS").State("wget --tries=5 --timeout=20 --quiet --output-document=- '"# url #"'");  
+	dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_QUERY_RET").State(1);
+	stdout = dom.GetObject("CUxD." # CuxGeraetAbfrage # ".CMD_RETS").State();
+	! Prüfe, ob es sich um einen Parameter mit Enum-Werten handelt.
+	if (!stdout.Contains("FEHLER: Falscher Typ!"))
+	{
+		! Setzen des Systemvariabel Wertetyp und Ermitteln der Enum-Werte des Parameters
+		stdout = (stdout.Substr(stdout.Find("0 - "), stdout.Length())).ToLatin();
+		string value = "";
+		string newvalues = "";
+		integer inewvalues=0;
+		foreach (value, stdout.Split("\r"))
+		{
+			if (value.Contains(" - "))
+			{
+				if (newvalues == "") { newvalues = newvalues # value.Substr(value.Find(" - ") + 3,value.Length()); }
+				else { newvalues = newvalues # ";" # value.Substr(value.Find(" - ") + 3,value.Length()); }
+				inewvalues = inewvalues + 1;
+			}
+		}
+		
+		svObject.ValueType(ivtInteger);
+		svObject.ValueSubType(istEnum);
+		svObject.ValueList(newvalues);
+		!prüft, ob der ermittelte Wert innerhalbe der möglichen Werte liegt
+		if (Wert < inewvalues) { if (Wert != svObject.Value()) { if (Wert != "") { svObject.State(Wert); }} }
+		else { WriteLine("Der ermittelte Wert entspricht keinem gültigen Enum-Wert. Bitte Ausgabe prüfen!") }
+	}
+	elseif (Einheit.Contains("- Aus") || Einheit.Contains("- Ein"))
+	{ 
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtBinary);
+		svObject.ValueSubType(istBool);
+		svObject.ValueName0("Aus");
+		svObject.ValueName1("Ein");
+		if (Wert != svObject.Value()) {	if (Wert != "") { svObject.State(Wert); } }
+	}
+	elseif (Einheit.Contains("°"))
+	{ 
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		svObject.ValueMin(-50);
+		svObject.ValueMax(100);
+		if (Wert != svObject.Value()) {	if (Wert != "") { svObject.State(Wert); } }
+	}
+	elseif (Einheit.Contains("%"))
+	{ 
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		svObject.ValueMin(0);
+		svObject.ValueMax(100);
+		if (Wert != svObject.Value()) {	if (Wert != "") { svObject.State(Wert); } }
+	}
+	else
+	{ 
+		! Setzen des Systemvariabel Wertetyp
+		svObject.ValueType(ivtFloat);
+		svObject.ValueSubType(istGeneric);
+		if (Wert != svObject.Value()) {	if (Wert != "") { svObject.State(Wert); } }
+	}
+	dom.RTUpdate(0); ! Interne Aktualisierung der Systemvariabelen
+
+	! Logging
+	if (CuxGeraetLogging != "")	{ dom.GetObject("CUxD."#CuxGeraetLogging#".LOGIT").State(dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Name()#";"#dom.GetObject(ID_SYSTEM_VARIABLES).Get(Variablename).Value());	}
+}
+```  
+
     
 ---    
     
