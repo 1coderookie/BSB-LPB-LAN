@@ -1,11 +1,13 @@
-## Handbuch zum BSB-LPB-LAN-Adapter   
+<h2><b><a href="https://1coderookie.github.io/BSB-LPB-LAN_EN">English language version of this manual now available!</a></b></h2>  
+   
+## Vorwort  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
 BSB-LPB-LAN-Adapters (Platinenlayout v2, Arduino-Version) und der dazugehörigen BSB-LAN-Software 
 zu vereinfachen und um als Nachschlagewerk zu dienen.  
 
 ***Es wird empfohlen, dieses Handbuch vor einer initialen
-Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***    
+    Verwendung des BSB-LPB-LAN-Adapters komplett zu lesen.***    
     
 ---  
   
@@ -15,17 +17,16 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
     
 ### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md). ###  
     
-### Zum Ausdrucken besser geeignet: [Die PDF-Version als Download](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
+### Zum Ausdrucken besser geeignet: [Die PDF-Version des Handbuchs](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
   
-### Eine druckerfreundliche Übersicht aller URL-Befehle gibt es hier: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf). ###  
-### The cheatsheet of the URL-commands is also available as an [english version](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_EN.pdf). ### 
+### Druckerfreundliche Übersicht aller URL-Befehle: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf). ###  
 
 ---  
 
-***ACHTUNG:  
-Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt!  
-Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko!  
-Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden!***   
+### ACHTUNG:  
+### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! 
+### Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko!  
+### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden! ###   
 
 ---
   
