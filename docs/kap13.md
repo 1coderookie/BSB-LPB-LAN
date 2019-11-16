@@ -38,10 +38,7 @@ HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
 (`//#define HIDE_UNKNOWN`).
 
 Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
-wird, jedoch für diese Gerätefamilie nicht freigegeben ist, aktiviere
-bitte vorübergehend das Definement `#define DEBUG` in der Datei
-*BSB\_lan\_config.h* und führe dann den Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)).\
-Bei diesem Befehl werden trotz aktivem ‚HIDE\_UNKNOWN'-Definement etwaige error7-Fehlermeldungen angezeigt.  
+wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den URL-Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)). Sollten bei dieser Abfrage 'error 7'-Meldungen angezeigt werden, melde sie bitte unter Angabe des kompletten Outputs von /Q.  
     
 ---
     
