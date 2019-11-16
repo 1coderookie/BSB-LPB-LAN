@@ -34,16 +34,16 @@ verfügbaren Parametern. Weitere Angaben sind im entsprechenden Kapitel
 zu finden.
     
 ***Hinweis und Bitte:***  
-*Um die Liste vervollständigen zu können und anderen möglichen Nutzern
+Um die Liste vervollständigen zu können und anderen möglichen Nutzern
 den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
 Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
 einen noch nicht aufgeführten Regler unter Angabe  
 - der genauen Hersteller- und Modellbezeichnung,  
-- *des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
-- *der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
-- *der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` sowie `http://<IP-Adresse>/6220-6236` (via Adapter!) zu melden.  
-*Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
-Danke!*
+- des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
+- der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
+- der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` sowie `http://<IP-Adresse>/6220-6236` (via Adapter!) zu melden.  
+Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
+Danke!
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q und /6220-6236 abfragen und rückmelden!):
@@ -299,9 +299,6 @@ EWMs definieren und beschreiben.
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 
     
-***Hinweis:  
-Im Folgenden nicht aufgeführte Regler bitte wie in Kap. [10](kap10.md) beschrieben auslesen und melden.
-Danke!***
     
 ---
     
@@ -309,8 +306,10 @@ Danke!***
 Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
 sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
    
+---
+   
 #### 3.2.1.1 LMU-Regler  
-Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
    
 Regler der Serie *LMU74/LMU75* scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
@@ -332,6 +331,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
 | LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
    
+---  
    
 #### 3.2.1.2 LMS-Regler   
 Regler der Serie *LMS* scheinen die Nachfolger der LMU-Serie und somit die
@@ -347,7 +347,7 @@ Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzu
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-*Tabelle 3: LMS-Regler*
+*Tabelle 3: LMS-Regler (aktuelle Reglergeneration)*
 
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
@@ -407,7 +407,7 @@ Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS51, RVS61 und RVS23 zu sein.  
 RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
-RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe zum Einsatz und scheinen nur einen LPB aufzuweisen. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
+RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
@@ -455,7 +455,7 @@ Anschlüsse.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg">
     
-*Anschlüsse des neuen Reglertyps einer Brötje WLC24 - inkompatibel mit BSB-LAN!*     
+*Anschlüsse des neuen Reglertyps einer Brötje WLC24 - dieser Regler ist inkompatibel mit BSB-LAN!*     
     
     
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
@@ -493,17 +493,17 @@ Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinhei
 ## 3.6 Konventionelle Raumgeräte für die aufgeführten Reglertypen  
 Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
   
-Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler, die auch von BSB-LAN voll unterstützt werden (ISR).  
+Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler (RVS und LMS), die auch von BSB-LAN voll unterstützt werden (sog. "Broetje ISR").  
 
 Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und weiteres Zubehör ergänzt wurde. Bei Gelegenheit werde ich die m.E. relevanten Produkte hier hinzufügen.
   
 ---  
   
 ### 3.6.1 QAA55 / QAA58  
-Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit zusätzlichen Bedienoptionen anzusehen.  
+Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit einigen wenigen zusätzlichen Bedienoptionen anzusehen.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">
-
+*Das QAA 55 Raumgerät.*
    
 Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
    
@@ -512,10 +512,10 @@ Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempf
 ---  
   
 ### 3.6.2 QAA75 / QAA78  
-Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Taste ausgelöst werden.  
+Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Betriebsarttaste ausgelöst werden.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">
-
+*Das QAA75 Raumgerät.*  
    
 Das QAA75 heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
 Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss für die optional nutzbare Hintergrundbeleuchtung vorhanden ist (Klemme „G+“ am Regler).  
@@ -525,7 +525,7 @@ Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempf
 ---  
   
 ### 3.6.3 Brötje IDA  
-Die „Brötje IDA“ ist eine Raumeinheit, die neben einem integrierten Temperaturfühler und einigen Funktionen zusätzlich einen gewissen Funktionsumfang für die Steuerung mit einem Rechner und/oder Smartphone bietet. Eine Präsenztaste ist nicht vorhanden.  
+Die „Brötje IDA“ ist eine Raumeinheit, die neben einem integrierten Temperaturfühler und einigen Funktionen zusätzlich einen gewissen Funktionsumfang für die Steuerung via App mit Smartphone bietet. Eine Präsenztaste ist nicht vorhanden.  
   
 IDA wird ins heimische WLAN integriert und benötigt Internetzugriff, falls man die Steuerung per App nutzen möchte. Bei einer rein lokalen Nutzung des Raumgerätes (ohne Fernzugriff via App) ist kein WLAN-Zugang erforderlich. Über den WLAN-Zugang erfolgt im Übrigen auch die Aktualisierung der IDA-Firmware.  
 Eine interessante Analyse des Datenverkehrs wurde [hier](https://forum.fhem.de/index.php/topic,29762.msg833831.html#msg833831) von FHEM-Forumsmitglied „freetz“ vorgenommen.  
