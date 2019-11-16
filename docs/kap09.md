@@ -60,7 +60,7 @@ bspw. 59 Sekunden anstatt 60 Sekunden einstellen.*
 ## 9.2 Verwendung des Adapters als Remote-Logger
 
 Neben dem Einsatz komplexer Systeme wie bspw. FHEM und den spezifischen
-Log-Lösungen kann bspw. folgender Befehl[^24] periodisch ausgeführt
+Log-Lösungen kann bspw. folgender Befehl periodisch ausgeführt
 werden (z.B. per cron job):
     
 ```
@@ -68,7 +68,7 @@ DATE=`date +%Y%m%d%H%M%S`; wget -qO- http://192.168.178.88/8310/720/710 | egrep 
 ```
     
 Das aus diesem Beispiel resultierende Logfile \'*log.txt*\' enthält die
-aufgezeichneten Werte der Parameter 8310, 720 und 710.\
+aufgezeichneten Werte der Parameter 8310, 720 und 710.  
 Später kannst du das Logfile basierend auf den Parameternummern
 sortieren, nutze hierfür den Befehl \'sort\':
 
