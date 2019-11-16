@@ -7,11 +7,11 @@
     
 # 17. Weiterführende Informationen und Quellen
 Ein reger Austausch bzgl. der hier vorgestellten Hard- und Software
-findet in folgendem Forum statt: [https://forum.fhem.de/index.php/topic,29762.0.html](http://forum.fhem.de/index.php/topic,29762.0.html)\
+findet in folgendem Forum statt:   [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)  
 Dies ist auch eine gute Anlaufstelle für Fragen, Erfahrungsaustausch und
 Support, wo auch regelmäßig über Neuerungen und erfolgte Updates
-informiert wird.
-
+informiert wird.  
+  
 Sämtliche Dokumentationen zur hier vorgestellten Hard- und Software
 sowie die verschiedenen Software-Versionen sind [hier](https://github.com/fredlcore/bsb_lan) zu finden.  
 Dieses Handbuch ist zudem [hier](https://github.com/1coderookie/BSB-LPB-LAN) als PDF-Version erhältlich.
