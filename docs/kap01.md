@@ -1,4 +1,5 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)    
+[Zurück zum Vorwort](index.md)  
     
 ---
     
@@ -57,12 +58,12 @@ Holst (bsb \[ät\] code-it.de) kontaktieren.
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
 
-Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.  
+*Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.*  
     
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.jpeg">
     
-Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.  
+*Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.*  
     
     
 ***Hinweis:***  
@@ -77,7 +78,7 @@ das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
     
-Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.  
+*Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.*  
     
      
 ***Alle Informationen in diesem Handbuch beziehen sich nur auf die
@@ -88,4 +89,3 @@ Arduino-Version!***
 [Weiter zu Kapitel 2](kap02.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
     
-###### *&copy; Ulf Dieckmann*

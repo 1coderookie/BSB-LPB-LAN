@@ -3,12 +3,12 @@
     
 ---
     
-# 13. Etwaige Fehlermeldungen und deren mögliche Ursachen #  
+# 13. Etwaige Fehlermeldungen und deren mögliche Ursachen
     
 ---
     
 
-## 13.1 Fehlermeldung „unknown type \<xxxxxxxx\>" ##
+## 13.1 Fehlermeldung „unknown type \<xxxxxxxx\>"
 
 Dieser Fehler sagt aus, dass für diesen Parameter keine
 Umrechnungsanweisung vorliegt, um die Rohdaten in eine entsprechende
@@ -23,7 +23,7 @@ damit eine eindeutige Zuordnung stattfinden kann.
 ---
     
 
-## 13.2 Fehlermeldung „error 7 (parameter not supported)" ##
+## 13.2 Fehlermeldung „error 7 (parameter not supported)"
 
 Die zugehörige Command ID wird nicht erkannt oder der entsprechende
 Parameter wird vom Regler nicht unterstützt (bspw. spezifische
@@ -46,7 +46,7 @@ Bei diesem Befehl werden trotz aktivem ‚HIDE\_UNKNOWN'-Definement etwaige erro
 ---
     
 
-## 13.3 Fehlermeldung „query failed" ##
+## 13.3 Fehlermeldung „query failed"
 
 Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
 (sinnvolle) Antwort des Reglers kommt.
@@ -59,7 +59,7 @@ Reglers).
 ---
     
 
-## 13.4 Fehlermeldung „FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar" ##
+## 13.4 Fehlermeldung „FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
 
 Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
 übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
@@ -76,5 +76,4 @@ Vorgehensweise ist in Kap. [5](kap05.md) (vorletzter Punkt) ausführlich beschri
 [Weiter zu Kapitel 14](kap14.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

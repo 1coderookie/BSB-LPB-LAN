@@ -2,11 +2,9 @@
 [Zurück zu Anhang A2](anhang_a2.md)    
     
 ---
-    
+        
 
-    
-
-# Anhang B: Cheatsheet URL-Befehle #
+# Anhang B: Cheatsheet URL-Befehle
 
 
 | URL-Befehl            | Auswirkung                                                                    |
@@ -55,7 +53,6 @@
     
 ---
     
-
      
 [Weiter zu Anhang C](anhang_c.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  

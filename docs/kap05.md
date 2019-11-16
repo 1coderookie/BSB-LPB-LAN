@@ -4,10 +4,7 @@
 ---
     
 
-    
-
-# 5. Einstellungsrelevante Parameter der BSB-LAN-Software #
-
+# 5. Einstellungsrelevante Parameter der BSB-LAN-Software
 Folgende Parameter in der Datei *BSB_lan_config.h* können bzw. sollten
 vor der Verwendung des Adapters angepasst werden:
 
@@ -306,5 +303,4 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 [Weiter zu Kapitel 6](kap06.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

@@ -4,9 +4,7 @@
 ---
     
 
-    
-
-# 11. Nutzung von externen Programmen #
+# 11. Nutzung von externen Programmen
 
 Da der Adapter lediglich eine Schnittstelle darstellt, mittels derer man
 Zugriff auf den Heizungsregler via Computer erhält, können
@@ -42,11 +40,11 @@ zur Anbindung des Adapters freuen! Sende es mir dazu einfach als
     
 ---
     
-## 11.1 FHEM ##
+## 11.1 FHEM
     
 ---
     
-### 11.1.1 Einbindung mittels BSB-LAN-Modul ###
+### 11.1.1 Einbindung mittels BSB-LAN-Modul
 
 ***Derzeit wird vom FHEM-Forumsmitglied „justme1968" ein BSB-LAN-Modul für
 FHEM entwickelt:
@@ -59,7 +57,7 @@ und problemloser Betrieb kann jedoch noch nicht garantiert werden!
     
 ---
     
-### 11.1.2 Einbindung mittels HTTPMOD-Modul ###
+### 11.1.2 Einbindung mittels HTTPMOD-Modul
 
 ***Die FHEM-Beispielscripte stammen vom FHEM-Forumsmitglied „freetz".  
 Vielen Dank!***
@@ -179,7 +177,7 @@ attr EthRelais timeout 5
 ---
     
 
-## 11.2 openHAB ##
+## 11.2 openHAB
   
 Es existiert derzeit kein komplettes Binding fuer BSB-LAN. Mit dem HTTP
 Binding und der Javascript Transformation ist es allerdings
@@ -190,7 +188,7 @@ Visualisierung mit Grafana.
   
 ---  
   
-### 11.2.1 openHAB mit Javascript Transformation ###  
+### 11.2.1 openHAB mit Javascript Transformation
 
 ***Die openHAB-Beispielscripte stammen vom FHEM-Forumsmitglied
 „acfischer42", zwei Korrekturen/Änderungsvorschläge sowie das Skript zum Anzeigen der Werte in einer Sitemap von „sihui".  
@@ -287,7 +285,7 @@ sitemap demo label="Mein BSB LAN" {
     
 ---
     
-### 11.2.2 openHAB mit Javascript Transformation, MQTT, Network und Expire ###
+### 11.2.2 openHAB mit Javascript Transformation, MQTT, Network und Expire
   
 ***Basierend auf dem vorhergehenden Beispiel hat FHEM-Forumsmitglied „sihui" (GitHub: [sihui62](https://github.com/sihui62)) ein erweitertes Beispiel erstellt.  
 Vielen Dank!***  
@@ -550,7 +548,7 @@ Frame	{
   
 ---
    
-### 11.2.3 openHAB2-Binding ###
+### 11.2.3 openHAB2-Binding
    
 ***BSB-LAN-User „hypetsch“ hat ein Binding für openHAB2 entwickelt, das er freundlicherweise in seinem [GitHub-Repo](https://github.com/hypetsch/openhab2-addons/tree/add-bsb-lan-binding/bundles/org.openhab.binding.bsblan) zur Verfügung stellt.***  
 ***Vielen Dank!***
@@ -559,7 +557,7 @@ Frame	{
 ---
    
     
-## 11.3 HomeMatic (EQ3) ##  
+## 11.3 HomeMatic (EQ3)
     
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
 Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
@@ -1912,8 +1910,7 @@ WriteLine("Hallo Welt!");
     
 ---
     
-## 11.4 ioBroker ##  
-   
+## 11.4 ioBroker
 ***BSB-LAN-User „hacki11“ hat einen Adapter für ioBroker entwickelt, den er freundlicherweise in seinem [GitHub-Repo](https://github.com/hacki11/ioBroker.bsblan) zur Verfügung stellt.  
 Vielen Dank!***  
    
@@ -2069,7 +2066,7 @@ Unter ‚RegEx' folgende Syntax angeben:
 ---
     
     
-## 11.5 Loxone ##  
+## 11.5 Loxone
 
 ***Die Loxone-Beispiele stammen vom FHEM-Forumsmitglied „Loxonaut".  
 Vielen Dank!***
@@ -2125,7 +2122,7 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
     
 ---
 
-## 11.6 IP-Symcon ##   
+## 11.6 IP-Symcon
    
 ***Die BSB-LAN-User „sokkederheld" und „Joachim" haben ihre IPS-Skripte samt Screenshots im Symcon-Forum vorgestellt: [Hier](https://www.symcon.de/forum/threads/41369-Mein-Skript-f%C3%BCr-BSB-LAN) und [hier](https://www.symcon.de/forum/threads/36243-Br%C3%B6tje-Ecotherm-Plus-an-IPS).*** *Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.*  
 ***Vielen Dank!***   
@@ -2133,14 +2130,14 @@ Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funkt
       
 ---   
     
-## 11.7 MQTT, InfluxDB, Telegraf und Grafana ##   
+## 11.7 MQTT, InfluxDB, Telegraf und Grafana
    
 ***Ein vom FHEM-Forumsmitglied „cubase" sehr gut dokumentiertes Beispiel für die Verwendung von MQTT, InfluxDB, Telegraf und Grafana findet sich [hier](https://github.com/futschikato/bsb_lan-mqtt-workspace).*** *Auf eine weitere/erneute Beschreibung wird daher an dieser Stelle verzichtet.*  
 ***Vielen Dank!***
     
 ---   
    
-## 11.8 MQTT und FHEM ##  
+## 11.8 MQTT und FHEM
   
 ***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „mifh", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg899597.html#msg899597) zu finden.  
 Vielen Dank!***
@@ -2204,7 +2201,7 @@ sub setHzgLeistung{
 
 ---  
 
-## 11.9 MQTT2 und FHEM ##  
+## 11.9 MQTT2 und FHEM
   
 ***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „FunkOdyssey", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg904464.html#msg904464) zu finden.  
 Vielen Dank!***
@@ -2235,7 +2232,7 @@ BSB_LAN:BSB/700:.* Betriebsart\
   
 ---  
 
-## 11.10 EDOMI ##  
+## 11.10 EDOMI
   
 ***Das folgende Beispiel stammt vom BSB-LAN-User Lutz.***  
 ***Vielen Dank!***
@@ -2263,7 +2260,7 @@ A5 = Verkettung von A1 bis A4
   
 ---  
 
-## 11.11 Home Assistant ##  
+## 11.11 Home Assistant
   
 ***BSB-LAN-User Willem-Jan hat seine Lösung für die Einbindung in Home Assistant [in seinem GitHub-Repo](https://github.com/liudger/BSB-LAN-Component-for-Home-Assistant) zur Verfügung gestellt.***  
 ***Vielen Dank!***  
@@ -2278,5 +2275,4 @@ A5 = Verkettung von A1 bis A4
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

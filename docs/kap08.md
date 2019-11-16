@@ -3,11 +3,7 @@
     
 ---
     
-
-    
-
-# 8. URL-Befehle und Spezialfunktionen #
-
+# 8. URL-Befehle und Spezialfunktionen
 Da das Webinterface prinzipiell nur ‚aufgesetzt' ist, um eine Bedienung
 ohne weitere Programme wie bspw. FHEM zu ermöglichen, ist ein direkter
 Zugriff auf die einzelnen Funktionen und Parameter mittels anderer
@@ -18,8 +14,7 @@ Programme grundsätzlich möglich.
     
 ---
     
-## 8.1 Auflistung und Beschreibung der URL-Befehle ##
-
+## 8.1 Auflistung und Beschreibung der URL-Befehle
 -   **Alle Kategorien auflisten:**
 
     `http://<IP-Adresse>/K`  
@@ -309,12 +304,11 @@ Programme grundsätzlich möglich.
     
 ---
     
-## 8.2 Spezialfunktionen ##
+## 8.2 Spezialfunktionen  
     
 ---
     
-### 8.2.1 Raumtemperatur übermitteln ###
-
+### 8.2.1 Raumtemperatur übermitteln
 Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
 gesendet werden, um einen Raumeinfluss bei der Berechnung der
 VL-Temperatur geltend zu machen.  
@@ -338,8 +332,7 @@ große Fenster in Südlage etc.) befindet.*
     
 ---
     
-### 8.2.2 Präsenztaste simulieren ###
-
+### 8.2.2 Präsenztaste simulieren
 Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
 und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
 genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)). Der Parameter (701) ist NICHT abrufbar.
@@ -353,8 +346,7 @@ Zeitprogramm gültig. ***Die Präsenztaste ist nur im Automatikbetrieb wirksam!*
     
 ---
     
-### 8.2.3 Manuellen TWW-Push ausführen ###
-
+### 8.2.3 Manuellen TWW-Push ausführen
 Bei einigen Reglern ist die (nahezu undokumentierte) Funktion eines
 manuellen Trinkwasser-Pushs verfügbar. Um einen manuellen TWW-Push
 auszulösen, muss dazu die TWW-Taste an der ISR-Bedieneinheit gedrückt
@@ -367,8 +359,7 @@ Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
     
 ---
     
-### 8.2.4 Abrufen und Steuern mittels JSON ###
-
+### 8.2.4 Abrufen und Steuern mittels JSON
 ***Hinweis:***    
 *Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
 es kann also noch Veränderungen hinsichtlich der Befehle und/oder
@@ -422,8 +413,7 @@ JSON erfolgen.
     
 ---
     
-### 8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs ###
-
+### 8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs
 *Hinweis: Es ist empfehlenswert, diese Abfrage einmalig auszuführen.*
 
 `http://<IP-Adresse>/Q`  
@@ -495,8 +485,7 @@ damit eine entsprechende Anpassung vorgenommen werden kann.
         
 ---
     
-### 8.2.6 Gasthermen: Interne Gasenergiezählung (falls vorhanden) aktivieren ###  
-    
+### 8.2.6 Gasthermen: Interne Gasenergiezählung (falls vorhanden) aktivieren    
 Bei einigen Gasthermen-Modellen (vermutlich nur mit Reglertyp LMS14 und LMS15) ist eine interne (überschlägige) Gasenergiezählung unter den Parametern 8378-8383 verfügbar. Diese ist jedoch i.d.R. ab Werk nicht aktiviert.  
 Eine Aktivierung muss bei *Parameter 2550* (Menü "Kessel", Fachmann-Ebene) vorgenommen werden. (Wie immer bei Parametern in der Fachmann-Ebene sollte dies nur von einem Heizungsfachmann durchgeführt werden.)  
       
@@ -528,8 +517,7 @@ Im Zuge der Aktivierung von 2550 sollte der *Parameter 1630* "TWW-Ladevorrang" a
     
 --- 
     
-### 8.2.7 Datum, Uhrzeit und Zeitprogramme verändern ###  
-   
+### 8.2.7 Datum, Uhrzeit und Zeitprogramme verändern   
 Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
 Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. Kap. [5](kap05.md)).  
   
@@ -544,8 +532,7 @@ Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Par
      
 ---  
    
-### 8.2.8 Übermitteln einer alternativen Außentemperatur ###  
-   
+### 8.2.8 Übermitteln einer alternativen Außentemperatur   
 Bei bestimmten Reglermodellen ist es möglich, diverse Funkkomponenten anzuschließen, u.a. auch einen Funk-Außentemperaturfühler. Mittels BSB-LAN ist es bei diesen kompatiblen Reglern möglich, dem Heizungsregler eine anderweitig ermittelte Außentemperatur (AT) zu übermitteln. Dies ist insbesondere für Nutzer komplexerer Hausautomationsinstallationen interessant, die bspw. eine Wetterstation an einem günstigeren Standort als dem des heizungsseitigen Außentemperaturfühlers installiert haben.  
    
 Als kompatible Regler sind bisher einige Reglermodelle der Reihen [LMS](kap03.md#3212-lms-regler) und [RVS](kap03.md#3222-rvs-regler) gemeldet worden (Stand Oktober 2019). Ältere Reglergenerationen wie bspw. [LMU](kap03.md#3211-lmu-regler) oder [RVA](kap03.md#3221-rva--und-rvp-regler) sind anscheinend nicht kompatibel.  
@@ -576,6 +563,4 @@ Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
-
 

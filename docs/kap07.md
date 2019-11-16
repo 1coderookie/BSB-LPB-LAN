@@ -6,8 +6,7 @@
 
     
 
-# 7. BSB-LAN Web - das Webinterface des Adapters #
-
+# 7. BSB-LAN Web - das Webinterface des Adapters
 Die Startseite des Webinterface wird angezeigt, wenn ohne weitere
 Parameter auf die URL des Servers zugegriffen wird:  
 `http://<IP-Adresse>`
@@ -111,5 +110,4 @@ nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 [Weiter zu Kapitel 8](kap08.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

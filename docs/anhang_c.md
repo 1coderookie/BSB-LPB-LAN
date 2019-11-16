@@ -5,7 +5,7 @@
     
 
     
-# Anhang C: Changelog BSB-LAN-Software #
+# Anhang C: Changelog BSB-LAN-Software
 
 Version 0.43
 - Bugfix: DHCP (ethernet) implementation
@@ -403,7 +403,5 @@ Version 0.1 -- 21.01.2015 -- initial version
       
     
 ---
-    
-
-    
+        
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  

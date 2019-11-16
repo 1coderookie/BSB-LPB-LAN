@@ -3,11 +3,7 @@
     
 ---
     
-
-    
-
-# 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle #
-    
+# 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle    
 Bei BSB (Boiler System Bus), LPB (Local Process Bus) und PPS (Point-to-Point Schnittstelle) handelt es sich um jeweils verschiedene und untereinander nicht kompatible Bus-Systeme bzw. Schnittstellen. Es können also jeweils nur Geräte angeschlossen werden, die den gleichen Bus- bzw. Schnittstellen-Typ aufweisen.  
   
 Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS und LMU ist ein BSB-Anschluss am Regler zu finden. 
@@ -111,8 +107,7 @@ Anschlüsse.
     
 ---  
   
-### 2.1.1 Adressierung beim BSB ###  
-  
+### 2.1.1 Adressierung beim BSB  
 Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits reserviert und werden eigenständig vom System so vergeben, dem BSB-LPB-LAN-Adapter wird in der Voreinstellung (s. Datei BSB_lan_config.h.default) die Adresse 66 zugeteilt:  
 
 Bus-Adresse 0x00 =     0 = Heizungsregler („HEIZ“)  
@@ -124,25 +119,23 @@ Bus-Adresse 0x08 =     8 = OCI700 Servicetool („CNTR“)
 Bus-Adresse 0x0A =   10 = reglerseitige Bedieneinheit / Display („DISP“)  
 Bus-Adresse 0x0B =   11 = Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“)  
 Bus-Adresse 0x31 =   49 = OZW672 Webserver  
-*Bus-Adresse 0x42 =   66 = BSB-LPB-LAN-Adapter („LAN“)*  
+**Bus-Adresse 0x42 =   66 = BSB-LPB-LAN-Adapter („LAN“)**  
 Bus-Adresse 0x7F = 127 = Broadcast („INF“-Meldungen)    
    
 ---  
   
-### 2.1.2 Adressierung beim LPB ###  
-  
+### 2.1.2 Adressierung beim LPB  
 Beim LPB ist die Adressierung anders als beim BSB. Prinzipiell gibt es verschiedene Segmente (bzw. Segmentadressen) und Geräteadressen. Den Segmentadressen kommt eine andere Bedeutung zu, als den Geräteadressen. Da die doch recht komplexe Installation i.d.R. bereits bei der Installation vom jeweiligen Monteur vorgenommen wird, wird an dieser Stelle nicht auf weitere Besonderheiten eingegangen.  
 Dem interessierten Anwender seinen an dieser Stelle insbesondere zwei Dokumente von „Siemens Building Technologies - Landis & Staefa Division“ empfohlen:  
 - CE1N2030D Local Process Bus LPB Systemgrundlagen  
 - CE1N2032D Local Process Bus LPB Projektierungsgrundlagen   
   
 *Hinweis:*  
-Die voreingestellte Adresse 0x42 des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.  
+*Die voreingestellte Adresse 0x42 des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.*  
   
 ---  
     
-## 2.2 PPS-Schnittstelle ##
-
+## 2.2 PPS-Schnittstelle
 Die PPS-Schnittstelle findet sich bei *älteren* Reglern und stellt eine
 Punkt-zu-Punkt-Schnittstelle dar, mittels derer digitale 
 Bedieneinheiten/Raumgeräte wie das QAA70 angeschlossen werden
@@ -210,7 +203,7 @@ Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders al
   
 ----  
   
-## 2.3 Anschluss des Adapters ##  
+## 2.3 Anschluss des Adapters  
   
 Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.  
   
@@ -240,8 +233,8 @@ des Adapters anzuschließen ist.
   
 *Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
 
-*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird! 
-Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
+*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
+*Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
   
 ***Tipps:***
   
@@ -262,5 +255,4 @@ Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können auch i
 [Weiter zu Kapitel 3](kap03.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

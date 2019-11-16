@@ -5,11 +5,11 @@
     
 
     
-# 9. Loggen von Daten #  
+# 9. Loggen von Daten
     
 ---
     
-## 9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN ##
+## 9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN
 
 Stecke eine FAT32-formatierte microSD-Karte in den
 Speicherkartenplatz des Ethernet-Shields, bevor du den Arduino
@@ -57,7 +57,7 @@ bspw. 59 Sekunden anstatt 60 Sekunden einstellen.*
     
 ---
     
-## 9.2 Verwendung des Adapters als Remote-Logger ##
+## 9.2 Verwendung des Adapters als Remote-Logger
 
 Neben dem Einsatz komplexer Systeme wie bspw. FHEM und den spezifischen
 Log-Lösungen kann bspw. folgender Befehl[^24] periodisch ausgeführt
@@ -86,7 +86,5 @@ Parameter etc. sind im obigen Beispiel anzupassen.*
 [Weiter zu Kapitel 10](kap10.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
-
 
 

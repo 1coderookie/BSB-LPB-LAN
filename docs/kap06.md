@@ -4,10 +4,7 @@
 ---
     
 
-    
-
-# 6. Funktionsüberprüfung und erste Nutzung des Adapters #
-
+# 6. Funktionsüberprüfung und erste Nutzung des Adapters
 Um zu überprüfen, ob der angeschlossene Regler korrekt erkannt wird,
 sollte bei der Ersteinrichtung eine Funktionsüberprüfung vorgenommen
 werden.  
@@ -94,10 +91,8 @@ Dazu bietet sich folgende Vorgehensweise an:
     
 ---
     
-
      
 [Weiter zu Kapitel 7](kap07.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
-    
-###### *&copy; Ulf Dieckmann*
+
 

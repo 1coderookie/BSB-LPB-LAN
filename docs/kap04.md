@@ -2,12 +2,9 @@
 [Zurück zu Kapitel 3](kap03.md)    
     
 ---
-    
+        
 
-    
-
-# 4. Installation der Arduino IDE und Konfiguration des Adapters #
-
+# 4. Installation der Arduino IDE und Konfiguration des Adapters
 -   Downloade und installiere die aktuelle Version der Arduino IDE von
     [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
     (Windows-, Mac- und Linux-Version verfügbar).
@@ -93,6 +90,6 @@
 [Weiter zu Kapitel 5](kap05.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
+
 
 

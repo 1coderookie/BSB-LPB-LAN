@@ -4,12 +4,12 @@
 ---
     
 
-# 12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter #  
+# 12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter
     
     
 ---
     
-## 12.1 Der Arduino Mega 2560 ## 
+## 12.1 Der Arduino Mega 2560
 *Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen.*  
 
 Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
@@ -20,7 +20,7 @@ Es können auch günstige Nachbauten des Arduino Mega 2560 verwendet werden, der
     
 ---
     
-## 12.2 Das LAN-Shield ## 
+## 12.2 Das LAN-Shield
 *Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shields zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann.*  
 
 Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum einen mit einem W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
@@ -55,7 +55,7 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
     
 ---
    
-## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20 ##
+## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20
 
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
 (OneWire-Temperatursensor) und DHT22 (Temperatur- und
@@ -103,7 +103,7 @@ Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen
 ---
     
 
-### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren ###
+### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren
 
 DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
 sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
@@ -133,7 +133,7 @@ Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf ei
         
 ---
     
-### 12.3.2 Hinweise zu DS18B20-Temperatursensoren ###
+### 12.3.2 Hinweise zu DS18B20-Temperatursensoren
 
 DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
 Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
@@ -235,7 +235,7 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
         
 ---
     
-## 12.4 Relais und Relaisboards ##  
+## 12.4 Relais und Relaisboards
 Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziellen URL-Befehlen auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
     
 Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Daher ist die zusätzliche Verwendung von entsprechend dimensionierten Koppelrelais oder Solid-State-Relais überlegenswert. Sollten diese jedoch ausschließlich zum Einsatz kommen und mit ihnen Schaltvorgänge ausgelöst werden, so ist ggf. darauf zu achten, dass Strom- und Spannungsstärke des Arduino ausreichend sind, um den Schaltvorgang des Relais auszulösen.  
@@ -248,7 +248,7 @@ Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen
 
 ---
      
-## 12.5 MAX!-Komponenten ##
+## 12.5 MAX!-Komponenten
 
 BSB-LAN ist bereits für die Einbindung und Nutzung von MAX!-Komponenten
 vorbereitet. MAX-Thermostate, die von BSB-LAN verwendet werden sollen,
@@ -335,7 +335,7 @@ ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-dis
     
 ---
     
-## 12.6 Eigene Hardwarelösungen ##
+## 12.6 Eigene Hardwarelösungen
 
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
 Nachbau anregen, sondern weitere Nutzungsmöglichkeiten von BSB-LAN
@@ -350,7 +350,7 @@ Vielen Dank!
     
 ---
     
-### 12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster) ###
+### 12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)
 
 FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno
 einen Raumgeräteersatz realisiert. Der jeweilige Betriebs- und
@@ -378,7 +378,7 @@ Andreas29 hat den Funktionsumfang um Push-Benachrichtigung im Fehlerfall (Errech
 ---
     
     
-### 12.6.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display) ###
+### 12.6.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)
 
 FHEM-Forumsmitglied *„Gizmo\_the\_great"* hat basierend auf einem Wemos D1
 mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
@@ -389,12 +389,12 @@ Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](http
      
 ---
     
-## 12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter ##  
+## 12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter
 Obwohl für die Netzwerkanbindung des Adapters definitv die kabelgebundene Variante zu empfehlen ist, kann es in Einzelfällen jedoch nötig sein, eine alternative LAN-Anbindung für den Adapter zu schaffen, da eine Kabelinstallation (LAN oder Busleitung) bis zum Wärmeerzeuger nicht realisierbar ist. Dafür gibt es mehrere Möglichkeiten, die im Folgenden kurz vorgestellt werden.  
     
 ---
     
-### 12.7.1 Nutzung eines PowerLANs / dLANs ###  
+### 12.7.1 Nutzung eines PowerLANs / dLANs
 Die Nutzung von Powerline-Adaptern, bei denen das 230V-Netz als LAN 'missbraucht' wird, ist eine Option, die im Idealfall zuverlässiger arbeitet als eine WLAN-Lösung.  
 
 Probleme können hierbei jedoch von Steckernetzteilen ausgelöst werden, bei denen bestimmte Frequenzen auf die Stromleitung übertragen werden.  
@@ -402,7 +402,7 @@ Außerdem müssen sich die Powerline-Adapter bzw. die verwendeten Steckdosen an 
     
 ---
     
-### 12.7.2 WLAN: Nutzung eines extra Routers ###  
+### 12.7.2 WLAN: Nutzung eines extra Routers
 Eine Möglichkeit für eine WLAN-Anbindung ist, den Adapter via LAN an einen ausgemusterten Router (bspw. eine alte Fritz!Box) anzuschließen, welcher sich wiederum als Client im bestehenden WLAN-Netz anmeldet. Die Übertragungsraten und Latenzen sind normalerweise für die Nutzung von BSB-LAN absolut ausreichend. Sollte das WLAN-Signal am Aufstellort grenzwertig sein, so könnte der Router mit stärkeren Antennen ausgerüstet werden.  
 
 Neben dem Einsatz eines 'normalen' Routers können auch kleine 'Minirouter' verwendet werden, wenn sie denn den Client-Modus unterstützen. Als Beispiel sei hier der "Phicomm M1" genannt, der mittlerweile (meist gebraucht) für unter zehn Euro in Online-Auktionshäusern oder diversen Kleinanzeigen zu finden ist. Geräte dieser Art sind aber auch neu und mit höheren Übertragungsgeschwindigkeiten bei diversen Anbietern für ca. 15-20€ (neu) zu finden.  
@@ -411,7 +411,7 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
     
 ---
     
-### 12.7.3 WLAN: Nutzung eines zusätzlichen ESP oder eines 'WLAN-Arduino' ###  
+### 12.7.3 WLAN: Nutzung eines zusätzlichen ESP oder eines 'WLAN-Arduino'
 Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ESP-WLAN-Moduls anstelle des LAN-Shields dar. Hierbei ist jedoch ein gewisser Konfigurations- und Bastelaufwand (zusätzlicher Levelshifter etc.) nötig. Der ESP muss dabei mit der ursprünglichen AT-Firmware von Espressif geflasht sein (weitere Infos s.u.). Durch den Wegfall des LAN-Shields kann dann jedoch die microSD-Karten-Loggingfunktion nicht mehr genutzt werden.  
 
 Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden. Bei diesen Boards können mittels DIP-Schaltern verschiedene Konfigurationen eingestellt werden (bspw. Arduino<->USB, Arduino<->ESP, ESP<->USB), was bei der Installation und der Verwendung berücksichtigt werden muss.  
@@ -462,7 +462,7 @@ und den zweiten Schalter rechts untenterhalb davon auf "RXD3/TXD3".
     
 ---  
    
-## 12.8 Gehäuse ##  
+## 12.8 Gehäuse
       
 Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
 Gehäuse, die nur den Arduino Mega 2560 aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
@@ -485,5 +485,4 @@ Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein 
 [Weiter zu Kapitel 13](kap13.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

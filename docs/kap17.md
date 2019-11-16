@@ -5,8 +5,7 @@
     
 
     
-# 17. Weiterführende Informationen und Quellen #
-
+# 17. Weiterführende Informationen und Quellen
 Ein reger Austausch bzgl. der hier vorgestellten Hard- und Software
 findet in folgendem Forum statt: [https://forum.fhem.de/index.php/topic,29762.0.html](http://forum.fhem.de/index.php/topic,29762.0.html)\
 Dies ist auch eine gute Anlaufstelle für Fragen, Erfahrungsaustausch und
@@ -50,9 +49,7 @@ hinsichtlich der Bus-Typologie und der Leitungslängen) und auf die
 Hinweise im entsprechenden Kapitel empfohlen.    
     
 ---
-    
-
-     
+         
      
 [Weiter zu Anhang A1](anhang_a1.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  

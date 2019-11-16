@@ -4,12 +4,12 @@
 ---
     
     
-# 15. FAQ #  
+# 15. FAQ
     
 ---
     
 
-## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen? ##
+## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?
 
 Ja und nein.  
 Der Adapter kann mit einem Raspberry Pi 2 verwendet werden, wenn andere
@@ -26,7 +26,7 @@ Ende von Kap. [1](kap01.md) zu finden.
 ---
     
 
-## 15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen? ##
+## 15.2 Kann ich einen Adapter gleichzeitig an zwei Regler anschließen?
 
 Nein, das geht leider nicht.
 
@@ -39,7 +39,7 @@ verbunden sein, beachte bitte die folgende FAQ.
 ---
     
 
-## 15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen? ##
+## 15.3 Kann ich einen Adapter via LPB anschließen und mehrere Regler abfragen?
 
 Ja, wenn die vorhandenen Regler bereits korrekt via LPB miteinander
 verbunden und entsprechend konfiguriert sind (korrekte
@@ -51,7 +51,7 @@ ausgiebig getestet. Siehe hierzu den entsprechenden Punkt in Kapitel [8.1](kap08
 ---
     
 
-## 15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar? ##
+## 15.4 Ist ein multifunktionaler Eingang des Reglers direkt via Adapter schaltbar?
 
 Nein!
 
@@ -77,22 +77,21 @@ falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!
 ---
     
 
-## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar? ##
+## 15.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?
 
 Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle) sowie Kap. [12.4](kap12.md#124-relais-und-relaisboards).  
     
 ---
     
 
-## 15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen? ##
+## 15.6 Kann ich bspw. den Zustand eines angeschlossenen Koppelrelais abfragen?
 
 Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [8.1](kap08.md#81-auflistung-und-beschreibung-der-url-befehle).  
     
 ---
     
 
-## 15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen? ##
-
+## 15.7 Kann ich behilflich sein, um bisher nicht unterstützte Parameter hinzuzufügen?
 Ja! Wenn dein Heizungssystem über Parameter verfügt, die von der
 Software bisher nicht unterstützt werden, würden wir uns sehr freuen,
 wenn du uns unterstützt! Genauere Informationen zur Vorgehensweise sind
@@ -101,7 +100,7 @@ in Kap. [10](kap10.md) zu finden.
 ---
     
 
-## 15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt? ##
+## 15.8 Warum erscheinen bei einer Komplettabfrage einige Parameter doppelt?
 
 Wenn du eine Komplettabfrage aller Parameter via URL-Befehl machst  
 (`http://<IP-Adresse>/0-10000`) kann es sein, dass sich einige Parameter
@@ -113,7 +112,7 @@ Funktionalität nicht negativ beeinflusst.
 ---
     
 
-## 15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt? ##
+## 15.9 Warum werden manchmal bestimmte Parameter nicht angezeigt?
 
 Wenn der Regler nach erfolgtem Adapteranschluss angeschaltet wird und
 der Arduino zu diesem Zeitpunkt bereits lief, funktioniert die
@@ -126,7 +125,7 @@ bitte einmal /Q ausgeführt und die Webausgabe gemeldet werden.
 ---
     
 
-## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich? ##
+## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?
 
 Wenn du DHT22- und/oder DS18B20-Sensoren korrekt am Arduino/Adapter
 angeschlossen hast, die entsprechenden Menüs im Webinterface jedoch
@@ -137,7 +136,7 @@ Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).
 ---
     
 
-## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun? ##
+## 15.11 Ich nutze ein W5500-LAN-Shield, was muss ich tun?
 
 Darauf achten, dass die aktuelle Version der Ethernet Bibliothek 
 (mindestens Version 2.0) in der Arduino IDE vorhanden ist.   
@@ -145,7 +144,7 @@ Darauf achten, dass die aktuelle Version der Ethernet Bibliothek
 ---
     
 
-## 15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden? ##
+## 15.12 Können Stati oder Werte als Push-Mitteilungen abgesetzt werden?
 
 Nein, nicht ohne weitere Software wie z.B. FHEM. Dafür müsste ansonsten
 die Therme ständig abgefragt werden, was den Bus (und die Erreichbarkeit
@@ -157,7 +156,7 @@ Bei FHEM wäre das mit DOIF oder NOTIFY möglich.
 ---
     
 
-## 15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen'? ##
+## 15.13 Kann bspw. FHEM auf bestimmte Broadcasts ‚lauschen'?
 
 FHEM kann zwar lauschen, aber BSB-LAN kann bisher keine eigenständigen
 Nachrichten absetzen. Dazu müsste ein Hintergrundprozess die
@@ -170,7 +169,7 @@ möchte, ist herzlich eingeladen, dies zu tun!
 ---
     
 
-## 15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM? ##
+## 15.14 Warum kommt es manchmal zu timeout-Problemen bei FHEM?
 
 Das könnte an der Dauer des Sende-/Empfangsvorgangs liegen. Man sollte
 den timeout-Wert in FHEM so bemessen, dass für jeden Parameter pro
@@ -191,7 +190,7 @@ um Kollisionen bei den Abfragen zu verhindern.
     
 
 
-## 15.15 Gibt es ein Modul für FHEM? ##
+## 15.15 Gibt es ein Modul für FHEM?
 
 Jein. Ein Modul wird gerade vom FHEM-Forumsmitglied *„justme1968"*
 entwickelt:
@@ -204,7 +203,7 @@ werden kann.
     
 
 
-## 15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt? ##
+## 15.16 Warum werden unter /B bei Stufe 2 keine Werte angezeigt?
 
 Wenn du einen Gasbrenner hast, so wird dieser höchstwahrscheinlich
 modulieren und generell nicht über ein zweistufiges Brennersystem
@@ -218,7 +217,7 @@ dargestellt. Bitte beachte diesbezüglich auch den Hinweis unter „/B" in Kap. 
     
 
 
-## 15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt. ##
+## 15.17 Ich habe den Eindruck, die angezeigten Werte bei /B sind nicht korrekt.
 
 Das kann durchaus sein. Die jeweiligen Starts und Laufzeiten werden
 anhand von Broadcasts ermittelt, die automatisch vom Regler gesendet
@@ -230,7 +229,7 @@ Logfile lädt.
     
 
 
-## 15.18 Was ist der genaue Unterschied zwischen /M1 und /V1? ##
+## 15.18 Was ist der genaue Unterschied zwischen /M1 und /V1?
 
 Mit dem URL-Befehl /M1 aktivierst du den Monitor-Modus, mit /V1 den
 Verbositäts-Modus.
@@ -274,7 +273,7 @@ aufgebauten Nachrichten.
     
 
 
-## 15.19 Kann ich eigenen Code in BSB-LAN einbinden? ##
+## 15.19 Kann ich eigenen Code in BSB-LAN einbinden?
 
 Ja, dafür gibt es die Datei *BSB\_lan\_custom.h*. Hier können eigene
 Programmteile geschrieben werden, die bei jedem Schleifendurchlauf
@@ -288,7 +287,7 @@ digitalen Ausgang angeschlossen ist.
     
 
 
-## 15.20 Kann ich MAX!-Thermostate einbinden? ##
+## 15.20 Kann ich MAX!-Thermostate einbinden?
 
 Ja, das ist möglich. Dazu musst du das entsprechende Definement in der
 Datei *BSB\_lan\_config.h* aktivieren und anpassen. Mittels
@@ -301,7 +300,7 @@ Siehe auch die jeweiligen Punkte in den Kapiteln [5](kap05.md), [8.1](kap08.md#8
     
 
 
-## 15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar? ##
+## 15.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?
 
 Dieses Verhalten wurde des Öfteren bei den günstigen LAN-Shield-Clones
 beobachtet, mit einem originalen Arduino-LAN-Shield scheint dieses
@@ -315,7 +314,7 @@ bisher nicht bekannt.
     
 
 
-## 15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar? ##
+## 15.22 Warum ist der Adapter (ohne Stromausfall) manchmal nicht mehr erreichbar?
 
 Dieses Problem ist bisher nur vereinzelt aufgetreten, eine eindeutige
 Lösung oder Erklärung für dieses Verhalten gibt es bisher noch nicht.
@@ -335,7 +334,7 @@ Des Weiteren kann es bei Clones mit einem W5100-Chip aufgrund fehlerhafter Baute
     
 
 
-## 15.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen? ##
+## 15.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen?
 
 Wenn Befehle, die in der Regel problemlos gesendet werden können,
 plötzlich ‚query failed'-Fehlermeldungen auslösen, könnte dies in der
@@ -357,13 +356,13 @@ dies kommuniziert und im Platinenlayout berücksichtigt werden.
     
 
 
-## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?! ##
+## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!
 
 In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).  
     
 ---
     
-## 15.25 Gibt es eine (W)LAN-Option für den Adapter? ##
+## 15.25 Gibt es eine (W)LAN-Option für den Adapter?
 
 Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
 
@@ -396,12 +395,9 @@ hierauf beantwortet. Bitte bedenke, dass dies für jeden von uns nur ein
 Hobby-Projekt ist.  
     
 ---
-    
-
-     
+         
      
 [Weiter zu Kapitel 16](kap16.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

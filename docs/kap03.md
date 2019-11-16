@@ -2,12 +2,9 @@
 [Zurück zu Kapitel 2](kap02.md)    
     
 ---
-    
+        
 
-    
-
-# 3. Unterstützte Heizungssysteme und Regler #
-
+# 3. Unterstützte Heizungssysteme und Regler
 Prinzipiell unterstützt BSB-LAN von der Firma SIEMENS hergestellte
 (Heizungs-)Regler, die einen BSB und/oder LPB aufweisen. Diese werden
 von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
@@ -20,7 +17,7 @@ Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis
     
 ---
     
-## 3.1 Erfolgreich getestete Heizungssysteme ##
+## 3.1 Erfolgreich getestete Heizungssysteme
 
 Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
 Regler, bei denen von einem erfolgreichen Einsatz des Adapters berichtet
@@ -65,104 +62,103 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
     
 ---
     
-### 3.1.1 Brötje ###
+### 3.1.1 Brötje
+-   Brötje BBK 22E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje BBK 22E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje BBK 22F \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje BBK 22F \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
--   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner / gas fired) {BSB}
+-   Brötje BSK 20 \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje BSK 20 \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner) {BSB}
 
--   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner / gas fired) {BSB}
+-   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrennerd) {BSB}  
 
--   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15] (Gasbrenner + Solar) {BSB}  
 
--   Brötje EcoSolar Kompakt BMR 20/24 [LMS15] (Gasbrenner + Solar / gas fired + solar) {BSB}  
+-   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner) {BSB}
 
--   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner / gas fired) {BSB}
+-   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner) {BSB}  
 
--   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}  
 
--   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner / gas fired) {+ OCI420 via LPB}  
+-   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}
 
--   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner / gas fired) {+ OCI420 via LPB}
+-   Brötje EcoTherm Plus WGB 15-38H \[LMS14\] (Gasbrenner) {BSB}  
 
--   Brötje EcoTherm Plus WGB 15-38H \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje EuroCondens BBS EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje EuroCondens BBS EVO 15H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler) {BSB}
 
--   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler / solar system controller) {BSB}
+-   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler) {BSB}
 
--   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler / zone controller) {BSB}
+-   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner) {BSB}
 
--   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner / oil fired) {BSB}
+-   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner) {BSB}
 
--   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
+-   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner) {BSB}  
 
--   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner / oil fired) {BSB}  
+-   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {BSB}
 
--   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner / oil fired) {BSB}
+-   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner) {BSB}
 
--   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner / oil fired) {BSB}
-
--   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner / oil fired) + EWM
+-   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner) + EWM
     \[RVS75.390\] {BSB}
 
--   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner / oil fired) {BSB}
+-   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner) {BSB}
 
--   Brötje SensoTherm BLW Split B \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+-   Brötje SensoTherm BLW Split B \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
+-   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe) {BSB}
 
--   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe / heat pump) {BSB}
+-   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe) {BSB}
 
--   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
+-   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe) {BSB}
 
--   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe / heat pump) {BSB}  
+-   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe) {BSB}  
 
--   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WBS 14D \[LMU74\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
 
--   Brötje WBS 14F \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WBS 14F \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WBS 22E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WBS 22E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WGB 15E \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB 15E \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WGB 20C \[LMU74\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB 20C \[LMU74\] (Gasbrenner) {BSB}  
 
--   Brötje WGB 20E \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB 20E \[LMS14\] (Gasbrenner) {BSB}  
 
--   Brötje WGB 28E \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB 28E \[LMS14\] (Gasbrenner) {BSB}  
 
--   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
 
--   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner) {BSB}
 
--   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WGB-U 15H \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Brötje WGB-U 15H \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WMC \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
 
 ***ACHTUNG:***  
 ***Die neuen Modellreihen Brötje WLS/WLC und
@@ -171,104 +167,101 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ---
     
-### 3.1.2 Elco ###
-
--   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}  
+### 3.1.2 Elco
+-   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe) {BSB}  
    
--   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
+-   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe) {BSB}
 
--   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe / heat pump) {BSB}
+-   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe) {BSB}
 
--   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe / heat pump) {BSB}
+-   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe) {BSB}
 
--   Elco Straton 17 \[RVS63\] (Ölbrenner / oil fired) {BSB}  
+-   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
 
--   Elco Straton 21 \[RVS63.283\] (Ölbrenner / oil fired) {BSB}
+-   Elco Straton 21 \[RVS63.283\] (Ölbrenner) {BSB}
 
--   Elco Straton S \[RVS63\] (Ölbrenner / oil fired) {BSB}  
+-   Elco Straton S \[RVS63\] (Ölbrenner) {BSB}  
 
--   Elco Thision 25S \[RVS63\] \] (Gasbrenner / gas fired) {BSB}  
+-   Elco Thision 25S \[RVS63\] \] (Gasbrenner) {BSB}  
 
--   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner / gas fired) {BSB}
+-   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner) {BSB}
 
--   Elco Thision S Plus 19 \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+-   Elco Thision S Plus 19 \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Elco Thision S Plus 24 Compact \[?\] {BSB}  
 
--   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner / gas fired) {BSB}
+-   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner) {BSB}
 
--   Elco Thision S17.1 \[LMU74\] (Gasbrenner / gas fired) {BSB}
+-   Elco Thision S17.1 \[LMU74\] (Gasbrenner) {BSB}
 
--   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner / gas fired) {BSB}
+-   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner) {BSB}
 
--   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner / gas fired) + MM \[AVS75.390\] {BSB}
+-   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\] {BSB}
     
 ---
     
-### 3.1.3 Weitere Hersteller ###
+### 3.1.3 Weitere Hersteller
+-   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+-   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+-   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}  
+-   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe / heat pump) {BSB}  
+-   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe) {BSB}
 
--   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
+-   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner) {BSB}
 
--   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner / gas fired) {BSB}
+-   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner) {BSB}  
 
--   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner / gas fired) {BSB}  
+-   Bösch (unbekanntes Modell / unknown model) \[RVS63\] (Wärmepumpe] {BSB}  
 
--   Bösch (unbekanntes Modell / unknown model) \[RVS63\] (Wärmepumpe / heat pump] {BSB}  
+-   CTA Optiheat 1-5es \[RVS61\] (Wäärmepumpe) {BSB}  
 
--   CTA Optiheat 1-5es \[RVS61\] (Wäärmepumpe / heat pump) {BSB}  
-
--   CTC 380 IC \[RVS43.143\] (Ölbrenner / oil fired) {BSB}  
+-   CTC 380 IC \[RVS43.143\] (Ölbrenner) {BSB}  
 
 -   Deville 9942 \[RVA53\] (?) (PPS)  
 
--   Deville 9981 \[RVA53.140\] (Ölbrenner / oil fired) {PPS}
+-   Deville 9981 \[RVA53.140\] (Ölbrenner) {PPS}
 
--   Fröling Rendagas Plus \[RVA63.244\] (Gasbrenner / gas fired) {LPB}
+-   Fröling Rendagas Plus \[RVA63.244\] (Gasbrenner) {LPB}
 
--   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe / heat pump) {BSB}  
+-   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
--   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe / heat pump) {BSB}  
+-   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
 
--   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe / heat pump) {BSB}  
+-   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
--   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe / heat pump) {BSB}
+-   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
 
--   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe / heat pump) \[+ RVA46\] {PPS/LPB}  
+-   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
 
--   MHG Procon E25 \[LMS14\] (Gasbrenner / gas fired) {BSB}  
+-   MHG Procon E25 \[LMS14\] (Gasbrenner) {BSB}  
 
--   MHG Procon E 25 HS \[LMS14\] (Gasbrenner / gas fired) {BSB}  
-
--   Olymp WHS-500 \[RVS61\] (Wärmepumpe / heat pump) {BSB}  
+-   MHG Procon E 25 HS \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Olymp SHS 730 \[RVS63\] (Ölbrenner / oil fired) {BSB}  
 
--   Sieger TG11 \[RVP54.100\] (Ölbrenner / oil fired) {PPS}  
+-   Olymp WHS 500 \[RVS61\] (Wärmepumpe) {BSB}  
+
+-   Sieger TG11 \[RVP54.100\] (Ölbrenner) {PPS}  
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
--   Thermital TBox Clima TOP \[RVS63\] (?) {BSB/LPB}  
+-   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
 
--   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner / oil fired) {LPB}  
+-   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner) {LPB}  
     
--   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner / oil fired) {LPB}  
+-   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
     
--   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner / oil fired) {LPB}  
+-   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
     
--   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner / oil fired) {LPB}  
+-   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
     
 ---
     
-## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler ##
-
+## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler
 Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
 Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
 rudimentären Unterschiede geben. Auf die unterschiedliche
@@ -312,13 +305,11 @@ Danke!***
     
 ---
     
-### 3.2.1 LMx-Regler ###
-
+### 3.2.1 LMx-Regler
 Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
 sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
    
-#### 3.2.1.1 LMU-Regler ####  
-  
+#### 3.2.1.1 LMU-Regler  
 Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann i.d.R. mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
    
@@ -342,8 +333,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
    
    
-#### 3.2.1.2 LMS-Regler ####   
-   
+#### 3.2.1.2 LMS-Regler   
 Regler der Serie *LMS* scheinen die Nachfolger der LMU-Serie und somit die
 aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
    
@@ -376,8 +366,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
     
 ---
     
-### 3.2.2 RVx-Regler ###
-
+### 3.2.2 RVx-Regler
 Im Folgenden werden die Regler des Typs RVA, RVP und RVS (aktueller
 Reglertyp) aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
 Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
@@ -385,8 +374,7 @@ Solarsystemregler) zum Einsatz zu kommen.
     
 ---
     
-#### 3.2.2.1 RVA- und RVP-Regler ####
-
+#### 3.2.2.1 RVA- und RVP-Regler
 Regler des Typs *RVA* gehören anscheinend zur vorherigen Reglergeneration
 und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
 (keinen BSB).  
@@ -412,8 +400,7 @@ eingeschränktem Umfang möglich.
     
 ---
     
-#### 3.2.2.2 RVS-Regler ####
-
+#### 3.2.2.2 RVS-Regler
 Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
@@ -453,8 +440,7 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
     
 ---
     
-## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje ##
-
+## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje
 Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
 genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
 haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
@@ -482,8 +468,7 @@ Raumgerät „Brötje IDA" angeschlossen werden.
 
 ---  
   
-## 3.4 Hinweis: Spezialfall LMU54/LMU64-Regler ##  
-  
+## 3.4 Hinweis: Spezialfall LMU54/LMU64-Regler  
 Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
 Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (OCI420) einen LPB nachrüsten. An diesen wiederum ist der Adapter anschließbar.  
   
@@ -497,8 +482,7 @@ Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.
   
 ---  
   
-## 3.5 Hinweis: Spezialfall Weishaupt-Geräte ##  
-  
+## 3.5 Hinweis: Spezialfall Weishaupt-Geräte  
 Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
 An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
 
@@ -506,8 +490,7 @@ Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinhei
   
 ---  
   
-## 3.6 Konventionelle Raumgeräte für die aufgeführten Reglertypen ##  
-  
+## 3.6 Konventionelle Raumgeräte für die aufgeführten Reglertypen  
 Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
   
 Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler, die auch von BSB-LAN voll unterstützt werden (ISR).  
@@ -516,8 +499,7 @@ Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und wei
   
 ---  
   
-### 3.6.1 QAA55 / QAA58 ###  
-  
+### 3.6.1 QAA55 / QAA58  
 Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit zusätzlichen Bedienoptionen anzusehen.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">
@@ -529,8 +511,7 @@ Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempf
   
 ---  
   
-### 3.6.2 QAA75 / QAA78 ###  
-  
+### 3.6.2 QAA75 / QAA78  
 Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Taste ausgelöst werden.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">
@@ -543,8 +524,7 @@ Das QAA78 ist die Funkvariante des QAA75. Es ist batteriebetrieben, der Funkempf
   
 ---  
   
-### 3.6.3 Brötje IDA ###  
-  
+### 3.6.3 Brötje IDA  
 Die „Brötje IDA“ ist eine Raumeinheit, die neben einem integrierten Temperaturfühler und einigen Funktionen zusätzlich einen gewissen Funktionsumfang für die Steuerung mit einem Rechner und/oder Smartphone bietet. Eine Präsenztaste ist nicht vorhanden.  
   
 IDA wird ins heimische WLAN integriert und benötigt Internetzugriff, falls man die Steuerung per App nutzen möchte. Bei einer rein lokalen Nutzung des Raumgerätes (ohne Fernzugriff via App) ist kein WLAN-Zugang erforderlich. Über den WLAN-Zugang erfolgt im Übrigen auch die Aktualisierung der IDA-Firmware.  
@@ -568,22 +548,19 @@ Die Funktion der Präsenztaste ist via BSB-LAN i.d.R. nach wie vor gegeben.
   
 ---  
   
-### 3.6.4 QAA53 / QAA73 ###  
-  
+### 3.6.4 QAA53 / QAA73  
 Die Raumgeräte QAA 53 und QAA 73 unterscheiden sich ebenfalls im Funktionsumfang. Zum Einsatz kommen sie bei den OpenTherm-basierten Reglern des Typs LMU6x.   
 Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
   
 ---  
   
-### 3.6.5 QAA50 / QAA70 ###  
-  
+### 3.6.5 QAA50 / QAA70  
 Auch beim QAA50 und QAA70 besteht prinzipiell der Unterschied im Funktionsumfang. Diese Raumgeräte kommen bei den alten Reglergenrationen zum Einsatz, die lediglich eine PPS-Schnittstelle aufweisen. Der Einsatz von BSB-LAN parallel zu einem vorhandenen Raumgerät ist in diesem Fall nur lesend möglich, Werte und Einstellungen des Heizungsreglers können also nicht via BSB-LAN verändert werden.  
 Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
   
 ---  
   
-## 3.7 Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur ##  
-  
+## 3.7 Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur  
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
 Sein Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
   
@@ -611,8 +588,7 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
   
 ---  
   
-## 3.8 LPB nachrüsten mittels OCI420 ClipIn-Modul ##  
-  
+## 3.8 LPB nachrüsten mittels OCI420 ClipIn-Modul  
 Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
   
 Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anleitungen zu finden sind, obwohl sie für einen erfolgreichen Betrieb entscheidend sind. Dies betrifft vor allem die Einstellungen, die für die LPB-Spannungsversorgung vorzunehmen sind. Des Weiteren ist die LPB-Geräteadresse 1 mit Segmentadresse 0 einzustellen und die Einstellung als Uhrzeit-Master vorzunehmen.  
@@ -648,5 +624,4 @@ Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die gr�
 [Weiter zu Kapitel 4](kap04.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 

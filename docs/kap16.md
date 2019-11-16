@@ -5,7 +5,7 @@
     
 
     
-# 16. Offene Punkte #
+# 16. Offene Punkte
 
 -   Mehr Befehle (Command IDs) hinzufügen.  
     Nur die bekannten Befehle aus der genannten FHEM-Forendiskussion und

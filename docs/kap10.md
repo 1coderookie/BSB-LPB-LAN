@@ -6,7 +6,7 @@
 
     
 
-# 10. Auslesen neuer Parameter-Telegramme #
+# 10. Auslesen neuer Parameter-Telegramme
 
 In diesem Kapitel wird die Vorgehensweise des Auslesens neuer
 Parameter-Telegramme beschrieben. Es ist dabei in eine ausführliche
@@ -51,7 +51,7 @@ Vielen Dank für deine Unterstützung!
     
 ---
     
-## 10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger) ##
+## 10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger)
 
 ***Achtung:***  
 *Bitte beachte auch die einleitenden Hinweise am Anfang des Kapitels!*
@@ -164,7 +164,7 @@ Auslesen somit beendet hast, kannst du den seriellen Monitor schließen.
 ---
     
 
-## 10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer) ##
+## 10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer)
 
 ***Achtung:***  
 *Bitte beachte auch die einleitenden Hinweise am Anfang des Kapitels!*
@@ -191,7 +191,7 @@ Fahre so für jeden weiteren Parameter fort.
 ---
     
 
-## 10.3 Implementieren neuer Command IDs (für Programmierer) ##
+## 10.3 Implementieren neuer Command IDs (für Programmierer)
 
 Das folgende Procedere sei nur Anwendern empfohlen, die
 Programmierkenntnisse haben und die neuen Command IDs eigenständig in
@@ -296,7 +296,7 @@ Letzte zwei Bytes: CRC-Checksumme
 ---
     
     
-## 10.4 Beispiel für eine ‚Meldedatei' ##
+## 10.4 Beispiel für eine ‚Meldedatei'
 
 Hier ein Beispiel für eine erstellte ‚Meldedatei', die alle notwendigen
 Informationen für eine weitere Verarbeitung und Implementierung der
@@ -349,5 +349,4 @@ DC 80 06 0E 07 25 3D 08 A3 00 0F 00 0D 90
 [Weiter zu Kapitel 11](kap11.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-###### *&copy; Ulf Dieckmann*
 
