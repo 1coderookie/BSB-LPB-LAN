@@ -21,8 +21,8 @@
 |  /JK=\<x\>        	| JSON: Interroga una categoria specifica \<x\>
 |  /JK=ALL          	| JSON: Interroga tutte le categorie definite
 |  /JQ=\<x\>,\<y\>,\<z\>      | JSON: Interroga le categorie specifiche \<x\>, \<y\> e \<z\>
-|  /JQ                  | *→ con struttura JSON (vedi [manuale](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#824-abrufen-und-steuern-mittels-json)) tramite richiesta HTTP-POST:* Interroga i parametri
-|  /JS                  |  *→ con struttura JSON (vedi [manuale](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#824-abrufen-und-steuern-mittels-json)) tramite richiesta HTTP-POST:* Imposta i parametri
+|  /JQ                  | *→ con struttura JSON (vedi [manuale](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) tramite richiesta HTTP-POST:* Interroga i parametri
+|  /JS                  |  *→ con struttura JSON (vedi [manuale](https://1coderookie.github.io/BSB-LPB-LAN_EN/chap08.html#824-retrieving-and-controlling-via-json)) tramite richiesta HTTP-POST:* Imposta i parametri
 |  /K                   | Elenca tutte le categories di parametri
 |  /K\<x\>              | Interroga tutti i parametri e i valori della categoria \<x\>
 |  /L=0,0               | Disattiva temporaneamente il logging su microSD-card 
@@ -42,6 +42,6 @@
 |  /X                   | Interroga i termoatati MAX! opzionali
 
 
-[Istruzioni in PDF](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/commandref/Cheatsheet_URL-commands_IT.pdf)
+[Istruzioni in PDF](https://github.com/1coderookie/BSB-LPB-LAN_EN/raw/master/Cheatsheet_URL-commands_IT.pdf)
 
 
