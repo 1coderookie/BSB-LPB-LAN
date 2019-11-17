@@ -36,7 +36,7 @@
 |  /P\<x\>,\<s\>,\<d\>  | Imposta il tipo di protocollo del bus \<x\>, il proprio indirizzo \<s\>, l'indirizzo di destinazione \<d\> (temporaneamente)
 |  /Q                   | Interroga parametri specifici del controller non censiti
 |  /R\<x\>              | Ripristina il valore del parametro \<x\> 
-|  /S\<x\>=\<y\>        | Imposta il valore <y> per il parametro \<x\>
+|  /S\<x\>=\<y\>        | Imposta il valore \<y\> per il parametro \<x\>
 |  /T                   | Interroga i sensori opzionali (DS18B20/DHT22)
 |  /V\<x\>              | Attiva (\<x\> = 1) oppure disattiva (\<x\> = 0) la modalità verbose di output
 |  /X                   | Interroga i termoatati MAX! opzionali
