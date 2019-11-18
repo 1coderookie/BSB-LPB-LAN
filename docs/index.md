@@ -15,18 +15,18 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
   
 ---  
     
-### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md). ###  
+#### Hier geht es direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md).   
     
-### Zum Ausdrucken besser geeignet: [Die PDF-Version des Handbuchs](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf). ###  
+#### Zum Ausdrucken besser geeignet: [Die PDF-Version des Handbuchs](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf).  
   
-### Druckerfreundliche Übersicht aller URL-Befehle: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf). ###  
+#### Druckerfreundliche Übersicht aller URL-Befehle: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf).  
 
 ---  
 
-### ACHTUNG:  
-### Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! 
-### Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko!  
-### Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden! ###   
+***ACHTUNG:  
+Es gibt KEINE GARANTIE oder Gewährleistung jeglicher Art, dass dieser Adapter dein Heizungssystem NICHT beschädigt! 
+Jegliche Umsetzung der hier beschriebenen Schritte, jeder Nachbau des Adapters sowie jede Verwendung der beschriebenen Hard- und Software erfolgt auf eigene Verantwortung und eigenes Risiko!  
+Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art haftbar gemacht werden!***   
 
 ---
   
