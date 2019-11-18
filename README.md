@@ -2,7 +2,7 @@
 
 Hier findet sich das umfassende Handbuch zum Projekt "BSB-LPB-LAN" als [PDF-Dokument zum Herunterladen](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf) und Ausdrucken.  
 
-***Die online-Version des Handbuchs ist [hier](https://1coderookie.github.io/BSB-LPB-LAN) verfügbar.***
+***Die GitHub Pages dieses Handbuchs sind [hier](https://1coderookie.github.io/BSB-LPB-LAN) verfügbar.***
    
 ---  
   
