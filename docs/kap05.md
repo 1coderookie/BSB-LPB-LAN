@@ -267,18 +267,18 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern
     der Heizungssteuerung per Adapter ist standardmäßig nicht möglich.  
     Das betreffende Definement lautet:  
-    `#define DEFAULT_FLAG FL_RONLY;`
+    `#define DEFAULT_FLAG FL_RONLY`
 
     Wer den Status ändern will, um *generell* Werte und Einstellungen
     des Reglers per Adapter verändern zu können, muss das Flag auf 0
     setzen:  
-    `#define DEFAULT_FLAG 0;`
+    `#define DEFAULT_FLAG 0`
 
     Ist diese Funktion nur bei *ausgewählten* Parametern (z.B. 10000
     oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
     das genannte Flag generell auf `FL_RONLY` gesetzt sein und dann in
     der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
-    Parameters durch 0 (Null) ersetzt werden.  
+    Parameters durch 0 (Null) ersetzt werden. Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen! 
     
     Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
     gemacht:  
