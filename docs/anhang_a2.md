@@ -39,7 +39,7 @@ Für den Einsatz des Adapters an einem ***Arduino***:
 je 1x Widerstand 560kΩ (→ R1), 1,5kΩ (→ R2), 300Ω (→ R3), 4,7kΩ (→ R4)  
 2x Optokoppler 4N25 (→ U1, U2) (plus optional 2x Sockel)
     
-Für den Einsatz des Adapters an einem ***Raspberry*** *zusätzlich*:  
+**Zusätzlich** für den Einsatz des Adapters an einem ***Raspberry Pi 2***:  
 1x Widerstand 4,7kΩ (→ R11)  
 2x Widerstand 10kΩ (→ R12, R13)  
 1x Transistor BC557A (→ Q11)  
@@ -62,7 +62,7 @@ Anschlussklemmen, Pinheader etc. für die Leitungen.
 ***Arduino*** *zwingend die Verbindung SJ1 herzustellen!*  
 *Die Bestückung von R11-13 sowie Q11&12 ist nicht nötig!*
 
-*Für den Einsatz an einem* ***Raspberry*** *sind jedoch SJ2 und SJ3 zu
+*Für den Einsatz an einem* ***Raspberry Pi 2*** *sind jedoch SJ2 und SJ3 zu
 setzen!*  
 *Ebenso sind in diesem Verwendungsfall die Komponenten R11-13 und Q11&12
 zwingend erforderlich!*  
