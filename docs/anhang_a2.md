@@ -71,20 +71,19 @@ Die folgenden Hinweise ersetzen kein grundsätzliches
 Elektronik-Vorwissen, könnten aber vielleicht doch dem einen oder
 anderen Elektronik-Anfänger eine kleine Hilfe sein.
 
-Generell ist es u.U. hilfreich, die Bauteile erst einmal zu
-positionieren und erst am Schluss zu verlöten, so dass ein Vertauschen
-der Komponenten verhindert wird.  
+Generell ist es hilfreich, die Bauteile erst einmal zu
+positionieren und die 'Beine' der Komponenten leicht umzubiegen, so dass sie nicht herausfallen können. Wenn du die Platine fertig bestückt hast, prüfe den Aufbau erneut. Insbesondere die korrekte Ausrichtung von Bauteilen wie Dioden, Transistoren und der ICs solltest du nochmals überprüfen. Sieht soweit alles gut aus, kannst du die Platine umdrehen und mit dem Verlöten beginnen. Benutze dabei nicht zu viel Lötzinn für die einzelnen Lötstellen und achte darauf, dass du nicht versehentlich Kurzschlüsse produzierst, indem du löstellen ungewollt mit einander verbindest.  
 Ein vorheriger Breadboard-Testaufbau ist natürlich eine Option, aber
 aufgrund nicht auszuschließender Problemquellen (Nutzung einer falschen
 Steckreihe, eventuelle Wackelkontakte o.ä.) nicht unbedingt
 empfehlenswert.
 
 Bitte achte darauf, dass die Bauteile beim Löten nicht zu heiß werden,
-da sie u.U. Schaden nehmen können. Für den Einsatz der Optokoppler-ICs
+da sie u. U. Schaden nehmen können. Für den Einsatz der Optokoppler-ICs
 U1 und U2 bietet es sich daher an, einen entsprechenden IC-Sockel zu
 verwenden und die Optokoppler erst nach Fertigstellung der Lötarbeiten
 in die Sockel zu stecken. Achte dabei auf die korrekte Ausrichtung der
-Sockel/Optokoppler; ebenso ist auf die korrekte Ausrichtung von bspw.
+Sockel und Optokoppler; ebenso ist auf die korrekte Ausrichtung von bspw.
 Dioden und Transistoren zu achten!
 
 Vor der Inbetriebnahme des Adapters ist es ratsam, die komplette
