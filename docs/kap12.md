@@ -160,15 +160,21 @@ Installation für diverse Temperaturmessungen realisiert werden kann.
    
 Die Ausgabe der Werte im Webinterface mittels URL-Befehl /T ist wie folgt strukturiert (exemplarisch mit zwei Sensoren):  
 ```
-temp[0] <16_stellige_ID>: 21.75 °C
-temp[1] <16_stellige_ID>: 21.63 °C 
+1w_temp[0] <16_stellige_ID>: 21.75 °C
+1w_temp[1] <16_stellige_ID>: 21.63 °C 
 ```
 Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exemplarisch mit zwei Sensoren):  
 ```
-temp[0]: 21.75
-temp[1]: 21.62
+1w_temp[0]: 21.75
+1w_temp[1]: 21.63
 
 ```
+Im Logfile der SD-Karte werden die Sensoren anhand der virtuellen Parameter 20020+ aufgeführt, unter denen sie auch in der Datei *BSB_lan_config.h* als zu loggende Parameter aufzuführen sind:  
+```
+20020;Temperature 0;11.81
+20021;Temperature 1;22.56
+```  
+   
    
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
