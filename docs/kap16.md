@@ -13,7 +13,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 
 3. Downloade die aktuelle Version von [BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
-4. Entpacke die heruntergeladene Datei "BSB-lan-master.zip" und benenne den Ordner in "BSB_lan" um.  
+4. Entpacke die heruntergeladene Datei "BSB_lan-master.zip" und benenne den Ordner in "BSB_lan" um.  
 
 5. Bennene die Datei "BSB_lan_config.h.default" in "BSB_lan_config.h" um.  
 
