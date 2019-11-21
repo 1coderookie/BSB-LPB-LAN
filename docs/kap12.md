@@ -167,7 +167,6 @@ Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exempl
 ```
 1w_temp[0]: 21.75
 1w_temp[1]: 21.63
-
 ```
 Im Logfile der SD-Karte werden die Sensoren anhand der virtuellen Parameter 20020+ aufgeführt, unter denen sie auch in der Datei *BSB_lan_config.h* als zu loggende Parameter aufzuführen sind:  
 ```
