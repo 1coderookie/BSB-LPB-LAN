@@ -128,6 +128,18 @@ Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf ei
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AM2302.jpg">  
    
+Die Ausgabe der Werte im Webinterface mittels URL-Befehl /T ist wie folgt strukturiert (exemplarisch mit einem Sensor):  
+```
+temp[0]: 17.80 °C
+hum[0]: 55.90 %
+abs_hum[0]: 8.47 g/m3
+```
+Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exemplarisch mit einem Sensor):  
+```
+DHT22 sensors: 1
+OK,	temp[0]: 18.80, hum[0]: 53.90
+```
+   
 *Tipp:*  
 *Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele für die Anwendung von DHT22-Sensoren.*
         
@@ -145,6 +157,18 @@ gekapselten Ausführungen mit verschiedenen Kabellängen erhältlich.
 Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteuerung
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
+   
+Die Ausgabe der Werte im Webinterface mittels URL-Befehl /T ist wie folgt strukturiert (exemplarisch mit zwei Sensoren):  
+```
+temp[0] <16_stellige_ID>: 21.75 °C
+temp[1] <16_stellige_ID>: 21.63 °C 
+```
+Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exemplarisch mit zwei Sensoren):  
+```
+temp[0]: 21.75
+temp[1]: 21.62
+
+```
    
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
