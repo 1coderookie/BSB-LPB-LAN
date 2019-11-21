@@ -111,18 +111,18 @@ eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse auf
 Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
 Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
    
-Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Oberseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden. Die Belegung der Pins ist normalerweise wie folgt:  
+Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Vorderseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden. Die Belegung der Pins ist normalerweise wie folgt:  
 Pin 1 = VCC (+)  
 Pin 2 = DATA  
 Pin 3 = i.d.R. nicht belegt  
 Pin 4 = GND (-)  
 
-Bei Anschluss der Sensoren muss ein PullUp-Widerstand zwischen VCC (Pin 1) und DATA (Pin 2) in der Größe von etwa 4,7kΩ bis 10kΩ hinzugefügt werden. Meist werden 10kΩ empfohlen, die richtige Größe muss im Zweifelsfall ermittelt werden.  
+Bei Anschluss des Sensors sollte ein PullUp-Widerstand zwischen VCC (Pin 1) und DATA (Pin 2) in der Größe von etwa 4,7kΩ bis 10kΩ hinzugefügt werden. Meist werden 10kΩ empfohlen, die richtige Größe muss im Zweifelsfall ermittelt werden.  
    
 ***Bitte beachte:***    
 *Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-BSB\_lan\_config.h definiert werden.*  
+BSB\_lan\_config.h definiert werden!*  
         
 Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
    
