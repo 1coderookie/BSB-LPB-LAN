@@ -139,7 +139,7 @@
 [15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!](kap15.md#1524-ich-finde-keinen-lpb--oder-bsb-anschluss-nur-l-bus-und-r-bus)  
 [15.25 Gibt es eine WLAN-Option für den Adapter?](kap15.md#1525-gibt-es-eine-wlan-option-für-den-adapter)  
 [15.26 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1526-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
-[16. Offene Punkte](kap16.md)  
+[16. Schnellinstallationsanleitung](kap16.md)  
 [17. Weiterführende Informationen und Quellen](kap17.md)  
 [Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md)  
 [Anhang A2: Anmerkungen zum Schaltplan](anhang_a2.md)  
