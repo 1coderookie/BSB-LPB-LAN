@@ -522,7 +522,7 @@ Für die Verwendung des Adapters an einem RPi2 muss außerdem eine gänzlich and
 Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
 kontaktiere bitte direkt den Autor von bsb_gateway. Dieses Handbuch bezieht sich nur auf BSB-LAN!  
 
-Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
+Für die Nutzung des Adapters mit einem RPi2 an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
