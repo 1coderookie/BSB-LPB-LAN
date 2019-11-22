@@ -517,10 +517,13 @@ Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein 
 ## 12.9 Raspberry Pi 2
 Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
 werden. Dafür ist es jedoch nötig, den Adapter u.a. um bestimmte Komponenten zu erweitern und andere Pinheader zu nutzen. Für weitere Informationen diesbezüglich beachte bitte den [Schaltplan](anhang_a1.md) und die [Anmerkungen zum Schaltplan](anhang_a2.md).  
+   
+**ABER:**  
 Für die Verwendung des Adapters an einem RPi2 muss außerdem eine gänzlich andere Software genutzt werden:
 ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
 Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
-kontaktiere bitte direkt den Autor von bsb_gateway. Dieses Handbuch bezieht sich nur auf BSB-LAN!  
+kontaktiere bitte direkt den Autor von bsb_gateway.  
+**Dieses Handbuch bezieht sich nur auf BSB-LAN!**  
 
 Für die Nutzung des Adapters mit einem RPi2 an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
