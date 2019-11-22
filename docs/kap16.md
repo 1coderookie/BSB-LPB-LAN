@@ -11,7 +11,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 
 2. Stecke das LAN-Shield und den Adapter auf den Arduino Mega 2560 und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer.  
 
-3. Downloade die aktuelle Version von [BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
+3. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
 4. Entpacke die heruntergeladene Datei "bsb_lan-master.zip" und benenne den Ordner in "BSB_lan" um.  
 
