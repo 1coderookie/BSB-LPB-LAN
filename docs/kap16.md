@@ -20,7 +20,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_lan.ino" im BSB_lan-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Mega 2560 automatisch samt verwendetem COM-Port erkennen.  
 *Für die Schritte 1-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
 
-7. Passe die Einstellungen in der Datei "BSB_lan_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
+7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_lan_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
 *Beachte hierfür das [Kapitel 5](kap05.md)!*  
 Wenn alle Einstellungen angepasst wurden, flashe den Arduino mit der BSB-LAN-Software.  
 
