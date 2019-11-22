@@ -512,6 +512,24 @@ Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen 
 Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
 Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
    
+---  
+   
+## 12.9 Raspberry Pi 2
+Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
+werden. Dafür ist es jedoch nötig, den Adapter u.a. um bestimmte Komponenten zu erweitern und andere Pinheader zu nutzen. Für weitere Informationen diesbezüglich beachte bitte den [Schaltplan](anhang_a1.md) und die [Anmerkungen zum Schaltplan](anhang_a2.md).  
+Für die Verwendung des Adapters an einem RPi2 muss außerdem eine gänzlich andere Software genutzt werden:
+["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
+Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
+kontaktiere bitte direkt den Autor von bsb_gateway. Dieses Handbuch bezieht sich nur auf BSB-LAN!  
+
+Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
+das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
+    
+*Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.*  
+         
+   
 ---
          
 [Weiter zu Kapitel 13](kap13.md)      
