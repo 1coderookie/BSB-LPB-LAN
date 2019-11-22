@@ -12,8 +12,7 @@
 -   Schließe den Arduino (samt Ethernet-Shield und Adapter) via USB an
     deinem PC an.
 
--   Downloade die aktuelle BSB-LAN-Version von
-    [https://github.com/fredlcore/bsb\_lan](https://github.com/fredlcore/bsb_lan)
+-   Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/bsb_lan/archive/master.zip)
     und entpacke die heruntergeladene Datei *bsb\_lan-master.zip*.
 
 -   Benenne den nun erstellten Ordner *bsb\_lan-master* in
