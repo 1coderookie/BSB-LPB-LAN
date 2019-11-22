@@ -15,7 +15,7 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Mega 2560
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/mega_clone.jpg">  
    
-*Ein kompatibler Clone des Arduino Mega 2560 (rev3).*  
+*Ein kompatibler Clone des Arduino Mega 2560 (Rev3).*  
 
    
 ***Hinweise:***  
