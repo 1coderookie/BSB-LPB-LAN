@@ -18,7 +18,7 @@
 -   Benenne den nun erstellten Ordner *bsb\_lan-master* in
     ***BSB\_lan*** um!
 
--   Benenne die Datei *BSB\_lan\_config.h.default* in
+-   Wechsle in den Ordner "BSB_lan" und benenne die Datei *BSB\_lan\_config.h.default* in
     ***BSB\_lan\_config.h*** um!  
     
 -   Wenn du eigenen Code implementieren willst, benenne die Datei 
