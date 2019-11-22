@@ -18,7 +18,8 @@ SmartHome-Systeme ist durch die Verwendung von HTTPMOD und JSON ebenfalls mögli
 
 Die Software ist auf einem [Arduino Mega2560](kap12.md#121-der-arduino-mega-2560) 
 samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
-erfahrungsgemäß ‚out of the box'. Aufgrund des geringeren Speichers ist 
+erfahrungsgemäß ‚out of the box'. Das ist (neben dem Adapter selbst natürlich) bereits alles was du brauchst!  
+Aufgrund des geringeren Speichers ist 
 die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.  
 
 Die hier vorgestellte Lösung stellt somit eine Alternative zu den bisherigen
@@ -65,25 +66,6 @@ Holst (bsb \[ät\] code-it.de) kontaktieren.
     
 *Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.*  
     
-    
-***Hinweis:***  
-Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
-werden, jedoch nur unter Verwendung einer gänzlich anderen Software:
-[bsb_gateway](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
-Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
-kontaktiere bitte direkt den Autor von bsb_gateway.
-
-Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
-das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
-    
-*Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.*  
-    
-     
-***Alle Informationen in diesem Handbuch beziehen sich nur auf die
-Arduino-Version!***    
-        
 ---      
      
 [Weiter zu Kapitel 2](kap02.md)      
