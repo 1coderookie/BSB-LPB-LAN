@@ -10,7 +10,7 @@ Prinzipiell unterstützt BSB-LAN von der Firma SIEMENS hergestellte
 von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
    
 *Klarstellung:*  
-*Wenn immer ich von "Regler" spreche, dann meine ich die sog. "BMU", die 'boiler management unit'. Das ist das Gerät im Inneren des Gehäuses des Wärmeerzeugers, das die Funktion des Wärmeerzeugers steuert und an dem die Sensoren, Pumpen, die Bedieneinheit und die Raumgeräte angeschlossen sind.  
+*Wenn immer ich von "Regler" spreche, dann meine ich die sog. "BMU" (boiler management unit). Das ist das Gerät im Inneren des Gehäuses des Wärmeerzeugers, das die Funktion des Wärmeerzeugers steuert und an dem die Sensoren, Pumpen, die Bedieneinheit und die Raumgeräte angeschlossen sind.  
 Die 'Bedieneinheit' und die Raumgeräte hingegen sind die Komponenten, die außerhalb des Gehäuses angebracht sind und mit einem Display und Knöpfen zur Bedienung des Wärmeerzeugers ausgesattet sind.*  
    
 ***ACHTUNG:  
