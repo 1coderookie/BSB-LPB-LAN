@@ -330,6 +330,32 @@ ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
 große Fenster in Südlage etc.) befindet.*  
     
+***Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur***    
+*FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
+Sein Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
+  
+Im Folgenden ein Auszug aus seinem Beitrag:  
+  
+dTV = dTRw * (1 + s)
+wobei:
+dTV = resultierende Vorlauftemperaturabweichung
+dTRw = Raumsollwertkorrektur
+s = Heizkurvensteilheit (Parameter 720)  
+  
+Die Raumsollwertkorrektur dTRw berechnet sich wie folgt:
+dTRw = dTR * Raumeinfluss (Parameter 750) / 10
+wobei:
+dTR = Differenz Raumtemperatur-Ist - Raumtemperatur-Soll  
+  
+Zusammengeführt lautet die Formel dann:
+dTV = dTR * Raumeinfluss / 10 * (1 + s)  
+  
+Bei einer Heizkurve von 1,5 und einer Raumtemperaturabweichung Ist/Soll von 2 Grad und einem Raumtemperatureinfluss von 25% bedeutet das:  
+  
+dTV = 2 * 25 / 10 * (1 + 1,5) = 12,5 °C Vorlauftemperaturveränderung
+  
+Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon bei 25 Grad höherer VL-Temperatur, was vermutlich mehr ist, als das, was man bei Schnellaufheizung (Parameter 770) hinterlegen würde. Die Therme schaltet darüber hinaus bei Erreichen der Raumtemperaturbegrenzung (Parameter 760) auch bei einem RT-Einfluss von nur 1% ab. Für mich hat das die Konsequenz, dass ich den Einfluss auf max. 20% ansetzen werde. Vielleicht reicht sogar 1%, wenn die Heizkurve als solches gut eingestellt ist und der Einfluss dann nur dafür verwendet wird, bei Erreichen der RT-Begrenzung abzuschalten.  
+   
 ---
     
 ### 8.2.2 Präsenztaste simulieren
