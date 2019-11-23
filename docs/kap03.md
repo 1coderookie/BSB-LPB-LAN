@@ -506,7 +506,8 @@ Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und wei
 ### 3.6.1 QAA55 / QAA58  
 Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit einigen wenigen zusätzlichen Bedienoptionen anzusehen.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">  
+   
 *Das QAA 55 Raumgerät.*
    
 Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
@@ -521,7 +522,8 @@ Das QAA75 ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten T
 An dieser Stelle muss erwähnt werden, dass es offenbar zwei verschiedene Ausführungen des QAA75 gibt: Das QAA75.61x und das optisch nicht identische QAA75.91x. Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoch nur bei Geräten des Herstellers 'Baxi' zum Einsatz zu kommen.  
 <!--- Die folgenden Fotos zeigen die optischen Unterschiede. -->   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">  
+   
 *Das QAA75.61x Raumgerät.*  
    
 Das QAA75.61x heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
