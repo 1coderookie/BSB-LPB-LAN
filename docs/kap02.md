@@ -66,7 +66,7 @@ Beispiel angeschlossen ist, müssen*
 *1. die Geräte- und Segmentadressen entsprechend der
 LPB-Konfigurationsanforderungen eingestellt werden, und*  
 *2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2](kap02.md#212-adressierung-beim-lpb) und [Kap. 8](kap08.md).*   
+jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2](kap02.md#212-adressierung-beim-lpb) und [Kap. 8](kap08.md)).*   
   
 Eine übergreifende Abfrage von Werten oder Parametern zweier oder mehrerer Regler im LPB-Verbund via Adapter kann zwar erfolgen, doch ist diese Funktion noch nicht ausgiebig getestet worden.  
 Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
@@ -190,8 +190,9 @@ lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - a
 - Betriebsart  
 - Anwesenheit
   
-***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus"!***  
-**Aus den anderen Kategorien sind keinerlei Parameter abrufbar! Somit entfällt auch die Abfrage von `URL/6220-6228` und die Kontrolle via `URL/Q` auf nicht-freigegebene Parameter!**
+***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus"!*** 
+***Aus den anderen Kategorien sind keinerlei Parameter abrufbar!***  
+*Somit entfällt auch die Abfrage von `URL/Q` zur Kontrolle auf nicht-freigegebene Parameter!*
 
 Immerhin lassen sich damit aber die wichtigsten Funktionen einer
 intelligenten Heizungssteuerung umsetzen, indem man z.B. gewichtete
@@ -220,21 +221,21 @@ Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet
   
 **BSB:**  
 Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus':  
-Adapter-CL+ an Regler-CL+ sowie  
-Adapter-CL- an Regler-CL-.  
+Adapter-"CL+" an Regler-"CL+" sowie  
+Adapter-"CL-" an Regler-"CL-".  
   
 Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
 (Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
   
 **LPB:**  
 Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet:  
-Adapter-DB an Regler-DB sowie  
-Adapter-MB an Regler-MB.  
+Adapter-"DB" an Regler-"DB" sowie  
+Adapter-"MB" an Regler-"MB".  
   
 **PPS:**  
-Hier sind es häufig die die Anschlüsse A6 und M, wobei dann  
-A6 an CL+ und  
-M an CL-  
+Hier sind es häufig die die Anschlüsse A6 und M oder MD, wobei dann  
+"A6" an "CL+" und  
+"M"/"MD" an "CL-"  
 des Adapters anzuschließen ist.  
   
 *Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
