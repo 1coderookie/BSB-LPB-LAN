@@ -22,7 +22,7 @@ Programme grundsätzlich möglich.
     Heizungssystem.  
     Es ist eine softwareseitige, interne Funktion.
 
--   **Alle enum-Werte für Parameter \<x\> auflisten:**
+-   **Alle ENUM-Werte für Parameter \<x\> auflisten:**
 
     `http://<IP-Adresse>/E<x>`  
     Bei diesem Befehl kommuniziert der Adapter nicht mit dem
@@ -30,7 +30,7 @@ Programme grundsätzlich möglich.
     Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur
     für Parameter des Typs VT\_ENUM verfügbar.
 
--   **Alle Werte von Kategorie \<x\> abfragen:**
+-   **Alle Parameter von Kategorie \<x\> abfragen:**
 
     `http://<IP-Adresse>/K<x>`
 
