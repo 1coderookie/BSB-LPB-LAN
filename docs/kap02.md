@@ -138,10 +138,14 @@ Dem interessierten Anwender seinen an dieser Stelle insbesondere zwei Dokumente 
 ## 2.2 PPS-Schnittstelle
 Die PPS-Schnittstelle findet sich bei *älteren* Reglern und stellt eine
 Punkt-zu-Punkt-Schnittstelle dar, mittels derer digitale 
-Bedieneinheiten/Raumgeräte wie das QAA70 angeschlossen werden
+Bedieneinheiten/Raumgeräte wie das [QAA70](kap03.md#366-qaa50--qaa70) angeschlossen werden
 können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
 angeschlossen. Die Anschlüsse sind dem jeweiligen Handbuch zu entnehmen, 
-häufig sind dies jedoch die Pins A6 & M (in dem Fall dann A6→CL+ und M→CL-).
+häufig sind dies jedoch die Pins "A6" und "MD" (oder auch "M") (in dem Fall dann "A6" → CL+ und "M"/"MD" → CL-).  
+       
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">
+    
+*Die Anschlüsse "A6" und "MD" bei einem Siemens RVA53 Regler.*  
 
 PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
 „Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
@@ -152,7 +156,7 @@ Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
 Bei den ‚Bedieneinheiten‘/Reglern handelt es sich (bei Brötje) vermutlich 
 meist um Eurocontrol-Varianten, manchmal auch um Eurotronic-Varianten 
 (anscheinend NICHT Eurotronic A, nur Eurotronic D aufwärts). *Als Hinweis 
-kann die Anschlussmöglichkeit einer QAA70-Raumeinheit überprüft werden - 
+kann die Anschlussmöglichkeit einer [QAA70](kap03.md#366-qaa50--qaa70)-Raumeinheit überprüft werden - 
 ist diese anschließbar, so sollte auch der Anschluss des Adapters möglich sein.*
 
 Die beiden Geräte (Raumgerät und Regler) kommunizieren nur bedingt
