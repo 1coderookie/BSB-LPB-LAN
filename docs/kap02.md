@@ -111,18 +111,18 @@ Anschlüsse.
 Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits reserviert und werden eigenständig vom System so vergeben, dem BSB-LPB-LAN-Adapter wird in der Voreinstellung (s. Datei BSB_lan_config.h.default) die Geräteadresse 66 zugeteilt:  
    
 | Bus-Adresse | Geräteadresse | Gerät (Bezeichnung im Seriellen Monitor) |
-|:------------------------------:|:-----------------------:|:------------------------:|
-| Bus-Adresse 0x00 |   0 | Heizungsregler („HEIZ“) |  
-| Bus-Adresse 0x03 |   3 | Erweiterungsmodul 1 („EM1“) / Mischer-ClipIn AGU |  
-| Bus-Adresse 0x04 |   4 | Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU | 
-| Bus-Adresse 0x06 |   6 | Raumgerät 1 („RGT1“) | 
-| Bus-Adresse 0x07 |   7 | Raumgerät 2 („RGT2“) | 
-| Bus-Adresse 0x08 |   8 | OCI700 Servicetool („CNTR“) | 
-| Bus-Adresse 0x0A |  10 | reglerseitige Bedieneinheit / Display („DISP“) | 
-| Bus-Adresse 0x0B |  11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
-| Bus-Adresse 0x31 |  49 | OZW672 Webserver | 
-| **Bus-Adresse 0x42** |  **66** | **BSB-LPB-LAN-Adapter („LAN“)** |  
-| Bus-Adresse 0x7F | 127 | Broadcast („INF“-Meldungen) |   
+|:-----------:|:-------------:|:------------------------:|
+| 0x00 | 0 | Heizungsregler („HEIZ“) |  
+| 0x03 | 3 | Erweiterungsmodul 1 („EM1“) / Mischer-ClipIn AGU |  
+| 0x04 | 4 | Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU | 
+| 0x06 | 6 | Raumgerät 1 („RGT1“) | 
+| 0x07 | 7 | Raumgerät 2 („RGT2“) | 
+| 0x08 | 8 | OCI700 Servicetool („CNTR“) | 
+| 0x0A | 10 | reglerseitige Bedieneinheit / Display („DISP“) | 
+| 0x0B | 11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
+| 0x31 | 49 | OZW672 Webserver | 
+| **0x42** |  **66** | **BSB-LPB-LAN-Adapter („LAN“)** |  
+| 0x7F | 127 | Broadcast („INF“-Meldungen) |   
    
 ---  
   
