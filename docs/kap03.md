@@ -382,11 +382,15 @@ Solarsystemregler) zum Einsatz zu kommen.
 Regler des Typs *RVA* gehören anscheinend zur vorherigen Reglergeneration
 und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
 (keinen BSB).  
-Als Bedieneinheit ist meist eine Variante der Eurocontrol-Steuerung
+Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol" 
 (Brötje) verbaut.  
 Eine Bedienung mittels BSB-LAN ist nur in deutlich geringerem Umfang als
-bei der aktuellen Reglergeneration RVS möglich.
-
+bei der aktuellen Reglergeneration RVS möglich.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_front.jpg">  
+   
+*Ein Regler des Typs RVA53.*  
+   
 Regler des Typs *RVP* scheinen noch älter als RVA-Regler zu sein und
 weisen lediglich eine PPS-Schnittstelle auf.  
 Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
@@ -577,6 +581,11 @@ Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anlei
   
 ### 3.6.6 QAA50 / QAA70  
 Auch beim QAA50 und QAA70 besteht prinzipiell der Unterschied im Funktionsumfang. Diese Raumgeräte kommen bei den alten Reglergenrationen zum Einsatz, die lediglich eine PPS-Schnittstelle aufweisen und somit prinzipiell kompatibel mit dem BSB-LPB-LAN-Adapter sind. Der Einsatz von BSB-LAN parallel zu einem vorhandenen Raumgerät ist in diesem Fall nur lesend möglich, Werte und Einstellungen des Heizungsreglers können also nicht via BSB-LAN verändert werden.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA70.jpg">  
+   
+*Ein QAA70 Raumgerät.*  
+   
 Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
   
 ---  
