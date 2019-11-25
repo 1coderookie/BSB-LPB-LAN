@@ -459,7 +459,7 @@ Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede
 RVS46.xxx  
 Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für eine oder zwei Pumpen hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpeg">
     
 *Der kleine Zonenregler ZR1.*     
     
