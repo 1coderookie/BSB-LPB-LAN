@@ -13,6 +13,13 @@ von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
 *Wann immer ich von "Regler" spreche, dann meine ich die sog. "BMU" (boiler management unit). Das ist das Gerät im Inneren des Gehäuses des Wärmeerzeugers, das die Funktionsweise des Wärmeerzeugers steuert und an dem die Sensoren, Pumpen, die Bedieneinheit und die Raumgeräte angeschlossen sind.  
 Die 'Bedieneinheit' und die Raumgeräte hingegen sind die Komponenten, die außerhalb des Gehäuses angebracht sind und mit einem Display und Knöpfen zur Bedienung des Wärmeerzeugers ausgestattet sind.*  
    
+Hinweise:  
+Die folgende Aufzählung der verschiedenen Reglertypen mag im ersten Moment ein wenig verwirrend erscheinen, doch im Grunde kann man sich eine vereinfachte Regel merken:   
+Wenn die Reglerbezeichnung mit einem "S" endet (RVS und LMS), dann ist der Reglertyp grundsätzlich mit BSB-LAN kompatibel.  
+Grundsätzlich ist die Gerätefamilie LMS die Modellreihe für Gasgeräte, alle anderen Systeme nutzen RVS-Regler.    
+Je größer die darauffolgende Nummer in der Reglerbezeichnung ist, desto 'größer' vom Funktionsumfang her und meist auch hinsichtlich der Anzahl der Anschlüsse ist das jeweilige Modell.  
+Je nach 'Größe', Typ und vorgesehenem Verwendungsumfang sind somit auch unterschiedliche Parameter verfügbar.   
+      
 ***ACHTUNG:  
 Aus aktuellem Anlass sei bereits hier darauf hingewiesen, dass die
 Heizungshersteller offensichtlich eine neue Heizungs- und
@@ -419,9 +426,9 @@ RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
-
-*Tabelle 5: RVS-Regler (aktuelle Reglergeneration)*  
-
+<!---
+*Tabelle 5: RVS-Regler (aktuelle Reglergeneration)*  --->
+<!---
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | RVS21.825E/100 (Brötje)          | 205                     | 100                      | 301.2                      | 7.2                     | &#10003;   | \-  | \-  |
@@ -445,7 +452,34 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | RVS63.283/360 (Elco)             | 90                      | 234                      | 101.6                      | 3.5                     | &#10003;   | &#10003;   | \-  |
 | RVS63.283/460 (Elco)             | 90                      | ?                        | ?                          | ?                       | &#10003;   | &#10003;   | \-  |
 | RVS65.583/200 (Brötje)           | 116                     | 239                      | 101.4                      | 3.3                     | &#10003;   | &#10003;   | \-  |
+--->
+
+Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
+  
+RVS46.xxx  
+Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für eine oder zwei Pumpen hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpg">
+    
+*Der kleine Zonenregler ZR1.*     
+    
+Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess eines Ölbrenners zu steuern.  
+    
+RVS43.xxx  
+Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
+  
+<!---      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg"> --->  
+   
+RVS63.xxx  
+Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund seines Funktionsumfanges vielfältig eingesetzt werden. Er ist in erster Linie dafür vorgesehen, komplexere Anlagen mit einer zusätzlichen Solarthermieanlage zu steuern. Bei Brötje wird er daher auch als "Solar System Regler" bezeichnet. Er ist sowohl als optionaler Nachrüstregler in einem Wandgehäuse erhältlich, wir daber auch als bereits in den Wärmerzeuger eingebauter interner Regler verwendet.  
+   
+<!---    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg"> --->
+    
+
+    
+
 ---
     
 ## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje
