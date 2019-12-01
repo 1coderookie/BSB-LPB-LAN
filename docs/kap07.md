@@ -18,7 +18,7 @@ Passkey-Verwendung bspw.:
 
 *Bitte den Slash hinter dem Passkey nicht vergessen!*
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_home.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite.png">
     
     
 Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
@@ -29,13 +29,13 @@ wird.
 Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
 Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_funktionen.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorien.png">
     
 Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet
 eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
 in dieser Kategorie verfügbar sind.
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-hk1.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
     
 Unter der URL  
 `http://<IP-Adresse>/C`  
@@ -54,7 +54,7 @@ Parameter oder Werte auf die interne microSD-Karte geloggt.
 Darüber hinaus ist zu sehen, dass als Bus-System für den Adapteranschluss 
 der BSB und der Adapter selbst als RGT2 definiert ist ("Bus-System: BSB (7, 0)").
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfiguration.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">
     
 Der Menüpunkt „URL-Befehle" zeigt eine Auflistung und kurze Erklärung
 der URL-Befehle.
