@@ -2,9 +2,6 @@
 [Zurück zu Kapitel 6](kap06.md)    
     
 ---
-    
-
-    
 
 # 7. BSB-LAN Web - das Webinterface des Adapters
 Die Startseite des Webinterface wird angezeigt, wenn ohne weitere
@@ -20,11 +17,23 @@ Passkey-Verwendung bspw.:
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite.png">
     
-    
+Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen einfachen und schnellen Zugriff auf bestimmte Funktionen bieten:  
+- Heizungsfunktionen  
+- Sensoren  
+- Ausgabe Logdatei  
+- Prüfe auf neue Parameter  
+- Einstellungen  
+- URL-Befehle  
+- Handbuch  
+- FAQ  
+   
+Die zwei Buttons "Sensoren" und "Ausgabe Logdatei" sind in schwarzer Schrift dargestellt, wenn die jeweilige Funktion nicht aktiviert ist (s. Datei *BSB_lan_config.h*). Bei dem gezeigten Beispiel ist dies der Button "Ausgabe Logdatei", da keinerlei zu loggende Parameter definiert wurden.  
+
+---  
+   
+**Heizungsfunktionen (URL-Befehl: /K):**  
 Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
-im Display dargestellten Untermenükategorien entsprechen, wenn auf den
-Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen
-wird.
+im Display der dargestellten Untermenükategorien entsprechen, wenn auf den Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen wird.
 
 Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
 Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
@@ -37,58 +46,25 @@ in dieser Kategorie verfügbar sind.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
     
-Unter der URL  
-`http://<IP-Adresse>/C`  
-wird eine Übersicht der Konfiguration dargestellt. Dort sind u.a. der
-Monitor-Modus, der Verbositäts-Level, die definierten Pins für optional
-angeschlossene Sensoren, die zu loggenden Parameter und Parameter, von
-denen 24h-Mittelwerte berechnet werden sollen, auf einen Blick
-überprüfbar.
+---  
+   
+**Sensoren (URL-Befehl: /T):**  
+Wenn optionale DS18B20-/DHT22-Sensoren angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
-Eine schwarze Schrift bei den Schaltflächen für DS18B20- und
-DHT22-Sensoren zeigt an, dass diese nicht definiert sind.
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png">
 
-Bei dem folgenden abgebildeten Beispiel sind lediglich DS18B20-Sensoren
-definiert. Es werden keinerlei 24h-Mittelwerte berechnet und keinerlei 
-Parameter oder Werte auf die interne microSD-Karte geloggt.  
-Darüber hinaus ist zu sehen, dass als Bus-System für den Adapteranschluss 
-der BSB und der Adapter selbst als RGT2 definiert ist ("Bus-System: BSB (7, 0)").
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">
-    
-Der Menüpunkt „URL-Befehle" zeigt eine Auflistung und kurze Erklärung
-der URL-Befehle.
-
-Grau hinterlegte Zeilen zeigen an, dass der Befehl nicht verfügbar ist.
-Im nachfolgend gezeigten Beispiel betrifft dies die nicht-installierten
-DHT22-Sensoren, die fehlenden MAX!-Komponenten sowie die Befehle für die 
-hier deaktivierte Loggingfunktion auf eine microSD-Karte.
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_url-befehle.png">
-    
-Zusätzlich zum Webinterface kann somit auf alle Funktionen mittels
-Eingabe des entsprechenden Befehls direkt zugegriffen werden. Dies ist
-nützlich, wenn der Adapter in Verbindung mit Heimautomationssystemen wie
-bspw. FHEM genutzt wird.
-
-Eine Übersicht und ausführlichere Beschreibung der URL-Befehle findet
-sich im Kap. [8](kap08.md).
-
-Generell werden alle Heizungsparameter anhand ihrer Zeilennummern
-abgefragt. Eine nahezu vollständige Übersicht findet sich bspw. im
-Systemhandbuch des Brötje ISR Plus.
-
-Einige Zeilen sind \'virtuell\' und wurden hinzugefügt, um bspw. den
-Zugang zu komplexen Einstellungen wie den Tagesprogrammen zu
-erleichtern.
+DS18B20-Sensoren sind mit "1w_temp[x]" benannt, bei jedem Sensor wird zusätzlich die spezifische Sensor ID mit angezeigt.  
+DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit an.  
+   
+---  
+   
+**Ausgabe Logdatei (URL-Befehle /D und /DG):**  
 
 Eine grafische Darstellung des optional erstellbaren Logfiles auf einer 
 microSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log.jpg">  
     
-    
-
 ***Hinweis:*** 
     
 *Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen 
@@ -101,7 +77,42 @@ beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
 oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch
 nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 
-       
+---  
+   
+**Prüfe auf neue Parameter (URL-Befehl /Q):**  
+Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überprüft, ob für den angeschlossenen Regler noch etwaige Parameter freizugeben sind.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_Q_de.png">  
+   
+---  
+   
+**Einstellungen (URL-Befehl: /C):**  
+Hier wird eine Übersicht der Konfiguration dargestellt. Dort sind u.a. der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional
+angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick
+überprüfbar.
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  
+   
+---  
+   
+**URL-Befehle:**  
+Dieser Button ist mit dem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind.  
+   
+   
+   
+   
+Eine Übersicht und ausführlichere Beschreibung der URL-Befehle findet
+sich im Kap. [8](kap08.md).
+   
+---  
+   
+**Handbuch:**  
+Dieser Button ist mit dem Handbuch verlinkt.  
+   
+---  
+   
+**FAQ:**  
+Dieser Button ist mit dem Kapitel "FAQ" des Handbuchs verlinkt.
     
 ---
     
