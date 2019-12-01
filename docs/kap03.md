@@ -290,6 +290,11 @@ das Modell AVS75.390 dar. Hierbei handelt es sich um ein
 Erweiterungsmodul (EWM) für den RVS-Reglertyp, an dem sich weitere
 Fühler und Verbraucher anschließen und somit im System integrieren
 lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS75.jpg">  
+   
+*Ein AVS75 Erweiterungsmodul (EWM).*  
+      
 Die Parametrierung und Einbindung erfolgt über den eigentlichen
 RVS-Regler bzw. die eigentliche Bedieneinheit des RVS-Reglers.
 
@@ -420,8 +425,18 @@ Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
+Der Hauptunterschied zwischen den Reglern RVS43 und RVS63 liegt (neben der Größe) im erweitereten Funktionsumfang und den vielzähligeren Anschlüssen des RVS63. Die folgenden Fotos zeigen diese beiden Reglertypen.
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
+   
+*Ein Regler des Typs RVS43.*  
+         
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS63.jpg">  
+   
+*Ein Regler des Typs RVS63.*  
+   
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS51, RVS61 und RVS23 zu sein.  
-RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen.  
+RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen. Ebenso wie bei den RVS43/63-Reglern lässt auch hier die größere Nummer in der Bezeichnung auf einen größeren Bedienungsumfang schließen.    
 RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
