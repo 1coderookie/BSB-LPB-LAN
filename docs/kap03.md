@@ -425,16 +425,7 @@ Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
-Der Hauptunterschied zwischen den Reglern RVS43 und RVS63 liegt (neben der Größe) im erweitereten Funktionsumfang und den vielzähligeren Anschlüssen des RVS63. Die folgenden Fotos zeigen diese beiden Reglertypen.
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
-   
-*Ein Regler des Typs RVS43.*  
-         
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS63.jpg">  
-   
-*Ein Regler des Typs RVS63.*  
-   
+     
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS51, RVS61 und RVS23 zu sein.  
 RVSx1-Regler kommen bei Wärmepumpen zum Einsatz und scheinen nur einen BSB aufzuweisen. Ebenso wie bei den RVS43/63-Reglern lässt auch hier die größere Nummer in der Bezeichnung auf einen größeren Bedienungsumfang schließen.    
 RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
@@ -471,7 +462,7 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
 Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
   
-RVS46.xxx  
+**RVS46.xxx**  
 Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen und Mischer hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpeg">
@@ -480,19 +471,19 @@ Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Ansch
     
 Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess eines Ölbrenners zu steuern.  
     
-RVS43.xxx  
+**RVS43.xxx**  
 Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
-  
-<!---      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg"> --->  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
    
-RVS63.xxx  
+*Ein Regler des Typs RVS43.*  
+   
+**RVS63.xxx**  
 Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund seines Funktionsumfanges vielfältig eingesetzt werden. Er ist in erster Linie dafür vorgesehen, komplexere Anlagen mit einer zusätzlichen Solarthermieanlage zu steuern. Bei Brötje wird er daher auch als "Solar System Regler" bezeichnet. Er ist sowohl als optionaler Nachrüstregler in einem Wandgehäuse erhältlich, wir daber auch als bereits in den Wärmerzeuger eingebauter interner Regler verwendet.  
+         
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS63.jpg">  
    
-<!---    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg"> --->
-    
-
+*Ein Regler des Typs RVS63.*  
     
 
 ---
