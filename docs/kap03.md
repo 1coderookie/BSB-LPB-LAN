@@ -329,7 +329,11 @@ Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht
 Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
    
 Regler der Serie *LMU74/LMU75* scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU7.jpg">  
    
+*Ein Regler des Typs LMU7x.*  
+      
 Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
