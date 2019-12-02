@@ -463,7 +463,7 @@ Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ES
 
 Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden.  
           
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/WLAN_Ardu.jpg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/WLAN_Ardu.jpeg">
     
 *Ein 'WLAN-Arduino Mega 2560'.*   
    
