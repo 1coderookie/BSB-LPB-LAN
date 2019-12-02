@@ -461,7 +461,13 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
 ### 12.7.3 WLAN: Nutzung eines zusätzlichen ESP oder eines 'WLAN-Arduino'
 Eine weitere Möglichkeit für eine WLAN-Anbindung stellt der Anschluss eines ESP-WLAN-Moduls anstelle des LAN-Shields dar. Hierbei ist jedoch ein gewisser Konfigurations- und Bastelaufwand (zusätzlicher Levelshifter etc.) nötig. Der ESP muss dabei mit der ursprünglichen AT-Firmware von Espressif geflasht sein (weitere Infos s.u.). Durch den Wegfall des LAN-Shields kann dann jedoch die microSD-Karten-Loggingfunktion nicht mehr genutzt werden.  
 
-Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden. Bei diesen Boards können mittels DIP-Schaltern verschiedene Konfigurationen eingestellt werden (bspw. Arduino<->USB, Arduino<->ESP, ESP<->USB), was bei der Installation und der Verwendung berücksichtigt werden muss.  
+Darüber hinaus werden Boards angeboten, die bereits mit einem ATmega2560 und einem ESP8266 gemeinsam bestückt sind. Durch die gleiche Größe und das gleiche Pin-Layout des Boards wie bei einem 'normalen' Arduino Mega 2560 kann der Adapter weiterhin problemlos aufgesteckt werden.  
+          
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/WLAN_Ardu.jpg">
+    
+*Ein 'WLAN-Arduino Mega 2560'.*   
+   
+Bei diesen Boards können mittels DIP-Schaltern verschiedene Konfigurationen eingestellt werden (bspw. Arduino<->USB, Arduino<->ESP, ESP<->USB), was bei der Installation und der Verwendung berücksichtigt werden muss.  
 Anzumerken ist auch hier, dass durch den Wegfall des LAN-Shields das microSD-Karten-Logging nicht mehr verwendet werden kann.  Außerdem sinken sowohl die Übertragungsrate als auch die Latenzzeit deutlich im Vergleich zum Aufbau mit dem regulären kabelgebundenen LAN-Shield, da die Daten seitens des ATmega zum ESP lediglich mit 115200 Baud über die serielle Schnittstelle übertragen werden.  
 Im Folgenden als (nicht gekennzeichnetes) Zitat die Installationsbeschreibung von FHEM-Forumsmitglied "freetz" (original FHEM-Forumsbeitrag [hier](https://forum.fhem.de/index.php/topic,29762.msg867911.html#msg867911)):  
 
