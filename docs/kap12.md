@@ -119,7 +119,7 @@ eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse auf
 Die DHT22-Sensoren sind demzufolge auch nicht mit den ‚echten‘ 
 Maxim-OneWire-Sensoren/-Komponenten kompatibel.   
    
-Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Vorderseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden. Die Belegung der Pins ist normalerweise wie folgt:  
+Die einzelnen DHT22-Sensoren weisen i.d.R. vier Anschlusspins auf, von denen jedoch der dritte Pin von links (bei Ansicht auf die Vorderseite des Sensors) meistens nicht belegt ist. Im Zweifelsfall sollte dies jedoch nochmal nachgemessen werden! Die Belegung der Pins ist üblicherweise wie folgt:  
 Pin 1 = VCC (+)  
 Pin 2 = DATA  
 Pin 3 = i.d.R. nicht belegt  
@@ -186,7 +186,7 @@ Im Logfile der SD-Karte werden die Sensoren anhand der virtuellen Parameter 2002
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
 Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
-Rot oder Weiß = VCC (+5V)  
+Rot = VCC (+5V)  
 Gelb = DATA  
 Schwarz = GND (-)  
    
