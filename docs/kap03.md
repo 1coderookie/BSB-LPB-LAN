@@ -469,6 +469,8 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
 Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
     
+---    
+    
 **RVS21.xxx**  
 Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet einen BSB und Anschlüsse für ein optionales Raumgerät.  
    
