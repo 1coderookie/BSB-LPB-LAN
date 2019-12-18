@@ -305,15 +305,15 @@ BSB-Anschluss.
 Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils
 spezifischen Parameter möglich, die die Einstellungen und Funktionen des
 EWMs definieren und beschreiben.
-
-*Tabelle 1: Erweiterungsmodul AVS75.390*
-
+<!--
+*Tabelle 1: Erweiterungsmodul AVS75.390*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:-------------------------:|:---:|:---:|:---:|
 | AVS75.390/100 (Brötje)         | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 | AVS75.390/109 (Siemens)        | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
 | AVS75.390/260 (Elco)           | \-                      | \-                       | \-                         | \-                        | \-  | \-  | \-  |
-
+-->
     
     
 ---
@@ -339,8 +339,8 @@ Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzu
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
    
-*Tabelle 2: LMU-Regler*
-
+<!--*Tabelle 2: LMU-Regler*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | LMU54   (?)               | ?                      | ?                      | ?                        | ?                     | \-   | \-  | &#10003;  |
@@ -350,7 +350,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | LMU74   (Elco)                 | 97                      | 136                      | 0.2                        | 11.1                     | &#10003;   | \-  | \-  |
 | LMU74.100A136 (Elco)           | 97                      | 136                      | 0.4                        | 11.2                     | &#10003;   | \-  | \-  |
 | LMU75   (Brötje)               | 98                      | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
-   
+-->   
 ---  
    
 #### 3.2.1.2 LMS-Regler   
@@ -414,16 +414,16 @@ Regler des Typs *RVP* scheinen noch älter als RVA-Regler zu sein und
 weisen lediglich eine PPS-Schnittstelle auf.  
 Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
 eingeschränktem Umfang möglich.
-
-*Tabelle 4: RVA- und RVP-Regler (alte Reglergenerationen)*
-
+<!--
+*Tabelle 4: RVA- und RVP-Regler (alte Reglergenerationen)*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | RVA53.140/100 (Brötje)           | ?                      | ?                      | ?                      | ?                     | \-   | \-  | &#10003;  |
 | RVA63.242/? (Brötje)           | 28                      | 100                      | 302.0                      | 2.5                     | \-   | &#10003;  | &#10003;  |
 | RVA63.242/? (Brötje)           | 28                      | 109                      | 302.0                      | 3.6                     | \-   | &#10003;  | &#10003;  |
 | RVP54.100/? (Sieger)           | ?                       | ?                         | ?                          | ?                       | \-   | \-  | &#10003;  |
-
+-->
     
 ---
     
@@ -475,7 +475,9 @@ Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet ei
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS21.jpeg">  
    
 *Ein RVS21 Regler.*  
-      
+   
+---   
+   
 **RVS46.xxx**  
 Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen und Mischer hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
     
@@ -485,12 +487,16 @@ Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Ansch
     
 Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess eines Ölbrenners zu steuern.  
     
+---
+    
 **RVS43.xxx**  
 Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
    
 *Ein Regler des Typs RVS43.*  
+   
+---   
    
 **RVS63.xxx**  
 Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund seines Funktionsumfanges vielfältig eingesetzt werden. Er ist in erster Linie dafür vorgesehen, komplexere Anlagen mit einer zusätzlichen Solarthermieanlage zu steuern. Bei Brötje wird er daher auch als "Solar System Regler" bezeichnet. Er ist sowohl als optionaler Nachrüstregler in einem Wandgehäuse erhältlich, wird aber auch als bereits in den Wärmerzeuger eingebauter interner Regler verwendet.  
