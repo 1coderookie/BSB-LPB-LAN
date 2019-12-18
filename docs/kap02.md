@@ -220,10 +220,21 @@ Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders al
   
 Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.  
   
-Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler), so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
+Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler) und/oder bereits ein Raumgerät vorhanden, so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
+  
+*Hinweis:*  
+Da es sich bei BSB um ein Bussystem handelt, kann der Adapter auch bei einem bereits im Wohnraum installierten kabelgebundenen Raumgerät angeschlossen werden!  
+Sollte kein Raumgerät vorhanden sein, so sollte man überprüfen, ob es nicht einfacher ist, ein langes dünnes zweiadriges Buskabel in die Wohnung zu verlegen als ein langes LAN-Kabel.
+Es ist also nicht zwingend nötig, den Adapter unmittelbar am Aufstellort der Heizung anzuschließen!
+  
+---  
   
 **Adapterplatine:**  
 Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
+  
+---  
   
 **BSB:**  
 Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus':  
@@ -233,10 +244,14 @@ Adapter-"CL-" an Regler-"CL-".
 Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
 (Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
   
+---  
+  
 **LPB:**  
 Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet:  
 Adapter-"DB" an Regler-"DB" sowie  
 Adapter-"MB" an Regler-"MB".  
+  
+---  
   
 **PPS:**  
 Hier sind es häufig die die Anschlüsse A6 und M oder MD, wobei dann  
@@ -249,6 +264,8 @@ des Adapters anzuschließen ist.
 *Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
 *Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
   
+---  
+  
 ***Tipps:***
   
 Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß LPB-Projektierungsgrundlagen1 einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m).  
@@ -256,9 +273,9 @@ Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabe
 Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden2. 
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer vorzuziehen.  
    
-Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
+Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
    
-Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen. 
+Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. 
 Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können auch isolierte 6,3mm-Kabelschuhe verwendet werden. 
 
  
