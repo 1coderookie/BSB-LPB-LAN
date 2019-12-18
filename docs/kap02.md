@@ -227,6 +227,11 @@ Da es sich bei BSB um ein Bussystem handelt, kann der Adapter auch bei einem ber
 Sollte kein Raumgerät vorhanden sein, so sollte man überprüfen, ob es nicht einfacher ist, ein langes dünnes zweiadriges Buskabel in die Wohnung zu verlegen als ein langes LAN-Kabel.
 Es ist also nicht zwingend nötig, den Adapter unmittelbar am Aufstellort der Heizung anzuschließen!
   
+*Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
+
+*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
+*Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
+  
 ---  
   
 **Adapterplatine:**  
@@ -259,11 +264,7 @@ Hier sind es häufig die die Anschlüsse A6 und M oder MD, wobei dann
 "M"/"MD" an "CL-"  
 des Adapters anzuschließen ist.  
   
-*Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
 
-*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
-*Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
-  
 ---  
   
 ***Tipps:***
