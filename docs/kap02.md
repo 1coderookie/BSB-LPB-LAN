@@ -239,6 +239,9 @@ Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt_anschluss.jpeg">
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/adapter_anschluss.jpg">
+
+  
 ---  
   
 **BSB:**  
