@@ -364,11 +364,14 @@ aufweisen.
 
 Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
+   
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 
-*Tabelle 3: LMS-Regler (aktuelle Reglergeneration)*
-
+<!--*Tabelle 3: LMS-Regler (aktuelle Reglergeneration)*-->
+<!--
 | Geräte-Identifikation \[6224\] | Geräte-Familie \[6225\] | Geräte-Variante \[6226\] | Obj.Verz.-Version \[6227\] | Software-Version \[6220\] | BSB | LPB | PPS |
 |:------------------------------:|:-----------------------:|:------------------------:|:--------------------------:|:------------------------:|:---:|:---:|:---:|
 | LMS14.001A100 (Brötje)         | 162                     | 14                       | 0.1                        | 2.3                     | &#10003;   | \-  | \-  |
@@ -382,7 +385,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 | LMS15.000A349 (Brötje)         | 123                     | 1                        | 0.1                        | 4.2                     | &#10003;   | \-  | \-  |
 | LMS15.000A349 (Baxi)           | 163                     | ?                        | ?                          | ?                       | &#10003;   | \-  | \-  |
 | LMS15.001A100 (Brötje)         | 163                     | 16                       | 0.6                        | 3.8                     | &#10003;   | \-  | \-  |
-
+-->
     
 ---
     
@@ -465,7 +468,14 @@ zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 --->
 
 Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
-  
+    
+**RVS21.xxx**  
+Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet einen BSB und Anschlüsse für ein optionales Raumgerät.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS21.jpeg">  
+   
+*Ein RVS21 Regler.*  
+      
 **RVS46.xxx**  
 Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen und Mischer hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
     
