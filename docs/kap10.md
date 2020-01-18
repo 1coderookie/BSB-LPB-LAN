@@ -199,9 +199,7 @@ die Datei *BSB\_lan\_defs.h* implementieren möchten.
 Vorgehensweise des Auslesens empfohlen, bei der die neuen Telegramme
 letztlich nur ‚gemeldet' werden!*
 
-Zum Auslesen der Telegramme ist prinzipiell die unter 10.2 Kurze
-Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer)
-beschriebene Vorgehensweise zu empfehlen.
+Zum Auslesen der Telegramme ist prinzipiell die unter [10.2](kap10.md#102-kurze-beschreibung-des-auslesens-neuer-telegramme-für-erfahrene-nutzer) beschriebene Vorgehensweise zu empfehlen.
 
 Erläuterung der Struktur der Datentelegramme anhand des folgenden
 Beispiels:
