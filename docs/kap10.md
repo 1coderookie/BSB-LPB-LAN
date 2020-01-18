@@ -145,9 +145,9 @@ handelt!*
 *Schreibe nun **zusätzlich** zum Telegramm die entsprechende
 Parameternummer, die genaue Parameterbezeichnung sowie ggf. die
 jeweilige Werte-Einheit hinzu!*  
-
+  
 *Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
-den im Moment der Abfrage angezeigten Wert! Dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
+den im Moment der Abfrage angezeigten Wert - dies ist **zwingend** notwendig, da ohne die aufgezählten zusätzlichen
 Informationen das reine Telegramm nutzlos ist! *  
 
 Wenn du einen weiteren Parameter auslesen möchtest, wiederhole das
