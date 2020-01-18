@@ -142,13 +142,13 @@ die Textdatei, ob es sich auch wirklich um das gewünschte Telegramm
 handelt!*
 
 ***WICHTIG:***  
-*Schreibe nun **zusätzlich** zum Telegramm die entsprechende
+***Schreibe nun zusätzlich zum Telegramm die entsprechende
 Parameternummer, die genaue Parameterbezeichnung sowie ggf. die
-jeweilige Werte-Einheit hinzu!*  
+jeweilige Werte-Einheit hinzu!***  
   
-*Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
-den im Moment der Abfrage angezeigten Wert - dies ist **zwingend** notwendig, da ohne die aufgezählten zusätzlichen
-Informationen das reine Telegramm nutzlos ist!*  
+***Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
+den im Moment der Abfrage angezeigten Wert - dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
+Informationen das reine Telegramm nutzlos ist!***  
 
 Wenn du einen weiteren Parameter auslesen möchtest, wiederhole das
 beschriebene Procedere entsprechend. Es bietet sich an, vorher wieder
