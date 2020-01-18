@@ -116,7 +116,7 @@ DC 80 0A 0D 07 11 3D 30 5F 00 00 03 A1
 ```
     
 Die ersten vier Zeilen in obigem Beispiel sind von dem Parameter, zu dem
-hingeschaltet wurde. Die letzten vier Zeilen (hier im Beispiel mit zusätzlichen Sternchen `**` gekennzeichnet) stammen von dem Parameter, den du nun analysieren
+hingeschaltet wurde. Die letzten vier Zeilen (hier im Beispiel mit zusätzlichen `**`Sternchen`**` gekennzeichnet) stammen von dem Parameter, den du nun analysieren
 möchtest.  
 QUR bedeutet Anfrage, ANS die zugehörige Antwort. Anstelle von DISP wird
 eventuell RGT1 oder RGT2 angezeigt, dies ist abhängig vom jeweiligen
@@ -139,7 +139,7 @@ Beispiel) und füge sie in eine Textdatei ein.
 *Copy&paste funktioniert im seriellen Monitor erfahrungsgemäß
 nicht immer zuverlässig, also überprüfe bitte jedes Mal beim Einfügen in
 die Textdatei, ob es sich auch wirklich um das gewünschte Telegramm
-handelt.*
+handelt!*
 
 ***WICHTIG:***  
 *Schreibe nun **zusätzlich** zum Telegramm die entsprechende
