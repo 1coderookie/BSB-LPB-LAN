@@ -108,16 +108,15 @@ DC 8A 00 0B 06 3D 11 30 5F AB EC
 HEIZ->DISP ANS 113D305F 00 00  
 DC 80 0A 0D 07 11 3D 30 5F 00 00 03 A1  
     
-*DISP->HEIZ QUR 113D3063  
-DC 8A 00 0B 06 3D 11 30 63 5C 33*  
+**DISP->HEIZ QUR 113D3063**  
+**DC 8A 00 0B 06 3D 11 30 63 5C 33**  
     
-*HEIZ->DISP ANS 113D3063 00 00 16  
-DC 80 0A 0E 07 11 3D 30 63 00 00 16 AD 0B*  
+**HEIZ->DISP ANS 113D3063 00 00 16**  
+**DC 80 0A 0E 07 11 3D 30 63 00 00 16 AD 0B**  
 ```
     
 Die ersten vier Zeilen in obigem Beispiel sind von dem Parameter, zu dem
-hingeschaltet wurde. Die letzten vier Zeilen (hier im Beispiel kursiv
-dargestellt) stammen von dem Parameter, den du nun analysieren
+hingeschaltet wurde. Die letzten vier Zeilen (hier im Beispiel mit zusätzlichen Sternchen `**` gekennzeichnet) stammen von dem Parameter, den du nun analysieren
 möchtest.  
 QUR bedeutet Anfrage, ANS die zugehörige Antwort. Anstelle von DISP wird
 eventuell RGT1 oder RGT2 angezeigt, dies ist abhängig vom jeweiligen
@@ -148,8 +147,7 @@ Parameternummer, die genaue Parameterbezeichnung sowie ggf. die
 jeweilige Werte-Einheit hinzu!*  
 
 *Notiere bitte außerdem die jeweils angezeigte aktive Einstellung bzw.
-den im Moment der Abfrage angezeigten Wert!  
-Dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
+den im Moment der Abfrage angezeigten Wert! Dies ist zwingend notwendig, da ohne die aufgezählten zusätzlichen
 Informationen das reine Telegramm nutzlos ist! *  
 
 Wenn du einen weiteren Parameter auslesen möchtest, wiederhole das
