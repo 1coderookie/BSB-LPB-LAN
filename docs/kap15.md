@@ -15,13 +15,12 @@ Ja und nein.
 Der Adapter kann mit einem Raspberry Pi 2 verwendet werden, wenn andere
 Pinheader genutzt werden (weibliche statt männliche) und die Platine
 entsprechend mit den Komponenten für die RPi-Nutzung bestückt ist
-(R11-13, Q11+12, SJ2+3).
+(R11-13, Q11+12, SJ2+3). Siehe hierzu bitte die folgenden Kapitel: [Kap. 12.9](kap12.md#129-raspberry-pi-2), [Anhang A1](anhang_a1.md) sowie [Anhang A2.2](anhang_a2.md#a22-teileliste).
 
 Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
 ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!  
 Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
-Software genutzt werden. Weitere Informationen diesbezüglich sind am
-Ende von Kap. [1](kap01.md) zu finden.  
+Software genutzt werden. Weitere Informationen diesbezüglich sind in [Kap. 12.9](kap12.md#129-raspberry-pi-2) zu finden.  
     
 ---
     
