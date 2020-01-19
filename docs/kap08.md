@@ -235,35 +235,80 @@ nicht!*
 
 Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben
 sind, sieht die auf `http://<IP-Adresse>/Q`
-folgende Webausgabe exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
+folgende Webausgabe exemplarisch so aus:
     
 ```
-Gerätefamilie: 90  
-Gerätevariante: 100  
-Start Test...  
-Test Ende.  
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
+
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+
+
+Starte Test...
+
+Test beendet.
+
+Fertig.  
 ```
     
 Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern
-für den spezifischen Regler hingegen sieht exemplarisch so aus (*Anmerkung: Hier handelt es sich noch um die Ausgabe mit einer veralteten BSB-LAN-Version, eine Beispielausgabe mit der aktuellen BSB-LAN-Version folgt!*):
+für den spezifischen Regler hingegen sieht exemplarisch so aus:
     
 ```
-Gerätefamilie: 90  
-Gerätevariante: 100  
-Start Test...  
-2214  
-DC 86 00 0B 06 3D 0D 08 EB E7 3A  
-DC 80 06 0E 07 0D 3D 08 EB 00 0F 00 1B 94 5024  
-5024 Trinkwasserspeicher - TWW Schaltdifferenz 1 ein: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 31 07 1D C8 19  
-DC 80 06 0E 07 31 3D 07 1D 00 01 40 A6 94 6031  
-6031 Konfiguration - Relaisausgang QX22 Modul 1: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 05 07 86 E3 AE  
-DC 80 06 0D 07 05 3D 07 86 00 00 2C 55 8314  
-8314 Diagnose Erzeuger - Kesselrücklauftemperatur Ist: error 7 (parameter not supported)  
-DC 86 00 0B 06 3D 11 05 1A 58 5A  
-DC 80 06 0E 07 11 3D 05 1A 01 00 00 91 09  
-Test Ende.  
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
+
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+
+
+Starte Test...
+
+5
+5 Uhrzeit und Datum - Sommerzeitbeginn Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B3 DA F8 
+DC 8A 42 14 07 05 3D 04 B3 00 FF 03 19 FF FF FF FF 16 C4 C8 
+6
+6 Uhrzeit und Datum - Sommerzeitende Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B2 CA D9 
+DC 8A 42 14 07 05 3D 04 B2 00 FF 0A 19 FF FF FF FF 16 80 41 
+
+Test beendet.
+
+Fertig.  
 ```  
     
 In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik oder mich (Ulf) gemeldet werden,
