@@ -130,7 +130,7 @@ Wenn du DHT22- und/oder DS18B20-Sensoren korrekt am Arduino/Adapter
 angeschlossen hast, die entsprechenden Menüs im Webinterface jedoch
 nicht anwählbar sind, hast du vermutlich die betreffenden Einträge in
 der Datei *BSB\_lan\_config.h* nicht entsprechend angepasst.  
-Siehe hierzu auch die Kapitel [5](kap05.md), [11](kap11.md) & [13](kap13.md).  
+Siehe hierzu auch die Kapitel [5](kap05.md) und [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20).  
     
 ---
     
@@ -365,7 +365,7 @@ In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3]
 
 Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
 
-## 15.26 Ich habe weitere Fragen, an wen kann ich mich wenden? ##
+## 15.26 Ich habe weitere Fragen, an wen kann ich mich wenden?
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum
 ([https://forum.fhem.de/](https://forum.fhem.de/))
