@@ -64,11 +64,18 @@ während der Zugriff des Adapters nur auf Lesen beschränkt ist
 (`FL_RONLY`).  
 Der gewünschte Parameter (oder auch generell alle Parameter) muss in
 diesem Fall als schreibbar definiert werden. Die hierfür notwendige
-Vorgehensweise ist in Kap. [5](kap05.md) (vorletzter Punkt) ausführlich beschrieben.
+Vorgehensweise ist in [Kap. 5](kap05.md) (vorletzter Punkt) ausführlich beschrieben.
      
     
 ---
-    
+        
+## 13.5 Fehlermeldung „decoding error"  
+  
+Die Fehlermeldung "decoding error" bedeutet, dass der Parameter und die Command ID bekannt sind bzw. passen, aber dass das Datenpaket nicht der bisher bekannten Dekodierung entspricht. Das kann eine andere Länge oder eine andere Einheit als Grund haben.  
+  
+Um das für die entsprechende Heizung zu aktualisieren, wird das zu dem Fehler ausgegebene Datenpaket und der exakt zu diesem Moment angezeigte Wert an der Therme und die Einheit benötigt. Siehe hierzu auch das [Kap. 10](kap10.md).  
+  
+---
      
 [Weiter zu Kapitel 14](kap14.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
