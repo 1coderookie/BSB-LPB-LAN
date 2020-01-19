@@ -8,7 +8,7 @@
 ---
     
 
-## 13.1 Fehlermeldung „unknown type \<xxxxxxxx\>"
+## 13.1 Fehlermeldung "unknown type \<xxxxxxxx\>"
 
 Dieser Fehler sagt aus, dass für diesen Parameter keine
 Umrechnungsanweisung vorliegt, um die Rohdaten in eine entsprechende
@@ -23,7 +23,7 @@ damit eine eindeutige Zuordnung stattfinden kann.
 ---
     
 
-## 13.2 Fehlermeldung „error 7 (parameter not supported)"
+## 13.2 Fehlermeldung "error 7 (parameter not supported)"
 
 Die zugehörige Command ID wird nicht erkannt oder der entsprechende
 Parameter wird vom Regler nicht unterstützt (bspw. spezifische
@@ -43,7 +43,7 @@ wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den U
 ---
     
 
-## 13.3 Fehlermeldung „query failed"
+## 13.3 Fehlermeldung "query failed"
 
 Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
 (sinnvolle) Antwort des Reglers kommt.
@@ -56,7 +56,7 @@ Reglers).
 ---
     
 
-## 13.4 Fehlermeldung „FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
+## 13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
 
 Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
 übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
@@ -69,7 +69,7 @@ Vorgehensweise ist in [Kap. 5](kap05.md) (vorletzter Punkt) ausführlich beschri
     
 ---
         
-## 13.5 Fehlermeldung „decoding error"  
+## 13.5 Fehlermeldung "decoding error"  
   
 Die Fehlermeldung "decoding error" bedeutet, dass der Parameter und die Command ID bekannt sind bzw. passen, aber dass das Datenpaket nicht der bisher bekannten Dekodierung entspricht. Das kann eine andere Länge oder eine andere Einheit als Grund haben.  
   
