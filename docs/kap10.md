@@ -44,8 +44,7 @@ Heizungssystems sowie den von dir verwendeten Bustyp (BSB/LPB/PPS).
 entsprechenden Zusatzangaben findest du im Kap. [10.4](kap10.md#104-beispiel-für-eine-meldedatei).*
 
 Wenn du alles abgeschlossen hast, speichere deine Auflistung bitte als
-einfache .txt-Datei. Schicke die Datei nun entweder an `bsb [ät]
-code-it.de` oder melde dich [hier](https://forum.fhem.de/index.php/topic,29762.0.html) im FHEM-Forum.
+einfache .txt-Datei. Schicke die Datei nun entweder an `bsb [ät] code-it.de` oder melde dich [hier](https://forum.fhem.de/index.php/topic,29762.0.html) im FHEM-Forum.
 
 Vielen Dank für deine Unterstützung!
     
@@ -277,8 +276,7 @@ Letzte zwei Bytes: CRC-Checksumme
     Y und somit letztlich beide Systeme die mehrdeutigen Command IDs für
     die korrekten Parameter nutzen können.
 
-7.  Bitte sende die neuen bzw. aktualisierten Zeilen an `bsb [ät]
-    code-it.de` oder poste sie [hier](https://forum.fhem.de/index.php/topic,29762.0.html) im FHEM-Forum.  
+7.  Bitte sende die neuen bzw. aktualisierten Zeilen an `bsb [ät] code-it.de` oder poste sie [hier](https://forum.fhem.de/index.php/topic,29762.0.html) im FHEM-Forum.  
 
     Solltest du eine Diff-Datei nutzen, überprüfe bitte vor dem
     Erstellen nochmals, ob du wirklich die aktuelle *BSB\_lan\_defs.h*
