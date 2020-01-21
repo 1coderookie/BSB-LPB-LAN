@@ -311,7 +311,7 @@ Test beendet.
 Fertig.  
 ```  
     
-In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik oder mich (Ulf) gemeldet werden,
+In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an `bsb [ät] code-it.de` gemeldet werden,
 damit eine entsprechende Anpassung vorgenommen werden kann.  
         
 ---
