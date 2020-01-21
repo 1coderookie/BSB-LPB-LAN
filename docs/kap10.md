@@ -250,11 +250,8 @@ Letzte zwei Bytes: CRC-Checksumme
     Anfang der Datei passt.
 
     ***Beispiel:***    
-    *Wenn der Parameter einen Temperaturwert zurückgeben soll, kannst du
-    VT\_TEMP, VT\_TEMP\_SHORT, VT\_TEMP\_SHORT5 oder VT\_TEMP\_WORD
-    ausprobieren.\
-    Für Parameter, die mehrere Optionen bereitstellen, musst du eine
-    entsprechende Zeile im Abschnitt \"*ENUM tables\*\" hinzufügen.*
+    *Wenn der Parameter einen Temperaturwert zurückgeben soll, kannst du VT\_TEMP, VT\_TEMP\_SHORT, VT\_TEMP\_SHORT5 oder VT\_TEMP\_WORD ausprobieren.*  
+    *Für Parameter, die mehrere Optionen bereitstellen, musst du eine entsprechende Zeile im Abschnitt \"ENUM tables\" hinzufügen.*
 
 5.  Wenn der Adapter den gleichen Wert ausgibt wie auf dem Display der
     integrierten Heizungssteuerung dargestellt, hast du den richtigen
