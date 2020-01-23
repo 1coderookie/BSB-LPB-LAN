@@ -40,6 +40,8 @@ HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
 Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
 wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den URL-Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)). Sollten bei dieser Abfrage 'error 7'-Meldungen angezeigt werden, melde sie bitte unter Angabe des kompletten Outputs von /Q.  
     
+Sollte ein Parameter an der heizungsseitigen Bedieneinheit jedoch definitiv verfügbar sein und dennoch bei der /Q-Abfrage nicht als 'error 7'-Parameter aufgelistet werden, so sollte der entspr. Parameter gemäß der Beschreibung in Kap. [10](kap10.md) decodiert und gemeldet werden.  
+  
 ---
     
 
