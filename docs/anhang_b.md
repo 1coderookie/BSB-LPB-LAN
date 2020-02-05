@@ -14,7 +14,7 @@
 |  /\<x\>-\<y\>         | Werte/Einstellungen der Parameter \<x\> bis \<y\> anzeigen  
 |  /A                   | Anzeigen der 24h-Durchschnittswerte  
 |  /A=\<x\>,\<y\>       | Ändern der 24h-Durchschnittswertberechnung in Parameter \<x\>, \<y\>  
-|  /A0                  | 24h-Durchschnittswertberechnung temporär deaktivieren  
+|  /A=0                  | 24h-Durchschnittswertberechnung temporär deaktivieren  
 |  /B                   | Anzeige akkumulierter Brennerlaufzeiten (in Sek.) und -takte (inkl. TWW)  
 |  /B0                  | Zurücksetzen des Zählers Brennerlaufzeiten und -takte  
 |  /C                   | Anzeige der Konfiguration von BSB-LAN  
