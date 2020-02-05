@@ -5,7 +5,10 @@
         
 
 # Anhang B: Cheatsheet URL-Befehle
-
+  
+***HINWEIS:***  
+***Dies ist nur eine kurze Übersicht der verfügbaren URL-Befehle. Eine ausführlichere Erläuterung der einzelnen Befehle sowie weitere Spezialfunktionen von BSB-LAN findest du in [Kapitel 8](kap08.md)!***  
+   
 
 | URL-Befehl            | Auswirkung                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|
