@@ -47,7 +47,7 @@
 [8.2.3 Manuellen TWW-Push ausführen](kap08.md#823-manuellen-tww-push-ausführen)  
 [8.2.4 Abrufen und Steuern mittels JSON](kap08.md#824-abrufen-und-steuern-mittels-json)  
 [8.2.5 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
-[8.2.6 Gasthermen: Interne Gasenergiezählung (falls vorhanden) aktivieren](kap08.md#826-gasthermen-interne-gasenergiezählung-falls-vorhanden-aktivieren)  
+[8.2.6 IPWE-Erweiterung](kap08.md#826-ipwe-erweiterung)  
 [8.2.7 Datum, Uhrzeit und Zeitprogramme verändern](kap08.md#827-datum-uhrzeit-und-zeitprogramme-verändern)  
 [8.2.8 Übermitteln einer alternativen Außentemperatur](kap08.md#828-übermitteln-einer-alternativen-außentemperatur)  
 [9. Loggen von Daten](kap09.md)  
