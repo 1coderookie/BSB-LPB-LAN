@@ -108,7 +108,7 @@ Anschlüsse.
 ---  
   
 ### 2.1.1 Adressierung beim BSB  
-Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits reserviert und werden eigenständig vom System so vergeben, dem BSB-LPB-LAN-Adapter wird in der Voreinstellung (s. Datei BSB_lan_config.h.default) die Geräteadresse 66 zugeteilt:  
+Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits festgelegt:  
    
 | Bus-Adresse | Geräteadresse | Gerät (Bezeichnung im Seriellen Monitor) |
 |:-----------:|:-------------:|:------------------------:|
@@ -125,11 +125,13 @@ Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse 
 | **0x42** |  **66** | **BSB-LPB-LAN-Adapter („LAN“)** |  
 | 0x7F | 127 | Broadcast („INF“-Meldungen) |   
    
+Dem BSB-LPB-LAN-Adapter wird in der Voreinstellung die Busadresse `0x42` zugeteilt, was der BSB-Adresse 66 entspricht. Die Adresse wird in der Datei `BSB_lan_config.h` festgelegt.  
+   
 ---  
   
 ### 2.1.2 Adressierung beim LPB  
 Beim LPB ist die Adressierung anders als beim BSB. Prinzipiell gibt es verschiedene Segmente (bzw. Segmentadressen) und Geräteadressen. Den Segmentadressen kommt eine andere Bedeutung zu, als den Geräteadressen.  
-In diesem Zusammenhang sei lediglich darauf hingewiesen, dass zusätzlich zu diesem Unterschied auch die jeweiligen Adressvergaben selbst beim LPB anders gestaltet sind. Bei der Bus-Adresse `0x00` beispielsweise ist die erste Ziffer hinter dem x die Segmentadresse 0 (also 0=0, 1=1 etc.), die zweite 0 hingegen ist Busadresse des Gerätes plus eins (also 0=1, 1=2 etc.).   
+In diesem Zusammenhang sei lediglich darauf hingewiesen, dass zusätzlich zu diesem Unterschied auch die jeweiligen Adressvergaben selbst beim LPB anders gestaltet sind. Bei der Busadresse `0x00` beispielsweise ist die erste Ziffer hinter dem x die Segmentadresse 0 (also 0=0, 1=1 etc.), die zweite 0 hingegen ist Busadresse des Gerätes plus eins (also 0=1, 1=2 etc.).   
    
 Beispiel:  
 Das Gerät im obigen Beispiel `0x00` befindet sich im Segment 0 mit der Adresse 1. Die bei BSB-LAN in der Datei `BSB_lan_config.h` voreingestellte Adresse `0x42` bedeutet somit, dass der Adapter im Segment 4 mit der Adresse 3 angemeldet wird.  
