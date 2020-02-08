@@ -324,15 +324,21 @@ Die IPWE-Erweiterung stellt eine Möglichkeit dar, zuvor festgelegte Parameter d
 `<IP-Adresse>/ipwe.cgi`  
 *Hinweis: Sollte die optionale SIcherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IPWE_example.png">  
+*Beispiel einer IPWE-Ausgabe.*  
+  
 Um die Funktion der IPWE-Erweiterung zu nutzen, müssen vor dem Flashen des Arduino zwei Einstellungen in der Datei `BSB_lan_config.h` vorgenommen werden:  
 - Das Definement `#define IPWE` muss aktiviert werden.  
 - Die gewünschten Parameter die dargestellt werden sollen, müssen aufgelistet werden.  
   
-Zusätzlich zu den aufgeführten Parametern werden automatisch die Werte optional angeschlossener Sensoren (DHT22 / DS18B20) dargestellt. Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sensor IDs dargestellt.  
+Zusätzlich zu den aufgeführten Parametern werden automatisch die Werte optional angeschlossener Sensoren (DHT22 / DS18B20) dargestellt.  
+Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sensor IDs dargestellt. Dies kann man in der letzten Zeile im obigen Beispiel erkennen, dort lautet die spezifische Sensor ID des einzigen angeschlossenen DS18B20-Sensors "284c453d07000082". Auf diese Weise lassen sich mehrere Sensoren eindeutig identifizieren.   
   
-Zwei kurze Hinweise:  
+*Hinweise:*  
 - Sollten aus Versehen Parameter zur Anzeige definiert werden, die das spezifische Heizungssystem nicht aufweist, so wird als jeweiliger Wert "0.00" dargestellt. Das heißt aber nicht, dass der Wert des nicht-unterstützen Parameters "0.00" ist! Es ist daher sinnvoll, vor der Definition der anzuzeigenden Parameter zu überprüfen, ob diese auch wirklich vom Heizungssystem bereit gestellt werden.  
-- Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit". Diese können einfach ignoriert werden.  
+- Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit" oder "Regenmenge". Diese können einfach ignoriert werden. Im Grunde sind bei den normalen Parametern lediglich die beiden Spalten "Beschreibung" und "Temperatur" relevant, da hier die Parameterbezeichnung und der jeweilige Wert dargestellt werden.  
+- Die Darstellungen der jeweiligen Parameterwerte/-einstellungen erfolgen nicht im Klartext, sondern numerisch. Bei dem oben abgebildeten Beispiel ist dies u.a. beim Parameter "1. Brennerstufe T1" gut zu erkennen: Dort steht nicht "Ein", sondern "255", was wiederum "Ein" bedeutet.  
+- Die Anzeige BSB-LAN-spezifischer Funktionen wie bspw. die Werte der 24h-Durchschnittswertberechnung (/A) und die Brennerstatistik (/B) kann innerhalb der IPWE-Erweiterung *nicht* erfolgen. Führt man diese URL-Befehle in der Liste der anzuzeigenden Parameter für die IPWE-Erweiterung in der Datei `BSB_lan_config.h` auf, so kommt es beim Kompilieren zu einer Fehlermeldung der Arduino IDE.  
     
     
 --- 
