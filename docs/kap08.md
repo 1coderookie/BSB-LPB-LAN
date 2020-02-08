@@ -322,11 +322,12 @@ damit eine entsprechende Anpassung vorgenommen werden kann.
 ### 8.2.6 IPWE-Erweiterung  
 Die IPWE-Erweiterung stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
 `<IP-Adresse>/ipwe.cgi`  
-*Hinweis: Sollte die optionale SIcherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
+*Hinweis: Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IPWE_example.png">  
-*Beispiel einer IPWE-Ausgabe.*  
   
+*Beispiel einer IPWE-Ausgabe.*   
+   
 Um die Funktion der IPWE-Erweiterung zu nutzen, müssen vor dem Flashen des Arduino zwei Einstellungen in der Datei `BSB_lan_config.h` vorgenommen werden:  
 - Das Definement `#define IPWE` muss aktiviert werden.  
 - Die gewünschten Parameter die dargestellt werden sollen, müssen aufgelistet werden.  
