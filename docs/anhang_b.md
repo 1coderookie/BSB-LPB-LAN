@@ -26,7 +26,7 @@
 |  /D0                  | Zurücksetzen der Logdatei & neue Generierung des Headers  
 |  /E\<x\>              | ENUM-Werte für Parameter \<x\> anzeigen  
 |  /G\<x\>              | GPIO: Abfragen des Pins \<x\>  
-|  /G\<x\>,\<y\>        | GPIO: Setzen des Pins \<x\> auf high (\<y\> = 1) oder low (\<y\> = 0)  
+|  /G\<x\>=\<y\>        | GPIO: Setzen des Pins \<x\> auf high (\<y\> = 1) oder low (\<y\> = 0)  
 |  /G\<x\>,I            | GPIO: Abfragen des Pins \<x\> mit gleichzeitigem Setzen auf INPUT  
 |  /I\<x\>=\<y\>        | INF-Nachricht an Parameter \<x\> mit Wert \<y\> senden  
 |  /JK=\<x\>        	| JSON: Abfrage der verfügbaren Parameter der Kategorie \<x\>  
