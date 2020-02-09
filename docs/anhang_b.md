@@ -48,7 +48,8 @@
 |  /Q                   | Test auf nicht-freigegebene reglerspezifische Parameter  
 |  /R\<x\>              | Abfrage des Reset-Werts für Parameter \<x\>  
 |  /S\<x\>=\<y\>        | Wert \<y\> für Parameter \<x\> setzen  
-|  /T                   | Abfrage optional angeschlossener Sensoren (DS18B20/DHT22) 
+|  /T                   | Abfrage optional angeschlossener Sensoren (DS18B20/DHT22)  
+|  /U                   | Zeigt die benutzerdefinierten Variablen an, falls diese in `BSB_lan_custom.h` verwendet werden  
 |  /V\<x\>              | Verbositäts-Modus aktivieren (\<x\> = 1) oder deaktivieren (\<x\> = 0)  
 |  /X                   | Abfrage optional eingebundener MAX!-Thermostate  
 
