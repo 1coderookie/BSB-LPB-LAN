@@ -31,7 +31,7 @@ Die zwei Buttons "Sensoren" und "Ausgabe Logdatei" sind in schwarzer Schrift dar
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
 BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
-*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies deaktiviert werden! Bitte beachte dazu den entspr. Punkt in der Datei BSB_lan_config.h und lies im [Kapitel 5](kap05.md) nach.*   
+*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies durch Auskommentieren des entspr. Definements (`//#define VERSION_CHECK 1`) in der Datei BSB_lan_config.h deaktiviert werden.*   
 
 ---  
    
