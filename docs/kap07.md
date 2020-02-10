@@ -27,7 +27,7 @@ Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen ein
 - Handbuch  
 - FAQ  
    
-Die zwei Buttons "Sensoren" und "Ausgabe Logdatei" sind in schwarzer Schrift dargestellt, wenn die jeweilige Funktion nicht aktiviert ist (s. Datei *BSB_lan_config.h*). Bei dem gezeigten Beispiel ist dies der Button "Ausgabe Logdatei", da keinerlei zu loggende Parameter definiert wurden.  
+Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion in der Datei *BSB_lan_config.h* nicht aktiviert ist (wie im obigen Screenshot zu sehen).  
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
 BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
@@ -91,32 +91,25 @@ Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überpr�
 ---  
    
 **Einstellungen (URL-Befehl: /C):**  
-Hier wird eine Übersicht der Konfiguration dargestellt. Dort sind u.a. der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional
-angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick
-überprüfbar.
+Hier wird eine Übersicht der Konfiguration dargestellt.  
+Dort sind u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  
    
 ---  
    
 **URL-Befehle:**  
-Dieser Button ist mit dem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind.  
-   
-   
-   
-   
-Eine Übersicht und ausführlichere Beschreibung der URL-Befehle findet
-sich im Kap. [8](kap08.md).
+Dieser Button ist mit dem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
    
 ---  
    
 **Handbuch:**  
-Dieser Button ist mit dem Handbuch verlinkt.  
+Dieser Button ist mit dem Handbuch verlinkt. Internetzugriff wird benötigt.  
    
 ---  
    
 **FAQ:**  
-Dieser Button ist mit dem Kapitel "FAQ" des Handbuchs verlinkt.
+Dieser Button ist mit dem Kapitel "FAQ" des Handbuchs verlinkt. Internetzugriff wird benötigt.
     
 ---
     
