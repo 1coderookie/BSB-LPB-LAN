@@ -28,6 +28,10 @@ Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen ein
 - FAQ  
    
 Die zwei Buttons "Sensoren" und "Ausgabe Logdatei" sind in schwarzer Schrift dargestellt, wenn die jeweilige Funktion nicht aktiviert ist (s. Datei *BSB_lan_config.h*). Bei dem gezeigten Beispiel ist dies der Button "Ausgabe Logdatei", da keinerlei zu loggende Parameter definiert wurden.  
+  
+Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
+BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
+*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies deaktiviert werden! Bitte beachte dazu den entspr. Punkt in der Datei BSB_lan_config.h und lies im [Kapitel 5](kap05.md) nach.*   
 
 ---  
    
