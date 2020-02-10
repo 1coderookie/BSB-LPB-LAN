@@ -6,9 +6,9 @@
 
 # 5. Einstellungsrelevante Parameter der BSB-LAN-Software  
 *Hinweis:  
-Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor der Raute zwei Slashes hinzuzufügen ("auskommentieren"):  
+Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
 `//#define XYZ` = Definement XYZ ist deaktiviert.      
-Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor der Raute zu entfernen:  
+Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem Hashtag zu entfernen:  
 `#define XYZ` = Definement XYZ ist aktiv.*  
   
 **Die folgenden Parameter können bzw. sollten vor der Verwendung des Adapters in der Datei *BSB_lan_config.h* angepasst werden**
