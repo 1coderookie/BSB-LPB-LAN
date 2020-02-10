@@ -4,9 +4,14 @@
 ---
     
 
-# 5. Einstellungsrelevante Parameter der BSB-LAN-Software
-Folgende Parameter in der Datei *BSB_lan_config.h* können bzw. sollten
-vor der Verwendung des Adapters angepasst werden:
+# 5. Einstellungsrelevante Parameter der BSB-LAN-Software  
+*Hinweis:  
+Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor der Raute zwei Slashes hinzuzufügen ("auskommentieren"):  
+`//#define XYZ` = Definement XYZ ist deaktiviert.      
+Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor der Raute zu entfernen:  
+`#define XYZ` = Definement XYZ ist aktiv.*  
+  
+**Die folgenden Parameter können bzw. sollten vor der Verwendung des Adapters in der Datei *BSB_lan_config.h* angepasst werden**
 
 
 -   **Ethernet-Port:**  
@@ -209,7 +214,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define MAX_CUL 192,168,178,5`  
     aktiviert, sowie die URL und die spezifischen MAX!-IDs entsprechend  
     angepasst werden.  
-    Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. Kap. [12.2](kap12.md).  
+    Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. [Kap. 12.5](kap12.md#125-max-komponenten).  
 
 -   Soll der Arduino **per URL-Befehl** mittels `http://<IP-Adresse>/N`
     **resettet** werden können, muss das entsprechende Definement aktiviert
@@ -251,7 +256,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     *Sollen via BSB-LAN aktiv Einstellungen geändert werden, so muss selbstverständlich das etwas weiter unten aufgeführte Definement bzgl. Schreibzugriff des Adapters zusätzlich entspr. angepasst werden!*   
     
 -   Verwendetes **Bus-Protokoll** festlegen (bereits nach Booten des Arduino wirksam):     
-    `uint8_t bus_type = bus.setBusType(0);`   
+    `constexpr uint8_t bus_type = 0;`   
     Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
     hingegen 2.  
     0 = BSB  
@@ -293,7 +298,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     → das „DEFAULT_FLAG" wurde durch „0" (Null, ohne Anführungszeichen)
     ersetzt
     
-
+- **Eigenen Code** aus der Datei *BSB_lan_custom.h* einfügen:  
+`#define CUSTOM_COMMANDS`  
+Fügt die Befehle aus der Datei `BSB_lan_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden.  
+  
+- **Überprüfen der BSB-LAN-Version:**  
+`#define VERSION_CHECK 1`  
+Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist. Dazu ist Internetzugriff nötig. Wenn der automatische Internetzugriff von BSB-LAN nicht erwünscht ist, so ist dieses Definement zu deaktivieren.    
        
     
 ---
