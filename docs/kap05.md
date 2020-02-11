@@ -18,24 +18,29 @@ Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem 
     `#define Port 80` (default für HTTP)  
 
 -   **IP-Adresse:**  
-    `#define IPAddr 192,168,178,88`
+    IP-Adresse des Adapters. Es ist ratsam, eine feste IP-Adresse zu vergeben (die frei ist und vom Router nicht vergeben wird!), so dass eine korrekte Einbindung in Hausautomationssysteme erfolgen kann.  
+    `#define IPAddr 192,168,178,88`  
+    Bitte beachte die Kommata anstelle von Punkten!  
 
 -   **GatewayIP:**  
     Durch Aktivierung des Definements und Anpassung der IP
     kann hier optional die IP eines (nicht-Standard-)Gateways definiert
     werden:  
     `#define GatewayIP 192,168,178,1`  
-    
+    Bitte beachte die Kommata anstelle von Punkten!  
+        
 -   **DNSIP:**  
     Durch Aktivierung des Definements und Anpassung der IP 
     kann hier optional die IP eines (nicht-Standard-)DNS definiert 
     werden, wenn die IP nicht mit der des Routers übereinstimmt:  
     `#define DNSIP 192,168,178,1`    
-    
+    Bitte beachte die Kommata anstelle von Punkten!  
+  
 -   **SubnetIP:**  
     Durch Aktivierung des Definements und Anpassung der IP 
     kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
     `#define SubnetIP 255,255,255,0`  
+    Bitte beachte die Kommata anstelle von Punkten!  
     
 -   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters sowie der Kategorie- und Parameterbezeichnungen muss
     *zwingend* ausgewählt bzw. definiert werden. Für "Deutsch" ist dabei das folgende Definement zu wählen:  
@@ -182,27 +187,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
     `//#define LOGGER`   
    
--   Soll die **IPWE-Erweiterung** aktiviert werden, ist das entsprechende
-    Definement  
+-   Soll die **IPWE-Erweiterung** aktiviert werden, ist das entsprechende Definement zu aktivieren:   
     `#define IPWE`   
-    zu aktivieren, die gewünschten Parameter sind wie gewohnt
-    einzutragen:  
+    Die gewünschten Parameter sind ebenfalls einzutragen:  
     ```  
-    // Activate IPWE extension (http://xxx.xxx.xxx.xxx/ipwe.cgi)  
-    #define IPWE  
-    // Parameters to be displayed in IPWE extension  
     const int ipwe_parameters[] = {  
     8700,                   // Außentemperatur  
-    8743,                   // Vorlauftemperatur  
-    8314,                   // Rücklauftemperatur  
-    8750,                   // Gebläsedrehzahl  
-    8830,                   // Warmwassertemperatur  
-    8740,                   // Raumtemperatur Ist  
-    8741,                   // Raumtemperatur Soll  
-    8326,                   // Brenner-Modulation  
-    8337,                   // Startzähler Brenner  
-    8703,                   // Aussentemperatur gedämpft  
-    8704                    // Aussentemperatur gemischt  
+    8830                   // Warmwassertemperatur  
     };  
     ```
 
@@ -267,7 +258,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define QAA_TYPE 0x53`   
     0x53 → QAA70 (Standardeinstellung)   
     0x52 → QAA50
-
+  
+-   **Aktivieren des Verbose oder Monitor Modus:**  
+    Per default ist der Verbose-Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen.    
+    `byte verbose = 1;`
+    `byte monitor = 0;`
+  
+  
 -   In der Voreinstellung ist der **Zugriff des Adapters auf den Regler**
     auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern
     der Heizungssteuerung per Adapter ist standardmäßig nicht möglich.  
@@ -305,6 +302,10 @@ Fügt die Befehle aus der Datei `BSB_lan_custom.h` hizu, die am Ende jedes 'main
 - **Überprüfen der BSB-LAN-Version:**  
 `#define VERSION_CHECK 1`  
 Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist. Dazu ist Internetzugriff nötig. Wenn der automatische Internetzugriff von BSB-LAN nicht erwünscht ist, so ist dieses Definement zu deaktivieren.    
+  
+- **Debugging via Telnet aktivieren:**  
+`#define DebugTelnet 1`  
+Wird dieses Definement aktiviert, so werden Debug-Meldungen nicht an den seriellen Port, sondern an einen Telnet client geschickt. Für die reguläre Verwendung von BSB-LAN sollte dieses Definement deaktiviert bleiben, so dass der lokale Serielle Monitor (bspw. von der ArduinoIDE) genutzt werden kann.  
        
     
 ---
