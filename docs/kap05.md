@@ -259,10 +259,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     0x53 → QAA70 (Standardeinstellung)   
     0x52 → QAA50
   
--   **Aktivieren des Verbose oder Monitor Modus:**  
-    Per default ist der Verbose-Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen.    
+-   **Aktivieren des Verbose Modus:**  
+    Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen.    
     `byte verbose = 1;`
-    `byte monitor = 0;`
   
   
 -   In der Voreinstellung ist der **Zugriff des Adapters auf den Regler**
