@@ -52,12 +52,12 @@ einen noch nicht aufgeführten Regler unter Angabe
 - der genauen Hersteller- und Modellbezeichnung,  
 - des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
 - der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
-- der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` sowie `http://<IP-Adresse>/6220-6236` (via Adapter!) zu melden.  
+- der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` (via Adapter!) zu melden.  
 Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
 Danke!
 
 Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
-26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q und /6220-6236 abfragen und rückmelden!):
+26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q abfragen und rückmelden!):
     
 ```
 6220 Konfiguration - Software- Version: 1.3  
@@ -289,7 +289,7 @@ Eine Ausnahme bei der nachfolgenden Auflistung der Reglertypen stellt
 das Modell AVS75.390 dar. Hierbei handelt es sich um ein
 Erweiterungsmodul (EWM) für den RVS-Reglertyp, an dem sich weitere
 Fühler und Verbraucher anschließen und somit im System integrieren
-lassen. Pro RVS-Regler können bis zu zwei EWM angeschlossen werden.  
+lassen.    
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS75.jpg">  
    
@@ -489,7 +489,7 @@ Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet ei
 ---   
    
 **RVS46.xxx**  
-Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen und Mischer hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl BSB als auch LPB.  
+Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen- / Mischerkreise hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl eine BSB- als auch einen LPB-Anschluss.  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpeg">
     
@@ -505,6 +505,11 @@ Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
    
 *Ein Regler des Typs RVS43.*  
+  
+---    
+    
+**RVS61.xxx**  
+Der RVS61 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
    
 ---   
    
@@ -515,6 +520,7 @@ Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund
    
 *Ein Regler des Typs RVS63.*  
     
+Der **RVS65.xxx** scheint relativ identisch zum RVS63 zu sein und wurde bisher lediglich einmal von einem User gemeldet, wo der Regler als SSR von Brötje in einem Wandgehäuse zum Einsatz kam.       
 
 ---
     
