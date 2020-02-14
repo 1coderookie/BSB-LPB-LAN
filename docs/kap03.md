@@ -508,8 +508,8 @@ Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. 
   
 ---    
     
-**RVS61.xxx**  
-Der RVS61 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
+**RVS51.xxx**  
+Der RVS51 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
    
 ---   
    
