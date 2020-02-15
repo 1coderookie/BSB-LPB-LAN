@@ -385,30 +385,7 @@ Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<
 *Hinweis:*  
 Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion nach bisherigem Kenntnisstand nicht verfügbar. Das Übermitteln der alternativen AT kann in diesem Fall aber trotzdem wie beschrieben getestet werden, allerdings muss dann der Parameter 10004 anstelle von 10003 verwendet werden: `<ip>/10004=xx`.  
    
----
-   
-### 8.2.9 Virtuelle Parameter
-Innerhalb von BSB-LAN gibt es Parameter, die im Regler selbst nicht existieren und somit auch nicht direkt abgefragt werden können. Diese Parameter sind sogenannte 'virtuelle' Parameter. Sie wurden geschaffen, um spezielle Funktionen zu realisieren, wie bspw. das Übermitteln einer Raumtemperatur mittels `/S10000=xx` oder um die Brennerstatistik (`/B`) zu erstellen.  
-Als einfach Regel kann man sich merken, dass zumindest alle Parameter ab 10000 zu diesen virtuellen Parametern zählen. Die folgende Auflistung zeigt die wichtigsten dieser virtuellen Parameter:  
-   
-- 701 Präsenztastenfunktion Heizkreis 1   
-- 1001 Präsenztastenfunktion Heizkreis 2  
-- 1601 Auslösen des manuellen TWW-Pushs    
-- 10000 Raumtemperatur 1
-- 10001 Raumtemperatur 2  
-- 10002 Raumtemperatur 3/P  
-- 10003 (alternative) Außentemperatur  
-- 10004 (alternative) Außentemperatur 
-- 20000 Brenner-Laufzeit Stufe 1 (/B)
-- 20001 Brenner-Takte Stufe 1 (/B)
-- 20002 Brenner-Laufzeit Stufe 2 (/B)
-- 20003 Brenner-Takte Stufe 2 (/B)
-- 20004 TWW-Laufzeit (/B)
-- 20005 TWW-Takte (/B)
-- 20006 24h-Durchschnittswerte (/A)
-- 30000 rohe Bus-Datentelegramme
 
-   
 ---  
      
 [Weiter zu Kapitel 9](kap09.md)      
