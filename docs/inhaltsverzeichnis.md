@@ -50,7 +50,6 @@
 [8.2.6 IPWE-Erweiterung](kap08.md#826-ipwe-erweiterung)  
 [8.2.7 Datum, Uhrzeit und Zeitprogramme verändern](kap08.md#827-datum-uhrzeit-und-zeitprogramme-verändern)  
 [8.2.8 Übermitteln einer alternativen Außentemperatur](kap08.md#828-übermitteln-einer-alternativen-außentemperatur)  
-[8.2.9 Virtuelle Parameter](kap08.md#829-virtuelle-parameter)  
 [9. Loggen von Daten](kap09.md)  
 [9.1 Verwendung des Adapters als Standalone-Logger mittels BSB-LAN](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan)  
 [9.2 Verwendung des Adapters als Remote-Logger](kap09.md#92-verwendung-des-adapters-als-remote-logger)  
