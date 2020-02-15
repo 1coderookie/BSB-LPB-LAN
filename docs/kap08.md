@@ -389,7 +389,11 @@ Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion
    
 ### 8.2.9 Virtuelle Parameter
 Innerhalb von BSB-LAN gibt es Parameter, die im Regler selbst nicht existieren und somit auch nicht direkt abgefragt werden können. Diese Parameter sind sogenannte 'virtuelle' Parameter. Sie wurden geschaffen, um spezielle Funktionen zu realisieren, wie bspw. das Übermitteln einer Raumtemperatur mittels `/S10000=xx` oder um die Brennerstatistik (`/B`) zu erstellen.  
-Als einfach Regel kann man sich merken, dass alle Parameter ab 10000 zu diesen virtuellen Parametern zählen. Die folgende Auflistung zeigt diese virtuellen Parameter (die Liste ist möglicherweise jedoch nicht komplett):  
+Als einfach Regel kann man sich merken, dass zumindest alle Parameter ab 10000 zu diesen virtuellen Parametern zählen. Die folgende Auflistung zeigt diese virtuellen Parameter (die Liste ist möglicherweise jedoch nicht komplett):  
+   
+- 701 Präsenztastenfunktion Heizkreis 1   
+- 1001 Präsenztastenfunktion Heizkreis 2  
+- 1601 Auslösen des manuellen TWW-Pushs    
 - 10000 Raumtemperatur 1
 - 10001 Raumtemperatur 2  
 - 10002 Raumtemperatur 3/P  
