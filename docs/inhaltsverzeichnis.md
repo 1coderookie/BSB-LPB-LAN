@@ -23,6 +23,7 @@
 [3.2.2 RVx-Regler](kap03.md#322-rvx-regler)  
 [3.2.2.1 RVA- und RVP-Regler](kap03.md#3221-rva--und-rvp-regler)  
 [3.2.2.2 RVS-Regler](kap03.md#3222-rvs-regler)  
+[3.2.3 Erweiterungs- und ClipIn-Module](kap03.md#323-erweiterungs--und-clipin-module)  
 [3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje)  
 [3.4 Hinweis: Spezialfall LMU54/LMU64-Regler](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler)  
 [3.5 Hinweis: Spezialfall Weishaupt-Geräte](kap03.md#35-hinweis-spezialfall-weishaupt-geräte)  
