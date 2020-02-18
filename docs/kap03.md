@@ -290,7 +290,7 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 ---
    
 #### 3.2.1.1 LMU-Regler  
-Regler der Serie *LMU54/LMU64* sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Regler der Serie **LMU54/LMU64** sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 
          
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
@@ -301,7 +301,7 @@ Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in 
    
 ---
    
-Regler der Serie *LMU74/LMU75* scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
+Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU7.jpg">  
    
@@ -315,7 +315,7 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
 ---  
    
 #### 3.2.1.2 LMS-Regler   
-Regler der Serie *LMS* scheinen die Nachfolger der LMU-Serie und somit die
+Regler der Serie **LMS** scheinen die Nachfolger der LMU-Serie und somit die
 aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
    
 Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
@@ -342,7 +342,7 @@ Solarsystemregler) zum Einsatz zu kommen.
 ---
     
 #### 3.2.2.1 RVA- und RVP-Regler
-Regler des Typs *RVA* gehören anscheinend zur vorherigen Reglergeneration
+Regler des Typs **RVA** gehören anscheinend zur vorherigen Reglergeneration
 und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
 (keinen BSB).  
 Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol" 
@@ -350,11 +350,15 @@ Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol"
 Eine Bedienung mittels BSB-LAN ist nur in deutlich geringerem Umfang als
 bei der aktuellen Reglergeneration RVS möglich.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_front.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">  
    
 *Ein Regler des Typs RVA53.*  
    
-Regler des Typs *RVP* scheinen noch älter als RVA-Regler zu sein und
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_front.jpg">  
+   
+*Vorderansicht: Bedieneinheit eines Reglers des Typs RVA53.*  
+   
+Regler des Typs **RVP** scheinen noch älter als RVA-Regler zu sein und
 weisen lediglich eine PPS-Schnittstelle auf.  
 Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
 eingeschränktem Umfang möglich.  
@@ -362,7 +366,7 @@ eingeschränktem Umfang möglich.
 ---
     
 #### 3.2.2.2 RVS-Regler
-Regler des Typs *RVS* scheinen die ‚aktuelle' Reglergeneration
+Regler des Typs **RVS** scheinen die ‚aktuelle' Reglergeneration
 darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
 Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
