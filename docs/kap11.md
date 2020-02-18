@@ -85,17 +85,20 @@ und \"Rücklauftemperatur\" und weist diese Differenz dem Reading
 *Die RegEx-Bedingungen müssen vom Beginn des Strings an
 (also der Parameternummer wie bspw. 8700) matchen und nicht erst ab
 einem späteren Teil des Strings.*  
+  
+***Hinweis:***  
+*Es scheint ein Problem mit dem HTTPMOD-Modul zu geben, aufgrund dessen Readings nicht erfolgen, die `reading0Name` und `reading0Regex` heißen. Bitte beginne daher stets mit `1`.*  
     
 ```
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314 300
-attr THISION userattr reading0Name reading0Regex reading1Name reading1Regex reading2Name reading2Regex readingOExpr set0Name set0URL
+attr THISION userattr reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex readingOExpr set0Name set0URL
 attr THISION event-on-change-reading .*
-attr THISION reading0Name Aussentemperatur
-attr THISION reading0Regex 8700 .*:[ \t]+([-]?[\d\.]+)
-attr THISION reading1Name Vorlauftemperatur
-attr THISION reading1Regex 8743 .*:[ \t]+([-]?[\d\.]+)
-attr THISION reading2Name Ruecklauftemperatur
-attr THISION reading2Regex 8314 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading1Name Aussentemperatur
+attr THISION reading1Regex 8700 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading2Name Vorlauftemperatur
+attr THISION reading2Regex 8743 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading3Name Ruecklauftemperatur
+attr THISION reading3Regex 8314 .*:[ \t]+([-]?[\d\.]+)
 attr THISION readingOExpr $val=~s/[\r\n]//g;;$val
 attr THISION set0Name Istwert
 attr THISION set0URL http://192.168.178.88/I10000=$val
@@ -112,10 +115,10 @@ Im Folgenden ein Beispiel für die Parameter '700 - Betriebsart' und
 '8000 - Status Heizkreis 1'. 
     
 ```
-attr THISION reading3Name Betriebsart
-attr THISION reading3Regex 700 .*-[ \t]+(.*)
-attr THISION reading4Name Status Heizkreis 1
-attr THISION reading4Regex 8000 .*-[ \t]+(.*)
+attr THISION reading4Name Betriebsart
+attr THISION reading4Regex 700 .*-[ \t]+(.*)
+attr THISION reading5Name Status Heizkreis 1
+attr THISION reading5Regex 8000 .*-[ \t]+(.*)
 ```
     
 Die Nummerierung der zuvor aufgeführten Readings wird hierbei weitergeführt, 
@@ -127,16 +130,16 @@ Zusammengefasst sieht das Ganze dann so aus:
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314/700/8000 300
 attr THISION userattr reading0Name reading0Regex reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex reading4Name reading4Regex readingOExpr set0Name set0URL
 attr THISION event-on-change-reading .*
-attr THISION reading0Name Aussentemperatur
-attr THISION reading0Regex 8700 .*:[ \t]+([-]?[\d\.]+)
-attr THISION reading1Name Vorlauftemperatur
-attr THISION reading1Regex 8743 .*:[ \t]+([-]?[\d\.]+)
-attr THISION reading2Name Ruecklauftemperatur
-attr THISION reading2Regex 8314 .*:[ \t]+([-]?[\d\.]+)
-attr THISION reading3Name Betriebsart
-attr THISION reading3Regex 700 .*-[ \t]+(.*)
-attr THISION reading4Name Status Heizkreis 1
-attr THISION reading4Regex 8000 .*-[ \t]+(.*)
+attr THISION reading1Name Aussentemperatur
+attr THISION reading1Regex 8700 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading2Name Vorlauftemperatur
+attr THISION reading2Regex 8743 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading3Name Ruecklauftemperatur
+attr THISION reading3Regex 8314 .*:[ \t]+([-]?[\d\.]+)
+attr THISION reading4Name Betriebsart
+attr THISION reading4Regex 700 .*-[ \t]+(.*)
+attr THISION reading5Name Status Heizkreis 1
+attr THISION reading5Regex 8000 .*-[ \t]+(.*)
 attr THISION readingOExpr $val=~s/[\r\n]//g;;$val
 attr THISION set0Name Istwert
 attr THISION set0URL http://192.168.178.88/I10000=$val
@@ -154,21 +157,21 @@ angeschlossen sind.
     
 ```
 define EthRelais HTTPMOD http://192.168.178.88/G05/G06/G07 30
-attr EthRelais userattr reading0Name reading0Regex reading1Name reading1Regex reading2Name reading2Regex readingOExpr readingOMap set0Name set0URL set1Name set1URL set2Name set2URL setIMap setParseResponse:0,1 setRegex
+attr EthRelais userattr reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex readingOExpr readingOMap set1Name set1URL set2Name set2URL set3Name set3URL setIMap setParseResponse:0,1 setRegex
 attr EthRelais event-on-change-reading .*
-attr EthRelais reading0Name Heater
-attr EthRelais reading0Regex GPIO7:[ \t](\d)
-attr EthRelais reading1Name Fan
-attr EthRelais reading1Regex GPIO6:[ \t](\d)
-attr EthRelais reading2Name Bell
-attr EthRelais reading2Regex GPIO5:[ \t](\d)
+attr EthRelais reading1Name Heater
+attr EthRelais reading1Regex GPIO7:[ \t](\d)
+attr EthRelais reading2Name Fan
+attr EthRelais reading2Regex GPIO6:[ \t](\d)
+attr EthRelais reading3Name Bell
+attr EthRelais reading3Regex GPIO5:[ \t](\d)
 attr EthRelais room Heizung
-attr EthRelais set0Name Heater
-attr EthRelais set0URL http://192.168.178.88/G07=$val
-attr EthRelais set1Name Fan
-attr EthRelais set1URL http://192.168.178.88/G06=$val
-attr EthRelais set2Name Bell
-attr EthRelais set2URL http://192.168.178.88/G05=$val
+attr EthRelais set1Name Heater
+attr EthRelais set1URL http://192.168.178.88/G07=$val
+attr EthRelais set2Name Fan
+attr EthRelais set2URL http://192.168.178.88/G06=$val
+attr EthRelais set3Name Bell
+attr EthRelais set3URL http://192.168.178.88/G05=$val
 attr EthRelais setParseResponse 1
 attr EthRelais setRegex GPIO[0-9]+:[ \t](\d)
 attr EthRelais timeout 5
