@@ -232,7 +232,7 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
 (bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
 für den Kontaktbereich zu verwenden.  
    
-- Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einer Rohrbiegung oder eines 90°-"Knicks" an der 'Außenseite' des "Knicks" ideal zu sein scheint, da hier die
+- Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einer Rohrbiegung oder eines 90°-"Knicks" (in Strömungsrichtung) an der 'Außenseite' des "Knicks" ideal zu sein scheint, da hier die
 Kerntemperatur des Strömungsmediums aufgrund der auftretenden
 Verwirbelungen nah an die Rohrwand gelangt.  
    
