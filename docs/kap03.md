@@ -464,17 +464,17 @@ Erweiterungsmodule für LMx-Regler werden als "ClipIn-Module" bezeichnet. Je nac
 ### 3.2.4 Bedieneinheiten  
    
 Die Bedieneinheit (am Wärmeerzeuger selbst) der Systeme der letzten Jahre (mit den Reglertypen LMU7x, LMS1x, RVS) sind üblicherweise Modelle des Typs **AVS37.xxx**. Sie sehen herstellerübergreifend recht identisch aus, können aber bei bestimmten Systeme (bspw. Wärmepumpen) zusätzliche Bedienelemente oder Funktionen aufweisen.   
-Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte vergleicht, so kann man feststellen, dass sich die beiden Geräte sehr ähneln. Die Art der Bedienung ist in dem meisten Fällen ebenso identisch. Die heizungsseitigen Bedieneinheiten stellen i.d.R. die Temperatur des Wärmeerzeugers (bspw. Kesseltemperatur) dauerhaft dar, die Raumgeräte hingegen üblicherweise die Raumtemperatur. Beide Geräte senden den jeweiligen Wert regelmäßig (etwa alle zehn Sekunden) als Broadcast (Inf-Nachricht) über den BSB.   
+Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte vergleicht, so kann man feststellen, dass sich die beiden Geräte sehr ähneln. Die Art der Bedienung ist in dem meisten Fällen ebenso identisch. Die heizungsseitigen Bedieneinheiten stellen i.d.R. die Temperatur des Wärmeerzeugers (bspw. Kesseltemperatur) dauerhaft dar, die Raumgeräte hingegen üblicherweise die Raumtemperatur. Beide Geräte senden den jeweiligen Wert regelmäßig (etwa alle zehn Sekunden) als Broadcast (INF-Nachricht) über den BSB.   
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS37.jpg">  
    
-*Eine typische AVS37-Bedieneinheit.*  
+*Eine Bedieneinheit des Typs AVS37.xxx.*  
    
 In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein neuer Typ von Bedieneinheit verbaut, die Modellbezeichnung lautet **QAA75.91x**. Die Bedieneinheit scheint (zumindest bei bestimmten Herstellern) abnehmbar und mithilfe eines Adapters (Brötje: "ISR RGA") im Wohnraum installiert und zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente.     
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
    
-*Eine QAA75.91x Bedieneinheit, mit Zubehör optional nutzbar als Raumgerät.*  
+*Eine Bedieneinheit des Typs QAA75.91x.*  
    
 ---
     
