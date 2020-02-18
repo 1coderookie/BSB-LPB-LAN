@@ -231,15 +231,19 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
 - Sollen die Sensoren für Temperaturmessungen an Rohren zum Einsatz kommen
 (bspw. HK-VL/-RL), so ist es empfehlenswert, ein Bett aus Wärmeleitpaste
 für den Kontaktbereich zu verwenden.  
-Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einem
-Knick an der Außenseite eines Rohres ideal zu sein scheint, da hier die
+   
+- Darüber hinaus haben Tests gezeigt, dass die Positionierung nach einer Rohrbiegung oder eines 90°-"Knicks" an der 'Außenseite' des "Knicks" ideal zu sein scheint, da hier die
 Kerntemperatur des Strömungsmediums aufgrund der auftretenden
 Verwirbelungen nah an die Rohrwand gelangt.  
-Die Metallhülse der gekapselten Bauform sollte möglichst mit einer
-metallenen Rohrschelle am Rohr fixiert werden. Das Kabel selbst sollte
+   
+- Die Metallhülse der gekapselten Bauform sollte möglichst mit einer
+metallenen Rohrschelle am Rohr fixiert werden.  
+    
+- Das Kabel selbst sollte
 zusätzlich mit einem Kabelbinder fixiert werden, um Zugkräfte an der
 Fühlerhülse sowie ein Verrutschen des Fühlers zu vermeiden.  
-Die Rohrdämmung sollte nach Anbringen des Fühlers (unter der Dämmung)
+   
+- Die Rohrdämmung sollte nach Anbringen des Fühlers (unter der Dämmung)
 wieder gewissenhaft verschlossen werden. Löcher, Einschnitte o.ä. in
 Fühlernähe sind zu vermeiden. Werden Fühler an bisher ungedämmten Rohren
 montiert, so ist zumindest für den Bereich des Fühlers eine zusätzliche
