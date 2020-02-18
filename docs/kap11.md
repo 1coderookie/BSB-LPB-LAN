@@ -128,7 +128,7 @@ Zusammengefasst sieht das Ganze dann so aus:
     
 ```
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314/700/8000 300
-attr THISION userattr reading0Name reading0Regex reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex reading4Name reading4Regex readingOExpr set0Name set0URL
+attr THISION userattr reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex reading4Name reading4Regex reading5Name reading5Regex readingOExpr set1Name set1URL
 attr THISION event-on-change-reading .*
 attr THISION reading1Name Aussentemperatur
 attr THISION reading1Regex 8700 .*:[ \t]+([-]?[\d\.]+)
@@ -141,8 +141,8 @@ attr THISION reading4Regex 700 .*-[ \t]+(.*)
 attr THISION reading5Name Status Heizkreis 1
 attr THISION reading5Regex 8000 .*-[ \t]+(.*)
 attr THISION readingOExpr $val=~s/[\r\n]//g;;$val
-attr THISION set0Name Istwert
-attr THISION set0URL http://192.168.178.88/I10000=$val
+attr THISION set1Name Istwert
+attr THISION set1URL http://192.168.178.88/I10000=$val
 attr THISION timeout 5
 attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorlauftemperatur",0)-ReadingsVal("THISION","Ruecklauftemperatur",0));; }
 ```
