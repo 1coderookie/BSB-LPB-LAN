@@ -91,7 +91,7 @@ einem späteren Teil des Strings.*
     
 ```
 define THISION HTTPMOD http://192.168.178.88/8700/8743/8314 300
-attr THISION userattr reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex readingOExpr set0Name set0URL
+attr THISION userattr reading1Name reading1Regex reading2Name reading2Regex reading3Name reading3Regex readingOExpr set1Name set1URL
 attr THISION event-on-change-reading .*
 attr THISION reading1Name Aussentemperatur
 attr THISION reading1Regex 8700 .*:[ \t]+([-]?[\d\.]+)
@@ -100,8 +100,8 @@ attr THISION reading2Regex 8743 .*:[ \t]+([-]?[\d\.]+)
 attr THISION reading3Name Ruecklauftemperatur
 attr THISION reading3Regex 8314 .*:[ \t]+([-]?[\d\.]+)
 attr THISION readingOExpr $val=~s/[\r\n]//g;;$val
-attr THISION set0Name Istwert
-attr THISION set0URL http://192.168.178.88/I10000=$val
+attr THISION set1Name Istwert
+attr THISION set1URL http://192.168.178.88/I10000=$val
 attr THISION timeout 5
 attr THISION userReadings Spreizung { sprintf("%.1f",ReadingsVal("THISION","Vorlauftemperatur",0)-ReadingsVal("THISION","Ruecklauftemperatur",0));; }
 ```  
