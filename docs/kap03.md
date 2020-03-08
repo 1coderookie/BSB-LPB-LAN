@@ -226,9 +226,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner) {BSB}  
 
--   Bösch (unbekanntes Modell / unknown model) \[RVS63\] (Wärmepumpe] {BSB}  
+-   Bösch (unbekanntes Modell) \[RVS63\] (Wärmepumpe] {BSB}  
 
--   CTA Optiheat 1-5es \[RVS61\] (Wäärmepumpe) {BSB}  
+-   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner) {BSB}  
 
