@@ -418,6 +418,10 @@ Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess ei
     
 **RVS51.xxx**  
 Der RVS51 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
+            
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS51483.jpeg">  
+   
+*Ein Regler des Typs RVS51.843.*  
    
 ---    
     
