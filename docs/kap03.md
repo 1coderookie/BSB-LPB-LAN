@@ -198,7 +198,6 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 ***ACHTUNG:***  
 ***Die neuen Modellreihen Brötje WLS/WLC und
 BOK sind NICHT mit BSB-LAN kompatibel!***  
-***The new models WLS/WLC and BOK by Brötje are NOT compatible with BSB-LAN!***
     
 ---
     
