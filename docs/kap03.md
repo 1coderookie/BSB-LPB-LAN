@@ -80,6 +80,10 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
+-   Brötje BGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}
+
+-   Brötje BMR 20/24 \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje BSK 20 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner) {BSB}
@@ -88,7 +92,13 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner) {BSB}
 
--   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrennerd) {BSB}  
+-   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Brötje EcoCondens BBS EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Brötje EcoCondens Kompakt BBK 22D \[LMU7\] (Gasbrenner) {BSB}
+
+-   Brötje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15] (Gasbrenner + Solar) {BSB}  
 
@@ -110,11 +120,15 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler) {BSB}
 
+-   Brötje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
+
 -   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner) {BSB}
 
 -   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner) {BSB}
 
 -   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner) {BSB}  
+
+-   Brötje NovoCondens BOB 25 \[RVS43\] (Ölbrenner) {BSB}
 
 -   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {BSB}
 
@@ -135,6 +149,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe) {BSB}  
 
+-   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
@@ -153,13 +169,19 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje WGB 20 Eco \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
+-   Brötje WGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
+
 -   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
+
+-   Brötje WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
 
@@ -171,6 +193,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
 
+-   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
+
 ***ACHTUNG:***  
 ***Die neuen Modellreihen Brötje WLS/WLC und
 BOK sind NICHT mit BSB-LAN kompatibel!***  
@@ -180,6 +204,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.2 Elco
 -   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe) {BSB}  
+
+-   Elco Aerotop S \[RVS61\] (Wärmepumpe) {BSB}
    
 -   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe) {BSB}
 
@@ -199,7 +225,11 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Thision S Plus 19 \[LMS14\] (Gasbrenner) {BSB}  
 
--   Elco Thision S Plus 24 Compact \[?\] {BSB}  
+-   Elco Thision S Plus 24 \[LMS14\] (Gasbrenner) {BSB}
+
+-   Elco Thision S Plus 24 Compact \[?\] (Gasbrenner) {BSB}  
+
+-   Elco Thision S9.1 \[LMU7\] (Gasbrenner) {BSB}
 
 -   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner) {BSB}
 
@@ -212,6 +242,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ---
     
 ### 3.1.3 Weitere Hersteller
+-   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
+
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
@@ -220,7 +252,11 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
 
+-   Atlantic Alféa Extensa Duo \[RVS21\] (Wärmepumpe) {BSB}  
+
 -   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe) {BSB}
+
+-   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
 
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner) {BSB}
 
@@ -229,6 +265,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Bösch (unbekanntes Modell) \[RVS63\] (Wärmepumpe] {BSB}  
 
 -   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
+
+-   CTA Optiheat 1-18es \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   CTC 380 IC \[RVS43.143\] (Ölbrenner) {BSB}  
 
@@ -245,6 +283,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
+
+-   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
 
