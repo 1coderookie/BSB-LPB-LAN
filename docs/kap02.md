@@ -33,7 +33,7 @@ korrekter Parametrierung gewisse Werte miteinander teilen bzw. sich gegenseitig
 beeinflussen.  
 Auf diese Weise kann bspw. eine Kaskadenschaltung von mehreren Brennern
 realisiert werden oder eine Gas- oder Öl-Heizung mit einer Solaranlage
-und einem Feststoffkessel regelungstechnisch \'verbunden\' werden.\  
+und einem Feststoffkessel regelungstechnisch \'verbunden\' werden.  
 Der korrekte Anschluss der einzelnen Komponenten sowie die korrekte
 Parametrierung der jeweiligen Regler sollte im Normalfall bereits bei
 der Installation der Anlage durch den Heizungsinstallateur erfolgt
