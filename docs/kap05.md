@@ -183,6 +183,14 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define MQTTTopicPrefix "BSB-LAN"`   
     Die MQTT-Nachrichten haben dann das Topic-Format „BSB-LAN/\<Parametername\>“ und den entsprechenden Wert dann in der Payload.  
     
+    `#define MQTT_JSON`  
+    Die über MQTT übertragenen Parameter werden nicht einzeln, sondern in eine JSON-Struktur übertragen.  
+       
+    `#define MQTTDeviceID "MyHeater"`  
+    Übergibt die JSON-Struktur unterhalb der hier definierten DeviceID.  
+    Beispiel einer solchen JSON-Struktur:
+    {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}  
+    
     ***Hinweis:***   
     *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
     `//#define LOGGER`   
