@@ -297,6 +297,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner) {PPS}  
 
+-   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (Wärmepumpe) {BSB}  
+
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
 -   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
