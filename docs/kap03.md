@@ -80,6 +80,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
+-   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje BGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje BMR 20/24 \[LMS14\] (Gasbrenner) {BSB}
