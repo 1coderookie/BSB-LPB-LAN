@@ -180,7 +180,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define MQTTUsername "User"` → Username  
     `#define MQTTPassword "Pass"` → Passwort   
     Nach Aktivierung des Definements kann hier das "Thema" für die MQTT-Nachrichten eingegeben werden (Standard ist BSB-LAN):  
-    `#define MQTTTopicPrefix "BSB-LAN"` - Die MQTT-Nachrichten haben dann das Topic-Format „BSB-LAN/<Parametername>“ und den entsprechenden Wert dann in der Payload.  
+    `#define MQTTTopicPrefix "BSB-LAN"` - Die MQTT-Nachrichten haben das Topic-Format `BSB-LAN/<Parametername>` und den entsprechenden Wert dann in der Payload.  
     `#define MQTT_JSON` - Die über MQTT übertragenen Parameter werden nicht einzeln, sondern in eine JSON-Struktur übertragen.  
     `#define MQTTDeviceID "MyHeater"` - Übergibt die JSON-Struktur unterhalb der hier definierten DeviceID.  
     Beispiel einer solchen JSON-Struktur: `{"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}}`  
