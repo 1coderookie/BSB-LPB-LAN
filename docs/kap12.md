@@ -9,13 +9,13 @@
     
 ---
     
-## 12.1 Der Arduino Mega 2560
-*Grundsätzlich ist die Verwendung eines originalen Arduino Mega 2560 (Rev3) zu empfehlen.*  
-Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Mega 2560 verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
+## 12.1 Der Arduino Due
+*Grundsätzlich ist die Verwendung eines [originalen Arduino Due](https://store.arduino.cc/arduino-due) zu empfehlen.*  
+Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/mega_clone.jpg">  
    
-*Ein kompatibler Clone des Arduino Mega 2560 (Rev3).*  
+*Ein kompatibler Clone des Arduino Due.*  
 
    
 ***Hinweise:***  
@@ -26,7 +26,7 @@ Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspa
 ---
     
 ## 12.2 Das LAN-Shield
-*Grundsätzlich ist die Verwendung eines originalen Arduino Ethernet-Shields zu empfehlen, das direkt auf den Arduino Mega 2560 aufgesteckt werden kann.*  
+*Grundsätzlich ist die Verwendung eines [originalen Arduino Ethernet-Shields](https://store.arduino.cc/arduino-ethernet-shield-2) zu empfehlen, das direkt auf den Arduino Due aufgesteckt werden kann.*  
 
 Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum einen mit einem WIZnet W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
 Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
@@ -464,41 +464,31 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
    
 ## 12.8 Gehäuse
       
-Das Angebot an verfügbaren Gehäusen für einen Arduino Mega 2560 samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
-Gehäuse, die nur den Arduino Mega 2560 aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
-Sämtliche Gehäuse für den Arduino Uno sind aufgrund des Größenunterschiedes nicht geeignet.  
+Das Angebot an verfügbaren Gehäusen für einen Arduino Due samt LAN-Shield ist leider recht begrenzt, nur bei einzelnen Anbietern finden sich Kunststoff-, Plexiglas- oder Metallgehäuse. Noch knapper wird die Auswahl, wenn ein zusätzlich aufgestecktes Relaisboard mit untergebracht werden soll.  
+Gehäuse, die nur den Arduino Due aufnehmen und im Deckel Schlitze haben, so dass Shields aufgesteckt werden können, sind nicht zu empfehlen, da in dem Fall sowohl das LAN-Shield als auch der Adapter ungeschützt sind.  
    
 Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen bietet sich für Besitzer eines 3D-Druckers noch die Möglichkeit, ein entsprechendes Gehäuse selbst herzustellen.  
 **FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
 **Vielen Dank!**  
-Bei den Vorlagen kann zwischen zwei Varianten gewählt werden: Eines, das einen Arduino samt LAN-Shield und Adapterplatine aufnimmt und eines, bei dem ein zusätzlich aufgestecktes Relaisboard ebenfalls untergebracht werden kann. Optional kann bei beiden Gehäusen am Rand ein passender Neodymmagnet in der dafür vorgesehenen Aussparung angebracht werden, so dass das Gehäuse ganz einfach am metallenen Heizungsgehäuse angebracht werden kann.   
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB.jpg">  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ArduinoBSB-H.jpg">  
-   
-Die STL-Datei der 'flachen' Modellvariante hiervon ist bereits im GitHub-Repo von BSB-LAN enthalten.  
-Darüber hinaus kann diese sowie die STL-Datei der 'höheren' Variante (die ein zusätzliches Relaisshield aufnehmen kann) samt Abbildungen beider Modelle [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/case/3D_case_bsb-lan.zip) als zip-File heruntergeladen werden.  
+  
+Die STL-Dateien sind bereits im GitHub-Repo von BSB-LAN enthalten.  
    
 ---  
    
-## 12.9 Raspberry Pi 2
-Der aktuelle Adapter (v2) kann auch an einem Raspberry Pi 2 genutzt
+## 12.9 Raspberry Pi
+Der aktuelle Adapter (v3) kann auch an einem Raspberry Pi genutzt
 werden. Dafür ist es jedoch nötig, den Adapter u.a. um bestimmte Komponenten zu erweitern und andere Pinheader zu nutzen. Für weitere Informationen diesbezüglich beachte bitte den [Schaltplan](anhang_a1.md) und die [Anmerkungen zum Schaltplan](anhang_a2.md).  
    
 **ABER:**  
-Für die Verwendung des Adapters an einem RPi2 muss außerdem eine gänzlich andere Software genutzt werden:
+Für die Verwendung des Adapters an einem RPi muss außerdem eine gänzlich andere Software genutzt werden:
 ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert.  
 Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software
 kontaktiere bitte direkt den Autor von bsb_gateway.  
 **Dieses Handbuch bezieht sich nur auf BSB-LAN!**  
 
-Für die Nutzung des Adapters mit einem RPi2 an der PPS-Schnittstelle kann
+Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
 das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-rpi.jpeg">  
-    
-*Die BSB-LPB-LAN-Adapterplatine auf einem Raspberry Pi 2.*  
          
    
 ---
