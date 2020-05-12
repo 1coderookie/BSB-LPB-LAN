@@ -23,7 +23,7 @@ Dazu bietet sich folgende Vorgehensweise an:
     Sollte die LED in unregelmäßigen Abständen flackern, ist dies keine
     Fehlfunktion, sondern zeigt Aktivität auf dem Bus an.
 
-3.  Den Arduino Due nun via USB (Programming Port) mit dem PC und via LAN mit dem Netzwerk
+3.  Den Arduino Due nun via USB (nutze den "Programming Port" in der Boardmitte) mit dem PC und via LAN mit dem Netzwerk
     verbinden.
 
 4.  Nun die Arduino IDE starten, den korrekten Anschluss des Arduino
