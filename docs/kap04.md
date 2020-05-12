@@ -9,8 +9,8 @@
     [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
     (Windows-, Mac- und Linux-Version verfügbar).
 
--   Schließe den Arduino (samt Ethernet-Shield und Adapter) via USB an
-    deinem PC an.
+-   Schließe den Arduino Due (samt Ethernet-Shield und Adapter) via USB an
+    deinem PC an. Achte darauf, dass du den korrekten USB-Port am Arduino Due nimmst, nämlich den "Programming Port"! Dies ist der USB-Port in der Mitte, also der, der direkt neben der Hohlsteckerbuchse für das Netzteil gelegen ist.
 
 -   Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/bsb_lan/archive/master.zip)
     und entpacke die heruntergeladene Datei *bsb\_lan-master.zip*.
@@ -53,8 +53,6 @@
 
 -   Wähle \"AVRISP mkII\" unter Tools/Programmer bzw.
     Werkzeuge/Programmer.
-
--   Schließe den Arduino Due mit dem passenden USB-Kabel an deinen Rechner an. Achte darauf, dass du den korrekten USB-Port am Arduino Due nimmst, nämlich den "Programming Port"! Dies ist der USB-Port in der Mitte, also der, der direkt neben der Hohlsteckerbuchse für das Netzteil gelegen ist.
 
 -   Passe die Datei *BSB\_lan\_config.h* deinen Wünschen entsprechend an
     (s. Kap. [5](kap05.md)) und lade den Sketch mittels Sketch/Upload
