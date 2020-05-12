@@ -60,14 +60,6 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
     Die deutsche und englische Sprachdatei sind schon nach "Wichtigkeit" sortiert, also zuerst die Webinterface-Texte, dann die Kategorien, dann die Parameternamen und dann die Parameteroptionen.  
 
--   **WIFI-Einstellungen:**  
-    Wenn anstelle des LAN-Shields ein ESP8266-AT-firmware-basiertes 
-    WiFi-Modul zum Einsatz kommt, muss das Definement  
-    `#define WIFI`  
-    aktiviert und die SSID sowie das WLAN-Passwort hinterlegt werden:  
-    `char ssid[] = "SSID_hier_eingeben"`  
-    `char pass[] = "WLAN-Passwort_hier_eingeben"`
-
 -   Um das System vor einem ungewollten Zugriff von außen zu schützen,
     kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** aktiviert
     werden (sehr einfach und nicht wirklich sicher!):  
@@ -224,10 +216,10 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     nur nötig, wenn mehr als ein Adapter verwendet wird.
 
 -   **Konfiguration des Adapters:**  
-    `BSB bus(68,69,<my_addr>,<dest_addr>);`
+    `BSB bus(19,18,<my_addr>,<dest_addr>);`
 
-    - RX-Pin (68)  
-    - TX-Pin (69)  
+    - RX-Pin (19 = Hardware Serial)  
+    - TX-Pin (18 = Hardware Serial)  
     - eigene Bus-Adresse, voreingestellt auf 0x42 (→ BSB: entspricht der Geräteadresse 66; LPB: entspricht der Segmentadresse 4 mit Geräteadresse 3)  
     - Bus-Adresse des Zielsystems, voreingestellt auf 0x00 → dies entspricht dem direkt angeschlossenen Heizungsregler bei BSB bzw. der Ziel-Geräteadresse 1 beim LPB
 
@@ -243,9 +235,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     ***→ PPS:***  
     *Wenn als Anschluss die PPS-Schnittstelle verwendet wird (s. nächster Punkt "Bus-Protokoll"), so ist als dritter Wert (oben als \<my_addr\> bezeichnet) zusätzlich eine 1 zu setzen, wenn der Adapter (nur bei NICHT vorhandenem QAA50/70-Raumgerät!) auch schreibend wirken soll:*  
-    `BSB bus(68,69,1);`  
+    `BSB bus(19,18,1);`  
     *Soll der Adapter nur lesend wirken, ist nichts einzustellen:*    
-    `BSB bus(68,69);`   
+    `BSB bus(19,18);`   
     *Sollen via BSB-LAN aktiv Einstellungen geändert werden, so muss selbstverständlich das etwas weiter unten aufgeführte Definement bzgl. Schreibzugriff des Adapters zusätzlich entspr. angepasst werden!*   
     
 -   Verwendetes **Bus-Protokoll** festlegen (bereits nach Booten des Arduino wirksam):     
