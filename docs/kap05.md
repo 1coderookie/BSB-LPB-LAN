@@ -218,8 +218,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **Konfiguration des Adapters:**  
     `BSB bus(19,18,<my_addr>,<dest_addr>);`
 
-    - RX-Pin (19 = Hardware Serial)  
-    - TX-Pin (18 = Hardware Serial)  
+    - RX-Pin = 19 (Hardware Serial)  
+    - TX-Pin = 18 (Hardware Serial)  
     - eigene Bus-Adresse, voreingestellt auf 0x42 (→ BSB: entspricht der Geräteadresse 66; LPB: entspricht der Segmentadresse 4 mit Geräteadresse 3)  
     - Bus-Adresse des Zielsystems, voreingestellt auf 0x00 → dies entspricht dem direkt angeschlossenen Heizungsregler bei BSB bzw. der Ziel-Geräteadresse 1 beim LPB
 
