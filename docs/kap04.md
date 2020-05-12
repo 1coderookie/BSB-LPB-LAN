@@ -48,14 +48,13 @@
     ob ein Update bzw. eine aktuellere Version der „Ethernet Bibliothek“ 
     verfügbar ist. Falls ja, führe ein Update aus bzw. installiere die Version.  
     
--   Wähle \"Arduino/Genuino Mega or Mega 2560\" unter Tools/Board bzw.
-    Werkzeuge/Board.
-
--   Wähle \"ATmega 2560\" unter Tools/Processor bzw.
-    Werkzeuge/Prozessor.
+-   Wähle \"Arduino Due (Programming Port)\" unter Tools/Board bzw.
+    Werkzeuge/Board. Sollte das Board nicht aufgeführt sein, so installiere die Bibliothek dafür.
 
 -   Wähle \"AVRISP mkII\" unter Tools/Programmer bzw.
     Werkzeuge/Programmer.
+
+-   Schließe den Arduino Due mit dem passenden USB-Kabel an deinen Rechner an. Achte darauf, dass du den korrekten USB-Port am Arduino Due nimmst, nämlich den "Programming Port"! Dies ist der USB-Port in der Mitte, also der, der direkt neben der Hohlsteckerbuchse für das Netzteil gelegen ist.
 
 -   Passe die Datei *BSB\_lan\_config.h* deinen Wünschen entsprechend an
     (s. Kap. [5](kap05.md)) und lade den Sketch mittels Sketch/Upload
@@ -63,7 +62,7 @@
 
 -   Verbinde den Arduino mittels LAN-Kabel mit deinem Router/Switch.
     Stelle dabei sicher, dass eine Stromversorgung für den Arduino via
-    USB oder externem Netzteil besteht!
+    USB (Programming Port) oder externem Netzteil besteht!
 
 -   Öffne die Seite `http://<IP-Adresse>/` (oder
     `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s.u.)
