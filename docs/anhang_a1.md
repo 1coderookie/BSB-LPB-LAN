@@ -5,9 +5,9 @@
     
 
     
-# Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2
+# Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v3
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/circuit_diagram_adapter_v2.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/circuit_diagram_adapter_v3.png">  
  
        
     
