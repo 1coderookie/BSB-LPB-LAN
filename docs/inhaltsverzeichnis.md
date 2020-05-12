@@ -145,7 +145,7 @@
 [15.26 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1526-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
 [16. Schnellinstallationsanleitung](kap16.md)  
 [17. Weiterführende Informationen und Quellen](kap17.md)  
-[Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v2](anhang_a1.md)  
+[Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v3](anhang_a1.md)  
 [Anhang A2: Anmerkungen zum Schaltplan](anhang_a2.md)  
 [A2.1 Kurze Legende zum Schaltplan](anhang_a2.md#a21-kurze-legende-zum-schaltplan)  
 [A2.2 Teileliste](anhang_a2.md#a22-teileliste)  
