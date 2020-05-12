@@ -16,7 +16,7 @@ Funktionalität durch das Hinzufügen von eigenem Code den individuellen
 Gegebenheiten angepasst werden. Eine optionale Einbindung in bestehende 
 SmartHome-Systeme ist durch die Verwendung von HTTPMOD und JSON ebenfalls möglich.  
 
-Die Software ist auf einem [Arduino Mega2560](kap12.md#121-der-arduino-mega-2560) 
+Die Software ist auf einem [Arduino Due](kap12.md#121-der-arduino-due) 
 samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
 erfahrungsgemäß ‚out of the box'. Das ist (neben dem Adapter selbst natürlich) bereits alles was du brauchst!  
 Aufgrund des geringeren Speichers ist 
@@ -57,14 +57,17 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im [FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-platine-unbestueckt.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
 
-*Die BSB-LPB-LAN-Adapterplatine v2, unbestückt.*  
+*Die BSB-LPB-LAN-Adapterplatine v3, Oberseite, unbestückt.*  
     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-back.jpeg">
+
+*Die BSB-LPB-LAN-Adapterplatine v3, Unterseite, unbestückt.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-ardu.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-due.jpeg">
     
-*Die BSB-LPB-LAN-Adapterplatine v2, bestückt, auf einem Arduino Mega2560 (Clone) samt LAN-Shield.*  
+*Die BSB-LPB-LAN-Adapterplatine v3, bestückt, auf einem Arduino Due (Clone) samt LAN-Shield.*  
     
 ---      
      
