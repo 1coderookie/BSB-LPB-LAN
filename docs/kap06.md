@@ -23,11 +23,11 @@ Dazu bietet sich folgende Vorgehensweise an:
     Sollte die LED in unregelmäßigen Abständen flackern, ist dies keine
     Fehlfunktion, sondern zeigt Aktivität auf dem Bus an.
 
-3.  Den Adapter nun via USB mit dem PC und via LAN mit dem Netzwerk
+3.  Den Arduino Due nun via USB (Programming Port) mit dem PC und via LAN mit dem Netzwerk
     verbinden.
 
 4.  Nun die Arduino IDE starten, den korrekten Anschluss des Arduino
-    Mega 2560 auswählen (COM-Port) und dann unter ‚Werkzeuge' den
+    Due auswählen (COM-Port) und dann unter ‚Werkzeuge' den
     ‚Seriellen Monitor' starten.
 
 5.  Wird der angeschlossene Regler automatisch korrekt erkannt, steht am
