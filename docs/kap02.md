@@ -217,6 +217,13 @@ Bzgl. der spezifischen Bus-Einstellungen in der Datei *BSB_lan_config.h* beachte
   
 Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders als bspw. beim BSB) einige Zeit abwarten, bis die Parameter abrufbar/verfügbar sind.  
   
+***Wichtiger Hinweis für Nutzer des (veralteten) Setups Adapter v2 + Arduino Mega 2560:***   
+Aufgrund der zeitkritischen Kommunikation bei PPS ist es sinnvoll, das Setup auf die Nutzung der Hardware-Serial umzustellen. Dazu sind folgende Änerungen vorzunehmen: 
+- Die Adapterplatine v2 muss *komplett* bestückt sein. 
+- Es darf nur die Lötbrücke SJ1 gesetzt sein.  
+- Die Platine muss um eine Pin-Reihe versetzt in Richtung Mitte des Arduinos eingesetzt werden. 
+- Die Konfiguration muss entsprechend geändert werden, indem die BSB-bus-Variable auf die Pins 19 (RX) und 18 (TX) gesetzt wird.  
+   
 ----  
   
 ## 2.3 Anschluss des Adapters  
