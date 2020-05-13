@@ -45,12 +45,23 @@ RXD = Digitalpin Empfangen
 - 2x Widerstand 4.7kΩ (→ R5, R6)  
     
 
-Optional:  
-Anschlussklemmen, Pinleisten 2.54mm (→ Einsatz am Arduino) bzw. zusätzlich Buchsenleiste 2.54mm (→ zusätzlich zu Pinleisten für den Einsatz am RaspberryPi), IC-Sockel für Optokoppler und/oder EEPROM etc.  
+***Arduino Due:***  
+Anschlussklemmen, *Pinleisten*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
+  
+Für den Einsatz des Adapters v3 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
+  
+<img src = "pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
+  
+*Zwingend zu bestückende Pins für die Verwendung mit dem Arduino Due.*  
+  
+***Raspberry Pi:***  
+Anschlussklemmen, *Buchsenleiste*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
+  
+Für den Einsatz des Adapters v3 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
+        
     
 ---
     
-
 
 ## A2.3 Generelle Hinweise
 
