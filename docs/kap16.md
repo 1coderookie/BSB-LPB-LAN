@@ -9,7 +9,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
    
 1. Downloade und installiere die aktuelle Version der [ArduinoIDE](https://www.arduino.cc/en/Main/Software).   
 
-2. Stecke das LAN-Shield und den Adapter auf den Arduino Mega 2560 und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer.  
+2. Stecke das LAN-Shield und den Adapter auf den Arduino Due und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. 
 
 3. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
@@ -17,7 +17,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 
 5. Wechsle in den Ordner "BSB_lan". Bennene die dortige Datei "BSB_lan_config.h.default" in "BSB_lan_config.h" um.  
 
-6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_lan.ino" im BSB_lan-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Mega 2560 automatisch samt verwendetem COM-Port erkennen.  
+6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_lan.ino" im BSB_lan-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Due automatisch samt verwendetem COM-Port erkennen.  
 *Für die Schritte 1-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
 
 7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_lan_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
