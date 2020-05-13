@@ -483,8 +483,8 @@ Die STL-Dateien sind bereits im GitHub-Repo von BSB-LAN enthalten.
 Der aktuelle Adapter (v3) kann auch an einem Raspberry Pi genutzt
 werden. Es sind dabei jedoch ein folgende Punkte zu beachten:  
 - **Eine Verwendung der BSB-LAN-Software ist NICHT möglich (s. unten stehende Hinweise)!**  
-- Es muss eine doppelreihige Buchsenleiste anstelle der Pinleisten (wie für die Arduino-Verwendung nötig) verwendet werden. 
-- Bei kompletter Buchsenlänge des Adapters (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern um einen Pin 'nach hinten versetzt'. Man fängt also bei dem Pinpaar 3/4 an.  
+- Es muss nur eine doppelreihige Buchsenleiste (anstelle der Pinleisten wie für die Arduino-Verwendung nötig) verwendet werden. 
+- Bei kompletter Buchsenlänge des Adapterpinouts (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern muss um einen Pin 'nach hinten versetzt' werden. Man fängt also bei dem Pinpaar 3/4 an.  
 Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeichnete TX1-Pin auf dem RPi-Pin 8 (= GPIO 14, UART0_TXD) liegt, der RX1-Pin dann auf dem RPi-Pin 10 (= GPIO 15, UART0_RXD) etc.  
 *Achtung:* Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  
 Die Abbildung unten zeigt für ein besseres Verständnis den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden. 
