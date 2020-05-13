@@ -12,15 +12,13 @@
 ## 15.1 Kann ich Adapter & Software mit einem Raspberry Pi nutzen?
 
 Ja und nein.  
-Der Adapter kann mit einem Raspberry Pi 2 verwendet werden, wenn andere
-Pinheader genutzt werden (weibliche statt männliche) und die Platine
-entsprechend mit den Komponenten für die RPi-Nutzung bestückt ist
-(R11-13, Q11+12, SJ2+3). Siehe hierzu bitte die folgenden Kapitel: [Kap. 12.9](kap12.md#129-raspberry-pi-2), [Anhang A1](anhang_a1.md) sowie [Anhang A2.2](anhang_a2.md#a22-teileliste).
+Der Adapter kann mit einem Raspberry Pi verwendet werden, wenn andere
+Pinheader genutzt werden (weibliche statt männliche). Siehe hierzu bitte die folgenden Kapitel: [Kap. 12.9](kap12.md#129-raspberry-pi) sowie [Anhang A2.2](anhang_a2.md#a22-teileliste).
 
-Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
-ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!  
+**Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
+ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!**  
 Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
-Software genutzt werden. Weitere Informationen diesbezüglich sind in [Kap. 12.9](kap12.md#129-raspberry-pi-2) zu finden.  
+Software genutzt werden. Weitere Informationen diesbezüglich sind in [Kap. 12.9](kap12.md#129-raspberry-pi) zu finden.  
     
 ---
     
@@ -363,9 +361,19 @@ In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3]
     
 ## 15.25 Gibt es eine (W)LAN-Option für den Adapter?
 
-Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
+Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).  
+  
+---  
+  
+## 15.26 Ich nutze das veraltete Setup Adapter v2 + Arduino Mega 2560 - muss ich irgendetwas beachten?  
+  
+Ja!  
+1.) Zuerst muss jedoch Folgendes klargestellt werden: Wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, dann kannst du das Setup natürlich weiterhin verwenden. In diesem Fall musst du nur beachten, dass die *letzte stabile BSB-LAN-Version für dein Setup die v0.44 ist.* Sie kann im GitHub-Repo heruntergeladen werden, indem du auf den Button 'Branch' klickst, dann auf 'Tags' und dort dann die v0.44 auswählst. Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 höchstwahrscheinlich nicht genügend Speicher aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt keine Garantie, dass ein problemloser Betrieb möglich sein wird.  
+2.) Du kannst den Adapter v2 NICHT mit einem Arduino Due verwenden! Möchtest du also auch in Zukunft von den neuen Funktionen von BSB-LAN profitieren, musst du dir einen Adapter v3 besorgen oder selbst herstellen und ihn mit einem Arduino Due verwenden. Das LAN-Shield kannst du in dem Fall weiterverwenden, so dass du da ein bisschen Geld sparen kannst.. ;) 
+  
+---
 
-## 15.26 Ich habe weitere Fragen, an wen kann ich mich wenden?
+## 15.27 Ich habe weitere Fragen, an wen kann ich mich wenden?
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum
 ([https://forum.fhem.de/](https://forum.fhem.de/))
