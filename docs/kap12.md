@@ -471,6 +471,10 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
 **FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
 **Vielen Dank!**  
   
+<img src = "pics/BSB-Gehaeuse.jpg">  
+  
+*3D-Druckmodell des Gehäuses für den Arduino Due inkl. LAN-Shield und Adapter v3.*  
+  
 Die STL-Dateien sind bereits im GitHub-Repo von BSB-LAN enthalten.  
    
 ---  
