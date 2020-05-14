@@ -154,3 +154,4 @@
 [A2.3 Generelle Hinweise](anhang_a2.md#a23-generelle-hinweise)  
 [Anhang B: Cheatsheet URL-Befehle](anhang_b.md)  
 [Anhang C: Changelog BSB-LAN-Software](anhang_c.md)  
+[Anhang D: Hinweise für Nutzer des veralteten Setups Adapter v2 + Arduino Mega 2560](anhang_d.md)  
