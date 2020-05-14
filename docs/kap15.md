@@ -330,7 +330,6 @@ Des Weiteren kann es bei Clones mit einem W5100-Chip aufgrund fehlerhafter Baute
 ---
     
 
-
 ## 15.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen?
 
 Wenn Befehle, die in der Regel problemlos gesendet werden können,
@@ -352,7 +351,6 @@ dies kommuniziert und im Platinenlayout berücksichtigt werden.
 ---
     
 
-
 ## 15.24 Ich finde keinen LPB- oder BSB-Anschluss, nur L-BUS und R-BUS?!
 
 In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje).  
@@ -367,7 +365,7 @@ Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
   
 ## 15.26 Ich nutze das veraltete Setup Adapter v2 + Arduino Mega 2560 - muss ich irgendetwas beachten?  
   
-Ja! Siehe hierzu bitte [Anhang D](anhang_d.md)   
+Ja! Siehe hierzu bitte [Anhang D](anhang_d.md).   
   
 ---
 
