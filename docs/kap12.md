@@ -13,7 +13,7 @@
 *Grundsätzlich ist die Verwendung eines [originalen Arduino Due](https://store.arduino.cc/arduino-due) zu empfehlen.*  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone.jpg">  
+<img src = "pics/due_clone.jpg">  
    
 *Ein kompatibler Clone des Arduino Due.*  
 
@@ -32,7 +32,7 @@ Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum eine
 Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten dieser Shields verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Allerdings sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/lanshield_clone.jpg">  
+<img src = "pics/lanshield_clone.jpg">  
    
 *Ein kompatibler Clone eines LAN-Shields mit einem W5100-Chip.*  
        
@@ -64,7 +64,10 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
 ---
    
 ## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20
-
+  
+**ACHTUNG:**  
+**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+  
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
 (OneWire-Temperatursensor) und DHT22 (Temperatur- und
 Feuchtigkeitssensor) direkt an bestimmte Pins des Adapters bzw. Arduino
@@ -112,7 +115,10 @@ Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen
     
 
 ### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren
-
+  
+**ACHTUNG:**  
+**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+  
 DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
 sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
 eines ‚echten‘ Bussystems, bei dem jeder Sensor eine spezifische Adresse aufweist! 
@@ -154,7 +160,10 @@ OK,	temp[0]: 18.80, hum[0]: 53.90
 ---
     
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren
-
+  
+**ACHTUNG:**  
+**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+  
 DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
 Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
 Neben der üblichen Bauart TO-92 sind die Sensoren auch in wasserdicht
@@ -276,7 +285,11 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
         
 ---
     
-## 12.4 Relais und Relaisboards
+## 12.4 Relais und Relaisboards  
+  
+**ACHTUNG:**  
+**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+  
 Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziellen URL-Befehlen auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
 ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!***
    
@@ -387,7 +400,10 @@ ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-dis
 ---
     
 ## 12.6 Eigene Hardwarelösungen
-
+  
+**ACHTUNG:**  
+**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind!**      
+  
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
 Nachbau anregen, sondern weitere Nutzungsmöglichkeiten von BSB-LAN
 aufzeigen und als Inspiration für eigene Projekte dienen sollen.
