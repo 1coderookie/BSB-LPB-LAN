@@ -247,9 +247,9 @@ Es ist also nicht zwingend nötig, den Adapter unmittelbar am Aufstellort der He
 **Adapterplatine:**  
 Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
    
-<img src="pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
   
-<img src="pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">
 
   
 ---  
