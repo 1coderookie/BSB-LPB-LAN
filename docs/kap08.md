@@ -390,16 +390,16 @@ Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion
   
 ### 8.2.9 Eigenen Code in BSB-LAN einbinden
   
-BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_lan_config.h` aktiviert und der Code entspr. in den Dateien `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` sowie `BSB_lan_custom_setup.h` hinzugefügt werden. Die Datei `BSB_lan_custom.h.default` muss zur Verwendung in `BSB_lan_custom.h` umbenannt werden.  
+BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_lan_config.h` aktiviert und der Code entspr. in den Dateien `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` sowie `BSB_lan_custom_setup.h` hinzugefügt werden. Die Datei `BSB_lan_custom.h.default` muss zur Verwendung in `BSB_lan_custom.h` umbenannt werden. Ein Beispiel und entspr. Hinweise sind in den jeweiligen Dateien zu finden.  
   
-*Neben dem bereits vorhandenen Beispiel in der Datei `BSB_lan_custom.h.default` hat FHEM-Forumuser "Scherheinz" ein weiteres Beispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
+*FHEM-Forumuser "Scherheinz" hat ein anderes Beispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
 *Vielen Dank dafür!*  
   
 Nachfolgend das erwähnte Beispiel:  
-- Beschreibung:  
+Beschreibung:  
 "Alle 20 Sekunden wird über einen Spannungsteiler die Akku Spannung eingelesen. Dann wird aus den letzten 10 Werten ein gleitender Mittelwert ermittelt und per MQTT an FHEM weitergeleitet" (Zitat aus dem oben verlinkten Beitrag).  
-
-- Einbindung:  
+  
+Einbindung:  
 Der folgende Code muss in die Datei `BSB_lan_custom_global.h` eingefügt werden:  
 ```
 const int akkuPin = A0;
