@@ -89,6 +89,7 @@
 [12.6 Eigene Hardwarelösungen](kap12.md#126-eigene-hardwarelösungen)  
 [12.6.1 Raumgeräteersatz (Arduino Uno, LAN-Shield, DHT22, Display, Taster)](kap12.md#1261-raumgeräteersatz-arduino-uno-lan-shield-dht22-display-taster)  
 [12.6.2 Raumtemperaturfühler (Wemos D1 mini, DHT22, Display)](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-display)  
+[12.6.3 Raumgeräteersatz mit UDP-Kommunikation (LAN-Anbindung)](kap12.md#1263-raumgeräteersatz-mit-udp-kommunikation-lan-anbindung)  
 [12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter)  
 [12.7.1 Nutzung eines PowerLANs / dLANs](kap12.md#1271-nutzung-eines-powerlans--dlans)  
 [12.7.2 WLAN: Nutzung eines extra Routers](kap12.md#1272-wlan-nutzung-eines-extra-routers)   
