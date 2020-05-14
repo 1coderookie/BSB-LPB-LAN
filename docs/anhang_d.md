@@ -11,7 +11,13 @@ Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 h
 aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt 
 keine Garantie, dass ein problemloser Betrieb möglich sein wird.  
 Auf Nachfragen diesbzgl. werden wir nicht weiter eingehen.  
+  
+- *Warum gibt es jetzt einen Umstieg auf den Due?*  
+Der Mega 2560 bot einfach nicht mehr genügend Speicher, um auch in Zukunft das stetig wachsende BSB-LAN zu beherbergen! ;)  
 
+- *Warum gibt es jetzt einen neuen Adapter v3?*  
+Das war nötig, da der bisherige Adapter v2 aus verschiedenen Gründen nicht kompatibel mit dem Due ist.  
+  
 - *Kann ich den Adapter v2 an einem Due weiterverwenden?*  
 Nein! Der Grund dafür liegt primär darin, dass sowohl der Adapter v2 als auch der Due kein EEPROM aufweist, was für BSB-LAN 
 jedoch notwendig ist.  
