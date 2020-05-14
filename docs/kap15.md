@@ -336,7 +336,7 @@ Des Weiteren kann es bei Clones mit einem W5100-Chip aufgrund fehlerhafter Baute
 Wenn Befehle, die in der Regel problemlos gesendet werden können,
 plötzlich ‚query failed'-Fehlermeldungen auslösen, könnte dies in der
 eingesetzten Hardware begründet sein. Es scheint, als wenn einige
-günstige Arduino-Mega-Clones zeitweise unzuverlässig arbeiten und
+günstige Arduino-Clones zeitweise unzuverlässig arbeiten und
 diffuse Probleme verursachen. Abhilfe könnte ein Austausch des Arduino
 schaffen, der Einsatz eines originalen Arduino ist selbstverständlich
 eine weitere Option.
