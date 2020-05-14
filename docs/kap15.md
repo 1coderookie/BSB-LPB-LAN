@@ -367,10 +367,7 @@ Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
   
 ## 15.26 Ich nutze das veraltete Setup Adapter v2 + Arduino Mega 2560 - muss ich irgendetwas beachten?  
   
-Ja!  
-1.) Zuerst muss jedoch Folgendes klargestellt werden: Wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, dann kannst du das Setup natürlich weiterhin verwenden. Aber: **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte stabile und getestete Version für dein Setup!**  
-Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 höchstwahrscheinlich nicht genügend Speicher aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt keine Garantie, dass ein problemloser Betrieb möglich sein wird.  
-2.) *Du kannst den Adapter v2 NICHT mit einem Arduino Due verwenden!* Möchtest du also auch in Zukunft von den neuen Funktionen von BSB-LAN profitieren, musst du dir einen Adapter v3 besorgen oder selbst herstellen und ihn mit einem Arduino Due verwenden. Das LAN-Shield kannst du in dem Fall weiterverwenden, so dass du da ein bisschen Geld sparen kannst.. ;) 
+Ja! Siehe hierzu bitte [Anhang D](anhang_d.md)   
   
 ---
 
