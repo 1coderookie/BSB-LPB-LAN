@@ -50,7 +50,7 @@ Anschlussklemmen, *Pinleisten*, ggf. IC-Sockel für Optokoppler und/oder EEPROM 
   
 Für den Einsatz des Adapters v3 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
   
-<img src = "pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
   
 *Zwingend zu bestückende Pins für die Verwendung mit dem Arduino Due.*  
   
