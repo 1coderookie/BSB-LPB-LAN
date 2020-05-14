@@ -24,7 +24,7 @@ Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspa
 Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen.  
     
   
-***ACHTUNG: Die GPIOs des Due sind nur 3.3V-kompatibel!***      
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***      
   
 
 ---
@@ -69,8 +69,8 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
    
 ## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20
   
-**ACHTUNG:**  
-**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
+*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
 (OneWire-Temperatursensor) und DHT22 (Temperatur- und
@@ -120,8 +120,8 @@ Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen
 
 ### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren
   
-**ACHTUNG:**  
-**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
+*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
 sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
@@ -165,8 +165,8 @@ OK,	temp[0]: 18.80, hum[0]: 53.90
     
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren
   
-**ACHTUNG:**  
-**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
+*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
 Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
@@ -291,8 +291,8 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
     
 ## 12.4 Relais und Relaisboards  
   
-**ACHTUNG:**  
-**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind! Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.**      
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
+*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziellen URL-Befehlen auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
 ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!***
@@ -404,10 +404,7 @@ ist in Kap. [12.6.2](kap12.md#1262-raumtemperaturfühler-wemos-d1-mini-dht22-dis
 ---
     
 ## 12.6 Eigene Hardwarelösungen
-  
-**ACHTUNG:**  
-**Mit dem Plattformwechsel auf den Arduino Due im Mai 2020 ist darauf zu achten, dass die GPIOs des Due nur 3.3V-kompatibel sind!**      
-  
+
 Im Folgenden werden Lösungen von Nutzern vorgestellt, die nicht nur zum
 Nachbau anregen, sondern weitere Nutzungsmöglichkeiten von BSB-LAN
 aufzeigen und als Inspiration für eigene Projekte dienen sollen.
