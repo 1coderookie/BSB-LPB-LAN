@@ -3,7 +3,8 @@
 Für Nutzer des veralteten Setups sind im Folgenden einige Fragen und Punkte aufgeführt, die der Klärung bedürfen oder die es 
 zu beachten gilt.
 
-- Wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
+- *Muss ich zwingend auf das neue Setup Adapter v3 + Due wechseln?*  
+Nein, wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
 dann kannst du das alte Setup natürlich weiterhin verwenden.  
 Aber: **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte stabile 
 und getestete Version für dein Setup!**  
@@ -46,9 +47,7 @@ her passen. Allerdings musst du vermutlich dein Gehäuse etwas anpassen und eine
 mittleren USB-Port des Due ('Programming Port') hinzufügen, damit du auch weiterhin bequem das entspr. USB-Kabel anschließen kannst.  
 
 - *Die GPIOs des Due sind nur 3.3V kompatibel - was mache ich mit bestehenden Komponenten, die 5V benötigen?*  
-In dem Fall musst du Pegelwandler (3.3V <-> 5V) einsetzen. Einige gängige Lösungen, Selbstbaulösungen und/oder spezielle Hinweise
-werde ich schnellstöglich im Handbuch hinzufügen.  
+In dem Fall musst du Pegelwandler (3.3V <-> 5V) einsetzen. Einige gängige Lösungen, Selbstbaulösungen und/oder spezielle Hinweise werde ich schnellstöglich im Handbuch hinzufügen.  
 
 - *Ich habe Fragen, die hier noch nicht behandelt wurden - was nun?*  
-In dem Fall kannst du dich natürlich gerne direkt bei uns oder im entspr. Forumsthread melden. Sind die Fragen dann ggf. auch für 
-andere User relevant, werde ich sie hier mit aufführen.  
+In dem Fall kannst du dich natürlich gerne direkt bei uns oder im entspr. Forumsthread melden. Sind die Fragen dann ggf. auch für andere User relevant, werde ich sie hier mit aufführen.  
