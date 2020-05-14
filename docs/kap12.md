@@ -453,7 +453,14 @@ mini und einem DHT22-Fühler einen Raumfühler realisiert. Die aktuellen
 Temperaturen von HK1 und HK2 werden dabei auf einem OLED-Display
 angezeigt. Auf dem Wemos D1 läuft ESPeasy.
 
-Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.
+Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](https://github.com/DaddySun/Smart_Home_DIY) zu finden.  
+  
+---  
+  
+### 12.6.3 Raumgeräteersatz mit UDP-Kommunikation (LAN-Anbindung)
+  
+FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante von User "Andreas29" einen Raumgeräteersatz realisiert, der mit dem BSB-LAN-Adapter via UDP kommuniziert. Zur Verwendung kommen dabei ein Arduino Uno samt LAN-Shield, ein 20x4 LCD sowie ein Taster. Eine genaue Beschreibung sowie der entspr. Code ist [hier](https://forum.fhem.de/index.php/topic,110599.0.html) zu finden.  
+
      
 ---
     
