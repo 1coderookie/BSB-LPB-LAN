@@ -13,7 +13,7 @@
 *Grundsätzlich ist die Verwendung eines [originalen Arduino Due](https://store.arduino.cc/arduino-due) zu empfehlen.*  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
-<img src = "pics/due_clone_pp.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_pp.jpg">  
    
 *Ein kompatibler Clone des Arduino Due.*  
 
@@ -36,7 +36,7 @@ Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum eine
 Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten dieser Shields verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Allerdings sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
-<img src = "pics/lanshield_clone.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/lanshield_clone.jpg">  
    
 *Ein kompatibler Clone eines LAN-Shields mit einem W5100-Chip.*  
        
@@ -495,7 +495,7 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
 **FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
 **Vielen Dank!**  
   
-<img src = "pics/BSB-Gehaeuse.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-Gehaeuse.jpg">  
   
 *3D-Druckmodell des Gehäuses für den Arduino Due inkl. LAN-Shield und Adapter v3.*  
   
@@ -519,7 +519,7 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 `gpio -1 mode 7 output`  
 `gpio -1 write 7 1`  
    
-<img src = "pics/rpi_v3_ausrichtung.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
   
 *Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.*  
    
