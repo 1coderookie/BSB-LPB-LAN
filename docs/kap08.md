@@ -161,6 +161,7 @@ Parameterabfragen sowie das Setzen von Werten kann ebenfalls mittels
 JSON erfolgen.
 
 -   **Abfrage der möglichen Werte von Parametern:**  
+
     `http://<IP-Adresse>/JC=<x>,<y>,<z>`  
     Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.
     
