@@ -10,7 +10,7 @@
     (Windows-, Mac- und Linux-Version verfügbar).
 
 -   Schließe den Arduino Due (samt Ethernet-Shield und Adapter) via USB an
-    deinem PC an. Achte darauf, dass du den korrekten USB-Port am Arduino Due nimmst, nämlich den "Programming Port"! Dies ist der USB-Port in der Mitte, also der, der direkt neben der Hohlsteckerbuchse für das Netzteil gelegen ist.
+    deinem PC an. Achte darauf, dass du den ["Programming Port" des Due](kap12.md#121-der-arduino-due) verwendest!
 
 -   Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/bsb_lan/archive/master.zip)
     und entpacke die heruntergeladene Datei *bsb\_lan-master.zip*.
