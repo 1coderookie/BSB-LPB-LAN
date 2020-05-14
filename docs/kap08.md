@@ -386,7 +386,63 @@ Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<
 *Hinweis:*  
 Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion nach bisherigem Kenntnisstand nicht verfügbar. Das Übermitteln der alternativen AT kann in diesem Fall aber trotzdem wie beschrieben getestet werden, allerdings muss dann der Parameter 10004 anstelle von 10003 verwendet werden: `<ip>/10004=xx`.  
    
+---  
+  
+### 8.2.9 Eigenen Code in BSB-LAN einbinden
+  
+BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_lan_config.h` aktiviert und der Code entspr. in den Dateien `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` sowie `BSB_lan_custom_setup.h` hinzugefügt werden. Die Datei `BSB_lan_custom.h.default` muss zur Verwendung in `BSB_lan_custom.h` umbenannt werden.  
+  
+*Neben dem bereits vorhandenen Beispiel in der Datei `BSB_lan_custom.h.default` hat FHEM-Forumuser "Scherheinz" ein weiteres Beispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
+*Vielen Dank dafür!*  
+  
+Nachfolgend das erwähnte Beispiel:  
+- Beschreibung:  
+"Alle 20 Sekunden wird über einen Spannungsteiler die Akku Spannung eingelesen. Dann wird aus den letzten 10 Werten ein gleitender Mittelwert ermittelt und per MQTT an FHEM weitergeleitet" (Zitat aus dem oben verlinkten Beitrag).  
 
+- Einbindung:  
+Der folgende Code muss in die Datei `BSB_lan_custom_global.h` eingefügt werden:  
+```
+const int akkuPin = A0;
+int akkuWert = 0;
+float akkuSpg = 12.00;
+char tempBuffer[100];
+int j;
+
+void Filtern(float &FiltVal, int NewVal, int FF){ //gleitender Mittelwert bilden aus den 10 letzten Werten
+  FiltVal= ((FiltVal * FF) + NewVal) / (FF +1);
+}
+```
+Der folgende Code muss in die Datei `BSB_lan_custom.h` eingefügt werden:  
+```
+if (custom_timer > custom_timer_compare + 20000) {    // alle 20 Sekunden 
+  custom_timer_compare = millis();
+
+akkuWert = analogRead(akkuPin); // Spannung messen         
+
+akkuWert = map(akkuWert, 500, 1023, 0, 150); // umwandeln auf 0 - 15V
+akkuWert = akkuWert / 10.00;
+
+Filtern(akkuSpg, akkuWert, 9); //gleitender Mittelwert bilden aus den 10 letzten Werten
+if (j++ > 10) akkuWert=1;  // nach 10 Werten Sprung auf 1
+ 
+if (!MQTTClient.connected()) {
+      MQTTClient.setServer(MQTTBroker, 1883);
+      int retries = 0;
+      while (!MQTTClient.connected() && retries < 3) {
+        MQTTClient.connect("BSB-LAN", MQTTUser, MQTTPass);
+        retries++;
+        if (!MQTTClient.connected()) {
+          delay(1000);
+          DebugOutput.println(F("Failed to connect to MQTT broker, retrying..."));
+        }
+        MQTTClient.publish("AkkuSpannung",dtostrf(akkuSpg, 6, 1, tempBuffer));
+        MQTTClient.disconnect();
+      }
+    }
+}
+```  
+
+  
 ---  
      
 [Weiter zu Kapitel 9](kap09.md)      
