@@ -52,8 +52,9 @@
 |  `/T`                   | `Abfrage optional angeschlossener Sensoren (DS18B20/DHT22)`  
 |  `/U`                   | `Zeigt die benutzerdefinierten Variablen an, falls diese in BSB_lan_custom.h verwendet werden`  
 |  `/V<x>`              | `Verbositäts-Modus aktivieren (<x> = 1) oder deaktivieren (<x> = 0)`  
+|  `/W`                   | `Mit vorangehendem /W liefern die URL-Befehle C, S, T und Q Daten ohne HTML-header und -footer zurück (bspw. /WC oder /WS<x>=<y!z>)`  
 |  `/X`                   | `Abfrage optional eingebundener MAX!-Thermostate`  
-|  `/W`                   | `Mit vorangehendem /W liefern die URL-Befehle C, S, T und Q Daten ohne HTML-header und -footer zurück (bspw. /WC oder /WS<x>=<y!z>)`
+
        
 [Cheatsheet als PDF](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf)
     
