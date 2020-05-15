@@ -7,13 +7,39 @@
     
 # Anhang C: Changelog BSB-LAN-Software
 
+Version 0.44
+- Added webserver functionality via SD card and various other improvements from GitHub user dukess
+- Added JSON output for MQTT
+- mobile friendlier web interface
+- more parameters and device families
+- last version completely tested on Mega 2560. Future versions may still run on the Mega, but will only be tested on the Arduino Due.  
+   
 Version 0.43
-- Bugfix: DHCP (ethernet) implementation
+- Added support for HardwareSerial (Serial1) connection of the adapter. Use RX pin 19 in bus() definition to activate. See manual/forum for hardware details.
+- Added definement DebugTelnet to divert serial output to telnet client (port 23, no password) in BSB_lan_config.h
+- Added possibility to control BSB-LAN (almost?) completely via USB-serial port. Most commands supported like their URL-counterparts, i.e. /<passcode>/xxx to query parameter xxx or /<passcode>/N to restart Arduino.
+- Changed default device ID from 6 (room controller "RGT1") to unused ID 66 ("LAN")
+- Many new parameters, please run /Q to see any possible changes for your device family and report back to us!
+- Added global variables (arrays of 20 bytes) custom_floats[] and custom_longs[] for use with BSB_lan_custom.h, for example to read sensors etc. Output of these variables is done via new URL command /U
+- Added device families 23 and 29 (Grünenwald heaters)
+- Added device families 49, 52, 59 (Weishaupt heaters)
+- Added device fmilies 91, 92, 94, 118, 133, 136, 137, 165, 184, 188 (various controllers like QAA75 or AVS37)
+- Added device family 171 (Bösch wood pellet system)
+- Added device family 172 (SensoTherm BLW Split B (RVS21.826F/200))
+- Added device families 186 and 164 (Olymp WHS-500)
+- Added device family 195 variant 2 (Thision 19 Plus / LMS14.111B109)
+- Including DHT, 1Wire and burner status parameters (>20000) to MQTT
+- English is now default language
+- Updated various translations
+- Added STL files to print a case with a 3D printer (thanks to FHEM user EPo!)
 - Moved all sensors to /T , /H is now no longer used
 - New virtual parameters 702/703 for Weishaupt room controller
-- New data types VT_CUSTOM_ENUM and VT_CUSTOM_BYTE to extract information from non-standard telegrams (such as 702/703)
+- New virtual parameter 10003 to set outside temperature on newer systems
 - Added text descriptions for error phases (6706 ff.)
-
+- /Q is now more comprehensive
+- New data types VT_CUSTOM_ENUM and VT_CUSTOM_BYTE to extract information from non-standard telegrams (such as 702/703)
+- Bugfix: DHCP (ethernet) implementation
+  
 Version 0.42
 - Added localization! Now you can help translate BSB-LAN into your language! Simply copy one of the language files from the localization folder (LANG_DE.h is the most complete) and translate whatever you can. Non-translated items will be displayed in German.
 Attention: Language definition in BSB_lan_config.h is now #define LANG <ISO-CODE> 
