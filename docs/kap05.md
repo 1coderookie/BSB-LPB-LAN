@@ -300,6 +300,12 @@ Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob 
 `#define DebugTelnet 1`  
 Wird dieses Definement aktiviert, so werden Debug-Meldungen nicht an den seriellen Port, sondern an einen Telnet client geschickt. Für die reguläre Verwendung von BSB-LAN sollte dieses Definement deaktiviert bleiben, so dass der lokale Serielle Monitor (bspw. von der ArduinoIDE) genutzt werden kann.  
        
+- **"Externen" Webserver aktivieren:**  
+`#define WEBSERVER`    
+Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Alle Dateien werden bzw. müssen auf der microSD-Karte gespeichert werden. Die Dateien können in verschiedenen Verzeichnissen abgelegt werden. Lediglich statische Inhalte werden unterstützt.
+Unterstützte Dateitypen sind: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.
+Der Webserver unterstützt statische Komprimierung. Wenn möglich (d.h., wenn der Client gzip unterstützt) wird stets versucht, gzip-gezippte Inhalte zu erzeugen (z.B. /d3d.js.gz für die URL /d3d.js).
+Der Webserver unterstützt dabei folgende header: ETag, Last-Modified, Content-Length, Cache-Control.
     
 ---
     
