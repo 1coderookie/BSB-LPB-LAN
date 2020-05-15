@@ -66,8 +66,7 @@ Laptop/PC via USB verbunden werden.
 
 Starte dann die Arduino IDE und wähle unter „Menü Werkzeuge → Port" den
 korrekten USB-Anschluss aus.  
-Überprüfe außerdem, ob unter „Menü Werkzeuge → Board → Arduino Mega
-2560" und unter „Menü Werkzeuge → Prozessor → Atmega 2560" ausgewählt
+Überprüfe außerdem, ob unter „Menü Werkzeuge → Board → Due (Programming Port)" ausgewählt
 ist.
 
 Starte nun den seriellen Monitor unter „Menü Werkzeuge → Serieller
