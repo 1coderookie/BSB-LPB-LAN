@@ -539,6 +539,7 @@ Bei Brötje scheint es sich hierbei um die Modellreihen
 - WLS/WLC (Gas), 
 - BOK (Öl) sowie 
 - BLW Split-P, BLW Split C und BLW Split-K C (Wärmepumpen) zu handeln.  
+
 Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut (geräteseitig "IWR Alpha", kompatibles Raumgerät "IWR IDA"), die weder einen LPB noch einen BSB aufweisen.
 
 Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
