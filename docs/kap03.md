@@ -535,9 +535,11 @@ genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
 haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
 kompatibel sind.
 
-Bei Brötje handelt es sich hierbei um die Modellreihe WLS/WLC und BOK.  
-Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut,
-die weder einen LPB noch einen BSB aufweisen.
+Bei Brötje scheint es sich hierbei um die Modellreihen 
+- WLS/WLC (Gas), 
+- BOK (Öl) sowie 
+- BLW Split-P, BLW Split C und BLW Split-K C (Wärmepumpen) zu handeln.  
+Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut (geräteseitig "IWR Alpha", kompatibles Raumgerät "IWR IDA"), die weder einen LPB noch einen BSB aufweisen.
 
 Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
 Anschlüsse.  
@@ -550,8 +552,7 @@ Anschlüsse.
 Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
 weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.  
 Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
-(On/Off), ein entsprechendes QAA-Raumgerät oder das neue ‚smarte'
-Raumgerät „Brötje IDA" angeschlossen werden.
+(On/Off) oder das neue ‚smarte' Raumgerät „Brötje IDA" angeschlossen werden.
 
 ***ACHTUNG: An keinem dieser Anschlüsse ist der BSB-LPB-LAN-Adapter anschließbar!***
 
