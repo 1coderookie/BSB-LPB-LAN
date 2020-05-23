@@ -30,6 +30,7 @@
 |  `/G<x>,I`            | `GPIO: Abfragen des Pins <x> mit gleichzeitigem Setzen auf INPUT`  
 |  `/I<x>=<y>`        | `INF-Nachricht an Parameter <x> mit Wert <y> senden`  
 |  `/JC=<x>,<y>,<z>`   | `JSON: Abfrage der möglichen Werte der Parameter <x>,<y>,<z> für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl /JK=<x>`  
+|  `/JI`                   | `JSON: Anzeige der Konfiguration von BSB-LAN`  
 |  `/JK=<x>`        	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
 |  `/JK=ALL`          	| `JSON: Auflistung aller Kategorien samt zugehörigen Parameternummern`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
