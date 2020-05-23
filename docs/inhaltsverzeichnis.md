@@ -3,7 +3,7 @@
 ---  
 # Inhaltsverzeichnis  
     
-***[User des veralteten Setups Adapter v2 + Mega: Bitte Anhang D beachten!](anhang_d.md)***  
+***User des veralteten Setups Adapter v2 + Mega: Bitte Anhang D beachten!***  
 ---  
     
 [Einleitung](index.md)  
