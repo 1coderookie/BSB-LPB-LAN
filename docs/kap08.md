@@ -39,6 +39,7 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/G<x>,I`            | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als INPUT genutzt)` <br /> `Für die reine Abfrage eines externes Gerätes, das an einen GPIO angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl so lange auf ‚input', bis das nächste Mal mit /G<xx>=<y> ein Wert geschrieben wird - ab da ist er dann bis zum nächsten „I" wieder auf ‚output'.`  
 |  `/I<x>=<y>`        | `Sende eine INF-Nachricht für den Parameter <x> mit dem Wert <y>` <br /> `Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem wird mit einer TYPE_INF-Nachricht informiert, bspw. bei der Raumtemperatur: http://<ip-address>/I10000=19.5 → Raumtemperatur beträgt 19.5°C`  
 |  `/JC=<x>,<y>,<z>`         	| `JSON: Abfrage der möglichen Werte der Parameter <x>,<y>,<z> für Parameter des Typs ENUM` <br /> `Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl /JK=<x>. Im Gegensatz zum Befehl /JQ werden die aktuellen Parameterwerte nicht zurückgemeldet.`   
+|  `/JI`                   | `JSON: Konfiguration von BSB-LAN anzeigen lassen`  
 |  `/JK=<x>`         	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
 |  `/JK=ALL`          	   | `JSON: Auflistung aller Kategorien samt zugehöriger Parameternummern`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
@@ -165,7 +166,11 @@ JSON erfolgen.
 
     `http://<IP-Adresse>/JC=<x>,<y>,<z>`  
     Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.
-    
+-   **Abfrage der Konfiguration von BSB-LAN:**  
+
+    `http://<IP-Adresse>/JI`  
+    Konfiguration von BSB-LAN in JSON-Format anzeigen lassen.  
+
 -   **Abfrage von Kategorien:**
 
     `http://<IP-Adresse>/JK=<xx>`  
@@ -449,6 +454,35 @@ if (!MQTTClient.connected()) {
 }
 ```  
 
+  
+---  
+  
+### 8.2.10 Verwenden der Webserver-Funktion
+  
+***Die Webserver-Funktion wurde von User ["dukess"](https://github.com/dukess) entwickelt, der ebenfalls die nachfolgenden Informationen hinsichtlich der Benutzung zur Verfügung stellte.***  
+***Vielen Dank!***  
+  
+Wenn das zugehörige Definement '#define webserver' in *BSB_lan_config.h* aktiviert wurde, kann BSB-LAN als Webserver fungieren, der außerdem statische Komprimierung unterstützt. Um diese Funktion zu verwenden müssen folgende Punkte berücksichtigt werden:
+- Alle Dateien werden / müssen auf der microSD-Karte gespeichert sein, können allerdings in verschiedenen Unterverzeichnissen abgelegt werden. Beispiel: `http://<IP-Adresse>/foo/bar.html` liest die Datei `bar.html` aus dem Verzeichnis `foo` von der microSD-Karte.   
+- Nur statische Inhalte werden unterstützt.  
+- Unterstützte Dateiformate sind: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.  
+- Der Webserver unterstützt die folgenden header: ETag, Last-Modified, Content-Length, Cache-Control.  
+- Wie bereits erwähnt unterstützt der Webserver statische Komprimierung. Wenn möglich (falls der Browser des Clients gzip unterstützt), werden immer gzip-Inhalte generiert (bspw. /d3d.js.gz für die URL /d3d.js).  
+  
+Die folgenden Beispiele verdeutlichen die Benutzung:  
+- Wenn keine Datei namens `index.html` im Stammverzeichnis der microSD-Karte vorliegt, wird das reguläre Webinterface bei Aufruf von `http://IP-Adresse` dargestellt.  
+- Wenn eine Datei namens `index.html` im Stammverzeichnis der microSD-Karte vorliegt, wird diese Datei anstelle des regulären Webinterface bei Aufruf von `http://IP-Adresse` dargestellt.  
+- Wenn die Datei `index.html` in einem Unterverzeichnis auf der mcroSD-Karte liegt, wird diese nur dann dargestellt, wenn die komplette URL eingegeben und abgerufen wird: `http://<IP-Adresse>/foo/bar/index.html`. Sollte in diesem Fall lediglich `http://<ip-address>/foo/bar/` abgerufen werden, so wird trotzdem das reguläre Webinterface von BSB-LAN dargestellt, da weder eine Verzeichnisauflistung, noch eine URL-Umschreibung in der Webserverfunktion implememtiert ist.  
+  
+Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wie immer der URL hinzugefügt werden.  
+  
+---  
+  
+### 8.2.11 Benutzen des alternativen AJAX Webinterface  
+  
+***Die AJAX Webserverfunktion wurde ebenfalls von User ["dukess"](https://github.com/dukess) entwickelt.***  
+***Bitte sieh dir die entspr. Beschreibung hinsichtlich der Benutzung in seinem [AJAX repo](https://github.com/dukess/bsb_lan_ajax) an.***  
+***Vielen Dank!***  
   
 ---  
      
