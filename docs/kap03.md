@@ -496,7 +496,7 @@ Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils spezifischen Pa
   
 ---  
    
-Erweiterungsmodule des Typs **AVS75.xxx** kommen bei den Reglerserien des Typs RVS zum Einsatz. Die Busanbindung erfolgt i.d.R. über den Anschluss "Bus-EM".     
+Erweiterungsmodule des Typs **AVS75.xxx** kommen bei den Reglerserien des Typs RVS und LMS zum Einsatz. Die Busanbindung erfolgt i.d.R. über den Anschluss "Bus-EM".     
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS75.jpg">  
    
@@ -504,7 +504,7 @@ Erweiterungsmodule des Typs **AVS75.xxx** kommen bei den Reglerserien des Typs R
    
 ---  
    
-Erweiterungsmodule für LMx-Regler werden als "ClipIn-Module" bezeichnet. Je nach Verwendungszweck scheint es unterschiedliche Ausführungen zu geben (bspw. Relaismodul, Solarmodul). Generell scheinen sie jedoch die Typenbezeichnung **AGU2.5x** zu tragen (das "x" scheint dann die jeweilige Ausführung zu kennzeichnen), die Busanbindung erfolgt i.d.R. über den Anschluss "X50".   
+Erweiterungsmodule für LMU-Regler werden als "ClipIn-Module" bezeichnet. Je nach Verwendungszweck scheint es unterschiedliche Ausführungen zu geben (bspw. Relaismodul, Solarmodul). Generell scheinen sie jedoch die Typenbezeichnung **AGU2.5x** zu tragen (das "x" scheint dann die jeweilige Ausführung zu kennzeichnen), die Busanbindung erfolgt i.d.R. über den Anschluss "X50".   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AGU255.JPG">  
    
