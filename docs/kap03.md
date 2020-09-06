@@ -78,6 +78,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje BBK 22F \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje BBK EVO 22I \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
 -   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
@@ -173,6 +175,10 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB 20 Eco \[LMS15\] (Gasbrenner) {BSB}
 
+-   Brötje WGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
@@ -180,6 +186,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 -   Brötje WGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Brötje WGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
 
@@ -192,6 +200,8 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 -   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WGB-U 15H \[LMS14\] (Gasbrenner) {BSB}
+
+-   Brötje WGB-U 15I \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
 
@@ -214,11 +224,15 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe) {BSB}
 
+-   Elco Aquatop S08 \[RVS61.843\] (Wärmepumpe) {BSB}
+
 -   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
 
 -   Elco Straton 21 \[RVS63.283\] (Ölbrenner) {BSB}
 
 -   Elco Straton S \[RVS63\] (Ölbrenner) {BSB}  
+
+-   Elco Straton S 21.2 \[RVS43.345\] (Ölbrenner) {BSB}  
 
 -   Elco Thision 25S \[RVS63\] \] (Gasbrenner) {BSB}  
 
@@ -248,6 +262,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
+
+-   Atlantic Alféa Extensa Duo + \[RVS21.831\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe) {BSB}  
 
@@ -281,6 +297,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
 
+-   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
+
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
@@ -302,6 +320,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (Wärmepumpe) {BSB}  
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
+
+-   Termomax Termo ÖV Color 35/E \[RVA63.2424\] {LPB}
 
 -   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
 
