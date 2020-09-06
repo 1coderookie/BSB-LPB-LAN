@@ -122,6 +122,7 @@ Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse 
 | 0x0B | 11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
 | 0x31 | 49 | OZW672 Webserver | 
 | 0x32 | 50 | (vermutlich) Funkempfänger („FE“) | 
+| 0x36 | 54 | Remocon Net B („REMO") |  
 | **0x42** |  **66** | **BSB-LPB-LAN-Adapter („LAN“)** |  
 | 0x7F | 127 | Broadcast („INF“-Meldungen) |   
    
