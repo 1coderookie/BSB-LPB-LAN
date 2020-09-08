@@ -153,8 +153,8 @@ und für etwa drei Sekunden gehalten werden, bis im Display eine
 entsprechende Meldung erscheint.
 
 Bei einigen Reglern kann diese Funktion mittels eines SET-Befehls
-erfolgen. Dieser lautet `http://<IP-Adresse>/S1601=1` - der
-Spezialparameter 1601 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
+erfolgen. Dieser lautet `http://<IP-Adresse>/S1603=1` - der
+Spezialparameter 1603 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
     
 ---
     
