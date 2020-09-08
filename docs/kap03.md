@@ -132,7 +132,9 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner) {BSB}  
 
--   Brötje NovoCondens BOB 25 \[RVS43\] (Ölbrenner) {BSB}
+-   Brötje NovoCondens BOB 25 \[RVS43\] (Ölbrenner) {BSB}  
+
+-   Brötje NovoCondens BOB 25B \[RVS43\] (Ölbrenner) {BSB}  
 
 -   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {BSB}
 
