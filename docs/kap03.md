@@ -656,6 +656,9 @@ Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoc
 ### 3.6.3 QAA74  
 Das QAA74 ist ein relativ neues Raumgerät, welches das QAA75 ablösen soll/wird. Bei Brötje heißt es "ISR RGP" ("Raumgerät Premium"), bei Siemens "UI400". Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt bei einigen Modellen ebenfalls als heizungsseitige Bedieneinheit unter der Bezeichnung AVS74 zum Einsatz. 
    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
+
+   
 ---
   
 ### 3.6.4 Brötje IDA  
