@@ -189,9 +189,7 @@ Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
 
 -   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner) {BSB}  
 
--   Brötje WGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
+-   Brötje WGB EVO 38I \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
