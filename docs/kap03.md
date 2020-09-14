@@ -372,7 +372,7 @@ Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
 aufweisen.
 
 Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
+Bedarf mittels eines ClipIn-Moduls (OCI345) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
    
@@ -415,7 +415,7 @@ darzustellen. Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüs
 auf.  
      
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu sein:  
-- RVSx1-Regler kommen bei Wärmepumpen zum Einsatz, der RVS21 scheint nur einen BSB aufzuweisen.      
+- RVSx1-Regler kommen bei Wärmepumpen zum Einsatz, der RVS21 scheint nur einen BSB aufzuweisen.       
 - RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
@@ -431,6 +431,8 @@ Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet ei
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS21.jpeg">  
    
 *Ein RVS21 Regler.*  
+   
+LPB ist bei einem RVS21 im Bedarfsfall via OCI345 nachzurüsten (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).
    
 ---    
     
