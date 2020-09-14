@@ -15,9 +15,9 @@ Die 'Bedieneinheit' und die Raumgeräte hingegen sind die Komponenten, die auße
    
 Hinweise:  
 Die folgende Aufzählung der verschiedenen Reglertypen mag im ersten Moment ein wenig verwirrend erscheinen, doch im Grunde kann man sich eine vereinfachte Regel merken:   
-Wenn die Reglerbezeichnung mit einem "S" endet (RVS und LMS), dann ist der Reglertyp grundsätzlich mit BSB-LAN kompatibel.  
-Grundsätzlich ist die Gerätefamilie LMS die Modellreihe für Gasgeräte, alle anderen Systeme nutzen RVS-Regler.    
-Je größer die darauffolgende Nummer in der Reglerbezeichnung ist, desto 'größer' vom Funktionsumfang her und meist auch hinsichtlich der Anzahl der Anschlüsse ist das jeweilige Modell.  
+Wenn die Reglerbezeichnung mit einem "S" endet (RVS und LMS), dann gehört der Regler zur 'aktuellen' Generation.  
+Die Gerätefamilie LMS ist dabei die Modellreihe für Gasgeräte, alle anderen Systeme nutzen RVS-Regler.    
+Je größer die darauffolgende Nummer in der Reglerbezeichnung ist, desto 'größer' vom (internen) Funktionsumfang her und meist auch hinsichtlich der Anzahl der Anschlüsse ist das jeweilige Modell.  
 Je nach 'Größe', Typ und vorgesehenem Verwendungsumfang sind somit auch unterschiedliche Parameter verfügbar.   
       
 ***ACHTUNG:  
@@ -38,11 +38,6 @@ meldet, ist davon auszugehen, dass in der Praxis noch weitere Systeme
 erfolgreich mit dem BSB-LPB-LAN-Adapter und der BSB-LAN-Software
 betrieben werden (können).
 
-Bei den (aktuelleren) Reglern kann i.d.R. grundsätzlich zwischen zwei
-Reglertypen unterschieden werden: Regler des Typs RVS und LMx. Diese
-zwei Typen unterscheiden sich u.a. in der Anschlussvielfalt und einigen
-verfügbaren Parametern. Weitere Angaben sind im entsprechenden Kapitel
-zu finden.
     
 ***Hinweis und Bitte:***  
 Um die Liste vervollständigen zu können und anderen möglichen Nutzern
@@ -52,24 +47,10 @@ einen noch nicht aufgeführten Regler unter Angabe
 - der genauen Hersteller- und Modellbezeichnung,  
 - des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
 - der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
-- der Ausgabe der Parameterabfragen `http://<IP-Adresse>/Q` (via Adapter!) zu melden.  
+- der [Ausgabe der Parameterabfrage `http://<IP-Adresse>/Q` (via Adapter!)](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids) zu melden.  
 Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
 Danke!
 
-Beispielausgabe einer solchen Abfrage bei einer „Brötje NovoCondens SOB
-26C" (hier nur die Darstellung der Abfrage /6220-6228, bitte aber /Q abfragen und rückmelden!):
-    
-```
-6220 Konfiguration - Software- Version: 1.3  
-6221 Konfiguration - Entwicklungs-Index: error 7 (parameter not supported)  
-6222 Konfiguration - Gerätebetriebsstunden: 12345 h  
-6223 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
-6224 Konfiguration - Geräte-Identifikation: RVS43.222/100  
-6225 Konfiguration - Gerätefamilie: 96  
-6226 Konfiguration - Gerätevariante: 100  
-6227 Konfiguration - Objektverzeichnis-Version: 1.0  
-6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014
-```
     
 ---
     
@@ -336,13 +317,17 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ---
     
 ## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler
-Die folgende Reglerauflistung und -beschreibung soll u.a. einen kurzen
+Die folgende Reglerauflistung und -beschreibung soll einen kurzen
 Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
 rudimentären Unterschiede geben. Auf die unterschiedliche
 reglerspezifische Verfügbarkeit von speziellen Parametern wird nicht
-weiter eingegangen. Es sei jedoch darauf hingewiesen, dass mittels
-BSB-LAN grundsätzlich etliche Parameter verfügbar sind, die mittels
-integrierter Bedieneinheit nicht verfügbar sind.
+weiter eingegangen.  
+  
+Mittels BSB-LAN steht i.d.R. der gesamte Funktionsumfang der jeweiligen Reglertypen zur Verfügung. Dieser ist jedoch hinsichtlich der verfügbaren Parameter naturgemäß unterschiedlich: Ein Regler der neusten Generation weist mehr Parameter und Einstelloptionen als ein Regler der ältesten Generation auf. Die Heizungsanlage wird dadurch jedoch nicht zwingend ineffizienter oder ist per se 'veraltet' und unbrauchbar! Dank BSB-LAN können auch die ältesten unterstützten Regler noch etwas 'smarter' gemacht und in die Hausautomatisierung mit eingebunden werden.  
+  
+*Hinweis:*  
+Bei besonders 'neuen' (Software-)Versionen der aktuellen Reglerserien (Typ LMS&RVS) kann es u.U. vorkommen, dass vom Hersteller neu hinzugefügte Reglerparameter mangels entsprechender Regler-Hardware bei BSB-LAN noch nicht implementiert sind. Sollte ein solcher Regler in deinem Heizungssystem verbaut sein, so kannst du das Projekt durch Dekodieren dieser neuen Parameter unterstützen (s. hierzu [Kapitel 10](kap10.md)).
+
    
 ---
     
@@ -353,24 +338,24 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 ---
    
 #### 3.2.1.1 LMU-Regler  
-Regler der Serie **LMU54/LMU64** sind in älteren Systemen verbaut, sie sind nicht mehr aktuell. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 
          
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
    
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
-Eine Nutzung von BSB-LAN mit diesen Reglermodellen ist erfahrungsgemäß nur in eingeschränktem Maße möglich. Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
+Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
    
 ---
    
-Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut. Sie weisen einen BSB auf, an dem der Adapter angeschlossen wird und mittels BSB-LAN nachfolgend nahezu der komplette Funktionsumfang verfügbar ist. Lediglich vereinzelte (Spezial-)Funktionen scheinen nicht verfügbar zu sein, wie bspw. das Übermitteln einer alternativen Außentemperatur.  
+Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut.     
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU7.jpg">  
    
 *Ein Regler des Typs LMU7x.*  
       
-Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
+Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
@@ -379,14 +364,14 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
    
 #### 3.2.1.2 LMS-Regler   
 Regler der Serie **LMS** scheinen die Nachfolger der LMU-Serie und somit die
-aktuelle Reglergeneration zu sein. Bei diesem Reglertyp ist mittels BSB-LAN erfahrungsgemäß der komplette Funktionsumfang nutzbar.  
+aktuelle Reglergeneration zu sein.   
    
 Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
 scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
 Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
 aufweisen.
 
-Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, LPB muss bei
+Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
@@ -405,13 +390,10 @@ Solarsystemregler) zum Einsatz zu kommen.
 ---
     
 #### 3.2.2.1 RVA- und RVP-Regler
-Regler des Typs **RVA** gehören anscheinend zur vorherigen Reglergeneration
-und weisen je nach Modell nur einen PPS oder einen PPS- und LPB-Anschluss auf
-(keinen BSB).  
+Regler des Typs **RVA** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Je nach Modell weisen sie nur einen PPS oder einen PPS- und LPB-Anschluss auf, jedoch keinen BSB.  
 Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol" 
 (Brötje) verbaut.  
-Eine Bedienung mittels BSB-LAN ist nur in deutlich geringerem Umfang als
-bei der aktuellen Reglergeneration RVS möglich.  
+  
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">  
    
@@ -423,15 +405,13 @@ bei der aktuellen Reglergeneration RVS möglich.
    
 Regler des Typs **RVP** scheinen noch älter als RVA-Regler zu sein und
 weisen lediglich eine PPS-Schnittstelle auf.  
-Der Bedienungsumfang mittels BSB-LAN ist bei diesem Reglertyp nur in
-eingeschränktem Umfang möglich.  
+  
     
 ---
     
 #### 3.2.2.2 RVS-Regler
 Regler des Typs **RVS** scheinen die ‚aktuelle' Reglergeneration
-darzustellen und werden i.d.R. von BSB-LAN vollständig unterstützt.
-Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
+darzustellen. Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
 auf.  
      
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu sein:  
