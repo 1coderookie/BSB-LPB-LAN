@@ -367,9 +367,21 @@ Ja, s. Kap. [12.7](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter).
   
 Ja! Siehe hierzu bitte [Anhang D](anhang_d.md).   
   
----
+---  
 
-## 15.27 Ich habe weitere Fragen, an wen kann ich mich wenden?
+## 15.27 Ich bekomme Fehlermeldungen von der Arduino IDE, was kann ich tun?  
+  
+Fehlermeldungen seitens der Arduino IDE können vielfältig sein und verschiedene Gründe haben, daher kann hier nicht tiefer darauf eingegangen werden. Grundsätzlich sollten in dem Fall nochmals alle Einstellungen hinsichtlich Port, Boardtyp etc. überprüft werden. Wenn auch Google keine weiteren Hinweise liefert, kann selbstverständlich auch im Forum nachgefragt werden.  
+Exemplarisch sei hier jedoch ein Typ einer Fehlermeldung genannt, die auftritt, wenn der falsche Boardtyp bei Verwendung eines Arduino DUE eingestellt wurde:  
+```  
+BSB_lan:802:27: error: 'pgm_read_byte_far' was not declared in this scope
+
+ uint8_t second_char = pgm_read_byte_far(enum_addr + page + 1);
+
+                       ^~~~~~~~~~~~~~~~~
+```  
+  
+## 15.28 Ich habe weitere Fragen, an wen kann ich mich wenden?
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum
 ([https://forum.fhem.de/](https://forum.fhem.de/))
