@@ -306,7 +306,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   MHG Procon E 25 HS \[LMS14\] (Gasbrenner) {BSB}  
 
--   Olymp SHS 730 \[RVS63\] (Ölbrenner / oil fired) {BSB}  
+-   Olymp SHS 730 \[RVS63\] (Ölbrenner) {BSB}  
 
 -   Olymp WHS 500 \[RVS61\] (Wärmepumpe) {BSB}  
 
