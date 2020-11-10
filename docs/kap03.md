@@ -132,7 +132,9 @@ Danke!
 
 -   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe) {BSB}
 
--   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe) {BSB}
+-   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe) {BSB}  
+
+-   Brötje SensoTherm BSW-6A \[RVS51\] (Wärmepumpe) {BSB}  
 
 -   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe) {BSB}  
 
@@ -143,6 +145,8 @@ Danke!
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 14F \[LMS14\] (Gasbrenner) {BSB}
+
+-   Brötje WBS 22 \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Brötje WBS 22E \[LMS14\] (Gasbrenner) {BSB}
 
@@ -215,6 +219,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Straton S 21.2 \[RVS43.345\] (Ölbrenner) {BSB}  
 
+-   Elco Thision 9 \[LMU7\] (Gasbrenner) {BSB}  
+
 -   Elco Thision 25S \[RVS63\] \] (Gasbrenner) {BSB}  
 
 -   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner) {BSB}
@@ -252,6 +258,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (Wärmepumpe) {BSB}  
 
+-   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}  
+
 -   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe) {BSB}
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
@@ -270,7 +278,11 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Deville 9942 \[RVA53\] (?) (PPS)  
 
--   Deville 9981 \[RVA53.140\] (Ölbrenner) {PPS}
+-   Deville 9981 \[RVA53.140\] (Ölbrenner) {PPS}  
+
+-   EVI HEAT Combi-7 \[RVA43\] (Wärmepumpe) {LPB}  
+
+-   Fernwärme \[RVD230\] {LPB}  
 
 -   Fröling Rendagas Plus \[RVA63.244\] (Gasbrenner) {LPB}
 
@@ -287,6 +299,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
+
+-   MHG Ecostar 200 \[RVS53\] (Ölbrenner) {BSB}  
 
 -   MHG Procon E25 \[LMS14\] (Gasbrenner) {BSB}  
 
@@ -305,12 +319,14 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Termomax Termo ÖV Color 35/E \[RVA63.2424\] {LPB}
 
 -   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
+    
+-   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
 
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner) {LPB}  
     
 -   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
-    
--   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
+
+-   Weishaupt WTU 25 S \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
     
 -   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
     
