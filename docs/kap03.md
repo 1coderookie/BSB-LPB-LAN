@@ -316,7 +316,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
 
--   Termomax Termo ÖV Color 35/E \[RVA63.2424\] {LPB}
+-   Termomax Termo ÖV Color 35/E \[RVA63.2424\] (Ölbrenner) {LPB}  
+
+-   Thermics Energie 9PWW \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
     
