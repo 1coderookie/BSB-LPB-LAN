@@ -2279,7 +2279,7 @@ A5 = Verkettung von A1 bis A4
   
 ## 11.12 SmartHomeNG  
   
-***BSB-LAN-User Thomas hat ein Plugin für SmartHomeNG geschrieben und in [seinem GitHub Repo](https://github.com/smarthomeNG/plugins/tree/develop/bsblan) zur Verfügung gestellt. ***  
+***BSB-LAN-User Thomas hat ein Plugin für SmartHomeNG geschrieben und in [seinem GitHub Repo](https://github.com/smarthomeNG/plugins/tree/develop/bsblan) zur Verfügung gestellt.***  
 ***Vielen Dank!***  
   
 ---  
