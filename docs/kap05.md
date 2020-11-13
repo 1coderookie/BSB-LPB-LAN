@@ -77,12 +77,11 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
     - `boolean show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
     Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`boolean show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
-
+  
 -   **Aktivieren des Verbose Modus:**  
     `byte verbose = 1;`  
     Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen.    
     
-
 -   **Sicherheitsfunktionen:**  
     -   Um das System vor einem ungewollten Zugriff von außen zu schützen,
     kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** genutzt
@@ -280,15 +279,18 @@ Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellu
  
 -   **Buseinstellungen:**  
     Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
-    *BSB:*  
-    - `byte own_bsb_address = 0x42;` → entspricht der eigenen  Geräteadresse 66 des BSB-LAN-Adapters 
-    *LPB:*  
+    
+    → **BSB:**  
+    - `byte own_bsb_address = 0x42;` → entspricht der eigenen  Geräteadresse 66 des BSB-LAN-Adapters  
+    
+    → **LPB:**  
     - `byte own_lpb_address = 0x42;` → eigene Adresse (BSB-LAN-Adapter), entspricht der Segmentadresse 4 mit Geräteadresse 3   
     - `byte dest_lpb_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
-    *PPS:*  
+    
+    → **PPS:**  
     - `boolean pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`boolean pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
     - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
-
+  
 -   **Geschützte GPIO-Pins:**  
     Hier sind normalerweise keinerlei Anpassungen vorzunehmen. Sollten individuelle Veränderungen an der Hardware vorgenommen werden, die entspr. Berücksichtigungen hinsichtlich der geschützten GPIO-Pins erfordern, sieh bitte im entspr. Abschnitt in der Datei *BSB_lan_config.h* nach.  
     
