@@ -41,7 +41,7 @@
 [3.7 Sonderzubehör: Webserver OZW672 und Servicetool OCI700](kap03.md#37-sonderzubehör-webserver-ozw672-und-servicetool-oci700)  
 [3.8 LPB nachrüsten mittels OCI420 ClipIn-Modul](kap03.md#38-lpb-nachrüsten-mittels-oci420-clipin-modul)  
 [4. Installation der Arduino IDE und Konfiguration des Adapters](kap04.md)  
-[5. Einstellungsrelevante Parameter der BSB-LAN-Software](kap05.md)  
+[5. Einstellungsrelevante Parameter der BSB-LAN-Software v2.x](kap05.md)  
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
 [7. BSB-LAN Web - das Webinterface des Adapters](kap07.md)  
 [8. URL-Befehle und Spezialfunktionen](kap08.md)  
