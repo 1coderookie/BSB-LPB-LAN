@@ -8,7 +8,8 @@
 **Die folgenden Einstellungen können bzw. sollten vor der Verwendung des Adapters in der Datei *BSB_lan_config.h* angepasst werden.**  
   
 *Achtung:*  
-Im Folgenden werden sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es bietet sich daher an, die Einstellungen Punkt für Punkt abzuarbeiten. Bitte lies dieses Kapitel *bis zum Schluss* durch, da am Ende nochmals etliche Definements gesammelt aufgeführt sind und ggf. auch dort nochmals zu aktivieren/deaktivieren sind!  
+*Im Folgenden werden sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
+Bitte lies dieses Kapitel bis zum Schluss durch, da am Ende nochmals etliche Definements gesammelt aufgeführt sind und ggf. auch dort nochmals zu aktivieren/deaktivieren sind!*  
   
 *Hinweis:  
 Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
@@ -77,7 +78,8 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
     - `boolean show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
     Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`boolean show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
-  
+   
+   
 -   **Aktivieren des Verbose Modus:**  
     `byte verbose = 1;`  
     Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen.    
@@ -268,6 +270,7 @@ Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellu
     - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18  
     - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69  
     
+    
 -   **Bus-Typ/-Protokoll:**  
     `uint8_t bus_type = 0;`  
     Je nach Anschluss des Adapters an einen BSB/LPB/PPS-Anschluss muss der entspr. Bus-Typ definiert werden (bereits nach Booten des Arduino wirksam).     
@@ -290,7 +293,8 @@ Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellu
     → **PPS:**  
     - `boolean pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`boolean pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
     - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
-  
+   
+   
 -   **Geschützte GPIO-Pins:**  
     Hier sind normalerweise keinerlei Anpassungen vorzunehmen. Sollten individuelle Veränderungen an der Hardware vorgenommen werden, die entspr. Berücksichtigungen hinsichtlich der geschützten GPIO-Pins erfordern, sieh bitte im entspr. Abschnitt in der Datei *BSB_lan_config.h* nach.  
     
