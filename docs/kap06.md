@@ -43,12 +43,12 @@ Dazu bietet sich folgende Vorgehensweise an:
     ```
     
     Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen 
-    Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist als 
-    RGT2 konfiguriert und fragt zur automatischen Erkennung beim 
-    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab. 
+    Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist im folgenden Beispiel als 
+    "RGT2" konfiguriert und fragt zur automatischen Erkennung beim 
+    Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab (in der Standardeinstellung lautet die Kennung des Adapters "LAN"). 
     Die darauf folgenden Zeilen sind bereits empfangene Telegramme. 
     Die Anzeige des kesselseitigen Steuerungsdisplays (hier: 
-    Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC).  
+    Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
     
     <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
         
