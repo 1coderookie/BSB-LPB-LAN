@@ -4,7 +4,7 @@
 ---
         
 
-# 4. Installation der Arduino IDE und Konfiguration des Adapters
+# 4. Installation der Arduino IDE und Flashen des Arduino Due  
 -   Downloade und installiere die aktuelle Version der Arduino IDE von
     [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
     (Windows-, Mac- und Linux-Version verfügbar).
@@ -29,16 +29,6 @@
     *BSB_lan_config.h* und *BSB_lan_defs.h* werden automatisch mit
     geladen.
 
--   Konfiguriere die IP-Adresse in *BSB\_lan\_config.h* deinem Netzwerk
-    entsprechend.  
-    Die voreingestellte IP 192.168.178.88 funktioniert mit den meisten
-    Standard-Routern wie bspw. Fritz!Box, aber prüfe, ob die IP bereits
-    anderweitig vergeben ist, damit es nicht zu einer Adresskollision
-    kommt.
-
--   ***Wichtig:***  
-    *Passe nun die weiteren Einstellungen in der Datei BSB_lan_config.h deinen Wünschen und Hardwaregegebenheiten (Pinbelegungen, angeschlossene DS18B20- und/oder DHT22-Sensoren, zu loggende Parameter etc.) entsprechend an!*
-    
 -   Stelle sicher, dass du die aktuelle Ethernet-Bibliothek verwendest 
     (mindestens v2.0). Rufe dazu unter dem Menüpunkt „Sketch“ → 
     „Bibliothek einbinden“ → „Bibliotheken verwalten“ auf und überprüfe, 
@@ -53,25 +43,22 @@
 
 -   Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.
 
--   Passe die Datei *BSB_lan_config.h* deinen Wünschen entsprechend an
-    (s. Kap. [5](kap05.md)) und lade den Sketch mittels Sketch/Upload
-    bzw. Sketch/Hochladen auf den Arduino.
+-   ***WICHTIG:*** Springe nun zu [Kap. 5](kap05.md) und passe die Datei *BSB_lan_config.h* deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen. **Entscheidend ist, dass du zumindest die Netzwerkeinstellungen entspr. anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!**  
+
+-   Nachdem du *zumindest* die Netzwerkeinstellungen in der Datei *BSB_lan_config.h* deinen Wünschen entsprechend angepasst hast, starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino.
 
 -   Verbinde den Arduino mittels LAN-Kabel mit deinem Router/Switch.
     Stelle dabei sicher, dass eine Stromversorgung für den Arduino via
     USB (Programming Port) oder externem Netzteil besteht!
 
 -   Öffne die Seite `http://<IP-Adresse>/` (oder
-    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s.u.)
-    genutzt wird) um zu sehen, ob alles korrekt kompiliert und
-    hochgeladen wurde.  
-    Die Startseite des Webinterface des Adapters sollte erscheinen.  
+    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s. Beschreibung in [Kap. 5.1](kap05.md#51-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) genutzt wird) - die Startseite des Webinterface der BSB-LAN-Software sollte erscheinen.  
     Sollte sie nicht erscheinen, drücke einmal kurz auf den Reset-Knopf
     des Arduino und rufe die Startseite erneut auf.  
     Unter `http://<IP-Adresse>/C` (bzw. Menüpunkt „Konfiguration" im
     Webinterface) kannst du deine Konfiguration überprüfen.  
     
-    *Wenn alle einstellungsrelevanten Parameter in der Datei BSB_lan_config.h angepasst sind (s. Kap. [5](kap05.md)) und der     Zugriff auf das Webinterface möglich ist, fahre mit der Funktionsüberprüfung des Adapters fort.*
+
 
        
     
