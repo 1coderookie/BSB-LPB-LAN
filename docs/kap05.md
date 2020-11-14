@@ -27,7 +27,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
   
 ---
 
--   **Konfigurationseinstellungen aus EEPROM oder der Datei BSB_lan_config.h laden:**  
+-   **Konfigurationseinstellungen aus EEPROM oder der Datei *BSB_lan_config.h* laden:**  
     `byte UseEEPROM = 1;`  
     Gemäß Voreinstellung werden die Konfigurationseinstellungen beim Start von BSB-LAN aus dem EEPROM gelesen. Als Fallback kann die Variable auf '0' gesetzt werden, dann werden die Einstellungen aus der Datei *BSB_lan_config.h* gelesen.  
     
