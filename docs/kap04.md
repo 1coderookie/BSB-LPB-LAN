@@ -43,7 +43,9 @@
 
 -   Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.
 
--   ***WICHTIG:*** *Springe nun zu [Kap. 5.1](kap05.md#51-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), lies die dortigen Beschreibungen und passe die Datei BSB_lan_config.h deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen.* ***Entscheidend ist, dass du zumindest die Netzwerkeinstellungen wunschgemäß anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!***  
+-   ***WICHTIG:***  
+*Springe nun zu [Kap. 5.1](kap05.md#51-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), lies die dortigen Beschreibungen und passe die Datei BSB_lan_config.h deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen.*  
+***Entscheidend ist, dass du zumindest die Netzwerkeinstellungen wunschgemäß anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!***  
 
 -   Nachdem du *zumindest* die Netzwerkeinstellungen in der Datei *BSB_lan_config.h* deinen Wünschen entsprechend angepasst hast, starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino.
 
@@ -52,7 +54,7 @@
     USB (Programming Port) oder externem Netzteil besteht!
 
 -   Öffne die Seite `http://<IP-Adresse>/` (oder
-    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s. Beschreibung in [Kap. 5.1](kap05.md#51-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) genutzt wird) - die Startseite des Webinterface der BSB-LAN-Software sollte erscheinen.  
+    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s. Beschreibung in [Kap. 5.1](kap05.md#51-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)) genutzt wird - die Startseite des Webinterface der BSB-LAN-Software sollte erscheinen.  
     Sollte sie nicht erscheinen, drücke einmal kurz auf den Reset-Knopf
     des Arduino und rufe die Startseite erneut auf.  
     Unter `http://<IP-Adresse>/C` (bzw. Menüpunkt „Konfiguration" im
