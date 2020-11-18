@@ -37,9 +37,9 @@
     
 -   Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw.
     Werkzeuge/Board.  
-    Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugrfügt werden. Öffne dafür den Boardverwalter unter Werkzeuge/Board und suche nach "Arduino SAM Boards", wo der Due enthalten ist. Klicke auf den Eintrag und dann auf die Schaltfläche 'Installieren'. Danach solltest du den Due unter Werkzeuge/Boards finden.
+    Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Öffne dafür den Boardverwalter unter Werkzeuge/Board und suche nach "Arduino SAM Boards", wo der Due enthalten ist. Klicke auf den Eintrag und dann auf die Schaltfläche 'Installieren'. Danach solltest du den Due unter Werkzeuge/Boards finden.
 
--   Wähle der korrekten Seriellen Prot unter Werkzeuge/Port aus.
+-   Wähle den korrekten Seriellen Port unter Werkzeuge/Port aus.
 
 -   Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.
 
