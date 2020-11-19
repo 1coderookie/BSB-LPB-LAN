@@ -64,10 +64,10 @@ DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit
    
 **Ausgabe Logdatei (URL-Befehle /D und /DG):**  
 
-Eine grafische Darstellung des optional erstellbaren Logfiles auf einer 
+Eine grafische Darstellung des optional erstellbaren Logfiles (Datei *datalog.txt*) auf einer 
 microSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph.jpg">  
     
 ***Hinweis:*** 
     
@@ -92,24 +92,26 @@ Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überpr�
    
 **Einstellungen (URL-Befehl: /C):**  
 Hier wird eine Übersicht der Konfiguration dargestellt.  
-Dort sind u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
+Dort sind im oberen Bereich u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  
    
+Unter der Auflistung findet sich das Webinterface zur Konfiguration von BSB-LAN. 
+
 ---  
    
 **URL-Befehle:**  
-Dieser Button ist mit dem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
+Der Button ist mit diesem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
    
 ---  
    
 **Handbuch:**  
-Dieser Button ist mit dem Handbuch verlinkt. Internetzugriff wird benötigt.  
+Der Button ist mit diesem Handbuch verlinkt. Internetzugriff wird benötigt.  
    
 ---  
    
 **FAQ:**  
-Dieser Button ist mit dem Kapitel "FAQ" des Handbuchs verlinkt. Internetzugriff wird benötigt.
+Der Button ist mit dem Kapitel "FAQ" dieses Handbuchs verlinkt. Internetzugriff wird benötigt.
     
 ---
     
