@@ -65,7 +65,7 @@ DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit
 **Ausgabe Logdatei (URL-Befehle /D und /DG):**  
 
 Eine grafische Darstellung des optional erstellbaren Logfiles (Datei *datalog.txt*) auf einer 
-microSD-Karte erfolgt bei Klick auf „Anzeige Logdatei".
+microSD-Karte erfolgt bei Klick auf den Button „Anzeige Logdatei".
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph.jpg">  
     
