@@ -11,7 +11,7 @@
      
 ---
     
-# 5.1 Konfiguration mittels Webinterface  
+## 5.1 Konfiguration mittels Webinterface  
 
 *Die Beschreibung dieser neuen Funktion ist noch in Arbeit.*  
 
@@ -23,9 +23,6 @@
   
 Die Konfiguration der BSB-LAN-Software kann erfolgen, indem die Einstellungen in der Datei *BSB_lan_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
 
-  
-*Hinweis:  
-Bitte lies dieses Kapitel bis zum Schluss durch, da am Ende nochmals etliche Definements gesammelt aufgeführt sind und ggf. auch dort nochmals zu aktivieren/deaktivieren sind!*  
   
 *Hinweis:  
 Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
@@ -54,12 +51,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **MAC-Adresse des Ethernet-Shields:**  
     `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
 
-    Üblicherweise befindet sie sich auf einem Aufkleber auf dem
-    Ethernet-Shield, diese ist dann einzutragen. Sollte kein Aufkleber
-    mit einer spezifischen Adresse vorhanden sein, kann die
-    voreingestellte Adresse beibehalten werden. Eine Änderung ist i.d.R.
-    nur nötig, wenn mehr als ein Adapter verwendet wird.  
-Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur *einmal* vorkommt!  
+    Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R.
+    nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
+     
+    *Wichtiger Hinweis:*  
+    *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
+    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
+    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` geändert, so lautet der Hostname entsprechend "WIZnet196991", also `http://wiznet196991`.*  
     
 -   **Ethernet-Port:**  
     `uint16_t HTTPPort = 80;`  
@@ -68,43 +66,41 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     
 -   **DHCP:**  
     `boolean useDHCP = true;`  
-    Bei Verwendung von DHCP ist *true* einzustellen, für die Nutzung einer festen IP ist *false* einzustellen.  
+    Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
+    
+    *Wichtiger Hinweis:*  
+    *Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
+    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
+    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` geändert, so lautet der Hostname entsprechend "WIZnet196991", also `http://wiznet196991`.*  
+    *Die IP, die in diesem Fall vom Router automatisch vergeben wird, wird beim Start des Arduino Due im Seriellen Monitor der Arduino IDE angezeigt.*  
 
 
 -   **IP-Adresse:**  
-    IP-Adresse des Adapters. Es ist ratsam, eine feste IP-Adresse zu vergeben (die frei ist und vom Router nicht vergeben wird!), so dass eine korrekte Einbindung in Hausautomationssysteme erfolgen kann.  
     `byte ip_addr[4] = {192,168,178,88};`  
-    *Bitte beachte die Kommata anstelle von Punkten!*  
-    
-
--   **GatewayIP:**  
-    Durch Aktivierung des Definements und Anpassung der IP
-    kann hier optional die IP eines (nicht-Standard-)Gateways definiert
-    werden:  
-    `byte gateway_addr[4] = {192,168,178,1};`  
-    *Bitte beachte die Kommata anstelle von Punkten!*  
+    IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
+    *Achtung: Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt!*  
+  
+  
+-   **Gateway-Adresse:**  
+    `byte gateway_addr[4] = {192,168,178,1};` 
+    IP-Adresse des Gateways (i.d.R. die des Routers) - *bitte beachte die Kommata anstelle von Punkten!*  
           
         
 -   **DNS-Server:**  
-    Durch Aktivierung des Definements und Anpassung der IP 
-    kann hier optional die IP eines (nicht-Standard-)DNS definiert 
-    werden, wenn die IP nicht mit der des Routers übereinstimmt:  
     `byte dns_addr[4] = {192,168,178,1};`  
-    *Bitte beachte die Kommata anstelle von Punkten!*  
+    IP-Adresse des DNS - *bitte beachte die Kommata anstelle von Punkten!*  
   
   
--   **SubnetIP:**  
-    Durch Aktivierung des Definements und Anpassung der IP 
-    kann hier optional die IP eines (nicht-standard-)Subnets definiert werden:  
+-   **Subnet:**  
     `byte subnet_addr[4] = {255,255,255,0};`  
-    *Bitte beachte die Kommata anstelle von Punkten!*  
+    Subnetz-Adresse - *bitte beachte die Kommata anstelle von Punkten!*  
     
 ---    
     
 -   **Debugging und entspr. Einstellungen:**  
     - `#define DEBUG` → Debug-Modus aktivieren (s. nachfolgende Optionen)  
     
-    - `byte debug_mode = 2;` → Folgende Debug-Optionen sind verfügbar:  
+    - `byte debug_mode = 1;` → Folgende Debug-Optionen sind verfügbar:  
     0 - Debugging deaktiviert  
     1 - Debug-Nachrichten an das serielle Interface senden (einzustellen bei der Verwendung von bspw. dem Seriellen Monitor der Arduino IDE)  
     2 - Debug-Nachrichten an einen TelNet-Client anstelle des seriellen Interface senden  
@@ -171,7 +167,7 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     Adapterboard) definiert werden.  
     Voreingestellt ist das Modul aktiviert und Pin 7 eingestellt.  
     Soll keine Verwendung stattfinden, ist `boolean enableOneWireBus = false;` einzutragen.  
-    *Achtung: Es sind softwareseitig theoretisch bis zu 200 DS18B20-Sensoren verwendbar. Eine solch hohe Anzahl von Sensoren ist in diesem Fall jedoch nicht empfehlenswert!*      
+          
 
 -   **DHT22-Sensoren:**  
     `#define DHT_BUS`  
@@ -180,8 +176,9 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
     Adapterboard) definiert werden.  
     Voreingestellt ist das Modul samt Verwendung der Pins 2 und 3 aktiv.  
-    *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen und verwendet werden!*  
-
+  
+    *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
+  
 ---
 
 -   **24h-Durchschnittswerte:**  
@@ -205,13 +202,10 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
 
 ---
 
--   **Logging:**  
-    BSB-LAN bietet die Möglichkeit, verschiedene Werte von Parametern oder auch Telegramme auf eine microSD-Karte zu loggen. Hierfür ist eine FAT32-formatierte Karte im entsprechenden Slot auf dem Ethernet-Shield einzulegen und das entsprechende Definement zu
-    aktivieren:  
-    `#define LOGGER`  
-    ***Achtung: Dieses Definement ist auch für die Verwendung von MQTT (s.u.) zu aktivieren, selbst wenn kein Loggen stattfinden soll!***  
-    
-    Nachfolgend können/müssen verschiedene Einstellungen vorgenommen werden:  
+-   **Logging auf microSD-Karte und bei Verwendung von MQTT:**  
+    `#define LOGGER` → Das Logging-Modul wird kompiliert. *Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!*     
+      
+    Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
     `int logTelegram = LOGTELEGRAM_OFF;`  
     
@@ -223,12 +217,12 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
     `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
 
     - Für die zu loggenden *Parameter* gibt es folgende Einstelloptionen:  
-    `boolean logCurrentValues = true;`  
-    Die Werte der zu loggenden Parameter werden in der Datei 'datalog.txt' auf der microSD-Karte gespeichert (Voreinstellung). Soll keine Speicherung stattfinden, so ist `false` einzustellen.  
+    `boolean logCurrentValues = false;`  
+    Die Werte der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
       
     `unsigned long log_interval = 3600;`  
     Das gewünschte Logintervall in Sekunden.  
-    ***Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!***  
+    *Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!*  
 
     Die zu loggenden Parameter müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
     ```
@@ -257,9 +251,9 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
 ---        
         
 -   **MQTT:**  
-    Soll MQTT zum Einsatz kommen, so sind die entspr. Definements und Variablen zu aktivieren und anzupassen:    
+    Soll MQTT zum Einsatz kommen, so sind die entspr. Variablen und Einstellungen anzupassen:    
 
-    - `//define MQTT` → MQTT ist deaktiviert (Voreinstellung)  
+    - `define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
     
     - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind möglich:  
     1 = die Nachrichten werden im einfachen Textformat gesendet  
@@ -284,9 +278,9 @@ Es sollte in jedem Fall darauf geachtet werden, dass die Adresse im Netzwerk nur
 ---   
    
 -   **IPWE:**  
-    `#define IPWE`  
+    `#define IPWE` → Das IPWE-Modul wird kompiliert.    
     `boolean enable_ipwe = false;`  
-    Soll die IPWE-Erweiterung (URL/ipwe.cgi) aktiviert werden, ist das entsprechende Definement zu aktivieren und die entspr. Variable auf 'true' zu setzen (Voreinstellung: 'false', also deaktiviert).     
+    Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
   
     Die gewünschten Parameter (maximal 40) sind ebenfalls einzutragen:  
     ```  
@@ -468,27 +462,27 @@ Der Webserver unterstützt dabei folgende header: ETag, Last-Modified, Content-L
     
 ---    
     
--   **Zusammenfassung der zu kompilierenden Module:**  
-    ***ACHTUNG: Diese Einstellungen/Definements sind nochmals zu überprüfen und ggf. anzupassen! Per default werden ALLE nachfolgend aufgeführten Module bei Verwendung eines Arduino Due kompiliert!***   
-    ```
-    #if ! defined(__AVR__)
-    #define CONFIG_IN_EEPROM
-    #define WEBCONFIG
-    #define AVERAGES
-    #define DEBUG
-    #define IPWE
-    #define MQTT
-    #define OFF_SITE_LOGGER
-    #define RESET
-    #define ROOM_UNIT
-    #define VERSION_CHECK
-    #define WEBCONFIG
-    #define WEBSERVER
+-   **Deaktivierung bestimmter Module (bei Nutzung eines Arduino Mega 2560):**  
+       
+    Wird anstelle des Arduino Due noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Hinweis: Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
+    Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
     
+    ```
+    #if defined(__AVR__)
+    //#undef CONFIG_IN_EEPROM
+    //#undef WEBCONFIG
+    //#undef WEBSERVER
+    #undef AVERAGES
+    #undef DEBUG
+    #undef IPWE
+    #undef MQTT
+    #undef OFF_SITE_LOGGER
+    #undef ROOM_UNIT
+    #undef VERSION_CHECK
+    #undef MAX_CUL
     #endif
     ```  
- 
-  
+   
 ---  
 
      
