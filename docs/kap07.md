@@ -27,7 +27,7 @@ Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen ein
 - Handbuch  
 - FAQ  
    
-Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion in der Datei *BSB_lan_config.h* nicht aktiviert ist (wie im obigen Screenshot zu sehen).  
+Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion nicht aktiviert ist (wie im obigen Screenshot zu sehen). Ist die Logging-Funktion aktiviert, so heißt die Bezeichnung des Buttons "Zeichne Logdatei".
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
 BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
@@ -62,10 +62,10 @@ DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit
    
 ---  
    
-**Ausgabe Logdatei (URL-Befehle /D und /DG):**  
+**Ausgabe/Zeichne Logdatei (URL-Befehle /D und /DG):**  
 
 Eine grafische Darstellung des optional erstellbaren Logfiles (Datei *datalog.txt*) auf einer 
-microSD-Karte erfolgt bei Klick auf den Button „Ausgabe Logdatei".
+microSD-Karte erfolgt bei Klick auf den Button "Zeichne Logdatei". Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schrift angezeigt und die Bezeichnung lautet "Ausgabe Logdatei".
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph.jpg">  
     
