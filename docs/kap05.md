@@ -6,13 +6,20 @@
 
 # 5. Konfiguration der BSB-LAN-Software v2.x  
   
-**Hinweis: Ab v2.x ist es nun möglich, die Konfiguration der BSB-LAN-Software auch über ein Webinterface vorzunehmen, anstatt sämtliche Einstellungen in der Datei *BSB_lan_config.h* anzupassen. Eine Beschreibung dieser neuen Funktion erfolgt in Kürze.**  
+**Hinweis: Ab v2.x ist es nun möglich, die Konfiguration der BSB-LAN-Software auch über das Webinterface unter "Einstellungen" vorzunehmen. Die Beschreibung dieser Funktion ist noch in Arbeit.**  
 
-***Es ist ratsam, das folgende Kapitel 5.1 auch bei ausschließlicher Verwendung des Webinterface zur Konfiguration komplett zu lesen, da nur dort eine entsprechende Beschreibung der einzelnen Funktionen bzw. Einstellungen erfolgt!***  
-  
+     
+---
+    
+# 5.1 Konfiguration mittels Webinterface  
+
+*Die Beschreibung dieser neuen Funktion ist noch in Arbeit.*  
+
+
+
 ---  
   
-## 5.1 Konfiguration durch Anpassen der Datei *BSB_lan_config.h*  
+## 5.2 Konfiguration durch Anpassen der Datei *BSB_lan_config.h*  
   
 Die Konfiguration der BSB-LAN-Software kann erfolgen, indem die Einstellungen in der Datei *BSB_lan_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
 
@@ -480,12 +487,7 @@ Der Webserver unterstützt dabei folgende header: ETag, Last-Modified, Content-L
     
     #endif
     ```  
-     
----
-    
-# 5.2 Konfiguration mittels Webinterface  
-
-*Die Beschreibung dieser neuen Funktion erfolgt in Kürze!*  
+ 
   
 ---  
 
