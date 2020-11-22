@@ -50,14 +50,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
 -   **MAC-Adresse des Ethernet-Shields:**  
     `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
-
-    Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R.
-    nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
+    Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
      
     *Wichtiger Hinweis:*  
     *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
     *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
-    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in  
+    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
     *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
     *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
     
@@ -206,7 +204,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
 ---
 
--   **Logging auf microSD-Karte und bei Verwendung von MQTT:**  
+-   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
     `#define LOGGER` → Das Logging-Modul wird kompiliert. *Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!*     
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
@@ -215,16 +213,15 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     Folgende Einstelloptionen sind hier verfügbar:  
     `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
-    `LOGTELEGRAM_ON` = alle Bus-Telegramme werden geloggt  
+    `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
     `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
     `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
     `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
 
-    - Für die zu loggenden *Parameter* gibt es folgende Einstelloptionen:  
-    `boolean logCurrentValues = false;`  
-    Die Werte der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
+    - `boolean logCurrentValues = false;`  
+    Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
       
-    `unsigned long log_interval = 3600;`  
+    - `unsigned long log_interval = 3600;`  
     Das gewünschte Logintervall in Sekunden.  
     *Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!*  
 
