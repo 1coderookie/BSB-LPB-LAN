@@ -256,7 +256,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
     - `define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
     
-    - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind möglich:  
+    - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
     1 = die Nachrichten werden im einfachen Textformat gesendet  
     2 = die Nachrichten werden im JSON-Format gesendet (Struktur der JSON-Payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
     3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"parameterid": one_of_logvalues, "parametername": "name", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}}  
@@ -321,23 +321,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Hier kann bei Bedarf eingestellt werden, wieviele maximale Wiederholungsversuche ausgeführt werden, wenn bei einer Abfrage keine entsprechende Antwort vom Heizungsregler kommt. In der Regel kann die Voreinstellung (max. 3 Versuche) beibehalten werden.  
     
 ---    
-    
--   Soll der Arduino **per URL-Befehl** mittels `http://<IP-Adresse>/N`
-    **resettet** werden können, muss das entsprechende Definement aktiviert
-    werden:  
-    `#define RESET`  
-    
-    *Hinweis:*  
-    Trotz Aktivierung kann es in Ausnahmefällen vorkommen, dass dieser Befehl bei einigen (älteren) Arduino-Boards (bzw. Clones) keine Wirkung zeigt.    
-    
----    
-
--   **RX-/TX-Konfiguration des Adapters:**  
+  
+***Buseinstellungen (Pins und Typ):*** 
+  
+-   **RX-/TX-Pinkonfiguration:**  
     `byte bus_pins[2] = {0,0};` → automatische Erkennung und Einstellung der RX-/TX-Pinbelegung (Voreinstellung); ansonsten gilt:  
-    - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18  
-    - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69  
-    
----    
+    - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18 (`{19,18}`)  
+    - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69 (`{68,69}`)  
     
 -   **Bus-Typ/-Protokoll:**  
     `uint8_t bus_type = 0;`  
@@ -347,9 +337,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     0 = BSB  
     1 = LPB  
     2 = PPS
- 
---- 
- 
+  
 -   **Buseinstellungen:**  
     Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
     
@@ -389,17 +377,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
     
 -   **Schreib-/Lesezugriff auf den Heizungsregler:**  
-    `#define DEFAULT_FLAG FL_RONLY`  
-    In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich.  
-    Wer den Status ändern will, um *generell* Werte und Einstellungen
-    des Reglers per Adapter verändern zu können, muss das Flag auf 0
-    setzen:  
-    `#define DEFAULT_FLAG 0`  
-    *Achtung: Dies betrifft ALLE verfügbaren Parameter/Einstelloptionen des Heizungsreglers!*  
-
-    Ist diese Funktion aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
+    `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
+    In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich. Eine Änderung des Status auf *generellen* Schreibzugriff kann via Webinterface (Menüpunkt "Einstellungen") erfolgen.    
+      
+    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
     oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
-    das genannte Flag generell auf `FL_RONLY` gesetzt sein und dann in
+    das genannte Flag auf `FL_SW_CTL_RONLY` gesetzt sein und dann in
     der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
     Parameters durch 0 (Null) ersetzt werden. Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen! 
     
@@ -419,24 +402,26 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
     
 -   **Eigenen Code** aus der Datei *BSB_lan_custom.h* einfügen:  
-`#define CUSTOM_COMMANDS`  
-Fügt die Befehle aus der Datei `BSB_lan_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden.  
+    `//#define CUSTOM_COMMANDS`  
+    Fügt die Befehle aus der Datei `BSB_lan_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden (per default deaktiviert).  
    
 ---   
    
 -   **Überprüfen der BSB-LAN-Version:**  
-`#define VERSION_CHECK`  
-`boolean enable_version_check = true;`    
-Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist. Dazu ist Internetzugriff nötig. Wenn der automatische Internetzugriff von BSB-LAN nicht erwünscht ist, so ist das Definement zu deaktivieren und die Variable auf `false` zu setzen.    
+    `#define VERSION_CHECK`  
+    `boolean enable_version_check = false;`    
+    Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
+    
+    *Hinweis: Dabei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen.*  
+
+
+
     
 ---    
        
--   **"Externen" Webserver aktivieren:**  
-`#define WEBSERVER`    
-Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Alle Dateien werden bzw. müssen auf der microSD-Karte gespeichert werden. Die Dateien können in verschiedenen Verzeichnissen abgelegt werden. Lediglich statische Inhalte werden unterstützt.
-Unterstützte Dateitypen sind: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.
-Der Webserver unterstützt statische Komprimierung. Wenn möglich (d.h., wenn der Client gzip unterstützt) wird stets versucht, gzip-gezippte Inhalte zu erzeugen (z.B. /d3d.js.gz für die URL /d3d.js).
-Der Webserver unterstützt dabei folgende header: ETag, Last-Modified, Content-Length, Cache-Control.
+-   **"Externer" Webserver:**  
+    `#define WEBSERVER`    
+    Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Für weitere Informationen siehe bitte [Kapitel 8.2.10](kap08.html#8210-verwenden-der-webserver-funktion).  
     
 ---    
     
@@ -447,8 +432,8 @@ Der Webserver unterstützt dabei folgende header: ETag, Last-Modified, Content-L
 ---    
     
 -   **Konfiguration via Webinterface:**  
-    `//#define WEBCONFIG`  
-    Wenn die Möglichkeit der Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM) gewünscht ist (nur Arduino Due), dann ist dieses Definement zu aktivieren.   
+    `#define WEBCONFIG`  
+    Ermöglicht die Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM; nur Arduino Due). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
     
 ---    
 
