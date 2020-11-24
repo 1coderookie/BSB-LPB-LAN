@@ -297,7 +297,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **MAX! (CUNO/CUNX/modifizierter MAX!Cube):**  
     Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellungen angepasst werden:  
     
-     - `//#define MAX_CUL` → Definement aktivieren  
+     - `//#define MAX_CUL` → Definement aktivieren (= `#define MAX_CUL`) (deaktiviert by default)  
      
      - `boolean enable_max_cul = false;` → Variable auf 'true' setzen  
      
