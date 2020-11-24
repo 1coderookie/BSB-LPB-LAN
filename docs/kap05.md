@@ -259,7 +259,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
     1 = die Nachrichten werden im einfachen Textformat gesendet  
     2 = die Nachrichten werden im JSON-Format gesendet (Struktur der JSON-Payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
-    3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"parameterid": one_of_logvalues, "parametername": "name", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}}  
+    3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
     
     - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP des MQTT-Brokers.  
         *Bitte beachte die Kommata anstelle von Punkten!*  
