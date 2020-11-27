@@ -21,7 +21,7 @@
 |  `/B`                   | `Anzeige akkumulierter Brennerlaufzeiten (in Sek.) und -takte (inkl. TWW)`  
 |  `/B0`                  | `Zurücksetzen des Zählers Brennerlaufzeiten und -takte`  
 |  `/C`                   | `Anzeige der Konfiguration von BSB-LAN`  
-|  `/D` oder `/DD`         | `Anzeige der Logdatei datalog.txt von der microSD-Karte`  
+|  `/D oder /DD`         | `Anzeige der Logdatei datalog.txt von der microSD-Karte`  
 |  `/DG`                  | `Grafische Anzeige der Logdatei datalog.txt von der microSD-Karte`  
 |  `/DJ`                  | `Anzeige der Logdatei journal.txt von der microSD-Karte`  
 |  `/D0`                  | `Zurücksetzen der beiden Logdateien & neue Generierung des CSV-Headers`  
