@@ -21,9 +21,12 @@
 |  `/B`                   | `Anzeige akkumulierter Brennerlaufzeiten (in Sek.) und -takte (inkl. TWW)`  
 |  `/B0`                  | `Zurücksetzen des Zählers Brennerlaufzeiten und -takte`  
 |  `/C`                   | `Anzeige der Konfiguration von BSB-LAN`  
-|  `/D`                   | `Anzeige der Logdatei der microSD-Karte`  
-|  `/DG`                  | `Grafische Anzeige der Logdatei der microSD-Karte`  
-|  `/D0`                  | `Zurücksetzen der Logdatei & neue Generierung des Headers`  
+|  `/D` oder `/DD`         | `Anzeige der Logdatei datalog.txt von der microSD-Karte`  
+|  `/DG`                  | `Grafische Anzeige der Logdatei datalog.txt von der microSD-Karte`  
+|  `/DJ`                  | `Anzeige der Logdatei journal.txt von der microSD-Karte`  
+|  `/D0`                  | `Zurücksetzen der beiden Logdateien & neue Generierung des CSV-Headers`  
+|  `/DD0`               | `Nur Logdatei datalog.txt löschen`  
+|  `/DJ0`               | `Nur Logdatei journal.txt löschen`  
 |  `/E<x>`              | `ENUM-Werte für Parameter <x> anzeigen`  
 |  `/G<x>`              | `GPIO: Abfragen des Pins <x>`  
 |  `/G<x>=<y>`        | `GPIO: Setzen des Pins <x> auf HIGH (<y> = 1) oder LOW (<y> = 0)`  
@@ -41,6 +44,8 @@
 |  `/L=0,0`               | `Loggen auf microSD-Karte temporär deaktivieren`  
 |  `/L=<x>,<y1>,<y2>,<y3>`       | `Log-Intervall auf <x> Sekunden setzen, mit (optional) Log-Parameter <y1>,<y2>,<y3>`  
 |  `/LB=<x>`            | `Loggen von Bus-Telegrammen: Nur Broadcasts (<x>=1) oder alle (<x>=0)`  
+|  `/LD`                | `Loggen von Bus-Telegrammen (Datei journal.txt) deaktivieren`  
+|  `/LE`                | `Loggen von Bus-Telegrammen (Datei journal.txt) aktivieren`  
 |  `/LU=<x>`            | `Loggen von Bus-Telegrammen: Nur unbekannte (<x>=1) oder alle (<x>=0)`  
 |  `/M<x>`              | `Monitor-Modus aktivieren (<x> = 1) oder deaktivieren (<x> = 0)`  
 |  `/N`                   | `Reset und Neustart des Arduino (Dauer ca. 15Sek)`  
