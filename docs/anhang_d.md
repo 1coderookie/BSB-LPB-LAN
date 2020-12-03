@@ -12,6 +12,7 @@ und getestete Version für dein Setup!** Im zip-file befindet sich auch die letz
 Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 höchstwahrscheinlich nicht genügend Speicher 
 aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt 
 keine Garantie, dass ein problemloser Betrieb möglich sein wird.  
+  
 *Achtung:*  
 Solltest du dennoch eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zugehörige Datei *BSB_lan_config.h.default* verwendest und entsprechend anpasst: 
   - Bei BSB-LAN-Versionen VOR v2.x ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
