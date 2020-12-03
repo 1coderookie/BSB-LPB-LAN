@@ -86,6 +86,7 @@
 [11.10 EDOMI](kap11.md#1110-edomi)  
 [11.11 Home Assistant](kap11.md#1111-home-assistant)  
 [11.12 SmartHomeNG](kap11.md#1112-smarthomeng)  
+[11.13 Node-RED](kap11.md#1113-node-red)  
 [12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter](kap12.md)  
 [12.1 Der Arduino Due](kap12.md#121-der-arduino-due)  
 [12.2 Das LAN-Shield](kap12.md#122-das-lan-shield)  
