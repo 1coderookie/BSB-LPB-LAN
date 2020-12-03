@@ -2282,6 +2282,13 @@ A5 = Verkettung von A1 bis A4
 ***BSB-LAN-User Thomas hat ein Plugin für SmartHomeNG geschrieben und in [seinem GitHub Repo](https://github.com/smarthomeNG/plugins/tree/develop/bsblan) zur Verfügung gestellt.***  
 ***Vielen Dank!***  
   
+--- 
+
+## 11.13 Node-RED  
+   
+***BSB-LAN-User Konrad hat ein [Modul für Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) geschrieben, das eine einfache Einbindung von BSB-LAN ermöglicht.***  
+***Vielen Dank!***  
+  
 ---  
   
 [Weiter zu Kapitel 12](kap12.md)      
