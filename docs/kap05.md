@@ -384,9 +384,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
     oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
-    das genannte Flag auf `FL_SW_CTL_RONLY` gesetzt sein und dann in
+    das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!) gesetzt sein und dann in
     der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
-    Parameters durch 0 (Null) ersetzt werden. Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen! 
+    Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
     
     Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
     gemacht:  
