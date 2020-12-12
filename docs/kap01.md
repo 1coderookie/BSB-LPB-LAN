@@ -57,7 +57,7 @@ der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
 bei Interesse kann man sich im [FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) melden oder direkt Frederik
 Holst (bsb \[ät\] code-it.de) kontaktieren.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
+<img src="pics/bsb-adapter-v3-unbestueckt-front.jpeg">
 
 *Die BSB-LPB-LAN-Adapterplatine v3, Oberseite, unbestückt.*  
     
