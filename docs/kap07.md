@@ -52,7 +52,7 @@ in dieser Kategorie verfügbar sind.
     
 ---  
    
-**Sensoren (URL-Befehl: /T):**  
+**Sensoren (URL-Befehl: /K49):**  
 Wenn optionale DS18B20-/DHT22-Sensoren angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png">
