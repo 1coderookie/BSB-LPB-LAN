@@ -288,13 +288,13 @@ des Adapters anzuschließen ist.
    
 ---   
    
-<img src="pics/BSB-LMS.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-LMS.jpg">  
 
 *BSB-Anschluss "FB" bei einem LMS1x-Regler.*  
    
 ---   
    
-<img src="pics/BSB-X86-RVS21.jpg">      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
 
 *BSB-Anschluss "X86" eines RVS21-Reglers.* 
    
@@ -310,7 +310,8 @@ des Adapters anzuschließen ist.
 ***Tipps:***
   
 - Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. Eine umfassende Nennung der kompatiblen Stecker kann hier leider nicht erfolgen, da die Stecker kodiert und teilweise unterschiedlich belegt sind. Meist findet man aber in den Bedienungsanleitungen Teilenummern der passenden Stecker, um ein Raumgerät an den Regler anzuschließen. 
-Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der bei den meisten Reglern zu passen scheint: ["Brötje Stecker Raumgerät ISR, Rast 5- 3pol. = 627528"](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050).  
+Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der bei den meisten Reglern zu passen scheint: [Brötje Stecker Raumgerät ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050)  
+   
    *Hinweis:*  
    *Sollten die originalen Stecker nicht unmittelbar erhältlich oder verfügbar sein, können auch (möglichst isolierte) 6,3mm-Kabelschuhe verwendet werden.* 
   
@@ -320,9 +321,7 @@ Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer vorzuziehen.  
    
 - Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
-
- 
-
+   
 ---
     
 
