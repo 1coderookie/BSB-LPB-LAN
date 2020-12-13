@@ -6,7 +6,7 @@
 # 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle    
 Bei BSB (Boiler System Bus), LPB (Local Process Bus) und PPS (Point-to-Point Schnittstelle) handelt es sich um jeweils verschiedene und untereinander nicht kompatible Bus-Systeme bzw. Schnittstellen. Es können also jeweils nur Geräte angeschlossen werden, die den gleichen Bus- bzw. Schnittstellen-Typ aufweisen.  
   
-Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS und LMU ist ein BSB-Anschluss am Regler zu finden. 
+Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS1x und LMU7x ist ein BSB-Anschluss am Regler zu finden. 
 Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar (s. [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul)).  
 PPS ist nur bei alten Reglern vorzufinden und wird heutzutage nicht mehr verbaut.  
   
@@ -76,32 +76,8 @@ Dokumentationen der Hersteller zu entnehmen. Hinsichtlich des LPB seien
 insbesondere die Dokumentationen „LPB Systemgrundlagen" (Siemens Building 
 Technologies - Landis & Staefa Division: CE1N2030D) und „LPB Projektierungsgrundlagen" 
 (Siemens Building Technologies - Landis & Staefa Division: CE1N2032D) empfohlen.
+   
 
-Bei einigen Reglern sind die entsprechenden Anschlüsse teilweise
-unterschiedlich gekennzeichnet:
-
--   Der BSB ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.: „CL+ & CL-", „FB" (Fernbedienung) oder „BSB" (bei FB und BSB i.d.R. zusätzlich mit Nennung der Pole „CL+ & CL-") sowie „BSB & M". Bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-.  
-  
--   Der LPB ist bei einigen Reglern mit „DB"(+) und „MB"(-)
-    gekennzeichnet.  
-
-Die folgenden Abbildungen zeigen exemplarisch die verschiedenen
-Anschlüsse.  
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
-
-*BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
-    
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
-    
-*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
-    
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
-    
-*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
-→ Die (dauerhafte) Verwendung dieses Anschlusses ist jedoch nicht zu empfehlen.*  
     
 *Bezüglich des Anschlusses des Adapters s. [Kap. 2.3](kap02.md#23-anschluss-des-adapters).*
     
@@ -229,7 +205,7 @@ Aufgrund der zeitkritischen Kommunikation bei PPS ist es sinnvoll, das Setup auf
   
 ## 2.3 Anschluss des Adapters  
   
-Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.  
+**Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.**  
   
 Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler) und/oder bereits ein Raumgerät vorhanden, so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
   
@@ -280,18 +256,61 @@ des Adapters anzuschließen ist.
   
 
 ---  
+
+***Kennzeichnung der Anschlüsse:***  
+   
+-   Der **BSB** ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.:  
+    - „CL+ & CL-"   
+    - „FB" (Fernbedienung)  
+    - „BSB" (bei FB und BSB manchmal zusätzlich mit Nennung der Pole „CL+ & CL-")  
+    - „BSB & M" (bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-)
+    - "X86" bei einem RVS21-Regler (s. Abb. weiter unten)
+    Ist bei den jeweiligen Anschlüssen lediglich eine Nummerierung zu erkennen (häufig bei "FB": 1,2,3), so ist in der spezifischen Bedienungsanleitung nachzusehen, welche dieser Pins mit CL+ und CL- belegt sind. Bitte den Anschluss G+ *nicht* benutzen, dies ist kein Buspin! 
+    Der Anschluss des Adapters an den BSB erfolgt wie erwähnt analog zu dem Anschluss von Raumgeräten. In der gerätespezifischen  Bedienungsanleitung finden sich diesbzgl. die reglerspezifischen Angaben. Am Regler selbst sind manchmal auch kleine Abbildungen angebracht, die ein Raumgerät darstellen sollen - auch dies kann zum Auffinden des benötigten Anschlusses hilfreich sein.  
+  
+-   Der **LPB** ist bei einigen Reglern als solcher gekennzeichnet, manchmal aber auch nur mit den Bezeichnungen „DB"(+) und „MB"(-) versehen.  
+   
+**Die folgenden Abbildungen zeigen exemplarisch die verschiedenen
+Anschlüsse bei verschiedenen Reglermodellen:**    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
+
+*BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
+    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+    
+*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
+    
+<img src="pics/BSB-LMS.jpg">  
+
+*BSB-Anschluss "FB" bei einem LMS1x-Regler.*  
+    
+<img src="pics/BSB-X86-RVS21.jpg">      
+
+*BSB-Anschluss "X86" eines RVS21-Reglers.* 
+        
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
+    
+*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus
+→ Die (dauerhafte) Verwendung dieses Anschlusses ist aufgrund einer mangelnden Zugentlastung jedoch nicht zu empfehlen.*  
+   
+---  
   
 ***Tipps:***
   
-Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß LPB-Projektierungsgrundlagen1 einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m).  
+- Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. Eine umfassende Nennung der kompatiblen Stecker kann hier leider nicht erfolgen, da die Stecker kodiert und teilweise unterschiedlich belegt sind. Meist findet man aber in den Bedienungsanleitungen Teilenummern der passenden Stecker, um ein Raumgerät an den Regler anzuschließen. 
+Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der bei den meisten Reglern zu passen scheint: ["Brötje Stecker Raumgerät ISR, Rast 5- 3pol. = 627528"](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050).  
+   
+*Hinweis:*  
+Sollten die originalen Stecker nicht unmittelbar erhältlich oder verfügbar sein, können auch (möglichst isolierte) 6,3mm-Kabelschuhe verwendet werden. 
   
-Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden2. 
+- Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß LPB-Projektierungsgrundlagen1 einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m).  
+  
+- Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden2. 
 Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer vorzuziehen.  
    
-Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
-   
-Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. 
-Sollten diese nicht unmittelbar erhältlich oder verfügbar sein, können auch isolierte 6,3mm-Kabelschuhe verwendet werden. 
+- Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
 
  
 
