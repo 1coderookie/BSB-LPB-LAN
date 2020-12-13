@@ -320,7 +320,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Thermics Energie 9PWW \[RVS61\] (Wärmepumpe) {BSB}  
 
--   Thermital TBox Clima TOP \[RVS63\] (Basbrenner + Solar + Pelletofen) {BSB/LPB}  
+-   Thermital TBox Clima TOP \[RVS63\] (Gasbrenner + Solar + Pelletofen) {BSB/LPB}  
+
+-   Viessmann Vitotwin 300-W {BSB}  
     
 -   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
 
