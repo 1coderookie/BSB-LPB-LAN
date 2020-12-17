@@ -261,7 +261,7 @@ des Adapters anzuschließen ist.
    
 -   Der **BSB** ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.:  
     - „CL+ & CL-"   
-    - „FB" (Fernbedienung)  
+    - „FB" (Fernbedienung = Raumgerät)  
     - „BSB" (bei FB und BSB manchmal zusätzlich mit Nennung der Pole „CL+ & CL-")  
     - „BSB & M" (bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-)
     - "X86" bei einem RVS21-Regler (s. Abb. weiter unten)  
@@ -290,13 +290,13 @@ des Adapters anzuschließen ist.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-LMS.jpg">  
 
-*BSB-Anschluss "FB" bei einem LMS1x-Regler.*  
+*BSB am "FB"-Anschluss bei einem LMS1x-Regler.*  
    
 ---   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
 
-*BSB-Anschluss "X86" eines RVS21-Reglers.* 
+*BSB am "X86"-Anschluss eines RVS21-Reglers (Achtung, nur bestimmte Pins!).* 
    
 ---   
    
