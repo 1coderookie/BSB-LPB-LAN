@@ -55,6 +55,7 @@ Danke!
 ---
     
 ### 3.1.1 Brötje
+
 -   Brötje BBK 22E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje BBK 22F \[LMS14\] (Gasbrenner) {BSB}
@@ -117,7 +118,9 @@ Danke!
 
 -   Brötje NovoCondens BOB 25B \[RVS43\] (Ölbrenner) {BSB}  
 
--   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {BSB}
+-   Brötje NovoCondens SOB 22 \[RVA63.242\] (Ölbrenner) {PPS}
+
+-   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {PPS}
 
 -   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner) {BSB}
 
@@ -141,6 +144,8 @@ Danke!
 -   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
+
+-   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
 
@@ -188,6 +193,8 @@ Danke!
 
 -   Brötje WGB-U 15I \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje WGB-U 20I \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
@@ -199,6 +206,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ---
     
 ### 3.1.2 Elco
+
 -   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe) {BSB}  
 
 -   Elco Aerotop S \[RVS61\] (Wärmepumpe) {BSB}
@@ -244,6 +252,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ---
     
 ### 3.1.3 Weitere Hersteller
+
 -   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
