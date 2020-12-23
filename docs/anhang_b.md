@@ -15,11 +15,9 @@
 |  `/<x>`               | `Wert/Einstellung von Parameter <x> anzeigen`
 |  `/<x>/<y>/<z>`   | `Werte/Einstellungen der Parameter <x>, <y> und <z> anzeigen`  
 |  `/<x>-<y>`         | `Werte/Einstellungen der Parameter <x> bis <y> anzeigen`  
-|  `/A`                   | `Anzeigen der 24h-Durchschnittswerte`  
 |  `/A=<x>,<y>`       | `Ändern der 24h-Durchschnittswertberechnung in Parameter <x>, <y>`  
 |  `/A=0`                  | `24h-Durchschnittswertberechnung temporär deaktivieren`  
-|  `/B`                   | `Anzeige akkumulierter Brennerlaufzeiten (in Sek.) und -takte (inkl. TWW)`  
-|  `/B0`                  | `Zurücksetzen des Zählers Brennerlaufzeiten und -takte`  
+|  `/B0`                  | `Zurücksetzen des Zählers dr akkumulierten Brennerlaufzeiten und -takte`  
 |  `/C`                   | `Anzeige der Konfiguration von BSB-LAN`  
 |  `/D oder /DD`         | `Anzeige der Logdatei datalog.txt von der microSD-Karte`  
 |  `/DG`                  | `Grafische Anzeige der Logdatei datalog.txt von der microSD-Karte`  
@@ -55,7 +53,6 @@
 |  `/Q`                   | `Test auf nicht-freigegebene reglerspezifische Parameter`  
 |  `/R<x>`              | `Abfrage des Reset-Werts für Parameter <x>`  
 |  `/S<x>=<y>`        | `Wert <y> für Parameter <x> setzen`  
-|  `/T`                   | `Abfrage optional angeschlossener Sensoren (DS18B20/DHT22)`  
 |  `/U`                   | `Zeigt die benutzerdefinierten Variablen an, falls diese in BSB_lan_custom.h verwendet werden`  
 |  `/V<x>`              | `Verbositäts-Modus aktivieren (<x> = 1) oder deaktivieren (<x> = 0)`  
 |  `/W`                   | `Mit vorangehendem /W liefern die URL-Befehle C, S, T und Q Daten ohne HTML-header und -footer zurück (bspw. /WC oder /WS<x>=<y!z>)`  
