@@ -496,15 +496,15 @@ Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (N
 *Der sechspolige SPI-Anschluss des Arduino Due.*  
    
 Die Anschlüsse sind wie folgt zu verbinden:
-| Pin DUE | Funktion | Pin ESP8266 |
-|:-----------:|:-------------:|:----------:|
+| Pin DUE | Funktion | Pin ESP8266 |  
+|:-----------:|:-------------:|:----------:|  
 |SPI 1 | MISO | D06 |  
 |SPI 2 | VCC | +5V |  
-|SPI 3 | SCK | D05 | 
-|SPI 4 | MOSI | D07 | 
-|SPI 6 | GND | G | 
-|Pin 13 | SS | D08 | 
-  
+|SPI 3 | SCK | D05 |  
+|SPI 4 | MOSI | D07 |  
+|SPI 6 | GND | G |  
+|Pin 13 | SS | D08 |  
+   
 Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, Pin 13 = D08) verzichtet werden. Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 angeschlossen werden, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
