@@ -495,7 +495,8 @@ Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (N
   
 *Der sechspolige SPI-Anschluss des Arduino Due.*  
    
-Die Anschlüsse sind wie folgt zu verbinden:
+Die Anschlüsse sind wie folgt zu verbinden:  
+  
 | Pin DUE | Funktion | Pin ESP8266 |  
 |:-----------:|:-------------:|:----------:|  
 |SPI 1 | MISO | D06 |  
