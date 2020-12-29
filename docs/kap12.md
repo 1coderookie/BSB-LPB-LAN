@@ -493,7 +493,7 @@ Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (N
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
   
-*Der sechspolige SPI-Anschluss des Arduino Due.*  
+*Der zu verwendende sechspolige SPI-Anschluss des Arduino Due.*  
    
 Die Anschlüsse sind wie folgt zu verbinden:  
   
@@ -506,7 +506,8 @@ Die Anschlüsse sind wie folgt zu verbinden:
 |SPI 6 | GND | G |  
 |Pin 13 | SS | D08 |  
    
-Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, Pin 13 = D08) verzichtet werden. Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 angeschlossen werden, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
+Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, Pin 13 = D08) verzichtet werden.  
+Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 angeschlossen werden, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
   
@@ -519,7 +520,7 @@ Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplat
 *Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
    
 *Achtung:*  
-Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss).    
+Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss). Ob ein paralleler Betrieb von LAN-Shield und ESP8266 problemlos möglich ist, wurde bisher jedoch noch nicht getestet.   
    
 **Flashen des ESP8266:**  
 Der ESP8266 muss mit einer speziellen Firmware geflasht werden. Für die Verwendung der Arduino IDE muss darauf geachtet werden, dass zuvor die entspr. ESP8266-Bibliotheken mittels des Boardverwalters installiert wurden.  
@@ -530,9 +531,7 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
   
 *Hinweis:*  
 Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
-   
-*Achtung:*  
-Beim derzeitigen Stand kann die Sicherheitsfunktion `trustedIP` nicht verwendet werden.  
+ 
   
 ---  
    
