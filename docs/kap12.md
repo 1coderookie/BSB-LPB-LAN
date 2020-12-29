@@ -487,9 +487,48 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
     
 ---
    
-### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266
-Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem Arduino Due zu verbinden. Eine detaillierte Beschreibung erfolgt in Kürze.
+### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266  
+  
+Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
+  
+*Der sechspolige SPI-Anschluss des Arduino Due.*  
    
+Die Anschlüsse sind wie folgt zu verbinden:
+| Pin DUE | Funktion | Pin ESP8266 |
+|:-----------:|:-------------:|:----------:|
+|SPI 1 | MISO | D06 |  
+|SPI 2 | VCC | +5V |  
+|SPI 3 | SCK | D05 | 
+|SPI 4 | MOSI | D07 | 
+|SPI 6 | GND | G | 
+|Pin 13 | SS | D08 | 
+  
+Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, Pin 13 = D08) verzichtet werden. Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 angeschlossen werden, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
+  
+*Die korrespondierenden Anschlüsse beim Wemos D1.*  
+     
+Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten. Empfohlen sei hier ausdrücklich die Verwendung eines Wemos D1, da er einerseits deutlich kleiner ist und andererseits problemlos mit den 5V des sechspoligen SPI-Anschlusses versorgt werden kann (NodeMCUs scheinen diesbezüglich nicht immer problemlos zu funktionieren). 
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
+  
+*Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
+   
+*Achtung:*  
+Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss).    
+   
+**Flashen des ESP8266:**  
+Der ESP8266 muss mit einer speziellen Firmware geflasht werden. Für die Verwendung der Arduino IDE muss darauf geachtet werden, dass zuvor die entspr. ESP8266-Bibliotheken mittels des Boardverwalters installiert wurden.  
+Die benötigte Firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) liegt bereits als zip-file im BSB-LAN-Repository. Das zip-file *muss in einem anderen Ordner als BSB_lan* entpackt werden! Der ESP8266 ist dann mit der Datei *WiFiSPIESP.ino* zu flashen.  
+  
+**Konfiguration von BSB-LAN:**  
+Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h* aktiviert werden. Des Weiteren sind die beiden Variablen `wifi_ssid` und `wifi_pass` entsprechend angepasst und die SSID des WLAN sowie das Passwort eingetragen werden. Diese Angaben können auch im Nachhinein via Webinterface geändert werden.   
+  
+*Hinweis:*  
+Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
    
 ---  
    
