@@ -485,6 +485,12 @@ Neben dem Einsatz eines 'normalen' Routers können auch kleine Geräte genutzt w
 
 In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden - insbesondere dann, wenn via FHEM o.ä. Logdateien erstellt oder mit zusätzlicher Hardware (HK-Thermostate o.ä.) der Wärmeerzeuger gesteuert oder dessen Verhalten beeinflusst werden soll.  
     
+---
+   
+### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266
+Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem Arduino Due zu verbinden. Eine detaillierte Beschreibung erfolgt in Kürze.
+   
+   
 ---  
    
 ## 12.8 Gehäuse
