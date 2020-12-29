@@ -530,6 +530,8 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
 *Hinweis:*  
 Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
    
+Beim derzeitigen Stand kann die Sicherheitsfunktion `trustedIP` nicht verwendet werden.  
+  
 ---  
    
 ## 12.8 Gehäuse
