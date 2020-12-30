@@ -98,6 +98,22 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Subnetz-Adresse - *bitte beachte die Kommata anstelle von Punkten!*  
     
 ---    
+   
+-   **WiFi per zusätzlichem ESP8266:**  
+    `//#define WIFI`  
+    Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-Lösung](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) genutzt werden soll.  
+    
+    `char wifi_ssid[32] = "YourWiFiNetwork";` 
+    Bei Verwendung von WiFi, *YourWiFiNetwork* durch die SSID des WLAN-Netzwerkes ersetzen.  
+    
+    `char wifi_pass[64] = "YourWiFiPassword";`  
+    Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
+    
+    `#define WIFI_SPI_SS_PIN 13`  
+    Hier wird der beim DUE zu verwendende SS-Pin definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
+   
+   
+---    
     
 -   **Debugging und entspr. Einstellungen:**  
     - `#define DEBUG` → Debug-Modus aktivieren (s. nachfolgende Optionen)  
@@ -422,7 +438,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
        
 -   **"Externer" Webserver:**  
-    `#define WEBSERVER`    
+    `//#define WEBSERVER`    
     Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Für weitere Informationen siehe bitte [Kapitel 8.2.10](kap08.html#8210-verwenden-der-webserver-funktion).  
     
 ---    
@@ -436,7 +452,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **Konfiguration via Webinterface:**  
     `#define WEBCONFIG`  
     Ermöglicht die Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM; nur Arduino Due). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
-    
+---  
+  
+-   **Compile JSON-based configuration and EEPROM config store module extension.**  
+   `#define JSONCONFIG`  
+   
+
 ---    
 
 -   **Variablen für eine zukünftige Verwendung, derzeit (November 2020) noch ohne Funktion:**  
