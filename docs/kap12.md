@@ -503,17 +503,17 @@ Die Anschlüsse sind wie folgt zu verbinden:
 |SPI 2 | VCC | +5V |  
 |SPI 3 | SCK | D05 |  
 |SPI 4 | MOSI | D07 |  
-|SPI 6 | GND | G |  
+|SPI 6 | GND | GND |  
 |Pin 13 | SS | D08 |  
    
-Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, Pin 13 = D08) verzichtet werden.  
-Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 angeschlossen werden, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
+Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 13 = D08 beim ESP8266) verzichtet werden.  
+Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
   
 *Die korrespondierenden Anschlüsse beim Wemos D1.*  
      
-Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten. Empfohlen sei hier ausdrücklich die Verwendung eines Wemos D1, da er einerseits deutlich kleiner ist und andererseits problemlos mit den 5V des sechspoligen SPI-Anschlusses versorgt werden kann (NodeMCUs scheinen diesbezüglich nicht immer problemlos zu funktionieren). 
+Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten. Empfohlen sei hier ausdrücklich die Verwendung eines Wemos D1, da er einerseits deutlich kleiner ist und andererseits problemlos mit den 5V des sechspoligen SPI-Anschlusses versorgt werden kann (NodeMCUs scheinen nicht immer problemlos zu funktionieren, wenn sie mit 5V via Vin betrieben werden sollen). 
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
   
