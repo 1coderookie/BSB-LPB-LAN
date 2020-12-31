@@ -7,16 +7,24 @@ Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die s
 - *Muss ich zwingend auf das neue Setup Adapter v3 + Due wechseln?*  
 Nein, wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
 dann kannst du das alte Setup natürlich weiterhin verwenden.  
-Aber: **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte stabile 
-und getestete Version für dein Setup!** Im zip-file befindet sich auch die letzte 'Mega-gültige'-Version des Handbuchs (als PDF), das sich auf den Adapter v2 + Mega bezieht.    
-Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 höchstwahrscheinlich nicht genügend Speicher 
-aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt 
-keine Garantie, dass ein problemloser Betrieb möglich sein wird.  
+
+Aber: **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte 'offiziell'  getestete Version für dein Setup! Im zip-file befindet sich auch die letzte 'Mega-gültige'-Version des Handbuchs (als PDF), das sich auf den Adapter v2 + Mega bezieht.** Nachfolgende Versionen können u.U. auch laufen, allerdings wird der Mega 2560 höchstwahrscheinlich nicht genügend Speicher aufweisen. Du könntest versuchen, gewisse Funktionen zu deaktivieren (bspw. das Loggen auf die microSD-Karte), aber es gibt keine Garantie, dass ein problemloser Betrieb möglich sein wird.   
   
-*Achtung:*  
-Solltest du dennoch eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zugehörige Datei *BSB_lan_config.h.default* verwendest und entsprechend anpasst: 
+*Anmerkung:*  
+Es hat sich bei mehreren Usern gezeigt, dass auch die **[v1.1]**(https://github.com/fredlcore/bsb_lan/releases/tag/v1.1) noch ohne große Einschränkungen läuft, aufgrund des Speichermangels vermutlich aber eben nicht mit allen verfügbaren Optionen, die BSB-LAN bietet.  
+  
+Ab **v2.x** ist es dann definitiv nötig, einzelne Module zu deaktivieren. Hinweise diesbzgl. findest du in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) bzw in den Kommentaren der Datei *BSB_lan_config.h*. Besonderes Augenmerk ist für Mega-User auf die letzten Punkte zu richten, die u.a. ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht. 
+Neben dem Deaktivieren einzelner Module gibt es hier noch eine weitere Möglichkeit, Speicherplatz einzusparen:  
+Im Repo liegt ein Perlscript, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert. Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man nun mit `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` eine reduzierte Datei namens *BSB_lan_defs_filtered.h* erstellen, die nur die für die beiden Gerätefamilien relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl entsprechend `./selected_defs.pl 162 > BSB_lan_defs_filtered.h`.  
+Die originale *BSB_lan_defs.h* kann man dann an einem anderen Ort ablegen und durch die neu erzeugte *BSB_lan_defs_filtered.h* ersetzen - *die neu erzeugte Datei ist dann jedoch zwingend wieder in BSB_lan_defs.h umzubenennen!*  
+Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.   
+Dieser Zusatzschritt ist zwar nicht besonders bequem, aber ermöglicht Usern des Mega vielleicht noch eine gewisse Zeit lang mehr, die Software auf der alten Hardware zu nutzen.  
+Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.    
+  
+*Weitere Hinweise:*  
+Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei *BSB_lan_config.h.default* verwendest und entsprechend anpasst: 
   - Bei BSB-LAN-Versionen *vor* v2.x ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
-  - Bei BSB-LAN-Versionen *ab* v2.x ist in der Datei *BSB_lan_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardwade serial) zum Einsatz kommt. Ab v2.x sind allerdings noch weitere bzw. andere Anpassungen aufgrund des geringeren Speichers des Mega zwingend nötig. Beachte hierzu bitte das [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), in dem sämtliche Einträge der Datei *BSB_lan_config.h* Punkt für Punkt erklärt sind. Besonderes Augenmerk ist für Mega-User auf den letzten Punkt zu richten, der ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht. 
+  - Bei BSB-LAN-Versionen *ab* v2.x ist in der Datei *BSB_lan_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardwade serial) zum Einsatz kommt.   
   
 - *Warum gibt es jetzt einen Umstieg auf den Due?*  
 Der Mega 2560 bot einfach nicht mehr genügend Speicher, um auch in Zukunft das stetig wachsende BSB-LAN zu beherbergen! ;)  
