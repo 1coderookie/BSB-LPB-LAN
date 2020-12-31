@@ -336,7 +336,7 @@ damit eine entsprechende Anpassung vorgenommen werden kann.
 ---
     
 ### 8.2.6 IPWE-Erweiterung  
-Die IPWE-Erweiterung stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
+Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger)stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
 `<IP-Adresse>/ipwe.cgi`  
 *Hinweis: Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
   
