@@ -70,15 +70,14 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
 ## 12.3 Verwendung optionaler Sensoren: DHT22 und DS18B20
   
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
-*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
-  
+    
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
 (OneWire-Temperatursensor) und DHT22 (Temperatur- und
 Feuchtigkeitssensor) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
 bereits im Softwarepaket des Adapters integriert.
 
-Der Anschluss der Sensoren kann i.d.R. an GND und +5V des Adapters / Arduino
+Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino
 (unter zusätzlicher Verwendung der fühlerspezifischen
 PullUp-Widerstände!) stattfinden.
 
@@ -89,7 +88,7 @@ Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
 Webinterface (jeweilige Links im oberen Bereich) oder mittels des
-URL-Befehls /T zugegriffen werden.  
+URL-Befehls /K49 zugegriffen werden.  
    
 Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_lan\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
    
@@ -99,12 +98,12 @@ Anpassungen in der Datei *BSB\_lan\_config.h* (s. Kap. [5](kap05.md)) ganz einfa
 werden.
 
 ***Tipp:***  
-*Werden DS18B20-Sensoren verwendet, so werden unter /T (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
-Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von /T anhand der Temperaturschwankung identifiziert werden.  
-Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie unter /T angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie bei /T angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
+*Werden DS18B20-Sensoren verwendet, so werden unter /K49 (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
+Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von /K49 anhand der Temperaturschwankung identifiziert werden.  
+Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie unter /K49 angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie bei /K49 angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
 Die folgenden Screenshots verdeutlichen das Geschilderte.*  
 
-*Ausgabe von /T mit zwei installierten Sensoren:*  
+*Ausgabe von /K49 mit zwei installierten Sensoren:*  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
    
 *Nach dem Hinzufügen eines dritten Sensors und erfolgtem Neustart des Arduino ändert sich die dargestellte Reihenfolge:*     
