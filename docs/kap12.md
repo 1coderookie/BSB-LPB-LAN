@@ -121,7 +121,6 @@ Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen
 ### 12.3.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren
   
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
-*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 DHT22-Sensoren werden häufig als „1 wire“ beworben, jedoch handelt es 
 sich hierbei NICHT um den OneWire-Bus von Maxim Integrated oder eine andere Form 
@@ -166,7 +165,6 @@ OK,	temp[0]: 18.80, hum[0]: 53.90
 ### 12.3.2 Hinweise zu DS18B20-Temperatursensoren
   
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
-*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
   
 DS18B20-Sensoren sind 'echte' 1-Wire-/OneWire-Komponenten der Firma Maxim Integrated (ursprünglich Dallas Semiconductor).  
 Jeder Sensor weist eine spezifische interne SensorID auf, die es insbesondere bei größeren Installationen deutlich einfacher macht, einzelne Sensoren zu identifizieren, sofern man vor der finalen Installation die ID ausgelesen und gut sichtbar auf/an den Sensoren angebracht hat (siehe Tipp in Kap. [12.3](kap12.md#123-verwendung-optionaler-sensoren-dht22-und-ds18b20)).  
@@ -199,23 +197,24 @@ Im Logfile der SD-Karte werden die Sensoren anhand der virtuellen Parameter 2002
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
 Bei den gekapselten Versionen ist die Farbwahl der bereits angeschlossenen Kabel meist wie folgt:  
-Rot = VCC (+5V)  
+Rot = VCC (+3,3V)  
 Gelb = DATA  
 Schwarz = GND (-)  
    
 Kommen mehrere DS18B20-Sensoren und/oder größere Leitungslängen zum
 Einsatz, hat es sich bewährt, pro Sensor je einen 100nF-Keramikkondensator (und
 ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
-Sensor in die Leitung zwischen GND und VCC (+5V) zu positionieren, um
+Sensor in die Leitung zwischen GND und VCC zu positionieren, um
 einen Spannungsabfall bei der Abfrage zu kompensieren.  
    
 *Anmerkungen:*  
 - *Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.*  
 - *Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten!*  
 
-Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC
-(+5V) ist für einen problemlosen Betrieb u.U. kleiner als die
-üblicherweise empfohlenen 4,7kΩ zu wählen. 
+Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC (+3,3V) ist (insbesondere bei großen Leitungslängen und/oder mehreren Sensoren) für einen problemlosen Betrieb u.U. kleiner als die üblicherweise empfohlenen 4,7kΩ zu wählen.  
+  
+Darüber hinaus scheint es bei komplexeren bzw. größeren Installationen in Einzelfällen so zu sein, dass die Spannungsversorgung mit den 3,3V des Due nicht immer einen problemlosen Betrieb der Sensoren ermöglicht. Da diese OneWire-Sensoren "open drain" sind, können sie auch mit 5V des Due betrieben werden, was einen stabileren Betrieb zur Folge zu haben scheint. Es muss dann allerdings darauf geachtet werden, dass die 5V *nie* an dem GPIO des Due anliegen!  
+*Für die Installation heißt das konkret, dass VCC der Sensoren am 5V-Pin des Due angeschlossen wird, der zu verwendende PullUp-Widerstand dann jedoch zwischen DATA und einem 3,3V-Pin des Due platziert werden muss!*  
 
 Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.  
 Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen. Die Schirmung sollte dabei einseitig an Masse (GND) angeschlossen werden.  
@@ -291,9 +290,8 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
     
 ## 12.4 Relais und Relaisboards  
   
-***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
-*Die nachfolgend beschriebenen Lösungen berücksichtigen dies noch nicht, es wird aber so schnell wie möglich auch hier die entspr. Umsetzung beschrieben werden.*      
-  
+***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***      
+   
 Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit speziellen URL-Befehlen auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
 ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!***
    
