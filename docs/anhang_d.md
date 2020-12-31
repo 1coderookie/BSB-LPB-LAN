@@ -23,8 +23,8 @@ Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig in
   
 *Weitere Hinweise:*  
 Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei *BSB_lan_config.h.default* verwendest und entsprechend anpasst: 
-  - Bei BSB-LAN-Versionen *vor* v2.x ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
-  - Bei BSB-LAN-Versionen *ab* v2.x ist in der Datei *BSB_lan_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardwade serial) zum Einsatz kommt.   
+Bei BSB-LAN-Versionen *vor* v2.x ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
+Bei BSB-LAN-Versionen *ab* v2.x ist in der Datei *BSB_lan_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardwade serial) zum Einsatz kommt.   
   
 - *Warum gibt es jetzt einen Umstieg auf den Due?*  
 Der Mega 2560 bot einfach nicht mehr genügend Speicher, um auch in Zukunft das stetig wachsende BSB-LAN zu beherbergen! ;)  
