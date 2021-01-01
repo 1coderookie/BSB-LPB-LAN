@@ -8,11 +8,11 @@ Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die s
 Nein, wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
 dann kannst du das alte Setup natürlich weiterhin verwenden.  
 
-  **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte 'offiziell'  getestete und empfohlene Version für dein Setup! Im zip-file befindet sich auch die letzte 'Mega2560-gültige' Version des Handbuchs (als PDF), das sich auf den Adapter v2 + Mega bezieht.**     
+  **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte 'offiziell'  getestete und empfohlene Version für dein Setup! Im zip-file befindet sich auch die letzte 'Mega2560-spezifische' Version des Handbuchs (als PDF).**     
   
   Es hat sich bei mehreren Usern gezeigt, dass auch die **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** noch ohne große Einschränkungen läuft, aufgrund des Speichermangels des Mega 2560 vermutlich aber schon nicht mehr mit allen verfügbaren Optionen, die BSB-LAN bietet.  
   
-  Ab **v2.x** ist es dann definitiv nötig, einzelne Module zu deaktivieren und somit auf spezifische Funktionen zu verzichten, die BSB-LAN bietet. Hinweise diesbzgl. findest du in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) bzw in den Kommentaren der Datei *BSB_lan_config.h*. Besonderes Augenmerk ist für Mega-User auf die letzten Punkte zu richten, die u.a. ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht.  
+  Ab **v2.x** ist es dann definitiv nötig, einzelne Module zu deaktivieren und somit auf spezifische Funktionen zu verzichten, die BSB-LAN bietet. Hinweise diesbzgl. findest du in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) bzw in den Kommentaren der Datei *BSB_lan_config.h*. Besonderes Augenmerk ist auf die letzten Punkte zu richten, die u.a. ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht.  
   
   Neben dem Deaktivieren einzelner Module gibt es *ab v2.x* noch eine weitere Möglichkeit, Speicherplatz einzusparen:  
 Im Repo liegt ein Perlscript, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
