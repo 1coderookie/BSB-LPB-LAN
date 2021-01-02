@@ -15,14 +15,20 @@ dann kannst du das alte Setup natürlich weiterhin verwenden.
   Ab **v2.x** ist es dann definitiv nötig, einzelne Module zu deaktivieren und somit auf spezifische Funktionen zu verzichten, die BSB-LAN bietet. Hinweise diesbzgl. findest du in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) bzw in den Kommentaren der Datei *BSB_lan_config.h*. Besonderes Augenmerk ist auf die letzten Punkte zu richten, die u.a. ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht.  
   
   Neben dem Deaktivieren einzelner Module gibt es *ab v2.x* noch eine weitere Möglichkeit, Speicherplatz einzusparen:  
-Im Repo liegt ein Perlscript, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
+Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executable namens *selected_defs.exe*, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
   Dieser Zusatzschritt ist zwar nicht besonders bequem, aber ermöglicht Usern des Mega vielleicht noch eine gewisse Zeit lang mehr, die Software auf der alten Hardware zu nutzen.  
-  Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.    
+  Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.     
   
   Vorgehensweise zur Erstellung einer reglerspezifischen defs-Datei:  
-    - Parameter 6225 "Gerätefamilie" via BSB-LAN abrufen und den Wert notieren. 
-    - Erstelle die reduzierte Datei namens *BSB_lan_defs_filtered.h* mit Hilfe des Perlscripts, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl `./selected_defs.pl 162 > BSB_lan_defs_filtered.h`. Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man den Befehl um den zweiten Wert erweitern: `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h`.    
-    - Verschiebe die originale Datei *BSB_lan_defs.h* aus dem "BSB_lan"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan".  
+    - Parameter 6225 "Gerätefamilie" via BSB-LAN abrufen und den Wert notieren.  
+    - Datei *selected_defs.pl* bzw. *selected_defs.exe* vor dem Ausführen in den gleichen Ordner kopieren, in dem auch die Datei *BSB_lan_defs.h* liegt.  
+    - Öffne ein Terminal, wechsle in den entspr. Ordner und erstelle die reduzierte Datei namens *BSB_lan_defs_filtered.h* mit Hilfe des Perlscripts bzw. des Windows-Executables, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl  
+    `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` bzw.  
+    `./selected_defs.exe 162 > BSB_lan_defs_filtered.h`.  
+    Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man den Befehl um den zweiten Wert erweitern:  
+    `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` bzw.  
+    `./selected_defs.exe 162 90 > BSB_lan_defs_filtered.h`.    
+    - Verschiebe die originale Datei *BSB_lan_defs.h* aus dem "BSB_lan"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan" (falls du die Datei nicht bereits im Ordner "BSB_lan" erstellt hast).  
     - *Wichtig: Die neu erzeugte Datei nun in "BSB_lan_defs.h" umbenennen!*  
        
   ***Weitere Hinweise:***  
