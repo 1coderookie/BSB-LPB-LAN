@@ -217,7 +217,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe) {BSB}
 
--   Elco Aquatop S08 \[RVS61.843\] (Wärmepumpe) {BSB}
+-   Elco Aquatop S08 \[RVS61.843\] (Wärmepumpe) {BSB}  
+
+-   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
 
