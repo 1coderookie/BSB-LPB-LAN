@@ -22,8 +22,10 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 | URL-Befehl           | Auswirkung                                                                    |
 |:----------------------|:------------------------------------------------------------------------------|
 |  `/<x>`               | `Alle Werte von Parameter <x> abfragen`  
+|  `/<x>!<adr>`         | `Alle Werte von Parameter <x> für Zieladresse <adr> abfragen`  
 |  `/<x>/<y>/<z>`     | `Alle Werte der Parameter <x>, <y> und <z> abfragen` <br /> `Hinweis: Mehrere Abfragen können miteinander verkettet werden, z.B.: http://<IP-Adresse>/K11/8000/8003/8005/8300/8301/8730-8732/8820`    
 |  `/<x>-<y>`         | `Alle Werte eines Parameterbereichs von <x> bis <y> abfragen`  
+|  `/<x>!<adr>-<y>`   | `Alle Werte eines Parameterbereichs von <x> bis <y> für Zieladresse <adr> abfragen`  
 |  `/A=<x>,<y>,<z>`       | `24h-Durchschnittswertberechnung für Parameter <x>, <y>, <z> einstellen` <br /> `Während der Laufzeit kann /A=[parameter1],...,[parameter20] verwendet werden, um (bis zu 20) neue Parameter zu definieren.`  
 |  `/A=0`                 | `24h-Durchschnittswertberechnung temporär deaktivieren.` <br /> `Deaktiviert die 24-h Durchschnittswertberechnung vorübergehend bis zum nächsten Reset/Neustart des Arduino. Für eine komplette und dauerhafte Deaktivierung müssen alle als zu berechnend aufgeführten Parameter in der Datei BSB_lan_config.h auskommentiert werden.`  
 |  `/B0`                  | `Zurücksetzen des Zählers der akkumulierten Brennerlaufzeiten und -zyklen`  
