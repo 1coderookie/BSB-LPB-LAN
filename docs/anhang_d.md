@@ -24,10 +24,10 @@ Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executa
     - Datei *selected_defs.pl* bzw. *selected_defs.exe* vor dem Ausführen in den gleichen Ordner kopieren, in dem auch die Datei *BSB_lan_defs.h* liegt.  
     - Öffne ein Terminal, wechsle in den entspr. Ordner und erstelle die reduzierte Datei namens *BSB_lan_defs_filtered.h* mit Hilfe des Perlscripts bzw. des Windows-Executables, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl  
     `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` bzw.  
-    `./selected_defs.exe 162 > BSB_lan_defs_filtered.h`.  
+    `selected_defs.exe 162 > BSB_lan_defs_filtered.h`.  
     Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man den Befehl um den zweiten Wert erweitern:  
     `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` bzw.  
-    `./selected_defs.exe 162 90 > BSB_lan_defs_filtered.h`.    
+    `selected_defs.exe 162 90 > BSB_lan_defs_filtered.h`.    
     - Verschiebe die originale Datei *BSB_lan_defs.h* aus dem "BSB_lan"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan" (falls du die Datei nicht bereits im Ordner "BSB_lan" erstellt hast).  
     - *Wichtig: Die neu erzeugte Datei nun in "BSB_lan_defs.h" umbenennen!*  
        
