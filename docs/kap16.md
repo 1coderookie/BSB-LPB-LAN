@@ -7,10 +7,14 @@
 ***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!  
 Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
    
-1. Downloade und installiere die aktuelle Version der [ArduinoIDE](https://www.arduino.cc/en/Main/Software).   
-
-2. Stecke das LAN-Shield und den Adapter auf den Arduino Due und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. 
-
+1. Stecke das LAN-Shield und den Adapter auf den Arduino Due und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. 
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+    
+*Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
+  
+2. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
+   
 3. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
 4. Entpacke die heruntergeladene Datei "bsb_lan-master.zip" und benenne den Ordner in "BSB_lan" um.  
@@ -18,11 +22,12 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 5. Wechsle in den Ordner "BSB_lan". Bennene die dortige Datei "BSB_lan_config.h.default" in "BSB_lan_config.h" um.  
 
 6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_lan.ino" im BSB_lan-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Due automatisch samt verwendetem COM-Port erkennen.  
-*Für die Schritte 1-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
+*Für die Schritte 2-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
 
 7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_lan_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
-*Beachte hierfür das [Kapitel 5](kap05.md)!*  
+*Beachte hierfür das [Kapitel 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)!*  
 Wenn alle Einstellungen angepasst wurden, flashe den Arduino mit der BSB-LAN-Software.  
+*Hinweis:* Die Konfiguration kann auch nach dem Flashvorgang via Webinterface (Seite "Einstellungen") erfolgen.  
 
 8. Entferne nach Beenden des Flashvorgangs das USB-Kabel, um den Arduino stromlos zu machen. Schließe das LAN-Kabel an und halte die Stromversorgung für den Arduino bereit.  
 
@@ -33,9 +38,11 @@ Wenn alle Einstellungen angepasst wurden, flashe den Arduino mit der BSB-LAN-Sof
 
 11. Stelle die Stromversorgung des Arduino-Setups her, idealerweise mit einem spezifischen Netzteil mit Anschluss an der Hohlsteckerbuchse. Solltest du (noch) kein geeignetes Netzteil zur Hand haben, kannst du das Arduino-Setup auch über die USB-Buchse mit Strom versorgen.  
 
-12. Starte einen Internetbrowser und rufe die Seite des BSB-LAN-Webinterfaces auf. Diese findest du unter der IP-Adresse, die du zuvor bei Schritt 6 eingestellt hast (voreingestellt ist "192.168.178.88").  
+12. Starte einen Internetbrowser und rufe die Seite des BSB-LAN-Webinterfaces auf. Diese findest du unter der IP-Adresse, die du zuvor bei Schritt 6 eingestellt hast (voreingestellt ist "192.168.178.88"). Solltest du DHCP verwenden, so kann die vergebene IP während der Startsequenz des Arduino mittels des Seriellen Monitors der Arduino IDE ausgelesen werden.   
 
 Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte neben den bereits genannten Kapiteln auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md).  
+  
+Bitte führe nun die Überprüfung auf neue Parameter (URL-Befehl /Q) aus und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
 
 Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
     
