@@ -69,6 +69,10 @@ Holst (bsb \[ät\] code-it.de) kontaktieren.
     
 *Die BSB-LPB-LAN-Adapterplatine v3, bestückt, auf einem Arduino Due (Clone) samt LAN-Shield.*  
     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+    
+*Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*      
+    
 ---      
      
 [Weiter zu Kapitel 2](kap02.md)      
