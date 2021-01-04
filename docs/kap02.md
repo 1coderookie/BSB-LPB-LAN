@@ -161,7 +161,7 @@ der Regler verfällt wieder in einen Suchmodus.
 
 Der Funktionsumfang ist hierbei nur rudimentär und beschränkt sich
 derzeit mittels BSB-LAN derzeit auf etwa ein Dutzend Parameter, die man
-lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - ausschlaggebend ist Kategorie 42 "PPS-Bus" im Webinterface und die von Regler unterstützten Parameter!*):
+lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - ausschlaggebend ist Kategorie "PPS-Bus" im Webinterface und die von Regler unterstützten Parameter!*):
 
 - Raumtemperatur Ist  
 - Raumtemperatur Soll  
