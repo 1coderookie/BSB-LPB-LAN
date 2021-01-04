@@ -1,3 +1,8 @@
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+[Zurück zu Anhang C](anhang_c.md)    
+    
+---
+        
 # Anhang D: Hinweise für Nutzer des veralteten Setups Adapter v2 + Arduino Mega 2560
 
 Für Nutzer des veralteten Setups sind im Folgenden einige Fragen und Punkte aufgeführt, die evtl. der Klärung bedürfen oder die es zu beachten gilt. Etwaige weitere Fragen diesbzgl. stelle bitte im entspr. [Thread des FHEM Forums](https://forum.fhem.de/index.php/topic,29762.0.html).  
@@ -69,4 +74,8 @@ Jein. Der Due weist prinzipiell den gleichen Formfaktor auf wie der Mega 2560, i
 her passen. Allerdings musst du vermutlich dein Gehäuse etwas anpassen und einen Ausschnitt oder eine große Bohrung für den 
 mittleren USB-Port des Due ('Programming Port') hinzufügen, damit du auch weiterhin bequem das entspr. USB-Kabel anschließen kannst.  
 
-
+---  
+  
+[Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+  
+    
