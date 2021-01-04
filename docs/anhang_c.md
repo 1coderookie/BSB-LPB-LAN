@@ -6,7 +6,40 @@
 
     
 # Anhang C: Changelog BSB-LAN-Software
-
+  
+Version 2.0
+- ATTENTION: LOTS of new functionalities, some of which break compatibility with previous versions, so be careful and read all the docs if you make the upgrade!
+- Webinterface allows for configuration of most settings without the need to re-flash
+- Added better WiFi option through Jiri Bilek's WiFiSpi library, using an ESP8266-based microcontroller like Wemos D1 mini or LoLin NodeMCU. Older WiFi-via-Serial approach no longer supported.
+- Setting a temporary destination address for querying parameters by adding !x (where x is the destination id), e.g. /6224!10 to query the identification of the display unit
+- URL command /T has been removed as all sensors can now be accessed via parameter numbers 20000 and above.
+- New categories added, subsequent categories have been shifted up
+- Lots of new parameters added
+- URL command /JR allows for querying the standard (reset) value of a parameter in JSON format
+  
+Version 1.1
+- ATTENTION: DHW Push ("Trinkwasser Push") parameter had to be moved from 1601 to 1603 because 1601 has a different "official" meaning on some heaters. Please check and change your configuration if necessary
+- ATTENTION: New categories added, most category numbers (using /K) will be shifted up by a few numbers.
+- /JA URL command outputs average values
+- Many new parameters decoded
+- New parameters for device families 25, 44, 51, 59, 68, 85, 88, 90, 96, 97, 108, 134, 162, 163, 170, 195, 209, 211
+- Improved mobile display of webinterface
+- Added definement "BtSerial" for diverting serial output to Serial2 where a Bluetooth adapter can be connected (5V->5V, GND->GND, RX->TX2, TX->RX2). Adapter has to be in slave mode and configured to 115200 bps, 8N1.
+- Lots of added Polish translations
+- New data types VT_BYTE10, VT_SPF
+- Bugfix for PPS bus regarding display of heating time programs
+- Bugfix for MQTT
+  
+Version 1.0
+- /JI URL command outputs configuration in JSON structure
+- /JC URL command gets list of possible values from user-defined list of functions. Example: /JC=505,700,701,702,711,1600,1602
+- Logging telegrams (log parameter 30000) now writes to separate file (journal.txt). It can be reset with /D0 (same time with datalog.txt) command and dumped with /DJ command.
+- removed WIFI configuration as it is no longer applicable for the Due
+- lots of new parameters for various device families
+- Code optimization and restructuring, general increase of speed
+- new schemativs for board layout V3
+- lots of bugfixes  
+  
 Version 0.44
 - Added webserver functionality via SD card and various other improvements from GitHub user dukess
 - Added JSON output for MQTT
