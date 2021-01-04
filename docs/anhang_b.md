@@ -34,9 +34,12 @@
 |  `/JI`                   | `JSON: Anzeige der Konfiguration von BSB-LAN`  
 |  `/JK=<x>`        	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
 |  `/JK=ALL`          	| `JSON: Auflistung aller Kategorien samt zugehörigen Parameternummern`  
+|  `/JL`                | `JSON: Erstellt eine Liste der Konfiguration im JSON-Format`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
-|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`
-|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`
+|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
+|  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab`  
+|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
+|  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entspr. an` 
 |  `/K`                   | `Alle Regler-Kategorien auflisten`  
 |  `/K<x>`              | `Alle Parameter und Werte von Regler-Kategorie <x> abfragen`  
 |  `/L=0,0`               | `Loggen auf microSD-Karte temporär deaktivieren`  
