@@ -36,7 +36,7 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/D0`                  | `Logfiles löschen und neuen CSV-header erstellen` <br /> `Dieser Befehl löscht die Dateien datalog.txt und journal.txt und erstellt einen neuen CSV-header für datalog.txt. Dieser Befehl sollte vor dem ersten Logging ausgeführt werden.`  
 |  `/DD0`               | `Logfile datalog.txt löschen`  
 |  `/DJ0`               | `Logfile journal.txt löschen`  
-|  `/E<x>`              | `Alle ENUM-Werte für Parameter <x> auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur für Parameter des Typs VT_ENUM verfügbar.`  
+|  `/E<x>`              | `Alle ENUM-Werte für Parameter <x> auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur für Parameter des Typs VT_ENUM, VT_CUSTOM_ENUM, VT_BITS und VT_CUSTOM_BITS verfügbar.`  
 |  `/G<x>`              | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als OUTPUT genutzt)` <br /> `Gibt den momentanen Status von GPIO Pin <x> an, wobei <y>=0 LOW und <y>=1 HIGH ist.`  
 |  `/G<x>=<y>`        | `GPIO: Abfragen des GPIO-Pins <x> und Setzen auf <y> (GPIO wird als OUTPUT genutzt)` <br /> `Setzt GPIO Pin <x> auf LOW (<y>=0) oder HIGH (<y>=1).` <br /> `Reservierte Pins, die nicht gesetzt werden dürfen, können in der BSB_lan_config.h unter dem Parameter GPIO_exclude gesperrt werden.` 
 |  `/G<x>,I`            | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als INPUT genutzt)` <br /> `Für die reine Abfrage eines externes Gerätes, das an einen GPIO angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl so lange auf ‚input', bis das nächste Mal mit /G<xx>=<y> ein Wert geschrieben wird - ab da ist er dann bis zum nächsten „I" wieder auf ‚output'.`  
@@ -45,9 +45,12 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/JI`                   | `JSON: Konfiguration von BSB-LAN anzeigen lassen`  
 |  `/JK=<x>`         	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
 |  `/JK=ALL`          	   | `JSON: Auflistung aller Kategorien samt zugehöriger Parameternummern`  
+|  `/JL`                | `JSON: Erstellt eine Liste der Konfiguration im JSON-Format`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
-|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`
-|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`
+|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
+|  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab` <br /> `Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.`  
+|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
+|  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.`  
 |  `/K`                   | `Alle Kategorien auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
 |  `/K<x>`              | `Alle Parameter von Kategorie <x> abfragen` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
 |  `/L=0,0`               | `Vorübergehendes Deaktivieren des Loggens auf die microSD-Karte` <br /> `Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion durch das entsprechende Definement in der Datei BSB_lan_config.h vor dem Flashen. Während des Betriebes kann das Loggen jedoch mit diesem Befehl deaktiviert werden. Zum Aktivieren werden dann wieder das Intervall und die gewünschten Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden die Einstellungen aus der Datei BSB_lan_config.h verwendet - eine dauerhafte Umstellung der Logging-Parameter sollte also dort erfolgen.`  
