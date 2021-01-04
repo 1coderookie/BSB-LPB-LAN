@@ -172,7 +172,8 @@ JSON erfolgen.
 -   **Abfrage der möglichen Werte von Parametern:**  
 
     `http://<IP-Adresse>/JC=<x>,<y>,<z>`  
-    Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.
+    Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.  
+    
 -   **Abfrage der Konfiguration von BSB-LAN:**  
 
     `http://<IP-Adresse>/JI`  
@@ -220,6 +221,17 @@ JSON erfolgen.
     ```
     curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS
     ```
+  
+-   **Abfrage des Reset-Werts eines Parameters:**  
+    `http://<IP-Adresse>/JR<x>` → Fragt den Reset-Wert für Parameter <x> ab. Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird (JSON: Mittels /JS).  
+  
+-   **Backup und Restore der Konfiguration von BSB-LAN:**  
+    
+    `http://<IP-Adresse>/JL` → Erstellt eine Liste der Konfiguration im JSON-Format.  
+    
+    `http://<IP-Adresse>/JW` → Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.  
+      
+    *Achtung:* Zur Nutzung dieser Funktion muss das Modul "JSONCONFIG" (s. Datei *BSB_lan_config.h*) kompiliert sein!  
     
 ---
     
