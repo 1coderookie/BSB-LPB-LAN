@@ -50,6 +50,7 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
 |  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab` <br /> `Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.`  
 |  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
+|  `/JV`                | `Abfrage der JSON-API-Version. Payload: {"api_version": "major.minor"}`  
 |  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.`  
 |  `/K`                   | `Alle Kategorien auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
 |  `/K<x>`              | `Alle Parameter von Kategorie <x> abfragen` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
