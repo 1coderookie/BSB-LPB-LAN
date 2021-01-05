@@ -4,65 +4,14 @@
 ---
         
 
-# Anhang B: Cheatsheet URL-Befehle
+# Anhang B: Arduino DUE Pinout
   
-***HINWEIS:***  
-***Dies ist nur eine kurze Übersicht der verfügbaren URL-Befehle. Eine ausführlichere Erläuterung der einzelnen Befehle sowie weitere Spezialfunktionen von BSB-LAN findest du in [Kapitel 8](kap08.md)!***  
+***Das nachfolgend abgebildete 'inoffizielle' Arduino DUE Pinout-Schema stammt von [Rob Gray](www.robgray.com). Es ist u.a. auch direkt als [PDF](http://www.robgray.com/temp/Due-pinout.pdf) verfügbar. Vielen Dank! 
+Das 'offzielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.***  
    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due-pinout-WEB.png">
 
-| URL-Befehl            | Auswirkung                                                                    |
-|:----------------------|:------------------------------------------------------------------------------|
-|  `/<x>`               | `Wert/Einstellung von Parameter <x> anzeigen`
-|  `/<x>/<y>/<z>`   | `Werte/Einstellungen der Parameter <x>, <y> und <z> anzeigen`  
-|  `/<x>-<y>`         | `Werte/Einstellungen der Parameter <x> bis <y> anzeigen`  
-|  `/A=<x>,<y>`       | `Ändern der 24h-Durchschnittswertberechnung in Parameter <x>, <y>`  
-|  `/A=0`                  | `24h-Durchschnittswertberechnung temporär deaktivieren`  
-|  `/B0`                  | `Zurücksetzen des Zählers dr akkumulierten Brennerlaufzeiten und -takte`  
-|  `/C`                   | `Anzeige der Konfiguration von BSB-LAN`  
-|  `/D oder /DD`         | `Anzeige der Logdatei datalog.txt von der microSD-Karte`  
-|  `/DG`                  | `Grafische Anzeige der Logdatei datalog.txt von der microSD-Karte`  
-|  `/DJ`                  | `Anzeige der Logdatei journal.txt von der microSD-Karte`  
-|  `/D0`                  | `Zurücksetzen der beiden Logdateien & neue Generierung des CSV-Headers`  
-|  `/DD0`               | `Nur Logdatei datalog.txt löschen`  
-|  `/DJ0`               | `Nur Logdatei journal.txt löschen`  
-|  `/E<x>`              | `ENUM-Werte für Parameter <x> anzeigen`  
-|  `/G<x>`              | `GPIO: Abfragen des Pins <x>`  
-|  `/G<x>=<y>`        | `GPIO: Setzen des Pins <x> auf HIGH (<y> = 1) oder LOW (<y> = 0)`  
-|  `/G<x>,I`            | `GPIO: Abfragen des Pins <x> mit gleichzeitigem Setzen auf INPUT`  
-|  `/I<x>=<y>`        | `INF-Nachricht an Parameter <x> mit Wert <y> senden`  
-|  `/JC=<x>,<y>,<z>`   | `JSON: Abfrage der möglichen Werte der Parameter <x>,<y>,<z> für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl /JK=<x>`  
-|  `/JI`                   | `JSON: Anzeige der Konfiguration von BSB-LAN`  
-|  `/JK=<x>`        	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
-|  `/JK=ALL`          	| `JSON: Auflistung aller Kategorien samt zugehörigen Parameternummern`  
-|  `/JL`                | `JSON: Erstellt eine Liste der Konfiguration im JSON-Format`  
-|  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
-|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
-|  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab`  
-|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
-|  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entspr. an` 
-|  `/K`                   | `Alle Regler-Kategorien auflisten`  
-|  `/K<x>`              | `Alle Parameter und Werte von Regler-Kategorie <x> abfragen`  
-|  `/L=0,0`               | `Loggen auf microSD-Karte temporär deaktivieren`  
-|  `/L=<x>,<y1>,<y2>,<y3>`       | `Log-Intervall auf <x> Sekunden setzen, mit (optional) Log-Parameter <y1>,<y2>,<y3>`  
-|  `/LB=<x>`            | `Loggen von Bus-Telegrammen: Nur Broadcasts (<x>=1) oder alle (<x>=0)`  
-|  `/LD`                | `Loggen von Bus-Telegrammen (Datei journal.txt) deaktivieren`  
-|  `/LE`                | `Loggen von Bus-Telegrammen (Datei journal.txt) aktivieren`  
-|  `/LU=<x>`            | `Loggen von Bus-Telegrammen: Nur unbekannte (<x>=1) oder alle (<x>=0)`  
-|  `/M<x>`              | `Monitor-Modus aktivieren (<x> = 1) oder deaktivieren (<x> = 0)`  
-|  `/N`                   | `Reset und Neustart des Arduino (Dauer ca. 15Sek)`  
-|  `/NE`                  | `Reset und Neustart des Arduino (Dauer ca. 15Sek) und lösche EEPROM`  
-|  `/P<x>`              | `Busprotokoll / Bustyp setzen: <x> = 0 → BSB / 1 → LPB / 2 → PPS`  
-|  `/P<x>,<s>,<d>`  | `Busprotokoll/-typ <x>, eigene Adresse <s>, Zieladresse <d> setzen`  
-|  `/Q`                   | `Test auf nicht-freigegebene reglerspezifische Parameter`  
-|  `/R<x>`              | `Abfrage des Reset-Werts für Parameter <x>`  
-|  `/S<x>=<y>`        | `Wert <y> für Parameter <x> setzen`  
-|  `/U`                   | `Zeigt die benutzerdefinierten Variablen an, falls diese in BSB_lan_custom.h verwendet werden`  
-|  `/V<x>`              | `Verbositäts-Modus aktivieren (<x> = 1) oder deaktivieren (<x> = 0)`  
-|  `/W`                   | `Mit vorangehendem /W liefern die URL-Befehle C, S, T und Q Daten ohne HTML-header und -footer zurück (bspw. /WC oder /WS<x>=<y!z>)`  
-|  `/X`                   | `Abfrage optional eingebundener MAX!-Thermostate`  
-
-       
-[Cheatsheet als PDF](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf)
+   
     
 ---
     
