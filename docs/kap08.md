@@ -9,8 +9,6 @@ ohne weitere Programme wie bspw. FHEM zu ermöglichen, ist ein direkter
 Zugriff auf die einzelnen Funktionen und Parameter mittels anderer
 Programme grundsätzlich möglich.  
   
-*Eine kurze und druckerfreundliche Übersicht der URL-Befehle ist [hier](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf) als Download verfügbar.*
-
     
 ---
     
