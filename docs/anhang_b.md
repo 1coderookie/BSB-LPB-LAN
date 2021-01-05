@@ -10,6 +10,7 @@
 Es ist u.a. auch direkt als [PDF](http://www.robgray.com/temp/Due-pinout.pdf) verfügbar.  
 Vielen Dank für die großartige Arbeit!***  
   
+*Hinweis: Bitte beachte, dass das Pinout bei einigen günstigen Clones vom originalen Pinout abweichen kann!*    
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due-pinout-WEB.png">
 
