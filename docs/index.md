@@ -19,7 +19,7 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
     
 #### Zum Ausdrucken besser geeignet: [Die PDF-Version des Handbuchs](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf).  
   
-#### Druckerfreundliche Übersicht aller URL-Befehle: [Cheatsheet URL-Befehle](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Cheatsheet_URL-Befehle.pdf).  
+
 
 ---  
 
