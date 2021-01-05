@@ -10,7 +10,7 @@
   
 ---  
   
-**Das 'offzielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.**    
+**Das 'offizielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.**    
    
 ---   
    
