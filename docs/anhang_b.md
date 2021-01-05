@@ -8,7 +8,11 @@
   
 ***Das nachfolgend abgebildete 'inoffizielle' Arduino DUE Pinout-Schema stammt von [Rob Gray](www.robgray.com). Es ist u.a. auch direkt als [PDF](http://www.robgray.com/temp/Due-pinout.pdf) verfügbar. Vielen Dank!***  
   
+---  
+  
 **Das 'offzielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.**    
+   
+---   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due-pinout-WEB.png">
 
