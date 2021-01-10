@@ -13,20 +13,19 @@ Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die s
 Nein, wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
 dann kannst du das alte Setup natürlich weiterhin verwenden.  
 
-  **In diesem Fall ist [BSB-LAN-Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44) die letzte 'offiziell'  getestete und empfohlene Version für dein Setup! Im zip-file befindet sich auch die letzte 'Mega2560-spezifische' Version des Handbuchs (als PDF).**     
-  
-  Es hat sich bei mehreren Usern gezeigt, dass auch die **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** noch ohne große Einschränkungen läuft, aufgrund des Speichermangels des Mega 2560 vermutlich aber schon nicht mehr mit allen verfügbaren Optionen, die BSB-LAN bietet.  
-  
+- ***Gibt es bzgl. der BSB-LAN-Versionen etwas zu beachten?***  
+Ja. Die letzte 'offiziell'  getestete und empfohlene Version für dein Setup ist die **[Version v0.44](https://github.com/fredlcore/bsb_lan/releases/tag/v0.44)**. Im zip-file befindet sich auch die letzte 'Mega2560-spezifische' Version des Handbuchs (als PDF).     
+  Aber: Es hat sich bei mehreren Usern gezeigt, dass auch die **[v1.1](https://github.com/fredlcore/bsb_lan/releases/tag/v1.1)** noch ohne große Einschränkungen läuft, aufgrund des Speichermangels des Mega 2560 vermutlich aber schon nicht mehr mit allen verfügbaren Optionen, die BSB-LAN bietet.  
   Ab **v2.x** ist es dann definitiv nötig, einzelne Module zu deaktivieren und somit auf spezifische Funktionen zu verzichten, die BSB-LAN bietet. Hinweise diesbzgl. findest du in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) bzw in den Kommentaren der Datei *BSB_lan_config.h*. Besonderes Augenmerk ist auf die letzten Punkte zu richten, die u.a. ein komfortables Deaktivieren einzelner Module (bspw. Webconfig, MQTT, IPWE etc.) an zentraler Stelle ermöglicht.  
-  Darüber hinaus kann die Größe der Variablen von bspw. `PASSKEY[]`, `avg_parameters[]`, `log_parameters[]`, `ipwe_parameters[]`, `max_device_list[]` verkleinert werden (wenn bspw. weniger Parameter als maximal möglich verwendet werden), um ein wenig Speicher einzusparen.   
-  Beachte bitte, dass spezifische Änderungen an der Datei *BSB_lan_config.h* neu vorzunehmen sind, wenn die Datei im Zuge eines Updates von BSB-LAN überschrieben wird! Stelle also sicher, dass du möglichst eine Kopie der Datei zum Vergleich zur Hand oder ein Backupfile via JSON-Befehl `/JL` erstellt hast (Wiederherstellung der Konfig dann mittels JSON-Befehl `/JW`). Für die BAckup-Methode via JSON-Befehl muss das Modul `JSONCONFIG` kompiliert sein!    
   
-  Neben dem Deaktivieren einzelner Module gibt es *ab v2.x* noch eine weitere Möglichkeit, Speicherplatz einzusparen:  
-Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executable namens *selected_defs.exe*, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
-  Dieser Zusatzschritt ist zwar nicht besonders bequem, aber ermöglicht Usern des Mega vielleicht noch eine gewisse Zeit lang mehr, die Software auf der alten Hardware zu nutzen.  
-  Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.     
-  
-  Vorgehensweise zur Erstellung einer reglerspezifischen defs-Datei:  
+- **Was gilt es zu beachten, wenn ich die aktuelle v2.x nutzen möchte?**  
+Wie bereits erwähnt muss die v2.x in der Konfiguration prinzipiell so angepasst werden, dass sie mit dem geringeren Speicher des Mega problemlos kompiliert und lauffähig ist. Neben dem bereits erwähnten Deaktivieren einzelner Module gibt es weitere Möglichkeiten:  
+    1.) Die Größe der Variablen von bspw. `PASSKEY[]`, `avg_parameters[]`, `log_parameters[]`, `ipwe_parameters[]`, `max_device_list[]` kann verkleinert werden (wenn bspw. weniger Parameter als maximal möglich verwendet werden), um ein wenig Speicher einzusparen.   
+    2.) In der Datei *BSB_lan_config.h* finden sich im unteren Abschnitt verschiedene Definements, die in bestimmten Fällen aktiviert werden können. Hinweise diesbzgl. findest du in der Datei selbst.  
+    3.) Erstellung einer reglerspezifischen *BSB_lan_defs.h*:  
+    Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executable namens *selected_defs.exe*, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
+    Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.       
+    Vorgehensweise zur Erstellung einer reglerspezifischen defs-Datei:  
     - Parameter 6225 "Gerätefamilie" via BSB-LAN abrufen und den Wert notieren.  
     - Datei *selected_defs.pl* bzw. *selected_defs.exe* vor dem Ausführen in den gleichen Ordner kopieren, in dem auch die Datei *BSB_lan_defs.h* liegt.  
     - Öffne ein Terminal, wechsle in den entspr. Ordner und erstelle die reduzierte Datei namens *BSB_lan_defs_filtered.h* mit Hilfe des Perlscripts bzw. des Windows-Executables, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl  
@@ -38,15 +37,15 @@ Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executa
     - Verschiebe die originale Datei *BSB_lan_defs.h* aus dem "BSB_lan"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan" (falls du die Datei nicht bereits im Ordner "BSB_lan" erstellt hast).  
     - *Wichtig: Die neu erzeugte Datei nun in "BSB_lan_defs.h" umbenennen!*  
        
-  ***Weitere Hinweise:***  
-  *Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei BSB_lan_config.h.default verwendest und entsprechend anpasst:* 
+- ***Gibt es bzgl. der zu verwendenden Pineinstellungen etwas zu beachten?***  
+Ja! Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei BSB_lan_config.h.default verwendest und entsprechend anpasst:  
   - Bei BSB-LAN-Versionen **vor v2.x** ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
   - Bei BSB-LAN-Versionen **ab v2.x** ist in der Datei *BSB_lan_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardware serial) zum Einsatz kommt.    
    
-- ***Warum gibt es jetzt einen Umstieg auf den Due?***  
+- ***Warum gibt es überhaupt einen Umstieg auf den Due?***  
 Der Mega 2560 bot einfach nicht mehr genügend Speicher, um auch in Zukunft das stetig wachsende BSB-LAN zu beherbergen! ;)  
 
-- ***Warum gibt es jetzt einen neuen Adapter v3/v4?***  
+- ***Warum gibt es überhaupt einen neuen Adapter v3/v4?***  
 Das war nötig, da der bisherige Adapter v2 aus verschiedenen Gründen nicht kompatibel mit dem Due ist.  
   
 - ***Kann ich den Adapter v2 an einem Due weiterverwenden?***  
