@@ -65,7 +65,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     
 -   **DHCP:**  
-    `boolean useDHCP = true;`  
+    `bool useDHCP = true;`  
     Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
     
     *Wichtiger Hinweis:*  
@@ -112,6 +112,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define WIFI_SPI_SS_PIN 13`  
     Hier wird der beim DUE zu verwendende SS-Pin definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
    
+---   
+   
+-   **Nutzung von Multicast DNS:**  
+    `#define MDNS_HOSTNAME "BSB-LAN"`  
+    Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist. Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
    
 ---    
     
@@ -127,8 +132,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
     
-    - `boolean show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
-    Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`boolean show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
+    - `bool show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
+    Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`bool show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
    
 ---   
 
@@ -178,13 +183,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
 -   **OneWire-Temperatursensoren (DS18B20):**  
     `#define ONE_WIRE_BUS`  
-    `boolean enableOneWireBus = true;`  
+    `bool enableOneWireBus = true;`  
     `byte One_Wire_Pin = 7;`  
     
     Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, der Eintrag *true* verwendet sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
     Adapterboard) definiert werden.  
     Voreingestellt ist das Modul aktiviert und Pin 7 eingestellt.  
-    Soll keine Verwendung stattfinden, ist `boolean enableOneWireBus = false;` einzutragen.  
+    Soll keine Verwendung stattfinden, ist `bool enableOneWireBus = false;` einzutragen.  
           
 
 -   **DHT22-Sensoren:**  
@@ -204,9 +209,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
         Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet
     werden, so ist das Definement zu aktivieren (Voreinstellung).  
     
-    `boolean logAverageValues = true;`  
-    Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Einstellung `true` beizubehalten.  
-    Ist ein Loggen dieser Werte nicht gewünscht, ist hingegen `false` einzustellen.  
+    `bool logAverageValues = false;`  
+    Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
+    Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
     
     Des weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
     werden, bspw.:  
@@ -234,7 +239,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
     `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
 
-    - `boolean logCurrentValues = false;`  
+    - `bool logCurrentValues = false;`  
     Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
       
     - `unsigned long log_interval = 3600;`  
@@ -255,7 +260,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     müssen diese bei den Log-Parametern entsprechend einzeln
     untereinander aufgeführt werden, bspw.:  
     ```
-    20300, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100 (/T)  
+    20300, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
     20301,  
     20302, 
     ```
@@ -270,7 +275,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **MQTT:**  
     Soll MQTT zum Einsatz kommen, so sind die entspr. Variablen und Einstellungen anzupassen:    
 
-    - `define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
+    - `#define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
     
     - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
     1 = die Nachrichten werden im einfachen Textformat gesendet  
@@ -297,7 +302,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 -   **IPWE:**  
     `#define IPWE` → Das IPWE-Modul wird kompiliert.    
-    `boolean enable_ipwe = false;`  
+    `bool enable_ipwe = false;`  
     Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
   
     Die gewünschten Parameter (maximal 40) sind ebenfalls einzutragen:  
@@ -315,7 +320,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
      - `//#define MAX_CUL` → Definement aktivieren (= `#define MAX_CUL`) (deaktiviert by default)  
      
-     - `boolean enable_max_cul = false;` → Variable auf 'true' setzen  
+     - `bool enable_max_cul = false;` → Variable auf 'true' setzen  
      
      - `byte max_cul_ip_addr[4] = {192,168,178,5};` → IP-Adresse des CUNO/CUNX/modifizierten MAX!Cubes - *bitte beachte die Kommata anstelle von Punkten!*  
      
@@ -358,14 +363,15 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
     
     → **BSB:**  
-    - `byte own_bsb_address = 0x42;` → entspricht der eigenen  Geräteadresse 66 des BSB-LAN-Adapters  
+    - `byte own_address = 0x42;` → entspricht der eigenen Geräteadresse 66 des BSB-LAN-Adapters  
+    - `byte dest_address = 0x00;` → entspricht der Zieladresse 0 (i.d.R. der Regler des Wärmeerzeugers)  
     
     → **LPB:**  
-    - `byte own_lpb_address = 0x42;` → eigene Adresse (BSB-LAN-Adapter), entspricht der Segmentadresse 4 mit Geräteadresse 3   
-    - `byte dest_lpb_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
+    - `byte own_address = 0x42;` → eigene Adresse (BSB-LAN-Adapter), entspricht der Segmentadresse 4 mit Geräteadresse 3   
+    - `byte dest_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
     
     → **PPS:**  
-    - `boolean pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`boolean pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
+    - `bool pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`bool pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
     - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
    
 ---   
@@ -384,7 +390,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226`
     eingetragen werden (6225 = Gerätefamilie / device family & 6226 =
     Gerätevariante / device variant).  
-    Ein fest eingestellter Wert (laut 6225&6226) stellt sicher, dass
+    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass
     BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der
     Regler erst nach dem Starten des Arduino eingeschaltet wird (da in
     dem Fall die automatische Erkennung des angeschlossenen Reglers
@@ -427,14 +433,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 -   **Überprüfen der BSB-LAN-Version:**  
     `#define VERSION_CHECK`  
-    `boolean enable_version_check = false;`    
+    `bool enable_version_check = false;`    
     Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
     
     *Hinweis: Dabei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen.*  
-
-
-
-    
+   
 ---    
        
 -   **"Externer" Webserver:**  
@@ -471,8 +474,21 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `uint32_t destinationDelay = 84600;` → Sendeintervall in Sekunden  
     
 ---    
-    
--   **Deaktivierung bestimmter Module (bei Nutzung eines Arduino Mega 2560):**  
+***Für Nutzer des veralteten Setups auf Basis des Arduino Mega 2560:***  
+*Nachfolgende Einstellmöglichkeiten dienen der Möglichkeit, Speicher einzusparen, so dass auch auf einen Mega 2560 geflasht werden kann.*    
+
+-   **Deaktivieren bestimmter Funktionen:**  
+  
+    If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
+    `#define I_DO_NOT_WANT_URL_CONFIG`
+  
+    Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
+    `#define I_WILL_USE_EXTERNAL_INTERFACE`  
+   
+    Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory.  /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
+    `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
+      
+-   **Deaktivieren bestimmter Module:**  
        
     Wird anstelle des Arduino Due noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Hinweis: Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
     Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
