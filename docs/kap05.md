@@ -116,7 +116,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 -   **Nutzung von Multicast DNS:**  
     `#define MDNS_HOSTNAME "BSB-LAN"`  
-    Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist. Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
+    Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
+    Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
    
 ---    
     
