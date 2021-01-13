@@ -503,6 +503,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     #undef DEBUG
     #undef IPWE
     #undef MQTT
+    #undef MDNS_HOSTNAME
     #undef OFF_SITE_LOGGER
     #undef ROOM_UNIT
     #undef VERSION_CHECK
