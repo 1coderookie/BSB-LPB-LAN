@@ -66,7 +66,7 @@
 [10. Auslesen neuer Parameter-Telegramme](kap10.md)  
 [10.1 Ausführliche Beschreibung des Auslesens neuer Telegramme (für Einsteiger)](kap10.md#101-ausführliche-beschreibung-des-auslesens-neuer-telegramme-für-einsteiger)    
 [10.2 Kurze Beschreibung des Auslesens neuer Telegramme (für erfahrene Nutzer)](kap10.md#102-kurze-beschreibung-des-auslesens-neuer-telegramme-für-erfahrene-nutzer)  
-[10.3 Beispiel für eine ‚Meldedatei‘](kap10.md#104-beispiel-für-eine-meldedatei)  
+[10.3 Beispiel für eine ‚Meldedatei‘](kap10.md#103-beispiel-für-eine-meldedatei)  
 [11. Nutzung von externen Programmen](kap11.md)  
 [11.1 FHEM](kap11.md#111-fhem)  
 [11.1.1 Einbindung mittels BSB-LAN-Modul](kap11.md#1111-einbindung-mittels-bsb-lan-modul)  
