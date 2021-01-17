@@ -93,7 +93,7 @@ Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse 
 | 0x04 | 4 | Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU | 
 | 0x06 | 6 | Raumgerät 1 („RGT1“) | 
 | 0x07 | 7 | Raumgerät 2 („RGT2“) | 
-| 0x08 | 8 | OCI700 Servicetool („CNTR“) | 
+| 0x08 | 8 | Raumgerät 3/P und/oder OCI700 Servicetool („CNTR“) | 
 | 0x0A | 10 | reglerseitige Bedieneinheit / Display („DISP“) | 
 | 0x0B | 11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
 | 0x31 | 49 | OZW672 Webserver | 
