@@ -91,8 +91,8 @@ Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse 
 | 0x00 | 0 | Heizungsregler („HEIZ“) |  
 | 0x03 | 3 | Erweiterungsmodul 1 („EM1“) / Mischer-ClipIn AGU |  
 | 0x04 | 4 | Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU | 
-| 0x06 | 6 | Raumgerät 1 („RGT1“) | 
-| 0x07 | 7 | Raumgerät 2 („RGT2“) | 
+| 0x06 | 6 | Raumgerät 1 („RGT1“: QAA55, QAA75, IDA) | 
+| 0x07 | 7 | Raumgerät 2 („RGT2“: QAA55, QAA75) | 
 | 0x08 | 8 | Raumgerät 3/P und/oder OCI700 Servicetool („CNTR“) | 
 | 0x0A | 10 | reglerseitige Bedieneinheit / Display („DISP“) | 
 | 0x0B | 11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
