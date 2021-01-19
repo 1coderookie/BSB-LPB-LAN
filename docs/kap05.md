@@ -26,53 +26,53 @@ Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:
   
 ***Wichtig: Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Daten absenden" geklickt werden.***  
   
-Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen:  
+Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
 
-| Kategorie | Funktion | (Vor-)Einstellung | Erklärung |
-|:-----------:|:-------------:|:-------------:|:-----------:|
-| Generell | Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, wenn sie entspr. angepasst und gespeichert wurden. <br> Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen! <br> Dies kann u.a. ebenfalls nötig sein, wenn es Probleme mit dem Netzwerkzugriff bei voreingestellten IPs oder verwendeten Kennwörtern gibt und diese geändert wurden/werden sollen. |
-| Generell | Schreibzugriff (Ebene) | Aus | Status des Schreibzugriffs des Adapters (Aus/Standard/Komplett). <br> **Soll Schreibzugriff gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
-| Generell | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
-| Bus |	Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
-| Bus |	Eigene Adresse | 66 | Eigene Adresse des Adapters (0x42 = "LAN" im Seriellen Monitor der Arduino IDE) |
-| Bus |	Zieladresse | 0 | Zieladresse für die Anfragen (0x00 = i.d.R. der angeschlossene Heizungsregler bei Verwendung von BSB) |	
-| Bus |	PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein originales Raumgerät (QAA50/QAA70) angeschlossen ist.* |
-| Bus |	PPS: QAA Modell | QAA70 | Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
-| Netzwerk | URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion "URL passkey" | 
-| Netzwerk | HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion "HTTP basic auth" |	
-| Netzwerk | DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
-| Netzwerk | Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
-| Netzwerk | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
-| Netzwerk | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
-| Netzwerk | DNS server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
-| Netzwerk | TCP port | 80 | TCP port des Setups | 
-| Netzwerk | MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
-| Netzwerk | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
-| Netzwerk | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
-| Netzwerk | WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| Netzwerk | Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| 24h-Durchschnittswerte | Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
-| 24h-Durchschnittswerte | Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
-| Logging | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
-| Logging | Auf SD Karte | Aus | zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
-| Logging | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
-| Logging | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
-| OneWire | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
-| DHT | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |	
-| IPWE| Verwenden | Aus | IPWE-Erweiterung (URL/ipwe.cgi) verwenden (Aus/Ein) |	
-| IPWE | Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung | 
-| MAX! | Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
-| MAX! | IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
-| MAX! | Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
-| MQTT | Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
-| MQTT | IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
-| MQTT | Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
-| MQTT | Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
-| MQTT | Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
-| MQTT | Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
-| Debugging | Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
-| Debugging | Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
-| Debugging | Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
+| Funktion | (Vor-)Einstellung | Erklärung |
+|:-------------:|:-------------:|:-------------------------------------------:|
+| Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, wenn sie entspr. angepasst und gespeichert wurden. <br> Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen! <br> Dies kann u.a. ebenfalls nötig sein, wenn es Probleme mit dem Netzwerkzugriff bei voreingestellten IPs oder verwendeten Kennwörtern gibt und diese geändert wurden/werden sollen. |
+| Schreibzugriff (Ebene) | Aus | Status des Schreibzugriffs des Adapters (Aus/Standard/Komplett). <br> **Soll Schreibzugriff gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
+| Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
+| Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
+| Eigene Adresse | 66 | Eigene Adresse des Adapters (0x42 = "LAN" im Seriellen Monitor der Arduino IDE) |
+| Zieladresse | 0 | Zieladresse für die Anfragen (0x00 = i.d.R. der angeschlossene Heizungsregler bei Verwendung von BSB) |	
+| PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein originales Raumgerät (QAA50/QAA70) angeschlossen ist.* |
+| PPS: QAA Modell | QAA70 | Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
+| URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion "URL passkey" | 
+| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion "HTTP basic auth" |	
+| DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
+| Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
+| Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
+| Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
+| DNS server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
+| TCP port | 80 | TCP port des Setups | 
+| MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
+| WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
+| Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |	
+| Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
+| Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
+| Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
+| Auf SD Karte | Aus | zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
+| Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
+| Parameter | 8700,8743,8314 | Zu loggende Parameter | 
+| Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
+| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |	
+| Verwenden | Aus | IPWE-Erweiterung (URL/ipwe.cgi) verwenden (Aus/Ein) |	
+| Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung | 
+| Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
+| IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
+| Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
+| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
+| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
+| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
+| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
+| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
+| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
+| Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
+| Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
+| Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
   
 
 
