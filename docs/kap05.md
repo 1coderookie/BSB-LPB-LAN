@@ -34,8 +34,8 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Schreibzugriff (Ebene) | Aus | Status des Schreibzugriffs des Adapters (Aus/Standard/Komplett). <br> **Soll Schreibzugriff gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
-| Eigene Adresse | 66 | Eigene Adresse des Adapters (0x42 = "LAN" im Seriellen Monitor der Arduino IDE) |
-| Zieladresse | 0 | Zieladresse für die Anfragen (0x00 = i.d.R. der angeschlossene Heizungsregler bei Verwendung von BSB) |	
+| Eigene Adresse | 66 | Eigene Adresse des Adapters |
+| Zieladresse | 0 | Zieladresse für die Abfragen |	
 | PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein originales Raumgerät (QAA50/QAA70) angeschlossen ist.* |
 | PPS: QAA Modell | QAA70 | Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
 | URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion "URL passkey" | 
