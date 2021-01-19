@@ -61,7 +61,7 @@
     Webinterface) kannst du deine Konfiguration überprüfen.  
     
 
-
+***Hinweis: Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.***    
        
     
 ---
