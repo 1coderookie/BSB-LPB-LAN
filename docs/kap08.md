@@ -135,9 +135,9 @@ Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
 und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
 genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)). Der Parameter (701) ist NICHT abrufbar.
 
-Bei aktivem Automatikprogramm ist dabei `http://<IP-Adresse>/S701=1` für
-den Wechsel auf ‚Betriebsart Reduziert' und `http://<IP-Adresse>/S701=0`
-für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
+Bei aktivem Automatikprogramm ist dabei  
+`http://<IP-Adresse>/S701=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
+`http://<IP-Adresse>/S701=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
 Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut
 Zeitprogramm gültig.  
   
