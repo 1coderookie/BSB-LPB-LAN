@@ -24,14 +24,15 @@ Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:
 - In der Mitte wird die Funktion genannt.
 - Rechts daneben befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_lan_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
   
-***Wichtig: Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Daten absenden" geklickt werden.***  
+***Wichtig:  
+Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Daten absenden" geklickt werden!***  
   
 Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
 
 | Funktion | (Vor-)Einstellung | Erklärung |
 |:-------------:|:-------------:|:-------------------------------------------:|
 | Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_lan_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
-| Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf die Parameter/Einstellungen des Heizungsreglers (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
+| Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
