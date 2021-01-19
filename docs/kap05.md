@@ -61,7 +61,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | DHT | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |	
 | IPWE| Verwenden | Aus | IPWE-Erweiterung (URL/ipwe.cgi) verwenden (Aus/Ein) |	
 | IPWE | Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung | 
-| MAX! | Verwenden | Aus | MAX!-Gerääte verwenden (Aus/Ein) |	
+| MAX! | Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
 | MAX! | IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
 | MAX! | Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
 | MQTT | Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
