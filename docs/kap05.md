@@ -14,7 +14,7 @@
 ## 5.1 Konfiguration mittels Webinterface  
 
 Die Einstellungsübersicht bzw. die Webkonfigurationsoberfläche ist zwar im Prinzip selbsterklärend, trotzdem seien die einzelnen Punkte hier nochmals mit einer kurzen Erklärung aufgeführt.  
-Für eine u.U. ausführlichere Erklärung zu den einzelnen Funktionen sieh bitte im [Kap. 5.2](kap5.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) nach.  
+Für eine u.U. ausführlichere Erklärung zu den einzelnen Funktionen sieh bitte im [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) nach.  
 
 Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:  
 
