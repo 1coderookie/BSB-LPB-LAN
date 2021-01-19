@@ -24,6 +24,8 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwe
 - Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben.  
 Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-20V). Die Versorgung mit einem 9V-Steckernetzteil (1000mA) stellte sich bisher als zuverlässige Lösung dar.  
 - Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen.  
+- Der Due kann via Netzteil an der Hohlsteckerbuchse mit Strom versorgt und gleichzeitig via USB am Programming Port mit dem Computer verbunden werden.  
+- Der Adapter kann am Bus des Heizungsreglers beim Flashen des Due angeschlossen bleiben.  
 - *Achte darauf, dass du ein qualitativ hochwertiges USB-Kabel verwendest!* Dies gilt sowohl für den Fall, dass du den Due via USB mit Strom versorgen willst, als auch für den Fall, dass du den Due zum Flashen an deinen PC anschließen möchtest. Insbesondere günstige und dünne Kabel (bspw. Zubehör von Smartphones) können Probleme bei der Stromversorgung und somit der Stabilität des Due verursachen und/oder sind nicht immer voll beschaltet, so dass eine Nutzung für die Datenübertragung nicht möglich ist.   
 - Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen.  
       
@@ -91,8 +93,8 @@ jeweiligen Definements zu aktivieren und die für DATA genutzten
 Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
 Auf die Daten der Sensoren kann nach erfolgter Installation über das
-Webinterface (jeweilige Links im oberen Bereich) oder mittels des
-URL-Befehls /K49 zugegriffen werden.  
+Webinterface (Button "Sensoren" im oberen Bereich oder Kategorie "One Wire, DHT & MAX! Sensors") oder mittels des
+URL-Befehls mit der entspr. Kategorienummer zugegriffen werden.  
    
 Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_lan\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
    
@@ -102,9 +104,9 @@ Anpassungen in der Datei *BSB\_lan\_config.h* (s. Kap. [5](kap05.md)) ganz einfa
 werden.
 
 ***Tipp:***  
-*Werden DS18B20-Sensoren verwendet, so werden unter /K49 (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
-Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf von /K49 anhand der Temperaturschwankung identifiziert werden.  
-Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie unter /K49 angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie bei /K49 angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
+*Werden DS18B20-Sensoren verwendet, so werden in der Kategorie "One Wire, DHT & MAX! Sensors" (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
+Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf der Sensor-Kategorie anhand der Temperaturschwankung identifiziert werden.  
+Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie in der enstpr. Kategorie angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie in der entspr. Kategorie angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
 Die folgenden Screenshots verdeutlichen das Geschilderte.*  
 
 *Ausgabe von /K49 mit zwei installierten Sensoren:*  
@@ -148,13 +150,13 @@ Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf ei
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AM2302.jpg">  
    
-Die Ausgabe der Werte im Webinterface mittels URL-Befehl /T ist wie folgt strukturiert (exemplarisch mit einem Sensor):  
+Die Ausgabe der Werte im Webinterface ist wie folgt strukturiert (exemplarisch mit einem Sensor):  
 ```
 temp[0]: 17.80 °C
 hum[0]: 55.90 %
 abs_hum[0]: 8.47 g/m3
 ```
-Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exemplarisch mit einem Sensor):  
+Die Ausgabe im Seriellen Monitor ist hingegen so strukturiert (exemplarisch mit einem Sensor):  
 ```
 DHT22 sensors: 1
 OK,	temp[0]: 18.80, hum[0]: 53.90
@@ -180,12 +182,12 @@ Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteue
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
    
-Die Ausgabe der Werte im Webinterface mittels URL-Befehl /T ist wie folgt strukturiert (exemplarisch mit zwei Sensoren):  
+Die Ausgabe der Werte im Webinterface ist wie folgt strukturiert (exemplarisch mit zwei Sensoren):  
 ```
 1w_temp[0] <16_stellige_ID>: 21.75 °C
 1w_temp[1] <16_stellige_ID>: 21.63 °C 
 ```
-Die Ausgabe im Seriellen Monitor mittels /T ist hingegen so strukturiert (exemplarisch mit zwei Sensoren):  
+Die Ausgabe im Seriellen Monitor ist hingegen so strukturiert (exemplarisch mit zwei Sensoren):  
 ```
 1w_temp[0]: 21.75
 1w_temp[1]: 21.63
@@ -505,16 +507,16 @@ Die Anschlüsse sind wie folgt zu verbinden:
 |SPI 3 | SCK | D05 |  
 |SPI 4 | MOSI | D07 |  
 |SPI 6 | GND | GND |  
-|Pin 13 | SS | D08 |  
+|Pin 12 | SS | D08 |  
    
-Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 13 = D08 beim ESP8266) verzichtet werden.  
-Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 13 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 13) zu belassen.     
+Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 12 = D08 beim ESP8266) verzichtet werden.  
+Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 12 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 12) zu belassen.     
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
   
 *Die korrespondierenden Anschlüsse beim Wemos D1.*  
      
-Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten. Empfohlen sei hier ausdrücklich die Verwendung eines Wemos D1, da er einerseits deutlich kleiner ist und andererseits problemlos mit den 5V des sechspoligen SPI-Anschlusses versorgt werden kann (NodeMCUs scheinen nicht immer problemlos zu funktionieren, wenn sie mit 5V via Vin betrieben werden sollen). 
+Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten.   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
   
