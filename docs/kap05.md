@@ -30,22 +30,22 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 
 | Funktion | (Vor-)Einstellung | Erklärung |
 |:-------------:|:-------------:|:-------------------------------------------:|
-| Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, wenn sie entspr. angepasst und gespeichert wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen!* <br> Dies kann u.a. ebenfalls nötig sein, wenn es Probleme mit dem Netzwerkzugriff bei voreingestellten IPs oder verwendeten Kennwörtern gibt und diese geändert wurden/werden sollen. |
-| Schreibzugriff (Ebene) | Aus | Status des Schreibzugriffs des Adapters (Aus/Standard/Komplett). <br> **Soll Schreibzugriff gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
+| Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_lan_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
+| Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf die Parameter/Einstellungen des Heizungsreglers (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
-| PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein originales Raumgerät (QAA50/QAA70) angeschlossen ist.* |
+| PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein Raumgerät angeschlossen ist.* |
 | PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
 | URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL passkey" | 
-| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "HTTP basic auth" |	
+| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "Basic HTTP Auth" |	
 | DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
 | Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
 | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
 | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
 | DNS server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
-| TCP port | 80 | TCP port des Setups | 
+| TCP port | 80 | TCP-Port des Setups | 
 | MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
