@@ -37,9 +37,9 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
 | PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein originales Raumgerät (QAA50/QAA70) angeschlossen ist.* |
-| PPS: QAA Modell | QAA70 | Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
-| URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion "URL passkey" | 
-| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion "HTTP basic auth" |	
+| PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
+| URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL passkey" | 
+| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "HTTP basic auth" |	
 | DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
 | Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
 | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
