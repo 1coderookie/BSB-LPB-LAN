@@ -6,7 +6,7 @@
 
 # 5. Konfiguration der BSB-LAN-Software v2.x  
   
-**Hinweis: Ab v2.x ist es nun möglich, die Konfiguration der BSB-LAN-Software auch über das Webinterface unter "Einstellungen" vorzunehmen.**  
+**Hinweis: Ab v2.x ist es nun möglich, die Konfiguration der BSB-LAN-Software auch über das Webinterface unter "Einstellungen" vorzunehmen - nahezu alle Einstellungen könne hier vorgenommen werden.**  
 
      
 ---
@@ -20,9 +20,9 @@ Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
 
-- Links wird der Übersichtlichkeit halber eine grobe Kategorie angezeigt (bspw. "Generell", "Bus" etc.), so dass bereits auf den ersten Blick die Zuordnung des jeweiligen Eintrages ersichtlich ist.
-- In der Mitte wird die Funktion genannt.
-- Rechts daneben befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_lan_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
+- In der linken Spalte wird der Übersichtlichkeit halber eine grobe Kategorie angezeigt (bspw. "Generell", "Bus" etc.), so dass bereits auf den ersten Blick die Zuordnung des jeweiligen Eintrages ersichtlich ist.
+- In der mittleren Spalte wird die Funktion genannt.
+- In der rechten Spalte befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_lan_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
   
 ***Wichtig:  
 Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Daten absenden" geklickt werden!***  
@@ -37,11 +37,11 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
-| PPS: PPS-Modus | passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (passiv/als Raumgerät). <br> Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Dabei ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an die Heizung schicken, so dass kein konsistenter Betrieb möglich ist.* |
+| PPS: PPS-Modus | passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (passiv/als Raumgerät). Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Dabei ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an den Heizungsregler schicken, so dass kein konsistenter Betrieb möglich ist.* |
 | PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
 | URL Passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL Passkey" | 
-| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
-| DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
+| HTTP-Authentifizierung | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
+| DHCP verwenden | Ein | DHCP verwenden (= automatische IP-Adressvergabe durch Router) (Aus/Ein) |	
 | Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
 | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
 | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
@@ -55,12 +55,12 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
 | Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
 | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
-| Auf SD Karte | Aus | zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
+| Auf SD Karte | Aus | Zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
 | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |	
-| Verwenden | Aus | IPWE-Erweiterung (URL/ipwe.cgi) verwenden (Aus/Ein) |	
+| Verwenden | Aus | IPWE-Erweiterung verwenden (URL/ipwe.cgi) (Aus/Ein) |	
 | Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung | 
 | Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
 | IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
