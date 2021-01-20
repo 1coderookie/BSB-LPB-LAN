@@ -74,7 +74,15 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
 | Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
 | Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
-  
+<!---
+| TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
+| Temp.sensor für RGT1 | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT1 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
+| Temp.sensor für RGT2 | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT2 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
+| Temp.sensor für RGT3 | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT3 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
+--->  
 
 
 
