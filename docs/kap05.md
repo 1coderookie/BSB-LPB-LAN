@@ -6,7 +6,7 @@
 
 # 5. Konfiguration der BSB-LAN-Software v2.x  
   
-**Hinweis: Ab v2.x ist es nun möglich, nahezu die komplette Konfiguration der BSB-LAN-Software auch über das Webinterface unter "Einstellungen" vorzunehmen.**  
+**Hinweis: Ab v2.x ist es nun möglich, nahezu die komplette Konfiguration der BSB-LAN-Software auch über das Webinterface vorzunehmen (Menü "Einstellungen").**  
 
      
 ---
