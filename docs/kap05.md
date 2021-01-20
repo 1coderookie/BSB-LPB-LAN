@@ -37,10 +37,10 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
-| PPS: Schreiben aktiviert | Aus | Nur PPS: Schreiben von Werten/Einstellungen möglich (Aus/Ein). <br> *"Ein" nur verwenden, wenn kein Raumgerät angeschlossen ist.* |
+| PPS-Modus | passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (passiv/als Raumgerät). <br> Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Dabei ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an die Heizung schicken, so dass kein konsistenter Betrieb möglich ist.* |
 | PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
-| URL passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL passkey" | 
-| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "Basic HTTP Auth" |	
+| URL Passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL Passkey" | 
+| HTTP-Authentifizierung | -keine Voreinstellung | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
 | DHCP verwenden | Ein | DHCP (= automatische IP-Adressvergabe durch Router) verwenden (Aus/Ein) |	
 | Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
 | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
@@ -48,8 +48,8 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | DNS server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
 | TCP port | 80 | TCP-Port des Setups | 
 | MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
-| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
-| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: Zugriff nur von dieser IP möglich | 
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
 | Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |	
 | Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
