@@ -46,7 +46,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
 | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
 | DNS server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
-| TCP port | 80 | TCP-Port des Setups | 
+| TCP Port | 80 | TCP-Port des Setups | 
 | MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
