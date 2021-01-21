@@ -25,7 +25,7 @@ Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:
 - In der rechten Spalte befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_lan_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
   
 ***Wichtig:  
-Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Daten absenden" geklickt werden!***  
+Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Parameter speichern" geklickt werden!***  
   
 Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
 
