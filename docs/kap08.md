@@ -511,8 +511,43 @@ Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wi
 
 ### 8.2.13 Raumgerät-Emulation
   
-*Beschreibung folgt in Kürze.*  
+Mit dem BSB-LAN-Setup lässt sich ein Raumgerät emulieren, dazu ist zusätzliche Hardware erforderlich. 
   
+Im Code implementiert sind folgende Funktionen:  
+
+- Einbindung angeschlossener Sensoren zur Messung und Übermittlung der Raumtemperatur an den/die gewünschten Heizkreis/e, 
+
+- TWW-Push mittels Taster auslösen sowie
+  
+- Präsenztastenfunktion für HK1-3 mittels Taster (automatische Erkennung des Ist-Zustandes mit entspr. Umschaltung zwischen Komfort und Reduziert im Automatikmodus).  
+  
+Um die Funktionen zu nutzen sind die entspr. Einträge in der Konfiguration vorzunehmen, dies kann entweder durch Änderungen in der Datei *BSB_lan_config.h* oder über das Webinterface (Menüpunkt "Einstellungen") erfolgen.  
+
+Nachfolgend einige Hinweise für die jeweiligen Funktionen.  
+
+  
+**Raumtemperatur**  
+- Es können bis zu fünf angeschlossene Sensoren für die Raumtemperaturmessungen angegeben werden.  
+- Kommen mehr als ein Sensor zum Einsatz, so wird automatisch ein Mittelwert gebildet und an den Heizungsregler übertragen.  
+- Um die jeweiligen Sensoren den gewünschten Heizkreisen zuzuordnen, müssen die spezifischen Parameternummern der jeweiligen Sensoren eingetragen werden. Einen Überblick über die angeschlossenen Sensoren samt zugehöriger Parameternummer gibt die Kategorie "One Wire, DHT & MAX! Sensors" (Menüpunkt "Heizungsfunktionen"). 
+- Bei Eingabe mehrerer Sensoren für einen HK sind die Parameternummern lediglich durch ein Komma von einander zu trennen, es darf kein Leerzeichen nach dem Komma verwendet werden.  
+
+  
+**Taster für TWW-Push und Präsenztastenfunktion**  
+- Die verwendeten GPIO-Pins für den Anschluss der Taster (pro Taster ein Pin) sind in der Konfiguration einzustellen.  
+- Es müssen DIGITALpins genutzt werden!  
+- Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12, 18, 19!  
+- Die Taster sind arduino-typisch für HIGH anzuschließen, d.h. du musst zusätzlich zum Taster noch einen PullDown-Widerstand (ca. 100kOhm) für den jeweiligen Pin anschließen.  
+- Ein Pinout-Diagramm des Due findest du in [Anhang B](anhang_b.md).  
+- Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Arduino für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
+    Trotzdem sei an dieser Stelle kurz erwähnt, wie vorzugehen ist:  
+    - Der Taster mit den beiden Anschlüssen A und B wird an einem Anschluss (A) mit dem gewünschten GPIO-Digitalpin des Due verbunden.  
+    - Gleichzeitig wird am selben Anschluss des Tasters (A) der PullDown-Widerstand (mit einer Seite) angeschlossen, welcher wiederum (mit der anderen Seite) mit GND verbunden wird.   
+    *Dies ist wichtig, auf den Einsatz des Widerstands darf nicht verzichtet werden!* Durch den PullDown-Widerstand liegt ein definiertes Potential bei nicht-betätigtem Taster am GPIO an und das sog. 'Floaten' des Eingangs wird verhindert. Würde man auf den PullDown verzichten und der Eingang würde 'floaten', so könnten ungewollte Leveländerungen am Pin entstehen, die wiederum zur Folge hätten, dass die jeweilige Funktion (also TWW-Push oder BA-Umschaltung) ungewollt ausgelöst wird.  
+    - Der andere Anschluss des Tasters (B) wird an einen **3,3V**-Anschluss des Due angeschlossen.  
+    **Achtung: Die Eingänge des Due sind nur 3,3V tolerant, verbinde also** ***keinesfalls*** **den Taster mit einem 5V-Anschlusspin des Due!**  
+    Wird der Taster nun betätigt, wird der Stromkreis geschlossen - das Signal wird als HIGH erkannt und der jeweilige Befehl (TWW-Push/Präsenztaste) wird ausgelöst.  
+
 ---  
 
      
