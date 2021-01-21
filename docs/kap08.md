@@ -529,14 +529,14 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 **Raumtemperatur**  
 - Es können bis zu fünf angeschlossene Sensoren für die Raumtemperaturmessungen angegeben werden.  
 - Kommen mehr als ein Sensor zum Einsatz, so wird automatisch ein Mittelwert gebildet und an den Heizungsregler übertragen.  
-- Um die jeweiligen Sensoren den gewünschten Heizkreisen zuzuordnen, müssen die spezifischen Parameternummern der jeweiligen Sensoren eingetragen werden. Einen Überblick über die angeschlossenen Sensoren samt zugehöriger Parameternummer gibt die Kategorie "One Wire, DHT & MAX! Sensors" (Menüpunkt "Heizungsfunktionen"). 
+- Um die jeweiligen Sensoren den gewünschten Heizkreisen zuzuordnen, müssen die spezifischen Parameternummern der jeweiligen Sensoren eingetragen werden. Einen Überblick über die angeschlossenen Sensoren samt zugehöriger Parameternummer gibt die Kategorie "One Wire, DHT & MAX! Sensors" (Menüpunkt "Heizungsfunktionen" bzw. direkt per Klick auf den Menüpunkt "Sensoren"). 
 - Bei Eingabe mehrerer Sensoren für einen HK sind die Parameternummern lediglich durch ein Komma von einander zu trennen, es darf kein Leerzeichen nach dem Komma verwendet werden.  
 
   
 **Taster für TWW-Push und Präsenztastenfunktion**  
 - Die verwendeten GPIO-Pins für den Anschluss der Taster (pro Taster ein Pin) sind in der Konfiguration einzustellen.  
 - Es müssen DIGITALpins genutzt werden!  
-- Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12, 18, 19!  
+- Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12-21, 31, 33, 53!  
 - Die Taster sind arduino-typisch für HIGH anzuschließen, d.h. du musst zusätzlich zum Taster noch einen PullDown-Widerstand (ca. 100kOhm) für den jeweiligen Pin anschließen.  
 - Ein Pinout-Diagramm des Due findest du in [Anhang B](anhang_b.md).  
 - Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Arduino für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
