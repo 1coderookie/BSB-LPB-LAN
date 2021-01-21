@@ -536,7 +536,7 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 **Taster für TWW-Push und Präsenztastenfunktion**  
 - Die verwendeten GPIO-Pins für den Anschluss der Taster (pro Taster ein Pin) sind in der Konfiguration einzustellen.  
 - Es müssen DIGITALpins genutzt werden!  
-- Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12-21, 31, 33, 53!  
+- Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12, 16-21, 31, 33, 53!  
 - Die Taster sind arduino-typisch für HIGH anzuschließen, d.h. du musst zusätzlich zum Taster noch einen PullDown-Widerstand (ca. 100kOhm) für den jeweiligen Pin anschließen.  
 - Ein Pinout-Diagramm des Due findest du in [Anhang B](anhang_b.md).  
 - Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Arduino für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
