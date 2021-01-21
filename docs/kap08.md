@@ -550,7 +550,15 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 - Zusätzlicher Hinweis: Solltest du die Taster entfernen (bspw. weil du die Funktion nicht mehr benutzen willst), so stelle den entspr. Pin in der Konfiguration bitte auf "0" und speichere die neue Einstellung, so dass der zuvor eingestellte Pin nicht 'floaten' kann!  
 
 ---  
+  
+### 8.2.14 EEPROM-Löschen mittels Pinkontakt  
+  
+Grundsätzlich kann das EEPROM via Webinterface mit dem Befehl /NE gelöscht werden. Es kann aber in bestimmten Situationen (bspw. wenn kein Zugriff auf das Webinterface möglich ist) nötig sein, dass EEPROM auch ohne Nutzung des URL-Befehls zu löschen.   
+*Hierfür müssen die Pins 31 und 33 (zugänglich auf der Adapterplatine) beim Start oder Reboot des Due kurzzeitig miteinander verbunden werden.* Die feste Installation eines Tasters kann hierbei nützlich sein.  
+Nach erfolgreichem Löschen blinkt die Arduino-LED vier Sekunden lang. Beim erneuten Start werden dann die (Vor-)Einstellungen aus der Datei *BSB_lan_config.h* übernommen, eine Anpassung kann danach wie gewohnt via Webinterface erfolgen.  
 
+
+---
      
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
