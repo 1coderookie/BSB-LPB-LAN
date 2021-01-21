@@ -551,7 +551,7 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 
 ---  
   
-### 8.2.14 EEPROM-Löschung mittels Pinkontakt  
+### 8.2.14 EEPROM-Löschung mittels Pinkontakten  
   
 Grundsätzlich kann das EEPROM via Webinterface mit dem Befehl /NE gelöscht werden. Es kann aber in bestimmten Situationen (bspw. wenn kein Zugriff auf das Webinterface möglich ist) nötig sein, das EEPROM auch ohne Nutzung des URL-Befehls zu löschen.   
 *Hierfür müssen die Pins 31 und 33 (zugänglich auf der Adapterplatine) beim Start oder Reboot des Due kurzzeitig miteinander verbunden werden.*    
