@@ -51,7 +51,13 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |	
+| Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
+| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
+| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
+| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
+| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
+| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
+| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
 | Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
 | Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
 | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
@@ -59,22 +65,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
-| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |	
-| Verwenden | Aus | IPWE-Erweiterung verwenden (URL/ipwe.cgi) (Aus/Ein) |	
-| Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung | 
-| Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
-| IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
-| Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
-| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
-| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
-| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
-| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
-| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
-| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
-| Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
-| Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
-| Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
-<!---
+| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
 | TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
 | RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
 | RGT1 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
@@ -82,7 +73,15 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | RGT2 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
 | RGT3 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
 | RGT3 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
---->  
+| Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
+| IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
+| Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
+| Verwenden | Aus | IPWE-Erweiterung verwenden (URL/ipwe.cgi) (Aus/Ein) |	
+| Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung |
+| Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
+| Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
+| Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
+
 
 
 
