@@ -502,6 +502,19 @@ Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wi
 ***Vielen Dank!***  
   
 ---  
+
+### 8.2.12 MQTT
+  
+*Beschreibung folgt in Kürze.*  
+  
+---
+
+### 8.2.13 Raumgerät-Emulation
+  
+*Beschreibung folgt in Kürze.*  
+  
+---  
+
      
 [Weiter zu Kapitel 9](kap09.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
