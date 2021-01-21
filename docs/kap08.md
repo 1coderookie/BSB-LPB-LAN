@@ -547,6 +547,7 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
     - Der andere Anschluss des Tasters (B) wird an einen **3,3V**-Anschluss des Due angeschlossen.  
     **Achtung: Die Eingänge des Due sind nur 3,3V tolerant, verbinde also** ***keinesfalls*** **den Taster mit einem 5V-Anschlusspin des Due!**  
     Wird der Taster nun betätigt, wird der Stromkreis geschlossen - das Signal wird als HIGH erkannt und der jeweilige Befehl (TWW-Push/Präsenztaste) wird ausgelöst.  
+- Zusätzlicher Hinweis: Solltest du die Taster entfernen (bspw. weil du die Funktion nicht mehr benutzen willst), so stelle den entspr. Pin in der Konfiguration bitte auf "0" und speichere die neue Einstellung, so dass der zuvor eingestellte Pin nicht 'floaten' kann!  
 
 ---  
 
