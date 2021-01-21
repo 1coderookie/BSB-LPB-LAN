@@ -542,7 +542,7 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 - Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Arduino für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
     Trotzdem sei an dieser Stelle kurz erwähnt, wie vorzugehen ist:  
     - Der Taster mit den beiden Anschlüssen A und B wird an einem Anschluss (A) mit dem gewünschten GPIO-Digitalpin des Due verbunden.  
-    - Gleichzeitig wird am selben Anschluss des Tasters (A) der PullDown-Widerstand (mit einer Seite) angeschlossen, welcher wiederum (mit der anderen Seite) mit GND verbunden wird.   
+    - Zusätzlich wird am selben Anschluss des Tasters (A) der PullDown-Widerstand angeschlossen, welcher wiederum mit GND des Due verbunden wird.   
     *Dies ist wichtig, auf den Einsatz des Widerstands darf nicht verzichtet werden!* Durch den PullDown-Widerstand liegt ein definiertes Potential bei nicht-betätigtem Taster am GPIO an und das sog. 'Floaten' des Eingangs wird verhindert. Würde man auf den PullDown verzichten und der Eingang würde 'floaten', so könnten ungewollte Leveländerungen am Pin entstehen, die wiederum zur Folge hätten, dass die jeweilige Funktion (also TWW-Push oder BA-Umschaltung) ungewollt ausgelöst wird.  
     - Der andere Anschluss des Tasters (B) wird an einen **3,3V**-Anschluss des Due angeschlossen.  
     **Achtung: Die Eingänge des Due sind nur 3,3V tolerant, verbinde also** ***keinesfalls*** **den Taster mit einem 5V-Anschlusspin des Due!**  
