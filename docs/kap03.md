@@ -259,6 +259,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.3 Weitere Hersteller
 
+-   ATAG QR-Serie {BSB}
+
 -   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
 
 -   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
