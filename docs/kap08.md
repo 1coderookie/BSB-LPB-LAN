@@ -505,7 +505,24 @@ Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wi
 
 ### 8.2.12 MQTT
   
-*Beschreibung folgt in Kürze.*  
+BSB-LAN unterstützt das MQTT-Protokoll, d.h. die Werte und Einstellungen des Heizungsreglers sind per MQTT abrufbar.  
+Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in der Datei *BSB_LAN_config.h* aktiviert sein. Dies ist in der Voreinstellung bereits der Fall.  
+Die abzufragenden Parameter, das Abfrageintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
+Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 10](kap10.md). 
+  
+Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN hierfür Schreibzugriff auf den Regler gewährt werden.  
+  
+Die Befehlssyntax lautet:  
+`set <MQTT-Server> publish <Topic> <Befehl>`  
+- `<MQTT-Server>` = Name des MQTT-Servers  
+- `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_LAN_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
+- `<Befehl>` = der entspr. parameterspezifische URL-Befehl /S oder /I  
+  
+Beispiel:  
+Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus.  
+  
+Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
+
   
 ---
 
