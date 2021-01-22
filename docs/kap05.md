@@ -47,11 +47,11 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
 | DNS Server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
 | TCP Port | 80 | TCP-Port des Setups | 
-| MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields; gilt nicht für WiFi-ESP-Lösung! |
+| MAC-Adresse (nur LAN) | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields (gilt nicht für WiFi-ESP-Lösung!) |
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
+| WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
 | Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
 | IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
 | Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
