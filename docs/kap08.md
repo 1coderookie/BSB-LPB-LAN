@@ -505,9 +505,9 @@ Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wi
 
 ### 8.2.12 MQTT
   
-BSB-LAN unterstützt das MQTT-Protokoll, d.h. die Werte und Einstellungen des Heizungsreglers sind per MQTT abrufbar.  
+BSB-LAN unterstützt das MQTT-Protokoll, d.h. die Werte und Einstellungen des Heizungsreglers sind per MQTT empfangbar.  
 Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in der Datei *BSB_LAN_config.h* aktiviert sein. Dies ist in der Voreinstellung bereits der Fall.  
-Die abzufragenden Parameter, das Abfrageintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
+Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
 Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 10](kap10.md). 
   
 Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN hierfür Schreibzugriff auf den Regler gewährt werden.  
