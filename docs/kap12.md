@@ -532,9 +532,10 @@ Die benötigte Firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) li
 **Konfiguration von BSB-LAN:**  
 Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h* aktiviert werden. Des Weiteren müssen die beiden Variablen `wifi_ssid` und `wifi_pass` entsprechend angepasst und die SSID des WLAN sowie das Passwort eingetragen werden. Diese Angaben können auch im Nachhinein via Webinterface geändert werden.   
   
-*Hinweis:*  
-Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
- 
+*Hinweise:*  
+- Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
+- Bei der Verwendung der ESP-WiFi-Lösung lautet der Hostname *nicht* WIZnetXYZXYZ, sondern i.d.R. ESP-XYZXYZ, wobei sich die Ziffern-Buchstabenkombination "XYZXYZ" nach "ESP-" aus den letzten drei Bytes (also den letzten sechs Zeichen) der MAC-Adresse des ESP zusammensetzt.  
+- Bei Verwendung der ESP-WiFi-Lösung lässt sich die MAC-Adresse des ESP *nicht* selbst festlegen.  
   
 ---  
    
