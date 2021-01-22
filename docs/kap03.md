@@ -410,7 +410,9 @@ Bedarf mittels eines ClipIn-Moduls (OCI345) nachgerüstet werden (für die Nutzu
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
    
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
+Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
+  
+Als Fühler kommen i.d.R. NTC10k (QAD34, QAZ34) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
        
 ---
     
@@ -452,7 +454,9 @@ Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu
 - RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
      
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
-zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
+zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
+  
+Als Fühler kommen i.d.R. NTC10k (QAD34, QAZ34) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
   
 Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
     
