@@ -67,12 +67,12 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
 | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
 | TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
-| RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT1 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
-| RGT2 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT2 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
-| RGT3 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät-Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT3 Präsenztaste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
+| RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 1 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT1 Präsenztaste: Pin | 0 | Raumgerät 1 Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
+| RGT2 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 2 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT2 Präsenztaste: Pin | 0 | Raumgerät 2 Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
+| RGT3 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 3 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT3 Präsenztaste: Pin | 0 | Raumgerät 3 Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
 | Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
 | IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
 | Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
