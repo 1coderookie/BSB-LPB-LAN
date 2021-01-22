@@ -390,8 +390,11 @@ Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglers
       
 Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
+  
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
+Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje). 
+  
+Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
     
 ---  
    
@@ -412,7 +415,7 @@ Bedarf mittels eines ClipIn-Moduls (OCI345) nachgerüstet werden (für die Nutzu
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
   
-Als Fühler kommen i.d.R. NTC10k (QAD34, QAZ34) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
+Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
        
 ---
     
@@ -456,7 +459,7 @@ Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu
 Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
   
-Als Fühler kommen i.d.R. NTC10k (QAD34, QAZ34) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
+Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
   
 Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
     
