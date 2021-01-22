@@ -47,7 +47,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
 | DNS Server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
 | TCP Port | 80 | TCP-Port des Setups | 
-| MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields |
+| MAC-Adresse | 00:80:41:19:69:90 | MAC-Adresse des LAN-Shields; gilt nicht für WiFi-ESP-Lösung! |
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
@@ -119,6 +119,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **MAC-Adresse des Ethernet-Shields:**  
     `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
     Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
+    *Hinweis: Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield! Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar!*
      
     *Wichtiger Hinweis:*  
     *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
@@ -177,8 +178,10 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `char wifi_pass[64] = "YourWiFiPassword";`  
     Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
     
-    `#define WIFI_SPI_SS_PIN 13`  
+    `#define WIFI_SPI_SS_PIN 12`  
     Hier wird der beim DUE zu verwendende SS-Pin definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
+    
+    *Hinweis: Die MAC-Adresse des ESP lässt sich nicht einstellen!*
    
 ---   
    
