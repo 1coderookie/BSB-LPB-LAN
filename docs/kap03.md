@@ -62,6 +62,8 @@ Danke!
 
 -   Brötje BBK EVO 22I \[LMS15\] (Gasbrenner) {BSB}
 
+-   Brötje BBS EVO 20H \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
 -   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
@@ -152,6 +154,8 @@ Danke!
 -   Brötje WBS 14F \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 22 \[LMS14\] (Gasbrenner) {BSB}  
+
+-   Brötje WBS 22D \[LMU74\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 22E \[LMS14\] (Gasbrenner) {BSB}
 
@@ -265,6 +269,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe) {BSB}  
 
+-   Atlantic Alféa Extensa 6+ \[RVS21.831\] (Wärmepumpe) {BSB}  
+
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (Wärmepumpe) {BSB}  
@@ -278,6 +284,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner) {BSB}
 
 -   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Baxi Luna Platinum+ 24 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Bösch (unbekanntes Modell) \[RVS63\] (Wärmepumpe] {BSB}  
 
