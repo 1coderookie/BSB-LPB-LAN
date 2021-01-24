@@ -83,20 +83,23 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 ### 8.2.1 Raumtemperatur übermitteln
 Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
 gesendet werden, um einen Raumeinfluss bei der Berechnung der
-VL-Temperatur geltend zu machen.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
-   
-Für die Raumtemperatur HK1 ist der Spezialparameter 10000, für den
-HK2 der Parameter 10001 zu nutzen.
-
+VL-Temperatur geltend zu machen. Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
+Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
+(bspw. Parameter 750 für HK1, Parameter 1050 für HK2).  
+BSB-LAN muss Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
+Die Raumtemperatur muss regelmäßig in relativ kurzen Intervallen übermittelt werden, bspw. alle ein oder zwei Minuten.  
+      
+Die folgenden Parameter müssen dafür genutzt werden:  
+- 10000 = Heizkreis 1 
+- 10001 = Heizkreis 2
+- 10003 = Heizkreis 3/P
+  
 ***Beispiel:***  
 *Der URL-Befehl für den HK1, um eine Raumtemperatur von
 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`*
 
 ***Hinweis:***  
-*Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
-Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
-(Parameter 750 für HK1, Parameter 1050 für HK2).  
+*  
 Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
 ist die Temperaturmessung in einem Führungs- / Referenzraum zu
 empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
@@ -131,15 +134,21 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
 ---
     
 ### 8.2.2 Präsenztaste simulieren
-Die Funktion der Präsenztaste ist mit dem Spezialparameter 701 (für HK1)
-und 1001 (für HK2) implementiert und als SET-Befehl auszuführen. Die
-genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)). Der Parameter (701) ist NICHT abrufbar.
+Die Funktion der Präsenztaste ist mit den Spezialparametern 
+- 701 = Heizkreis 1, 
+- 1001 = Heizkreis 2 sowie 
+- 1301 = Heizkreis 3/P 
+implementiert und als SET-Befehl auszuführen.  
+Die genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)).  
+Diese Spezialparameter (701, 1001, 1301) sind NICHT abrufbar.
 
-Bei aktivem Automatikprogramm ist dabei  
-`http://<IP-Adresse>/S701=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
-`http://<IP-Adresse>/S701=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
-Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut
-Zeitprogramm gültig.  
+Bei *aktivem Automatikbetrieb* ist dabei  
+`http://<IP-Adresse>/S<Parameter>=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
+`http://<IP-Adresse>/S<Parameter>=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
+  
+Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig.  
+  
+Beispiel: Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
   
 ***Hinweis: Die Präsenztaste ist nur im Automatikbetrieb wirksam!***
 
@@ -352,7 +361,7 @@ damit eine entsprechende Anpassung vorgenommen werden kann.
 ---
     
 ### 8.2.6 IPWE-Erweiterung  
-Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger)stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
+Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger) stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
 `<IP-Adresse>/ipwe.cgi`  
 *Hinweis: Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
   
