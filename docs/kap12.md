@@ -79,7 +79,7 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
     
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs 
 - DS18B20 (OneWire-Sensor: Temperatur), 
-- DHT22 (Temperatur, LUftfeuchtigkeit) sowie 
+- DHT22 (Temperatur, Luftfeuchtigkeit) sowie 
 - BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
 bereits im Softwarepaket des Adapters integriert.
