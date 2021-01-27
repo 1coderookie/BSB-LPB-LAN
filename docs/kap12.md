@@ -315,8 +315,8 @@ Folgende Punkte sind dabei zu beachten:
   
 Der Sensor bzw. das Breakout-Board ist i.d.R. bereits eindeutig beschriftet, so dass die Anschlüsse hier klar identifiziert werden können.  
 Je nach verwendetem Arduino muss ein anderer I2C-Anschluss verwendet werden:  
-- Der **Due** weist zwei I2C-Busanschlüsse auf: SDA/SCL an den pins 20/21 sowie SDA1/SCL1. Es ist darauf zu achten, dass die Anschlüsse **SDA1 & SCL1** verwendet werden, da der BSB-LAN-Adapter bereits die Anschlüsse SDA/SCL verwendet. SDA1/SCL1 befinden sich neben dem "AREF"-Pin. Sie werden i.d.R. vom LAN-Shield verdeckt und sind nicht nach oben zum/durchs LAN-Shield durchgeführt. Sie sind jedoch unterhalb des LAN-Shields direkt auf dem Due zugänglich. Für eine genaue Positionsbestimmung von SDA1/SCL1 sieh dir bitte das [Pinoutdiagramm in Anhang B](anhang_b.md) an.  
-- Der **Mega 2560** weist hingegen nur einen I2C-Busanschluss auf: SDA/SCL. Dieser wird vom alten Adapter v2 nicht belegt, der Anschluss kann für den BME280 verwendet werden.  
+- Der **Due** weist zwei I2C-Busanschlüsse auf: SDA/SCL an den Pins 20/21 sowie SDA1/SCL1. Es ist darauf zu achten, dass die Anschlüsse **SDA1 & SCL1** verwendet werden, da der BSB-LAN-Adapter bereits die Anschlüsse SDA/SCL verwendet. SDA1/SCL1 befinden sich neben dem "AREF"-Pin. Sie werden i.d.R. vom LAN-Shield verdeckt und sind nicht nach oben zum/durchs LAN-Shield durchgeführt. Sie sind jedoch unterhalb des LAN-Shields direkt auf dem Due zugänglich. Für eine genaue Positionsbestimmung von SDA1/SCL1 sieh dir bitte das [Pinoutdiagramm in Anhang B](anhang_b.md) an.  
+- Der **Mega 2560** weist hingegen nur einen I2C-Busanschluss auf: SDA/SCL an den Pins 20/21. Dieser wird vom alten Adapter v2 nicht belegt, der Anschluss kann für den BME280 verwendet werden.  
 
 Die Verkabelung ist wie folgt vorzunehmen:  
 
@@ -324,8 +324,8 @@ Die Verkabelung ist wie folgt vorzunehmen:
 |:------:|:---:|:--------:|
 | VIN | 3,3V | 3,3V |
 | GND | GND | GND |
-| SDA | SDA1 | SDA |
-| SCL | SCL1 | SCL |
+| SDA | SDA1 | SDA 20 |
+| SCL | SCL1 | SCL 21 |
   
 **Adressierung**  
   
