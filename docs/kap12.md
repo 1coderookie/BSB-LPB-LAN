@@ -77,9 +77,10 @@ Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https:/
   
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
     
-Es besteht die Möglichkeit, zusätzliche Sensoren des Typs DS18B20
-(OneWire-Temperatursensor) und DHT22 (Temperatur- und
-Feuchtigkeitssensor) direkt an bestimmte Pins des Adapters bzw. Arduino
+Es besteht die Möglichkeit, zusätzliche Sensoren des Typs 
+- DS18B20 (OneWire-Sensor: Temperatur), 
+- DHT22 (Temperatur, LUftfeuchtigkeit) sowie 
+- BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
 bereits im Softwarepaket des Adapters integriert.
 
