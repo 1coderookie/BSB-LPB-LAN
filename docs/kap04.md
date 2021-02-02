@@ -18,15 +18,15 @@
 -   Benenne den nun erstellten Ordner *bsb_lan-master* in
     ***BSB_lan*** um!
 
--   Wechsle in den Ordner "BSB_lan" und benenne die Datei *BSB_lan_config.h.default* in
-    ***BSB_lan_config.h*** um!  
+-   Wechsle in den Ordner "bsb_lan-master"/"BSB_LAN" und benenne die Datei *BSB_LAN_config.h.default* in
+    ***BSB_LAN_config.h*** um!  
     
 -   Wenn du eigenen Code implementieren willst, benenne die Datei 
-    *BSB_lan_custom.h.default* in ***BSB_lan_custom.h*** um!  
+    *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
 
--   Öffne den BSB_lan-Sketch mittels eines Doppelklicks auf die Datei
-    *BSB_lan.ino* im BSB_lan-Ordner. Die dazugehörigen Dateien
-    *BSB_lan_config.h* und *BSB_lan_defs.h* werden automatisch mit
+-   Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei
+    *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien
+    *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit
     geladen.
 
 -   Stelle sicher, dass du die aktuelle Ethernet-Bibliothek verwendest 
@@ -44,10 +44,10 @@
 -   Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.
 
 -   ***WICHTIG:***  
-*Springe nun zu [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), lies die dortigen Beschreibungen und passe die Datei BSB_lan_config.h deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen.*  
-***Entscheidend ist, dass du zumindest die Netzwerkeinstellungen wunschgemäß anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!***  
+*Springe nun zu [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), lies die dortigen Beschreibungen und passe die Datei BSB_LAN_config.h deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen.*  
+***Entscheidend ist, falls du DHCP nicht verwenden möchtest, dass du zumindest die Netzwerkeinstellungen wunschgemäß anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!***  
 
--   Nachdem du *zumindest* die Netzwerkeinstellungen in der Datei *BSB_lan_config.h* deinen Wünschen entsprechend angepasst hast, starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino.
+-   Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino.
 
 -   Verbinde den Arduino mittels LAN-Kabel mit deinem Router/Switch.
     Stelle dabei sicher, dass eine Stromversorgung für den Arduino via
