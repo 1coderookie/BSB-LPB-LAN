@@ -17,14 +17,14 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
    
 3. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
-4. Entpacke die heruntergeladene Datei "bsb_lan-master.zip" und benenne den Ordner in "BSB_lan" um.  
+4. Entpacke die heruntergeladene Datei "bsb_lan-master.zip" und wechsle in den Ordner.  
 
-5. Wechsle in den Ordner "BSB_lan". Bennene die dortige Datei "BSB_lan_config.h.default" in "BSB_lan_config.h" um.  
+5. Wechsle in den Ordner "BSB_LAN". Bennene die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
 
-6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_lan.ino" im BSB_lan-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Due automatisch samt verwendetem COM-Port erkennen.  
+6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Due automatisch samt verwendetem COM-Port erkennen.  
 *Für die Schritte 2-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
 
-7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_lan_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
+7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
 *Beachte hierfür das [Kapitel 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)!*  
 Wenn alle Einstellungen angepasst wurden, flashe den Arduino mit der BSB-LAN-Software.  
 *Hinweis:* Die Konfiguration kann auch nach dem Flashvorgang via Webinterface (Seite "Einstellungen") erfolgen.  
