@@ -556,7 +556,8 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
    
 ### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266  
   
-Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden. Der ESP8266 wird dabei vom Due mit Strom versorgt (+5V) und dient im Grunde anstelle des LAN-Shields nur als Schnittstelle, um über das Netzwerk auf den Due zuzugreifen. Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
+Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden.  
+Der ESP8266 wird dabei vom Due mit Strom versorgt (+5V) und dient im Grunde anstelle des LAN-Shields nur als Schnittstelle, um über das Netzwerk auf den Due zuzugreifen. Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
   
