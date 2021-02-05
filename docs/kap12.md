@@ -556,7 +556,7 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
    
 ### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266  
   
-Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden.  
+Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden. Der ESP8266 wird dabei vom Due mit Strom versorgt (+5V) und dient im Grunde anstelle des LAN-Shields nur als Schnittstelle, um über das Netzwerk auf den Due zuzugreifen. Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
   
@@ -566,12 +566,12 @@ Die Anschlüsse sind wie folgt zu verbinden:
   
 | Pin DUE | Funktion | Pin ESP8266 |  
 |:-----------:|:-------------:|:----------:|  
-|SPI 1 | MISO | D06 |  
-|SPI 2 | VCC | +5V |  
-|SPI 3 | SCK | D05 |  
-|SPI 4 | MOSI | D07 |  
-|SPI 6 | GND | GND |  
-|Pin 12 | SS | D08 |  
+|SPI 1 | MISO (Master Innput Slave Output) | D06 |  
+|SPI 2 | VCC (Stromversorgung ESP) | +5V / Vin |  
+|SPI 3 | SCK (Serial Clock) | D05 |  
+|SPI 4 | MOSI (Master Output Slave Input) | D07 |  
+|SPI 6 | GND (Stromversorgung ESP) | GND |  
+|Pin 12 | SS (Slave Select) | D08 |  
    
 Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 12 = D08 beim ESP8266) verzichtet werden.  
 Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 12 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 12) zu belassen.     
