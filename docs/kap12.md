@@ -133,7 +133,7 @@ Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes
 - In der Arduino IDE muss die ESP32-Plattform im Boardmanager installiert und verfügbar sein. 
 *Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) (Englisch: https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
 - Unter Umständen muss Python und Python-Serial installiert sein (falls die Arduino IDE eine solche Fehlermeldung beim Versuch des Flashens herausgibt).   
-- Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus.  
+- Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus. Bei Verwendung des empfohlenen Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.  
 - Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
 - Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
   
@@ -154,8 +154,6 @@ Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplati
   
 Diese BSB-LAN-Adapterplatine ist auf das 30 polige [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt. Es ist in Deutschland u.a. bei [Reichelt](https://www.reichelt.de/nodemcu-esp32-wifi-und-bluetooth-modul-debo-jt-esp32-p219897.html) erhältlich.  
 Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
-  
-*Hinweis: Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.*  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
   
@@ -164,7 +162,10 @@ Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net
 Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Board zum Einsatz kommen, so muss in jedem Fall auf zwei Dinge geachtet werden, damit der ESP32-spezifische BSB-LAN-Adapter passt:  
 1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige nodeMCUs - diese passen *nicht*!  
 2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
-
+  
+  
+***Hinweis:***  
+***Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.*** 
 
 ---
   
