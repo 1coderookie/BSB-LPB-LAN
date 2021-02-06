@@ -109,7 +109,6 @@
 [12.7 LAN-Optionen für den BSB-LPB-LAN-Adapter](kap12.md#127-lan-optionen-für-den-bsb-lpb-lan-adapter)  
 [12.7.1 Nutzung eines PowerLANs / dLANs](kap12.md#1271-nutzung-eines-powerlans--dlans)  
 [12.7.2 WLAN: Nutzung eines extra Routers](kap12.md#1272-wlan-nutzung-eines-extra-routers)   
-[12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266)  
 [12.8 Gehäuse](kap12.md#128-gehäuse)  
 [12.9 Raspberry Pi](kap12.md#129-raspberry-pi)  
 [13. Etwaige Fehlermeldungen und deren mögliche Ursachen](kap13.md)  
