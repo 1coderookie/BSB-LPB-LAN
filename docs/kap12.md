@@ -35,7 +35,7 @@ Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspa
 
 ---
     
-## 12.2 Das LAN-Shield
+### 12.1.1 Due + LAN: Das LAN-Shield
 *Grundsätzlich ist die Verwendung eines [originalen Arduino Ethernet-Shields](https://store.arduino.cc/arduino-ethernet-shield-2) zu empfehlen, das direkt auf den Arduino Due aufgesteckt werden kann.*  
 
 Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum einen mit einem WIZnet W5100-Chip (v1), zum anderen mit einem W5500-Chip (v2).  
@@ -69,6 +69,127 @@ Es wird jedoch berichtet, dass das zusätzliche Bestücken mit zwei 100 Ohm Wide
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Pins_RJ45.png">
     
 Wer die Diskussion dazu im FHEM-Forum nachlesen möchte, kann das [hier](https://forum.fhem.de/index.php/topic,29762.msg865768.html#msg865768) tun.  
+  
+---
+   
+### 12.1.2 Due + WLAN: Die ESP8266-WiFi-Lösung  
+  
+Das Due-Setup lässt sich mittels eines ESP8266 (NodeMCU oder Wemos D1) anstelle des LAN-Shields auch in WLAN-Netzwerke integrieren.  
+Hierfür ist der ESP8266 mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden und wird dabei vom Due mit Strom versorgt (+5V). Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
+  
+*Der zu verwendende sechspolige SPI-Anschluss des Arduino Due.*  
+   
+Die Anschlüsse sind wie folgt zu verbinden:  
+  
+| Pin DUE | Funktion | Pin ESP8266 |  
+|:-----------:|:-------------:|:----------:|  
+|SPI 1 | MISO (Master Innput Slave Output) | D06 |  
+|SPI 2 | VCC (Stromversorgung ESP) | +5V / Vin |  
+|SPI 3 | SCK (Serial Clock) | D05 |  
+|SPI 4 | MOSI (Master Output Slave Input) | D07 |  
+|SPI 6 | GND (Stromversorgung ESP) | GND |  
+|Pin 12 | SS (Slave Select) | D08 |  
+   
+Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 12 = D08 beim ESP8266) verzichtet werden.  
+Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 12 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 12) zu belassen.     
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
+  
+*Die korrespondierenden Anschlüsse beim Wemos D1.*  
+     
+Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten.   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
+  
+*Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
+   
+*Achtung:*  
+Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss). Ob ein paralleler Betrieb von LAN-Shield und ESP8266 problemlos möglich ist, wurde bisher jedoch noch nicht getestet.   
+   
+**Flashen des ESP8266:**  
+Der ESP8266 muss mit einer speziellen Firmware geflasht werden. Für die Verwendung der Arduino IDE muss darauf geachtet werden, dass zuvor die entspr. ESP8266-Bibliotheken mittels des Boardverwalters installiert wurden.  
+Die benötigte Firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) liegt bereits als zip-file im BSB-LAN-Repository. Das zip-file *muss in einem anderen Ordner als BSB_lan* entpackt werden! Der ESP8266 ist dann mit der Datei *WiFiSPIESP.ino* zu flashen.  
+  
+**Konfiguration von BSB-LAN:**  
+Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h* aktiviert werden. Des Weiteren müssen die beiden Variablen `wifi_ssid` und `wifi_pass` entsprechend angepasst und die SSID des WLAN sowie das Passwort eingetragen werden. Diese Angaben können auch im Nachhinein via Webinterface geändert werden.   
+  
+*Hinweise:*  
+- Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
+- Bei der Verwendung der ESP-WiFi-Lösung lautet der Hostname *nicht* WIZnetXYZXYZ, sondern i.d.R. ESP-XYZXYZ, wobei sich die Ziffern-Buchstabenkombination "XYZXYZ" nach "ESP-" aus den letzten drei Bytes (also den letzten sechs Zeichen) der MAC-Adresse des ESP zusammensetzt.  
+- Bei Verwendung der ESP-WiFi-Lösung lässt sich die MAC-Adresse des ESP *nicht* selbst festlegen.  
+  
+---  
+    
+## 12.2 Der ESP32
+  
+BSB-LAN ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen. Diese wären: 
+- Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht mehr im BSB-LAN- bzw. src-Ordner vorhanden sein!  
+- Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
+- Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
+
+Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes geachtet werden:  
+- In der Arduino IDE muss die ESP32-Plattform im Boardmanager installiert und verfügbar sein. 
+*Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) (Englisch: https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
+- Unter Umständen muss Python und Python-Serial installiert sein (falls die Arduino IDE eine solche Fehlermeldung beim Versuch des Flashens herausgibt).   
+- Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus.  
+- Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
+- Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
+  
+
+--
+
+### 12.2.1 ESP32 mit spezifischem BSB-LAN-Adapter
+
+Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, unbestückt.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB_assembled.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, bestückt.*    
+  
+Diese BSB-LAN-Adapterplatine ist auf das 30 polige [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (Chip: ESP WROOM 32) (Englisch: https://joy-it.net/en/products/SBC-NodeMCU-ESP32) ausgelegt. Es ist in Deutschland u.a. bei [Reichelt](https://www.reichelt.de/nodemcu-esp32-wifi-und-bluetooth-modul-debo-jt-esp32-p219897.html) erhältlich.  
+Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) (Englisch: https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
+  
+*Hinweis: Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "ESP WROOM 32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.*  
+  
+Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Board zum Einsatz kommen, so muss in jedem Fall auf zwei Dinge geachtet werden, damit der ESP32-spezifische BSB-LAN-Adapter passt:  
+1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige nodeMCUs - diese passen *nicht*!  
+2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
+  
+*Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
+
+--
+  
+### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter  
+  
+Der bisherige Due-kompatible Adapter (ab v3) lässt sich ebenfalls mit einem ESP32 verwenden. Das EEPROM des Adapters wird hierbei nicht benötigt/verwendet und ist dementsprechend auch bei der Verkabelung nicht zu berücksichtigen.  
+Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor genannte Joy-It-boardkompatible NodeMCU-Variante gegeben, da ohnehin eine 'lose' Verkabelung oder der Eigenbau einer kleinen Adapterplatine zur stabileren Aufnahme des BSB-LAN-Adapters und des ESP32 nötig ist. Es sollte jedoch darauf geachtet werden, dass die unten angegebenen Pinnummern/-belegungen mit denen des gewählten ESP32 übereinstimmen.  
+  
+Die Verbindungen sind wie folgt vorzunehmen:  
+  
+| BSB-LAN-Adapter | Funktion | EPS32 Board |
+|:---------------:|:-----------:|:---------:|
+| Pin 53 | VCC (Stromversorgung Adapter) | 3,3V |
+| GND | GND (Stromversorgung Adapter) | GND |
+| TX1 | TX (Senden) | Pin 17 (TX2) |
+| RX1 | RX (Empfangen) | Pin 16 (RX2) | 
+  
+Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip) in der Größe eines Arduino Uno mit einer selbstgebastelten Adapterplatine (Uno-kompatible Prototyping-Platine) für die Aufnahme des BSB-LAN-Adapters v3 (Due-Version) gezeigt. Selbstverständlich sind auch andere Varianten, wie bspw. mit einem ESP32-NodeMCU und einer entsprechend angepassten Lochrasterplatine möglich.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32-Due_adapter.jpg">  
+  
+*Links das "ESP32 D1 R32"-Board, rechts die entsprechende aufsteckbare Platine zur Aufnahme des BSB-LAN-Adapters v3 (Due-Version).*  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32+Due-adapter.jpg">  
+  
+*Der komplette Aufbau.*  
 
     
 ---
@@ -554,55 +675,7 @@ In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden -
     
 ---
    
-### 12.7.3 WLAN: Verwendung eines zusätzlichen ESP8266  
-  
-Eine weitere Möglichkeit für eine WLAN-Anbindung liegt darin, einen ESP8266 (NodeMCU oder Wemos D1) mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden.  
-Der ESP8266 wird dabei vom Due mit Strom versorgt (+5V) und dient im Grunde anstelle des LAN-Shields nur als Schnittstelle, um über das Netzwerk auf den Due zuzugreifen. Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
-  
-*Der zu verwendende sechspolige SPI-Anschluss des Arduino Due.*  
-   
-Die Anschlüsse sind wie folgt zu verbinden:  
-  
-| Pin DUE | Funktion | Pin ESP8266 |  
-|:-----------:|:-------------:|:----------:|  
-|SPI 1 | MISO (Master Innput Slave Output) | D06 |  
-|SPI 2 | VCC (Stromversorgung ESP) | +5V / Vin |  
-|SPI 3 | SCK (Serial Clock) | D05 |  
-|SPI 4 | MOSI (Master Output Slave Input) | D07 |  
-|SPI 6 | GND (Stromversorgung ESP) | GND |  
-|Pin 12 | SS (Slave Select) | D08 |  
-   
-Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 12 = D08 beim ESP8266) verzichtet werden.  
-Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 12 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 12) zu belassen.     
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
-  
-*Die korrespondierenden Anschlüsse beim Wemos D1.*  
-     
-Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten.   
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
-  
-*Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
-   
-*Achtung:*  
-Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss). Ob ein paralleler Betrieb von LAN-Shield und ESP8266 problemlos möglich ist, wurde bisher jedoch noch nicht getestet.   
-   
-**Flashen des ESP8266:**  
-Der ESP8266 muss mit einer speziellen Firmware geflasht werden. Für die Verwendung der Arduino IDE muss darauf geachtet werden, dass zuvor die entspr. ESP8266-Bibliotheken mittels des Boardverwalters installiert wurden.  
-Die benötigte Firmware [WiFiSpiESP](https://github.com/JiriBilek/WiFiSpiESP) liegt bereits als zip-file im BSB-LAN-Repository. Das zip-file *muss in einem anderen Ordner als BSB_lan* entpackt werden! Der ESP8266 ist dann mit der Datei *WiFiSPIESP.ino* zu flashen.  
-  
-**Konfiguration von BSB-LAN:**  
-Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h* aktiviert werden. Des Weiteren müssen die beiden Variablen `wifi_ssid` und `wifi_pass` entsprechend angepasst und die SSID des WLAN sowie das Passwort eingetragen werden. Diese Angaben können auch im Nachhinein via Webinterface geändert werden.   
-  
-*Hinweise:*  
-- Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden.
-- Bei der Verwendung der ESP-WiFi-Lösung lautet der Hostname *nicht* WIZnetXYZXYZ, sondern i.d.R. ESP-XYZXYZ, wobei sich die Ziffern-Buchstabenkombination "XYZXYZ" nach "ESP-" aus den letzten drei Bytes (also den letzten sechs Zeichen) der MAC-Adresse des ESP zusammensetzt.  
-- Bei Verwendung der ESP-WiFi-Lösung lässt sich die MAC-Adresse des ESP *nicht* selbst festlegen.  
-  
----  
+
    
 ## 12.8 Gehäuse
       
