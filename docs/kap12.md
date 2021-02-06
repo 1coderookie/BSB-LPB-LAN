@@ -131,7 +131,7 @@ BSB-LAN ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimm
 
 Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes geachtet werden:  
 - In der Arduino IDE muss die ESP32-Plattform im Boardmanager installiert und verfügbar sein. 
-*Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) (Englisch: https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Manual-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
+*Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) verfügbar. Dort ist neben dem boardspezifischen Pinoutschema auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
 - Unter Umständen muss Python und Python-Serial installiert sein (falls die Arduino IDE eine solche Fehlermeldung beim Versuch des Flashens herausgibt).   
 - Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus. Bei Verwendung des empfohlenen Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.  
 - Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
