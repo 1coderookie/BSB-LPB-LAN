@@ -156,14 +156,15 @@ Diese BSB-LAN-Adapterplatine ist auf das 30 polige [ESP32-NodeMCU-Board von Joy-
 Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
   
 *Hinweis: Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.*  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
+  
+*Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
   
 Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Board zum Einsatz kommen, so muss in jedem Fall auf zwei Dinge geachtet werden, damit der ESP32-spezifische BSB-LAN-Adapter passt:  
 1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige nodeMCUs - diese passen *nicht*!  
 2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
-  
-*Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
+
 
 ---
   
