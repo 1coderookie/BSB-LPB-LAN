@@ -137,8 +137,6 @@ Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes
 - Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
 - Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
   
-*Tipp: Eine sehr gute (englische) Seite bzgl. ESP32 ist die von ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), dort finden sich zahlreiche Informationen rund um das Thema ESP32, auch zur Fehlersuche. Das dort verwendete Board "ESP32 DOIT DEVKIT V1" ist m.W. identisch mit dem von uns empfohlenen Joy-It-Board.*    
-
 ---
 
 ### 12.2.1 ESP32 mit spezifischem "BSB-LAN ESP32"-Adapter  
@@ -169,8 +167,6 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
   
 ***Hinweis:***  
 ***Bei Verwendung des Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.***  
-  
-*Tipp: Eine sehr gute (englische) Seite bzgl. ESP32 ist die von ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), dort finden sich zahlreiche Informationen rund um das Thema ESP32, auch zur Fehlersuche. Das dort verwendete Board "ESP32 DOIT DEVKIT V1" ist m.W. identisch mit dem von uns empfohlenen Joy-It-Board.*      
 
 ---
   
@@ -200,8 +196,7 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
   
 *Der komplette Aufbau.*  
   
-*Tipp: Eine sehr gute (englische) Seite bzgl. ESP32 ist die von ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), dort finden sich zahlreiche Informationen rund um das Thema ESP32, auch zur Fehlersuche. Das dort verwendete Board "ESP32 DOIT DEVKIT V1" ist m.W. identisch mit dem von uns empfohlenen Joy-It-Board.*    
-  
+
 ---  
   
 ### 12.2.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter V2  
@@ -238,8 +233,7 @@ Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X"
   
 Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu bestücken und sich eine kleine Adapterplatine aus einer Lochrasterplatine und Pinheadern aufzubauen, auf der der Adapter und das ESP32-Board aufgesteckt werden könnnen, um einen stabilen Aufbau und eine sichere Verbindung zu gewährleisten.     
     
-*Tipp: Eine sehr gute (englische) Seite bzgl. ESP32 ist die von ["Random Nerd Tutorials"](https://randomnerdtutorials.com/getting-started-with-esp32/), dort finden sich zahlreiche Informationen rund um das Thema ESP32, auch zur Fehlersuche. Das dort verwendete Board "ESP32 DOIT DEVKIT V1" ist m.W. identisch mit dem von uns empfohlenen Joy-It-Board.*        
-    
+
 ---
    
 ## 12.3 Verwendung optionaler Sensoren: DHT22, DS18B20, BME280
