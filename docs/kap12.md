@@ -124,6 +124,8 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
     
 ## 12.2 Der ESP32
   
+***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+  
 BSB-LAN ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen. Diese wären: 
 - Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht mehr im BSB-LAN- bzw. src-Ordner vorhanden sein!  
 - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
@@ -140,7 +142,9 @@ Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes
 
 ---
 
-### 12.2.1 ESP32 mit spezifischem "BSB-LAN ESP32"-Adapter
+### 12.2.1 ESP32 mit spezifischem "BSB-LAN ESP32"-Adapter  
+  
+***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
 
 Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
@@ -170,6 +174,8 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 ---
   
 ### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab v3  
+  
+***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
   
 Der bisherige Due-kompatible Adapter (ab v3) lässt sich ebenfalls mit einem ESP32 verwenden. Das EEPROM des Adapters wird hierbei nicht benötigt/verwendet und ist dementsprechend auch bei der Verkabelung nicht zu berücksichtigen.  
 Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor genannte Joy-It-boardkompatible NodeMCU-Variante gegeben, da ohnehin eine 'lose' Verkabelung oder der Eigenbau einer kleinen Adapterplatine zur stabileren Aufnahme des BSB-LAN-Adapters und des ESP32 nötig ist. Es sollte jedoch darauf geachtet werden, dass die unten angegebenen Pinnummern/-belegungen mit denen des gewählten ESP32 übereinstimmen.  
