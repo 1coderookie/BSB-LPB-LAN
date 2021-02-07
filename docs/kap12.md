@@ -253,7 +253,7 @@ Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino
 PullUp-Widerstände!) stattfinden.
 
 Zur Nutzung dieser Sensoren muss lediglich die *Konfiguration in der
-Datei BSB\_lan\_config.h entsprechend angepasst werden*: Es sind die
+Datei BSB\_LAN\_config.h entsprechend angepasst werden*: Es sind die
 jeweiligen Definements zu aktivieren und die für DATA genutzten
 Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [5](kap05.md)).
 
@@ -261,27 +261,14 @@ Auf die Daten der Sensoren kann nach erfolgter Installation über das
 Webinterface (Button "Sensoren" im oberen Bereich oder Kategorie "One Wire, DHT & MAX! Sensors") oder mittels des
 URL-Befehls mit der entspr. Kategorienummer zugegriffen werden.  
    
-Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_lan\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
+Darüber hinaus werden sie unter `<URL>/ipwe.cgi` standardmäßig mit angezeigt. Voraussetzung hierfür ist jedoch, dass die IPWE-Erweiterung in der Datei *BSB\_LAN\_config.h* durch das entspr. Definement aktiviert wurde (s. Kap. [5](kap05.md)).
    
 Sollen die gemessenen Werte geloggt werden oder sind
 24h-Mittelwertsberechnungen gewünscht, so kann dies mit den jeweiligen
-Anpassungen in der Datei *BSB\_lan\_config.h* (s. Kap. [5](kap05.md)) ganz einfach realisiert
+Anpassungen in der Datei *BSB\_LAN\_config.h* (s. Kap. [5](kap05.md)) ganz einfach realisiert
 werden.
 
-***Tipp:***  
-*Werden DS18B20-Sensoren verwendet, so werden in der Kategorie "One Wire, DHT & MAX! Sensors" (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
-Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf der Sensor-Kategorie anhand der Temperaturschwankung identifiziert werden.  
-Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie in der enstpr. Kategorie angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie in der entspr. Kategorie angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
-Die folgenden Screenshots verdeutlichen das Geschilderte.*  
 
-*Ausgabe von /K49 mit zwei installierten Sensoren:*  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_2sensoren_T.jpg">  
-   
-*Nach dem Hinzufügen eines dritten Sensors und erfolgtem Neustart des Arduino ändert sich die dargestellte Reihenfolge:*     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_3sensoren_T.jpg">  
-   
-*Hinweis:  
-Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden.*  
 
 
     
@@ -309,23 +296,17 @@ Bei Anschluss des Sensors sollte ein PullUp-Widerstand zwischen VCC (Pin 1) und 
 ***Bitte beachte:***    
 *Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
 DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-BSB\_lan\_config.h definiert werden!*  
+BSB\_LAN\_config.h definiert werden!*  
         
 Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AM2302.jpg">  
    
-Die Ausgabe der Werte im Webinterface ist wie folgt strukturiert (exemplarisch mit einem Sensor):  
-```
-temp[0]: 17.80 °C
-hum[0]: 55.90 %
-abs_hum[0]: 8.47 g/m3
-```
-Die Ausgabe im Seriellen Monitor ist hingegen so strukturiert (exemplarisch mit einem Sensor):  
-```
-DHT22 sensors: 1
-OK,	temp[0]: 18.80, hum[0]: 53.90
-```
+Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (Bereich 20100-20199) oder durch den Aufruf der entspr. Kategorie erfolgen. Der folgende Screenshot zeigt die Webausgabe eines angeschlossenen DHT22-Sensors.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DHT22_web.png">  
+  
+*Darstellung der Messwerte eines DHT22 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*  
    
 *Tipp:*  
 *Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele für die Anwendung von DHT22-Sensoren.*
@@ -347,22 +328,19 @@ Die gekapselte Ausführung macht den Einsatz gerade im Bereich der Heizungssteue
 sehr interessant, da hiermit schnell und kostengünstig eine individuelle
 Installation für diverse Temperaturmessungen realisiert werden kann.  
    
-Die Ausgabe der Werte im Webinterface ist wie folgt strukturiert (exemplarisch mit zwei Sensoren):  
-```
-1w_temp[0] <16_stellige_ID>: 21.75 °C
-1w_temp[1] <16_stellige_ID>: 21.63 °C 
-```
-Die Ausgabe im Seriellen Monitor ist hingegen so strukturiert (exemplarisch mit zwei Sensoren):  
-```
-1w_temp[0]: 21.75
-1w_temp[1]: 21.63
-```
-Im Logfile der SD-Karte werden die Sensoren anhand der virtuellen Parameter 20020+ aufgeführt, unter denen sie auch in der Datei *BSB_lan_config.h* als zu loggende Parameter aufzuführen sind:  
-```
-20020;Temperature 0;21.75
-20021;Temperature 1;21.63
-```  
    
+Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (Bereich 20300-20399) oder durch den Aufruf der entspr. Kategorie erfolgen. Der folgende Screenshot zeigt die Webausgabe von vier an Pin 7 angeschlossenen DS18B20-Sensoren.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/DS18B20_web.png">  
+  
+*Darstellung der Messwerte von vier DS18B20 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*
+  
+***Tipp:***  
+*Werden DS18B20-Sensoren verwendet, so werden in der Kategorie "One Wire, DHT & MAX! Sensors" (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).  
+Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf der Sensor-Kategorie anhand der Temperaturschwankung identifiziert werden.  
+Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie in der enstpr. Kategorie angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie in der entspr. Kategorie angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.  
+*Hinweis:  
+Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden.*    
    
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
@@ -512,13 +490,8 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BME280_screenshot.png">  
     
-*Darstellung der Messwerte des BME280 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors".*  
-  
-  
+*Darstellung der Messwerte eines BME280 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*  
     
-
-
-        
 ---
     
 ## 12.4 Relais und Relaisboards  
