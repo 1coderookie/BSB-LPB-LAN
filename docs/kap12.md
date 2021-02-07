@@ -169,14 +169,14 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 
 ---
   
-### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter  
+### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab v3  
   
 Der bisherige Due-kompatible Adapter (ab v3) lässt sich ebenfalls mit einem ESP32 verwenden. Das EEPROM des Adapters wird hierbei nicht benötigt/verwendet und ist dementsprechend auch bei der Verkabelung nicht zu berücksichtigen.  
 Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor genannte Joy-It-boardkompatible NodeMCU-Variante gegeben, da ohnehin eine 'lose' Verkabelung oder der Eigenbau einer kleinen Adapterplatine zur stabileren Aufnahme des BSB-LAN-Adapters und des ESP32 nötig ist. Es sollte jedoch darauf geachtet werden, dass die unten angegebenen Pinnummern/-belegungen mit denen des gewählten ESP32 übereinstimmen.  
   
 Die Verbindungen sind wie folgt vorzunehmen:  
   
-| BSB-LAN-Adapter | Funktion | EPS32 Board |
+| BSB-LAN-Adapter ab v3 | Funktion | EPS32 Board |
 |:---------------:|:-----------:|:---------:|
 | Pin 53 | VCC (Stromversorgung Adapter) | 3,3V |
 | GND | GND (Stromversorgung Adapter) | GND |
@@ -192,7 +192,39 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32+Due-adapter.jpg">  
   
 *Der komplette Aufbau.*  
+  
+---  
+  
+### 12.2.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter v2  
+    
+Der BSB-LAN-Adapter v2 kann ebenfalls an einem ESP32 betrieben werden. So kann von der Weiterentwicklung und den neuen Funktionen der BSB-LAN-Software ab v2.x profitiert werden, ohne dass ein neuer Adapter angeschafft werden muss. Dazu müssen am Adapter selbst einige Änderungen vorgenommen werden, die im Folgenden beschrieben werden.  
+*Achtung: Die nachfolgend beschriebenen Schritte zur 'Umrüstung' des Adapters auf 3,3V gelten nur für den Einsatz an einem ESP32 - an einem Due kann der Adapter v2 aufgrund des fehlenden EEPROMs nicht genutzt werden!*       
+    
+Um den Adapter v2 erfolgreich an einem ESP32 betreiben zu können, muss der Adapter auf den Betrieb mit 3,3V 'umgerüstet' werden. Dies ist für die Nutzung mit einem Raspberry Pi bereits vorgesehen. Nachfolgende Schritte müssen vorgenommen werden:  
+- Der Adapter ist *komplett* zu bestücken. Wenn der Adapter bisher nur für die Nutzung mit dem Arduino Mega 2560 bestückt ist, so müssen folgende Komponenten nachgerüstet werden:  
+    - 1x Widerstand 4,7kΩ (→ R11)
+    - 2x Widerstand 10kΩ (→ R12, R13)
+    - 1x Transistor BC557A (→ Q11)
+    - 1x Transistor BC547A (→ Q12)
+- Die Lötbrücken *SJ2* und *SJ3* sind durch einen Lötpunkt zu *schließen*.  
+- Die Lötbrücke *SJ1* ist zu *entfernen*.  
 
+Nun ist der Adapter für den Betrieb an einem 3,3V-System vorbereitet.  
+Zum Anschluss an den ESP muss nun die "RasPi"-Kontaktreihe genutzt und wie folgt mit dem ESP32 verbunden werden:    
+  
+| BSB-LAN-Adapter v2 | Funktion | EPS32 Board |
+|:---------------:|:-----------:|:---------:|
+| Pin 06 | GND (Stromversorgung Adapter) | GND |
+| Pin 08 | TX (Senden) | Pin 17 (TX2) |
+| Pin 10 | RX (Empfangen) | Pin 16 (RX2) |
+| Pin 12 | 3,3V (Stromversorgung Adapter) | 3,3V |     
+
+Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X" bei SJ1 markiert die *entfernte* Lötbrücke (den nicht-geschlossenen Kontakt), die beiden gelben Umrandungen bei SJ2 und SJ3 markieren die *zu schließenden* Lötbrücken.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/adapter_v2-ESP.jpeg">  
+  
+*Der umgerüstete Adapter v2 für die Nutzung mit einem ESP32.*  
+  
     
 ---
    
