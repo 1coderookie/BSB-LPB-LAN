@@ -5,8 +5,7 @@
     
 
 # 12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter
-    
-    
+        
 ---
     
 ## 12.1 Der Arduino Due
@@ -127,14 +126,13 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
 ***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
   
 BSB-LAN ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen. Diese wären: 
-- Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht mehr im BSB-LAN- bzw. src-Ordner vorhanden sein!  
+- Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht mehr im "BSB-LAN"- bzw. "src"-Ordner vorhanden sein!  
 - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
 - Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
 
 Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes geachtet werden:  
 - In der Arduino IDE muss die ESP32-Plattform im Boardmanager installiert und verfügbar sein. 
 *Hinweis: Für das im nachfolgenden Kapitel empfohlene Board von Joy-It ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-20200320.pdf) verfügbar. Dort ist neben dem boardspezifischen Pinoutschema auch eine generelle Anleitung zur Installation und Verwendung von ESP32-Boards mit der Arduino IDE enthalten!*     
-- Unter Umständen muss Python und Python-Serial installiert sein (falls die Arduino IDE eine solche Fehlermeldung beim Versuch des Flashens herausgibt).   
 - Wähle den entspr. ESP32-Boardtyp und den Port in der Arduino IDE aus. Bei Verwendung des empfohlenen Joy-It-Boards oder eines identischen Clones mit einem "WROOM32"-Chip muss in der Arduino IDE als Boardtyp "ESP32 Dev Module" ausgewählt werden.  
 - Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
 - Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
@@ -173,7 +171,7 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 
 ---
   
-### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab v3  
+### 12.2.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab V3  
   
 ***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
   
@@ -201,7 +199,7 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
   
 ---  
   
-### 12.2.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter v2  
+### 12.2.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter V2  
   
 ***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
     
