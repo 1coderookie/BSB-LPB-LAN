@@ -170,7 +170,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 -   **WiFi per zusätzlichem ESP8266:**  
     `//#define WIFI`  
-    Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-Lösung](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) genutzt werden soll.  
+    Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-WiFi-Lösung](kap12.md#1212-due--wlan-die-esp8266-wifi-lösung) oder mittels eines [ESP32](kap12.md#122-der-esp32) genutzt werden soll.  
     
     `char wifi_ssid[32] = "YourWiFiNetwork";` 
     Bei Verwendung von WiFi, *YourWiFiNetwork* durch die SSID des WLAN-Netzwerkes ersetzen.  
@@ -179,7 +179,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
     
     `#define WIFI_SPI_SS_PIN 12`  
-    Hier wird der beim DUE zu verwendende SS-Pin definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
+    Hier wird der beim DUE zu verwendende SS-Pin für die [ESP8266-WiFi-Lösung](kap12.md#1212-due--wlan-die-esp8266-wifi-lösung) definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
     
     *Hinweis: Die MAC-Adresse des ESP lässt sich nicht einstellen!*
    
@@ -236,18 +236,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Wird die Voreinstellung `{0,0,0,0}` nicht geändert und/oder die erste Zahl ist eine 0, ist diese Funktion deaktiviert.  
 
 -   **User-Pass:**  
-    `char USER_PASS_B64[64] = "";`  
+    `char USER_PASS[64] = "";`  
     
-    Mit `USER_PASS_B64` kann ein in Base64-codierter String nach dem
-    Muster *username:passwort* als Zugangssperre gesetzt werden. Ist kein String eingegeben (Voreinstellung), so ist die Funktion deaktiviert.  
-    Als zusätzliche Option vorgegeben ist hier der Benutzername \"atari\" und das Passwort
-    \"800xl\" (codiert: YXRhcmk6ODAweGw=):  
-    `//char USER_PASS_B64[64] = "YXRhcmk6ODAweGw=";`  
-    Um diese Kombination zu nutzen, sind die entsprechenden `//` zu entfernen und bei dem leeren Eintrag hinzuzufügen.  
-    Um eine andere Kombination zu nutzen, gehe bspw. auf die Website
-    [https://www.base64encode.org](https://www.base64encode.org/), 
-    lasse dein neues Passwort im Format *username:password* erstellen
-    und füge die Codierung entsprechend ein.  
+    Mit `USER_PASS[64]` kann eine Zugangssperre nach dem Muster *Username:Passwort* gesetzt werden:  
+    `//char USER_PASS[64] = "User:Password";`  
+    Ist kein String eingegeben (Voreinstellung), so ist die Funktion deaktiviert.  
+      
       
 ---   
 
@@ -274,6 +268,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
   
     *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
   
+-  **BME280 Sensoren:**  
+   `//#define BME280 1`  
+      
+   Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 1, maximal 2!). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
+    
 ---
 
 -   **24h-Durchschnittswerte:**  
@@ -285,7 +284,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
     Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
     
-    Des weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
+    Des Weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
     werden, bspw.:  
     ```
     int avg_parameters[40] = {  
