@@ -521,18 +521,20 @@ Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur ei
   
 Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 10](kap10.md). 
   
-Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN hierfür Schreibzugriff auf den Regler gewährt werden.  
+Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus sowohl Abfragen als auch Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN für das Umsetzen von Steuerbefehlen Schreibzugriff auf den Regler gewährt werden.  
   
 Die Befehlssyntax lautet:  
 `set <MQTT-Server> publish <Topic> <Befehl>`  
 - `<MQTT-Server>` = Name des MQTT-Servers  
 - `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_lan_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
-- `<Befehl>` = der entspr. parameterspezifische URL-Befehl /S oder /I  
+- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I. *Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
+  
+Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
   
 Beispiel:  
 Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus.  
   
-Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
+Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700.  
 
   
 ---
