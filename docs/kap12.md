@@ -242,9 +242,9 @@ Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu 
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***  
     
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs 
-- DS18B20 (OneWire-Sensor: Temperatur), 
-- DHT22 (Temperatur, Luftfeuchtigkeit) sowie 
-- BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck) direkt an bestimmte Pins des Adapters bzw. Arduino
+- DHT22 (Temperatur, Luftfeuchtigkeit; Parameternummern 20100-20199),  
+- DS18B20 (OneWire-Sensor: Temperatur; Parameternummern 20300-20399) sowie 
+- BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck; Parameternummern 20200-20299) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind
 bereits im Softwarepaket des Adapters integriert.
 
