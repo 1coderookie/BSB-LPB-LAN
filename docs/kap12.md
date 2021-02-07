@@ -160,7 +160,7 @@ Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net
 *Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
   
 Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Board zum Einsatz kommen, so muss in jedem Fall auf zwei Dinge geachtet werden, damit der ESP32-spezifische BSB-LAN-Adapter passt:  
-1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige nodeMCUs - diese passen *nicht*!  
+1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige NodeMCUs - diese passen *nicht*!  
 2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
   
   
@@ -176,7 +176,7 @@ Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor g
   
 Die Verbindungen sind wie folgt vorzunehmen:  
   
-| BSB-LAN-Adapter ab v3 | Funktion | EPS32 Board |
+| BSB-LAN-Adapter ab v3 | Funktion | ESP32-Board |
 |:---------------:|:-----------:|:---------:|
 | Pin 53 | VCC (Stromversorgung Adapter) | 3,3V |
 | GND | GND (Stromversorgung Adapter) | GND |
@@ -212,7 +212,7 @@ Um den Adapter v2 erfolgreich an einem ESP32 betreiben zu können, muss der Adap
 Nun ist der Adapter für den Betrieb an einem 3,3V-System vorbereitet.  
 Zum Anschluss an den ESP muss nun die "RasPi"-Kontaktreihe genutzt und wie folgt mit dem ESP32 verbunden werden:    
   
-| BSB-LAN-Adapter v2 | Funktion | EPS32 Board |
+| BSB-LAN-Adapter v2 | Funktion | ESP32-Board |
 |:---------------:|:-----------:|:---------:|
 | Pin 06 | GND (Stromversorgung Adapter) | GND |
 | Pin 08 | TX (Senden) | Pin 17 (TX2) |
@@ -225,6 +225,7 @@ Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X"
   
 *Der umgerüstete Adapter v2 für die Nutzung mit einem ESP32.*  
   
+Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu bestücken und sich eine kleine Adapterplatine aus einer Lochrasterplatine und Pinheadern aufzubauen, auf der der Adapter und das ESP32-Board aufgesteckt werden könnnen, um einen stabilen Aufbau und eine sichere Verbindung zu gewährleisten.     
     
 ---
    
