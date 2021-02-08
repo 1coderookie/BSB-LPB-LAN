@@ -10,14 +10,14 @@ und somit auch einen entsprechenden Fernzugriff zu ermöglichen.
 
 Darüber hinaus ist es u.a. möglich, Parameter (bspw. Laufzeiten,
 Temperaturen) auf eine microSD-Karte zu loggen und sowohl DS18B20- als
-auch DHT22-Sensoren zusätzlich am Adapter anzuschließen. Ebenso können 
+auch DHT22- und BME280-Sensoren zusätzlich am Adapter anzuschließen. Ebenso können 
 MAX!-Komponenten bequem eingebunden, Relaisboards angeschlossen und die 
 Funktionalität durch das Hinzufügen von eigenem Code den individuellen 
 Gegebenheiten angepasst werden. Eine optionale Einbindung in bestehende 
-SmartHome-Systeme ist durch die Verwendung von HTTPMOD und JSON ebenfalls möglich.  
+SmartHome-Systeme ist durch die Verwendung von MQTT, HTTPMOD und JSON ebenfalls möglich.  
 
 Die Software ist auf einem [Arduino Due](kap12.md#121-der-arduino-due) 
-samt [Ethernet-Shield](kap12.md#122-das-lan-shield) lauffähig, 
+samt [Ethernet-Shield](kap12.md#1211-due--lan-das-lan-shield) sowie auf einem [ESP32](kap12.md#122-der-esp32) lauffähig, 
 erfahrungsgemäß ‚out of the box'. Das ist (neben dem Adapter selbst natürlich) bereits alles was du brauchst!  
 Aufgrund des geringeren Speichers ist 
 die Verwendung von bspw. Arduino UNO, Arduino Nano o.ä. nicht möglich.  
@@ -52,10 +52,9 @@ niemals ein voller Funktionsumfang garantiert werden. Bei nicht
 gelisteten Systemen ist u.U. ein erhöhter eigener Einsatz nötig, um die
 Software in vollem Umfang nutzen zu können (s. u.a. Kap. [10](kap10.md)).
 
-Der Schaltplan des Adapters ist im Anhang zu finden. Außerdem wurden in
-der Vergangenheit Sammelbestellungen für fertige Platinen durchgeführt,
-bei Interesse kann man sich im [FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) melden oder direkt Frederik
-Holst (bsb \[ät\] code-it.de) kontaktieren.
+Der Schaltplan des Adapters ist im [Anhang A1](anhang_a1.md) zu finden.  
+***Solltest du den Adapter nicht komplett selber aufbauen wollen, so kannst du Frederik
+Holst (bsb \[ät\] code-it.de) kontaktieren und nachfragen, ob noch eine Adapterplatine aus einer Sammelbestellung vorhanden ist. Bitte erwähne bei einer Anfrage, ob du eine Platine für einen Arduino Due oder einen ESP32 benötigst!***
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
 
