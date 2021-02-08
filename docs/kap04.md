@@ -6,7 +6,7 @@
 
 # 4. Installation der Arduino IDE und Flashen des Arduino Due  
   
-**Hinweis: Die nachfolgende Anleitung bezieht sich auf die Installation auf dem** ***Arduino Due!*** **Solltest du einen** ***ESP32*** **einsetzen wollen, so beachte bitte die [Anleitung in Kap. 12.2](kap12.md#122-der-esp32)!   
+**Hinweis: Die nachfolgende Anleitung bezieht sich auf die Installation auf dem** ***Arduino Due!*** **Solltest du einen** ***ESP32*** **einsetzen wollen, so beachte bitte die [Anleitung in Kap. 12.2](kap12.md#122-der-esp32)!**   
   
 -   Downloade und installiere die aktuelle Version der Arduino IDE von
     [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
