@@ -558,7 +558,7 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
   
 **Raumtemperatur**  
 - Es können bis zu fünf angeschlossene Sensoren für die Raumtemperaturmessungen angegeben werden.  
-- Kommen mehr als ein Sensor zum Einsatz, so wird automatisch ein Mittelwert gebildet und an den Heizungsregler übertragen.  
+- Kommen mehre Sensoren zum Einsatz, so wird automatisch ein Mittelwert der Messwerte gebildet und an den Heizungsregler übertragen.  
 - Um die jeweiligen Sensoren den gewünschten Heizkreisen zuzuordnen, müssen die spezifischen Parameternummern der jeweiligen Sensoren eingetragen werden. Einen Überblick über die angeschlossenen Sensoren samt zugehöriger Parameternummer gibt die Kategorie "One Wire, DHT & MAX! Sensors" (Menüpunkt "Heizungsfunktionen" bzw. direkt per Klick auf den Menüpunkt "Sensoren"). 
 - Bei Eingabe mehrerer Sensoren für einen HK sind die Parameternummern lediglich durch ein Komma von einander zu trennen, es darf kein Leerzeichen nach dem Komma verwendet werden.  
 
@@ -584,8 +584,12 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 ### 8.2.14 EEPROM-Löschung mittels Pinkontakten  
   
 Grundsätzlich kann das EEPROM via Webinterface mit dem Befehl /NE gelöscht werden. Es kann aber in bestimmten Situationen (bspw. wenn kein Zugriff auf das Webinterface möglich ist) nötig sein, das EEPROM auch ohne Nutzung des URL-Befehls zu löschen.   
-*Hierfür müssen die Pins 31 und 33 (zugänglich auf der Adapterplatine) beim Start oder Reboot des Due kurzzeitig miteinander verbunden werden.*    
-Nach erfolgreichem Löschen blinkt die Arduino-LED vier Sekunden lang. Beim erneuten Start werden dann die (Vor-)Einstellungen aus der Datei *BSB_lan_config.h* übernommen, eine Anpassung kann danach wie gewohnt via Webinterface erfolgen.  
+Hierfür müssen  
+- beim Due die Pins 31 und 33 und 
+- beim ESP32 die Pins 14 und GND 
+beim Start oder Reboot kurzzeitig miteinander verbunden werden.    
+Nach erfolgreichem Löschen blinkt die Arduino-/ESP32-LED vier Sekunden lang.  
+Beim erneuten Start werden dann die (Vor-)Einstellungen aus der Datei *BSB_LAN_config.h* übernommen, eine Anpassung kann danach wie gewohnt bspw. via Webinterface erfolgen.  
 
 
 ---
