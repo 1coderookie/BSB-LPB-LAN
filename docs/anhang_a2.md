@@ -7,9 +7,10 @@
     
 # Anhang A2: Anmerkungen zum Schaltplan
     
----
-    
 
+**Hinweis: Der Schaltplan für die ESP32-Variante des Adapters ist prinzipiell identisch, lediglich das EEPROM entfällt!**  
+    
+---
 
 ## A2.1 Kurze Legende zum Schaltplan
 
@@ -35,7 +36,7 @@ RXD = Digitalpin Empfangen
 
 - 1x LED (rot) (Betriebsspannung max. 2,8V, Sperrspannung 5V) (→ D1)  
 - 1x Diode 1N4148 (→ D2)  
-- 1x EEPROM 24LC32A-I/P (→ EEPROM)  
+- 1x EEPROM 24LC32A-I/P (→ EEPROM) → *Achtung: Nicht benötigt für die ESP32-Boardvariante!*  
 - 2x Optokoppler 4N25 (→ OK1, OK2)    
 - 1x Transistor BC547 (→ Q1)  
 - 1x Transistor BC557 (→ Q2)  
@@ -48,16 +49,25 @@ RXD = Digitalpin Empfangen
 ***Arduino Due:***  
 Anschlussklemmen, *Pinleisten*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
   
-Für den Einsatz des Adapters v3 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
+Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_pins.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v4-unbestueckt_pins.jpg">  
   
 *Zwingend zu bestückende Pins für die Verwendung mit dem Arduino Due.*  
   
 ***Raspberry Pi:***  
 Anschlussklemmen, *Buchsenleiste*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
   
-Für den Einsatz des Adapters v3 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
+Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
+        
+***ESP32:***  
+Anschlussklemmen, *Buchsenleiste*, ggf. IC-Sockel für Optokoppler etc.  
+  
+Für den Einsatz des ESP32-spezifischen Adapters v4 an dem empfohlenen *ESP32 NodeMCU von Joy-It* werden letztlich lediglich die Pins RX2, TX2,  GND sowie 3,3V benötigt und müssen daher zwingend mit entspr. Pinheadern bestückt werden. Aus Stabilitätsgründen ist es jedoch empfehlenswert, beide Seiten komplett mit je einer Reihe Pinheadern zu bestücken.   
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB.jpeg">  
+  
+*Die unbestückte ESP32-spezifische Adapterplatine.*  
         
     
 ---
