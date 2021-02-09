@@ -527,7 +527,8 @@ Die Befehlssyntax lautet:
 `set <MQTT-Server> publish <Topic> <Befehl>`  
 - `<MQTT-Server>` = Name des MQTT-Servers  
 - `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_lan_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
-- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I. *Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
+- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I.  
+*Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
   
 Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
   
