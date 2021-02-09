@@ -64,9 +64,9 @@ Holst (bsb \[ät\] code-it.de) kontaktieren und nachfragen, ob noch eine Adapter
 
 *Die BSB-LPB-LAN-Adapterplatine v3, Unterseite, unbestückt.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-komplett-due.jpeg">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v4-komplett-due.jpg">
     
-*Die BSB-LPB-LAN-Adapterplatine v3, bestückt, auf einem Arduino Due (Clone) samt LAN-Shield.*  
+*Die BSB-LPB-LAN-Adapterplatine v4, bestückt, auf einem Arduino Due (Clone) samt LAN-Shield.*  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
     
