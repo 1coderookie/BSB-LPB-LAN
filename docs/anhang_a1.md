@@ -5,9 +5,11 @@
     
 
     
-# Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v3
+# Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v4 (Due-Version)
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/circuit_diagram_adapter_v3.png">  
+**Hinweis: Der Schaltplan für die ESP32-Variante des Adapters ist prinzipiell identisch, lediglich das EEPROM entfällt!**  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/circuit_diagram_adapter_v4.png">  
  
        
     
