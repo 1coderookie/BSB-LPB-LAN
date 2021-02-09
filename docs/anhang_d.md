@@ -6,9 +6,15 @@
 # Anhang D: Hinweise für Nutzer des veralteten Setups Adapter v2 + Arduino Mega 2560
 
 Für Nutzer des veralteten Setups sind im Folgenden einige Fragen und Punkte aufgeführt, die evtl. der Klärung bedürfen oder die es zu beachten gilt. Etwaige weitere Fragen diesbzgl. stelle bitte im entspr. [Thread des FHEM Forums](https://forum.fhem.de/index.php/topic,29762.0.html).  
-Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die sich bspw. darauf beziehen, sich nach der erfolgten Umstellung auf den Adapter v3 jetzt noch einen Adapter v2 zu bauen.  
-**PCBs v2 sind nicht mehr verfügbar, Stand der Technik ist die Kombination Adapter v3/v4 + Due.**      
-
+Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die sich bspw. darauf beziehen, sich nach der erfolgten Umstellung auf den Adapter v3/v4 jetzt noch einen Adapter v2 zu bauen.  
+**PCBs v2 sind nicht mehr verfügbar, Stand der Technik ist die Kombination Adapter v3/v4 + Due.**    
+  
+---  
+  
+***Hinweis: Es ist möglich, den Adapter v2 durch eine Vollbestückung und kleinere Anpassungen mit einem ESP32 zu verwenden. Auf diese Weise könnte die aktuelle BSB-LAN-Version genutzt werden, ohne auf den aktuellen Adapter wechseln zu müssen. Für weitere Informationen lies bitte das [Kap. 12.2.3](kap12.md#1223-esp32-mit-due-kompatiblem-bsb-lan-adapter-v2).***
+  
+---  
+  
 - ***Muss ich zwingend auf das neue Setup Adapter v3/v4 + Due wechseln?***  
 Nein, wenn du zufrieden mit dem veralteten Setup bist und der Funktionsumfang von BSB-LAN deinen Ansprüchen bisher genügte, 
 dann kannst du das alte Setup natürlich weiterhin verwenden.  
