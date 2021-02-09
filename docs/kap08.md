@@ -25,18 +25,18 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/<x>-<y>`         | `Alle Werte eines Parameterbereichs von <x> bis <y> abfragen`  
 |  `/<x>!<adr>-<y>`   | `Alle Werte eines Parameterbereichs von <x> bis <y> für Zieladresse <adr> abfragen`  
 |  `/A=<x>,<y>,<z>`       | `24h-Durchschnittswertberechnung für Parameter <x>, <y>, <z> einstellen` <br /> `Während der Laufzeit kann /A=[parameter1],...,[parameter20] verwendet werden, um (bis zu 20) neue Parameter zu definieren.`  
-|  `/A=0`                 | `24h-Durchschnittswertberechnung temporär deaktivieren.` <br /> `Deaktiviert die 24-h Durchschnittswertberechnung vorübergehend bis zum nächsten Reset/Neustart des Arduino. Für eine komplette und dauerhafte Deaktivierung müssen alle als zu berechnend aufgeführten Parameter in der Datei BSB_lan_config.h auskommentiert werden.`  
+|  `/A=0`                 | `24h-Durchschnittswertberechnung temporär deaktivieren.` <br /> `Deaktiviert die 24-h Durchschnittswertberechnung vorübergehend bis zum nächsten Reset/Neustart des Arduino. Für eine komplette und dauerhafte Deaktivierung müssen alle als zu berechnend aufgeführten Parameter in der Datei BSB_LAN_config.h auskommentiert werden.`  
 |  `/B0`                  | `Zurücksetzen des Zählers der akkumulierten Brennerlaufzeiten und -zyklen`  
 |  `/C`                   | `Konfiguration von BSB-LAN anzeigen lassen`  
 |  `/D oder /DD`                   | `Anzeige der Logdatei` <br /> `Zeigt den Inhalt der Datei datalog.txt an, die sich auf der microSD-Karte im Slot des Ethernet-Shields befindet.`  
 |  `/DG`                  | `Grafische Anzeige der Logdatei` <br /> `Wer Parameter auf SD-Karte loggt, hat neben der reinen Textform auch die Möglichkeit, einen Graphen angezeigt zu bekommen.` <br /> `Hinweis: Für /DG muss bei Javascript-Blockern die Domain d3js.org freigegeben werden, da der Arduino weiterhin nur die CSV-Datei in den Browser lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird.` <br /> `Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische Darstellung.`   
-|  `/DJ`                  | `Anzeige des Logfiles von Telegrammen` <br /> `Dieser Befehl zeigt das Logfile *journal.txt* an, das den Inhalt der empfangenen und gesendeten Telegramme anzeigt. Dieses Logging ist nützlich bei der Fehlersuche und bei der Suche nach unbekannten Parametern. Um die Funktion nutzen zu können, muss das Modul LOGGER in der Datei *BSB_lan_config.h* aktiviert und das erste Element des Arrays log_parameters auf 30000 gesetzt werden.`   
+|  `/DJ`                  | `Anzeige des Logfiles von Telegrammen` <br /> `Dieser Befehl zeigt das Logfile *journal.txt* an, das den Inhalt der empfangenen und gesendeten Telegramme anzeigt. Dieses Logging ist nützlich bei der Fehlersuche und bei der Suche nach unbekannten Parametern. Um die Funktion nutzen zu können, muss das Modul LOGGER in der Datei BSB_LAN_config.h aktiviert und das erste Element des Arrays log_parameters auf 30000 gesetzt werden.`   
 |  `/D0`                  | `Logfiles löschen und neuen CSV-header erstellen` <br /> `Dieser Befehl löscht die Dateien datalog.txt und journal.txt und erstellt einen neuen CSV-header für datalog.txt. Dieser Befehl sollte vor dem ersten Logging ausgeführt werden.`  
 |  `/DD0`               | `Logfile datalog.txt löschen`  
 |  `/DJ0`               | `Logfile journal.txt löschen`  
 |  `/E<x>`              | `Alle ENUM-Werte für Parameter <x> auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur für Parameter des Typs VT_ENUM, VT_CUSTOM_ENUM, VT_BITS und VT_CUSTOM_BITS verfügbar.`  
 |  `/G<x>`              | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als OUTPUT genutzt)` <br /> `Gibt den momentanen Status von GPIO Pin <x> an, wobei <y>=0 LOW und <y>=1 HIGH ist.`  
-|  `/G<x>=<y>`        | `GPIO: Abfragen des GPIO-Pins <x> und Setzen auf <y> (GPIO wird als OUTPUT genutzt)` <br /> `Setzt GPIO Pin <x> auf LOW (<y>=0) oder HIGH (<y>=1).` <br /> `Reservierte Pins, die nicht gesetzt werden dürfen, können in der BSB_lan_config.h unter dem Parameter GPIO_exclude gesperrt werden.` 
+|  `/G<x>=<y>`        | `GPIO: Abfragen des GPIO-Pins <x> und Setzen auf <y> (GPIO wird als OUTPUT genutzt)` <br /> `Setzt GPIO Pin <x> auf LOW (<y>=0) oder HIGH (<y>=1).` <br /> `Reservierte Pins, die nicht gesetzt werden dürfen, können in der BSB_LAN_config.h unter dem Parameter GPIO_exclude gesperrt werden.` 
 |  `/G<x>,I`            | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als INPUT genutzt)` <br /> `Für die reine Abfrage eines externes Gerätes, das an einen GPIO angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl so lange auf ‚input', bis das nächste Mal mit /G<xx>=<y> ein Wert geschrieben wird - ab da ist er dann bis zum nächsten „I" wieder auf ‚output'.`  
 |  `/I<x>=<y>`        | `Sende eine INF-Nachricht für den Parameter <x> mit dem Wert <y>` <br /> `Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem wird mit einer TYPE_INF-Nachricht informiert, bspw. bei der Raumtemperatur: http://<ip-address>/I10000=19.5 → Raumtemperatur beträgt 19.5°C`  
 |  `/JC=<x>,<y>,<z>`         	| `JSON: Abfrage der möglichen Werte der Parameter <x>,<y>,<z> für Parameter des Typs ENUM` <br /> `Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl /JK=<x>. Im Gegensatz zum Befehl /JQ werden die aktuellen Parameterwerte nicht zurückgemeldet.`   
@@ -488,7 +488,7 @@ if (!MQTTClient.connected()) {
 ***Die Webserver-Funktion wurde von User ["dukess"](https://github.com/dukess) entwickelt, der ebenfalls die nachfolgenden Informationen hinsichtlich der Benutzung zur Verfügung stellte.***  
 ***Vielen Dank!***  
   
-Wenn das zugehörige Definement '#define webserver' in *BSB_lan_config.h* aktiviert wurde, kann BSB-LAN als Webserver fungieren, der außerdem statische Komprimierung unterstützt. Um diese Funktion zu verwenden müssen folgende Punkte berücksichtigt werden:
+Wenn das zugehörige Definement '#define webserver' in *BSB_LAN_config.h* aktiviert wurde, kann BSB-LAN als Webserver fungieren, der außerdem statische Komprimierung unterstützt. Um diese Funktion zu verwenden müssen folgende Punkte berücksichtigt werden:
 - Alle Dateien werden / müssen auf der microSD-Karte gespeichert sein, können allerdings in verschiedenen Unterverzeichnissen abgelegt werden. Beispiel: `http://<IP-Adresse>/foo/bar.html` liest die Datei `bar.html` aus dem Verzeichnis `foo` von der microSD-Karte.   
 - Nur statische Inhalte werden unterstützt.  
 - Unterstützte Dateiformate sind: html, htm, css, js, xml, txt, jpg, gif, svg, png, ico, gz.  
@@ -515,9 +515,9 @@ Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wi
 ### 8.2.12 MQTT
   
 BSB-LAN unterstützt das MQTT-Protokoll, d.h. die Werte und Einstellungen des Heizungsreglers sind per MQTT empfangbar.  
-Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in der Datei *BSB_lan_config.h* aktiviert sein. Dies ist in der Voreinstellung bereits der Fall.  
+Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in der Datei *BSB_LAN_config.h* aktiviert sein. Dies ist in der Voreinstellung bereits der Fall.  
   
-Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_lan_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
+Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
   
 Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 10](kap10.md). 
   
@@ -526,7 +526,7 @@ Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom B
 Die Befehlssyntax lautet:  
 `set <MQTT-Server> publish <Topic> <Befehl>`  
 - `<MQTT-Server>` = Name des MQTT-Servers  
-- `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_lan_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
+- `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_LAN_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
 - `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I.  
 *Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
   
