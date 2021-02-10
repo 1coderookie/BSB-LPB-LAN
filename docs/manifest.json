@@ -2,7 +2,7 @@
     "name": "Handbuch BSB-LPB-LAN-Adapter",
     "short_name": "BSB-LAN Handbuch",
     "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
-    "start_url": "https://1coderookie.github.io/BSB-LPB-LAN/inhaltsverzeichnis.html",
+    "start_url": "https://1coderookie.github.io/BSB-LPB-LAN/index.html",
     "display": "fullscreen",
     "orientation": "any",
     "background_color": "none"
