@@ -3,7 +3,7 @@
 ## Einleitung  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
-BSB-LPB-LAN-Adapters (Platinenlayout v3, Arduino-Version) und der dazugehörigen BSB-LAN-Software v2.x 
+BSB-LPB-LAN-Adapters (Platinenlayout v4, Arduino Due und ESP32) und der dazugehörigen BSB-LAN-Software v2.x 
 zu vereinfachen und um als Nachschlagewerk zu dienen.  
 
 ***Es wird empfohlen, dieses Handbuch vor einer initialen
@@ -36,7 +36,7 @@ Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art ha
 Im weiteren Verlauf sollte es dann möglich sein, Daten auszulesen, sie weiter zu verarbeiten (z.B. loggen und grafisch darstellen) oder gar Einfluss auf die Steuerung/Regelung nehmen zu können und das System in bestehende SmartHome-Systeme einzubinden.  
     
 All dies ist mittlerweile umgesetzt worden:  
-Mittels eines eigenbaufähigen Adapters, eines Arduino Due und eines LAN-Shields kann nun ein entsprechender Wärmeerzeuger mit einem ["Boiler-System-Bus" (BSB)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#21-bsb-und-lpb), einem ["Local-Process-Bus (LPB)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#21-bsb-und-lpb) oder einer ["Punkt-zu-Punkt-Schnittstelle" (PPS)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#22-pps-schnittstelle) kostengünstig ins heimische Netzwerk eingebunden werden. Dies sind in diesem Fall i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
+Mittels eines eigenbaufähigen Adapters, eines Arduino Due und eines LAN-Shields oder eines ESP32 kann nun ein entsprechender Wärmeerzeuger mit einem ["Boiler-System-Bus" (BSB)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#21-bsb-und-lpb), einem ["Local-Process-Bus (LPB)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#21-bsb-und-lpb) oder einer ["Punkt-zu-Punkt-Schnittstelle" (PPS)](https://1coderookie.github.io/BSB-LPB-LAN/kap02.html#22-pps-schnittstelle) kostengünstig ins heimische Netzwerk eingebunden werden. Dies sind in diesem Fall i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
 
 Mit Hilfe des Adapters und der BSB-LAN-Software können nun unkompliziert verschiedene Funktionen, Werte und Parameter beobachtet, geloggt und bei Bedarf web-basiert gesteuert und geändert werden.
 Eine optionale Einbindung in bestehende Smart-Home-Systeme wie bspw. [FHEM](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#111-fhem), [openHAB](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#112-openhab), [HomeMatic](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#113-homematic-eq3), [IoBroker](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#114-iobroker), [Loxone](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#115-loxone), [IP-Symcon](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#116-ip-symcon), [EDOMI](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#1110-edomi) oder [Home Assistant](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#1111-home-assistant) kann mittels [HTTPMOD](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#1112-einbindung-mittels-httpmod-modul), [MQTT](https://1coderookie.github.io/BSB-LPB-LAN/kap11.html#117-mqtt-influxdb-telegraf-und-grafana) oder [JSON](https://1coderookie.github.io/BSB-LPB-LAN/kap08.html#824-abrufen-und-steuern-mittels-json) erfolgen. 
