@@ -93,6 +93,8 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 Entwicklern! Vielen Dank!*  
       
     
+<link rel='manifest' href='/manifest.json'>    
+    
 <script type="module">
    <!-- // This is the "Offline page" service worker 
    // Add this below content to your HTML page inside a <script type="module"><\/script> tag, or add the js file to your page at the very top to register service worker
