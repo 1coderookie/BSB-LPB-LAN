@@ -1,4 +1,4 @@
-<link rel='manifest' href='https://1coderookie.github.io/BSB-LPB-LAN/manifest.json'>    
+<link rel='manifest' href='https://1coderookie.github.io/BSB-LPB-LAN/manifest.json'>
 
 <h2><b><a href="https://1coderookie.github.io/BSB-LPB-LAN_EN">English language version of this manual now available!</a></b></h2>  
    
@@ -110,7 +110,7 @@ import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 const el = document.createElement('pwa-update');
 document.body.appendChild(el);  
 </script>
-
+<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
 ---
     
 [Weiter zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
