@@ -93,7 +93,7 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 Entwicklern! Vielen Dank!*  
       
     
-<link rel='manifest' href='/manifest.json'>    
+<link rel='manifest' href='https://1coderookie.github.io/BSB-LPB-LAN/manifest.json'>    
     
 <script type="module">
    <!-- // This is the "Offline page" service worker 
