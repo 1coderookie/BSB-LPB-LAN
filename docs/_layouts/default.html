@@ -3,7 +3,13 @@
   <head>
    <link rel='manifest' href='manifest.json'>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
+ <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script> -->
+    <script type="module"
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+const el = document.createElement('pwa-update');
+document.body.appendChild(el);
+            </script>
     
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
