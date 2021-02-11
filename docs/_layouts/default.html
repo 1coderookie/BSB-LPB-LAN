@@ -2,13 +2,7 @@
 <html lang="{{ site.lang | default: "de-DE" }}">
   <head>
 <link rel='manifest' href='manifest.json'>
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"
-></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
 
-<pwa-update></pwa-update>
     
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -65,7 +59,7 @@
       </footer>
     </main>
         
-<!--
+
     <script type="module">
    // This is the "Offline page" service worker 
    // Add this below content to your HTML page inside a <script type="module"><\/script> tag, or add the js file to your page at the very top to register service worker
@@ -80,6 +74,15 @@ import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 const el = document.createElement('pwa-update');
 document.body.appendChild(el);  
 </script>
--->    
+   
+
+    <!-- <script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"
+></script>
+-->
+<script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+
+<pwa-update></pwa-update>
   </body>
 </html>
