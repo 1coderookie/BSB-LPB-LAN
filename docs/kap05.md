@@ -87,7 +87,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 
 ---  
   
-## 5.2 Konfiguration durch Anpassen der Datei *BSB_lan_config.h*  
+## 5.2 Konfiguration durch Anpassen der Datei *BSB_LAN_config.h*  
   
 Die Konfiguration der BSB-LAN-Software kann (weiterhin) erfolgen, indem die Einstellungen in der Datei *BSB_lan_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
 
