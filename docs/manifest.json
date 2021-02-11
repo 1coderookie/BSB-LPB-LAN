@@ -15,7 +15,7 @@
   ],
     "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
     "start_url": "https://1coderookie.github.io/BSB-LPB-LAN/inhaltsverzeichnis.html",
-    "display": "fullscreen",
+    "display": "minimal-ui",
     "orientation": "any",
     "background_color": "none"
 }
