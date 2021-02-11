@@ -3,12 +3,12 @@
     "short_name": "BSB-LAN Handbuch",
     "icons": [
     {
-      "src": "/pics/BSB_logo_square_192.png",
+      "src": "/BSB_logo_square_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/pics/BSB_logo_square_512.png",
+      "src": "/BSB_logo_square_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
