@@ -3,19 +3,24 @@
     "short_name": "BSB-LAN Handbuch",
     "icons": [
     {
-      "src": "/BSB_logo_square_192.png",
+      "src": "/BSB_logo_maskable_192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
+
     },
     {
-      "src": "/BSB_logo_square_512.png",
+      "src": "/BSB_logo_maskable_512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
+
     }
   ],
     "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
     "start_url": "https://1coderookie.github.io/BSB-LPB-LAN/inhaltsverzeichnis.html",
     "display": "fullscreen",
     "orientation": "any",
-    "background_color": "none"
+    "background_color": "#157878",
+    "theme_color": "#157878"
 }
