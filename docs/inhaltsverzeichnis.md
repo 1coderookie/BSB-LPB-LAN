@@ -43,7 +43,7 @@
 [4. Installation der Arduino IDE und Flashen des Arduino Due](kap04.md)  
 [5. Konfiguration der BSB-LAN-Software v2.x](kap05.md)  
 [5.1 Konfiguration mittels Webinterface](kap05.md#51-konfiguration-mittels-webinterface)  
-[5.2 Konfiguration durch Anpassen der Datei *BSB_lan_config.h*](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)  
+[5.2 Konfiguration durch Anpassen der Datei *BSB_LAN_config.h*](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)  
 [6. Funktionsüberprüfung und erste Nutzung des Adapters](kap06.md)  
 [7. BSB-LAN Web - das Webinterface des Adapters](kap07.md)  
 [8. URL-Befehle und Spezialfunktionen](kap08.md)  
