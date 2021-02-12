@@ -1,6 +1,7 @@
 {
     "name": "Handbuch BSB-LPB-LAN-Adapter",
     "short_name": "BSB-LAN",
+    "lang": "de-DE",
     "icons": [
     {
       "src": "BSB_logo_maskable_192.png",
