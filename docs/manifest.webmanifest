@@ -4,14 +4,14 @@
     "lang": "de-DE",
     "icons": [
     {
-      "src": "BSB_logo_maskable_192.png",
+      "src": "Logo_manual_maskablex192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
 
     },
     {
-      "src": "BSB_logo_maskable_512.png",
+      "src": "Logo_manual_maskablex512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
