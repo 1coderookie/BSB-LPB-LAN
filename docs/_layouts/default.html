@@ -4,7 +4,7 @@
    <link rel='manifest' href='manifest.webmanifest'>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
  <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script> -->
- <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script> -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate@latest/dist/pwa-update.js.map"></script> 
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">
     {% if site.google_analytics %}
@@ -51,14 +51,14 @@
         <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
       {{ content }}
         <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
-          
+    <!--      
       <script type="module">
             import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
 
 const el = document.createElement('pwa-update');
 document.body.appendChild(el);
             </script>
-      
+      -->
       <footer class="site-footer">
         <!-- <span class="site-footer-toclink"><a href="toc.html"><u><b>Back to TOC</a></b></u></span><br> -->
         <span class="site-footer-copyright">Copyright &copy; Ulf Dieckmann</span>
