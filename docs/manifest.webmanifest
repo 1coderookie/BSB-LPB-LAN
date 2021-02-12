@@ -16,6 +16,11 @@
       "sizes": "512x512",
       "purpose": "any maskable"
 
+    },
+    {
+      "src": "BSB_Manual_Logo.svg",
+      "type": "image/svg",
+      "sizes": "any"
     }
   ],
     "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
