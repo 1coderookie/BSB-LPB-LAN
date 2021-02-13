@@ -1,6 +1,7 @@
 {
-    "name": "Handbuch BSB-LPB-LAN-Adapter",
-    "short_name": "BSB-LAN",
+    "name": "Handbuch BSB-LPB-LAN-Adapter (PWA)",
+    "short_name": "BSB-LAN (PWA)",
+    "description": "Progressive Web App des Handbuchs zum BSB-LPB-LAN-Adapter und der BSB-LAN-Software.",
     "lang": "de-DE",
     "icons": [
     {
@@ -31,8 +32,7 @@
       "purpose": "any"  
     }
   ],
-    "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
-    "start_url": "https://1coderookie.github.io/BSB-LPB-LAN/inhaltsverzeichnis.html",
+    "start_url": "/BSB-LPB-LAN/inhaltsverzeichnis.html",
     "display": "minimal-ui",
     "orientation": "any",
     "background_color": "#157878",
