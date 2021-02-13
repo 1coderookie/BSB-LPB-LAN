@@ -19,8 +19,9 @@
     },
     {
       "src": "BSB_Manual_Logo.svg",
-      "type": "image/svg+xml",
-      "sizes": "any"
+      // "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"  
     }
   ],
     "description": "Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software.",
