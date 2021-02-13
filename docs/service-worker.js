@@ -33,7 +33,7 @@
                 'index.html',
                 'inhaltsverzeichnis.html?homescreen=1', //default
                 '?homescreen=1', //default
-                '/assets/css/style.css*',// configure as by your site ; just an example
+                '/assets/css/style.css?v=1ae6ea59cc29b8a55941394bec5ba63fd5b09c72',// configure as by your site ; just an example
                 '/pics/*',// choose images to keep offline; just an example
         // Do not replace/delete/edit the manifest.js paths below
         //These are links to the extenal social media buttons that should be cached;
