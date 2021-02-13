@@ -4,6 +4,13 @@
     "lang": "de-DE",
     "icons": [
     {
+      "src": "Logo_manual_maskablex144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+
+    },
+        {
       "src": "Logo_manual_maskablex192.png",
       "type": "image/png",
       "sizes": "192x192",
@@ -19,7 +26,7 @@
     },
     {
       "src": "BSB_Manual_Logo.svg",
-      // "type": "image/svg+xml",
+      "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any"  
     }
