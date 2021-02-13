@@ -2,7 +2,7 @@
 <html lang="{{ site.lang | default: "de-DE" }}">
   <head>
    <link rel='manifest' href='manifest.webmanifest'>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+<!--    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script> -->
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
  <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script> -->
  <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate@latest/dist/pwa-update.js.map"></script> -->
@@ -27,13 +27,13 @@
     </head>
   
     <body>
-      
+  <!--    
     <script async defer>
     var installComponent = document.createElement("pwa-install");
     document.body.appendChild(installComponent);
     installComponent.getInstalledStatus();
   </script>
-
+-->
   <script async defer>
     var updateComponent = document.createElement("pwa-update");
     document.body.appendChild(updateComponent);
