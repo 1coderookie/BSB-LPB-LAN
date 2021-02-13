@@ -29,7 +29,10 @@
 {% seo %}
   </head>
   <body>
-    <pwa-update></pwa-update>
+  <script async defer>
+    var updateComponent = document.createElement("pwa-update");
+    document.body.appendChild(updateComponent);
+  </script>
     <!-- <a id="skip-to-content" href="#content">Springe zum Inhalt.</a> -->
 
     <header class="page-header" role="banner">
