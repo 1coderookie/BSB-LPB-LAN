@@ -2,8 +2,8 @@
 <html lang="{{ site.lang | default: "de-DE" }}">
   <head>
    <link rel='manifest' href='site.webmanifest'>
-    <!-- register service worker -->
-        <script>          
+
+    <script>          
           if ('serviceWorker' in navigator)
           {
           window.addEventListener('load', function() {
@@ -13,11 +13,7 @@
           );
         }
         </script>
- <!-- end of service worker -->
-<!--    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script> -->
-<!--    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script> -->
- <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script> -->
- <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate@latest/dist/pwa-update.js.map"></script> -->
+
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">
     {% if site.google_analytics %}
@@ -39,23 +35,10 @@
     </head>
   
     <body>
-  <!--    
-    <script async defer>
-    var installComponent = document.createElement("pwa-install");
-    document.body.appendChild(installComponent);
-    installComponent.getInstalledStatus();
-  </script>
 
-  <script async defer>
-    var updateComponent = document.createElement("pwa-update");
-    document.body.appendChild(updateComponent);
-  </script>
--->
-    <!-- <a id="skip-to-content" href="#content">Springe zum Inhalt.</a> -->
 
     <header class="page-header" role="banner">
      <h1 class="project-name">Handbuch für den BSB-LPB-LAN-Adapter und die BSB-LAN-Software</h1>
-       <!-- <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2> -->
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
         <a href="https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf" class="btn">Download PDF Version</a>
@@ -72,17 +55,14 @@
 
     <main id="content" class="main-content" role="main">
       
-     <!-- <h1><b>Manual for the BSB-LPB-LAN adapter and the BSB-LAN software.</b><h1> -->
-        <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
+
       {{ content }}
-        <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
          
 
 
 
     
       <footer class="site-footer">
-        <!-- <span class="site-footer-toclink"><a href="toc.html"><u><b>Back to TOC</a></b></u></span><br> -->
         <span class="site-footer-copyright">Copyright &copy; Ulf Dieckmann</span>
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
