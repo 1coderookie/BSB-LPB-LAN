@@ -3,6 +3,10 @@
   <head>
    <link rel='manifest' href='manifest.webmanifest'>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
+    <script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"
+></script>
  <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script> -->
  <!--   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate@latest/dist/pwa-update.js.map"></script> -->
 
@@ -25,7 +29,7 @@
 {% seo %}
   </head>
   <body>
-    
+    <pwa-update></pwa-update>
     <!-- <a id="skip-to-content" href="#content">Springe zum Inhalt.</a> -->
 
     <header class="page-header" role="banner">
@@ -52,12 +56,9 @@
       {{ content }}
         <!-- <h2><a href="toc.html"><u><b>Back to TOC</a></b></u><h2> -->
          
-<script
-  type="module"
-  src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"
-></script>
 
-<pwa-update></pwa-update>
+
+
     
       <footer class="site-footer">
         <!-- <span class="site-footer-toclink"><a href="toc.html"><u><b>Back to TOC</a></b></u></span><br> -->
