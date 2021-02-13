@@ -1,78 +1,54 @@
-//This is the service worker with the Advanced caching
-
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
-
-const HTML_CACHE = "html";
-const JS_CACHE = "javascript";
-const STYLE_CACHE = "stylesheets";
-const IMAGE_CACHE = "images";
-const FONT_CACHE = "fonts";
-
-self.addEventListener("message", (event) => {
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
-});
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'document',
-  new workbox.strategies.NetworkFirst({
-    cacheName: HTML_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 10,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'script',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: JS_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'style',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: STYLE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'image',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: IMAGE_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-workbox.routing.registerRoute(
-  ({event}) => event.request.destination === 'font',
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: FONT_CACHE,
-    plugins: [
-      new workbox.expiration.ExpirationPlugin({
-        maxEntries: 15,
-      }),
-    ],
-  })
-);
-
-
-
+// PWA Fire Bundle
+                      
+        // after a service worker is installed and the user navigates to a different page or 
+        // refreshes,the service worker will begin to receive fetch events
+                          
+        self.addEventListener('fetch', function(event) {
+        event.respondWith(caches.open('cache').then(function(cache) {
+        return cache.match(event.request).then(function(response) {
+        console.log("cache request: " + event.request.url);
+        var fetchPromise = fetch(event.request).then(function(networkResponse) {           
+        // if we got a response from the cache, update the cache                   
+        console.log("fetch completed: " + event.request.url, networkResponse);
+        if (networkResponse) {
+            console.debug("updated cached page: " + event.request.url, networkResponse);
+              cache.put(event.request, networkResponse.clone());}
+              return networkResponse;
+                  }, function (event) {   
+        // rejected promise - just ignore it, we're offline!   
+                  console.log("Error in fetch()", event);
+                  event.waitUntil(
+                  caches.open('cache').then(function(cache) { 
+        // our cache is named *cache* in the caches.open() above
+                  return cache.addAll
+                  ([            
+        //cache.addAll(), takes a list of URLs, then fetches them from the server
+        // and adds the response to the cache.           
+        // add your entire site to the cache- as in the code below; for offline access
+        // If you have some build process for your site, perhaps that could 
+        // generate the list of possible URLs that a user might load.               
+                '/', // do not remove this
+                '/index.html', //default
+                '/index.html?homescreen=1', //default
+                '/?homescreen=1', //default
+               // '/assets/css/main.css',// configure as by your site ; just an example
+                '/pics/*',// choose images to keep offline; just an example
+        // Do not replace/delete/edit the manifest.js paths below
+        //These are links to the extenal social media buttons that should be cached;
+        // we have used twitter's as an example
+       //       'https://platform.twitter.com/widgets.js',       
+                ]);
+                })
+                );
+                });
+        // respond from the cache, or the network
+          return response || fetchPromise;
+        });
+        }));
+        });
+        
+        self.addEventListener('install', function(event) {
+          // The promise that skipWaiting() returns can be safely ignored.
+          self.skipWaiting();
+          console.log("Latest version installed!");
+        });
