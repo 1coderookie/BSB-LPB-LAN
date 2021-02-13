@@ -33,8 +33,30 @@
                 'index.html',
                 'inhaltsverzeichnis.html?homescreen=1', //default
                 '?homescreen=1', //default
-                '/assets/css/style.css?v=1ae6ea59cc29b8a55941394bec5ba63fd5b09c72',// configure as by your site ; just an example
-                '/pics/*',// choose images to keep offline; just an example
+                'assets/css/style.css?v=1ae6ea59cc29b8a55941394bec5ba63fd5b09c72',// configure as by your site ; just an example
+                'kap01.html',
+                'kap02.html',
+                'kap03.html',
+                'kap04.html',
+                'kap05.html',
+                'kap06.html',
+                'kap07.html',
+                'kap08.html',
+                'kap09.html',
+                'kap10.html',
+                'kap11.html',
+                'kap12.html',
+                'kap13.html',
+                'kap14.html',
+                'kap15.html',
+                'kap16.html',
+                'kap17.html',
+                'anhang_a1.html',
+                'anhang_a2.html',
+                'anhang_b.html',
+                'anhang_c.html',
+                'anhang_d.html',
+                'pics/*',// choose images to keep offline; just an example
         // Do not replace/delete/edit the manifest.js paths below
         //These are links to the extenal social media buttons that should be cached;
         // we have used twitter's as an example
