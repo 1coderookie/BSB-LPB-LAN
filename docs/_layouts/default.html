@@ -3,10 +3,11 @@
   <head>
    <link rel='manifest' href='site.webmanifest'>
     <!-- register service worker -->
-        <script>          if ('serviceWorker' in navigator)
+        <script>          
+          if ('serviceWorker' in navigator)
           {
           window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('service-worker.js')
             .then(function() { console.log("Service Worker registered."); });
           }
           );
