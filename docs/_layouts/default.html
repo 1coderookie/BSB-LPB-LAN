@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "de-DE" }}">
   <head>
-   <link rel='manifest' href='site.webmanifest'>
+   <link rel='manifest' href='manifest.webmanifest'>
 
     <script>          
      if ('serviceWorker' in navigator)
       {
        window.addEventListener('load', function() {
-       navigator.serviceWorker.register('service-worker.js')
+       navigator.serviceWorker.register('/service-worker.js')
        .then(function() { console.log("Service Worker registered."); });
       }
       );
