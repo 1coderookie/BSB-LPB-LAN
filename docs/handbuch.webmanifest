@@ -1,6 +1,6 @@
 {
-    "name": "Handbuch BSB-LPB-LAN-Adapter (PWA)",
-    "short_name": "BSB-LAN (PWA)",
+    "name": "Handbuch BSB-LPB-LAN-Adapter",
+    "short_name": "BSB-LAN",
     "description": "Progressive Web App des Handbuchs zum BSB-LPB-LAN-Adapter und der BSB-LAN-Software.",
     "lang": "de-DE",
     "icons": [
@@ -33,7 +33,7 @@
     }
   ],
     "start_url": "/BSB-LPB-LAN/inhaltsverzeichnis.html",
-    "display": "minimal-ui",
+    "display": "standalone",
     "orientation": "any",
     "background_color": "#157878",
     "theme_color": "#157878"
