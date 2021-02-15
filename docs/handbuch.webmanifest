@@ -1,7 +1,7 @@
 {
     "name": "Handbuch BSB-LPB-LAN-Adapter",
     "short_name": "BSB-LAN",
-    "description": "Progressive Web App des Handbuchs zum BSB-LPB-LAN-Adapter und der BSB-LAN-Software.",
+    "description": "Progressive Web App des Handbuchs zum BSB-LPB-LAN Adapter und der BSB-LAN Software.",
     "lang": "de-DE",
     "icons": [
     {
@@ -32,8 +32,8 @@
       "purpose": "any"  
     }
   ],
-    "start_url": "/BSB-LPB-LAN/inhaltsverzeichnis.html",
-    "display": "standalone",
+    "start_url": "index.html",
+    "display": "minimal-ui",
     "orientation": "any",
     "background_color": "#157878",
     "theme_color": "#157878"
