@@ -1,4 +1,4 @@
-[Zurück zur Einleitung](index.md)  
+[Zurück zur Einleitung](index2.md)  
    
 ---  
 # Inhaltsverzeichnis  
