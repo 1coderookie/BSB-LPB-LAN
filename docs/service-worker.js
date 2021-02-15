@@ -30,12 +30,12 @@
                // '/', // do not remove this
                 '.', 
                // '/index.html', //default
-                'index.html',
+                './index.html',
                 'inhaltsverzeichnis.html?homescreen=1', //default
                 '?homescreen=1', //default
                 'assets/css/style.css?v=1ae6ea59cc29b8a55941394bec5ba63fd5b09c72',// configure as by your site ; just an example
-                'kap01.html',
-                'kap02.html',
+                './kap01.html',
+                './kap02.html',
                 'kap03.html',
                 'kap04.html',
                 'kap05.html',
@@ -56,7 +56,7 @@
                 'anhang_b.html',
                 'anhang_c.html',
                 'anhang_d.html',
-                'pics/*',// choose images to keep offline; just an example
+                './pics/*.{png,jpg,jpeg}',// choose images to keep offline; just an example
         // Do not replace/delete/edit the manifest.js paths below
         //These are links to the extenal social media buttons that should be cached;
         // we have used twitter's as an example
