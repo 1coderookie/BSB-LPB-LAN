@@ -1,11 +1,11 @@
 
 <img src = "BSB_Manual_Logo.svg">
   
-## Herzlich willkommen beim Handbuch zum BSB-LPB-LAN-Adapter ud zur BSB-LAN-Software!
+## Herzlich willkommen beim Handbuch zum BSB-LPB-LAN-Adapter und zur BSB-LAN-Software!
          
-### Ist dies Dein erster Besuch, lies am Besten die [Einleitung](index2.md).   
+### Ist dies dein erster Besuch, lies am besten die [Einleitung](index2.md).   
   
-### Ansonsten springe direkt vor zum [Inhaltsverzeichnis](inhaltsverzeichnis.md).   
+### Ansonsten gehe direkt zum [Inhaltsverzeichnis](inhaltsverzeichnis.md).   
 
 ---  
   
