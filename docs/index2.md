@@ -3,7 +3,7 @@
 ## Einleitung  
 
 Dieses Handbuch wurde geschrieben, um den Einstieg in die Benutzung des
-BSB-LPB-LAN-Adapters (Platinenlayout v4, Arduino Due und ESP32) und der dazugehörigen BSB-LAN-Software v2.x 
+BSB-LPB-LAN Adapters (Platinenlayout v4, Arduino Due und ESP32) und der dazugehörigen BSB-LAN Software v2.x 
 zu vereinfachen und um als Nachschlagewerk zu dienen.  
 
 ***Es wird empfohlen, dieses Handbuch vor einer initialen
