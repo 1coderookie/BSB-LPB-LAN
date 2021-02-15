@@ -59,7 +59,7 @@
                 './anhang_b.html',
                 './anhang_c.html',
                 './anhang_d.html',
-                './pics/*.{png,jpg,jpeg}',// choose images to keep offline; just an example
+                './pics/*.{png,jpg,jpeg,JPG}',// choose images to keep offline; just an example
         // Do not replace/delete/edit the manifest.js paths below
         //These are links to the extenal social media buttons that should be cached;
         // we have used twitter's as an example
