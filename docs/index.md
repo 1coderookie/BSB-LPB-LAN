@@ -1,7 +1,7 @@
 
 <img src = "BSB_Manual_Logo.svg">
   
-## Herzlich willkommen beim Handbuch zum BSB-LPB-LAN-Adapter und zur BSB-LAN-Software!
+## Herzlich willkommen beim Handbuch zum [BSB-LPB-LAN Adapter](https://github.com/fredlcore/BSB-LAN)!
          
 ### Ist dies dein erster Besuch, lies am besten die [Einleitung](index2.md).   
   
