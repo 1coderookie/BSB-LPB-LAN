@@ -9,6 +9,10 @@
 
 ---  
   
+### [English version available!](https://1coderookie.github.io/BSB-LPB-LAN_EN)  
+  
+---  
+  
 Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
   
 ---  
