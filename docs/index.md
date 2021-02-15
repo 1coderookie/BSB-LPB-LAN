@@ -1,5 +1,5 @@
 
-<img src = "BSB_Manual_Logo.svg">
+<!-- <img src = "BSB_Manual_Logo.svg"> -->
   
 ## Herzlich willkommen beim Handbuch zum [BSB-LPB-LAN Adapter](https://github.com/fredlcore/BSB-LAN)!
          
