@@ -1,6 +1,9 @@
 ---
 ---
 
+
+@import "{{ site.theme }}";
+
 body {
   padding: 0;
   margin: 0;
@@ -10,4 +13,3 @@ body {
   color: $body-text-color;
 }
 
-@import "{{ site.theme }}";
