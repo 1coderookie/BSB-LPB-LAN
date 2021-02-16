@@ -34,7 +34,7 @@
                // 'index.html',
                 './index.html?homescreen=1', //default
                 './?homescreen=1', //default
-               // './assets/css/style.css*',// configure as by your site ; just an example
+                './assets/css/style.acss',// configure as by your site ; just an example
                 './index2.html',
                 './inhaltsverzeichnis.html',
                 './kap01.html',
