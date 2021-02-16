@@ -14,8 +14,8 @@
      }
     </script>
 
-
     <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">
+
     {% if site.google_analytics %}
       <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
       <script>
@@ -26,6 +26,10 @@
       </script>
     {% endif %}
     <meta charset="UTF-8">
+    
+ {% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -34,14 +38,13 @@
     <link rel="canonical" href="https://1coderookie.github.io/BSB-LPB-LAN/" />
     <meta property="og:url" content="https://1coderookie.github.io/BSB-LPB-LAN/" />
     
-    {% seo %}
     </head>
   
     <body>
 
-
     <header class="page-header" role="banner">
-     <h1 class="project-name">Handbuch für den BSB-LPB-LAN Adapter und die BSB-LAN Software</h1>
+      <img class="header-img" src ="BSB_Manual_Logo.svg" alt="Logo" height="100px" width="100px"href="https://1coderookie.github.io/BSB-LPB-LAN/index.html"/>
+      <h1 class="project-name">Handbuch für den BSB-LPB-LAN Adapter und die BSB-LAN Software</h1>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
         <a href="https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf" class="btn">Download PDF Version</a>
