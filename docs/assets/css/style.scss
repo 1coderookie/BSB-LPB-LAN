@@ -11,15 +11,15 @@
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
 
   @include large {
-    padding: 3.5rem 4.5rem;
+    padding: 3rem 4rem;
   }
 
   @include medium {
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2rem;
   }
 
   @include small {
-    padding: 1.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
   }
 }
 
