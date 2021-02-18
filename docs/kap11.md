@@ -2304,6 +2304,7 @@ A5 = Verkettung von A1 bis A4
   
 Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht die Abfrage des Komfortsollwerts (BSB-Parameter 710). Das Beispiel geht davon aus, dass dieser Parameter in den log_parameters enthalten ist und so per MQTT auch publiziert wird.  
   
+```  
 - platform: mqtt
   name: "BSB Komfortsollwert"
   state_topic: "BSB-LAN/710"
@@ -2312,6 +2313,7 @@ Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht 
   device_class: temperature
   availability_topic: "BSB-LAN/status"
   icon: "mdi:thermometer-chevron-up"
+```  
   
 Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/  
   
