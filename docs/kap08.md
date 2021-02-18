@@ -521,6 +521,10 @@ Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur ei
   
 Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 10](kap10.md). 
   
+BSB-LAN sendet über den Subtopic "status" unter dem definierten "MQTTTopicPrefix" jederzeit seinen Online-Status. Dies ist in der Voreinstellung also "BSB-LAN/status". Über diesen Topic kann so jederzeit festgestellt werden, ob der BSB-LAN derzeit Werte sendet und Kommandos empfangen kann.  
+Ist BSB-LAN verfügbar, ist im Topic die Nachricht "online" zu sehen, ansonsten wird "offline" gesetzt. Die Nachricht ist per Retain-Flag dauerhaft verfügbar, der Subscriber muss also nicht zum Zeitpunkt des BSB-LAN Starts bereits den Topic abonniert haben.  
+Ein Neustart über die Software (z.B. per URL-Befehl /N) setzt den Topic sofort auf "offline". Fällt BSB-LAN unkontrolliert aus (z.B. durch Stromausfall oder Flashen der Firmware) verschickt der Broker nach einem Timeout (dieser ist m.W. abhängig vom Broker) ebenfalls die Offline-Nachricht.   
+  
 Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus sowohl Abfragen als auch Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN für das Umsetzen von Steuerbefehlen Schreibzugriff auf den Regler gewährt werden.  
   
 Die Befehlssyntax lautet:  
