@@ -2220,7 +2220,7 @@ defmod mqtt2Server MQTT2_SERVER 1883 global
 attr mqtt2Server autocreate 1  
 ```    
   
-Sobald man in der Datei *BSB_lan_config.h* die IP des FHEM-Servers angegeben hat, erscheint das MQTT2-Device mitsamt aller Readings:  
+Sobald man in der Datei *BSB_LANn_config.h* die IP des FHEM-Servers angegeben hat, erscheint das MQTT2-Device mitsamt aller Readings:  
      
 ```  
 defmod MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN
@@ -2232,6 +2232,28 @@ BSB_LAN:BSB/8324:.* Brennergeblaesesollwert\
 BSB_LAN:BSB/700:.* Betriebsart\
 ...
 ```  
+  
+---  
+  
+***Das folgende Beispiel stammt vom FHEM-Forumsmitglied „Luposoft", der originale FHEM-Forumsbeitrag ist [hier](https://forum.fhem.de/index.php/topic,29762.msg1129702.html#msg1129702) zu finden.  
+Vielen Dank!***  
+  
+`define mqtt2Server MQTT2_SERVER 1883 global`  
+`define MQTT2_BSB_LAN MQTT2_DEVICE BSB_LAN`  
+`define FileLog_MQTT2 FileLog ./log/%V-%G-MQTT2.log MQTT2_BSB_LAN`  
+  
+Diese publish-Ausgabe sendet ungerichtet das MQTT-Telegramm in die Welt, ohne zu wissen, ob jemand zuhört
+(ein Grundprinzip von MQTT).  
+
+`set mqtt2Server publish BSB-LAN S5890=0` → Ausgabe des Steuerbefehls (manche brauchen auch ein I statt dem S) und unser Arduino hört genau auf BSB-LAN (zumindest in der Standardconfig).  
+  
+Die dazugehörigen Einträge in FileLog_MQTT2:   
+`2021-02-03_16:56:28 MQTT2_BSB_LAN MQTT: ACK_S5890=0` → Hier bestätigt BSB-LAN den Empfang.  
+`2021-02-03_16:56:29 MQTT2_BSB_LAN BSB-LAN_5890: 0 - Kein ` → Das ist die Ausgabe nach der Abfrage der Heizung.  
+
+`set mqtt2Server publish BSB-LAN 5890` → Einfache Wertabfrage.  
+`2021-02-04_13:24:15 MQTT2_BSB_LAN MQTT: ACK_5890` → Hier bestätigt BSB-LAN den Empfang.  
+`2021-02-04_13:24:16 MQTT2_BSB_LAN BSB-LAN_5890: 1 - Zirkulationspumpe Q4` → Das ist die Ausgabe nach der Abfrage der Heizung.    
   
 ---  
 
@@ -2276,6 +2298,24 @@ A5 = Verkettung von A1 bis A4
 ***Vielen Dank!***
   
 ---  
+
+***BSB-LAN-User Torben hat den Adapter via MQTT in Home Assistant eingebunden und stellt hier ein Beispiel zur Verfügung.***  
+***Vielen Dank!***  
+  
+Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht die Abfrage des Komfortsollwerts (BSB-Parameter 710). Das Beispiel geht davon aus, dass dieser Parameter in den log_parameters enthalten ist und so per MQTT auch publiziert wird.  
+  
+- platform: mqtt
+  name: "BSB Komfortsollwert"
+  state_topic: "BSB-LAN/710"
+  unique_id: "bsb710"
+  unit_of_measurement: '°C'
+  device_class: temperature
+  availability_topic: "BSB-LAN/status"
+  icon: "mdi:thermometer-chevron-up"
+  
+Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/  
+  
+---
   
 ## 11.12 SmartHomeNG  
   
