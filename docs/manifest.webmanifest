@@ -32,7 +32,8 @@
       "purpose": "any"  
     }
   ],
-    "start_url": "index.html",
+    "start_url": "./",
+    "scope": ".",
     "display": "minimal-ui",
     "orientation": "any",
     "background_color": "#157878",
