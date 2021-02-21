@@ -5,7 +5,12 @@
     
 
 # 11. Nutzung von externen Programmen
-
+  
+***Achtung:  
+Die in den nachfolgenden Unterkapiteln dargestellten Codebeispiele und/oder Module sind u.U. noch nicht an die Änderungen angepasst, die mit der Umstellung der BSB-LAN-Version auf die v2.x einher gingen. Es kann also sein, dass einige Beispiele nicht mehr 1:1 übernommen werden können, sondern angepasst werden müssen. Als Beispiel sei hier der Wegfall des URL-Befehls /T erwähnt, der in vorherigen Versionen die Werte der angeschlossenen Sensoren ausgab und in den nachfolgenden Beispielen hin und wieder noch vorzufinden ist.  
+Solltest du ein Codebeispiel oder ein Modul entdecken, das in der dargestellten Form nicht mit der aktuellen BSB-LAN-Version v2.x lauffähig ist, so informiere bitte den entspr. Autor des Beispiels/Moduls und schicke mir ggf. ein entsprechend angepasstes Beispiel, damit ich die korrigierte Version hier einstellen kann.  
+Danke.***  
+  
 Da der Adapter lediglich eine Schnittstelle darstellt, mittels derer man
 Zugriff auf den Heizungsregler via Computer erhält, können
 selbstverständlich externe Programme zum Einsatz kommen. Somit kann die
