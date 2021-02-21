@@ -137,6 +137,8 @@ Darüber hinaus muss bei Verwendung der Arduino IDE grundsätzlich auf Folgendes
 - Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: Per default wird in der Arduino IDE bei ESP32-Boards i.d.R. 921600 voreingestellt).  
 - Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
   
+**Hinweis: Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen.**    
+  
 *Hinweis: Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen.*    
   
 ---
