@@ -259,7 +259,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
     
 ### 3.1.3 Weitere Hersteller
 
--   ATAG QR-Serie {BSB}
+-   ATAG Q38CR \[LMS14\] (Gasbrenner) {BSB}
 
 -   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
 
@@ -320,6 +320,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
+
+-   HANSA SND 30TK \[RVS13\] (Ölbrenner) {BSB}  
 
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (Gasbrenner) {BSB}  
 
