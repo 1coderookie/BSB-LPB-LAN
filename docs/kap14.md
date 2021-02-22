@@ -23,7 +23,6 @@
 - Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
 - Evtl. falsche Pinbelegung (Rx/Tx)
 - Evtl. kalte Lötstellen
-- *Arduino-Version des Adapters: Kontakt SJ1 auf der Platine evtl. nicht hergestellt*
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
     
 ---
@@ -43,9 +42,6 @@ aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan) 
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
-- LAN-Shield mit W5500-Chip bestückt? → In der Ardunio IDE muss die aktuelle 
-Ethernet Bibliothek installiert sein (mindestens Version 2.0)!  
-- Probleme mit (temporärer) Nicht-Erreichbarkeit via LAN? → s. Kap. [12.2](kap12#122-das-lan-shield)
 
     
 ---
