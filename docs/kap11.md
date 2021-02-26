@@ -2338,6 +2338,15 @@ Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/
   
 ---  
   
+## 11.14 Datenverarbeitung mittels Bash-Skript
+
+***BSB-LAN-User Karl-Heinz hat zwei Bash-Skripte geschrieben, die unter Linux dazu verwendet werden können, Daten vom Heizungsregler auszulesen und mittels gnuplot graphisch darzustellen.***  
+***Vielen Dank!***   
+   
+Die Lösung von Karl-Heinz ist für diejenigen Nutzer interessant, die keine komplexe Heimautomatisierungssoftware einsetzen (wollen), um Daten unter Linux vom Heizungsregler abzurufen und graphisch darstellen zu lassen. Die Skripte stellt er freundlicherweise in [seinem GitHub-Repo](https://github.com/khfm/bsb-lan-readout) zur Verfügung.  
+  
+---  
+  
 [Weiter zu Kapitel 12](kap12.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
