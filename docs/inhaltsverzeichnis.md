@@ -100,6 +100,7 @@
    * [11.11 Home Assistant](kap11.md#1111-home-assistant)  
    * [11.12 SmartHomeNG](kap11.md#1112-smarthomeng)  
    * [11.13 Node-RED](kap11.md#1113-node-red)  
+   * [11.14 Datenverarbeitung mittels Bash-Skript](kap11.md#1114-datenverarbeitung-mittels-bash-skript)  
    
 [**12. Hardware in Verbindung mit dem BSB-LPB-LAN-Adapter**](kap12.md)  
    * [12.1 Der Arduino Due](kap12.md#121-der-arduino-due)  
