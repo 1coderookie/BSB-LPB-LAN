@@ -34,20 +34,23 @@ RXD = Digitalpin Empfangen
     
 ## A2.2 Teileliste
 
-- 1x LED (rot) (Betriebsspannung max. 2,8V, Sperrspannung 5V) (→ D1)  
-- 1x Diode 1N4148 (→ D2)  
-- 1x EEPROM 24LC32A-I/P (→ EEPROM) → *Achtung: Nicht benötigt für die ESP32-Boardvariante!*  
-- 2x Optokoppler 4N25 (→ OK1, OK2)    
-- 1x Transistor BC547 (→ Q1)  
-- 1x Transistor BC557 (→ Q2)  
-- 3x Widerstand 330kΩ (→ R1, R4, R7) 
-- 1x Widerstand 1.5kΩ (→ R2) 
-- 1x Widerstand 300Ω (→ R3) 
-- 2x Widerstand 4.7kΩ (→ R5, R6)  
+| Anzahl | Komponente | Bezeichnung | Abbildung | Anmerkung | 
+|:-----------:|:-------------:|:----------:|:-----------:|:------:|  
+| 1 | LED (rot) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/led_small.jpg"> | Betriebsspannung max. 2,8V, Sperrspannung 5V |  
+| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1n4148_small.jpg"> | - |  
+| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/eeprom_small.jpg"> | nicht benötigt für die ESP32-Boardvariante |  
+| 2 | Optokoppler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4n25_small.jpg"> | - |    
+| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc547_small.jpg"> | - |  
+| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc557_small.jpg"> | - |  
+| 3 | Widerstand 330kΩ | R1, R4, R7 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330k_small.png"> | orange, orange, schwarz, orange, braun | 
+| 1 | Widerstand 1.5kΩ | R2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1k5_small.png"> | braun, grün, schwarz, braun, braun | 
+| 1 | Widerstand 300Ω | R3 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330_small.png"> | orange, orange, schwarz, schwarz, braun | 
+| 2 | Widerstand 4.7kΩ | R5, R6 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4k7_small.png"> | gelb, violett, schwarz, braun, braun |  
+| 1 | Anschlussklemme | CL+/CL | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/klemme_small.jpg"> | RM 5,08mm |
     
 
 ***Arduino Due:***  
-Anschlussklemmen, *Pinleisten*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
+*Pinleisten (RM 2,54mm)*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
   
 Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
   
@@ -56,12 +59,12 @@ Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich ledigli
 *Zwingend zu bestückende Pins für die Verwendung mit dem Arduino Due.*  
   
 ***Raspberry Pi:***  
-Anschlussklemmen, *Buchsenleiste*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
+*Buchsenleiste / weibliche Pinheader (doppelreihig, RM 2,54mm)*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
   
 Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
         
 ***ESP32:***  
-Anschlussklemmen, *Buchsenleiste*, ggf. IC-Sockel für Optokoppler etc.  
+*Buchsenleiste / weibliche Pinheader (RM 2,54mm; ESP32: einreihig; Olimex: doppelreihig 5x2)*, ggf. IC-Sockel für Optokoppler etc.  
   
 Für den Einsatz des ESP32-spezifischen Adapters v4 an dem empfohlenen *ESP32 NodeMCU von Joy-It* werden letztlich lediglich die Pins RX2, TX2,  GND sowie 3,3V benötigt und müssen daher zwingend mit entspr. Pinheadern bestückt werden. Aus Stabilitätsgründen ist es jedoch empfehlenswert, beide Seiten komplett mit je einer Reihe Pinheadern zu bestücken.   
   
