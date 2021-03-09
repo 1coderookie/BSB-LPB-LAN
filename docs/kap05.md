@@ -249,22 +249,20 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
 -   **OneWire-Temperatursensoren (DS18B20):**  
     `#define ONE_WIRE_BUS`  
-    `bool enableOneWireBus = true;`  
+    `bool enableOneWireBus = false;`  
     `byte One_Wire_Pin = 7;`  
     
-    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, der Eintrag *true* verwendet sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
+    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
     Adapterboard) definiert werden.  
-    Voreingestellt ist das Modul aktiviert und Pin 7 eingestellt.  
-    Soll keine Verwendung stattfinden, ist `bool enableOneWireBus = false;` einzutragen.  
-          
-
+    Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
+              
 -   **DHT22-Sensoren:**  
     `#define DHT_BUS`  
-    `byte DHT_Pins[10] = {2, 3};`  
+    `byte DHT_Pins[10] = {5};`  
     
     Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
-    Adapterboard) definiert werden.  
-    Voreingestellt ist das Modul samt Verwendung der Pins 2 und 3 aktiv.  
+    Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
+    Voreingestellt ist das Modul samt Verwendung des Pins 5 aktiv.  
   
     *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
   
@@ -297,9 +295,14 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---
 
 -   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
-    `#define LOGGER` → Das Logging-Modul wird kompiliert. *Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!*     
+    `#define LOGGER` → Das Logging-Modul wird kompiliert.  
+    ***Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!***     
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
+    
+    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
+    `//#define ESP32_USE_SD`  
+    
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
     `int logTelegram = LOGTELEGRAM_OFF;`  
     
