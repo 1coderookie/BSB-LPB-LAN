@@ -571,6 +571,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     #if defined(__AVR__)
     //#undef CONFIG_IN_EEPROM
     //#undef WEBCONFIG
+    #undef JSONCONFIG
     //#undef WEBSERVER
     #undef AVERAGES
     #undef DEBUG
@@ -581,6 +582,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     #undef ROOM_UNIT
     #undef VERSION_CHECK
     #undef MAX_CUL
+    #undef BME280
     #endif
     ```  
    
