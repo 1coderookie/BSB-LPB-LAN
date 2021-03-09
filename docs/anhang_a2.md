@@ -64,7 +64,7 @@ Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich ledigli
 Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
         
 ***ESP32:***  
-*Buchsenleiste / weibliche Pinheader (RM 2,54mm; ESP32: einreihig; Olimex: doppelreihig 5x2)*, ggf. IC-Sockel für Optokoppler etc.  
+*Buchsenleiste / weibliche Pinheader (RM 2,54mm; ESP32: einreihig; Olimex: doppelreihig 2x5)*, ggf. IC-Sockel für Optokoppler etc.  
   
 Für den Einsatz des ESP32-spezifischen Adapters v4 an dem empfohlenen *ESP32 NodeMCU von Joy-It* werden letztlich lediglich die Pins RX2, TX2,  GND sowie 3,3V benötigt und müssen daher zwingend mit entspr. Pinheadern bestückt werden. Aus Stabilitätsgründen ist es jedoch empfehlenswert, beide Seiten komplett mit je einer Reihe Pinheadern zu bestücken.   
   
