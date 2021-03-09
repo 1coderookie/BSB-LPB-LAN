@@ -568,10 +568,10 @@ Frame	{
 ## 11.3 HomeMatic (EQ3)
     
 ***Die folgenden HomeMatic-Beispielscripte stammen vom FHEM-Forumsmitglied „Bratmaxe".  
-Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).  
-***Das letzte Beispiel beinhaltet die Abfrage optional angeschlossener DS18B20-Temperatursensoren mittels der spezifischen SensorIDs und der Ausgabe von /T.  
-Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "PaulM" aufgeführt.
-Vielen Dank!***  
+Sie sind samt einer genaueren Beschreibung ebenfalls [hier](https://forum.fhem.de/index.php/topic,29762.msg851779.html#msg851779) im FHEM-Forum zu finden (die hier eingefügten Beschreibungen wurden von dort größtenteils unverändert übernommen).***  
+***Das letzte Beispiel beinhaltet die Abfrage optional angeschlossener DS18B20-Temperatursensoren mittels der spezifischen SensorIDs und der Ausgabe von /T.***  
+***Im Anschluss daran sind die Beispielskripte vom FHEM-Forumsmitglied "PaulM" aufgeführt.***  
+***Vielen Dank!***  
     
 ***Beispielscript für die Abfrage des Adapters:***  
 
