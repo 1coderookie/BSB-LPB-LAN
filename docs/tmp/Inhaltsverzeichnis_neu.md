@@ -10,7 +10,7 @@
 [**Einleitung**](index2.md)  
 
 [**1. BSB-LAN: Die Hardware**](kap01.md)  
-   * [1.1 Adapter]  
+   * [1.1 Adapter]()  
    * [1.2 Arduino Due](kap12.md#121-der-arduino-due)  
       * [1.2.1 Due + LAN: Das LAN-Shield](kap12.md#1211-due--lan-das-lan-shield)  
       * [1.2.2 Due + WLAN: Die ESP8266-WiFi-Lösung](kap12.md#1212-due--wlan-die-esp8266-wifi-lösung)  
@@ -24,11 +24,11 @@
    * [1.5 Gehäuse](kap1md#14-gehäuse)  
 
 [**2. BSB-LAN: Die Software**](kap02.md)  
-   * [2.1 Installation**](kap06.md)  
-      * [2.1.1 Installation auf dem Due]  
-      * [2.1.2 Installation auf dem ESP32]  
-      * [2.1.3 Updates]  
-   * [2.2 Konfiguration**](kap05.md)  
+   * [2.1 Installation](kap06.md)  
+      * [2.1.1 Installation auf dem Due]()  
+      * [2.1.2 Installation auf dem ESP32]()  
+      * [2.1.3 Updates]()  
+   * [2.2 Konfiguration](kap05.md)  
       * [2.2.1 Konfiguration mittels Webinterface](kap05.md#51-konfiguration-mittels-webinterface)  
       * [2.2.2 Konfiguration durch Anpassen der Datei *BSB_LAN_config.h*](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)
 
