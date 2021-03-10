@@ -3,8 +3,7 @@
 ---  
 # Inhaltsverzeichnis  
     
-***User des veralteten Setups Adapter v2 + Mega2560:***  
-[**Bitte Anhang D beachten!**](anhang_d.md)  
+[***User des veralteten Setups Adapter v2 + Mega2560: Bitte Anhang D beachten!***](anhang_d.md)  
 ---  
     
 [**Einleitung**](index2.md)  
