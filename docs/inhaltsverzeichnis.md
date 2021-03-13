@@ -27,7 +27,7 @@
 [**2. BSB-LAN: Die Software**](kap02.md)  
    * [2.1 Installation](kap02.md#21-installation)  
       * [2.1.1 Installation auf dem Due](kap02.md#211-installation-auf-dem-due)  
-      * [2.1.2 Installation auf dem ESP32](kap02.md#211-installation-auf-dem-esp32)  
+      * [2.1.2 Installation auf dem ESP32](kap02.md#212-installation-auf-dem-esp32)  
       * [2.1.3 Updates](kap02.md#213-updates)  
    * [2.2 Konfiguration](kap02.md#22-konfiguration)  
       * [2.2.1 Konfiguration mittels Webinterface](kap02.md#221-konfiguration-mittels-webinterface)  
