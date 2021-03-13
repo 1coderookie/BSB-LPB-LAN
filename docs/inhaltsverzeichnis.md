@@ -110,7 +110,7 @@
       * [10.2.2 RVx-Regler](kap10.md#1022-rvx-regler)  
          * [10.2.2.1 RVA- und RVP-Regler](kap10.md#10221-rva--und-rvp-regler)  
          * [10.2.2.2 RVS-Regler](kap10.md#10222-rvs-regler)  
-      * [10.2.3 Hinweis: Inkompatible Systeme von Brötje und Elco](kap10.md#1023-inkompatible-systeme-von-brötje-und-elco)  
+      * [10.2.3 Hinweis: Inkompatible Systeme von Brötje und Elco](kap10.md#1023-hinweis-inkompatible-systeme-von-brötje-und-elco)  
       * [10.2.4 Hinweis: Spezialfall LMU54/LMU64-Regler](kap10.md#1024-hinweis-spezialfall-lmu54lmu64-regler)  
       * [10.2.5 Hinweis: Spezialfall Weishaupt-Geräte](kap10.md#1025-hinweis-spezialfall-weishaupt-geräte)  
       * [10.2.6 Hinweis: LPB nachrüsten mittels OCI420 ClipIn-Modul](kap10.md#1026-hinweis-lpb-nachrüsten-mittels-oci420-clipin-modul)  
