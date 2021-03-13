@@ -105,7 +105,7 @@ Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens 
 
 ---
     
-## 5.2 JSON
+## 5.3 JSON
   
 ***Hinweis:***    
 *Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
