@@ -54,7 +54,7 @@ Die Verwendung des ESP32-spezifischen Adapters an einem Due ist aufgrund des feh
 
 ---
 
-## 1.2 Der Arduino Due
+## 1.2 Arduino Due
 *Grundsätzlich ist die Verwendung eines [originalen Arduino Due](https://store.arduino.cc/arduino-due) zu empfehlen.*  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
   
@@ -167,7 +167,7 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
   
 ---  
     
-## 1.3 Der ESP32
+## 1.3 ESP32
   
 ***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
   
