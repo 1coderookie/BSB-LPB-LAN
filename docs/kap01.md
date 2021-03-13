@@ -10,7 +10,7 @@ BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf
   
 ---
 
-## 1.1 Der Adapter
+## 1.1 Adapter
 
 Der BSB-LAN Adapter ist in zwei verschiednen Versionen verfügbar. Zum einen als Arduino Due-spezifische Version mit einem EEPROM, zum anderen als eine ESP32-spezifische Version ohne EEPROM.   Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die spezifische Version auswählen, da sich der Adapter dann mit dem jeweiligen System komfortabel und sicher durch ein Aufstecken verbinden lässt.  
   
