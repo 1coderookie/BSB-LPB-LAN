@@ -463,7 +463,7 @@ Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinhei
   
 ---  
   
-#### 10.2.6 LPB nachrüsten mittels OCI420 ClipIn-Modul  
+#### 10.2.6 Hinweis: LPB nachrüsten mittels OCI420 ClipIn-Modul  
 Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
   
 Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anleitungen zu finden sind, obwohl sie für einen erfolgreichen Betrieb entscheidend sind. Dies betrifft vor allem die Einstellungen, die für die LPB-Spannungsversorgung vorzunehmen sind. Des Weiteren ist die LPB-Geräteadresse 1 mit Segmentadresse 0 einzustellen und die Einstellung als Uhrzeit-Master vorzunehmen.  
@@ -633,7 +633,7 @@ Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anlei
   
 ---  
   
-## 10.7 Sonderzubehör: Webserver OZW672 und Servicetool OCI700  
+## 10.6 Sonderzubehör: Webserver OZW672 und Servicetool OCI700  
 An dieser Stelle seien der Vollständigkeit halber noch zwei kommerzielle Lösungen erwähnt, mittels derer man Zugriff auf den Heizungsregler via Computer bekommen kann.  
 Dies ist zum einen der Webserver OZW672 und zum anderen das Servicetool OCI700.  
    
