@@ -226,7 +226,7 @@ Aufgrund der zeitkritischen Kommunikation bei PPS ist es sinnvoll, das Setup auf
    
 ---    
     
-## 10.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler
+## 10.2 Detaillierte Beschreibung der kompatiblen Regler
 Die folgende Reglerauflistung und -beschreibung soll einen kurzen
 Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
 rudimentären Unterschiede geben. Auf die unterschiedliche
