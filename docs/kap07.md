@@ -426,7 +426,7 @@ FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante
      
 ---
     
-## 7.5 LAN-Optionen für den BSB-LPB-LAN-Adapter
+## 7.5 LAN-Optionen für das BSB-LAN-Setup
 Obwohl für die Netzwerkanbindung des Adapters definitv die kabelgebundene Variante zu empfehlen ist, kann es in Einzelfällen jedoch nötig sein, eine alternative LAN-Anbindung für den Adapter zu schaffen, da eine Kabelinstallation (LAN oder Busleitung) bis zum Wärmeerzeuger nicht realisierbar ist. Dafür gibt es mehrere Möglichkeiten, die im Folgenden kurz vorgestellt werden.  
 *An dieser Stelle sei aber nochmals darauf hingewiesen, dass der Adapter (nur bei Anbindung via BSB!) auch an ein bereits vorhandenes Raumgerät mittels zusätzlicher Busleitung angeschlossen werden kann.* 
     
