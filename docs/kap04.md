@@ -2,67 +2,116 @@
 [Zurück zu Kapitel 3](kap03.md)    
     
 ---
-        
 
-# 4. Installation der Arduino IDE und Flashen des Arduino Due  
-  
-**Hinweis: Die nachfolgende Anleitung bezieht sich auf die Installation auf dem** ***Arduino Due!*** **Solltest du einen** ***ESP32*** **einsetzen wollen, so beachte bitte die [Anleitung in Kap. 12.2](kap12.md#122-der-esp32)!**   
-  
--   Downloade und installiere die aktuelle Version der Arduino IDE von
-    [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software)
-    (Windows-, Mac- und Linux-Version verfügbar).
+# 4. BSB-LAN: Das Webinterface
+Die Startseite des Webinterface wird angezeigt, wenn ohne weitere
+Parameter auf die URL des Servers zugegriffen wird:  
+`http://<IP-Adresse>`
 
--   Schließe den Arduino Due (samt Ethernet-Shield und Adapter) via USB an
-    deinem PC an. Achte darauf, dass du den ["Programming Port" des Due](kap12.md#121-der-arduino-due) verwendest!
+Bei Verwendung eines Passkeys oder weiterer optionaler
+Sicherheitsfunktionen muss die URL entsprechend erweitert werden, bei
+Passkey-Verwendung bspw.:  
+`http://<IP-Adresse>/<passkey>/`
 
--   Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/bsb_lan/archive/master.zip)
-    und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.
-  
--   Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Datei *BSB_LAN_config.h.default* in
-    ***BSB_LAN_config.h*** um!  
+*Bitte den Slash hinter dem Passkey nicht vergessen!*
     
--   Wenn du eigenen Code implementieren willst, benenne die Datei 
-    *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
-
--   Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei
-    *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien
-    *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit
-    geladen.
-
--   Stelle sicher, dass du die aktuelle Ethernet-Bibliothek verwendest 
-    (mindestens v2.0). Rufe dazu unter dem Menüpunkt „Sketch“ → 
-    „Bibliothek einbinden“ → „Bibliotheken verwalten“ auf und überprüfe, 
-    ob ein Update bzw. eine aktuellere Version der „Ethernet Bibliothek“ 
-    verfügbar ist. Falls ja, führe ein Update aus bzw. installiere die Version.  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite.png">
     
--   Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw.
-    Werkzeuge/Board.  
-    Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Öffne dafür den Boardverwalter unter Werkzeuge/Board und suche nach "Arduino SAM Boards", wo der Due enthalten ist. Klicke auf den Eintrag und dann auf die Schaltfläche 'Installieren'. Danach solltest du den Due unter Werkzeuge/Boards finden.
+Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen einfachen und schnellen Zugriff auf bestimmte Funktionen bieten:  
+- Heizungsfunktionen  
+- Sensoren  
+- Ausgabe Logdatei  
+- Prüfe auf neue Parameter  
+- Einstellungen  
+- URL-Befehle  
+- Handbuch  
+- FAQ  
+   
+Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion nicht aktiviert ist (wie im obigen Screenshot zu sehen). Ist die Logging-Funktion aktiviert, so heißt die Bezeichnung des Buttons "Zeichne Logdatei".
+  
+Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
+BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
+*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies durch Auskommentieren des entspr. Definements (`//#define VERSION_CHECK 1`) in der Datei BSB_lan_config.h deaktiviert werden.*   
 
--   Wähle den korrekten Seriellen Port unter Werkzeuge/Port aus.
+---  
+   
+**Heizungsfunktionen (URL-Befehl: /K):**  
+Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
+im Display der dargestellten Untermenükategorien entsprechen, wenn auf den Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen wird.
 
--   Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.
-
--   ***WICHTIG:***  
-*Springe nun zu [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh), lies die dortigen Beschreibungen und passe die Datei BSB_LAN_config.h deinen Wünschen entsprechend an. Solltest du dir mit den einzelnen Einstellungen noch nicht sicher sein, so kannst du diese auch später noch anpassen.*  
-***Entscheidend ist, falls du DHCP nicht verwenden möchtest, dass du zumindest die Netzwerkeinstellungen wunschgemäß anpasst, damit du im weiteren Verlauf Zugriff auf das Webinterface von BSB-LAN hast!***  
-
--   Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino.
-
--   Verbinde den Arduino mittels LAN-Kabel mit deinem Router/Switch.
-    Stelle dabei sicher, dass eine Stromversorgung für den Arduino via
-    USB (Programming Port) oder externem Netzteil besteht!
-
--   Öffne die Seite `http://<IP-Adresse>/` (oder
-    `http://<IP-Adresse>/<passkey>/` wenn die Passkey-Funktion (s. Beschreibung in [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)) genutzt wird - die Startseite des Webinterface der BSB-LAN-Software sollte erscheinen.  
-    Sollte sie nicht erscheinen, drücke einmal kurz auf den Reset-Knopf
-    des Arduino und rufe die Startseite erneut auf.  
-    Unter `http://<IP-Adresse>/C` (bzw. Menüpunkt „Konfiguration" im
-    Webinterface) kannst du deine Konfiguration überprüfen.  
+Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
+Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
     
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorien.png">
+    
+Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet
+eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
+in dieser Kategorie verfügbar sind.
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
+    
+---  
+   
+**Sensoren (URL-Befehl: /K49):**  
+Wenn optionale DS18B20-/DHT22-Sensoren angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
-***Hinweis: Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.***    
-       
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png">
+
+DS18B20-Sensoren sind mit "1w_temp[x]" benannt, bei jedem Sensor wird zusätzlich die spezifische Sensor ID mit angezeigt.  
+DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit an.  
+   
+---  
+   
+**Ausgabe/Zeichne Logdatei (URL-Befehle /D und /DG):**  
+
+Eine grafische Darstellung des optional erstellbaren Logfiles (Datei *datalog.txt*) auf einer 
+microSD-Karte erfolgt bei Klick auf den Button "Zeichne Logdatei". Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schrift angezeigt und die Bezeichnung lautet "Ausgabe Logdatei".
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph.jpg">  
+    
+***Hinweis:*** 
+    
+*Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen 
+keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung 
+bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird.*  
+
+*Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue
+Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett
+beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
+oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch
+nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
+
+---  
+   
+**Prüfe auf neue Parameter (URL-Befehl /Q):**  
+Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überprüft, ob für den angeschlossenen Regler noch etwaige Parameter freizugeben sind.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_Q_de.png">  
+   
+---  
+   
+**Einstellungen (URL-Befehl: /C):**  
+Hier wird eine Übersicht der Konfiguration dargestellt.  
+Dort sind im oberen Bereich u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  
+   
+Unter der Auflistung findet sich das Webinterface zur Konfiguration von BSB-LAN. 
+
+---  
+   
+**URL-Befehle:**  
+Der Button ist mit diesem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
+   
+---  
+   
+**Handbuch:**  
+Der Button ist mit diesem Handbuch verlinkt. Internetzugriff wird benötigt.  
+   
+---  
+   
+**FAQ:**  
+Der Button ist mit dem Kapitel "FAQ" dieses Handbuchs verlinkt. Internetzugriff wird benötigt.
     
 ---
     
@@ -71,6 +120,4 @@
 [Weiter zu Kapitel 5](kap05.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
-
-
 

@@ -3,338 +3,699 @@
     
 ---
     
-# 2. Grundsätzliches zum BSB, LPB und zur PPS-Schnittstelle    
-Bei BSB (Boiler System Bus), LPB (Local Process Bus) und PPS (Point-to-Point Schnittstelle) handelt es sich um jeweils verschiedene und untereinander nicht kompatible Bus-Systeme bzw. Schnittstellen. Es können also jeweils nur Geräte angeschlossen werden, die den gleichen Bus- bzw. Schnittstellen-Typ aufweisen.  
-  
-Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS1x und LMU7x ist ein BSB-Anschluss am Regler zu finden. 
-Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar (s. [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul)).  
-PPS ist nur bei alten Reglern vorzufinden und wird heutzutage nicht mehr verbaut.  
-  
-Im folgenden Kapitel wird etwas näher auf die Unterschiede der beiden Bustypen BSB und LPB eingegangen. Die PPS-Schnittstelle wird in einem eigenen Kapitel kurz vorgestellt, da sie bei aktuellen Geräten nicht mehr vorhanden ist.  
-    
+# 2. BSB-LAN: Die Software
+
+In den folgenden Kapiteln wird auf die Installation und die Konfiguration der BSB-LAN-Software eingegangen. Eine Beschreibung des Webinterface findest du hingegen in [Kap. 4](kap04.md), eine Beschreibung der Abfrage- und Steuermöglichkeiten in [Kap 5](kap05.md) und eine Beschreibung der Spezialfunktionen in [Kap. 6](kap06.md).  
+
+--- 
+
+## 2.1 Installation
+
+Die BSB-LAN-Software muss zur Installation auf den jeweils verwendeten Mikrocontroller (Arduino Due oder ESP32) geflasht werden. Dies kann bspw. mittels der "Arduino IDE" erfolgen, selbstverständlich können aber auch andere Programme wie bspw. "PlatformIO" oder "Visual Studio Code" genutzt werden.  
+
+*Hinweis:*  
+In diesem Handbuch wird davon ausgegangen, dass die Arduino IDE genutzt wird. Sämtliche Beschreibungen und Bezeichnungen beziehen sich daher auf die Arduino IDE. Solltest du Anfänger und mit der Arduino IDE noch nicht vertraut sein, so findest du eine Beschreibung zur Installation und Konfiguration der Arduino IDE in [Kap. 12](kap12.md).   
+
+Je nach verwendeter Plattform (Arduino Due oder ESP32) unterscheiden sich die notwendigen Einstellungen der Arduino IDE. So müssen die entsprechenden Boardtypen installiert und ausgewählt sein, die Einstellungen plattformspezifisch angepasst werden etc. Auf diese Einstellungen wird im Folgenden eingegangen. Dabei wird davon ausgegangen, dass die nötigen Bibliotheken für die jeweilge Plattform bereits installiert sind. Sollte dies nicht der Fall sein, so findest du Informationen hierzu in [Kap. 12](kap12.md).  
+Darüber hinaus gibt es bei der Installation auf dem ESP32 noch weitere Dinge zu beachten, die im entspr. Kapitel ebenfalls behandelt werden.  
+
+
+
 ---
-    
-## 2.1 BSB und LPB
 
-BSB (Boiler System Bus) und LPB (Local Process Bus) sind zwei
-verschiedene Bus-Typen, die sich vereinfacht in zwei Nutzungsklassen
-unterscheiden lassen:
+### 2.1.1 Installation auf dem Due
 
-1. Der BSB (Boiler System Bus) ist ein ‚lokaler' Bus zur Nutzung des lokal angeschlossenen
-Reglers.  
-Angeschlossene Geräte wie bspw. die Bedieneinheit, ein
-Raumgerät / Fernbedienung oder auch der (via BSB) angeschlossene Adapter
-können nur auf den Regler zugreifen, an dem sie angeschlossen sind.
+Im Folgenden wird die Installation der BSB-LAN-Software auf einem Arduino Due beschrieben. Die Beschreibung bezieht sich dabei auf die Verwendung der Arduino IDE. Mit den Voreinstellungen der BSB-LAN-Software wird für die IP-Adressvergabe DHCP genutzt. Solltest du dies nicht wünschen und eine feste IP vergeben wollen, so lies bitte [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) und passe die Datei *BSB_LAN_config.h* vor dem Flashen an!  
 
-2. Der LPB (Local Process Bus) ist ein ‚übergreifender' Bus zur Nutzung mehrerer angeschlossener
-Regler in einem komunikationsfähigen Verbund.  
-Über den LPB können mehrere Regler miteinander verbunden werden und bei
-korrekter Parametrierung gewisse Werte miteinander teilen bzw. sich gegenseitig
-beeinflussen.  
-Auf diese Weise kann bspw. eine Kaskadenschaltung von mehreren Brennern
-realisiert werden oder eine Gas- oder Öl-Heizung mit einer Solaranlage
-und einem Feststoffkessel regelungstechnisch \'verbunden\' werden.  
-Der korrekte Anschluss der einzelnen Komponenten sowie die korrekte
-Parametrierung der jeweiligen Regler sollte im Normalfall bereits bei
-der Installation der Anlage durch den Heizungsinstallateur erfolgt
-sein.
-
-***Beispiel:***  
-*Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
-wasserführender Kamin und eine thermische Solaranlage zur Unterstützung
-des Heizkreises oder der Warmwasserbereitung.
-Alle drei Wärmeerzeuger sind hydraulisch an einem Pufferspeicher
-angeschlossen.
-Die Wärme für den Heizkreis soll vom Pufferspeicher bezogen werden.*
-
-*Die Regelung der Solaranlage und des Feststoffkessels übernimmt ein
-Solarsystemregler (SSR), die Kesselsteuerung der Heizung übernimmt in
-diesem Beispiel der interne Heizungsregler. Alle Sensoren, Pumpen,
-Mischer etc. sind am SSR angeschlossen, welcher jedoch via LPB mit dem
-Heizungsregler verbunden ist. Durch diese Verbindung der beiden Regler
-kann somit bspw. eine Pufferspeicherladung geregelt werden, bei der die
-Heizung nur aktiv wird, wenn weder Solar noch Feststoffkessel den Puffer
-laden / geladen haben.*
-
-*Wenn ein Adapter via BSB an einem der beiden Regler aus oben genanntem
-Beispiel angeschlossen ist, kann er folglich nur auf den jeweiligen
-Regler 'lokal' zugreifen, an dem er angeschlossen ist (also bspw.
-Heizungsregler oder SSR). Pro Regler muss in dem Fall ein Adapter am jeweiligen BSB angeschlossen werden, wenn Zugriff gewünscht ist.*  
-  
-*Wenn ein Adapter via LPB an einem der beiden Regler aus oben genanntem
-Beispiel angeschlossen ist, müssen*  
-*1. die Geräte- und Segmentadressen entsprechend der
-LPB-Konfigurationsanforderungen eingestellt werden, und*  
-*2. beim Adapter eine Zieladresse eingestellt werden, an die die
-jeweiligen Anfragen des Adapters geschickt werden (s. [Kap 2.1.2](kap02.md#212-adressierung-beim-lpb) und [Kap. 8](kap08.md)).*   
-  
-Eine übergreifende Abfrage von Werten oder Parametern zweier oder mehrerer Regler im LPB-Verbund via Adapter kann zwar erfolgen, doch ist diese Funktion noch nicht ausgiebig getestet worden.  
-Die spezifischen technischen Daten, Leistungsmerkmale und Anforderungen
-an entsprechende Installationen und Parametrierungen hinsichtlich der
-Geräte- und Segmentadressen sind den jeweiligen technischen
-Dokumentationen der Hersteller zu entnehmen. Hinsichtlich des LPB seien
-insbesondere die Dokumentationen „LPB Systemgrundlagen" (Siemens Building 
-Technologies - Landis & Staefa Division: CE1N2030D) und „LPB Projektierungsgrundlagen" 
-(Siemens Building Technologies - Landis & Staefa Division: CE1N2032D) empfohlen.
-   
-
-    
-*Bezüglich des Anschlusses des Adapters s. [Kap. 2.3](kap02.md#23-anschluss-des-adapters).*
-    
----  
-  
-### 2.1.1 Adressierung beim BSB  
-Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits festgelegt:  
-   
-| Bus-Adresse | Geräteadresse | Gerät (Bezeichnung im Seriellen Monitor) |
-|:-----------:|:-------------:|:------------------------:|
-| 0x00 | 0 | Heizungsregler („HEIZ“) |  
-| 0x03 | 3 | Erweiterungsmodul 1 („EM1“) / Mischer-ClipIn AGU |  
-| 0x04 | 4 | Erweiterungsmodul 2 („EM2“) / Mischer-ClipIn AGU | 
-| 0x06 | 6 | Raumgerät 1 („RGT1“: QAA55, QAA75, IDA) | 
-| 0x07 | 7 | Raumgerät 2 („RGT2“: QAA55, QAA75) | 
-| 0x08 | 8 | Raumgerät 3/P und/oder OCI700 Servicetool („CNTR“) | 
-| 0x0A | 10 | reglerseitige Bedieneinheit / Display („DISP“) | 
-| 0x0B | 11 | Servicegerät (QAA75 als Servicegerät parametriert) („SRVC“) | 
-| 0x31 | 49 | OZW672 Webserver | 
-| 0x32 | 50 | (vermutlich) Funkempfänger („FE“) | 
-| 0x36 | 54 | Remocon Net B („REMO") |  
-| **0x42** |  **66** | **BSB-LPB-LAN-Adapter („LAN“)** |  
-| 0x7F | 127 | Broadcast („INF“-Meldungen) |   
-   
-Dem BSB-LPB-LAN-Adapter wird in der Voreinstellung die Busadresse `0x42` zugeteilt, was der BSB-Adresse 66 entspricht. Die Adresse wird in der Datei `BSB_lan_config.h` festgelegt.  
-   
----  
-  
-### 2.1.2 Adressierung beim LPB  
-Beim LPB ist die Adressierung anders als beim BSB. Prinzipiell gibt es verschiedene Segmente (bzw. Segmentadressen) und Geräteadressen. Den Segmentadressen kommt eine andere Bedeutung zu, als den Geräteadressen.  
-In diesem Zusammenhang sei lediglich darauf hingewiesen, dass zusätzlich zu diesem Unterschied auch die jeweiligen Adressvergaben selbst beim LPB anders gestaltet sind. Bei der Busadresse `0x00` beispielsweise ist die erste Ziffer hinter dem x die Segmentadresse 0 (also 0=0, 1=1 etc.), die zweite 0 hingegen ist Busadresse des Gerätes plus eins (also 0=1, 1=2 etc.).   
-   
-Beispiel:  
-Das Gerät im obigen Beispiel `0x00` befindet sich im Segment 0 mit der Adresse 1. Die bei BSB-LAN in der Datei `BSB_lan_config.h` voreingestellte Adresse `0x42` bedeutet somit, dass der Adapter im Segment 4 mit der Adresse 3 angemeldet wird.  
-   
-Da die doch recht komplexe Installation i.d.R. bereits bei der Installation vom jeweiligen Monteur vorgenommen wird, wird an dieser Stelle nicht auf weitere Besonderheiten eingegangen.  
-Dem interessierten Anwender seinen an dieser Stelle insbesondere zwei Dokumente von „Siemens Building Technologies - Landis & Staefa Division“ empfohlen:  
-- CE1N2030D Local Process Bus LPB Systemgrundlagen  
-- CE1N2032D Local Process Bus LPB Projektierungsgrundlagen   
-  
 *Hinweis:*  
-*Die voreingestellte Adresse 0x42 des BSB-LPB-LAN-Adapters entspricht der Segmentadresse 4 mit der Geräteadresse 3.*  
-  
----  
-    
-## 2.2 PPS-Schnittstelle
-Die PPS-Schnittstelle findet sich bei *älteren* Reglern und stellt eine
-Punkt-zu-Punkt-Schnittstelle dar, mittels derer digitale 
-Bedieneinheiten/Raumgeräte wie das [QAA70](kap03.md#366-qaa50--qaa70) angeschlossen werden
-können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
-angeschlossen. Die Anschlüsse sind dem jeweiligen Handbuch zu entnehmen, 
-häufig sind dies jedoch die Pins "A6" und "MD" (oder auch "M") (in dem Fall dann "A6" → CL+ und "M"/"MD" → CL-).  
-       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">
-    
-*Die Anschlüsse "A6" und "MD" bei einem Siemens RVA53 Regler.*  
+Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.  
 
-PPS scheint bei folgenden Reglern zum Einsatz gekommen zu sein (siehe 
-„Siemens Raumgerät QAA70 Basisdokumentation“, CE1P1638D): RVP
-digital Serie D, RVP54..., ALBATROS RVA..., LGM11...; bzw. u.a. bei
-folgenden Heizungen: Brötje BBS/WGB 2N, Weishaupt WRD 0.2 / 1.1,
-Sieger TG11 (mit Siegermatic S42DB), Olymp THR 5-25C, Schäfer Interdomo
-(mit DomoCommand DC 225).  
-Bei den ‚Bedieneinheiten‘/Reglern handelt es sich (bei Brötje) vermutlich 
-meist um Eurocontrol-Varianten, manchmal auch um Eurotronic-Varianten 
-(anscheinend NICHT Eurotronic A, nur Eurotronic D aufwärts). *Als Hinweis 
-kann die Anschlussmöglichkeit einer [QAA70](kap03.md#366-qaa50--qaa70)-Raumeinheit überprüft werden - 
-ist diese anschließbar, so sollte auch der Anschluss des Adapters möglich sein.*
-
-Die beiden Geräte (Raumgerät und Regler) kommunizieren nur bedingt
-miteinander. Der Regler sendet Infos, schickt dann später mit einem
-einzigen Byte (0x17) eine Anforderung an das Raumgerät, das dann
-teilweise auf vorhergehende Regler-Infos reagiert, andererseits aber
-auch nach eigenem Rhythmus seine Infos sendet. Und das teilweise in
-unterschiedlicher Häufigkeit.
-Der Bus kommt so kaum zur Ruhe, i.d.R. werden bis zu zwei Telegramme pro
-Sekunde ausgetauscht, entsprechend schnell muss die Software dann auch
-antworten. Kommt auf bestimmte Anfragen des Reglers keine oder nicht die
-richtige Antwort, wird angenommen, dass es kein Raumgerät mehr gibt und
-der Regler verfällt wieder in einen Suchmodus.
-
-Der Funktionsumfang ist hierbei nur rudimentär und beschränkt sich
-derzeit mittels BSB-LAN derzeit auf etwa ein Dutzend Parameter, die man
-lesen/schreiben kann (*Anm.: Die folgende Auflistung ist u.U. nicht komplett - ausschlaggebend ist Kategorie "PPS-Bus" im Webinterface und die von Regler unterstützten Parameter!*):
-
-- Raumtemperatur Ist  
-- Raumtemperatur Soll  
-- Außentemperatur (read-only)  
-- Außentemperatur gemischt (read-only)  
-- Position Drehknopf  
-- Kesselvorlauftemperatur (read-only) 
-- Mischervorlauftemperatur (read-only)  
-- Status Trinkwasserbetrieb (read-only)  
-- Trinkwassertemperatur Ist (read-only)  
-- Trinkwassertemperatur Soll  
-- Betriebsart  
-- Anwesenheit
-  
-***Im Webinterface von BSB-LAN ist die einzig verfügbare Kategorie bei der Verwendung von PPS die Kategorie 42 "PPS-Bus"!*** 
-***Aus den anderen Kategorien sind keinerlei Parameter abrufbar!***  
-*Somit entfällt auch die Abfrage von `URL/Q` zur Kontrolle auf nicht-freigegebene Parameter!*
-
-Immerhin lassen sich damit aber die wichtigsten Funktionen einer
-intelligenten Heizungssteuerung umsetzen, indem man z.B. gewichtete
-Raumtemperaturen sendet und die Solltemperaturen nach vielfältigeren
-Kriterien steuern kann.
-
-***Hinweise:***  
-Sollte bereits ein QAA70 angeschlossen sein, so ist der Zugriff mittels BSB-LAN nur lesend möglich! Soll BSB-LAN schreibend einwirken, also aktiv Werte und Einstellungen verändern, so muss ein vorhandenes QAA70 dauerhaft deinstalliert werden, da es ansonsten mit den eigenen Werten alles wieder überschreibt!  
-   
-Bzgl. der spezifischen Bus-Einstellungen in der Datei *BSB_lan_config.h* beachte die dortigen Hinweise in [Kap. 5](kap05.md#5-einstellungsrelevante-parameter-der-bsb-lan-software).   
-   
-Über PPS tauschen Heizung und Raumgerät bzw. BSB-LAN permanent Daten aus. Das Protokoll ist sehr zeitkritisch. Das Aufrufen von längeren Webseiten führt dazu, dass der Arduino nicht rechtzeitig auf entsprechende Anfragen der Heizung reagieren kann, weswegen die Heizung dann denkt, dass die Gegenseite ausgefallen ist. Das ist an sich kein Problem, nach ca. 10-20 Sekunden, nachdem der Arduino wieder „ansprechbar“ ist, haben sich beide wieder verständigt. Bis dann aber wieder alle Werte ausgetauscht bzw. aktualisiert sind, kann es noch mal 1-2 Minuten dauern, so dass sich Änderungen dann erst entsprechend verzögert zeigen. Von zu vielen Anfragen auf den Arduino sollte daher bei PPS abgesehen werden und etwaige Sensoren etc. dann ggf. auf einen zweiten Arduino ausgelagert werden.   
-  
-Bei der ersten Verwendung bzw. nach einem Reboot des Arduino muss man (anders als bspw. beim BSB) einige Zeit abwarten, bis die Parameter abrufbar/verfügbar sind.  
-  
-***Wichtiger Hinweis für Nutzer des (veralteten) Setups Adapter v2 + Arduino Mega 2560:***   
-Aufgrund der zeitkritischen Kommunikation bei PPS ist es sinnvoll, das Setup auf die Nutzung der Hardware-Serial umzustellen. Dazu sind folgende Änerungen vorzunehmen: 
-- Die Adapterplatine v2 muss *komplett* bestückt sein. 
-- Es darf nur die Lötbrücke SJ1 gesetzt sein.  
-- Die Platine muss um eine Pin-Reihe versetzt in Richtung Mitte des Arduinos eingesetzt werden. 
-- Die Konfiguration muss entsprechend geändert werden, indem die BSB-bus-Variable auf die Pins 19 (RX) und 18 (TX) gesetzt wird.  
-   
-----  
-  
-## 2.3 Anschluss des Adapters  
-  
-**Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.**  
-  
-Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler) und/oder bereits ein Raumgerät vorhanden, so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
-  
-*Hinweis:*  
-Da es sich bei BSB um ein Bussystem handelt, kann der Adapter auch bei einem bereits im Wohnraum installierten kabelgebundenen Raumgerät angeschlossen werden!  
-Sollte kein Raumgerät vorhanden sein, so sollte man überprüfen, ob es nicht einfacher ist, ein langes dünnes zweiadriges Buskabel in die Wohnung zu verlegen als ein langes LAN-Kabel.
-Es ist also nicht zwingend nötig, den Adapter unmittelbar am Aufstellort der Heizung anzuschließen!
-  
-*Beim Anschließen des Adapters sollte der betreffende Regler stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
-
-*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
-*Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
-  
----  
-  
-**Adapterplatine:**  
-Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
-  
-*Die unbestückte Platine.*  
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">
-  
-*Die bestückte Platine.*    
+1. Verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sowohl das LAN-Shield als auch der BSB-LAN-Adapter sollte zuvor bereits auf den Due gesteckt sein, dies ist jedoch nicht zwingend nötig.  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
     
 *Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
-  
----  
-  
-**BSB:**  
-Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus':  
-Adapter-"CL+" an Regler-"CL+" sowie  
-Adapter-"CL-" an Regler-"CL-".  
-  
-Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
-(Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
-  
----  
-  
-**LPB:**  
-Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet:  
-Adapter-"DB" an Regler-"DB" sowie  
-Adapter-"MB" an Regler-"MB".  
-  
----  
-  
-**PPS:**  
-Hier sind es häufig die die Anschlüsse A6 und M oder MD, wobei dann  
-"A6" an "CL+" und  
-"M"/"MD" an "CL-"  
-des Adapters anzuschließen ist.  
-  
 
----  
-
-***Kennzeichnung der Anschlüsse:***  
-   
--   Der **BSB** ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.:  
-    - „CL+ & CL-"   
-    - „FB" (Fernbedienung = Raumgerät)  
-    - „BSB" (bei FB und BSB manchmal zusätzlich mit Nennung der Pole „CL+ & CL-")  
-    - „BSB & M" (bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-)
-    - "X86" bei einem RVS21-Regler (s. Abb. weiter unten)  
+2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
+  
+3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Datei *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
     
-    Ist bei den jeweiligen Anschlüssen lediglich eine Nummerierung zu erkennen (häufig bei "FB": 1,2,3), so ist in der spezifischen Bedienungsanleitung nachzusehen, welche dieser Pins mit CL+ und CL- belegt sind.  
-    Bitte den Anschluss G+ *nicht* benutzen, dies ist kein Buspin!  
-    Der Anschluss des Adapters an den BSB erfolgt wie erwähnt analog zu dem Anschluss von Raumgeräten. In der gerätespezifischen  Bedienungsanleitung finden sich diesbzgl. die reglerspezifischen Angaben. Am Regler selbst sind manchmal auch kleine Abbildungen angebracht, die ein Raumgerät darstellen sollen - auch dies kann zum Auffinden des benötigten Anschlusses hilfreich sein.  
+4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
+
+5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
+
+6. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
+   *Hinweis: Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
+
+7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+
+8. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
+
+9. Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino Due.  
+
+10. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des Arduino Due erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
+
+Herzlichen Glückwunsch - du hast BSB-LAN installiert! Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+
+---
+
+### 2.1.2 Installation auf dem ESP32
+
+Im Folgenden wird die Installation der BSB-LAN-Software auf einem ESP32 beschrieben. Die Beschreibung bezieht sich dabei auf die Verwendung der Arduino IDE. Mit den Voreinstellungen der BSB-LAN-Software wird für die IP-Adressvergabe DHCP genutzt. Solltest du dies nicht wünschen und eine feste IP vergeben wollen, so lies bitte [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) und passe die Datei *BSB_LAN_config.h* vor dem Flashen an!  
+
+*Hinweis:*  
+Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist evtl. noch eine zusätzliche Treiberinstallation für den vom Board verwendeten USB-Chip nötig.  
+
+1. Verbinde dein ESP32-Board mit mit einem USB-Kabel mit deinem Computer. Den BSB-LAN-Adapter kannst du vorher bereits auf bzw. unter dein ESP32-Board gesteckt haben, dies ist jedoch nicht zwingend nötig.  
+
+2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
   
--   Der **LPB** ist bei einigen Reglern als solcher gekennzeichnet, manchmal aber auch nur mit den Bezeichnungen „DB"(+) und „MB"(-) versehen.  
+3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Datei *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
+    
+4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
+
+5. Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen *nicht* im "BSB-LAN"- bzw. "src"-Ordner vorhanden sein!  
+
+6. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
+
+7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus. Für die in diesem Handbuch empfohlenen ESP32-Boardvarianten ("JoyIt ESP32-NodeMCU" sowie "Olimex ESP32-OVB") oder identische Clones mit einem "ESP32-WROOM"-Chip lautet der passende Boardtyp "ESP32 Dev Module".   
+   *Hinweis: Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
+
+8. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+
+9. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
+
+10. Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
+
+11. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
+    - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
+    - Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
+
+12. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
+
+13. Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino Due.  
+
+14. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des ESP32 erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
+
+**Achtung: Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen.**  
+  
+*Hinweis: Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei *BSB_LAN_config.h* zu aktivieren.*    
+
+Herzlichen Glückwunsch - du hast BSB-LAN installiert! Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+  
+---
+
+### 2.1.3 Updates
+
+Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Version ([Download als ZIP-File](https://github.com/fredlcore/BSB-LAN/archive/master.zip), per git o.ä.), wie es in den vorherigen Installationskapiteln beschrieben ist.  
+
+Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due/ESP32 erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.    
+
+*Hinweis:*  
+Die bestehende und ggf. angepasste Datei *BSB_LAN_config.h* kann in der Regel zwar übernommen werden, es jedoch ratsam, auch hier die jeweils aktuelle Datei *BSB_LAN_config.h.default* anstelle der bestehenden Datei *BSB_LAN_config.h* zu verwenden. Dazu muss die .default-Datei wie gehabt umbenannt und ggf. den vorherigen Einstellungen entspr. angepasst werden. So kann man sicher gehen, dass man ein komplettes Update der BSB-LAN-Software vorgenommen hat.  
+
+---
+
+## 2.2 Konfiguration  
+  
+Die BSB-LAN-Software kann den individuellen Ansprüchen entsprechend konfiguriert werden. Die Konfiguration kann dabei auf zwei Arten erfolgen: Mittels Anpassen der Datei *BSB_LAN_config.h* sowie mittels Webinterface. Im Folgenden werden die Konfigurationsmöglichkeiten eingehender erklärt. Die Beschreibungen in Kap. 2.2.2 sind i.d.R. ausführlicher, daher ist es sinnvoll, beide Kapitel eingehend zu studieren.  
+     
+---
+    
+### 2.2.1 Konfiguration mittels Webinterface  
+
+Die Einstellungsübersicht bzw. die Webkonfigurationsoberfläche ist zwar im Prinzip selbsterklärend, trotzdem seien die einzelnen Punkte hier nochmals mit einer kurzen Erklärung aufgeführt.  
+Für eine u.U. ausführlichere Erklärung zu den einzelnen Funktionen sieh bitte im [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) nach.  
+
+Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
+
+- In der linken Spalte wird der Übersichtlichkeit halber eine grobe Kategorie angezeigt (bspw. "Generell", "Bus" etc.), so dass bereits auf den ersten Blick die Zuordnung des jeweiligen Eintrages ersichtlich ist.
+- In der mittleren Spalte wird die Funktion genannt.
+- In der rechten Spalte befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_LAN_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
+  
+***Wichtig:  
+Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Parameter speichern" geklickt werden!***  
+  
+Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
+
+| Funktion | (Vor-)Einstellung | Erklärung |
+|:-------------:|:-------------:|:-------------------------------------------:|
+| Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_LAN_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
+| Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
+| Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
+| Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
+| Eigene Adresse | 66 | Eigene Adresse des Adapters |
+| Zieladresse | 0 | Zieladresse für die Abfragen |	
+| PPS: PPS-Modus | Passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (Passiv/Als Raumgerät). Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Zum anderen ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an den Heizungsregler schicken, so dass kein konsistenter Betrieb möglich ist.* |
+| PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
+| URL Passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL Passkey" | 
+| HTTP-Authentifizierung | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
+| DHCP verwenden | Ein | DHCP verwenden (= automatische IP-Adressvergabe durch Router) (Aus/Ein) |	
+| Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
+| Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
+| Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
+| DNS Server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
+| TCP Port | 80 | TCP-Port des Setups | 
+| MAC-Adresse | 00:80:41:19:69:90 | (Voreingestellte) MAC-Adresse des LAN-Shields oder MAC-Adresse des ESP |
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
+| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
+| WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
+| WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
+| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
+| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
+| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
+| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
+| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
+| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
+| Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
+| Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
+| Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
+| Auf SD Karte | Aus | Zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
+| Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
+| Parameter | 8700,8743,8314 | Zu loggende Parameter | 
+| Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
+| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
+| TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
+| RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 1 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT1 Präsenztaste: Pin | 0 | Raumgerät 1 Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
+| RGT2 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 2 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT2 Präsenztaste: Pin | 0 | Raumgerät 2 Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
+| RGT3 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 3 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
+| RGT3 Präsenztaste: Pin | 0 | Raumgerät 3 Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
+| Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
+| IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
+| Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
+| Verwenden | Aus | IPWE-Erweiterung verwenden (URL/ipwe.cgi) (Aus/Ein) |	
+| Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung |
+| Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
+| Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
+| Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
+
+
+---  
+  
+### 2.2.2 Konfiguration durch Anpassen der Datei *BSB_LAN_config.h*  
+  
+Die Konfiguration der BSB-LAN-Software kann außerdem erfolgen, indem die Einstellungen in der Datei *BSB_LAN_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_LAN_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
+
+  
+*Hinweis:  
+Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
+`//#define XYZ` = Definement XYZ ist deaktiviert.      
+Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem Hashtag zu entfernen:  
+`#define XYZ` = Definement XYZ ist aktiv.*  
+
+---
+
+-   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters sowie der Kategorie- und Parameterbezeichnungen muss
+    *zwingend* ausgewählt bzw. definiert werden. Für "Deutsch" ist dabei das folgende Definement zu wählen:  
+    `#define LANG DE`  
+    Ab BSB-LAN v.042 ist es möglich, BSB-LAN auch in anderen Sprachen zu nutzen, wobei prinzipiell jede Sprache unterstützt werden kann (es müssen dann 'nur' die entspr. Übersetzungen erstellt werden).  
+Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch (EN), Spanisch (ES), Finnisch (FI), Französisch (FR), Griechisch (GR), Ungarisch (HU), Italienisch (IT), Niederländisch (NL), Polnisch (PL), Russisch (RU), Schwedisch (SE), Slovenisch (SI) und Türkisch (TR). Wenn gewisse Ausdrücke nicht in der spezifischen Sprache vorliegen, wird automatisch der englische Ausdruck angezeigt. Sollte auch dieser nicht vorhanden sein, wird schließlich der deutsche Ausdruck dargestellt. 
+  
+---
+
+-   **Konfigurationseinstellungen aus EEPROM oder der Datei *BSB_LAN_config.h* laden:**  
+    `byte UseEEPROM = 1;`  
+    Gemäß Voreinstellung werden die Konfigurationseinstellungen beim Start von BSB-LAN aus dem EEPROM gelesen. Als Fallback kann die Variable auf '0' gesetzt werden, dann werden die Einstellungen aus der Datei *BSB_LAN_config.h* gelesen.  
+    
+---    
+
+***Netzwerkeinstellungen:***  
+    
+-   **MAC-Adresse des Ethernet-Shields:**  
+    `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
+    Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
+    *Hinweis: Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield! Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar!*
+     
+    *Wichtiger Hinweis:*  
+    *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
+    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
+    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
+    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
+    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
+    
+-   **Ethernet-Port:**  
+    `uint16_t HTTPPort = 80;`  
+    Port 80 für HTTP voreingestellt.   
+    
+    
+-   **DHCP:**  
+    `bool useDHCP = true;`  
+    Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
+    
+    *Wichtiger Hinweis:*  
+    *Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
+    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
+    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
+    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
+    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
+    *Die IP, die in diesem Fall vom Router automatisch vergeben wird, wird beim Start des Arduino Due im Seriellen Monitor der Arduino IDE angezeigt.*  
+
+
+-   **IP-Adresse:**  
+    `byte ip_addr[4] = {192,168,178,88};`  
+    IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
+    *Achtung: Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt!*  
+  
+  
+-   **Gateway-Adresse:**  
+    `byte gateway_addr[4] = {192,168,178,1};` 
+    IP-Adresse des Gateways (i.d.R. die des Routers) - *bitte beachte die Kommata anstelle von Punkten!*  
+          
+        
+-   **DNS-Server:**  
+    `byte dns_addr[4] = {192,168,178,1};`  
+    IP-Adresse des DNS - *bitte beachte die Kommata anstelle von Punkten!*  
+  
+  
+-   **Subnet:**  
+    `byte subnet_addr[4] = {255,255,255,0};`  
+    Subnetz-Adresse - *bitte beachte die Kommata anstelle von Punkten!*  
+    
+---    
+   
+-   **WiFi per zusätzlichem ESP8266:**  
+    `//#define WIFI`  
+    Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-WiFi-Lösung](kap1.md#122-due--wlan-die-esp8266-wifi-lösung) oder mittels eines [ESP32](kap1.md#13-der-esp32) genutzt werden soll.  
+    
+    `char wifi_ssid[32] = "YourWiFiNetwork";` 
+    Bei Verwendung von WiFi, *YourWiFiNetwork* durch die SSID des WLAN-Netzwerkes ersetzen.  
+    
+    `char wifi_pass[64] = "YourWiFiPassword";`  
+    Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
+    
+    `#define WIFI_SPI_SS_PIN 12`  
+    Hier wird der beim DUE zu verwendende SS-Pin für die [ESP8266-WiFi-Lösung](kap1.md#122-due--wlan-die-esp8266-wifi-lösung) definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
+    
+    *Hinweis: Die MAC-Adresse des ESP lässt sich nicht einstellen!*
    
 ---   
    
-**Die folgenden Abbildungen zeigen exemplarisch die Anschlüsse bei verschiedenen Reglermodellen:**    
+-   **Nutzung von Multicast DNS:**  
+    `#define MDNS_HOSTNAME "BSB-LAN"`  
+    Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
+    Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap1.md#122-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
+   
+---    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
+-   **Debugging und entspr. Einstellungen:**  
+    - `#define DEBUG` → Debug-Modus aktivieren (s. nachfolgende Optionen)  
+    
+    - `byte debug_mode = 1;` → Folgende Debug-Optionen sind verfügbar:  
+    0 - Debugging deaktiviert  
+    1 - Debug-Nachrichten an das serielle Interface senden (einzustellen bei der Verwendung von bspw. dem Seriellen Monitor der Arduino IDE)  
+    2 - Debug-Nachrichten an einen TelNet-Client anstelle des seriellen Interface senden  
+    
+    - `byte verbose = 1;` → Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen. zum Deaktivieren ist '0' anstelle der '1' einzutragen.    
+    
+    - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
+    
+    - `bool show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
+    Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`bool show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
+   
+---   
 
-*BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
+    
+***Sicherheitsfunktionen:***  
+
+-   **Passkey:**  
+    Um das System vor einem ungewollten Zugriff von außen zu schützen,
+    kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** genutzt
+    werden (sehr einfach und nicht wirklich sicher!):  
+    `char PASSKEY[64] = "";`
+
+    Für die Verwendung ist eine Zahlenfolge einzugeben, bspw. `char PASSKEY[64] = "1234";` → in diesem Beispiel lautet der Passkey 1234. Wird keine Zahlenfolge eingegeben (also die Voreinstellung nicht geändert), so ist die Funktion deaktiviert.   
+    Falls die PASSKEY-Funktion genutzt wird, muss die URL bei einem
+    Aufruf des Webinterfaces den definierten Schlüssel als erstes
+    Element enthalten, bspw. `http://<IP-Adresse>/<passkey>/`
+    um die Hilfeseite zu sehen.  
+    *Bitte nicht den Slash hinter dem Passkey vergessen!*
+
+
+-   **Trusted IP:**  
+    `byte trusted_ip_addr[4] = {0,0,0,0};`  
+    `byte trusted_ip_addr2[4] = {0,0,0,0};`  
+
+    Bei den Variablen `trusted_ip_addr` (und `trusted_ip_addr2` für eine weitere IP) kann man eine  vertrauenswürdige IP eintragen (z.B. des
+    FHEM-Servers), dann ist der Zugriff nur über diese IP. Lautet die vertrauenswürdige IP des Clients bspw.
+    `192.168.178.20`, so ist `byte trusted_ip_addr[4] = {192,168,178,20};` einzustellen.  
+    Wird die Voreinstellung `{0,0,0,0}` nicht geändert und/oder die erste Zahl ist eine 0, ist diese Funktion deaktiviert.  
+
+-   **User-Pass:**  
+    `char USER_PASS[64] = "";`  
+    
+    Mit `USER_PASS[64]` kann eine Zugangssperre nach dem Muster *Username:Passwort* gesetzt werden:  
+    `//char USER_PASS[64] = "User:Password";`  
+    Ist kein String eingegeben (Voreinstellung), so ist die Funktion deaktiviert.  
+      
+      
+---   
+
+***Einstellungen für optionale Sensoren:***  
+      
+-   **OneWire-Temperatursensoren (DS18B20):**  
+    `#define ONE_WIRE_BUS`  
+    `bool enableOneWireBus = false;`  
+    `byte One_Wire_Pin = 7;`  
+    
+    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
+    Adapterboard) definiert werden.  
+    Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
+              
+-   **DHT22-Sensoren:**  
+    `#define DHT_BUS`  
+    `byte DHT_Pins[10] = {5};`  
+    
+    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
+    Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
+    Voreingestellt ist das Modul samt Verwendung des Pins 5 aktiv.  
+  
+    *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
+  
+-  **BME280 Sensoren:**  
+   `//#define BME280 1`  
+      
+   Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 1, maximal 2!). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
+    
+---
+
+-   **24h-Durchschnittswerte:**  
+    `#define AVERAGES`  
+        Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet
+    werden, so ist das Definement zu aktivieren (Voreinstellung).  
+    
+    `bool logAverageValues = false;`  
+    Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
+    Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
+    
+    Des Weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
+    werden, bspw.:  
+    ```
+    int avg_parameters[40] = {  
+    8700, // Außentemperatur  
+    8740 // Raumtemperatur-Ist  
+    };
+    ```  
+    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
+
+---
+
+-   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
+    `#define LOGGER` → Das Logging-Modul wird kompiliert.  
+    ***Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!***     
+      
+    Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
+    
+    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
+    `//#define ESP32_USE_SD`  
+    
+    - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
+    `int logTelegram = LOGTELEGRAM_OFF;`  
+    
+    Folgende Einstelloptionen sind hier verfügbar:  
+    `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
+    `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
+    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
+    `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
+    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
+
+    - `bool logCurrentValues = false;`  
+    Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
+      
+    - `unsigned long log_interval = 3600;`  
+    Das gewünschte Logintervall in Sekunden.  
+    **Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!**  
+
+    Die zu loggenden Parameter müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
+    ```
+    int log_parameters[40] = {  
+    8700, // Außentemperatur  
+    8740 // Raumtemperatur-Ist  
+    };
+    ```
+    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
+    
+    *Hinweis:*  
+    Wenn mehrere DS18B20- oder DHT22-Sensoren geloggt werden sollen,
+    müssen diese bei den Log-Parametern entsprechend einzeln
+    untereinander aufgeführt werden, bspw.:  
+    ```
+    20300, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
+    20301,  
+    20302, 
+    ```
+    loggt die Werte der DS18B20-Sensoren 1-3.
+
+    ***Hinweis:***  
+    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden!*  
+    *TWW-Laufzeit und TWW-Takte sind die Spezialparameter 20004 und 20005, 24h-Durchschnittswerte sind die Spezialparameter 20050-20099, DHT22-Sensoren sind die Spezialparameter 20100-20299, DS18B20-Sensoren sind die Spezialparameter 20300-20499, MAX!-Sensoren sind die Spezialparameter 20500-20699.*  
+        
+---        
+        
+-   **MQTT:**  
+    Soll MQTT zum Einsatz kommen, so sind *neben den obigen Logging-Parametern* die entspr. Variablen und Einstellungen anzupassen:    
+
+    - `#define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
+    
+    - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
+    1 = die Nachrichten werden im einfachen Textformat gesendet  
+    2 = die Nachrichten werden im JSON-Format gesendet (Struktur der JSON-Payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
+    3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
+    
+    - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP des MQTT-Brokers.  
+        *Bitte beachte die Kommata anstelle von Punkten!*  
+        Der Standardport ist 1883 und muss nicht extra definiert werden.  
+        
+    - `char MQTTUsername[32] = "User";` → Username; wird Username/Passwort beim MQTT-Broker nicht verwendet, ist das *User* zu entfernen.   
+    
+    - `char MQTTPassword[32] = "Pass";` → Passwort; wird Username/Passwort beim MQTT-Broker nicht verwendet, ist das *Pass* zu entfernen.   
+    
+    - `char MQTTTopicPrefix[32] = "BSB-LAN";` → Optional: Die MQTT-Nachrichten haben das Topic-Format ('Thema') `BSB-LAN/<Parametername>` und den entsprechenden Wert dann in der Payload. Wenn nichts angegeben wird (`char MQTTTopicPrefix[32] = "";`), wird der Standard-Themenname verwendet.     
+    
+    - `char MQTTDeviceID[32] = "MyHeater";` → Optional: Device-Name, der als Header in der JSON-Payload genutzt wird. Wenn nichts angegeben wird (`char MQTTDeviceID[32] = "";`), wird "BSB-LAN" verwendet.  
+    
+    ***Hinweis:***   
+    *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
+    `//#define LOGGER`   
+   
+---   
+   
+-   **IPWE:**  
+    `#define IPWE` → Das IPWE-Modul wird kompiliert.    
+    `bool enable_ipwe = false;`  
+    Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
+  
+    Die gewünschten Parameter (maximal 40) sind ebenfalls einzutragen:  
+    ```  
+    int ipwe_parameters[40] = {  
+    8700,                   // Außentemperatur  
+    8830                   // Warmwassertemperatur  
+    };  
+    ```
+  
+---  
+  
+-   **MAX! (CUNO/CUNX/modifizierter MAX!Cube):**  
+    Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellungen angepasst werden:  
+    
+     - `//#define MAX_CUL` → Definement aktivieren (= `#define MAX_CUL`) (deaktiviert by default)  
+     
+     - `bool enable_max_cul = false;` → Variable auf 'true' setzen  
+     
+     - `byte max_cul_ip_addr[4] = {192,168,178,5};` → IP-Adresse des CUNO/CUNX/modifizierten MAX!Cubes - *bitte beachte die Kommata anstelle von Punkten!*  
+     
+    - Liste der abzufragenden MAX!-Thermostate:
+    ```
+    char max_device_list[20][11] = {   
+    "KEQ0502326",  
+    "KEQ0505080"
+    };
+    ```  
+    Hier bitte die entspr. 10-stellige Seriennummer / MAX!-ID eintragen.  
+    *Achtung: Es können maximal 20 MAX!-Devices angebunden werden!*  
+    Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. [Kap. 7.3](kap7.md#73-max-komponenten).  
+  
+---  
+  
+-   **Anzahl der maximalen Wiederholungsversuche bei einer Abfrage:**    
+    `#define QUERY_RETRIES  3`  
+    Hier kann bei Bedarf eingestellt werden, wieviele maximale Wiederholungsversuche ausgeführt werden, wenn bei einer Abfrage keine entsprechende Antwort vom Heizungsregler kommt. In der Regel kann die Voreinstellung (max. 3 Versuche) beibehalten werden.  
+    
+---    
+  
+***Buseinstellungen (Pins und Typ):*** 
+  
+-   **RX-/TX-Pinkonfiguration:**  
+    `byte bus_pins[2] = {0,0};` → automatische Erkennung und Einstellung der RX-/TX-Pinbelegung (Voreinstellung); ansonsten gilt:  
+    - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18 (`{19,18}`)  
+    - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69 (`{68,69}`)  
+    
+-   **Bus-Typ/-Protokoll:**  
+    `uint8_t bus_type = 0;`  
+    Je nach Anschluss des Adapters an einen BSB/LPB/PPS-Anschluss muss der entspr. Bus-Typ definiert werden (bereits nach Booten des Arduino wirksam).     
+    Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
+    hingegen 2:    
+    0 = BSB  
+    1 = LPB  
+    2 = PPS
+  
+-   **Buseinstellungen:**  
+    Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
+    
+    → **BSB:**  
+    - `byte own_address = 0x42;` → entspricht der eigenen Geräteadresse 66 des BSB-LAN-Adapters  
+    - `byte dest_address = 0x00;` → entspricht der Zieladresse 0 (i.d.R. der Regler des Wärmeerzeugers)  
+    
+    → **LPB:**  
+    - `byte own_address = 0x42;` → eigene Adresse (BSB-LAN-Adapter), entspricht der Segmentadresse 4 mit Geräteadresse 3   
+    - `byte dest_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
+    
+    → **PPS:**  
+    - `bool pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`bool pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
+    - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
+   
+---   
+   
+-   **Geschützte GPIO-Pins:**  
+    Hier sind normalerweise keinerlei Anpassungen vorzunehmen. Sollten individuelle Veränderungen an der Hardware vorgenommen werden, die entspr. Berücksichtigungen hinsichtlich der geschützten GPIO-Pins erfordern, sieh bitte im entspr. Abschnitt in der Datei *BSB_LAN_config.h* nach.  
     
 ---    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+-   **Erkennung bzw. Festlegung des Heizungsreglertyps:**  
+    `static const int fixed_device_family = 0;`  
+    `static const int fixed_device_variant = 0;`
     
-*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
-   
----   
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-LMS.jpg">  
-
-*BSB am "FB"-Anschluss bei einem LMS1x-Regler.*  
-   
----   
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
-
-*BSB am "X86"-Anschluss eines RVS21-Reglers (Achtung, nur bestimmte Pins!).* 
-   
----   
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
+    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung
+    des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.   
+    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226`
+    eingetragen werden (6225 = Gerätefamilie / device family & 6226 =
+    Gerätevariante / device variant).  
+    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass
+    BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der
+    Regler erst nach dem Starten des Arduino eingeschaltet wird (da in
+    dem Fall die automatische Erkennung des angeschlossenen Reglers
+    nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
     
-*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus. Die (dauerhafte) Verwendung dieses Anschlusses ist aufgrund einer mangelnden Zugentlastung jedoch nicht zu empfehlen.*  
+---    
+    
+-   **Schreib-/Lesezugriff auf den Heizungsregler:**  
+    `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
+    In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich. Eine Änderung des Status auf *generellen* Schreibzugriff kann via Webinterface (Menüpunkt "Einstellungen") erfolgen.  
+    *Hinweis für Mega-Nutzer:*  
+    Die Möglichkeit der Konfiguration via Webinterface bietet sich für Nutzer des Mega 2560 nicht, da das Modul WEBCONFIG mangels Speicher nicht kompiliert und nicht genutzt werden kann. In diesem Fall muss der Schreibzugriff nach wie vor durch das Flag '0' gewährt werden: `#define DEFAULT_FLAG 0`
+      
+    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
+    oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
+    das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in
+    der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
+    Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
+    
+    Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
+    gemacht:  
+    ```
+    {0x2D3D0574, CAT_HK1, VT_ENUM, 700, STR700, sizeof(ENUM700), ENUM700, DEFAULT_FLAG, DEV_ALL}, // [-] - Heizkreis 1 - Betriebsart ***(virtuelle Zeile)***
+    ```
+    → aufgrund des „DEFAULT_FLAG" ist der Parameter momentan nur lesbar
+
+    ```
+    {0x2D3D0574, CAT_HK1, VT_ENUM, 700, STR700, sizeof(ENUM700), ENUM700, 0, DEV_ALL}, // [-] - Heizkreis 1 - Betriebsart ***(virtuelle Zeile)***
+    ```
+    → das „DEFAULT_FLAG" wurde durch „0" (Null, ohne Anführungszeichen)
+    ersetzt
+    
+---    
+    
+-   **Eigenen Code** aus der Datei *BSB_LAN_custom.h* einfügen:  
+    `//#define CUSTOM_COMMANDS`  
+    Fügt die Befehle aus der Datei `BSB_LAN_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden (per default deaktiviert).  
    
+---   
+   
+-   **Überprüfen der BSB-LAN-Version:**  
+    `#define VERSION_CHECK`  
+    `bool enable_version_check = false;`    
+    Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
+    
+    *Hinweis: Dabei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen.*  
+   
+---    
+       
+-   **"Externer" Webserver:**  
+    `//#define WEBSERVER`    
+    Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Für weitere Informationen siehe bitte [Kapitel 6.9](kap06.html#69-verwenden-der-webserver-funktion).  
+    
+---    
+    
+-   **Speichern der Konfiguration im EEPROM (nur Arduino Due):**  
+    `#define CONFIG_IN_EEPROM`  
+    Soll die Konfiguration nicht im EEPROM des Due gespeichert werden, so ist das Definement zu deaktivieren.  
+    
+---    
+    
+-   **Konfiguration via Webinterface:**  
+    `#define WEBCONFIG`  
+    Ermöglicht die Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM; nur Arduino Due). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
 ---  
   
-***Hinweise zum Anschlussstecker:***  
+-   **Compile JSON-based configuration and EEPROM config store module extension.**  
+   `#define JSONCONFIG`  
    
-Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. Eine umfassende Nennung der entsprechenden Stecker kann hier leider nicht erfolgen, da die Stecker kodiert und teilweise unterschiedlich belegt sind. Meist findet man aber in den Bedienungsanleitungen Teilenummern der passenden Stecker, um ein Raumgerät an den Regler anzuschließen. 
-Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der bei den meisten Reglern zu passen scheint: [Brötje Stecker Raumgerät ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050)  
-   
-***BSB / LPB / PPS:*** Sollten die originalen Stecker nicht unmittelbar erhältlich oder verfügbar sein, können auch (möglichst isolierte) 6,3mm-Kabelschuhe verwendet werden.  
-   
-***Vierpoliger Servicestecker:*** Für den (vorübergehenden) Anschluss am vierpoligen Servicestecker vorne am Bedienteil können 2,54mm DuPont-Stecker (weiblich) genutzt werden. Diese finden sich bspw. bei den typischen Breadboard-Verbindungskabeln und bei diversen Kabeln im Desktop-PC-Bereich (bspw. interner Lüfteranschluss, interner Lautsprecher).   
-   
----
-   
-***Hinweise zum Kabel:***  
-   
-***LPB:*** Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß LPB-Projektierungsgrundlagen1 einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m).  
-  
-***BSB:*** Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden2. 
-Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer vorzuziehen.  
-   
-Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
-   
----
+
+---    
+
+-   **Variablen für eine zukünftige Verwendung, derzeit (November 2020) noch ohne Funktion:**  
+    `#define ROOM_UNIT` → Raumgeräteersatz  
+    `byte UdpIP[4] = {0,0,0,0};` → Ziel-IP-Adresse für UDP   
+    `uint16_t UdpDelay = 15;` → Sendeintervall in Sekunden für UDP  
+
+    `#define OFF_SITE_LOGGER` → Off-Site-Logger Erweiterung  
+    `byte destinationServer[128] = "";` → IP des Off-Site-Loggers  
+    `uint16_t destinationPort = 80;` → Port des Off-Site-Loggers  
+    `uint32_t destinationDelay = 84600;` → Sendeintervall in Sekunden  
     
+---    
+***Für Nutzer des veralteten Setups auf Basis des Arduino Mega 2560:***  
+*Nachfolgende Einstellmöglichkeiten dienen der Möglichkeit, Speicher einzusparen, so dass auch auf einen Mega 2560 geflasht werden kann.*    
+
+-   **Deaktivieren bestimmter Funktionen:**  
+  
+    If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
+    `#define I_DO_NOT_WANT_URL_CONFIG`
+  
+    Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
+    `#define I_WILL_USE_EXTERNAL_INTERFACE`  
+   
+    Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory.  /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
+    `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
+      
+-   **Deaktivieren bestimmter Module:**  
+       
+    Wird anstelle des Arduino Due noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Hinweis: Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
+    Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
+    
+    ```
+    #if defined(__AVR__)
+    //#undef CONFIG_IN_EEPROM
+    //#undef WEBCONFIG
+    #undef JSONCONFIG
+    //#undef WEBSERVER
+    #undef AVERAGES
+    #undef DEBUG
+    #undef IPWE
+    #undef MQTT
+    #undef MDNS_HOSTNAME
+    #undef OFF_SITE_LOGGER
+    #undef ROOM_UNIT
+    #undef VERSION_CHECK
+    #undef MAX_CUL
+    #undef BME280
+    #endif
+    ```  
+   
+---  
 
      
 [Weiter zu Kapitel 3](kap03.md)      

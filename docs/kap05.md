@@ -2,592 +2,184 @@
 [Zurück zu Kapitel 4](kap04.md)    
     
 ---
-    
-
-# 5. Konfiguration der BSB-LAN-Software v2.x  
   
-**Hinweis: Ab v2.x ist es nun möglich, nahezu die komplette Konfiguration der BSB-LAN-Software auch über das Webinterface vorzunehmen (Menü "Einstellungen").**  
+# 5. BSB-LAN: Abfragen und Steuern
 
-     
+Da das Webinterface prinzipiell nur ‚aufgesetzt' ist, um eine Bedienung
+ohne weitere Programme wie bspw. FHEM zu ermöglichen, ist ein direkter
+Zugriff auf die einzelnen Funktionen und Parameter mittels anderer
+Programme grundsätzlich möglich.  
+      
 ---
     
-## 5.1 Konfiguration mittels Webinterface  
-
-Die Einstellungsübersicht bzw. die Webkonfigurationsoberfläche ist zwar im Prinzip selbsterklärend, trotzdem seien die einzelnen Punkte hier nochmals mit einer kurzen Erklärung aufgeführt.  
-Für eine u.U. ausführlichere Erklärung zu den einzelnen Funktionen sieh bitte im [Kap. 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) nach.  
-
-Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:  
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
-
-- In der linken Spalte wird der Übersichtlichkeit halber eine grobe Kategorie angezeigt (bspw. "Generell", "Bus" etc.), so dass bereits auf den ersten Blick die Zuordnung des jeweiligen Eintrages ersichtlich ist.
-- In der mittleren Spalte wird die Funktion genannt.
-- In der rechten Spalte befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_lan_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
+## 5.1 URL-Befehle
   
-***Wichtig:  
-Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Parameter speichern" geklickt werden!***  
-  
-Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
+*Hinweis:*  
+Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Parameter ohne Klammern geschrieben werden. Beispiel: URL-Befehl `/<x>` für die einfache Abfrage von Parameter 8700 = `/8700`.  
+   
 
-| Funktion | (Vor-)Einstellung | Erklärung |
-|:-------------:|:-------------:|:-------------------------------------------:|
-| Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_lan_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
-| Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
-| Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
-| Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
-| Eigene Adresse | 66 | Eigene Adresse des Adapters |
-| Zieladresse | 0 | Zieladresse für die Abfragen |	
-| PPS: PPS-Modus | Passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (Passiv/Als Raumgerät). Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Dabei ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an den Heizungsregler schicken, so dass kein konsistenter Betrieb möglich ist.* |
-| PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
-| URL Passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL Passkey" | 
-| HTTP-Authentifizierung | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
-| DHCP verwenden | Ein | DHCP verwenden (= automatische IP-Adressvergabe durch Router) (Aus/Ein) |	
-| Statische IP-Adresse | 192.168.178.88 | Manuelle Netzwerkkonfiguration: Feste IP-Adresse |
-| Subnetzmaske | 255.255.255.0 | Manuelle Netzwerkkonfiguration: Subnetz |
-| Gateway | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des Gateways |	
-| DNS Server | 192.168.178.1 | Manuelle Netzwerkkonfiguration: IP-Adresse des DNS-Servers | 
-| TCP Port | 80 | TCP-Port des Setups | 
-| MAC-Adresse | 00:80:41:19:69:90 | (Voreingestellte) MAC-Adresse des LAN-Shields oder MAC-Adresse des ESP |
-| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
-| Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
-| WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
-| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
-| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
-| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
-| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
-| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
-| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
-| Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
-| Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
-| Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
-| Auf SD Karte | Aus | Zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
-| Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
-| Parameter | 8700,8743,8314 | Zu loggende Parameter | 
-| Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
-| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
-| TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
-| RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 1 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT1 Präsenztaste: Pin | 0 | Raumgerät 1 Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
-| RGT2 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 2 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT2 Präsenztaste: Pin | 0 | Raumgerät 2 Emulation: Verwendeter Pin für die HK2-Präsenztaste. |
-| RGT3 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 3 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
-| RGT3 Präsenztaste: Pin | 0 | Raumgerät 3 Emulation: Verwendeter Pin für die HK3-Präsenztaste. |
-| Verwenden | Aus | MAX!-Geräte verwenden (Aus/Ein) |	
-| IP-Adresse Cube | 192.168.178.5 | IP-Adresse des CUNO/CUNX/modifizierten MAX!Cube |	
-| Geräte | KEQ0502326,KEQ0505080 | Seriennummern der zu verwendenden MAX!-Geräte |	
-| Verwenden | Aus | IPWE-Erweiterung verwenden (URL/ipwe.cgi) (Aus/Ein) |	
-| Parameter | 8700,8743,8314 | Darzustellende Parameter in der IPWE-Erweiterung |
-| Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
-| Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
-| Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
-
-
-
-
----  
-  
-## 5.2 Konfiguration durch Anpassen der Datei *BSB_LAN_config.h*  
-  
-Die Konfiguration der BSB-LAN-Software kann (weiterhin) erfolgen, indem die Einstellungen in der Datei *BSB_lan_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_lan_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
-
-  
-*Hinweis:  
-Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
-`//#define XYZ` = Definement XYZ ist deaktiviert.      
-Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem Hashtag zu entfernen:  
-`#define XYZ` = Definement XYZ ist aktiv.*  
-
----
-
--   Die **Sprache der Benutzeroberfläche** des Webinterface des Adapters sowie der Kategorie- und Parameterbezeichnungen muss
-    *zwingend* ausgewählt bzw. definiert werden. Für "Deutsch" ist dabei das folgende Definement zu wählen:  
-    `#define LANG DE`  
-    Ab BSB-LAN v.042 ist es möglich, BSB-LAN auch in anderen Sprachen zu nutzen, wobei prinzipiell jede Sprache unterstützt werden kann (es müssen dann 'nur' die entspr. Übersetzungen erstellt werden).  
-Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch (EN), Spanisch (ES), Finnisch (FI), Französisch (FR), Griechisch (GR), Ungarisch (HU), Italienisch (IT), Niederländisch (NL), Polnisch (PL), Russisch (RU), Schwedisch (SE), Slovenisch (SI) und Türkisch (TR). Wenn gewisse Ausdrücke nicht in der spezifischen Sprache vorliegen, wird automatisch der englische Ausdruck angezeigt. Sollte auch dieser nicht vorhanden sein, wird schließlich der deutsche Ausdruck dargestellt. 
+| URL-Befehl           | Auswirkung                                                                    |
+|:----------------------|:------------------------------------------------------------------------------|
+|  `/<x>`               | `Alle Werte von Parameter <x> abfragen`  
+|  `/<x>!<adr>`         | `Alle Werte von Parameter <x> für Zieladresse <adr> abfragen`  
+|  `/<x>/<y>/<z>`     | `Alle Werte der Parameter <x>, <y> und <z> abfragen` <br /> `Hinweis: Mehrere Abfragen können miteinander verkettet werden, z.B.: http://<IP-Adresse>/K11/8000/8003/8005/8300/8301/8730-8732/8820`    
+|  `/<x>-<y>`         | `Alle Werte eines Parameterbereichs von <x> bis <y> abfragen`  
+|  `/<x>!<adr>-<y>`   | `Alle Werte eines Parameterbereichs von <x> bis <y> für Zieladresse <adr> abfragen`  
+|  `/A=<x>,<y>,<z>`       | `24h-Durchschnittswertberechnung für Parameter <x>, <y>, <z> einstellen` <br /> `Während der Laufzeit kann /A=[parameter1],...,[parameter20] verwendet werden, um (bis zu 20) neue Parameter zu definieren.`  
+|  `/A=0`                 | `24h-Durchschnittswertberechnung temporär deaktivieren.` <br /> `Deaktiviert die 24-h Durchschnittswertberechnung vorübergehend bis zum nächsten Reset/Neustart des Arduino. Für eine komplette und dauerhafte Deaktivierung müssen alle als zu berechnend aufgeführten Parameter in der Datei BSB_LAN_config.h auskommentiert werden.`  
+|  `/B0`                  | `Zurücksetzen des Zählers der akkumulierten Brennerlaufzeiten und -zyklen`  
+|  `/C`                   | `Konfiguration von BSB-LAN anzeigen lassen`  
+|  `/D oder /DD`                   | `Anzeige der Logdatei` <br /> `Zeigt den Inhalt der Datei datalog.txt an, die sich auf der microSD-Karte im Slot des Ethernet-Shields befindet.`  
+|  `/DG`                  | `Grafische Anzeige der Logdatei` <br /> `Wer Parameter auf SD-Karte loggt, hat neben der reinen Textform auch die Möglichkeit, einen Graphen angezeigt zu bekommen.` <br /> `Hinweis: Für /DG muss bei Javascript-Blockern die Domain d3js.org freigegeben werden, da der Arduino weiterhin nur die CSV-Datei in den Browser lädt und diese dann mit dem D3-Framework grafisch aufbereitet wird.` <br /> `Wird die Log-Datei via Webinterface mittels Klick auf „Anzeige Logdatei" aufgerufen, erfolgt standardmäßig zuerst die grafische Darstellung.`   
+|  `/DJ`                  | `Anzeige des Logfiles von Telegrammen` <br /> `Dieser Befehl zeigt das Logfile *journal.txt* an, das den Inhalt der empfangenen und gesendeten Telegramme anzeigt. Dieses Logging ist nützlich bei der Fehlersuche und bei der Suche nach unbekannten Parametern. Um die Funktion nutzen zu können, muss das Modul LOGGER in der Datei BSB_LAN_config.h aktiviert und das erste Element des Arrays log_parameters auf 30000 gesetzt werden.`   
+|  `/D0`                  | `Logfiles löschen und neuen CSV-header erstellen` <br /> `Dieser Befehl löscht die Dateien datalog.txt und journal.txt und erstellt einen neuen CSV-header für datalog.txt. Dieser Befehl sollte vor dem ersten Logging ausgeführt werden.`  
+|  `/DD0`               | `Logfile datalog.txt löschen`  
+|  `/DJ0`               | `Logfile journal.txt löschen`  
+|  `/E<x>`              | `Alle ENUM-Werte für Parameter <x> auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion. Dieser Befehl ist nur für Parameter des Typs VT_ENUM, VT_CUSTOM_ENUM, VT_BITS und VT_CUSTOM_BITS verfügbar.`  
+|  `/G<x>`              | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als OUTPUT genutzt)` <br /> `Gibt den momentanen Status von GPIO Pin <x> an, wobei <y>=0 LOW und <y>=1 HIGH ist.`  
+|  `/G<x>=<y>`        | `GPIO: Abfragen des GPIO-Pins <x> und Setzen auf <y> (GPIO wird als OUTPUT genutzt)` <br /> `Setzt GPIO Pin <x> auf LOW (<y>=0) oder HIGH (<y>=1).` <br /> `Reservierte Pins, die nicht gesetzt werden dürfen, können in der BSB_LAN_config.h unter dem Parameter GPIO_exclude gesperrt werden.` 
+|  `/G<x>,I`            | `GPIO: Abfragen des GPIO-Pins <x> (GPIO wird als INPUT genutzt)` <br /> `Für die reine Abfrage eines externes Gerätes, das an einen GPIO angeschlossen ist (z.B. ein einfaches Koppelrelais), da die Pins per default auf ‚output' gesetzt sind. Der Pin bleibt nach diesem Befehl so lange auf ‚input', bis das nächste Mal mit /G<xx>=<y> ein Wert geschrieben wird - ab da ist er dann bis zum nächsten „I" wieder auf ‚output'.`  
+|  `/I<x>=<y>`        | `Sende eine INF-Nachricht für den Parameter <x> mit dem Wert <y>` <br /> `Einige Werte können nicht direkt gesetzt werden. Das Heizungssystem wird mit einer TYPE_INF-Nachricht informiert, bspw. bei der Raumtemperatur: http://<ip-address>/I10000=19.5 → Raumtemperatur beträgt 19.5°C`  
+|  `/JC=<x>,<y>,<z>`         	| `JSON: Abfrage der möglichen Werte der Parameter <x>,<y>,<z> für Parameter des Typs ENUM` <br /> `Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl /JK=<x>. Im Gegensatz zum Befehl /JQ werden die aktuellen Parameterwerte nicht zurückgemeldet.`   
+|  `/JI`                   | `JSON: Konfiguration von BSB-LAN anzeigen lassen`  
+|  `/JK=<x>`         	| `JSON: Abfrage der verfügbaren Parameter der Kategorie <x>`  
+|  `/JK=ALL`          	   | `JSON: Auflistung aller Kategorien samt zugehöriger Parameternummern`  
+|  `/JL`                | `JSON: Erstellt eine Liste der Konfiguration im JSON-Format`  
+|  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
+|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
+|  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab` <br /> `Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.`  
+|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
+|  `/JV`                | `Abfrage der JSON-API-Version. Payload: {"api_version": "major.minor"}`  
+|  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.`  
+|  `/K`                   | `Alle Kategorien auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
+|  `/K<x>`              | `Alle Parameter von Kategorie <x> abfragen` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
+|  `/L=0,0`               | `Vorübergehendes Deaktivieren des Loggens auf die microSD-Karte` <br /> `Prinzipiell erfolgt das Aktivieren/Deaktivieren der Log-Funktion durch das entsprechende Definement in der Datei BSB_lan_config.h vor dem Flashen. Während des Betriebes kann das Loggen jedoch mit diesem Befehl deaktiviert werden. Zum Aktivieren werden dann wieder das Intervall und die gewünschten Parameter eingetragen. Bei einem Reset/Neustart des Arduino werden die Einstellungen aus der Datei BSB_lan_config.h verwendet - eine dauerhafte Umstellung der Logging-Parameter sollte also dort erfolgen.`  
+|  `/L=<x>,<y1>,<y2>,<y3>`       | `Setzen des Logging-Intervals auf <x> Sekunden mit (optional) zu loggenden Parametern <y1>,<y2>,<y3>` <br /> `Setzt während der Laufzeit das Logging-Intervall auf <x> Sekunden und (optional) die Logging-Parameter auf <y1>, <y2>, <y3> etc.` <br /> `Dabei sind stets alle zu loggenden Parameter anzugeben - also auch (falls gewünscht) diejenigen, die evtl. bereits in der Datei BSB_lan_config.h definiert wurden. Nach einem Neustart werden dann wieder nur die Parameter geloggt, die in der Datei BSB_lan_config.h definiert wurden.` <br /> `Hinweis: Das Logging muss durch das Definement #define LOGGING in der Datei BSB_lan_config.h aktiviert werden und kann initial anhand der Variablen log_parameters und log_interval konfiguriert werden.`  
+|  `/LB=<x>`            | `Konfiguration des Loggens von Bus-Telegrammen: Nur Broadcasts (<x>=1) oder alle Telegramme (<x>=0)` <br /> `Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen Parameter loggen), logge nur die Broadcasts (<x>=1) oder alle (<x>=0) Telegramme.`  
+|  `/LD`                | `Deaktivieren des Loggens von Bus-Telegrammen`  
+|  `/LE`                | `Aktivieren des Loggens von Bus-Telegrammen`  
+|  `/LU=<x>`            | `Konfiguration des Loggens von Bus-Telegrammen: Nur unbekannte (<x>=1) oder alle (<x>=0) Telegramme loggen` <br /> `Wenn Bus-Telegramme geloggt werden (Parameter 30000 als einzigen Parameter loggen), logge nur die unbekannten Command IDs (<x>=1) oder alle (<x>=0) Telegramme.`  
+|  `/M<x>`              | `Aktivieren (<x> = 1) oder Deaktivieren (<x> = 0) des Bus-Monitormodus` <br /> `Standardmäßig ist der Monitor-Modus deaktiviert (<x>=0).` <br /> `Wenn <x> auf 1 gesetzt wird, werden alle Bytes auf dem Bus überwacht. Telegramme werden durch Umbruchzeichen als solche erkannt. Jedes Telegramm wird im Hex-Format auf der seriellen Konsole mit einem Zeitstempel in Millisekunden dargestellt. Die Ausgabe der Überwachung betrifft nur die serielle Konsole des Arduino, die html-Ausgabe bleibt unverändert.` <br /> `Zum Deaktivieren des Monitor-Modus ist <x> wieder auf 0 zu setzen (URL-Befehl: /M0).`  
+|  `/N`                   | `Reset & Neustart des Arduino (Dauer: ca. 15 Sekunden)` <br /> `Hinweis: Die Funktion muss zuvor in der Datei BSB_lan_config.h aktiviert werden: #define RESET`  
+|  `/NE`                  | `Reset & Neustart des Arduino (Dauer: ca. 15 Sekunden) und löschen des EEPROMs` <br /> `Hinweis: Die Funktion muss zuvor in der Datei BSB_lan_config.h aktiviert werden: #define RESET`  
+|  `/P<x>`              | `Bus-Typ (BSB, LPB oder PPS) vorübergehend ändern: <x> = 0 → BSB / 1 → LPB / 2 → PPS` <br /> `Wechselt zwischen BSB (<x>=0), LPB (<x>=1) und PPS (<x>=2). Nach einem Reset/Neustart des Arduino wird die Einstellung aus der Datei BSB_lan_config.h verwendet. Um den Bus-Typ dauerhaft festzulegen, sollte die Option setBusType config in der Datei BSB_lan_config.h entsprechend angepasst werden.`     
+|  `/P<x>,<y>,<z>`  | `Bus-Typ und zusätzlich die eigene oder die Zieladresse mittels URL-Befehl wechseln` <br /> `<x> = Bus (0 = BSB, 1 = LPB, 2 = PPS),` <br /> `<y> = eigene Adresse und` <br /> `<z> = Zieladresse` <br /> `Leerwerte bei den Adressen belassen den bisherigen Wert (= voreingestellte Adresse).`    
+|  `/Q`                   | `Überprüfen auf nicht-freigegebene reglerspezifische Parameter`  
+|  `/R<x>`              | `Frage den Reset-Wert für Parameter <x> ab` <br /> `Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.`  
+|  `/S<x>=<y!z>`        | `Setze Wert <y> für den Parameter <x> mit optionaler Zieladresse <z>` <br /> `Die gewünschte Gerätezieladresse ist als <z> einzufügen, wenn <!z> nicht eingegeben wird, wird die Standardzieladresse verwendet. Um einen Parameter auf 'abgeschaltet/deaktiviert' zu setzen, muss lediglich ein leerer Wert eingefügt werden: http://<ip-address>/S<x>=`  
+|  `/U`                   | `Anzeige der in der Datei BSB_lan_custom.h benutzerdefinierten Variablen (falls verwendet)` <br /> `Für die Erstellung eigener Unterprogramme in der BSB_lan_custom.h stehen zwei globale Arrays, custom_floats[] und custom_longs[], zur Verfügung, die jeweils 20 Byte groß sind. Diese können nach Bedarf verwendet werden und über das URL-Kommando /U angezeigt werden. Dies kann nützlich sein, um z.B. eigene Sensoren anzubinden, die man dann in der BSB_lan_custom.h abfragen bzw. berechnen kann und dann über /U über die Weboberfläche abfragen kann.`   
+|  `/V<x>`              | `Aktivieren (<x> = 1) oder Deaktivieren (<x> = 0) des Verbositätsmodus` <br /> `Der voreingestellte Verbositäts-Level ist 1. Somit wird standardmäßig der Bus überwacht und alle Daten werden zusätzlich im Raw-Hex-Format dargestellt.` <br /> `Soll der Modus deaktivert werden, so ist <x> auf 0 zu setzen (URL-Befehl: /V0).` <br /> `Der Verbositäts-Level betrifft sowohl die serielle Konsole des Arduino als auch (optional) das Loggen der Bus-Daten auf die microSD-Karte, so dass die Speicherkarte u.U. sehr schnell voll wird! Im Fall des Loggens auf die interne microSD-Karte ist es daher empfehlenswert, den Verbostitätsmodus bereits in der Datei BSB_lan_config.h zu deaktivieren (byte verbose = 0).` <br /> `Die html-Ausgabe bleibt mit /V1 unverändert.`  
+|  `/W`                   | `Mit vorangehendem /W liefern die URL-Befehle C, S und Q Daten ohne HTML-header und -footer zurück (bspw. /WC oder /WS<x>=<y!z>); Modul WEBSERVER muss kompiliert sein!`  
+|  `/X`                   | `Abfragen optionaler MAX!-Thermostate` <br /> `Abfragen und Anzeigen der Temperaturen von optionalen MAX!-Thermostaten.` <br /> `Hinweis: MAX!-Komponenten müssen zuvor in der Datei BSB_lan_config.h definiert werden!`  
   
 ---
-
--   **Konfigurationseinstellungen aus EEPROM oder der Datei *BSB_lan_config.h* laden:**  
-    `byte UseEEPROM = 1;`  
-    Gemäß Voreinstellung werden die Konfigurationseinstellungen beim Start von BSB-LAN aus dem EEPROM gelesen. Als Fallback kann die Variable auf '0' gesetzt werden, dann werden die Einstellungen aus der Datei *BSB_lan_config.h* gelesen.  
     
----    
-
-***Netzwerkeinstellungen:***  
-    
--   **MAC-Adresse des Ethernet-Shields:**  
-    `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
-    Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
-    *Hinweis: Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield! Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar!*
-     
-    *Wichtiger Hinweis:*  
-    *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
-    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
-    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
-    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
-    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
-    
--   **Ethernet-Port:**  
-    `uint16_t HTTPPort = 80;`  
-    Port 80 für HTTP voreingestellt.   
-    
-    
--   **DHCP:**  
-    `bool useDHCP = true;`  
-    Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
-    
-    *Wichtiger Hinweis:*  
-    *Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
-    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
-    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
-    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
-    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
-    *Die IP, die in diesem Fall vom Router automatisch vergeben wird, wird beim Start des Arduino Due im Seriellen Monitor der Arduino IDE angezeigt.*  
-
-
--   **IP-Adresse:**  
-    `byte ip_addr[4] = {192,168,178,88};`  
-    IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
-    *Achtung: Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt!*  
+## 5.2 MQTT
   
+BSB-LAN unterstützt das MQTT-Protokoll, d.h. die Werte und Einstellungen des Heizungsreglers sind per MQTT empfangbar.  
+Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in der Datei *BSB_LAN_config.h* aktiviert sein. Dies ist in der Voreinstellung bereits der Fall.  
   
--   **Gateway-Adresse:**  
-    `byte gateway_addr[4] = {192,168,178,1};` 
-    IP-Adresse des Gateways (i.d.R. die des Routers) - *bitte beachte die Kommata anstelle von Punkten!*  
-          
-        
--   **DNS-Server:**  
-    `byte dns_addr[4] = {192,168,178,1};`  
-    IP-Adresse des DNS - *bitte beachte die Kommata anstelle von Punkten!*  
+Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
   
+Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 11](kap11.md). 
   
--   **Subnet:**  
-    `byte subnet_addr[4] = {255,255,255,0};`  
-    Subnetz-Adresse - *bitte beachte die Kommata anstelle von Punkten!*  
-    
----    
-   
--   **WiFi per zusätzlichem ESP8266:**  
-    `//#define WIFI`  
-    Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-WiFi-Lösung](kap12.md#1212-due--wlan-die-esp8266-wifi-lösung) oder mittels eines [ESP32](kap12.md#122-der-esp32) genutzt werden soll.  
-    
-    `char wifi_ssid[32] = "YourWiFiNetwork";` 
-    Bei Verwendung von WiFi, *YourWiFiNetwork* durch die SSID des WLAN-Netzwerkes ersetzen.  
-    
-    `char wifi_pass[64] = "YourWiFiPassword";`  
-    Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
-    
-    `#define WIFI_SPI_SS_PIN 12`  
-    Hier wird der beim DUE zu verwendende SS-Pin für die [ESP8266-WiFi-Lösung](kap12.md#1212-due--wlan-die-esp8266-wifi-lösung) definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
-    
-    *Hinweis: Die MAC-Adresse des ESP lässt sich nicht einstellen!*
-   
----   
-   
--   **Nutzung von Multicast DNS:**  
-    `#define MDNS_HOSTNAME "BSB-LAN"`  
-    Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
-    Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap12.md#1273-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
-   
----    
-    
--   **Debugging und entspr. Einstellungen:**  
-    - `#define DEBUG` → Debug-Modus aktivieren (s. nachfolgende Optionen)  
-    
-    - `byte debug_mode = 1;` → Folgende Debug-Optionen sind verfügbar:  
-    0 - Debugging deaktiviert  
-    1 - Debug-Nachrichten an das serielle Interface senden (einzustellen bei der Verwendung von bspw. dem Seriellen Monitor der Arduino IDE)  
-    2 - Debug-Nachrichten an einen TelNet-Client anstelle des seriellen Interface senden  
-    
-    - `byte verbose = 1;` → Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen. zum Deaktivieren ist '0' anstelle der '1' einzutragen.    
-    
-    - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
-    
-    - `bool show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
-    Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`bool show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
-   
----   
-
-    
-***Sicherheitsfunktionen:***  
-
--   **Passkey:**  
-    Um das System vor einem ungewollten Zugriff von außen zu schützen,
-    kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** genutzt
-    werden (sehr einfach und nicht wirklich sicher!):  
-    `char PASSKEY[64] = "";`
-
-    Für die Verwendung ist eine Zahlenfolge einzugeben, bspw. `char PASSKEY[64] = "1234";` → in diesem Beispiel lautet der Passkey 1234. Wird keine Zahlenfolge eingegeben (also die Voreinstellung nicht geändert), so ist die Funktion deaktiviert.   
-    Falls die PASSKEY-Funktion genutzt wird, muss die URL bei einem
-    Aufruf des Webinterfaces den definierten Schlüssel als erstes
-    Element enthalten, bspw. `http://<IP-Adresse>/<passkey>/`
-    um die Hilfeseite zu sehen.  
-    *Bitte nicht den Slash hinter dem Passkey vergessen!*
-
-
--   **Trusted IP:**  
-    `byte trusted_ip_addr[4] = {0,0,0,0};`  
-    `byte trusted_ip_addr2[4] = {0,0,0,0};`  
-
-    Bei den Variablen `trusted_ip_addr` (und `trusted_ip_addr2` für eine weitere IP) kann man eine  vertrauenswürdige IP eintragen (z.B. des
-    FHEM-Servers), dann ist der Zugriff nur über diese IP. Lautet die vertrauenswürdige IP des Clients bspw.
-    `192.168.178.20`, so ist `byte trusted_ip_addr[4] = {192,168,178,20};` einzustellen.  
-    Wird die Voreinstellung `{0,0,0,0}` nicht geändert und/oder die erste Zahl ist eine 0, ist diese Funktion deaktiviert.  
-
--   **User-Pass:**  
-    `char USER_PASS[64] = "";`  
-    
-    Mit `USER_PASS[64]` kann eine Zugangssperre nach dem Muster *Username:Passwort* gesetzt werden:  
-    `//char USER_PASS[64] = "User:Password";`  
-    Ist kein String eingegeben (Voreinstellung), so ist die Funktion deaktiviert.  
-      
-      
----   
-
-***Einstellungen für optionale Sensoren:***  
-      
--   **OneWire-Temperatursensoren (DS18B20):**  
-    `#define ONE_WIRE_BUS`  
-    `bool enableOneWireBus = false;`  
-    `byte One_Wire_Pin = 7;`  
-    
-    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
-    Adapterboard) definiert werden.  
-    Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
-              
--   **DHT22-Sensoren:**  
-    `#define DHT_BUS`  
-    `byte DHT_Pins[10] = {5};`  
-    
-    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
-    Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
-    Voreingestellt ist das Modul samt Verwendung des Pins 5 aktiv.  
+BSB-LAN sendet über den Subtopic "status" unter dem definierten "MQTTTopicPrefix" jederzeit seinen Online-Status. Dies ist in der Voreinstellung also "BSB-LAN/status". Über diesen Topic kann so jederzeit festgestellt werden, ob der BSB-LAN derzeit Werte sendet und Kommandos empfangen kann.  
+Ist BSB-LAN verfügbar, ist im Topic die Nachricht "online" zu sehen, ansonsten wird "offline" gesetzt. Die Nachricht ist per Retain-Flag dauerhaft verfügbar, der Subscriber muss also nicht zum Zeitpunkt des BSB-LAN Starts bereits den Topic abonniert haben.  
+Ein Neustart über die Software (z.B. per URL-Befehl /N) setzt den Topic sofort auf "offline". Fällt BSB-LAN unkontrolliert aus (z.B. durch Stromausfall oder Flashen der Firmware) verschickt der Broker nach einem Timeout (dieser ist m.W. abhängig vom Broker) ebenfalls die Offline-Nachricht.   
   
-    *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
+Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus sowohl Abfragen als auch Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN für das Umsetzen von Steuerbefehlen Schreibzugriff auf den Regler gewährt werden.  
   
--  **BME280 Sensoren:**  
-   `//#define BME280 1`  
-      
-   Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 1, maximal 2!). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
-    
----
-
--   **24h-Durchschnittswerte:**  
-    `#define AVERAGES`  
-        Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet
-    werden, so ist das Definement zu aktivieren (Voreinstellung).  
-    
-    `bool logAverageValues = false;`  
-    Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
-    Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
-    
-    Des Weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
-    werden, bspw.:  
-    ```
-    int avg_parameters[40] = {  
-    8700, // Außentemperatur  
-    8740 // Raumtemperatur-Ist  
-    };
-    ```  
-    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
+Die Befehlssyntax lautet:  
+`set <MQTT-Server> publish <Topic> <Befehl>`  
+- `<MQTT-Server>` = Name des MQTT-Servers  
+- `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_LAN_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
+- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I.  
+*Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
+  
+Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
+  
+Beispiel:  
+Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus.  
+  
+Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700.  
 
 ---
+    
+## 5.2 JSON
+  
+***Hinweis:***    
+*Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
+es kann also noch Veränderungen hinsichtlich der Befehle und/oder
+Funktionen geben!*
 
--   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
-    `#define LOGGER` → Das Logging-Modul wird kompiliert.  
-    ***Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!***     
+Parameterabfragen sowie das Setzen von Werten kann ebenfalls mittels
+JSON erfolgen.
+
+-   **Abfrage der möglichen Werte von Parametern:**  
+
+    `http://<IP-Adresse>/JC=<x>,<y>,<z>`  
+    Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.  
+    
+-   **Abfrage der Konfiguration von BSB-LAN:**  
+
+    `http://<IP-Adresse>/JI`  
+    Konfiguration von BSB-LAN in JSON-Format anzeigen lassen.  
+
+-   **Abfrage von Kategorien:**
+
+    `http://<IP-Adresse>/JK=<xx>`  
+    Abfrage einer spezifischen Kategorie (\<xx\> = Kategorienummer)
+
+    `http://<IP-Adresse>/JK=ALL`  
+    Abfrage aller Kategorien (samt Min. und Max.)
+
+-   **Abfragen und Setzen von Parametern per HTTP POST:**
+
+    Hierbei ist der Aufruf der URL  
+    `http://<IP-Adresse>/JQ` für eine Abfrage und   
+    `http://<IP-Adresse>/JS` für das Setzen von Parametern zu verwenden.
+
+    Folgende Parameter sind dabei möglich:
+    
+    ```
+    http://<IP-Adresse>/JQ
+    Senden: "Parameter"
+    Empfangen: "Parameter", "Value", "Unit", "DataType" (0 = Zahl, 1 = ENUM, 2 = Bit-Wert (Dezimalwert gefolgt von Bitmaske gefolgt von ausgewählter Option), 3 = Wochentag, 4 = Stunde/Minute, 5 = Datum/Uhrzeit, 6 = Tag/Monat, 7 = String, 8 = PPS-Uhrzeit (Wochentag, Stunde:Minute)), "readonly" (0 = read/write, 1 = read only parameter), "error" (0 - ok, 7 - parameter not supported, 1-255 - LPB/BSB bus errors, 256 - decoding error, 257 - unknown command, 258 - not found, 259 - no enum str, 260 - unknown type, 261 - query failed), "isswitch" (1 = it VT_ONOFF or VT_YESNO data type (subtype of ENUM), 0 = all other cases)  
+    
+    http://<IP-Adresse>/JS  
+    Senden: "Parameter", "Value" (nur numerisch), "Type" (0 = INF, 1 = SET)  
+    Empfangen: "Parameter", "Status" (0 = Fehler, 1 = OK, 2 = Parameter read-only)  
+    ```   
       
-    Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
-    
-    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
-    `//#define ESP32_USE_SD`  
-    
-    - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
-    `int logTelegram = LOGTELEGRAM_OFF;`  
-    
-    Folgende Einstelloptionen sind hier verfügbar:  
-    `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
-    `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
-
-    - `bool logCurrentValues = false;`  
-    Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
-      
-    - `unsigned long log_interval = 3600;`  
-    Das gewünschte Logintervall in Sekunden.  
-    *Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!*  
-
-    Die zu loggenden Parameter müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
-    ```
-    int log_parameters[40] = {  
-    8700, // Außentemperatur  
-    8740 // Raumtemperatur-Ist  
-    };
-    ```
-    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
-    
-    *Hinweis:*  
-    Wenn mehrere DS18B20- oder DHT22-Sensoren geloggt werden sollen,
-    müssen diese bei den Log-Parametern entsprechend einzeln
-    untereinander aufgeführt werden, bspw.:  
-    ```
-    20300, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
-    20301,  
-    20302, 
-    ```
-    loggt die Werte der DS18B20-Sensoren 1-3.
-
-    ***Hinweis:***  
-    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_lan_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden!*  
-    *TWW-Laufzeit und TWW-Takte sind die Spezialparameter 20004 und 20005, 24h-Durchschnittswerte sind die Spezialparameter 20050-20099, DHT22-Sensoren sind die Spezialparameter 20100-20299, DS18B20-Sensoren sind die Spezialparameter 20300-20499, MAX!-Sensoren sind die Spezialparameter 20500-20699.*  
-        
----        
-        
--   **MQTT:**  
-    Soll MQTT zum Einsatz kommen, so sind die entspr. Variablen und Einstellungen anzupassen:    
-
-    - `#define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
-    
-    - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
-    1 = die Nachrichten werden im einfachen Textformat gesendet  
-    2 = die Nachrichten werden im JSON-Format gesendet (Struktur der JSON-Payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
-    3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
-    
-    - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP des MQTT-Brokers.  
-        *Bitte beachte die Kommata anstelle von Punkten!*  
-        Der Standardport ist 1883 und muss nicht extra definiert werden.  
-        
-    - `char MQTTUsername[32] = "User";` → Username; wird Username/Passwort beim MQTT-Broker nicht verwendet, ist das *User* zu entfernen.   
-    
-    - `char MQTTPassword[32] = "Pass";` → Passwort; wird Username/Passwort beim MQTT-Broker nicht verwendet, ist das *Pass* zu entfernen.   
-    
-    - `char MQTTTopicPrefix[32] = "BSB-LAN";` → Optional: Die MQTT-Nachrichten haben das Topic-Format ('Thema') `BSB-LAN/<Parametername>` und den entsprechenden Wert dann in der Payload. Wenn nichts angegeben wird (`char MQTTTopicPrefix[32] = "";`), wird der Standard-Themenname verwendet.     
-    
-    - `char MQTTDeviceID[32] = "MyHeater";` → Optional: Device-Name, der als Header in der JSON-Payload genutzt wird. Wenn nichts angegeben wird (`char MQTTDeviceID[32] = "";`), wird "BSB-LAN" verwendet.  
-    
-    ***Hinweis:***   
-    *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
-    `//#define LOGGER`   
-   
----   
-   
--   **IPWE:**  
-    `#define IPWE` → Das IPWE-Modul wird kompiliert.    
-    `bool enable_ipwe = false;`  
-    Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
-  
-    Die gewünschten Parameter (maximal 40) sind ebenfalls einzutragen:  
-    ```  
-    int ipwe_parameters[40] = {  
-    8700,                   // Außentemperatur  
-    8830                   // Warmwassertemperatur  
-    };  
-    ```
-  
----  
-  
--   **MAX! (CUNO/CUNX/modifizierter MAX!Cube):**  
-    Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellungen angepasst werden:  
-    
-     - `//#define MAX_CUL` → Definement aktivieren (= `#define MAX_CUL`) (deaktiviert by default)  
-     
-     - `bool enable_max_cul = false;` → Variable auf 'true' setzen  
-     
-     - `byte max_cul_ip_addr[4] = {192,168,178,5};` → IP-Adresse des CUNO/CUNX/modifizierten MAX!Cubes - *bitte beachte die Kommata anstelle von Punkten!*  
-     
-    - Liste der abzufragenden MAX!-Thermostate:
-    ```
-    char max_device_list[20][11] = {   
-    "KEQ0502326",  
-    "KEQ0505080"
-    };
-    ```  
-    Hier bitte die entspr. 10-stellige Seriennummer / MAX!-ID eintragen.  
-    *Achtung: Es können maximal 20 MAX!-Devices angebunden werden!*  
-    Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. [Kap. 12.5](kap12.md#125-max-komponenten).  
-  
----  
-  
--   **Anzahl der maximalen Wiederholungsversuche bei einer Abfrage:**    
-    `#define QUERY_RETRIES  3`  
-    Hier kann bei Bedarf eingestellt werden, wieviele maximale Wiederholungsversuche ausgeführt werden, wenn bei einer Abfrage keine entsprechende Antwort vom Heizungsregler kommt. In der Regel kann die Voreinstellung (max. 3 Versuche) beibehalten werden.  
-    
----    
-  
-***Buseinstellungen (Pins und Typ):*** 
-  
--   **RX-/TX-Pinkonfiguration:**  
-    `byte bus_pins[2] = {0,0};` → automatische Erkennung und Einstellung der RX-/TX-Pinbelegung (Voreinstellung); ansonsten gilt:  
-    - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18 (`{19,18}`)  
-    - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69 (`{68,69}`)  
-    
--   **Bus-Typ/-Protokoll:**  
-    `uint8_t bus_type = 0;`  
-    Je nach Anschluss des Adapters an einen BSB/LPB/PPS-Anschluss muss der entspr. Bus-Typ definiert werden (bereits nach Booten des Arduino wirksam).     
-    Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
-    hingegen 2:    
-    0 = BSB  
-    1 = LPB  
-    2 = PPS
-  
--   **Buseinstellungen:**  
-    Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
-    
-    → **BSB:**  
-    - `byte own_address = 0x42;` → entspricht der eigenen Geräteadresse 66 des BSB-LAN-Adapters  
-    - `byte dest_address = 0x00;` → entspricht der Zieladresse 0 (i.d.R. der Regler des Wärmeerzeugers)  
-    
-    → **LPB:**  
-    - `byte own_address = 0x42;` → eigene Adresse (BSB-LAN-Adapter), entspricht der Segmentadresse 4 mit Geräteadresse 3   
-    - `byte dest_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
-    
-    → **PPS:**  
-    - `bool pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`bool pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
-    - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
-   
----   
-   
--   **Geschützte GPIO-Pins:**  
-    Hier sind normalerweise keinerlei Anpassungen vorzunehmen. Sollten individuelle Veränderungen an der Hardware vorgenommen werden, die entspr. Berücksichtigungen hinsichtlich der geschützten GPIO-Pins erfordern, sieh bitte im entspr. Abschnitt in der Datei *BSB_lan_config.h* nach.  
-    
----    
-    
--   **Erkennung bzw. Festlegung des Heizungsreglertyps:**  
-    `static const int fixed_device_family = 0;`  
-    `static const int fixed_device_variant = 0;`
-    
-    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung
-    des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.   
-    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226`
-    eingetragen werden (6225 = Gerätefamilie / device family & 6226 =
-    Gerätevariante / device variant).  
-    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass
-    BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der
-    Regler erst nach dem Starten des Arduino eingeschaltet wird (da in
-    dem Fall die automatische Erkennung des angeschlossenen Reglers
-    nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
-    
----    
-    
--   **Schreib-/Lesezugriff auf den Heizungsregler:**  
-    `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
-    In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich. Eine Änderung des Status auf *generellen* Schreibzugriff kann via Webinterface (Menüpunkt "Einstellungen") erfolgen.  
-    *Hinweis für Mega-Nutzer:*  
-    Die Möglichkeit der Konfiguration via Webinterface bietet sich für Nutzer des Mega 2560 nicht, da das Modul WEBCONFIG mangels Speicher nicht kompiliert und nicht genutzt werden kann. In diesem Fall muss der Schreibzugriff nach wie vor durch das Flag '0' gewährt werden: `#define DEFAULT_FLAG 0`
-      
-    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
-    oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
-    das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in
-    der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
-    Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
-    
-    Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
-    gemacht:  
-    ```
-    {0x2D3D0574, CAT_HK1, VT_ENUM, 700, STR700, sizeof(ENUM700), ENUM700, DEFAULT_FLAG, DEV_ALL}, // [-] - Heizkreis 1 - Betriebsart ***(virtuelle Zeile)***
-    ```
-    → aufgrund des „DEFAULT_FLAG" ist der Parameter momentan nur lesbar
-
-    ```
-    {0x2D3D0574, CAT_HK1, VT_ENUM, 700, STR700, sizeof(ENUM700), ENUM700, 0, DEV_ALL}, // [-] - Heizkreis 1 - Betriebsart ***(virtuelle Zeile)***
-    ```
-    → das „DEFAULT_FLAG" wurde durch „0" (Null, ohne Anführungszeichen)
-    ersetzt
-    
----    
-    
--   **Eigenen Code** aus der Datei *BSB_lan_custom.h* einfügen:  
-    `//#define CUSTOM_COMMANDS`  
-    Fügt die Befehle aus der Datei `BSB_lan_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden (per default deaktiviert).  
-   
----   
-   
--   **Überprüfen der BSB-LAN-Version:**  
-    `#define VERSION_CHECK`  
-    `bool enable_version_check = false;`    
-    Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
-    
-    *Hinweis: Dabei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen.*  
-   
----    
+    Die Abfrage mehrerer Parameter mit einem Befehl ist ebenfalls möglich:  
+    Der Befehl `http://<IP-Adresse>/JQ=<x>,<y>,<z>` fragt die Parameter \<x\>, \<y\> und \<z\> ab.  
        
--   **"Externer" Webserver:**  
-    `//#define WEBSERVER`    
-    Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Für weitere Informationen siehe bitte [Kapitel 8.2.10](kap08.html#8210-verwenden-der-webserver-funktion).  
-    
----    
-    
--   **Speichern der Konfiguration im EEPROM (nur Arduino Due):**  
-    `#define CONFIG_IN_EEPROM`  
-    Soll die Konfiguration nicht im EEPROM des Due gespeichert werden, so ist das Definement zu deaktivieren.  
-    
----    
-    
--   **Konfiguration via Webinterface:**  
-    `#define WEBCONFIG`  
-    Ermöglicht die Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM; nur Arduino Due). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
----  
-  
--   **Compile JSON-based configuration and EEPROM config store module extension.**  
-   `#define JSONCONFIG`  
-   
-
----    
-
--   **Variablen für eine zukünftige Verwendung, derzeit (November 2020) noch ohne Funktion:**  
-    `#define ROOM_UNIT` → Raumgeräteersatz  
-    `byte UdpIP[4] = {0,0,0,0};` → Ziel-IP-Adresse für UDP   
-    `uint16_t UdpDelay = 15;` → Sendeintervall in Sekunden für UDP  
-
-    `#define OFF_SITE_LOGGER` → Off-Site-Logger Erweiterung  
-    `byte destinationServer[128] = "";` → IP des Off-Site-Loggers  
-    `uint16_t destinationPort = 80;` → Port des Off-Site-Loggers  
-    `uint32_t destinationDelay = 84600;` → Sendeintervall in Sekunden  
-    
----    
-***Für Nutzer des veralteten Setups auf Basis des Arduino Mega 2560:***  
-*Nachfolgende Einstellmöglichkeiten dienen der Möglichkeit, Speicher einzusparen, so dass auch auf einen Mega 2560 geflasht werden kann.*    
-
--   **Deaktivieren bestimmter Funktionen:**  
-  
-    If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
-    `#define I_DO_NOT_WANT_URL_CONFIG`
-  
-    Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
-    `#define I_WILL_USE_EXTERNAL_INTERFACE`  
-   
-    Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory.  /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
-    `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
-      
--   **Deaktivieren bestimmter Module:**  
        
-    Wird anstelle des Arduino Due noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Hinweis: Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
-    Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
+-   **Setzen von Parametern per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“**   
+    Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
     
+    Linux-Kommandozeile:   
     ```
-    #if defined(__AVR__)
-    //#undef CONFIG_IN_EEPROM
-    //#undef WEBCONFIG
-    #undef JSONCONFIG
-    //#undef WEBSERVER
-    #undef AVERAGES
-    #undef DEBUG
-    #undef IPWE
-    #undef MQTT
-    #undef MDNS_HOSTNAME
-    #undef OFF_SITE_LOGGER
-    #undef ROOM_UNIT
-    #undef VERSION_CHECK
-    #undef MAX_CUL
-    #undef BME280
-    #endif
-    ```  
-   
----  
+    curl -v -H "Content-Type: application/json" -X POST -d '{"Parameter":"700", "Value":"1", "Type":"1"}' http://<IP-Adresse>/JS
+    ```
 
+    Curl for Windows:   
+    ```
+    curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS
+    ```
+  
+-   **Abfrage des Reset-Werts eines Parameters:**  
+    `http://<IP-Adresse>/JR<x>` → Fragt den Reset-Wert für Parameter <x> ab. Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird (JSON: Mittels /JS).  
+  
+-   **Backup und Restore der Konfiguration von BSB-LAN:**  
+    
+    `http://<IP-Adresse>/JL` → Erstellt eine Liste der Konfiguration im JSON-Format.  
+    
+    `http://<IP-Adresse>/JW` → Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.  
+      
+    *Achtung:* Zur Nutzung dieser Funktion muss das Modul "JSONCONFIG" (s. Datei *BSB_lan_config.h*) kompiliert sein!  
+    
+---
      
 [Weiter zu Kapitel 6](kap06.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   

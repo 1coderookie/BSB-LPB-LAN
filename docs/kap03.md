@@ -2,779 +2,314 @@
 [Zurück zu Kapitel 2](kap02.md)    
     
 ---
+    
+# 3. BSB-LAN Setup: Anschluss und Inbetriebnahme
+
+----  
+  
+## 3.1 Anschluss des Adapters  
+  
+**Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.**  
+  
+Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler) und/oder bereits ein Raumgerät vorhanden, so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
+  
+*Hinweis:*  
+Da es sich bei BSB um ein Bussystem handelt, kann der Adapter auch bei einem bereits im Wohnraum installierten kabelgebundenen Raumgerät angeschlossen werden!  
+Sollte kein Raumgerät vorhanden sein, so sollte man überprüfen, ob es nicht einfacher ist, ein langes dünnes zweiadriges Buskabel in die Wohnung zu verlegen als ein langes LAN-Kabel.
+Es ist also nicht zwingend nötig, den Adapter unmittelbar am Aufstellort der Heizung anzuschließen!
+  
+*Beim Anschließen des Adapters sollte der betreffende Regler sicherheitshalber stets ausgeschaltet sein, ebenso bei einem Entfernen des Adapters.*  
+
+*Es ist unbedingt darauf zu achten, dass der Regler polrichtig angeschlossen wird!* 
+*Ein verkehrter Anschluss kann eine Beschädigung des Reglers und/oder Adapters zur Folge haben!*  
+
+Im Folgenden wird der Anschluss des BSB-LAN-Adapters an die möglichen Anschlüsse der verschiedenen Heizungsregler ausführlich beschrieben. Sollte man bereits die entspr. Anschlüsse ausfindig gemacht haben, so lässt sich das Procedere auf drei Schritte verkürzt beschreiben:  
+ 
+1. Schalte deine Heizung aus, damit der Heizungsregler stromlos ist.  
+2. Schließe nun den BSB-LAN-Adapter an den Regler an. Verbinde dazu die reglerseitigen Anschlüsse "CL+" und "CL-" (bei BSB-Verwendung) bzw. "DB" und "MB" (bei LPB-Verwendung) mit den gleichnamigen Anschlüssen des Adapters. Achte auf die korrekte Verbindung: Die verbundenen Anschlüsse müssen *namensgleich* sein, also bspw. "CL+" an "CL+" und "CL-" an "CL-"!   
+3. Schalte die Heizung bzw. den Heizungsregler wieder ein. 
+
+  
+---  
+  
+**Adapterplatine:**  
+Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
+  
+*Die unbestückte Platine.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">
+  
+*Die bestückte Platine.*    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+    
+*Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
+  
+---  
+  
+**BSB:**  
+Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus an Plus' und 'Minus an Minus':  
+Adapter-"CL+" an Regler-"CL+" sowie  
+Adapter-"CL-" an Regler-"CL-".  
+  
+Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
+(Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
+  
+---  
+  
+**LPB:**  
+Der Anschluss des Adapters erfolgt an den beschriebenen Pins des LPB, meist mit DB und MB gekennzeichnet:  
+Adapter-"DB" an Regler-"DB" sowie  
+Adapter-"MB" an Regler-"MB".  
+  
+---  
+  
+**PPS:**  
+Hier sind es häufig die die Anschlüsse A6 und M oder MD, wobei dann  
+"A6" an "CL+" und  
+"M"/"MD" an "CL-"  
+des Adapters anzuschließen ist.  
+  
+
+---  
+
+***Kennzeichnung der Anschlüsse:***  
+   
+-   Der **BSB** ist hersteller- und reglerübergreifend leider nicht einheitlich gekennzeichnet. Mögliche Bezeichnungen sind u.a.:  
+    - „CL+ & CL-"   
+    - „FB" (Fernbedienung = Raumgerät)  
+    - „BSB" (bei FB und BSB manchmal zusätzlich mit Nennung der Pole „CL+ & CL-")  
+    - „BSB & M" (bei der Kennzeichnung „BSB & M" entspricht BSB → CL+ und M → CL-)
+    - "X86" bei einem RVS21-Regler (s. Abb. weiter unten)  
+    
+    Ist bei den jeweiligen Anschlüssen lediglich eine Nummerierung zu erkennen (häufig bei "FB": 1,2,3), so ist in der spezifischen Bedienungsanleitung nachzusehen, welche dieser Pins mit CL+ und CL- belegt sind.  
+    Bitte den Anschluss G+ *nicht* benutzen, dies ist kein Buspin!  
+    Der Anschluss des Adapters an den BSB erfolgt wie erwähnt analog zu dem Anschluss von Raumgeräten. In der gerätespezifischen  Bedienungsanleitung finden sich diesbzgl. die reglerspezifischen Angaben. Am Regler selbst sind manchmal auch kleine Abbildungen angebracht, die ein Raumgerät darstellen sollen - auch dies kann zum Auffinden des benötigten Anschlusses hilfreich sein.  
+  
+-   Der **LPB** ist bei einigen Reglern als solcher gekennzeichnet, manchmal aber auch nur mit den Bezeichnungen „DB"(+) und „MB"(-) versehen.  
+   
+---   
+   
+**Die folgenden Abbildungen zeigen exemplarisch die Anschlüsse bei verschiedenen Reglermodellen:**    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
+
+*BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
+    
+---    
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+    
+*Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
+   
+---   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-LMS.jpg">  
+
+*BSB am "FB"-Anschluss bei einem LMS1x-Regler.*  
+   
+---   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
+
+*BSB am "X86"-Anschluss eines RVS21-Reglers (Achtung, nur bestimmte Pins!).* 
+   
+---   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
+    
+*BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus. Die (dauerhafte) Verwendung dieses Anschlusses ist aufgrund einer mangelnden Zugentlastung jedoch nicht zu empfehlen.*  
+   
+---  
+  
+***Hinweise zum Anschlussstecker:***  
+   
+Der Anschluss der Leitungen an die jeweiligen Kontakte sollte prinzipiell immer mit den spezifischen Steckern erfolgen, sofern diese vorhanden sind. Eine umfassende Nennung der entsprechenden Stecker kann hier leider nicht erfolgen, da die Stecker kodiert und teilweise unterschiedlich belegt sind. Meist findet man aber in den Bedienungsanleitungen Teilenummern der passenden Stecker, um ein Raumgerät an den Regler anzuschließen. 
+Beispielhaft sei hier der Stecker für den dreipoligen FB-Anschluss genannt, der bei den meisten Reglern zu passen scheint: [Brötje Stecker Raumgerät ISR, Rast 5- 3pol. = 627528](https://polo.broetje.de/mobile/mobile_view.php?type=1&pid=5316&w=1680&h=1050)  
+   
+***BSB / LPB / PPS:*** Sollten die originalen Stecker nicht unmittelbar erhältlich oder verfügbar sein, können auch (möglichst isolierte) 6,3mm-Kabelschuhe verwendet werden.  
+   
+***Vierpoliger Servicestecker:*** Für den (vorübergehenden) Anschluss am vierpoligen Servicestecker vorne am Bedienteil können 2,54mm DuPont-Stecker (weiblich) genutzt werden. Diese finden sich bspw. bei den typischen Breadboard-Verbindungskabeln und bei diversen Kabeln im Desktop-PC-Bereich (bspw. interner Lüfteranschluss, interner Lautsprecher).   
+   
+---
+   
+***Hinweise zum Kabel:***  
+   
+***LPB:*** Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß LPB-Projektierungsgrundlagen1 einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m).  
+  
+***BSB:*** Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden2. 
+Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale), geschirmte Leitungen sind ungeschirmten Leitungen immer vorzuziehen.  
+   
+Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von positiven Ergebnissen mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden.  
+   
+---
+    
+## 3.2 Funktionsüberprüfung und erste Nutzung
+
+Um zu überprüfen, ob der angeschlossene Regler korrekt erkannt wird, sollte bei der Ersteinrichtung eine Funktionsüberprüfung vorgenommen werden.  
+Dazu bietet sich folgende Vorgehensweise an:  
+
+1.  Den Regler ausschalten und *polrichtig* mit dem Adapter via BSB verbinden.  
+    
+    ***Hinweis:***  
+    *Wenn (später) der LPB genutzt werden soll, muss sowohl der Bus-Typ in der Datei BSB_LAN_config.h als auch der Anschluss am Regler geändert werden!*
+
+2.  Den Regler einschalten und überprüfen, ob die rote LED auf dem Adapter leuchtet.  
+    Sollte die LED in unregelmäßigen Abständen flackern, ist dies keine Fehlfunktion, sondern zeigt Aktivität auf dem Bus an.  
+
+3.  Den Arduino Due nun via USB (nutze den "Programming Port" in der Boardmitte) bzw. das ESP32-Board via USB mit dem PC und via LAN/WLAN mit dem Netzwerk     verbinden.
+
+4.  Nun die Arduino IDE starten, den korrekten Anschluss des Arduino Due bzw. ESP32-Boards auswählen (COM-Port) und dann unter ‚Werkzeuge' den ‚Seriellen Monitor' starten. Achte darauf, dass unten rechts die Übertragungsgeschwindigkeit auf 115200 Baud eingestellt ist.  
+
+5.  Wird der angeschlossene Regler automatisch korrekt erkannt, steht am Anfang der Ausgabe des seriellen Monitors bei „Device family" und „Device variant" jeweils ein Wert, der nicht „0" ist.  
+    
+    *Beispiel:*  
+    ```
+    \[...\]  
+    Device family: 96  
+    Device variant: 100  
+    \[...\]  
+    ```
+    
+Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist im folgenden Beispiel als "RGT2" konfiguriert und fragt zur automatischen Erkennung beim Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab (in der Standardeinstellung lautet die Kennung des Adapters "LAN"). Die darauf folgenden Zeilen sind bereits empfangene Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier:     Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
         
+Nun sollte die Verwendung von BSB-LAN möglich sein. Zur weiteren Funktionsüberprüfung fahre mit dem Schritt im nächsten Kapitel fort. Sollte wider Erwarten bereits jetzt klar sein, dass eine Fehlfunktion vorliegt (was bspw. dadurch zu erkennen ist, dass bei der o.g. Ausgabe von "Device family" und "Device variant" jeweils eine "0" steht), fahre mit [Kap. 3.4](kap03.md#34-debugging-und-fehlersuche) fort.   
 
-# 3. Unterstützte Heizungssysteme und Regler
-Prinzipiell unterstützt BSB-LAN von der Firma SIEMENS hergestellte
-(Heizungs-)Regler, die einen BSB und/oder LPB aufweisen. Diese werden
-von verschiedenen Heizungsherstellern ‚gebrandet' und verbaut.
    
-*Klarstellung:*  
-*Wann immer ich von "Regler" spreche, dann meine ich die sog. "BMU" (boiler management unit). Das ist das Gerät im Inneren des Gehäuses des Wärmeerzeugers, das die Funktionsweise des Wärmeerzeugers steuert und an dem die Sensoren, Pumpen, die Bedieneinheit und die Raumgeräte angeschlossen sind.  
-Die 'Bedieneinheit' und die Raumgeräte hingegen sind die Komponenten, die außerhalb des Gehäuses angebracht und mit einem Display und Knöpfen zur Bedienung des Wärmeerzeugers ausgestattet sind.*  
-   
-Hinweise:  
-Die folgende Aufzählung der verschiedenen Reglertypen mag im ersten Moment ein wenig verwirrend erscheinen, doch im Grunde kann man sich eine vereinfachte Regel merken:   
-Wenn die Reglerbezeichnung mit einem "S" endet (RVS und LMS), dann gehört der Regler zur 'aktuellen' Generation.  
-Die Gerätefamilie LMS ist dabei die Modellreihe für Gasgeräte, alle anderen Systeme nutzen RVS-Regler.    
-Je größer die darauffolgende Nummer in der Reglerbezeichnung ist, desto 'größer' vom (internen) Funktionsumfang her und meist auch hinsichtlich der Anzahl der Anschlüsse ist das jeweilige Modell.  
-Je nach 'Größe', Typ und vorgesehenem Verwendungsumfang sind somit auch unterschiedliche Parameter verfügbar.   
-      
-***ACHTUNG:  
-Aus aktuellem Anlass sei bereits hier darauf hingewiesen, dass die
-Heizungshersteller offensichtlich eine neue Heizungs- und
-Reglergeneration auf den Markt gebracht haben, die nach bisherigem
-Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje))!***
-    
 ---
-    
-## 3.1 Erfolgreich getestete Heizungssysteme
 
-Im Folgenden findest du eine Auflistung derjenigen Heizungssysteme und
-Regler, bei denen von einem erfolgreichen Einsatz des Adapters berichtet
-wurde. Da jedoch nicht jeder sein Heizungssystem, den verbauten Regler
-und die Ausgabe der Parameterabfrage `http://<IP-Adresse>/Q`
-meldet, ist davon auszugehen, dass in der Praxis noch weitere Systeme
-erfolgreich mit dem BSB-LPB-LAN-Adapter und der BSB-LAN-Software
-betrieben werden (können).
+## 3.3 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs
 
-    
-***Hinweis und Bitte:***  
-Um die Liste vervollständigen zu können und anderen möglichen Nutzern
-den Einstieg zu erleichtern, sei hier nochmals ausdrücklich auf die
-Bitte hingewiesen, ein noch nicht aufgeführtes Heizungssystem und/oder
-einen noch nicht aufgeführten Regler unter Angabe  
-- der genauen Hersteller- und Modellbezeichnung,  
-- des jeweiligen Energie-Typs (Gas/Öl/Wärmepumpe),  
-- der verwendetenen Anschlussart (BSB/LPB/PPS) sowie  
-- der [Ausgabe der Parameterabfrage `http://<IP-Adresse>/Q` (via Adapter!)](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids) zu melden.  
-Dazu kann entweder der entspr. [Thread im FHEM-Forum](https://forum.fhem.de/index.php/topic,29762.0.html) genutzt oder eine Email an Frederik oder mich (Ulf) geschickt werden.  
-Danke!
+Als erster Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung) alle verfügbaren Parameter freigegeben sind, führe folgenden URL-Befehl aus:  
 
-    
----
-    
-### 3.1.1 Brötje
+`http://<IP-Adresse>/Q`  
 
--   Brötje BBK 22E \[LMS14\] (Gasbrenner) {BSB}
+Diese Funktion geht alle Command IDs durch, die in der Datei *BSB_lan_defs.h* hinterlegt sind und schickt diejenigen, die nicht für den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR, 0x06) an den Regler.  
+Das passiert bei Parametern, bei denen bisher nur eine Command ID bekannt ist, ständig und erzeugt die bekannten „error 7 (parameter not supported)"-Fehlermeldungen.  
 
--   Brötje BBK 22F \[LMS14\] (Gasbrenner) {BSB}
+Sobald aber mehr als eine Command ID bekannt ist, bleibt die bisherige Command ID i.d.R. auf "DEV_ALL", ist also für alle Regler der Standard, und die neue Command ID wird erst einmal nur für die Therme freigeschaltet, die diese Command ID gemeldet hat.  
 
--   Brötje BBK EVO 22I \[LMS15\] (Gasbrenner) {BSB}
+Da es aber auch genauso gut umgekehrt sein kann, dass die "neue" Command ID der Standard ist, und die "alte" Command ID der Sonderfall, geht /Q nun die Command IDs durch, die nicht dem eigenen Regler zugewiesen sind. Häufig können dort noch eine Reihe "neuer" Parameter freigeschaltet werden.  
 
--   Brötje BBS EVO 20H \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
-
--   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje BGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje BMR 20/24 \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje BSK 20 \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje EcoCondens BBS 28C \[LMU7\] (Gasbrenner) {BSB}
-
--   Brötje EcoCondens BBS EVO 20G \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje EcoCondens BBS EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje EcoCondens Kompakt BBK 22D \[LMU7\] (Gasbrenner) {BSB}
-
--   Brötje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15] (Gasbrenner + Solar) {BSB}  
-
--   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner) {BSB}
-
--   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner) {BSB}  
-
--   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}  
-
--   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}
-
--   Brötje EcoTherm Plus WGB 15-38H \[LMS14\] (Gasbrenner) {BSB}  
-
--   Brötje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje EuroCondens BBS EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler) {BSB}
-
--   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler) {BSB}
-
--   Brötje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
-
--   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner) {BSB}
-
--   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner) {BSB}
-
--   Brötje NovoCondens BOB 20B \[RVS43\] (Ölbrenner) {BSB}  
-
--   Brötje NovoCondens BOB 25 \[RVS43\] (Ölbrenner) {BSB}  
-
--   Brötje NovoCondens BOB 25B \[RVS43\] (Ölbrenner) {BSB}  
-
--   Brötje NovoCondens SOB 22 \[RVA63.242\] (Ölbrenner) {PPS}
-
--   Brötje NovoCondens SOB 26 \[RVA63.242\] (Ölbrenner) {PPS}
-
--   Brötje NovoCondens SOB 22C \[RVS43.222\] (Ölbrenner) {BSB}
-
--   Brötje NovoCondens SOB 26C \[RVS43.222\] (Ölbrenner) + EWM
-    \[RVS75.390\] {BSB}
-
--   Brötje NovoCondens WOB 20D \[RVS43.325\] (Ölbrenner) {BSB}
-
--   Brötje SensoTherm BLW Split B \[RVS21\] (Wärmepumpe) {BSB}  
-
--   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe) {BSB}
-
--   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe) {BSB}
-
--   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe) {BSB}  
-
--   Brötje SensoTherm BSW-6A \[RVS51\] (Wärmepumpe) {BSB}  
-
--   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe) {BSB}  
-
--   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
-
--   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
-
--   Brötje WBS 14F \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WBS 22 \[LMS14\] (Gasbrenner) {BSB}  
-
--   Brötje WBS 22D \[LMU74\] (Gasbrenner) {BSB}
-
--   Brötje WBS 22E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB 15E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB 20C \[LMU74\] (Gasbrenner) {BSB}  
-
--   Brötje WGB 20E \[LMS14\] (Gasbrenner) {BSB}  
-
--   Brötje WGB 28E \[LMS14\] (Gasbrenner) {BSB}  
-
--   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB 20 Eco \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje WGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 15I \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje WGB EVO 20 \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 28H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB EVO 38I \[LMS15\] (Gasbrenner) {BSB}
-
--   Brötje WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner) {BSB}
-
--   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB-U 15H \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB-U 15I \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WGB-U 20I \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
-
--   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
-
-***ACHTUNG:***  
-***Die neuen Modellreihen Brötje WLS/WLC und
-BOK sind NICHT mit BSB-LAN kompatibel!***  
-    
----
-    
-### 3.1.2 Elco
-
--   Elco Aerotop G07-14 \[RVS61.843\] (Wärmepumpe) {BSB}  
-
--   Elco Aerotop S \[RVS61\] (Wärmepumpe) {BSB}
-   
--   Elco Aerotop T07-16 \[RVS61.843\] (Wärmepumpe) {BSB}
-
--   Elco Aerotop T10C \[RVS61.843\] (Wärmepumpe) {BSB}
-
--   Elco Aquatop 8es \[RVS51.843\] (Wärmepumpe) {BSB}
-
--   Elco Aquatop S08 \[RVS61.843\] (Wärmepumpe) {BSB}  
-
--   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}  
-
--   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
-
--   Elco Straton 21 \[RVS63.283\] (Ölbrenner) {BSB}
-
--   Elco Straton S \[RVS63\] (Ölbrenner) {BSB}  
-
--   Elco Straton S 21.2 \[RVS43.345\] (Ölbrenner) {BSB}  
-
--   Elco Thision 9 \[LMU7\] (Gasbrenner) {BSB}  
-
--   Elco Thision 25S \[RVS63\] \] (Gasbrenner) {BSB}  
-
--   Elco Thision S Plus 13 \[LMS14\] (Gasbrenner) {BSB}
-
--   Elco Thision S Plus 19 \[LMS14\] (Gasbrenner) {BSB}  
-
--   Elco Thision S Plus 24 \[LMS14\] (Gasbrenner) {BSB}
-
--   Elco Thision S Plus 24 Compact \[?\] (Gasbrenner) {BSB}  
-
--   Elco Thision S9.1 \[LMU7\] (Gasbrenner) {BSB}
-
--   Elco Thision S13.1 E \[LMU7x\] (Gasbrenner) {BSB}
-
--   Elco Thision S17.1 \[LMU74\] (Gasbrenner) {BSB}
-
--   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner) {BSB}
-
--   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\] {BSB}
-    
----
-    
-### 3.1.3 Weitere Hersteller
-
--   ATAG Q38CR \[LMS14\] (Gasbrenner) {BSB}
-
--   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
-
--   Atlantic Alféa Excellia A.I.TRI 16 \[RVS21\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Extensa Duo + \[RVS21.831\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Extensa 6+ \[RVS21.831\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
-
--   Atlantic Alféa Extensa Duo \[RVS21\] (Wärmepumpe) {BSB}  
-
--   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}  
-
--   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe) {BSB}
-
--   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
-
--   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner) {BSB}
-
--   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner) {BSB}  
-
--   Baxi Luna Platinum+ 24 \[LMS15\] (Gasbrenner) {BSB}  
-
--   Bösch (unbekanntes Modell) \[RVS63\] (Wärmepumpe] {BSB}  
-
--   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
-
--   CTA Optiheat 1-18es \[RVS61\] (Wärmepumpe) {BSB}  
-
--   CTC 380 IC \[RVS43.143\] (Ölbrenner) {BSB}  
-
--   Deville 9942 \[RVA53\] (?) (PPS)  
-
--   Deville 9981 \[RVA53.140\] (Ölbrenner) {PPS}  
-
--   EVI HEAT Combi-7 \[RVA43\] (Wärmepumpe) {LPB}  
-
--   Fernwärme \[RVD230\] {LPB}  
-
--   Fröling Rendagas Plus \[RVA63.244\] (Gasbrenner) {LPB}
-
--   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe) {BSB}  
-
--   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
-
--   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
-
--   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe) {BSB}  
-
--   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
-
--   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
-
--   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
-
--   HANSA SND 30TK \[RVS13\] (Ölbrenner) {BSB}  
-
--   Interdomo Domostar GBK 25 H/SH \[LMS15\] (Gasbrenner) {BSB}  
-
--   MHG Ecostar 200 \[RVS53\] (Ölbrenner) {BSB}  
-
--   MHG Procon E25 \[LMS14\] (Gasbrenner) {BSB}  
-
--   MHG Procon E 25 HS \[LMS14\] (Gasbrenner) {BSB}  
-
--   Olymp SHS 730 \[RVS63\] (Ölbrenner) {BSB}  
-
--   Olymp WHS 500 \[RVS61\] (Wärmepumpe) {BSB}  
-
--   Sieger TG11 \[RVP54.100\] (Ölbrenner) {PPS}  
-
--   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (Wärmepumpe) {BSB}  
-
--   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
-
--   Termomax Termo ÖV Color 35/E \[RVA63.2424\] (Ölbrenner) {LPB}  
-
--   Thermics Energie 9PWW \[RVS61\] (Wärmepumpe) {BSB}  
-
--   Thermital TBox Clima TOP \[RVS63\] (Gasbrenner + Solar + Pelletofen) {BSB/LPB}  
-
--   Viessmann Vitotwin 300-W {BSB}  
-    
--   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
-
--   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner) {LPB}  
-    
--   Weishaupt WTU 25 G \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
-
--   Weishaupt WTU 25 S \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
-    
--   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
-    
----
-    
-## 3.2 Detailliertere Auflistung und Beschreibung der unterstützten Regler
-Die folgende Reglerauflistung und -beschreibung soll einen kurzen
-Überblick über eine Auswahl der bereits von BSB-LAN unterstützten Geräte und deren
-rudimentären Unterschiede geben. Auf die unterschiedliche
-reglerspezifische Verfügbarkeit von speziellen Parametern wird nicht
-weiter eingegangen.  
-  
-Mittels BSB-LAN steht i.d.R. der gesamte Funktionsumfang der jeweiligen Reglertypen zur Verfügung. Dieser ist jedoch hinsichtlich der verfügbaren Parameter naturgemäß unterschiedlich: Ein Regler der neusten Generation weist mehr Parameter und Einstelloptionen als ein Regler der ältesten Generation auf. Die Heizungsanlage wird dadurch jedoch nicht zwingend ineffizienter oder ist per se 'veraltet' und unbrauchbar! Dank BSB-LAN können auch die ältesten unterstützten Regler noch etwas 'smarter' gemacht und in die Hausautomatisierung mit eingebunden werden.  
-  
 *Hinweis:*  
-Bei besonders 'neuen' (Software-)Versionen der aktuellen Reglerserien (Typ LMS&RVS) kann es u.U. vorkommen, dass vom Hersteller neu hinzugefügte Reglerparameter mangels entsprechender Regler-Hardware bei BSB-LAN noch nicht implementiert sind. Sollte ein solcher Regler in deinem Heizungssystem verbaut sein, so kannst du das Projekt durch Dekodieren dieser neuen Parameter unterstützen (s. hierzu [Kapitel 10](kap10.md)).
+Es wird hierbei immer nur eine Anfrage mit einer Command ID an den Regler geschickt!  
+Der Regler beantwortet diese entweder mit einer Fehlermeldung (Typ ERR, 0x08) oder einer Antwort mit einem Datenpaket (Typ ANS, 0x07).  
+*In keinem Fall werden dabei Werte gesetzt oder Reglereinstellungen verändert! Dafür müsste ein ganz anderer Telegramm-Typ gesetzt werden (entweder Typ SET, 0x03 oder Typ INF, 0x02) - das macht /Q explizit nicht!*  
 
-   
----
+Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben sind, sieht die auf `http://<IP-Adresse>/Q` folgende Webausgabe exemplarisch so aus:
     
-### 3.2.1 LMx-Regler
-Im Folgenden werden die Regler des Typs LMU und LMS aufgeführt. Diese
-sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
-   
----
-   
-#### 3.2.1.1 LMU-Regler  
-Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+```
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
 
-         
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
-   
-*Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
-  
-Genauere Hinweise diesbezüglich sind in [Kap. 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
-   
----
-   
-Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut.     
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU7.jpg">  
-   
-*Ein Regler des Typs LMU7x.*  
-      
-Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
-  
-Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje). 
-  
-Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
-    
----  
-   
-#### 3.2.1.2 LMS-Regler   
-Regler der Serie **LMS** scheinen die Nachfolger der LMU-Serie und somit die
-aktuelle Reglergeneration zu sein.   
-   
-Der (Funktions-)Unterschied zwischen dem LMS14 und dem LMS15
-scheint in der „Sitherm Pro"-Anwendung zur Optimierung des gesamten
-Verbrennungsprozesses zu liegen, die anscheinend nur die LMS15-Regler
-aufweisen.
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
 
-Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
-Bedarf mittels eines ClipIn-Moduls (OCI345) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
-   
-Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
-Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
-  
-Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
-       
----
-    
-### 3.2.2 RVx-Regler
-Im Folgenden werden die Regler des Typs RVA, RVP und *RVS (aktueller
-Reglertyp)* aufgeführt. Diese scheinen i.d.R. bei Ölheizungen,
-Wärmepumpen und verschiedenen ‚alleinstehenden' Reglern (Zonenregler,
-Solarsystemregler) zum Einsatz zu kommen.
-    
----
-    
-#### 3.2.2.1 RVA- und RVP-Regler
-Regler des Typs **RVA** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Je nach Modell weisen sie nur einen PPS oder einen PPS- und LPB-Anschluss auf, jedoch keinen BSB.  
-Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol" 
-(Brötje) verbaut.  
-  
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">  
-   
-*Ein Regler des Typs RVA53.*  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_front.jpg">  
-   
-*Vorderansicht: Bedieneinheit eines Reglers des Typs RVA53.*  
-   
-Regler des Typs **RVP** scheinen noch älter als RVA-Regler zu sein und
-weisen lediglich eine PPS-Schnittstelle auf.  
-  
-    
----
-    
-#### 3.2.2.2 RVS-Regler
-Regler des Typs **RVS** scheinen die ‚aktuelle' Reglergeneration
-darzustellen. Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
-auf.  
-     
-Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu sein:  
-- RVSx1-Regler kommen bei Wärmepumpen zum Einsatz, der RVS21 scheint nur einen BSB aufzuweisen.       
-- RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 3.5](kap03.md#35-hinweis-spezialfall-weishaupt-geräte).  
-     
-Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
-zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
-  
-Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
-  
-Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
-    
----    
-    
-**RVS21.xxx**  
-Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet einen BSB und Anschlüsse für ein optionales Raumgerät.  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS21.jpeg">  
-   
-*Ein RVS21 Regler.*  
-   
-LPB ist bei einem RVS21 im Bedarfsfall via OCI345 nachzurüsten (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).
-   
----    
-    
-**RVS41.xxx**  
-Der RVS41 ist ebenfalls ein Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS43 recht ähnlich zu sein.    
-   
----
-    
-**RVS43.xxx**  
-Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
-   
-*Ein Regler des Typs RVS43.*  
-   
----   
-   
-**RVS46.xxx**  
-Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen- / Mischerkreise hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl eine BSB- als auch einen LPB-Anschluss.  
-    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpeg">
-    
-*Der kleine Zonenregler ZR1.*     
-    
-Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess eines Ölbrenners zu steuern.  
-   
----    
-    
-**RVS51.xxx**  
-Der RVS51 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
-            
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS51843.jpeg">  
-   
-*Ein Regler des Typs RVS51.843.*  
-   
----    
-    
-**RVS61.xxx**  
-Der RVS61 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
-   
----   
-   
-**RVS63.xxx**  
-Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund seines Funktionsumfanges vielfältig eingesetzt werden. Er ist in erster Linie dafür vorgesehen, komplexere Anlagen mit einer zusätzlichen Solarthermieanlage zu steuern. Bei Brötje wird er daher auch als "Solar System Regler" bezeichnet. Er ist sowohl als optionaler Nachrüstregler in einem Wandgehäuse erhältlich, wird aber auch als bereits in den Wärmerzeuger eingebauter interner Regler verwendet.  
-         
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS63.jpg">  
-   
-*Ein Regler des Typs RVS63.*  
-    
----
-    
-Der **RVS65.xxx** scheint relativ identisch zum RVS63 zu sein und wurde bisher lediglich einmal von einem User gemeldet, bei dem der Regler als SSR von Brötje in einem Wandgehäuse zum Einsatz kam.       
-   
----  
-   
-### 3.2.3 Erweiterungs- und ClipIn-Module    
-Sollten die Anschlussmöglichkeiten und der Funktionsumfang der genannten Regler im Einzelfall nicht ausreichen, bspw. weil ein zusätzlicher Pumpenkreis nachträglich installiert wird, so lassen sich jeweils spezielle Erweiterungs-/ClipIn-Module (im Folgenden EWM) verbauen. Die EWM bieten Anschlussmöglichkeiten für einen Pumpen- bzw. Mischerkreis samt zugehöriger Sensoren.  
-Diese EWM werden am Regler mittels eines speziellen Bus-Kabels an einem dedizitieren Anschluss angeschlossen und kommunizieren intern über den BSB (eine Ausnahme scheint Weishaupt zu sein, worauf in diesem Kapitel jedoch nicht weiter eingegangen wird). Die EWM selbst weisen keinen eigenen BSB- oder LPB-Anschluss auf. Die Parametrierung erfolgt über die Bedieneinheit des Reglers.  
-Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils spezifischen Parameter im eigentlichen Regler möglich, die die Einstellungen und Funktionen des EWMs definieren und beschreiben. Da sie jedoch bspw. beim Aufruf von `ip/Q` mit aufgelistet werden, stelle ich sie im Folgenden kurz vor.  
-  
-*Hinweis:*  
-*Soll ein Erweiterungs-/ClipIn-Modul nachgerüstet werden, so sollte selbstverständlich das anlagenspezifische Handbuch berücksichtigt sowie ein Heizungsinstallateur beauftragt werden.*    
-  
----  
-   
-Erweiterungsmodule des Typs **AVS75.xxx** kommen bei den Reglerserien des Typs RVS und LMS zum Einsatz. Die Busanbindung erfolgt i.d.R. über den Anschluss "Bus-EM".     
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS75.jpg">  
-   
-*Erweiterungsmodul des Typs AVS75.390.*  
-   
----  
-   
-Erweiterungsmodule für LMU-Regler werden als "ClipIn-Module" bezeichnet. Je nach Verwendungszweck scheint es unterschiedliche Ausführungen zu geben (bspw. Relaismodul, Solarmodul). Generell scheinen sie jedoch die Typenbezeichnung **AGU2.5x** zu tragen (das "x" scheint dann die jeweilige Ausführung zu kennzeichnen), die Busanbindung erfolgt i.d.R. über den Anschluss "X50".   
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AGU255.JPG">  
-   
-*ClipIn-Modul des Typs AGU2.55.*  
-   
----   
-   
-### 3.2.4 Bedieneinheiten  
-   
-Die Bedieneinheit (am Wärmeerzeuger selbst) der Systeme der letzten Jahre (mit den Reglertypen LMU7x, LMS1x, RVS) sind üblicherweise Modelle des Typs **AVS37.xxx**. Sie sehen herstellerübergreifend recht identisch aus, können aber bei bestimmten Systeme (bspw. Wärmepumpen) zusätzliche Bedienelemente oder Funktionen aufweisen.   
-Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte vergleicht, so kann man feststellen, dass sich die beiden Geräte sehr ähneln. Die Art der Bedienung ist in dem meisten Fällen ebenso identisch. Die heizungsseitigen Bedieneinheiten stellen i.d.R. die Temperatur des Wärmeerzeugers (bspw. Kesseltemperatur) dauerhaft dar, die Raumgeräte hingegen üblicherweise die Raumtemperatur. Beide Geräte senden den jeweiligen Wert regelmäßig (etwa alle zehn Sekunden) als Broadcast (INF-Nachricht) über den BSB.   
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS37.jpg">  
-   
-*Eine Bedieneinheit des Typs AVS37.xxx.*  
-   
-In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein neuer Typ von Bedieneinheit verbaut, die Modellbezeichnung lautet **QAA75.91x**. Die Bedieneinheit scheint (zumindest bei bestimmten Herstellern) abnehmbar und mithilfe eines Adapters (Brötje: "ISR RGA") im Wohnraum installiert und zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente.     
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75911_kessel.jpg">  
-   
-*Eine Bedieneinheit des Typs QAA75.91x.*  
-   
----
-    
-## 3.3 Hinweis: Neue Modellgeneration - NICHT unterstützter Regler von Brötje
-Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
-genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
-haben, deren Regler nach bisherigem Wissensstand NICHT mit BSB-LAN
-kompatibel sind.
 
-Bei Brötje scheint es sich hierbei um die Modellreihen 
-- WLS/WLC (Gas), 
-- BOK (Öl) sowie 
-- BLW Split-P, BLW Split C und BLW Split-K C (Wärmepumpen) zu handeln.  
+Starte Test...
 
-Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut (geräteseitig "IWR Alpha", kompatibles Raumgerät "IWR IDA"), die weder einen LPB noch einen BSB aufweisen.
+Test beendet.
 
-Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
-Anschlüsse.  
+Fertig.  
+```
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg">
+Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern für den spezifischen Regler hingegen sieht exemplarisch so aus:
     
-*Anschlüsse des neuen Reglertyps einer Brötje WLC24 - dieser Regler ist inkompatibel mit BSB-LAN!*     
+```
+Gerätefamilie: 92 
+Gerätevariante: 100 
+Geräte-Identifikation: AVS37.294/100 
+Software-Version: 2.0 
+Entwicklungs-Index: 
+Objektverzeichnis-Version: 1.3 
+Bootloader-Version: 
+EEPROM-Version: 
+Konfiguration - Info 2 OEM: 
+Zugangscode Inbetriebnahme?: 
+Zugangscode Fachmannebene ?: 
+Zugangscode OEM?: 
+Zugangscode OEM2?: 
+Bisher unbekannte Geräteabfrage: 20 
+Hersteller-ID (letzten vier Bytes): 58469 
+Bisher unbekannte Geräteabfrage: 
+Außentemperatur (10003): 
+Außentemperatur (10004): 
+
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
+92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+
+
+Starte Test...
+
+5
+5 Uhrzeit und Datum - Sommerzeitbeginn Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B3 DA F8 
+DC 8A 42 14 07 05 3D 04 B3 00 FF 03 19 FF FF FF FF 16 C4 C8 
+6
+6 Uhrzeit und Datum - Sommerzeitende Tag/Monat: error 7 (parameter not supported) 
+DC C2 0A 0B 06 3D 05 04 B2 CA D9 
+DC 8A 42 14 07 05 3D 04 B2 00 FF 0A 19 FF FF FF FF 16 80 41 
+
+Test beendet.
+
+Fertig.  
+```  
     
-    
-Neben einer Servicebuchse (vermutlich IWR CAN) sind dort ein nicht
-weiter dokumentierter ‚L-Bus' und ein ‚R-Bus' zugänglich.  
-Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
-(On/Off) oder das neue ‚smarte' Raumgerät „Brötje IDA" angeschlossen werden.
+In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik (bsb (ät) code-it.de) gemeldet werden, damit eine entsprechende Anpassung vorgenommen werden kann.  
+        
+Wenn die Q-Abfrage erfolgreich beendet wurde, ist das BSB-LAN-Setup korrekt installiert und verwendungsfähig.  
 
-***ACHTUNG: An keinem dieser Anschlüsse ist der BSB-LPB-LAN-Adapter anschließbar!***
-
----  
-  
-## 3.4 Hinweis: Spezialfall LMU54/LMU64-Regler  
-Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
-Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (OCI420) einen LPB nachrüsten. An diesen wiederum ist der Adapter anschließbar.  
-            
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
-   
-*Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
-  
-Der Funktionsumfang ist bei diesem Regler (auch bei der Nutzung von BSB-LAN) jedoch relativ eingeschränkt und außerdem in gewissem Ausmaß von der Softwareversion des Reglers abhängig (getestet mit LMU64, SW v2.08 vs. SW v3.0): Regler mit SW ab v3.0 scheinen mehr (via BSB-LAN steuerbare) Funktionen aufzuweisen als Regler mit SW <v3.0. Insbesondere seien hier die beiden Sollwert-Temperaturparameter 709 und 711 genannt, anhand derer das Brennerverhalten in gewissem Umfang bestimmt werden könnte – diese können nur mit SW ab v3.0 genutzt bzw. verändert werden. (Hinweis: Derzeit läuft noch ein Versuch, ob das Brennerverhalten zufriedenstellend via Relais an einem anderen Kontakt beeinflusst werden kann.)  
-  
-Auf Parameter wie Außentemperatur, Kesseltemperatur, TWW-Temperatur, Vorlauftemperatur etc. kann jedoch nach bisherigem Kenntnisstand bei beiden erwähnten Softwareversionen zugegriffen werden.  
-  
-Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, der für den Kauf eines LPB-ClipIn-Moduls des Typs OCI420 zusätzlich geleistet werden muss, u.U. nicht ‚lohnt‘. Dies ist jedoch abhängig vom verfolgten Ziel. Will man nur Temperaturen loggen um einen groben Überblick über den Ist-Zustand des Heizungssystems zu erhalten, so ist u.U. eine günstigere Lösung mit einer entsprechenden DS18B20-Temperatursensoren-Installation ausreichend.  
-  
-Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul) zu finden.  
-  
----  
-  
-## 3.5 Hinweis: Spezialfall Weishaupt-Geräte  
-Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
-An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
-
-Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinheit eine Servicebuchse zu geben, bei der von den vier vorgesehenen Pins zwei belegt und herausgeführt sind. Laut der Aussage eines Weishaupt-Nutzers (*Danke an BSB-LAN-User Philippe!*) scheint hier der obere der beiden Pins MB und der untere der beiden Pins DB zu sein.  
-  
----  
-  
-## 3.6 Konventionelle Raumgeräte für die aufgeführten Reglertypen  
-Im Folgenden wird kurz auf die unterschiedlichen Raumgeräte eingegangen. Auch diese werden prinzipiell von SIEMENS hergestellt und von den verschiedenen Heizungsherstellern gebrandet. Somit sind sie herstellerübergreifend einsetzbar, d.h. ein entsprechendes QAA-Raumgerät von bspw. Elco kann prinzipiell an einer Brötje-Heizung eingesetzt werden (natürlich immer vorausgesetzt, dass es sich um das richtige Modell handelt). Ob dabei in Einzelfällen gewisse Einschränkungen bestehen, ist bisher nicht bekannt bzw. bei Tests nicht aufgefallen.  
-  
-Die nachfolgende Beschreibung beginnt dabei mit den Raumgeräten für die aktuellen Heizungsregler (RVS und LMS), die auch von BSB-LAN voll unterstützt werden (sog. "Broetje ISR").  
-
-Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und weiteres Zubehör ergänzt wurde. Bei Gelegenheit werde ich die m.E. relevanten Produkte hier hinzufügen.
-  
----  
-  
-### 3.6.1 QAA55 / QAA58  
-Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit einigen wenigen zusätzlichen Bedienoptionen anzusehen.  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">  
-   
-*Das QAA 55 Raumgerät.*
-   
-Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
-   
-Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden.
-  
----  
-  
-### 3.6.2 QAA75 / QAA78  
-Das QAA75.61x ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Betriebsarttaste ausgelöst werden.  
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">  
-   
-*Das QAA75.61x Raumgerät.*  
-   
-Das QAA75.61x heißt bei Brötje „Raumgerät RGT“, manchmal ist es auch als „Raumgerät RGT B Top“, „ISR RGT“ o.ä. zu finden.  
-Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss für die optional nutzbare Hintergrundbeleuchtung vorhanden ist (Klemme „G+“ am Regler).  
-  
-Das QAA78.61x ist die Funkvariante des QAA75.61x. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“.  
-   
-*Hinweis:*  
-An dieser Stelle muss zusätzlich erwähnt werden, dass es offenbar zwei verschiedene Ausführungen des QAA75 gibt: Das bereits erwähnte Raumgerät QAA75.61x und ein optisch nicht identisches QAA75.91x.  
-Wann immer ich in diesem Handbuch das "QAA75" erwähne, so beziehe ich mich dabei auf das bereits vorgestellte Modell QAA75.61x.  
-   
-Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoch nur bei bestimmten Modellreihen einiger Hersteller (bspw. Brötje WMS/WMC C, BMK B, BMR B und Baxi Luna Platinum+) zum Einsatz zu kommen. Es scheint die 'heizungsseitige' Bedieneinheit zu sein, die jedoch mittels eines Adapters (Brötje: "ISR RGA") zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente, nur mit dem Vorteil, dass man sie im Wohnbereich installieren und sich ein zusätzliches Raumgerät sparen kann.     
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
-   
-*Eine QAA75.91x Bedieneinheit, mit Zubehör optional nutzbar als Raumgerät.*  
-   
----  
-   
-### 3.6.3 QAA74  
-Das QAA74 ist ein relativ neues Raumgerät, welches das QAA75 ablösen soll/wird. Bei Brötje heißt es "ISR RGP" ("Raumgerät Premium"), bei Siemens "UI400". Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt bei einigen Modellen ebenfalls als heizungsseitige Bedieneinheit unter der Bezeichnung AVS74 zum Einsatz. 
-   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
-
-   
 ---
-  
-### 3.6.4 Brötje IDA  
-Die „Brötje IDA“ ist eine Raumeinheit, die neben einem integrierten Temperaturfühler und einigen Funktionen zusätzlich einen gewissen Funktionsumfang für die Steuerung via App mit Smartphone bietet. Eine Präsenztaste ist nicht vorhanden.  
-  
-IDA wird ins heimische WLAN integriert und benötigt Internetzugriff, falls man die Steuerung per App nutzen möchte. Bei einer rein lokalen Nutzung des Raumgerätes (ohne Fernzugriff via App) ist kein WLAN-Zugang erforderlich. Über den WLAN-Zugang erfolgt im Übrigen auch die Aktualisierung der IDA-Firmware.  
-Eine interessante Analyse des Datenverkehrs wurde [hier](https://forum.fhem.de/index.php/topic,29762.msg833831.html#msg833831) von FHEM-Forumsmitglied „freetz“ vorgenommen.  
-  
-Für den Anschluss am BSB des Kesselreglers muss ein BSB-Interface (GTW17) angeschlossen werden. Interessenten müssen in diesem Fall nach „ISR IDA“ Ausschau halten, damit das GTW17 im Paket enthalten ist.  
-Bei Reglern mit dem Kommunikationsprotokoll OpenTherm (bspw. die ältere Reglergeneration Brötje LMU6x) muss das OT-Interface (GTW16) verwendet werden.  
-IWR-CAN-basierte Regler (s. [Kap. 3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-bröje)) werden direkt an das Service Dongle GW05 (WLAN-Gateway) angeschlossen.  
-  
-Der genaue Funktionsumfang und die Installationsschritte von IDA sind bitte den entsprechenden Anleitungen des Herstellers zu entnehmen. Eine Übersicht ist bspw. unter der URL https://www.broetje.de/de/produkte/regelung-und-vernetzte-heizung/isr/raumgeraet-isr-ida verfügbar.  
-  
-Der gleichzeitige Einsatz von IDA und BSB-LAN ist prinzipiell möglich, jedoch sind aufgrund des Erfahrungsberichtes eines Nutzers (*Danke an FHEM-Foumsmitglied „mifh“!*) ein paar Einschränkungen hinsichtlich des Funktionsumfangs von BSB-LAN bekannt:  
-Ist IDA am BSB angeschlossen, so ist es der Master für die Einstellungen bzw. Werte von 
-- Uhrzeit und Datum,
-- Heiz- bzw. Schaltprogrammen sowie der
-- Raumtemperatur.
-Werden diese Einstellungen / Werte via BSB-LAN geändert, so werden sie nach kurzer Zeit wieder mit den Einstellungen / Werten aus IDA überschrieben. 
-Es ist somit also nicht mehr möglich, bspw. die Raumtemperaturen aus verschiedenen Räumen zu erfassen und mittels BSB-LAN an den Regler zu übermitteln, da IDA dies überschreibt.  
-  
-Die Funktion der Präsenztaste ist via BSB-LAN i.d.R. nach wie vor gegeben.  
-  
----  
-  
-### 3.6.5 QAA53 / QAA73  
-Die Raumgeräte QAA 53 und QAA 73 unterscheiden sich ebenfalls im Funktionsumfang. Zum Einsatz kommen sie bei den OpenTherm-basierten Reglern des Typs LMU6x. Sollte dieser Raumgerätetyp angeschlossen oder anschließbar sein, so ist der Regler nicht ohne Weiteres kompatibel mit dem BSB-LPB-LAN-Adapter! Für weitere Informationen diesbzgl. beachte bitte das [Kapitel 3.4](kap03.md#34-hinweis-spezialfall-lmu54lmu64-regler). 
-Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
-  
----  
-  
-### 3.6.6 QAA50 / QAA70  
-Auch beim QAA50 und QAA70 besteht prinzipiell der Unterschied im Funktionsumfang. Diese Raumgeräte kommen bei den alten Reglergenrationen zum Einsatz, die lediglich eine PPS-Schnittstelle aufweisen und somit prinzipiell kompatibel mit dem BSB-LPB-LAN-Adapter sind. Der Einsatz von BSB-LAN parallel zu einem vorhandenen Raumgerät ist in diesem Fall nur lesend möglich, Werte und Einstellungen des Heizungsreglers können also nicht via BSB-LAN verändert werden.  
-      
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA70.jpg">  
-   
-*Ein QAA70 Raumgerät.*  
-   
-Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anleitungen zu entnehmen.  
-  
----  
-  
-## 3.7 Sonderzubehör: Webserver OZW672 und Servicetool OCI700  
-An dieser Stelle seien der Vollständigkeit halber noch zwei kommerzielle Lösungen erwähnt, mittels derer man Zugriff auf den Heizungsregler via Computer bekommen kann.  
-Dies ist zum einen der Webserver OZW672 und zum anderen das Servicetool OCI700.  
-   
-Der Webserver OZW672 (Brötje: "ISR OZW") wird per Busleitung an den Regler angeschlossen und mit einem Netzwerkanschluss mit dem heimischen Netzwerk und ggf. dem Internet verbunden. Er stellt bei Bedarf eine Verbindung zum (kostenpflichtigen) 'Brötje Datenportal' her und bietet dann mittels Fernzugriff (via PC, Tablet oder Smartphone+App) Möglichkeiten wie Ferndiagnose oder auch Benachrichtigungen im Störungsfall.  
-   
-Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt wird. Es wird lokal mit einem Rechner verbunden, auf dem eine spezielle Software installiert ist und ermöglicht einen Überblick über die Einstellungen des Reglers.  
-   
----  
-  
-## 3.8 LPB nachrüsten mittels OCI420 ClipIn-Modul  
-Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
-  
-Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anleitungen zu finden sind, obwohl sie für einen erfolgreichen Betrieb entscheidend sind. Dies betrifft vor allem die Einstellungen, die für die LPB-Spannungsversorgung vorzunehmen sind. Des Weiteren ist die LPB-Geräteadresse 1 mit Segmentadresse 0 einzustellen und die Einstellung als Uhrzeit-Master vorzunehmen.  
-  
-*Die folgenden Angaben sind wie immer ohne Gewähr – darauf sei an dieser Stelle nochmal explizit hingewiesen.*  
-  
-Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinlich der Fehler 81 auftreten, welcher „Kurzschluss im LPB Bus oder fehlende Speisung“ bedeutet. Sofern man das OCI420 korrekt angeschlossen hat, muss in dem Fall die LPB-Busspeisung aktiviert werden. Der Parameter dazu ist „LPBKonfig0“.  
-  
-Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch.  
-Bei der LMU64 hat der betreffende Parameter die Nummer 604 (bei LMU74: Parameternummer 6006). Hier sind acht Bits (604.0 bis 604.7) verfügbar, die wie folgt einzustellen sind (dabei bedeutet „0“=AUS und „1“=EIN):  
-  
-604.0 = 0 → Uhrzeitmaster  
-604.1 = 1 → Uhrzeitmaster  
-**604.2 = 1 → Verteilte Busspeisung AUTOMATIK**  
-604.3 = 1 → Status LPB-Busspeisung: 1 = aktiv  
-604.4 = 1 → Ereignisverhalten erlaubt  
-604.5 = 0 → Brauchwasserzuordnung lokal  
-604.6 = 0 → Brauchwasserzuordnung lokal  
-604.7 = 0 → Kein Vorrang LMU-Anforderung vor externer Leistungsvorgabe  
-  
-Ruft man die ‚Übersicht‘ der LPBKonfig0-Einstellungen auf, so wird dort jedoch die Bit-Reihenfolge von hinten nach vorne (also von Bit 7 bis Bit 0!) dargestellt und sollte nach erfolgreicher Einstellung folgendermaßen lauten: 00011110.
-Des Weiteren sind folgende Einstellungen vorzunehmen:  
-  
-605 LPB-Geräteadresse = 1  
-606 LPB-Segmentadresse = 0  
-  
-Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die grüne LED am OCI420 in regelmäßigen Abständen blinken.  
-      
----
+
+## 3.4 Debugging und Fehlersuche
+
+Sollten wider Erwarten Probleme auftauchen und das BSB-LAN-Setup nicht verwendungsfähig sein, so kann dies mehrere Ursachen haben.  
+
+Als erste Maßnahme bietet sich immer an, die Verkabelung zu überprüfen und nachzusehen, ob die rote LED auf dem BSB-LAN-Adapter leuchtet.  
+
+Als weiterer Schritt ist es immer sinnvoll, den Mikrocontroller zusätzlich an den PC anzuschließen und den Seriellen Monitor (SerMo) der Arduino IDE zu starten. Dort kann der Startvorgang überprüft werden. Sollten in der Ausgabe nur kryptische Zeichenfolgen erscheinen, so ist die eingestellte Baudrate zu überprüfen (unten rechts). Diese sollte auf 115200 Baud eingestellt sein.   
     
+Wird der angeschlossene Regler *nicht* automatisch korrekt erkannt, steht bei „Device family" und „Device variant" jeweils eine „0", zusätzlich stehen vor „Device family" sechs Zeilen „query failed".  
+*Beispiel:*  
+```
+[...]  
+query failed  
+query failed  
+query failed  
+query failed  
+query failed  
+query failed  
+Device family: 0  
+Device variant: 0  
+[...]
+```
+Meist liegt der Grund hierfür dann in einem Problem des Hardware-Setups oder der Verkabelung, da die Parameter 6225 und 6226 nicht erfolgreich abgerufen werden konnten ([Fehlermeldung "query failed"](kap13.md#133-fehlermeldung-query-failed)").  
+
+Weitere Gründe für Fehlfunktionen sind in den Kapiteln [13](kap13.md), [14](kap14.md) und [15](kap15.md) aufgeführt.  
+
+
+
+---
 
      
 [Weiter zu Kapitel 4](kap04.md)      

@@ -3,54 +3,54 @@
     
 ---
     
-# 16. Schnellinstallationsanleitung
-***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!  
-Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
-   
-1. Stecke das LAN-Shield und den Adapter auf den Arduino Due und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. 
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+
     
-*Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
+# 16 Weiterführende Informationen und Quellen
+Ein reger Austausch bzgl. der hier vorgestellten Hard- und Software
+findet in folgendem Forum statt:   [https://forum.fhem.de/index.php/topic,29762.0.html](https://forum.fhem.de/index.php/topic,29762.0.html)  
+Dies ist auch eine gute Anlaufstelle für Fragen, Erfahrungsaustausch und
+Support, wo auch regelmäßig über Neuerungen und erfolgte Updates
+informiert wird.  
   
-2. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
-   
-3. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
+Sämtliche Dokumentationen zur hier vorgestellten Hard- und Software
+sowie die verschiedenen Software-Versionen sind [hier](https://github.com/fredlcore/bsb_lan) zu finden.  
+Dieses Handbuch ist zudem [hier](https://github.com/1coderookie/BSB-LPB-LAN) als PDF-Version erhältlich.
 
-4. Entpacke die heruntergeladene Datei "bsb_lan-master.zip" und wechsle in den Ordner.  
+Die Software und die dazugehörigen Dokumentationen für den Einsatz des
+hier vorgestellten Adapters in Verbindung mit einem Raspberry Pi 2 ist
+[hier](https://github.com/loehnertj/bsbgateway) zu finden.
 
-5. Wechsle in den Ordner "BSB_LAN". Bennene die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
+Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann
+das Python-Script [„PPS-monitor"](https://github.com/dspinellis/PPS-monitor) genutzt werden.
 
-6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner. Die ArduinoIDE sollte den angeschlossenen Arduino Due automatisch samt verwendetem COM-Port erkennen.  
-*Für die Schritte 2-6 beachte die ausführlichere Beschreibung in [Kapitel 4](kap04.md)!*  
-
-7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an.  
-*Beachte hierfür das [Kapitel 5.2](kap05.md#52-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)!*  
-Wenn alle Einstellungen angepasst wurden, flashe den Arduino mit der BSB-LAN-Software.  
-*Hinweis:* Die Konfiguration kann auch nach dem Flashvorgang via Webinterface (Seite "Einstellungen") erfolgen.  
-
-8. Entferne nach Beenden des Flashvorgangs das USB-Kabel, um den Arduino stromlos zu machen. Schließe das LAN-Kabel an und halte die Stromversorgung für den Arduino bereit.  
-
-9. Schalte deine Heizung aus, damit der Heizungsregler stromlos ist. Schließe nun den Adapter des Arduino-Setups an den Regler an. Verbinde dazu die reglerseitigen Anschlüsse "CL+" und "CL-" (bei BSB-Verwendung) bzw. "DB" und "MB" (bei LPB-Verwendung) mit den gleichnamigen Anschlüssen des Adapters. Achte auf die korrekte Verbindung: Die verbundenen Anschlüsse müssen *namensgleich* sein, also bspw. "CL+" an "CL+" und "CL-" an "CL-"!   
-*Beachte hierzu auch die ausführliche Beschreibung in [Kapitel 2.3](kap02.md#23-anschluss-des-adapters)!*
-
-10. Schalte die Heizung bzw. den Heizungsregler wieder ein. 
-
-11. Stelle die Stromversorgung des Arduino-Setups her, idealerweise mit einem spezifischen Netzteil mit Anschluss an der Hohlsteckerbuchse. Solltest du (noch) kein geeignetes Netzteil zur Hand haben, kannst du das Arduino-Setup auch über die USB-Buchse mit Strom versorgen.  
-
-12. Starte einen Internetbrowser und rufe die Seite des BSB-LAN-Webinterfaces auf. Diese findest du unter der IP-Adresse, die du zuvor bei Schritt 6 eingestellt hast (voreingestellt ist "192.168.178.88"). Solltest du DHCP verwenden, so kann die vergebene IP während der Startsequenz des Arduino mittels des Seriellen Monitors der Arduino IDE ausgelesen werden.   
-
-Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte neben den bereits genannten Kapiteln auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md).  
-  
-Bitte führe nun die Überprüfung auf neue Parameter (URL-Befehl /Q) aus und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
-
-Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
+Die initiale Idee der Regleranbindung via BSB/LPB kann [hier](http://www.mikrocontroller.net/topic/218643) und [hier](http://blog.dest-unreach.be/2012/12/14/reverse-engineering-the-elco-heating-protocol) nachvollzogen werden.    
     
+Als relativ umfangreiche Quelle mit vielen Parameterbeschreibungen sei
+das „Brötje Systemhandbuch ISR Plus" empfohlen. Es stellt neben
+zahlreichen anderen und modellspezifischen Anleitungen die zugrunde
+liegende ‚Referenz' für die Parameterdefinitionen des hier vorgestellten
+Projekts dar.
 
+Tiefergehende Informationen wie Spezifikationen und technische
+Anforderungen der Bus-Typen sind den jeweiligen Dokumenten der
+Hersteller zu entnehmen.  
+Speziell hinsichtlich des LPB seien zwei Dokumente von „Siemens Building
+Technologies - Landis & Staefa Division" empfohlen:  
+- CE1N2030D Local Process Bus LPB Systemgrundlagen  
+- CE1N2032D Local Process Bus LPB Projektierungsgrundlagen  
+
+Hinsichtlich der Installation und Verwendung von DHT22- und
+OneWire-Sensoren wie dem DS18B20 gibt es zahlreiche Informationsquellen.
+Im Internet finden sich etliche kostenlose Anleitungen,
+Beispielinstallationen und Skripte.  
+Bei Problemen mit einer umfangreicheren OneWire-Installation sei ein
+Blick auf die technischen Anforderungen von OneWire (speziell
+hinsichtlich der Bus-Typologie und der Leitungslängen) und auf die
+Hinweise im entsprechenden Kapitel empfohlen.    
+    
 ---
-    
-
+         
      
-     
-[Weiter zu Kapitel 17](kap17.md)      
+[Weiter zu Anhang A1](anhang_a1.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
+
