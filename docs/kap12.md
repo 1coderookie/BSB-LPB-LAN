@@ -64,8 +64,10 @@ Zum Verwenden des SerMo gehe bitte wie folgt vor:
 - Starte nun den "Seriellen Monitor". Dies kann entweder über "Werkzeuge/Serieller Monitor" (Shortcut: Strg+Umschalt+M) oder einfach durch einen Klick auf das Lupensymbol oben rechts in der Symbolleiste der Arduino IDE erfolgen.  
 
 In dem Moment, in dem du den Seriellen Monitor startest, wird der angeschlossene Mikrocontroller (Due/ESP32) neu gestartet.  
+
 Hast du alles korrekt konfiguriert, kannst du den Startvorgang und das Senden und Empfangen von Telegrammen beobachten (eine exemplarische Ausgabe findest du am Ende dieses Kapitels).  
 Sollten jedoch nur unleserliche kryptische Zeichen auftauchen, so überprüfe die Einstellung der Übertragungsrate: Diese steht ganz unten rechts und sollte auf 115200 Baud eingestellt sein.  
+
 Es bietet sich außerdem an, einen Haken bei "Zeitstempel" zu setzen und im Feld links von der Übertragungsrate "Sowohl NL als auch CR" einzustellen.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/sermo_untere-zeile.png">  
@@ -73,10 +75,12 @@ Es bietet sich außerdem an, einen Haken bei "Zeitstempel" zu setzen und im Feld
 *Die untere Zeile des SerMo mit den entspr. Einstellungen.*  
 
 Wenn du nun bspw. via Webinterface URL-Befehle abschickst, so wirst du die entspr. Befehle bzw. Telegramme in der Ausgabe des SerMo sehen können. Regelmäßig eintreffende INF-Telegramme sind Broadcasts, die vom Heizungsregler bzw. von der angeschlossenen Bedieneinheit und ggf. auch von einem zusätzlichen Raumgerät geschickt weren. Von der Bedieneinheit wird etwa alle zehn Sekunden die Kesseltemperatur gesendet, von einem Raumgerät i.d.R. die Raumtemperatur.  
+
 Wenn du nun bspw. an der Bedieneinheit einen bestimmten Parameter aufrufst, dann wird dieser samt zugehörigem Wert nicht nur im Display der Bedieneinheit angezeigt, sondern auch im SerMo. Auf diese Weise können bspw. auch unbekannte, neue Parameter eines Heizungsreglers und deren zugehörige Telegramme dekodiert werden (siehe hierzu [Kap. 09](kap09.md)). 
 
 *Hinweis:*  
-Wenn du dich mit Fragen oder Problemen an uns (Frederik und mich, Ulf) wendest, so wirst du sehr wahrscheinlich die Aufforderung zum Schicken eines "SerMo-Logs" erhalten. Damit ist gemeint, dass du einen Mitschnitt der Ausgabe des SerMo erstellen sollst. Dazu entfernst du den Haken unten links bei "Autoscroll" im Fenster des SerMo (damit sich die Ausgabe nicht regelmäßig verschiebt) und markierst dann mit der Maus die gewünschten Zeilen. Mittels copy&paste kannst du die Ausgabe dann in einen Texteditor einfügen und die Datei als txt-file speichern (oder bspw. im Forum in Codetags eingefügt posten).  
+Wenn du dich mit Fragen oder Problemen an uns (Frederik und mich, Ulf) wendest, so wirst du sehr wahrscheinlich die Aufforderung zum Schicken eines "SerMo-Logs" erhalten. Damit ist gemeint, dass du einen Mitschnitt der Ausgabe des SerMo erstellen sollst.  
+Dazu entfernst du den Haken unten links bei "Autoscroll" im Fenster des SerMo (damit sich die Ausgabe nicht regelmäßig verschiebt) und markierst dann mit der Maus die gewünschten Zeilen. Mittels copy&paste kannst du die Ausgabe dann in einen Texteditor einfügen und die Datei als txt-file speichern (oder bspw. im Forum in Codetags eingefügt posten).  
 
 Nachfolgend ein exemplarischer Mitschnitt einer SerMo-Ausgabe eines erfolgreichen Starts eines BSB-LAN-Setups mit einem Arduino Due und einem angeschlossenem RVS43-Regler samt INF-Meldungen der angeschlossenen Bedieneinheit, die die Kesseltemperatur ca. alle zehn Sekunden als Broadcast sendet:  
 ```
