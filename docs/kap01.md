@@ -222,7 +222,7 @@ Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität
   
 *Das Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter.*    
   
- 
+--- 
 
 ### 1.3.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab V3  
   
@@ -319,7 +319,7 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 - *Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen!*   
 - *Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.*  
   
-***Dieses Handbuch bezieht sich nur auf BSB-LAN!***  
+***Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!***  
   
 ---
    
