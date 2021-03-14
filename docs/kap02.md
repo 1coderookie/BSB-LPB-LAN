@@ -55,7 +55,8 @@ Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstall
 
 10. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des Arduino Due erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
 
-Herzlichen Glückwunsch - du hast BSB-LAN installiert! Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
+Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
 
 ---
 
@@ -112,7 +113,7 @@ Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er
 *Hinweis:  
 Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei "BSB_LAN_config.h" zu aktivieren.*    
 
-Herzlichen Glückwunsch - du hast BSB-LAN installiert!  
+***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
 Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
   
 ---
