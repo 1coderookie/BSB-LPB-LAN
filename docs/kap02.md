@@ -78,8 +78,15 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
 
 6. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
 
-7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus. Für den in diesem Handbuch empfohlenen "Joy-It ESP32-NodeMCU" (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module". Für das empfohlene "Olimex ESP32-EVB" wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
-   *Hinweis: Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
+7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
+
+    - Für den in diesem Handbuch empfohlenen "Joy-It ESP32-NodeMCU" (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
+    
+    - Für das empfohlene "Olimex ESP32-EVB" wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
+    
+    *Hinweise:*  
+    *Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist.*   
+    *Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
 
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
@@ -103,7 +110,8 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
   
 *Hinweis: Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei *BSB_LAN_config.h* zu aktivieren.*    
 
-Herzlichen Glückwunsch - du hast BSB-LAN installiert! Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+Herzlichen Glückwunsch - du hast BSB-LAN installiert!  
+Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
   
 ---
 
