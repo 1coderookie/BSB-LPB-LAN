@@ -48,6 +48,10 @@ Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstall
    *Hinweis: Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
 
 7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+   
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_Due.png">  
+   
+   *Die Einstellungen für den Due in der Arduino IDE.*  
 
 8. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
 
@@ -93,8 +97,16 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
 
 9. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
 
-10. Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
+10. Wähle bei "Partition Scheme"  
+    
+    - für den empfohlenen ESP32-NodeMCU bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
+     
+    - für das empfohlene Olimex-Board die Variante "Standard" aus.  
 
+      <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_ESP32.png">  
+   
+      *Die Einstellungen für den ESP32-NodeMCU in der Arduino IDE.*  
+  
 11. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
 
     - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
