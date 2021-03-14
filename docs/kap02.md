@@ -101,11 +101,13 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
     
     - für den empfohlenen ESP32-NodeMCU bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
      
-    - für das empfohlene Olimex-Board die Variante "Standard" aus.  
+    - für das empfohlene Olimex-Board die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
 
+   
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_ESP32.png">  
    
-      *Die Einstellungen für den ESP32-NodeMCU in der Arduino IDE.*  
+      *Die Einstellungen für den ESP32-NodeMCU in der Arduino IDE.*   
+   
   
 11. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
 
