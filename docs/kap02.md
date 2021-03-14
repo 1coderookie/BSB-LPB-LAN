@@ -32,9 +32,9 @@ Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstall
 
 1. Verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sowohl das LAN-Shield als auch der BSB-LAN-Adapter sollte zuvor bereits auf den Due gesteckt sein, dies ist jedoch nicht zwingend nötig.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
     
-*Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
+   *Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
 
 2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
   
@@ -78,19 +78,21 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
 
 6. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
 
-7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus. Für die in diesem Handbuch empfohlenen ESP32-Boardvarianten ("JoyIt ESP32-NodeMCU" sowie "Olimex ESP32-OVB") oder identische Clones mit einem "ESP32-WROOM"-Chip lautet der passende Boardtyp "ESP32 Dev Module".   
+7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus. Für den in diesem Handbuch empfohlenen "Joy-It ESP32-NodeMCU" (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module". Für das empfohlene "Olimex ESP32-EVB" wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
    *Hinweis: Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
 
-8. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
 9. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
 
 10. Wähle bei "Partition Scheme" bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
 
 11. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
-    - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
-    - Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
 
+    - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
+
+    - Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
+  
 12. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
 
 13. Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino Due.  
