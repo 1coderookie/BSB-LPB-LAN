@@ -136,10 +136,17 @@ Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/od
 
 Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Version ([Download als ZIP-File](https://github.com/fredlcore/BSB-LAN/archive/master.zip), per git o.ä.), wie es in den vorherigen Installationskapiteln beschrieben ist.  
 
-Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due/ESP32 erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.    
+*Hinweise:* 
+- Solltest du in der Datei *BSB_LAN_config.h* bestimmte Änderungen bei der neu zu flashenden Version vorgenommen haben, wie bspw. die Zugangsdaten für dein WLAN oder eine fest vergebene IP, die dann nach dem Flashen offenbar nicht übernommen wurden, so liegt dies i.d.R. daran, dass die alten Einstellungen aus dem EEPROM gelesen wurden.  
+Um die neuen Einstellungen wirksam werden zu lassen, stelle in der [Webkonfiguration](kap02.md#221-konfiguration-mittels-webinterface) die Einstellung "Konfiguration aus EEPROM lesen" einmal auf "Aus", speichere die Änderung und flashe nochmal neu.  
+Danach sollten die neuen Einstellungen wirksam geworden sein, weil BSB-LAN diese nun aus der Datei *BSB_LAN_config.h* und nicht aus dem EEPROM eingelesen hat.  
+Nach erfolgreicher Überprüfung stelle "Konfiguration aus EEPROM lesen" wieder auf "Ein".  
 
-*Hinweis:*  
-Die bestehende und ggf. angepasste Datei *BSB_LAN_config.h* kann in der Regel zwar übernommen werden, es jedoch ratsam, auch hier die jeweils aktuelle Datei *BSB_LAN_config.h.default* anstelle der bestehenden Datei *BSB_LAN_config.h* zu verwenden. Dazu muss die .default-Datei wie gehabt umbenannt und ggf. den vorherigen Einstellungen entspr. angepasst werden. So kann man sicher gehen, dass man ein komplettes Update der BSB-LAN-Software vorgenommen hat.  
+- Die bestehende und ggf. angepasste Datei *BSB_LAN_config.h* kann in der Regel bei einem Update auf eine neuere Version zwar übernommen werden, es jedoch ratsam, auch hier die jeweils aktuelle Datei *BSB_LAN_config.h.default* anstelle der bestehenden Datei *BSB_LAN_config.h* zu verwenden. Dazu muss die .default-Datei wie gehabt umbenannt und ggf. den vorherigen Einstellungen entspr. angepasst werden. So kann man sicher gehen, dass man ein komplettes Update der BSB-LAN-Software vorgenommen hat. 
+
+- Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due/ESP32 erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.    
+
+ 
 
 ---
 
