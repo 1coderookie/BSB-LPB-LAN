@@ -59,7 +59,7 @@ Der Serielle Monitor (kurz: SerMo) ist ein nützliches Tool, um bspw. das Startv
 
 Zum Verwenden des SerMo gehe bitte wie folgt vor:  
 - Verbinde dein BSB-LAN-Setup per USB mit deinem Rechner verbindest.  
-- Starte die Arduino IDE per Doppelklick auf die Datei *BSB_LAN.ino".  
+- Starte die Arduino IDE per Doppelklick auf die Datei *BSB_LAN.ino*.  
 - Wähle nun deinen Boardtyp, den Port etc. entsprechend aus. 
 - Starte nun den "Seriellen Monitor". Dies kann entweder über "Werkzeuge/Serieller Monitor" (Shortcut: Strg+Umschalt+M) oder einfach durch einen Klick auf das Lupensymbol oben rechts in der Symbolleiste der Arduino IDE erfolgen.  
 
