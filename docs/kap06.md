@@ -336,9 +336,11 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 ## 6.12 EEPROM-Löschung mittels Pinkontakten  
   
 Grundsätzlich kann das EEPROM via Webinterface mit dem Befehl /NE gelöscht werden. Es kann aber in bestimmten Situationen (bspw. wenn kein Zugriff auf das Webinterface möglich ist) nötig sein, das EEPROM auch ohne Nutzung des URL-Befehls zu löschen.   
+  
 Hierfür müssen  
 - beim Due die Pins 31 und 33 und 
-- beim ESP32 die Pins 18 und GND 
+- beim ESP32 die Pins 18 und GND  
+
 beim Start oder Reboot kurzzeitig miteinander verbunden werden.    
 Nach erfolgreichem Löschen blinkt die Arduino-/ESP32-LED vier Sekunden lang.  
 Beim erneuten Start werden dann die (Vor-)Einstellungen aus der Datei *BSB_LAN_config.h* übernommen, eine Anpassung kann danach wie gewohnt bspw. via Webinterface erfolgen.  
