@@ -26,7 +26,7 @@ Je nach 'Größe', Typ und vorgesehenem Verwendungsumfang sind somit auch unters
 Aus aktuellem Anlass sei bereits hier darauf hingewiesen, dass die
 Heizungshersteller offensichtlich eine neue Heizungs- und
 Reglergeneration auf den Markt gebracht haben, die nach bisherigem
-Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [3.3](kap03.md#33-hinweis-neue-modellgeneration---nicht-unterstützter-regler-von-brötje))!***
+Wissensstand NICHT kompatibel mit BSB-LAN ist (s. Kap. [10.2.3](kap10.md#1023-hinweis-inkompatible-systeme-von-brötje-und-elco))!***
     
 ---
 
@@ -71,7 +71,7 @@ jeweiligen Anfragen des Adapters geschickt werden.*
 **PPS (Point-to-Point-Schnittstelle)** hingegen ist kein "echter" Bus, es können also nicht mehrere Teilnehmer mit spezifischen Adressen angeschlossen werden. PPS ist eher (wie der Name schon sagt) eine Schnittstelle, um ein weiteres Gerät (i.d.R. ein Raumgerät) anzuschließen.  
 
 Bei allen in diesem Handbuch aufgezählten (aktuellen) Reglern des Typs RVS, LMS1x und LMU7x ist ein BSB-Anschluss am Regler zu finden. 
-Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar (s. [Kap. 3.8](kap03.md#38-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul)).  
+Ein LPB ist standardmäßig nur bei Reglern des Typs RVS (nur Modellreihen 4x und 6x, Ölheizungen und SolarSystemRegler) vorhanden. Bei Reglern des Typs RVS21 (Wärmepumpen), LMS14/15 sowie LMU74/75 (Gasheizungen) ist ein LPB i.d.R. mittels eines ClipIn-Moduls nachrüstbar (s. [Kap. 10.2.6](kap10.md#1026-lpb-nachrüsten-mittels-oci420-clipin-modul)).  
 PPS ist nur bei alten Reglern vorzufinden und wird heutzutage nicht mehr verbaut.  
   
     
@@ -83,7 +83,7 @@ Der BSB (Boiler System Bus) ist im Grunde ein ‚lokaler' Bus. Mit 'lokal' meine
   
 An den BSB werden bspw. die Bedieneinheit, Raumgeräte und Erweiterungsmodule angeschlossen. Diese Geräte haben dann 'lokal' Zugriff auf den Regler. Schließt man das BSB-LAN Setup an den BSB an, so hat man aufgrund der eindeutigen Adressierung Zugriff auf alle Busteilnehmer dieses Reglers.  
   
-Der BSB ist bei den im Folgenden vorgestellten Reglern des TYps RVS, LMS1x sowie LMU7x vorhanden. Sollte dein Regler einen BSB- *und* einen LPB-Anschluss aufweisen und kein weiterer Regler via LPB (bspw. eines weiteren Wärmeerzeugers bei einer Kaskadenschaltung, ein Solaranlagenregler o.ä.) und möchtest du nur Zugriff auf diesen einen Regler, dann ist der Anschluss des BSB-LAN Setups an den BSB-Anschluss empfehlenswert.  
+Der BSB ist bei den im Folgenden vorgestellten Reglern des Typs RVS, LMS1x sowie LMU7x vorhanden. Sollte dein Regler einen BSB- *und* einen LPB-Anschluss aufweisen und kein weiterer Regler via LPB (bspw. eines weiteren Wärmeerzeugers bei einer Kaskadenschaltung, ein Solaranlagenregler o.ä.) und möchtest du nur Zugriff auf diesen einen Regler, dann ist der Anschluss des BSB-LAN Setups an den BSB-Anschluss empfehlenswert.  
   
 **Adressierung beim BSB**  
 Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits festgelegt:  
