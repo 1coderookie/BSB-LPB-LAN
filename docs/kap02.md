@@ -477,15 +477,22 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     müssen diese bei den Log-Parametern entsprechend einzeln
     untereinander aufgeführt werden, bspw.:  
     ```
-    20300, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
-    20301,  
-    20302, 
+    20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
+    20303,  
+    20305, 
     ```
-    loggt die Werte der DS18B20-Sensoren 1-3.
+    loggt die Messwerte der DS18B20-Sensoren 1-3.
 
     ***Hinweis:***  
     *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden!*  
-    *TWW-Laufzeit und TWW-Takte sind die Spezialparameter 20004 und 20005, 24h-Durchschnittswerte sind die Spezialparameter 20050-20099, DHT22-Sensoren sind die Spezialparameter 20100-20299, DS18B20-Sensoren sind die Spezialparameter 20300-20499, MAX!-Sensoren sind die Spezialparameter 20500-20699.*  
+    *Weitere gängige Spezialparameter lauten:*  
+    *TWW-Laufzeit und TWW-Takte: 20004 und 20005,*  
+    *24h-Durchschnittswerte: 20050-20099,*  
+    *DHT22-Sensoren: 20100-20299,*   
+    *BME280 Sensoren: 20200-20299,*   
+    *DS18B20-Sensoren: 20300-20499,*  
+    *MAX!-Sensoren: 20500-20699.*   
+    *Für eine genauere Aufschlüsselung der Nummernbereiche einzelner optionaler Sensoren sieh bitte im entspr. Kapitel nach.*  
         
 ---        
         
