@@ -31,7 +31,7 @@ Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Lo
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
 BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
-*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies durch Auskommentieren des entspr. Definements (`//#define VERSION_CHECK 1`) in der Datei BSB_lan_config.h deaktiviert werden.*   
+*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies durch Auskommentieren des entspr. Definements (`//#define VERSION_CHECK 1`) in der Datei BSB_LAN_config.h deaktiviert werden.*   
 
 ---  
    
@@ -57,9 +57,6 @@ Wenn optionale DS18B20-/DHT22-Sensoren angeschlossen und korrekt konfiguriert si
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png">
 
-DS18B20-Sensoren sind mit "1w_temp[x]" benannt, bei jedem Sensor wird zusätzlich die spezifische Sensor ID mit angezeigt.  
-DHT22-Sensoren zeigen die Temperatur, die relative und die absolute Feuchtigkeit an.  
-   
 ---  
    
 **Ausgabe/Zeichne Logdatei (URL-Befehle /D und /DG):**  
@@ -84,7 +81,7 @@ nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
 ---  
    
 **Prüfe auf neue Parameter (URL-Befehl /Q):**  
-Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überprüft, ob für den angeschlossenen Regler noch etwaige Parameter freizugeben sind.  
+Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überprüft, ob für den angeschlossenen Regler noch etwaige Parameter freizugeben sind. Siehe auch [Kap. 3.3](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_Q_de.png">  
    
@@ -92,26 +89,25 @@ Mit dieser Funktion werden sämtliche bekannten Parameter abgefragt und überpr�
    
 **Einstellungen (URL-Befehl: /C):**  
 Hier wird eine Übersicht der Konfiguration dargestellt.  
-Dort sind im oberen Bereich u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
+Dort ist im oberen Bereich das [Webinterface zur Konfiguration](kap02.md#221-konfiguration-mittels-webinterface) und im unteren Bereich u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc. auf einen Blick überprüfbar.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  
    
-Unter der Auflistung findet sich das Webinterface zur Konfiguration von BSB-LAN. 
 
 ---  
    
 **URL-Befehle:**  
-Der Button ist mit diesem Handbuch verknüpft und führt zum Kapitel "Cheatsheet URL-Befehle", in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
+Der Button ist mit diesem Handbuch verknüpft und führt zum Kapitel [URL-Befehle](kap05.md#51-url-befehle), in dem die möglichen Befehle übersichtlich und kurz aufgeführt sind. Internetzugriff wird benötigt.  
    
 ---  
    
 **Handbuch:**  
-Der Button ist mit diesem Handbuch verlinkt. Internetzugriff wird benötigt.  
+Der Button ist mit der Startseite dieses Handbuchs verlinkt. Internetzugriff wird benötigt.  
    
 ---  
    
 **FAQ:**  
-Der Button ist mit dem Kapitel "FAQ" dieses Handbuchs verlinkt. Internetzugriff wird benötigt.
+Der Button ist mit dem Kapitel [FAQ](kap15.md) dieses Handbuchs verlinkt. Internetzugriff wird benötigt.
     
 ---
     
