@@ -277,8 +277,12 @@ Dieses Array enthält die momentane Ventilöffnung des Heizkörperthermostats (b
     
 Die Reihenfolge zwischen den Arrays ist immer gleich, d.h., wenn `max_devices[3]` der Wandthermostat im Wohnzimmer mit ID xyz ist, dann ist `max_cur_temp[3]` die momentane Temperatur im Wohnzimmer und `max_dst_temp[3]` die entsprechende Solltemperatur usw.  
     
-Die Reihenfolge innerhalb `max_devices[]` richtet sich danach, wie sich diese angemeldet haben, bleibt dann aber auch über Neustarts hinweg konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://<IP-Adresse>/NE` gelöscht werden). Dennoch sollte man sich nicht darauf verlassen, sondern im Zweifelsfall, z.B. beim Ausklammern von bestimmten Thermostaten, immer mit der in `max_device[]` hinterlegten ID vergleichen (diese kann man der zweiten Spalte der Auflistung unter `http://<IP-Adresse>/X` entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten ID).
-
+Die Reihenfolge innerhalb `max_devices[]` richtet sich danach, wie sich diese angemeldet haben, bleibt dann aber auch über Neustarts hinweg konstant, da diese im EEPROM abgespeichert werden (bis diese mit `http://<IP-Adresse>/NE` gelöscht werden). Dennoch sollte man sich nicht darauf verlassen, sondern im Zweifelsfall, z.B. beim Ausklammern von bestimmten Thermostaten, immer mit der in `max_device[]` hinterlegten ID vergleichen. Diese kann man der zweiten Spalte der Auflistung unter `http://<IP-Adresse>/X` oder der Ausgabe der Kategorie "Sensoren" entnehmen und ist nicht identisch mit der auf den Geräten aufgedruckten ID.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Screenshot_MAX.png">  
+  
+*Darstellung der MAX!-Sensoren in der Kategorie "One Wire, DHT & MAX! Sensors".*    
+  
 Wichtiger Hinweis für diejenigen, die die MAX!-Thermostate über einen zum CUL/CUNO geflashten Max!Cube (Informationen diesbzgl. s. [hier](https://forum.fhem.de/index.php/topic,38404.0.html)) verwenden:  
 Wenn bei der Einrichtung des CUNO BSB-LAN nicht lief (oder anderweitig beschäftigt war), muss an den betreffenden Geräten nochmals die Pairing-Taste gedrückt werden. Denn nur bei *diesem* Pairing-Prozess wird die auf den Geräten aufgedruckte Seriennummer zusammen mit der sonst intern verwendeten ID (die auch u.a. auch FHEM verwendet) übermittelt und BSB-LAN kann die entsprechende Zuordnung vornehmen. Ansonsten weiß BSB-LAN bei den anderen Telegrammen des Cube nämlich nicht, um welche MAX!-Geräte es geht.  
     
