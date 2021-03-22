@@ -46,10 +46,10 @@ Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Param
 |  `/JK=ALL`          	   | `JSON: Auflistung aller Kategorien samt zugehöriger Parameternummern`  
 |  `/JL`                | `JSON: Erstellt eine Liste der Konfiguration im JSON-Format`  
 |  `/JQ=<x>,<y>,<z>`      | `JSON: Abfrage von Parameter <x>, <y> und <z>`  
-|  `/JQ`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Abfrage von Parametern`  
+|  `/JQ`                  | `JSON: Abfrage von Parametern`  
 |  `/JR<x>`                | `JSON: Fragt den Reset-Wert für Parameter <x> ab` <br /> `Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird.`  
-|  `/JS`                  | `→ mit JSON-Struktur (s. Kap. 8.2.4) via HTTP-POST Request: Setzen von Parametern`  
-|  `/JV`                | `Abfrage der JSON-API-Version. Payload: {"api_version": "major.minor"}`  
+|  `/JS`                  | `JSON: Setzen von Parametern`  
+|  `/JV`                | `JSON: Abfrage der JSON-API-Version. Payload: {"api_version": "major.minor"}`  
 |  `/JW`                   | `JSON: Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.`  
 |  `/K`                   | `Alle Kategorien auflisten` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
 |  `/K<x>`              | `Alle Parameter von Kategorie <x> abfragen` <br /> `Bei diesem Befehl kommuniziert der Adapter nicht mit dem Heizungssystem. Es ist eine softwareseitige, interne Funktion.`  
@@ -107,25 +107,47 @@ Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens 
     
 ## 5.3 JSON
   
-***Hinweis:***    
-*Diese Funktion ist derzeit noch in der (Weiter-)Entwicklung,
-es kann also noch Veränderungen hinsichtlich der Befehle und/oder
-Funktionen geben!*
+***User "hacki11" hat eine ausführliche und interaktive [API-Dokumentation zum Abfragen und Steuern via JSON](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml) erstellt.      
+Vielen Dank dafür!***  
 
-Parameterabfragen sowie das Setzen von Werten kann ebenfalls mittels
-JSON erfolgen.
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu.png">  
+    
 
--   **Abfrage der möglichen Werte von Parametern:**  
+Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfalls sämtliche Informationen zu den Typen, Formaten, möglichen Werten etc. aufgeführt. 
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu_schemes.png">  
+    
+    
+
+*Hinweis:*  
+JSON-Befehle lassen sich auch per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“ nutzen. Bei der o.g. interaktiven API-Dokumentation können die entspr. Curl-Befehle generiert und danach zur weiteren Nutzung kopiert werden (die IP ist bei der weiteren Verwendung stets anzupassen). Dazu ist wie folgt vorzugehen:  
+1. Klicke auf die gewünschte Operation, bspw. "/JQ={parameterIds}". 
+2. Bei dem aufklappenden Fenster klicke rechts auf "Try it out".
+3. Trage den/die gewünschten Parameter ein (im unten gezeigten Beispiel: 700,8300).
+4. Klicke auf "Execute".  
+
+Im Feld "Responses" werden dann die URL- und Curl-Befehle angezeigt, die man kopieren kann.  
+**Achtung: Die Zeichenkombination `%2C` bei der Auflistung mehrerer Parameter wird von Swagger anstelle des Kommas eingefügt. Solltest du die URL-/Curl-Befehle kopieren und nutzen wollen, so ersetze bitte jedes `%2C` durch ein `,` (Komma)!**  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/curl-beispiel.png"> 
+    
+*Die Ausgabe des URL-/Curl-Befehls.*  
+  
+
+
+<!--  Die nachfolgende Auflistung und Beschreibung der JSON-Befehle 
+
+<!-- -   **Abfrage der möglichen Werte von Parametern:**  
 
     `http://<IP-Adresse>/JC=<x>,<y>,<z>`  
     Abfrage der möglichen Werte der Parameter `<x>,<y>,<z>` für Parameter des Typs ENUM. Das Format der zurückgegeben Daten ist das gleiche wie bei dem Befehl `/JK=<x>`. Im Gegensatz zum Befehl `/JQ` werden die aktuellen Parameterwerte nicht zurückgemeldet.  
     
--   **Abfrage der Konfiguration von BSB-LAN:**  
+<!-- -   **Abfrage der Konfiguration von BSB-LAN:**  
 
     `http://<IP-Adresse>/JI`  
     Konfiguration von BSB-LAN in JSON-Format anzeigen lassen.  
 
--   **Abfrage von Kategorien:**
+<!-- -   **Abfrage von Kategorien:**
 
     `http://<IP-Adresse>/JK=<xx>`  
     Abfrage einer spezifischen Kategorie (\<xx\> = Kategorienummer)
@@ -133,7 +155,7 @@ JSON erfolgen.
     `http://<IP-Adresse>/JK=ALL`  
     Abfrage aller Kategorien (samt Min. und Max.)
 
--   **Abfragen und Setzen von Parametern per HTTP POST:**
+<!-- -   **Abfragen und Setzen von Parametern per HTTP POST:**
 
     Hierbei ist der Aufruf der URL  
     `http://<IP-Adresse>/JQ` für eine Abfrage und   
@@ -155,7 +177,7 @@ JSON erfolgen.
     Der Befehl `http://<IP-Adresse>/JQ=<x>,<y>,<z>` fragt die Parameter \<x\>, \<y\> und \<z\> ab.  
        
        
--   **Setzen von Parametern per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“**   
+<!-- -   **Setzen von Parametern per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“**   
     Exemplarisch am Parameter 700 (Betriebsart HK1) → Setzen auf 1 (automatisch):
     
     Linux-Kommandozeile:   
@@ -168,16 +190,16 @@ JSON erfolgen.
     curl -v -H "Content-Type: application/json" -X POST -d "{\"Parameter\":\"700\", \"Value\":\"1\", \"Type\":\"1\"}" http://<IP-Adresse>/JS
     ```
   
--   **Abfrage des Reset-Werts eines Parameters:**  
+<!-- -   **Abfrage des Reset-Werts eines Parameters:**  
     `http://<IP-Adresse>/JR<x>` → Fragt den Reset-Wert für Parameter <x> ab. Im Display der integrierten Heizungssteuerung gibt es für einige Parameter eine Reset-Option. Ein Reset wird vorgenommen, indem das System nach dem Reset-Wert gefragt wird und dieser anschließend gesetzt wird (JSON: Mittels /JS).  
   
--   **Backup und Restore der Konfiguration von BSB-LAN:**  
+<!-- -   **Backup und Restore der Konfiguration von BSB-LAN:**  
     
     `http://<IP-Adresse>/JL` → Erstellt eine Liste der Konfiguration im JSON-Format.  
     
     `http://<IP-Adresse>/JW` → Liest die per /JL erstellte Konfigurationsliste aus und passt die Einstellungen entsprechend an.  
       
-    *Achtung:* Zur Nutzung dieser Funktion muss das Modul "JSONCONFIG" (s. Datei *BSB_lan_config.h*) kompiliert sein!  
+    *Achtung:* Zur Nutzung dieser Funktion muss das Modul "JSONCONFIG" (s. Datei *BSB_lan_config.h*) kompiliert sein!  -->
     
 ---
      
