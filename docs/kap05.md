@@ -108,7 +108,7 @@ Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens 
 ## 5.3 JSON
   
 ***User "hacki11" hat eine ausführliche und interaktive [API-Dokumentation zum Abfragen und Steuern via JSON](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml) erstellt.      
-Vielen Dank dafür!***  
+Vielen Dank!***  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu.png">  
     
