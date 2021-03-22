@@ -76,13 +76,11 @@ Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sens
 ---
     
 ## 6.3 Raumtemperatur übermitteln
-Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler
-gesendet werden, um einen Raumeinfluss bei der Berechnung der
-VL-Temperatur geltend zu machen. Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im
-Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
+Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler gesendet werden, um einen Raumeinfluss bei der Berechnung der VL-Temperatur geltend zu machen. Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
 (bspw. Parameter 750 für HK1, Parameter 1050 für HK2).  
-BSB-LAN muss Schreibzugriff gewährt werden (s. [Kap. 5](https://github.com/1coderookie/BSB-LPB-LAN/blob/master/docs/kap05.md)).  
+BSB-LAN muss Schreibzugriff gewährt werden (s. [Kap. 2.2](kap02.md#22-konfiguration)).  
 Die Raumtemperatur muss regelmäßig in relativ kurzen Intervallen übermittelt werden, bspw. alle ein oder zwei Minuten.  
+*Hinweis: Dieser Parameter ist nicht abrufbar.*  
       
 Die folgenden Parameter müssen dafür genutzt werden:  
 - 10000 = Heizkreis 1 
@@ -90,15 +88,10 @@ Die folgenden Parameter müssen dafür genutzt werden:
 - 10003 = Heizkreis 3/P
   
 ***Beispiel:***  
-*Der URL-Befehl für den HK1, um eine Raumtemperatur von
-19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`*
+*Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`*
 
 ***Hinweis:***  
-*  
-Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt,
-ist die Temperaturmessung in einem Führungs- / Referenzraum zu
-empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen,
-große Fenster in Südlage etc.) befindet.*  
+*Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt, ist die Temperaturmessung in einem Führungs- / Referenzraum zu empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen, große Fenster in Südlage etc.) befindet.*  
     
 ***Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur***    
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
