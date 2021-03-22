@@ -30,23 +30,27 @@ Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen ein
 Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion nicht aktiviert ist (wie im obigen Screenshot zu sehen). Ist die Logging-Funktion aktiviert, so heißt die Bezeichnung des Buttons "Zeichne Logdatei".
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
-BSB-LAN prüft standardmäßig, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
-*Hinweis: Sollte diese Funktion nicht gewünscht sein, da BSB-LAN nicht eigenständig eine Verbindung ins Internet herstellen soll, so kann dies durch Auskommentieren des entspr. Definements (`//#define VERSION_CHECK 1`) in der Datei BSB_LAN_config.h deaktiviert werden.*   
+BSB-LAN kann prüfen, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.  
+*Hinweis: Diese Funktion muss aktiviert werden, siehe dazu bitte [Kap. 2.2](kap02.md#22-konfiguration).*   
+
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/neue_version.png">  
+
+*Der Hinweis auf eine verfügbare neuere Version von BSB-LAN.*  
+
 
 ---  
    
 **Heizungsfunktionen (URL-Befehl: /K):**  
-Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den
-im Display der dargestellten Untermenükategorien entsprechen, wenn auf den Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen wird.
+Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den im Display der dargestellten Untermenükategorien entsprechen, wenn auf den Regler des Heizungssystems vom integrierten Bedienteil aus zugegriffen wird.
 
-Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige
-Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
+Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind.
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorien.png">
     
-Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet
-eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
-in dieser Kategorie verfügbar sind.
+Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
+in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter, die vom spezifischen Reglermodell nicht unterstützt werden), werden in grauer Schrift mit dem Hinweis "(parameter not supported)" angezeigt.  
+*Hinweis: Man kann die nicht verfügbaren Parameter ausblenden lassen, bei einer Kategorie- oder Komplettabfrage werden sie dennoch mit abgefragt. Siehe hierzu bitte [Kap. 2.2](kap02.md#22-konfiguration).*
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
     
@@ -55,7 +59,7 @@ in dieser Kategorie verfügbar sind.
 **Sensoren (URL-Befehl: /K49):**  
 Wenn optionale Sensoren (DS18B20, DHT22, BME280, MAX!) angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png">
+<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png"> -->
 
 ---  
    
