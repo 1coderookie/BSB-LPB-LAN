@@ -177,7 +177,8 @@ Die folgende Abbildung zeigt exemplarisch den Auszug einer solchen Ausgabe des '
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/SerMo_start_DE.png">
         
-*Hinweis: Sollten in der Ausgabe des SerMo nur kryptische Zeichen erscheinen, so stelle bitte die Übertragungsrate rechts unten im Fenster auf 115200 Baud.*  
+*Hinweis:  
+Sollten in der Ausgabe des SerMo nur kryptische Zeichen erscheinen, so stelle bitte die Übertragungsrate rechts unten im Fenster auf 115200 Baud.*  
   
 **Überprüfen, ob der BSB-LAN-Server erreichbar ist**  
 
