@@ -204,3 +204,5 @@
 [**Anhang C: Changelog BSB-LAN-Software**](anhang_c.md)  
 
 [**Anhang D: Hinweise für Nutzer des veralteten Setups Adapter v2 + Arduino Mega 2560**](anhang_d.md)  
+
+[Swagger](swagger.html)
