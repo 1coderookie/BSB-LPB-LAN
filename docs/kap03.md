@@ -177,7 +177,9 @@ Die folgende Abbildung zeigt exemplarisch den Auszug einer solchen Ausgabe des '
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/SerMo_start_DE.png">
         
-Nun sollte die Verwendung von BSB-LAN möglich sein. 
+*Hinweis: Sollten in der Ausgabe des SerMo nur kryptische Zeichen erscheinen, so stelle bitte die Übertragungsrate rechts unten im Fenster auf 115200 Baud.*  
+  
+**Überprüfen, ob der BSB-LAN-Server erreichbar ist**  
 
 Als ersten Funktionstest, ob der BSB-LAN-Server erreichbar ist, gib nun die spezifische URL deines Setups ein (bei der Verwendung von DHCP erscheint die IP beim Startvorgang im SerMo). Du solltest nun auf die Startseite des BSB-LAN-Servers gelangen:  
 
