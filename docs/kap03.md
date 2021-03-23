@@ -173,18 +173,24 @@ Dazu bietet sich folgende Vorgehensweise an:
     \[...\]  
     ```
     
-Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist im folgenden Beispiel als "RGT2" konfiguriert und fragt zur automatischen Erkennung beim Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab (in der Standardeinstellung lautet die Kennung des Adapters "LAN"). Die darauf folgenden Zeilen sind bereits empfangene Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier:     Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
+Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist im folgenden Beispiel als "RGT2" konfiguriert und fragt zur automatischen Erkennung beim Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab (in der Standardeinstellung lautet die Kennung des Adapters "LAN"). Die darauf folgenden Zeilen sind bereits empfangene Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier: Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
         
-Nun sollte die Verwendung von BSB-LAN möglich sein. Zur weiteren Funktionsüberprüfung fahre mit dem Schritt im nächsten Kapitel fort. Sollte wider Erwarten bereits jetzt klar sein, dass eine Fehlfunktion vorliegt (was bspw. dadurch zu erkennen ist, dass bei der o.g. Ausgabe von "Device family" und "Device variant" jeweils eine "0" steht), fahre mit [Kap. 3.4](kap03.md#34-debugging-und-fehlersuche) fort.   
+Nun sollte die Verwendung von BSB-LAN möglich sein. 
+
+Als ersten Funktionstest, ob der BSB-LAN-Server erreichbar ist, gib nun die spezifische URL deines Setups ein (bei der Verwendung von DHCP erscheint die IP beim Startvorgang im SerMo). Du solltest nun auf die Startseite des BSB-LAN-Servers gelangen:  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite.png">
+
+Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapitel fort. Sollte wider Erwarten bereits jetzt klar sein, dass eine Fehlfunktion vorliegt (was bspw. dadurch zu erkennen ist, dass bei der o.g. Ausgabe von "Device family" und "Device variant" jeweils eine "0" steht), fahre mit [Kap. 3.4](kap03.md#34-debugging-und-fehlersuche) fort.   
 
    
 ---
 
 ## 3.3 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs
 
-Als erster Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung) alle verfügbaren Parameter freigegeben sind, führe folgenden URL-Befehl aus:  
+Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung) alle verfügbaren Parameter freigegeben sind, klicke nun auf den Button "Prüfe auf neue Parameter" oder führe folgenden URL-Befehl aus:  
 
 `http://<IP-Adresse>/Q`  
 
