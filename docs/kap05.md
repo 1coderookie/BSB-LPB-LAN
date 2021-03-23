@@ -154,6 +154,10 @@ Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens 
 ***User "hacki11" hat eine ausführliche und interaktive [API-Dokumentation zum Abfragen und Steuern via JSON](https://editor.swagger.io/?url=https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml) erstellt.      
 Vielen Dank!***  
 
+| Hinweis für Entwickler |
+|:-----------------------|
+| Die API lässt sich mittels [Postman](www.postman.com) am eigenen System testen. Dazu muss man die URL https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml in File/Import/Link hinzufügen und ggf. die spezifischen Angaben wie bspw. Adresse und Zugangsdaten anpassen. |   
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu.png">  
     
 
