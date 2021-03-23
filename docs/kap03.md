@@ -173,9 +173,9 @@ Dazu bietet sich folgende Vorgehensweise an:
     \[...\]  
     ```
     
-Die folgende Abbildung zeigt exemplarisch eine solche Ausgabe des 'Seriellen Monitors' der Arduino IDE direkt nach dem Start. Der Adapter ist im folgenden Beispiel als "RGT2" konfiguriert und fragt zur automatischen Erkennung beim Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab (in der Standardeinstellung lautet die Kennung des Adapters "LAN"). Die darauf folgenden Zeilen sind bereits empfangene Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier: Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
+Die folgende Abbildung zeigt exemplarisch den Auszug einer solchen Ausgabe des 'Seriellen Monitors' der Arduino IDE nach erfolgreichem Start. Der Adapter ist im folgenden Beispiel mit der Standardeinstellung als "LAN" konfiguriert und fragt zur automatischen Erkennung beim Startvorgang einmalig die Parameter 6225 und 6226 des Heizungsreglers ab. Die darauf folgenden Zeilen sind bereits empfangene Telegramme. Die Anzeige des kesselseitigen Steuerungsdisplays (hier: Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/arduino-ide_serieller-monitor.png">
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/SerMo_start_DE.png">
         
 Nun sollte die Verwendung von BSB-LAN möglich sein. 
 
@@ -194,7 +194,7 @@ Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp
 
 `http://<IP-Adresse>/Q`  
 
-Diese Funktion geht alle Command IDs durch, die in der Datei *BSB_lan_defs.h* hinterlegt sind und schickt diejenigen, die nicht für den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR, 0x06) an den Regler.  
+Diese Funktion geht alle Command IDs durch, die in der Datei *BSB_LAN_defs.h* hinterlegt sind und schickt diejenigen, die nicht für den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR, 0x06) an den Regler.  
 Das passiert bei Parametern, bei denen bisher nur eine Command ID bekannt ist, ständig und erzeugt die bekannten „error 7 (parameter not supported)"-Fehlermeldungen.  
 
 Sobald aber mehr als eine Command ID bekannt ist, bleibt die bisherige Command ID i.d.R. auf "DEV_ALL", ist also für alle Regler der Standard, und die neue Command ID wird erst einmal nur für die Therme freigeschaltet, die diese Command ID gemeldet hat.  
@@ -209,37 +209,35 @@ Der Regler beantwortet diese entweder mit einer Fehlermeldung (Typ ERR, 0x08) od
 Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben sind, sieht die auf `http://<IP-Adresse>/Q` folgende Webausgabe exemplarisch so aus:
     
 ```
-Gerätefamilie: 92 
-Gerätevariante: 100 
-Geräte-Identifikation: AVS37.294/100 
-Software-Version: 2.0 
-Entwicklungs-Index: 
-Objektverzeichnis-Version: 1.3 
-Bootloader-Version: 
-EEPROM-Version: 
-Konfiguration - Info 2 OEM: 
-Zugangscode Inbetriebnahme?: 
-Zugangscode Fachmannebene ?: 
-Zugangscode OEM?: 
-Zugangscode OEM2?: 
-Bisher unbekannte Geräteabfrage: 20 
-Hersteller-ID (letzten vier Bytes): 58469 
-Bisher unbekannte Geräteabfrage: 
-Außentemperatur (10003): 
-Außentemperatur (10004): 
-
+Teste Geräteadresse 0...
+Gerätefamilie: 96
+Gerätevariante: 100
+Geräte-Identifikation: RVS43.222/100
+Software-Version: 1.3
+Entwicklungs-Index: (parameter not supported)
+Objektverzeichnis-Version: 1.0
+Bootloader-Version: (parameter not supported)
+EEPROM-Version: 50.0
+Konfiguration - Info 2 OEM: (parameter not supported)
+Zugangscode Inbetriebnahme?: (parameter not supported)
+Zugangscode Fachmannebene ?: (parameter not supported)
+Zugangscode OEM?: (parameter not supported)
+Zugangscode OEM2?: (parameter not supported)
+Bisher unbekannte Geräteabfrage: 20
+Hersteller-ID (letzten vier Bytes): 31398
+Bisher unbekannte Geräteabfrage: 00010001F4 - unknown type
+Außentemperatur (10003): 5.9 °C
+Außentemperatur (10004): 5.9 °C
 6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
+96;100;RVS43.222/100;1.3;;1.0;50.0;;;;;;20;31398;00010001F4;
 
 
 Starte Test...
 
-Test beendet.
-
-Fertig.  
+Test beendet.  
 ```
     
-Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern für den spezifischen Regler hingegen sieht exemplarisch so aus:
+Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern (siehe die aufgeführten Parameter mit dem Hinweis "error 7 (parameter not supported)" zwischen "Starte Test..." und "Test beendet.") für den spezifischen Regler hingegen sieht exemplarisch so aus:
     
 ```
 Gerätefamilie: 92 
