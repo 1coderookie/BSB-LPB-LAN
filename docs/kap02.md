@@ -672,13 +672,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
 -   **Speichern der Konfiguration im EEPROM (nur Arduino Due und ESP32):**  
     `#define CONFIG_IN_EEPROM`  
-    Soll die Konfiguration nicht im EEPROM des Adapters des Due bzw. im Flashspeicher des ESP32 gespeichert werden, so ist das Definement zu deaktivieren.  
+    Soll die Konfiguration nicht im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32 gespeichert werden, so ist das Definement zu deaktivieren.  
     
 ---    
     
 -   **Konfiguration via Webinterface:**  
     `#define WEBCONFIG`  
-    Ermöglicht die Konfiguration via Webinterface (Speicherung der Einstellungen im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
+    Ermöglicht die Konfiguration via Webinterface (bei Speicherung der Einstellungen im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
     
 ---  
   
