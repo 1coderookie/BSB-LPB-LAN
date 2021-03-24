@@ -13,13 +13,12 @@ In den folgenden Kapiteln wird auf die Installation und die Konfiguration der BS
 
 Die BSB-LAN-Software muss zur Installation auf den jeweils verwendeten Mikrocontroller (Arduino Due oder ESP32) geflasht werden. Dies kann bspw. mittels der "Arduino IDE" erfolgen, selbstverständlich können aber auch andere Programme wie bspw. "PlatformIO" oder "Visual Studio Code" genutzt werden.  
 
-*Hinweis:*  
-In diesem Handbuch wird davon ausgegangen, dass die Arduino IDE genutzt wird. Sämtliche Beschreibungen und Bezeichnungen beziehen sich daher auf die Arduino IDE. Solltest du Anfänger und mit der Arduino IDE noch nicht vertraut sein, so findest du eine Beschreibung zur Installation und Konfiguration der Arduino IDE in [Kap. 12](kap12.md).   
+| Hinweis |
+|:--------|
+| In diesem Handbuch wird davon ausgegangen, dass die Arduino IDE genutzt wird. Sämtliche Beschreibungen und Bezeichnungen beziehen sich daher auf die Arduino IDE. <br> Solltest du Anfänger und mit der Arduino IDE noch nicht vertraut sein, so findest du eine Beschreibung zur Installation und Konfiguration der Arduino IDE in [Kap. 12](kap12.md). |  
 
 Je nach verwendeter Plattform (Arduino Due oder ESP32) unterscheiden sich die notwendigen Einstellungen der Arduino IDE. So müssen die entsprechenden Boardtypen installiert und ausgewählt sein, die Einstellungen plattformspezifisch angepasst werden etc. Auf diese Einstellungen wird im Folgenden eingegangen. Dabei wird davon ausgegangen, dass die nötigen Bibliotheken für die jeweilge Plattform bereits installiert sind. Sollte dies nicht der Fall sein, so findest du Informationen hierzu in [Kap. 12](kap12.md).  
 Darüber hinaus gibt es bei der Installation auf dem ESP32 noch weitere Dinge zu beachten, die im entspr. Kapitel ebenfalls behandelt werden.  
-
-
 
 ---
 
@@ -27,8 +26,9 @@ Darüber hinaus gibt es bei der Installation auf dem ESP32 noch weitere Dinge zu
 
 Im Folgenden wird die Installation der BSB-LAN-Software auf einem Arduino Due beschrieben. Die Beschreibung bezieht sich dabei auf die Verwendung der Arduino IDE. Mit den Voreinstellungen der BSB-LAN-Software wird für die IP-Adressvergabe DHCP genutzt. Solltest du dies nicht wünschen und eine feste IP vergeben wollen, so lies bitte [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) und passe die Datei *BSB_LAN_config.h* vor dem Flashen an!  
 
-*Hinweis:*  
-Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen.  
+| Hinweis |
+|:--------|
+| Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen. | 
 
 1. Verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sowohl das LAN-Shield als auch der BSB-LAN-Adapter sollte zuvor bereits auf den Due gesteckt sein, dies ist jedoch nicht zwingend nötig.  
   
@@ -68,8 +68,9 @@ Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/od
 
 Im Folgenden wird die Installation der BSB-LAN-Software auf einem ESP32 beschrieben. Die Beschreibung bezieht sich dabei auf die Verwendung der Arduino IDE. Mit den Voreinstellungen der BSB-LAN-Software wird für die IP-Adressvergabe DHCP genutzt. Solltest du dies nicht wünschen und eine feste IP vergeben wollen, so lies bitte [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) und passe die Datei *BSB_LAN_config.h* vor dem Flashen an!  
 
-*Hinweis:*  
-Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist evtl. noch eine zusätzliche Treiberinstallation für den vom Board verwendeten USB-Chip nötig.  
+| Hinweis |
+|:--------|
+| Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist evtl. noch eine zusätzliche Treiberinstallation für den vom Board verwendeten USB-Chip nötig. |  
 
 1. Verbinde dein ESP32-Board mit mit einem USB-Kabel mit deinem Computer. Den BSB-LAN-Adapter kannst du vorher bereits auf bzw. unter dein ESP32-Board gesteckt haben, dies ist jedoch nicht zwingend nötig.  
 
@@ -121,11 +122,10 @@ Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist ev
 
 14. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des ESP32 erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
 
-**Achtung:  
-Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen.**  
-  
-*Hinweis:  
-Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei "BSB_LAN_config.h" zu aktivieren.*    
+| Hinweise |
+|:---------|
+| Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen. |
+| Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei "BSB_LAN_config.h" zu aktivieren. |    
 
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
 Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
@@ -136,15 +136,11 @@ Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/od
 
 Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Version ([Download als ZIP-File](https://github.com/fredlcore/BSB-LAN/archive/master.zip), per git o.ä.), wie es in den vorherigen Installationskapiteln beschrieben ist.  
 
-*Hinweise:* 
-- Solltest du in der Datei *BSB_LAN_config.h* bestimmte Änderungen bei der neu zu flashenden Version vorgenommen haben, wie bspw. die Zugangsdaten für dein WLAN oder eine fest vergebene IP, die dann nach dem Flashen offenbar nicht übernommen wurden, so liegt dies i.d.R. daran, dass die alten Einstellungen aus dem EEPROM gelesen wurden.  
-Um die neuen Einstellungen wirksam werden zu lassen, stelle in der [Webkonfiguration](kap02.md#221-konfiguration-mittels-webinterface) die Einstellung "Konfiguration aus EEPROM lesen" einmal auf "Aus", speichere die Änderung und flashe nochmal neu.  
-Danach sollten die neuen Einstellungen wirksam geworden sein, weil BSB-LAN diese nun aus der Datei *BSB_LAN_config.h* und nicht aus dem EEPROM eingelesen hat.  
-Nach erfolgreicher Überprüfung stelle "Konfiguration aus EEPROM lesen" wieder auf "Ein".  
-
-- Die bestehende und ggf. angepasste Datei *BSB_LAN_config.h* kann in der Regel bei einem Update auf eine neuere Version zwar übernommen werden, es jedoch ratsam, auch hier die jeweils aktuelle Datei *BSB_LAN_config.h.default* anstelle der bestehenden Datei *BSB_LAN_config.h* zu verwenden. Dazu muss die .default-Datei wie gehabt umbenannt und ggf. den vorherigen Einstellungen entspr. angepasst werden. So kann man sicher gehen, dass man ein komplettes Update der BSB-LAN-Software vorgenommen hat. 
-
-- Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due/ESP32 erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte.    
+| Hinweise |
+|:---------|
+| Solltest du in der Datei *BSB_LAN_config.h* bestimmte Änderungen bei der neu zu flashenden Version vorgenommen haben, wie bspw. die Zugangsdaten für dein WLAN oder eine fest vergebene IP, die dann nach dem Flashen offenbar nicht übernommen wurden, so liegt dies i.d.R. daran, dass die alten Einstellungen aus dem EEPROM gelesen wurden. <br> Um die neuen Einstellungen wirksam werden zu lassen, stelle in der [Webkonfiguration](kap02.md#221-konfiguration-mittels-webinterface) die Einstellung "Konfiguration aus EEPROM lesen" einmal auf "Aus", speichere die Änderung und flashe nochmal neu. <br> Danach sollten die neuen Einstellungen wirksam geworden sein, weil BSB-LAN diese nun aus der Datei *BSB_LAN_config.h* und nicht aus dem EEPROM eingelesen hat. <br> Nach erfolgreicher Überprüfung stelle "Konfiguration aus EEPROM lesen" wieder auf "Ein". | 
+| Die bestehende und ggf. angepasste Datei *BSB_LAN_config.h* kann in der Regel bei einem Update auf eine neuere Version zwar übernommen werden, es jedoch ratsam, auch hier die jeweils aktuelle Datei *BSB_LAN_config.h.default* anstelle der bestehenden Datei *BSB_LAN_config.h* zu verwenden. Dazu muss die .default-Datei wie gehabt umbenannt und ggf. den vorherigen Einstellungen entspr. angepasst werden. So kann man sicher gehen, dass man ein komplettes Update der BSB-LAN-Software vorgenommen hat. | 
+| Wenn der Adapter an den Bus des Heizungsreglers angeschlossen ist, so kann er angeschlossen bleiben, wenn der Due/ESP32 erneut geflasht werden soll. Es besteht keine Notwendigkeit den Adapter vom Regler abzuklemmen, wenn man BSB-LAN updaten möchte. |    
 
  
 
@@ -169,8 +165,9 @@ Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:
 - In der mittleren Spalte wird die Funktion genannt.
 - In der rechten Spalte befindet sich das zugehörige Feld, das den derzeitigen Eintrag bzw. die Einstellung zeigt. Dabei werden die Einträge aus der Datei *BSB_LAN_config.h* übernommen, d.h. auch bei deaktivierten Funktionen sind die Voreinstellungen sichtbar, so dass deutlich wird, wie bspw. Parameter einzutragen sind. Je nach Art der Einstellung wird entweder ein PullDown-Menü mit den verfügbaren Einstellungen oder lediglich ein Feld angezeigt.  
   
-***Wichtig:  
-Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Parameter speichern" geklickt werden!***  
+| Wichtig |
+|:--------|
+| Zum Übernehmen geänderter Einstellungen muss schließlich unten auf den Button "Parameter speichern" geklickt werden! |  
   
 Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einstellungen und den entspr. Erklärungen (auf die Nennung der linken Spalte "Kategorie" muss an dieser Stelle aus Platz- und Darstellungsgründen leider verzichtet werden):  
 
@@ -235,11 +232,10 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 Die Konfiguration der BSB-LAN-Software kann außerdem erfolgen, indem die Einstellungen in der Datei *BSB_LAN_config.h* angepasst werden. Hierzu werden nachfolgend sämtliche Einstellmöglichkeiten analog zu der Reihenfolge in der Datei *BSB_LAN_config.h* aufgeführt. Es ist daher ratsam, die Einstellungen Punkt für Punkt abzuarbeiten.  
 
   
-*Hinweis:  
-Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"):  
-`//#define XYZ` = Definement XYZ ist deaktiviert.      
-Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem Hashtag zu entfernen:  
-`#define XYZ` = Definement XYZ ist aktiv.*  
+| Hinweis |
+|:--------|
+| Wenn ein Definement deaktiviert ist oder werden soll, dann sind vor dem Hashtag zwei Slashes hinzuzufügen ("auskommentieren"): <br> `//#define XYZ` = Definement XYZ ist deaktiviert. |     
+| Wenn ein Definement aktiviert werden soll, dann sind die beiden Slashes vor dem Hashtag zu entfernen: <br> `#define XYZ` = Definement XYZ ist aktiv. |  
 
 ---
 
@@ -262,14 +258,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **MAC-Adresse des Ethernet-Shields:**  
     `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
     Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
-    *Hinweis: Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield! Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar!*
-     
-    *Wichtiger Hinweis:*  
-    *Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
-    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
-    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
-    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
-    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
+    
+    | Hinweis | 
+    |:--------|
+    | Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield. Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar. |
+    | Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen. <br> Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar. <br> Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in <br> `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` <br> geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`. |  
     
 -   **Ethernet-Port:**  
     `uint16_t HTTPPort = 80;`  
