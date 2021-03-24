@@ -278,7 +278,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `bool useDHCP = true;`  
     Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
     
-    | Hinweise |
+    | Hinweis |
     |:--------|
     | Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen. <br> Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar. <br> Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in <br> `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` <br> geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`. <br>  Die IP, die bei der DHCP-Nutzung vom Router automatisch vergeben wird, wird beim Start des Due/ESP32 im Seriellen Monitor der Arduino IDE angezeigt. |  
    
