@@ -27,8 +27,8 @@ Um die Datei *datalog.txt* zu löschen und neu zu erstellen, benutze den Befehl 
     
 | Hinweise |
 |:---------|
-| • Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht problemlos vom LAN-Shield erkannt werden. In diesem Fall wird eine entspr. Fehlermeldung von BSB-LAN ausgegeben. Sollte bei dir dieser Fall eintreten, so probiere es mit einer anderen, möglichst aktuellen microSD-Karte. |  
-| • Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute betragen. Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen. |  
+| Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht problemlos vom LAN-Shield erkannt werden. In diesem Fall wird eine entspr. Fehlermeldung von BSB-LAN ausgegeben. Sollte bei dir dieser Fall eintreten, so probiere es mit einer anderen, möglichst aktuellen microSD-Karte. |  
+| Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute betragen. Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen. |  
      
 **Verwendung des Adapters als Remote-Logger**
 
@@ -71,9 +71,9 @@ Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sens
   
 | Hinweise |
 |:---------|
-| • Sollten aus Versehen Parameter zur Anzeige definiert werden, die das spezifische Heizungssystem nicht aufweist, so wird als jeweiliger Wert "0.00" dargestellt. Das heißt aber nicht, dass der Wert des nicht-unterstützen Parameters "0.00" ist! Es ist daher sinnvoll, vor der Definition der anzuzeigenden Parameter zu überprüfen, ob diese auch wirklich vom Heizungssystem bereit gestellt werden. |  
-| • Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit" oder "Regenmenge". Diese können einfach ignoriert werden. Im Grunde sind bei den normalen Parametern lediglich die beiden Spalten "Beschreibung" und "Temperatur" relevant, da hier die Parameterbezeichnung und der jeweilige Wert dargestellt werden. | 
-| • Die Darstellungen der jeweiligen Parameterwerte/-einstellungen erfolgen nicht im Klartext, sondern numerisch. Bei dem oben abgebildeten Beispiel ist dies u.a. beim Parameter "1. Brennerstufe T1" gut zu erkennen: Dort steht nicht "Ein", sondern "255", was wiederum "Ein" bedeutet. | 
+| Sollten aus Versehen Parameter zur Anzeige definiert werden, die das spezifische Heizungssystem nicht aufweist, so wird als jeweiliger Wert "0.00" dargestellt. Das heißt aber nicht, dass der Wert des nicht-unterstützen Parameters "0.00" ist! Es ist daher sinnvoll, vor der Definition der anzuzeigenden Parameter zu überprüfen, ob diese auch wirklich vom Heizungssystem bereit gestellt werden. |  
+| Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit" oder "Regenmenge". Diese können einfach ignoriert werden. Im Grunde sind bei den normalen Parametern lediglich die beiden Spalten "Beschreibung" und "Temperatur" relevant, da hier die Parameterbezeichnung und der jeweilige Wert dargestellt werden. | 
+| Die Darstellungen der jeweiligen Parameterwerte/-einstellungen erfolgen nicht im Klartext, sondern numerisch. Bei dem oben abgebildeten Beispiel ist dies u.a. beim Parameter "1. Brennerstufe T1" gut zu erkennen: Dort steht nicht "Ein", sondern "255", was wiederum "Ein" bedeutet. | 
     
     
 ---
