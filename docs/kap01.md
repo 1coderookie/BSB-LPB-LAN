@@ -72,12 +72,12 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwe
    
 | Hinweise |   
 |:---------|
-| • Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-16V). Die Versorgung mit einem 9V-Steckernetzteil (mind. 1000mA) stellte sich bisher als zuverlässige Lösung dar. | 
-| • Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen. |  
-| • Der Due kann via Netzteil an der Hohlsteckerbuchse mit Strom versorgt und gleichzeitig via USB am Programming Port mit dem Computer verbunden werden. |  
-| • Der Adapter kann am Bus des Heizungsreglers beim Flashen des Due angeschlossen bleiben. |  
-| • Achte darauf, dass du möglichst ein qualitativ hochwertiges USB-Kabel verwendest. Dies gilt sowohl für den Fall, dass du den Due via USB mit Strom versorgen willst, als auch für den Fall, dass du den Due zum Flashen an deinen PC anschließen möchtest. Insbesondere günstige und *dünne* Kabel (bspw. Zubehör von Smartphones) können Probleme bei der Stromversorgung und somit der Stabilität des Due verursachen und/oder sind nicht immer voll beschaltet, so dass eine Nutzung für die Datenübertragung nicht möglich ist. |   
-| • Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen. |  
+| Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-16V). Die Versorgung mit einem 9V-Steckernetzteil (mind. 1000mA) stellte sich bisher als zuverlässige Lösung dar. | 
+| Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen. |  
+| Der Due kann via Netzteil an der Hohlsteckerbuchse mit Strom versorgt und gleichzeitig via USB am Programming Port mit dem Computer verbunden werden. |  
+| Der Adapter kann am Bus des Heizungsreglers beim Flashen des Due angeschlossen bleiben. |  
+| Achte darauf, dass du möglichst ein qualitativ hochwertiges USB-Kabel verwendest. Dies gilt sowohl für den Fall, dass du den Due via USB mit Strom versorgen willst, als auch für den Fall, dass du den Due zum Flashen an deinen PC anschließen möchtest. Insbesondere lange und *dünne* Kabel (bspw. Zubehör von Smartphones) können Probleme bei der Stromversorgung und somit der Stabilität des Due verursachen und/oder sind nicht immer voll beschaltet, so dass eine Nutzung für die Datenübertragung nicht möglich ist. |   
+| Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen. |  
       
   
   
@@ -95,9 +95,9 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten dieser Shields verwen
    
 *Ein kompatibler Clone eines LAN-Shields mit einem W5100-Chip.*  
        
-***Hinweise:***     
-Bei der Installation der Arduino IDE sollte darauf geachtet werden, dass die aktuelle Version der Ethernet-Bibliothek (v2.0 oder höher) verwendet wird.  
-Als LAN-Kabel sollte möglichst eine geschirmte Ausführung mit einer Mindestlänge von 1m verwendet werden.
+| Tipp |
+|:-----|
+| Als LAN-Kabel sollte möglichst eine geschirmte Ausführung mit einer Mindestlänge von 1m verwendet werden. |
             
 <!-- Bei einigen Clones des Typs W5100 scheinen die LEDs des RJ45-Anschlusses nicht korrekt angeschlossen zu sein. So kann es bspw. vorkommen, dass die Traffic-LED (häufig gelb) keinerlei Aktivität anzeigt. Dies stellt jedoch normalerweise kein weitergehendes Problem dar, da es die Funktion nicht negativ zu beeinflussen scheint.  
 
@@ -167,9 +167,9 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
   
 | Hinweise |
 |:---------|
-| • Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden. |
-| • Bei der Verwendung der ESP-WiFi-Lösung lautet der Hostname *nicht* WIZnetXYZXYZ, sondern i.d.R. ESP-XYZXYZ, wobei sich die Ziffern-Buchstabenkombination "XYZXYZ" nach "ESP-" aus den letzten drei Bytes (also den letzten sechs Zeichen) der MAC-Adresse des ESP zusammensetzt. |  
-| • Bei Verwendung der ESP-WiFi-Lösung lässt sich die MAC-Adresse des ESP *nicht* selbst festlegen. |  
+| Bei Verwendung von DHCP kann die vom Router vergebene IP-Adresse im Seriellen Monitor der Arduino IDE beim Start des DUE ausgelesen werden. |
+| Bei der Verwendung der ESP-WiFi-Lösung lautet der Hostname *nicht* WIZnetXYZXYZ, sondern i.d.R. ESP-XYZXYZ, wobei sich die Ziffern-Buchstabenkombination "XYZXYZ" nach "ESP-" aus den letzten drei Bytes (also den letzten sechs Zeichen) der MAC-Adresse des ESP zusammensetzt. |  
+| Bei Verwendung der ESP-WiFi-Lösung lässt sich die MAC-Adresse des ESP *nicht* selbst festlegen. |  
   
 ---  
     
@@ -250,11 +250,7 @@ Die Verbindungen sind wie folgt vorzunehmen:
 | RX1 | RX (Empfangen) | Pin 16 (RX2) | 
   
 Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip) in der Größe eines Arduino Uno mit einer selbstgebastelten Adapterplatine (Uno-kompatible Prototyping-Platine) für die Aufnahme des BSB-LAN-Adapters v3 (Due-Version) gezeigt. Selbstverständlich sind auch andere Varianten, wie bspw. mit einem ESP32-NodeMCU und einer entsprechend angepassten Lochrasterplatine möglich!  
-
-| Hinweis |
-|:--------|
-| Das nachfolgend abgebildete ESP32 "D1 R32 Entwicklerboard" kann ich persönlich ausdrücklich NICHT empfehlen, da es offenbar deutlich schlechtere Empfangseigenschaften aufweist als andere ESP32-Boards. Obwohl der Router nur wenige Meter entfernt stand, war es mir nicht möglich, eine stabile WLAN-Verbindung aufzubauen. Auf Nachfrage beim Anbieter wurde mir dieser Eindruck bestätigt, die "Ursache dafür ist in der Bauform begründet". |  
-  
+ 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32-Due_adapter.jpg">  
   
 *Links das "ESP32 D1 R32"-Board, rechts die entsprechende aufsteckbare Platine zur Aufnahme des BSB-LAN-Adapters v3 (Due-Version).*  
@@ -263,7 +259,9 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
   
 *Der komplette Aufbau.*  
   
-
+| Hinweis |
+|:--------|
+| Das abgebildete ESP32 "D1 R32 Entwicklerboard" kann ich persönlich ausdrücklich NICHT empfehlen, da es offenbar deutlich schlechtere Empfangseigenschaften aufweist als andere ESP32-Boards. Obwohl der Router nur wenige Meter entfernt stand, war es mir nicht möglich, eine stabile WLAN-Verbindung aufzubauen. Auf Nachfrage beim Anbieter wurde mir dieser Eindruck bestätigt, die "Ursache dafür ist in der Bauform begründet". |    
 
 ---  
   
@@ -307,13 +305,19 @@ Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu 
 ---  
    
 ## 1.4 Raspberry Pi
-Der aktuelle Due-spezifische Adapter (v4) kann auch an einem Raspberry Pi genutzt
-werden. Es sind dabei jedoch folgende Punkte zu beachten:  
+Der aktuelle Due-spezifische Adapter (v4) kann auch an einem Raspberry Pi genutzt werden.  
+Es sind dabei jedoch folgende Punkte zu beachten:  
+
 - **Eine Verwendung der BSB-LAN-Software ist NICHT möglich (s. unten stehende Hinweise)!**  
+
 - Es muss nur eine doppelreihige Buchsenleiste (anstelle der Pinleisten wie für die Arduino-Verwendung nötig) verwendet werden. 
+
 - Bei kompletter Buchsenlänge des Adapterpinouts (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern muss um einen Pin 'nach hinten versetzt' werden. Man fängt also bei dem Pinpaar 3/4 an.  
 Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeichnete TX1-Pin auf dem RPi-Pin 8 (= GPIO 14, UART0_TXD) liegt, der RX1-Pin dann auf dem RPi-Pin 10 (= GPIO 15, UART0_RXD) etc.  
-*Achtung:* Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  
+
+*Achtung:*  
+Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  
+
 Die Abbildung unten zeigt für ein besseres Verständnis den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden. 
 - Bei dem Betriebssystem des RPi muss der Pin 7 (GPIO 4) vor der Verwendung  
 a) als Output-Pin definiert und dann  
@@ -327,12 +331,13 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 *Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.*  
    
    
-***WICHTIGE HINWEISE:***  
-- ***Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!***  
-- *Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway!*  
-- *Es kann und wird von uns keinerlei Support bzgl. einer RPi-Nutzung erfolgen!*  
-- *Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen!*   
-- *Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.*  
+| **Wichtige Hinweise** |  
+|:------------------|
+| ***Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!*** |  
+| *Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway!* |  
+| *Es kann und wird von uns keinerlei Support bzgl. einer RPi-Nutzung erfolgen!* | 
+| *Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen!* |  
+| *Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.* |  
   
 ***Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!***  
   
