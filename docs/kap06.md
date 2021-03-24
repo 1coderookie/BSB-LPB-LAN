@@ -146,11 +146,10 @@ Bei *aktivem Automatikbetrieb* ist dabei
 |:---------|
 | Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus. | 
 
-Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig.
-
-| Hinweis |
+| Hinweise |
 |:--------|
 | Die Präsenztaste ist nur im Automatikbetrieb wirksam! |
+| Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig. |
 
     
 ---
