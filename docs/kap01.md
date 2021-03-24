@@ -14,8 +14,9 @@ BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf
 
 Der BSB-LAN Adapter ist in zwei verschiednen Versionen verfügbar. Zum einen als Arduino Due-spezifische Version mit einem EEPROM, zum anderen als eine ESP32-spezifische Version ohne EEPROM.   Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die spezifische Version auswählen, da sich der Adapter dann mit dem jeweiligen System komfortabel und sicher durch ein Aufstecken verbinden lässt.  
   
-*Hinweis:*  
-Es sei bereits an dieser Stelle angemerkt, dass die ESP32-spezifische Adapterversion aufgrund des fehlenden EEPROMs *nur* mit einem ESP32 genutzt werden kann - die Due-spezifische Version hingegen kann (wenn auch nicht komfortabel aufsteckbar) auch mit einem ESP32 genutzt werden.  
+| Hinweis | 
+|:--------|
+| Es sei bereits an dieser Stelle angemerkt, dass die ESP32-spezifische Adapterversion aufgrund des fehlenden EEPROMs *nur* mit einem ESP32 genutzt werden kann - die Due-spezifische Version hingegen kann (wenn auch nicht komfortabel aufsteckbar) auch mit einem ESP32 genutzt werden. |  
 
 ---
 
@@ -69,12 +70,12 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwe
    
 | Hinweise |   
 |:---------|
-| - Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-16V). Die Versorgung mit einem 9V-Steckernetzteil (mind. 1000mA) stellte sich bisher als zuverlässige Lösung dar. | 
-| - Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen. |  
-| - Der Due kann via Netzteil an der Hohlsteckerbuchse mit Strom versorgt und gleichzeitig via USB am Programming Port mit dem Computer verbunden werden. |  
-| - Der Adapter kann am Bus des Heizungsreglers beim Flashen des Due angeschlossen bleiben. |  
-| - *Achte darauf, dass du möglichst ein qualitativ hochwertiges USB-Kabel verwendest!* Dies gilt sowohl für den Fall, dass du den Due via USB mit Strom versorgen willst, als auch für den Fall, dass du den Due zum Flashen an deinen PC anschließen möchtest. Insbesondere günstige und *dünne* Kabel (bspw. Zubehör von Smartphones) können Probleme bei der Stromversorgung und somit der Stabilität des Due verursachen und/oder sind nicht immer voll beschaltet, so dass eine Nutzung für die Datenübertragung nicht möglich ist. |   
-| - Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen. |  
+| * Es wird empfohlen, den Arduino mit einem externen Netzteil an der Hohlsteckerbuchse zu betreiben. Laut den technischen Daten von Arduino liegt dabei die empfohlene Versorgungsspannung in einem Bereich von 7-12V (Limit: 6-16V). Die Versorgung mit einem 9V-Steckernetzteil (mind. 1000mA) stellte sich bisher als zuverlässige Lösung dar. | 
+| * Soll die Stromversorgung trotzdem über die USB Buchse des Due erfolgen, so ist möglichst der 'Programming Port', also der mittlere USB Port (neben der Hohlsteckerbuchse gelegen) zu nutzen. |  
+| * Der Due kann via Netzteil an der Hohlsteckerbuchse mit Strom versorgt und gleichzeitig via USB am Programming Port mit dem Computer verbunden werden. |  
+| * Der Adapter kann am Bus des Heizungsreglers beim Flashen des Due angeschlossen bleiben. |  
+| * Achte darauf, dass du möglichst ein qualitativ hochwertiges USB-Kabel verwendest. Dies gilt sowohl für den Fall, dass du den Due via USB mit Strom versorgen willst, als auch für den Fall, dass du den Due zum Flashen an deinen PC anschließen möchtest. Insbesondere günstige und *dünne* Kabel (bspw. Zubehör von Smartphones) können Probleme bei der Stromversorgung und somit der Stabilität des Due verursachen und/oder sind nicht immer voll beschaltet, so dass eine Nutzung für die Datenübertragung nicht möglich ist. |   
+| * Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen. |  
       
   
 ***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***      
