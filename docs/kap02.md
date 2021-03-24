@@ -45,10 +45,11 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem Arduino Due be
 5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
 
 6. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
+
    | Hinweis |
    |:--------|
    | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
-
+  
 7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
    
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_Due.png">  
@@ -96,7 +97,7 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem ESP32 beschrie
     |:---------|
     | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist. |   
     | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
-
+  
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
 9. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
@@ -267,6 +268,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | Die hier einstellbare MAC-Adresse bezieht sich nur auf das LAN-Shield. Sie beeinflusst nicht die MAC-Adresse des ESP bei der WiFi-ESP-Lösung, dort ist die MAC-Adresse nicht einstellbar. |
     | Die hier vergebene MAC-Adresse beeinflusst auch den Hostnamen (bzw. ist ein Bestandteil davon), der bei der Verwendung von DHCP (s.u.) vom Router vergeben wird: Der Hostname setzt sich aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen. <br> Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar. <br> Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in <br> `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` <br> geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`. |  
     
+    
 -   **Ethernet-Port:**  
     `uint16_t HTTPPort = 80;`  
     Port 80 für HTTP voreingestellt.   
@@ -282,8 +284,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar. |  
     | Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in <br> `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` <br> geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`. |  
     | Die IP, die bei der DHCP-Nutzung vom Router automatisch vergeben wird, wird beim Start des Due/ESP32 im Seriellen Monitor der Arduino IDE angezeigt. |  
-
-
+   
+   
 -   **IP-Adresse:**  
     `byte ip_addr[4] = {192,168,178,88};`  
     IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
@@ -291,7 +293,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | Achtung |
     |:--------| 
     | Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt! |  
-  
+   
   
 -   **Gateway-Adresse:**  
     `byte gateway_addr[4] = {192,168,178,1};` 
@@ -467,7 +469,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | Achtung |
     |:--------|
     | Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll! |  
-
+  
     Die zu loggenden Parameter (max. 40) müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
     ```
     int log_parameters[40] = {  
