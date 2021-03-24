@@ -450,12 +450,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
     `int logTelegram = LOGTELEGRAM_OFF;`  
     
-    Folgende Einstelloptionen sind hier verfügbar:  
-    `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
-    `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
-    `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
+      Folgende Einstelloptionen sind hier verfügbar:  
+      `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
+      `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
+      `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
+      `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
+      `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
 
     - `bool logCurrentValues = false;`  
     Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
@@ -463,36 +463,36 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     - `unsigned long log_interval = 3600;`  
     Das gewünschte Logintervall in Sekunden.  
     
-    | Achtung |
-    |:--------|
-    | Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll! |  
+      | Achtung |
+      |:--------|
+      | Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll! |  
   
-    Die zu loggenden Parameter (max. 40) müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
-    ```
-    int log_parameters[40] = {  
-    8700, // Außentemperatur  
-    8740 // Raumtemperatur-Ist  
-    };
-    ```
+    - Die zu loggenden Parameter (max. 40) müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
+      ```
+      int log_parameters[40] = {  
+      8700, // Außentemperatur  
+      8740 // Raumtemperatur-Ist  
+      };
+      ```
         
-    Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die enstpr. spezifischen Parameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
-    ```
-    20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
-    20303,  
-    20305, 
-    ```
-    loggt die Messwerte der DS18B20-Sensoren 1-3.
+      Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die enstpr. spezifischen Parameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
+      ```
+      20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
+      20303,  
+      20305, 
+      ```
+      loggt die Messwerte der DS18B20-Sensoren 1-3.
 
-    Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden.  
+      Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden.  
     
-    Weitere gängige Spezialparameter lauten:   
-    * TWW-Laufzeit und TWW-Takte: 20004 und 20005,  
-    * 24h-Durchschnittswerte: 20050-20099,  
-    * DHT22-Sensoren: 20100-20299,    
-    * BME280 Sensoren: 20200-20299,    
-    * DS18B20-Sensoren: 20300-20499,   
-    * MAX!-Sensoren: 20500-20699.    
-    Für eine genauere Aufschlüsselung der Nummernbereiche einzelner optionaler Sensoren sieh bitte im entspr. Kapitel nach.  
+      Weitere gängige Spezialparameter lauten:   
+      * TWW-Laufzeit und TWW-Takte: 20004 und 20005,  
+      * 24h-Durchschnittswerte: 20050-20099,  
+      * DHT22-Sensoren: 20100-20299,    
+      * BME280 Sensoren: 20200-20299,    
+      * DS18B20-Sensoren: 20300-20499,   
+      * MAX!-Sensoren: 20500-20699.    
+      Für eine genauere Aufschlüsselung der Nummernbereiche einzelner optionaler Sensoren sieh bitte im entspr. Kapitel nach.  
         
 ---        
         
