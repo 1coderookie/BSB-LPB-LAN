@@ -45,7 +45,9 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem Arduino Due be
 5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
 
 6. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
-   *Hinweis: Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
+   | Hinweis |
+   |:--------|
+   | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
 
 7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
    
@@ -90,9 +92,10 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem ESP32 beschrie
     
     - Für das empfohlene "Olimex ESP32-EVB" wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
     
-    *Hinweise:*  
-    *Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist.*   
-    *Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md).*  
+    | Hinweise |
+    |:---------|
+    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist. |   
+    | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
 
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
@@ -273,19 +276,21 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `bool useDHCP = true;`  
     Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
     
-    *Wichtiger Hinweis:*  
-    *Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen.*  
-    *Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar.*  
-    *Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in*  
-    *`byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };`*  
-    *geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`.*  
-    *Die IP, die in diesem Fall vom Router automatisch vergeben wird, wird beim Start des Arduino Due im Seriellen Monitor der Arduino IDE angezeigt.*  
+    | Hinweise |
+    |:--------|
+    | Bei der Nutzung von DHCP setzt sich der automatisch vergebene Hostname aus der Kennung "WIZnet" und den drei letzten Bytes der MAC-Adresse zusammen. |  
+    | Für die o.g. voreingestellte MAC-Adresse lautet der Hostname somit "WIZnet196990". Dieser wird i.d.R. auch als solcher im Router angezeigt. Das Webinterface von BSB-LAN ist in dem Fall im Browser unter `http://wiznet196990` erreichbar. |  
+    | Wird die MAC-Adresse bei einem zweiten Adapter nun also bspw. in <br> `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x91 };` <br> geändert, so lautet der Hostname entsprechend "WIZnet196991" bzw. `http://wiznet196991`. |  
+    | Die IP, die bei der DHCP-Nutzung vom Router automatisch vergeben wird, wird beim Start des Due/ESP32 im Seriellen Monitor der Arduino IDE angezeigt. |  
 
 
 -   **IP-Adresse:**  
     `byte ip_addr[4] = {192,168,178,88};`  
     IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
-    *Achtung: Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt!*  
+    
+    | Achtung |
+    |:--------| 
+    | Falls du die IP selbst fest vergeben willst, so vergewissere dich, dass die IP-Adresse nur einmal im Netzwerk vorkommt! |  
   
   
 -   **Gateway-Adresse:**  
@@ -317,14 +322,19 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define WIFI_SPI_SS_PIN 12`  
     Hier wird der beim DUE zu verwendende SS-Pin für die [ESP8266-WiFi-Lösung](kap1.md#122-due--wlan-die-esp8266-wifi-lösung) definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
     
-    *Hinweis: Die MAC-Adresse des ESP lässt sich nicht einstellen!*
+    | Hinweis |
+    |:--------|
+    | Die MAC-Adresse des ESP8266 lässt sich nicht einstellen! |
    
 ---   
    
 -   **Nutzung von Multicast DNS:**  
     `#define MDNS_HOSTNAME "BSB-LAN"`  
     Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
-    Bitte beachte: mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap1.md#122-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht!
+    
+    | Hinweis | 
+    |:--------|
+    | mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap1.md#122-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht! |
    
 ---    
     
@@ -388,19 +398,16 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `bool enableOneWireBus = false;`  
     `byte One_Wire_Pin = 7;`  
     
-    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
-    Adapterboard) definiert werden.  
+    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am Adapterboard) definiert werden.  
     Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
               
 -   **DHT22-Sensoren:**  
     `#define DHT_BUS`  
     `byte DHT_Pins[10] = {5};`  
     
-    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am
-    Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
+    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit; max. Anzahl: 20) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
     Voreingestellt ist das Modul samt Verwendung des Pins 5 aktiv.  
-  
-    *Achtung: Es können maximal 10 DHT22-Sensoren angeschlossen werden!*   
+   
   
 -  **BME280 Sensoren:**  
    `//#define BME280 1`  
@@ -411,14 +418,13 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
 -   **24h-Durchschnittswerte:**  
     `#define AVERAGES`  
-        Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet
-    werden, so ist das Definement zu aktivieren (Voreinstellung).  
+    Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet werden, so ist das Definement zu aktivieren (Voreinstellung).  
     
     `bool logAverageValues = false;`  
     Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
     Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
     
-    Des Weiteren müssen die gewünschten Parameter bei der entsprechenden Variable eingetragen
+    Des Weiteren müssen die gewünschten Parameter (max. 40) bei der entsprechenden Variable eingetragen
     werden, bspw.:  
     ```
     int avg_parameters[40] = {  
@@ -426,13 +432,16 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     8740 // Raumtemperatur-Ist  
     };
     ```  
-    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
+      
 
 ---
 
 -   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
     `#define LOGGER` → Das Logging-Modul wird kompiliert.  
-    ***Achtung: Dies ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)!***     
+    
+    | Achtung |
+    |:--------|
+    | Das genannte *aktivierte* Definement ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)! |     
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
@@ -454,21 +463,20 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     - `unsigned long log_interval = 3600;`  
     Das gewünschte Logintervall in Sekunden.  
-    **Achtung: Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll!**  
+    
+    | Achtung |
+    |:--------|
+    | Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll! |  
 
-    Die zu loggenden Parameter müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
+    Die zu loggenden Parameter (max. 40) müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
     ```
     int log_parameters[40] = {  
     8700, // Außentemperatur  
     8740 // Raumtemperatur-Ist  
     };
     ```
-    *Achtung: Es können maximal 40 Parameter angegeben werden!*  
-    
-    *Hinweis:*  
-    Wenn mehrere DS18B20- oder DHT22-Sensoren geloggt werden sollen,
-    müssen diese bei den Log-Parametern entsprechend einzeln
-    untereinander aufgeführt werden, bspw.:  
+        
+    Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die enstpr. spezifischen Parameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
     ```
     20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
     20303,  
@@ -476,16 +484,16 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     ```
     loggt die Messwerte der DS18B20-Sensoren 1-3.
 
-    ***Hinweis:***  
-    *Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden!*  
-    *Weitere gängige Spezialparameter lauten:*  
-    *TWW-Laufzeit und TWW-Takte: 20004 und 20005,*  
-    *24h-Durchschnittswerte: 20050-20099,*  
-    *DHT22-Sensoren: 20100-20299,*   
-    *BME280 Sensoren: 20200-20299,*   
-    *DS18B20-Sensoren: 20300-20499,*  
-    *MAX!-Sensoren: 20500-20699.*   
-    *Für eine genauere Aufschlüsselung der Nummernbereiche einzelner optionaler Sensoren sieh bitte im entspr. Kapitel nach.*  
+    Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden.  
+    
+    Weitere gängige Spezialparameter lauten:   
+    * TWW-Laufzeit und TWW-Takte: 20004 und 20005,  
+    * 24h-Durchschnittswerte: 20050-20099,  
+    * DHT22-Sensoren: 20100-20299,    
+    * BME280 Sensoren: 20200-20299,    
+    * DS18B20-Sensoren: 20300-20499,   
+    * MAX!-Sensoren: 20500-20699.    
+    Für eine genauere Aufschlüsselung der Nummernbereiche einzelner optionaler Sensoren sieh bitte im entspr. Kapitel nach.  
         
 ---        
         
@@ -511,9 +519,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     - `char MQTTDeviceID[32] = "MyHeater";` → Optional: Device-Name, der als Header in der JSON-Payload genutzt wird. Wenn nichts angegeben wird (`char MQTTDeviceID[32] = "";`), wird "BSB-LAN" verwendet.  
     
-    ***Hinweis:***   
-    *Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden:*   
-    `//#define LOGGER`   
+    | Hinweis |
+    |:--------|
+    | Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! <br> Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden: <br> `//#define LOGGER` |  
    
 ---   
    
@@ -522,7 +530,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `bool enable_ipwe = false;`  
     Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
   
-    Die gewünschten Parameter (maximal 40) sind ebenfalls einzutragen:  
+    Die gewünschten Parameter (max. 40) sind ebenfalls einzutragen:  
     ```  
     int ipwe_parameters[40] = {  
     8700,                   // Außentemperatur  
@@ -541,7 +549,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
      
      - `byte max_cul_ip_addr[4] = {192,168,178,5};` → IP-Adresse des CUNO/CUNX/modifizierten MAX!Cubes - *bitte beachte die Kommata anstelle von Punkten!*  
      
-    - Liste der abzufragenden MAX!-Thermostate:
+    - Liste der abzufragenden MAX!-Thermostate (max. 20):
     ```
     char max_device_list[20][11] = {   
     "KEQ0502326",  
@@ -549,7 +557,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     };
     ```  
     Hier bitte die entspr. 10-stellige Seriennummer / MAX!-ID eintragen.  
-    *Achtung: Es können maximal 20 MAX!-Devices angebunden werden!*  
+      
     Für weitere Informationen bzgl. der Einbindung von MAX!-Komponenten s. [Kap. 7.3](kap7.md#73-max-komponenten).  
   
 ---  
@@ -618,14 +626,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **Schreib-/Lesezugriff auf den Heizungsregler:**  
     `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
     In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich. Eine Änderung des Status auf *generellen* Schreibzugriff kann via Webinterface (Menüpunkt "Einstellungen") erfolgen.  
-    *Hinweis für Mega-Nutzer:*  
-    Die Möglichkeit der Konfiguration via Webinterface bietet sich für Nutzer des Mega 2560 nicht, da das Modul WEBCONFIG mangels Speicher nicht kompiliert und nicht genutzt werden kann. In diesem Fall muss der Schreibzugriff nach wie vor durch das Flag '0' gewährt werden: `#define DEFAULT_FLAG 0`
+    
+    | Hinweis für Mega-Nutzer |
+    |:------------------------|
+    | Die Möglichkeit der Konfiguration via Webinterface bietet sich für Nutzer des Mega 2560 nicht, da das Modul WEBCONFIG mangels Speicher nicht kompiliert und nicht genutzt werden kann. <br> In diesem Fall muss der Schreibzugriff nach wie vor durch das Flag '0' gewährt werden: <br> `#define DEFAULT_FLAG 0` |
       
-    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000
-    oder 710) gewünscht, muss bei dem genannten Definement nach wie vor
-    das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in
-    der Datei *BSB_lan_defs.h* das `DEFAULT_FLAG` des gewünschten
-    Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
+    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000 oder 710) gewünscht, muss bei dem genannten Definement nach wie vor das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in der Datei *BSB_LAN_defs.h* das `DEFAULT_FLAG` des gewünschten Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
     
     Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
     gemacht:  
@@ -653,7 +659,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `bool enable_version_check = false;`    
     Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
     
-    *Hinweis: Dabei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen.*  
+    | Hinweis |
+    |:--------|
+    | Hierbei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen. |  
    
 ---    
        
@@ -707,7 +715,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
 -   **Deaktivieren bestimmter Module:**  
        
-    Wird anstelle des Arduino Due noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Hinweis: Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
+    Wird anstelle des Due/ESP32 noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
     Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
     
     ```
