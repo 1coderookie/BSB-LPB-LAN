@@ -244,7 +244,10 @@ Die Verbindungen sind wie folgt vorzunehmen:
 | RX1 | RX (Empfangen) | Pin 16 (RX2) | 
   
 Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip) in der Größe eines Arduino Uno mit einer selbstgebastelten Adapterplatine (Uno-kompatible Prototyping-Platine) für die Aufnahme des BSB-LAN-Adapters v3 (Due-Version) gezeigt. Selbstverständlich sind auch andere Varianten, wie bspw. mit einem ESP32-NodeMCU und einer entsprechend angepassten Lochrasterplatine möglich!  
-*Hinweis: Das nachfolgend abgebildete ESP32 "D1 R32 Entwicklerboard" kann ich persönlich ausdrücklich NICHT empfehlen, da es offenbar deutlich schlechtere Empfangseigenschaften aufweist als andere ESP32-Boards. Obwohl der Router nur wenige Meter entfernt stand, war es mir nicht möglich, eine stabile WLAN-Verbindung aufzubauen. Auf Nachfrage beim Anbieter wurde mir dieser Eindruck bestätigt, die "Ursache dafür ist in der Bauform begründet".*  
+
+| Hinweis |
+|:--------|
+|Das nachfolgend abgebildete ESP32 "D1 R32 Entwicklerboard" kann ich persönlich ausdrücklich NICHT empfehlen, da es offenbar deutlich schlechtere Empfangseigenschaften aufweist als andere ESP32-Boards. Obwohl der Router nur wenige Meter entfernt stand, war es mir nicht möglich, eine stabile WLAN-Verbindung aufzubauen. Auf Nachfrage beim Anbieter wurde mir dieser Eindruck bestätigt, die "Ursache dafür ist in der Bauform begründet".|  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32-Due_adapter.jpg">  
   
