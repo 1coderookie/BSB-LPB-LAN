@@ -25,12 +25,10 @@ Um die Datei *datalog.txt* zu löschen und neu zu erstellen, benutze den Befehl 
     
 *Die Ausführung des URL-Befehls `/D0` sollte außerdem bei der ersten Benutzung erfolgen, da hierdurch die Datei mit dem passenden CSV-Header initiiert wird.*  
     
-*Hinweise:*   
-- Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht problemlos vom LAN-Shield erkannt werden. In diesem Fall wird eine entspr. Fehlermeldung von BSB-LAN ausgegeben. Sollte bei dir dieser Fall eintreten, so probiere es mit einer anderen, möglichst aktuellen microSD-Karte.  
-  
-- Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute
-betragen.  
-Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen.  
+| Hinweise |
+|:---------|
+| • Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht problemlos vom LAN-Shield erkannt werden. In diesem Fall wird eine entspr. Fehlermeldung von BSB-LAN ausgegeben. Sollte bei dir dieser Fall eintreten, so probiere es mit einer anderen, möglichst aktuellen microSD-Karte. |  
+| • Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute betragen. Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen. |  
      
 **Verwendung des Adapters als Remote-Logger**
 
@@ -45,8 +43,9 @@ Später kannst du das Logfile basierend auf den Parameternummern sortieren, nutz
 
 `sort -k2 log.txt`  
     
-*Hinweis:*  
-Die IP, ggf. aktivierte optionale Sicherheitsfunktionen, die gewünschten Parameter etc. sind im obigen Beispiel anzupassen.  
+| Hinweis |
+|:--------|
+| Die IP, ggf. aktivierte optionale Sicherheitsfunktionen, die gewünschten Parameter etc. sind im obigen Beispiel anzupassen. | 
     
 ---
     
@@ -54,7 +53,10 @@ Die IP, ggf. aktivierte optionale Sicherheitsfunktionen, die gewünschten Parame
 Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger) stellt eine Möglichkeit dar, zuvor festgelegte Parameter durch den Aufruf einer kurzen URL darzustellen. Um diese tabellarische Übersicht aufzurufen, muss die folgende URL genutzt werden:  
 
 `<IP-Adresse>/ipwe.cgi`  
-*Hinweis: Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!*  
+
+| Hinweis |
+|:--------|
+| Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!|  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IPWE_example.png">  
   
@@ -67,10 +69,11 @@ Um die Funktion der IPWE-Erweiterung zu nutzen, müssen vor dem Flashen des Ardu
 Zusätzlich zu den aufgeführten Parametern werden automatisch die Werte optional angeschlossener Sensoren (DHT22 / DS18B20) dargestellt.  
 Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sensor IDs dargestellt. Dies kann man in der letzten Zeile im obigen Beispiel erkennen, dort lautet die spezifische Sensor ID des einzigen angeschlossenen DS18B20-Sensors "284c453d07000082". Auf diese Weise lassen sich mehrere Sensoren eindeutig identifizieren.   
   
-*Hinweise:*  
-- Sollten aus Versehen Parameter zur Anzeige definiert werden, die das spezifische Heizungssystem nicht aufweist, so wird als jeweiliger Wert "0.00" dargestellt. Das heißt aber nicht, dass der Wert des nicht-unterstützen Parameters "0.00" ist! Es ist daher sinnvoll, vor der Definition der anzuzeigenden Parameter zu überprüfen, ob diese auch wirklich vom Heizungssystem bereit gestellt werden.  
-- Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit" oder "Regenmenge". Diese können einfach ignoriert werden. Im Grunde sind bei den normalen Parametern lediglich die beiden Spalten "Beschreibung" und "Temperatur" relevant, da hier die Parameterbezeichnung und der jeweilige Wert dargestellt werden.  
-- Die Darstellungen der jeweiligen Parameterwerte/-einstellungen erfolgen nicht im Klartext, sondern numerisch. Bei dem oben abgebildeten Beispiel ist dies u.a. beim Parameter "1. Brennerstufe T1" gut zu erkennen: Dort steht nicht "Ein", sondern "255", was wiederum "Ein" bedeutet.  
+| Hinweise |
+|:---------|
+| • Sollten aus Versehen Parameter zur Anzeige definiert werden, die das spezifische Heizungssystem nicht aufweist, so wird als jeweiliger Wert "0.00" dargestellt. Das heißt aber nicht, dass der Wert des nicht-unterstützen Parameters "0.00" ist! Es ist daher sinnvoll, vor der Definition der anzuzeigenden Parameter zu überprüfen, ob diese auch wirklich vom Heizungssystem bereit gestellt werden. |  
+| • Da die IPWE-Erweiterung ursprünglich entworfen wurde, um die Messwerte einer spezifischen Funk-Wetterstation darzustellen, machen nicht alle Spalten der Tabelle Sinn, wie bspw. "Windgeschwindigkeit" oder "Regenmenge". Diese können einfach ignoriert werden. Im Grunde sind bei den normalen Parametern lediglich die beiden Spalten "Beschreibung" und "Temperatur" relevant, da hier die Parameterbezeichnung und der jeweilige Wert dargestellt werden. | 
+| • Die Darstellungen der jeweiligen Parameterwerte/-einstellungen erfolgen nicht im Klartext, sondern numerisch. Bei dem oben abgebildeten Beispiel ist dies u.a. beim Parameter "1. Brennerstufe T1" gut zu erkennen: Dort steht nicht "Ein", sondern "255", was wiederum "Ein" bedeutet. | 
     
     
 ---
@@ -80,20 +83,25 @@ Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler gesendet werd
 (bspw. Parameter 750 für HK1, Parameter 1050 für HK2).  
 BSB-LAN muss Schreibzugriff gewährt werden (s. [Kap. 2.2](kap02.md#22-konfiguration)).  
 Die Raumtemperatur muss regelmäßig in relativ kurzen Intervallen übermittelt werden, bspw. alle ein oder zwei Minuten.  
-*Hinweis: Dieser Parameter ist nicht abrufbar.*  
+
+| Hinweis |
+|:--------|
+| Dieser Parameter ist nicht abrufbar. |  
       
 Die folgenden Parameter müssen dafür genutzt werden:  
 - 10000 = Heizkreis 1 
 - 10001 = Heizkreis 2
 - 10003 = Heizkreis 3/P
   
-***Beispiel:***  
-*Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`*
+| Beispiel |
+|:---------|
+| Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5` |
 
-***Hinweis:***  
-*Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt, ist die Temperaturmessung in einem Führungs- / Referenzraum zu empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen, große Fenster in Südlage etc.) befindet.*  
+| Tipp |
+|:--------|
+| Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt, ist die Temperaturmessung in einem Führungs- / Referenzraum zu empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen, große Fenster in Südlage etc.) befindet. |  
     
-***Hinweis zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur***    
+**Exkurs: Erklärung zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur**    
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
 Sein Beitrag sowie eine Excel-Tabelle zur Berechnung findet sich [hier](https://forum.fhem.de/index.php/topic,29762.msg754102.html#msg754102).  
   
@@ -127,18 +135,22 @@ Die Funktion der Präsenztaste ist mit den Spezialparametern
 - 1001 = Heizkreis 2 sowie 
 - 1301 = Heizkreis 3/P 
 implementiert und als SET-Befehl auszuführen.  
-Die genannten Parameter müssen schreibbar sein (s. Kap. [5](kap05.md)).  
+Die genannten Parameter müssen schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)).  
 Diese Spezialparameter (701, 1001, 1301) sind NICHT abrufbar.
 
 Bei *aktivem Automatikbetrieb* ist dabei  
 `http://<IP-Adresse>/S<Parameter>=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
 `http://<IP-Adresse>/S<Parameter>=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
   
-Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig.  
-  
-Beispiel: Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
-  
-***Hinweis: Die Präsenztaste ist nur im Automatikbetrieb wirksam!***
+| Beispiel |
+|:---------|
+| Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus. | 
+
+Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig.
+
+| Hinweis |
+|:--------|
+| Die Präsenztaste ist nur im Automatikbetrieb wirksam! |
 
     
 ---
@@ -152,20 +164,20 @@ entsprechende Meldung erscheint.
 
 Bei einigen Reglern kann diese Funktion mittels eines SET-Befehls
 erfolgen. Dieser lautet `http://<IP-Adresse>/S1603=1` - der
-Spezialparameter 1603 muss dazu schreibbar sein (s. Kap. [5](kap05.md)).
+Spezialparameter 1603 muss dazu schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)).
     
 --- 
     
 ## 6.6 Datum, Uhrzeit und Zeitprogramme verändern   
 Das Verändern der Uhrzeit und der Zeitprogramme ist nur über einen speziellen URL-Befehl möglich, es ist *nicht* über das Webinterface möglich.  
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. Kap. [5](kap05.md)).  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt werden (s. Kap. [2.2](kap02.md#22-konfiguration)).  
   
-*Datum und Uhrzeit verändern*  
+**Datum und Uhrzeit verändern**  
 Der folgende Befehl stellt das Datum auf den 04.01.2019 und die Uhrzeit auf 20:15 Uhr:  
 `/S0=04.01.2019_20:15:00`  
 Mit dieser Funktion ist es möglich, die Uhrzeit- und Datumseinstellungen bspw. mit einem NTP Zeitserver abzugleichen. 
    
-*Zeitprogramme verändern*  
+**Zeitprogramme verändern**  
 Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Parameter 502) auf 05:00-22:00 Uhr:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
      
@@ -186,23 +198,26 @@ Für die Verwendung der Funktion der alternativen Außentemperaturübermittlung 
     
 Der Funk-Außentemperaturfühler scheint die gemessene AT ca. minütlich zu übermitteln. Bleibt diese Meldung aus, so scheint der Regler nach etwa 10-11 Minuten auf einen intern hinterlegten Wert zurückzugreifen. Zusätzlich erscheint die o.g. Fehlermeldung erneut. Es ist also empfehlenswert, die alternative AT via BSB-LAN etwa alle ein bis zwei Minuten zu übertragen.  
    
-Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. Kap. [5](kap05.md)) und die AT mit dem Befehl  
+Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. Kap. [2.2](kap02.md#22-konfiguration)) und die AT mit dem Befehl  
 `<ip>/I10003=xx`  
 übermittelt werden, wobei xx die betreffende AT in °C ist. Nachkommawerte sind möglich, als Komma ist ein Punkt einzufügen.  
    
-*Beispiel:*  
-Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT.  
+| Beispiel |
+|:---------|
+| Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT. | 
    
-*Hinweis:*  
-Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion nach bisherigem Kenntnisstand nicht verfügbar. Das Übermitteln der alternativen AT kann in diesem Fall aber trotzdem wie beschrieben getestet werden, allerdings muss dann der Parameter 10004 anstelle von 10003 verwendet werden: `<ip>/10004=xx`.  
+| Hinweis |
+|:--------|
+| Wird nur bei Parameter 10004 die Außentemperatur angezeigt, so ist die Funktion nach bisherigem Kenntnisstand nicht verfügbar. Das Übermitteln der alternativen AT kann in diesem Fall aber trotzdem wie beschrieben getestet werden, allerdings muss dann der Parameter 10004 anstelle von 10003 verwendet werden: `<ip>/10004=xx`. | 
    
 ---  
   
 ## 6.8 Eigenen Code in BSB-LAN einbinden
   
-BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_lan_config.h` aktiviert und der Code entspr. in den Dateien `BSB_lan_custom.h.default`, `BSB_lan_custom_global.h` sowie `BSB_lan_custom_setup.h` hinzugefügt werden. Die Datei `BSB_lan_custom.h.default` muss zur Verwendung in `BSB_lan_custom.h` umbenannt werden. Ein Beispiel und entspr. Hinweise sind in den jeweiligen Dateien zu finden.  
+BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_LAN_config.h` aktiviert und der Code entspr. in den Dateien `BSB_LAN_custom.h.default`, `BSB_LAN_custom_global.h` sowie `BSB_LAN_custom_setup.h` hinzugefügt werden. Die Datei `BSB_LAN_custom.h.default` muss zur Verwendung in `BSB_LAN_custom.h` umbenannt werden.  
+Ein Beispiel und entspr. Hinweise sind in den jeweiligen Dateien zu finden.  
   
-*FHEM-Forumuser "Scherheinz" hat ein anderes Beispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
+*FHEM-Forumuser "Scherheinz" hat ein anderes Verwendungsbeispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
 *Vielen Dank dafür!*  
   
 Nachfolgend das erwähnte Beispiel:  
@@ -210,7 +225,7 @@ Beschreibung:
 "Alle 20 Sekunden wird über einen Spannungsteiler die Akku Spannung eingelesen. Dann wird aus den letzten 10 Werten ein gleitender Mittelwert ermittelt und per MQTT an FHEM weitergeleitet" (Zitat aus dem oben verlinkten Beitrag).  
   
 Einbindung:  
-Der folgende Code muss in die Datei `BSB_lan_custom_global.h` eingefügt werden:  
+Der folgende Code muss in die Datei `BSB_LAN_custom_global.h` eingefügt werden:  
 ```
 const int akkuPin = A0;
 int akkuWert = 0;
@@ -222,7 +237,7 @@ void Filtern(float &FiltVal, int NewVal, int FF){ //gleitender Mittelwert bilden
   FiltVal= ((FiltVal * FF) + NewVal) / (FF +1);
 }
 ```
-Der folgende Code muss in die Datei `BSB_lan_custom.h` eingefügt werden:  
+Der folgende Code muss in die Datei `BSB_LAN_custom.h` eingefügt werden:  
 ```
 if (custom_timer > custom_timer_compare + 20000) {    // alle 20 Sekunden 
   custom_timer_compare = millis();
@@ -272,7 +287,9 @@ Die folgenden Beispiele verdeutlichen die Benutzung:
 - Wenn eine Datei namens `index.html` im Stammverzeichnis der microSD-Karte vorliegt, wird diese Datei anstelle des regulären Webinterface bei Aufruf von `http://IP-Adresse` dargestellt.  
 - Wenn die Datei `index.html` in einem Unterverzeichnis auf der mcroSD-Karte liegt, wird diese nur dann dargestellt, wenn die komplette URL eingegeben und abgerufen wird: `http://<IP-Adresse>/foo/bar/index.html`. Sollte in diesem Fall lediglich `http://<ip-address>/foo/bar/` abgerufen werden, so wird trotzdem das reguläre Webinterface von BSB-LAN dargestellt, da weder eine Verzeichnisauflistung, noch eine URL-Umschreibung in der Webserverfunktion implememtiert ist.  
   
-Hinweis: Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wie immer der URL hinzugefügt werden.  
+| Hinweis |
+|:--------|
+| Wenn die optionale PASSKEY-Funktion verwendet wird, muss der PASSKEY wie immer der URL hinzugefügt werden. |  
   
 ---  
   
