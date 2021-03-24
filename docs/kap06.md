@@ -313,7 +313,7 @@ Im Code implementiert sind folgende Funktionen:
   
 - Präsenztastenfunktion für HK1-3 mittels Taster (automatische Erkennung des Ist-Zustandes mit entspr. Umschaltung zwischen Komfort und Reduziert im Automatikmodus).  
   
-Um die Funktionen zu nutzen sind die entspr. Einträge in der Konfiguration vorzunehmen, dies kann entweder durch Änderungen in der Datei *BSB_lan_config.h* oder über das Webinterface (Menüpunkt "Einstellungen") erfolgen.  
+Um die Funktionen zu nutzen sind die entspr. Einträge in der Konfiguration vorzunehmen, dies kann entweder durch Änderungen in der Datei *BSB_LAN_config.h* oder über das Webinterface (Menüpunkt "Einstellungen") erfolgen.  
 
 Nachfolgend einige Hinweise für die jeweiligen Funktionen.  
 
