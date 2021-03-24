@@ -314,7 +314,6 @@ Es sind dabei jedoch folgende Punkte zu beachten:
 
 - Bei kompletter Buchsenlänge des Adapterpinouts (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern muss um einen Pin 'nach hinten versetzt' werden. Man fängt also bei dem Pinpaar 3/4 an.  
 Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeichnete TX1-Pin auf dem RPi-Pin 8 (= GPIO 14, UART0_TXD) liegt, der RX1-Pin dann auf dem RPi-Pin 10 (= GPIO 15, UART0_RXD) etc.  
-
 *Achtung:*  
 Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  
 
@@ -331,15 +330,14 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 *Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.*  
    
    
-| **Wichtige Hinweise** |  
+| **Achtung** |  
 |:------------------|
-| ***Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!*** |  
-| *Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway!* |  
-| *Es kann und wird von uns keinerlei Support bzgl. einer RPi-Nutzung erfolgen!* | 
-| *Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen!* |  
-| *Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden.* |  
+| **Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!** Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway! |  
+| **Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!** Es kann und wird von uns keinerlei Support bzgl. einer RPi-Nutzung erfolgen! | 
+| Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen! |  
+| Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden. |  
   
-***Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!***  
+  
   
 ---
    
