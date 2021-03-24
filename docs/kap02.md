@@ -678,7 +678,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
 -   **Konfiguration via Webinterface:**  
     `#define WEBCONFIG`  
-    Ermöglicht die Konfiguration via Webinterface (bei gleichzeitiger Speicherung im EEPROM; nur Arduino Due). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
+    Ermöglicht die Konfiguration via Webinterface (Speicherung der Einstellungen im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
     
 ---  
   
