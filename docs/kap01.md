@@ -59,7 +59,9 @@ Die ESP32-spezifische Version des BSB-LAN-Adapters weist kein EEPROM auf, Einste
 
 ## 1.2 Arduino Due
 *Grundsätzlich ist die Verwendung eines [originalen Arduino Due](https://store.arduino.cc/arduino-due) zu empfehlen.*  
-Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_lan_config.h* diesbezügliche Anpassungen vorzunehmen.  
+Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Bei diesen sollte beim Kauf allerdings darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_LAN_config.h* diesbezügliche Anpassungen vorzunehmen.  
+
+**ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!**      
   
 *Ein Pinout-Schema des Arduino Due ist im [Anhang B](anhang_b.md) abgebildet.*     
    
@@ -78,7 +80,6 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwe
 | • Bei einigen Due-Modellen/-Clones kann es vorkommen, dass sie nach einem initialen Start (bspw. nach einem Stromausfall) nicht richtig zu funktionieren scheinen und erst nach einem Betätigen des Reset-Buttons korrekt arbeiten. Hier kann anscheinend das [Hinzufügen eines Kondensators](https://forum.arduino.cc/index.php?topic=256771.msg2512504#msg2512504) Abhilfe schaffen. |  
       
   
-***ACHTUNG: Die GPIOs des Arduino Due sind nur 3.3V kompatibel!***      
   
 
 ---
