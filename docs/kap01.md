@@ -333,7 +333,7 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 | **Achtung** |  
 |:------------------|
 | **Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!** <br> Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway! |  
-| **Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!** <br> Es kann und wird von uns keinerlei Support bzgl. einer RPi-Nutzung erfolgen! | 
+| **Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!** <br> Es kann und wird von uns *keinerlei Support* bzgl. einer RPi-Nutzung erfolgen! | 
 | Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen. |  
 | Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden. |  
   
