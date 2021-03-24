@@ -151,7 +151,7 @@ Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplat
 *Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
    
 *Achtung:*  
-Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss). Ob ein paralleler Betrieb von LAN-Shield und ESP8266 problemlos möglich ist, wurde bisher jedoch noch nicht getestet.   
+Bei dieser Lösung entfällt jedoch die Möglichkeit, Daten auf eine microSD-Karte zu loggen. Soll dies trotz WiFi-Anbindung weiterhin möglich sein, so muss entweder ein entspr. Kartenmodul zusätzlich oder der ESP parallel zum bestehenden LAN-Shield angeschlossen werden. In beiden Fällen muss der SS-Pin *zwingend* angeschlossen werden (s. Pinbelegung/Anschluss). *Ob ein paralleler Betrieb von LAN-Shield und ESP8266 problemlos möglich ist, wurde bisher jedoch noch nicht getestet.*   
    
 **Flashen des ESP8266:**  
 Der ESP8266 muss mit einer speziellen Firmware geflasht werden. Für die Verwendung der Arduino IDE muss darauf geachtet werden, dass zuvor die entspr. ESP8266-Bibliotheken mittels des Boardverwalters installiert wurden.  
