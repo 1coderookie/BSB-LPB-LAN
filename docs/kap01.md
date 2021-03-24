@@ -23,9 +23,9 @@ Es sei bereits an dieser Stelle angemerkt, dass die ESP32-spezifische Adapterver
   
 Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem die Einstellungen der BSB-LAN-Software (ab v2.0) gespeichert werden. Der Adapter lässt sich komfortabel und sicher auf den Due aufstecken. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">
-
-*Die BSB-LAN-Adapterplatine v3, Oberseite, unbestückt.*  
+| <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg"> |
+|:---:|
+| *Die BSB-LAN-Adapterplatine v3, Oberseite, unbestückt.* | 
     
 *Hinweis:*  
 Die Verwendung des Due-spezifischen Adapters an einem ESP32 ist trotz des EEPROMs prinzipiell möglich, der Adapter kann jedoch nicht wie bei einem Due problemlos auf ein ESP32-Board aufgesteckt werden. Sollte der Adapter trotzdem mit einem ESP32-Board genutzt werden, so ist darauf zu achten, dass die Verbindungen zwischen Adapter und ESP32 korrekt und zuverlässig hergestellt werden.  
