@@ -93,9 +93,8 @@ Die folgenden Parameter müssen dafür genutzt werden:
 - 10001 = Heizkreis 2
 - 10003 = Heizkreis 3/P
   
-| Beispiel |
-|:---------|
-| Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5` |
+Beispiel:  
+Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln, lautet: `http://<IP-Adresse>/I10000=19.5`  
 
 | Tipp |
 |:--------|
@@ -140,9 +139,8 @@ Bei *aktivem Automatikbetrieb* ist dabei
 `http://<IP-Adresse>/S<Parameter>=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
 `http://<IP-Adresse>/S<Parameter>=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
   
-| Beispiel |
-|:---------|
-| Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus. | 
+Beispiel:  
+Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
 
 | Hinweise |
 |:--------|
@@ -196,9 +194,8 @@ Um die Funktion zu nutzen, muss BSB-LAN Schreibzugriff gewährt (s. Kap. [2.2](k
 `<ip>/I10003=xx`  
 übermittelt werden, wobei xx die betreffende AT in °C ist. Nachkommawerte sind möglich, als Komma ist ein Punkt einzufügen.  
    
-| Beispiel |
-|:---------|
-| Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT. | 
+Beispiel:  
+Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<ip>/I10003=9` übermittelt 9°C AT.  
    
 | Hinweis |
 |:--------|
