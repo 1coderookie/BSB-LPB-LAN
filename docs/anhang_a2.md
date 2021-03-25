@@ -61,7 +61,7 @@ Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich ledigli
 ***Raspberry Pi:***  
 *Buchsenleiste / weibliche Pinheader (doppelreihig, RM 2,54mm)*, ggf. IC-Sockel für Optokoppler und/oder EEPROM etc.  
   
-Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 12.9](kap12.md#129-raspberry-pi) gesammelt aufgeführt sind.    
+Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu beachten, die im [Kapitel 1.4](kap01.md#14-raspberry-pi) gesammelt aufgeführt sind.    
         
 ***ESP32:***  
 *Buchsenleiste / weibliche Pinheader (RM 2,54mm; ESP32: einreihig; Olimex: doppelreihig 2x5)*, ggf. IC-Sockel für Optokoppler etc.  
