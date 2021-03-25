@@ -39,7 +39,7 @@ aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - Router- und/oder Firewall-Einstellungen überprüfen 
 - Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
 - Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
-evtl. andere/kleinere Karte testen → s. Kap. [9.1](kap09.md#91-verwendung-des-adapters-als-standalone-logger-mittels-bsb-lan) 
+evtl. andere/kleinere Karte testen → s. Kap. [6.1](kap06.md#61-loggen-von-daten) 
 - (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
 
@@ -53,7 +53,7 @@ Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
 - Siehe Punkt [„Zugriff auf das Webinterface nicht möglich"](kap14.md#143-zugriff-auf-das-webinterface-nicht-möglich)
 - Rx- und/oder Tx-Belegung nicht korrekt, Pinbelegung und/oder Adapteranschluss
-stimmt nicht mit der Angabe in der Datei *BSB_lan_config.h* überein
+stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 - Falscher Bus-Typ (BSB/LPB)  
     
 ---
@@ -79,7 +79,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_lan_config.h* überein
 ## 14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden
 
 - Adapter ist evtl. als RGT2 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
     
 ---
     
@@ -94,22 +94,21 @@ stimmt nicht mit der Angabe in der Datei *BSB_lan_config.h* überein
 ## 14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden
 
 - Adapter ist evtl. als RGT1 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
     
 ---
     
 
 ## 14.10 Einstellungen des Reglers können nicht via Adapter verändert werden
 
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_lan_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
     
 ---
     
 
 ## 14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
 
-- Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage
-abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
+- Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
 auch die Darstellung des Logfiles dauern u.U. recht lange)  
     
 ---
