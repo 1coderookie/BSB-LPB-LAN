@@ -30,6 +30,8 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem Arduino Due be
 |:--------|
 | Solltest du Windows benutzen, so ist evtl. noch eine zusätzliche Treiberinstallation nötig. Auf der Seite [https://www.arduino.cc/en/Guide/ArduinoDue](https://www.arduino.cc/en/Guide/ArduinoDue) findest du weitere Informationen. | 
 
+Führe die folgenden Schritte aus:  
+
 1. Verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sowohl das LAN-Shield als auch der BSB-LAN-Adapter sollte zuvor bereits auf den Due gesteckt sein, dies ist jedoch nicht zwingend nötig.  
   
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
@@ -74,7 +76,9 @@ Im Folgenden wird die Installation der BSB-LAN-Software auf einem ESP32 beschrie
 | Hinweis |
 |:--------|
 | Sollte das ESP32-Board nicht von deinem Betriebssystem erkannt werden, so ist evtl. noch eine zusätzliche Treiberinstallation für den vom Board verwendeten USB-Chip nötig. |  
-
+  
+Führe die folgenden Schritte aus:    
+  
 1. Verbinde dein ESP32-Board mit mit einem USB-Kabel mit deinem Computer. Den BSB-LAN-Adapter kannst du vorher bereits auf bzw. unter dein ESP32-Board gesteckt haben, dies ist jedoch nicht zwingend nötig.  
 
 2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
@@ -252,7 +256,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---
 
 -   **Konfigurationseinstellungen aus EEPROM oder der Datei *BSB_LAN_config.h* laden:**  
+    
     `byte UseEEPROM = 1;`  
+    
     Gemäß Voreinstellung werden die Konfigurationseinstellungen beim Start von BSB-LAN aus dem EEPROM gelesen. Als Fallback kann die Variable auf '0' gesetzt werden, dann werden die Einstellungen aus der Datei *BSB_LAN_config.h* gelesen.  
     
 ---    
@@ -260,7 +266,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ***Netzwerkeinstellungen:***  
     
 -   **MAC-Adresse des Ethernet-Shields:**  
+    
     `byte mac[] = { 0x00, 0x80, 0x41, 0x19, 0x69, 0x90 };`
+    
     Die voreingestellte MAC-Adresse kann beibehalten werden. Eine Änderung ist i.d.R. nur nötig, wenn mehr als ein Adapter verwendet wird (es sollte in jedem Fall darauf geachtet werden, dass jede MAC-Adresse im Netzwerk nur *einmal* vorkommt!). Änderungen sollten in dem Fall möglichst nur bei dem letzten Byte erfolgen (also bspw. 0x91, wenn ein zweiter Adapter zum Einsatz kommt).  
     
     | Hinweis | 
@@ -270,12 +278,16 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     
 -   **Ethernet-Port:**  
+    
     `uint16_t HTTPPort = 80;`  
+    
     Port 80 für HTTP voreingestellt.   
     
     
 -   **DHCP:**  
+    
     `bool useDHCP = true;`  
+    
     Per default wird DHCP verwendet. Sollte dies jedoch nicht gewünscht sein, sondern soll selber eine feste IP vergeben werden, so ist *false* einzustellen.  
     
     | Hinweis |
@@ -284,7 +296,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
    
 -   **IP-Adresse:**  
+    
     `byte ip_addr[4] = {192,168,178,88};`  
+    
     IP-Adresse des Adapters, wenn DHCP nicht verwendet wird - *bitte beachte die Kommata anstelle von Punkten!*  
     
     | Achtung |
@@ -293,32 +307,43 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
   
 -   **Gateway-Adresse:**  
+    
     `byte gateway_addr[4] = {192,168,178,1};` 
+    
     IP-Adresse des Gateways (i.d.R. die des Routers) - *bitte beachte die Kommata anstelle von Punkten!*  
           
         
 -   **DNS-Server:**  
+    
     `byte dns_addr[4] = {192,168,178,1};`  
+    
     IP-Adresse des DNS - *bitte beachte die Kommata anstelle von Punkten!*  
   
   
 -   **Subnet:**  
+    
     `byte subnet_addr[4] = {255,255,255,0};`  
+    
     Subnetz-Adresse - *bitte beachte die Kommata anstelle von Punkten!*  
     
 ---    
    
 -   **WiFi per zusätzlichem ESP8266:**  
+    
     `//#define WIFI`  
+    
     Dieses Definement ist zu aktivieren, wenn die WiFi-Funktion mittels der [ESP8266-WiFi-Lösung](kap1.md#122-due--wlan-die-esp8266-wifi-lösung) oder mittels eines [ESP32](kap1.md#13-der-esp32) genutzt werden soll.  
     
     `char wifi_ssid[32] = "YourWiFiNetwork";` 
+    
     Bei Verwendung von WiFi, *YourWiFiNetwork* durch die SSID des WLAN-Netzwerkes ersetzen.  
     
     `char wifi_pass[64] = "YourWiFiPassword";`  
+    
     Bei Verwendung von WiFi, *YourWiFiPassword* durch das Passwort des WLAN-Netzwerkes ersetzen.  
     
     `#define WIFI_SPI_SS_PIN 12`  
+    
     Hier wird der beim DUE zu verwendende SS-Pin für die [ESP8266-WiFi-Lösung](kap1.md#122-due--wlan-die-esp8266-wifi-lösung) definiert. Es ist ratsam, die Voreinstellung zu belassen. Soll dennoch ein anderer Pin genutzt werden, so ist zwingend darauf zu achten, dass der gewünschte Pin weder anderweitig genutzt wird, noch in der Liste der geschützten Pins aufgeführt ist.  
     
     | Hinweis |
@@ -328,7 +353,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---   
    
 -   **Nutzung von Multicast DNS:**  
+    
     `#define MDNS_HOSTNAME "BSB-LAN"`  
+    
     Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
     
     | Hinweis | 
@@ -338,19 +365,31 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
     
 -   **Debugging und entspr. Einstellungen:**  
+    
     - `#define DEBUG` → Debug-Modus aktivieren (s. nachfolgende Optionen)  
     
-    - `byte debug_mode = 1;` → Folgende Debug-Optionen sind verfügbar:  
-    0 - Debugging deaktiviert  
-    1 - Debug-Nachrichten an das serielle Interface senden (einzustellen bei der Verwendung von bspw. dem Seriellen Monitor der Arduino IDE)  
-    2 - Debug-Nachrichten an einen TelNet-Client anstelle des seriellen Interface senden  
+    - `byte debug_mode = 1;`  
+      
+      Folgende Debug-Optionen sind verfügbar:  
+      
+      0 - Debugging deaktiviert  
+      
+      1 - Debug-Nachrichten an das serielle Interface senden (einzustellen bei der Verwendung von bspw. dem Seriellen Monitor der Arduino IDE)  
+      
+      2 - Debug-Nachrichten an einen TelNet-Client anstelle des seriellen Interface senden  
     
-    - `byte verbose = 1;` → Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen. zum Deaktivieren ist '0' anstelle der '1' einzutragen.    
+    - `byte verbose = 1;`  
     
-    - `byte monitor = 0;` → Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
+      Per default ist der Verbose Modus aktiviert (= 1), so dass neben den Rohdaten auch der jeweilige Klartext (falls vorhanden) von Parametern und Werten dargestellt wird. Es ist ratsam, diese Einstellung so zu belassen, da es eine etwaige  Fehlersuche erleichtert. Darüber hinaus ist diese Einstellung nötig, falls Telegramme und CommandIDs neuer Parameter dekodiert werden sollen. zum Deaktivieren ist '0' anstelle der '1' einzutragen.    
     
-    - `bool show_unknown = true;` → Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
-    Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`bool show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
+    - `byte monitor = 0;`  
+       
+       Bus-Monitor-Modus, per default deaktivert (= 0); zum Aktivieren auf '1' stellen.  
+    
+    - `bool show_unknown = true;`  
+      
+      Alle Parameter mitsamt der *unbekannten Parameter* (Fehlermeldung „error 7 (parameter not supportet)") werden bei einer Abfrage via Webinterface (bspw. bei einer Abfrage einer kompletten Kategorie) angezeigt (Voreinstellung).  
+      Sollen der Übersichtlichkeit halber die vom Heizungsregler nicht unterstützten (also 'unbekannten') Parameter bei einer Abfrage ausgeblendet werden (bspw. bei der Abfrage einer kompletten Kategorie), so ist 'false' einzustellen (`bool show_unknown = false;`). *Die Parameter werden jedoch bei einer solchen Abfrage (bspw. einer komplette Kategorie) trotzdem mit abgefragt.*  
    
 ---   
 
@@ -358,17 +397,17 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ***Sicherheitsfunktionen:***  
 
 -   **Passkey:**  
-    Um das System vor einem ungewollten Zugriff von außen zu schützen,
-    kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** genutzt
-    werden (sehr einfach und nicht wirklich sicher!):  
+    
+    Um das System vor einem ungewollten Zugriff von außen zu schützen, kann die **Funktion des Sicherheitsschlüssels (PASSKEY)** genutzt werden (sehr einfach und nicht wirklich sicher!):  
+    
     `char PASSKEY[64] = "";`
 
     Für die Verwendung ist eine Zahlenfolge einzugeben, bspw. `char PASSKEY[64] = "1234";` → in diesem Beispiel lautet der Passkey 1234. Wird keine Zahlenfolge eingegeben (also die Voreinstellung nicht geändert), so ist die Funktion deaktiviert.   
-    Falls die PASSKEY-Funktion genutzt wird, muss die URL bei einem
-    Aufruf des Webinterfaces den definierten Schlüssel als erstes
-    Element enthalten, bspw. `http://<IP-Adresse>/<passkey>/`
-    um die Hilfeseite zu sehen.  
-    *Bitte nicht den Slash hinter dem Passkey vergessen!*
+    
+    | Achtung |
+    |:--------|
+    | Falls die PASSKEY-Funktion genutzt wird, muss die URL bei einem Aufruf des Webinterfaces den definierten Schlüssel als erstes Element enthalten, bspw. `http://<IP-Adresse>/<passkey>/` um die Startseite zu sehen. <br> *Nur* bei der URL der optionalen [IPWE-Erweiterung](kap06.md#62-ipwe-erweiterung) darf der Passkey *nicht* zusätzlich eingegeben werden! |
+    | Bitte nicht den Slash hinter dem Passkey vergessen! |
 
 
 -   **Trusted IP:**  
@@ -376,8 +415,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `byte trusted_ip_addr2[4] = {0,0,0,0};`  
 
     Bei den Variablen `trusted_ip_addr` (und `trusted_ip_addr2` für eine weitere IP) kann man eine  vertrauenswürdige IP eintragen (z.B. des
-    FHEM-Servers), dann ist der Zugriff nur über diese IP. Lautet die vertrauenswürdige IP des Clients bspw.
-    `192.168.178.20`, so ist `byte trusted_ip_addr[4] = {192,168,178,20};` einzustellen.  
+    FHEM-Servers), dann ist der Zugriff nur über diese IP. Lautet die vertrauenswürdige IP des Clients bspw. `192.168.178.20`, so ist `byte trusted_ip_addr[4] = {192,168,178,20};` einzustellen.  
     Wird die Voreinstellung `{0,0,0,0}` nicht geändert und/oder die erste Zahl ist eine 0, ist diese Funktion deaktiviert.  
 
 -   **User-Pass:**  
@@ -393,6 +431,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ***Einstellungen für optionale Sensoren:***  
       
 -   **OneWire-Temperatursensoren (DS18B20):**  
+    
     `#define ONE_WIRE_BUS`  
     `bool enableOneWireBus = false;`  
     `byte One_Wire_Pin = 7;`  
@@ -401,6 +440,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
               
 -   **DHT22-Sensoren:**  
+    
     `#define DHT_BUS`  
     `byte DHT_Pins[10] = {5};`  
     
@@ -409,6 +449,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
   
 -  **BME280 Sensoren:**  
+   
    `//#define BME280 1`  
       
    Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 1, maximal 2!). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
@@ -416,15 +457,19 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---
 
 -   **24h-Durchschnittswerte:**  
+    
     `#define AVERAGES`  
+    
     Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet werden, so ist das Definement zu aktivieren (Voreinstellung).  
     
     `bool logAverageValues = false;`  
+    
     Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
     Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
     
     Des Weiteren müssen die gewünschten Parameter (max. 40) bei der entsprechenden Variable eingetragen
     werden, bspw.:  
+    
     ```
     int avg_parameters[40] = {  
     8700, // Außentemperatur  
@@ -436,6 +481,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---
 
 -   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
+    
     `#define LOGGER` → Das Logging-Modul wird kompiliert.  
     
     | Achtung |
@@ -445,23 +491,32 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
     - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
+    
     `//#define ESP32_USE_SD`  
     
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
+    
     `int logTelegram = LOGTELEGRAM_OFF;`  
     
       Folgende Einstelloptionen sind hier verfügbar:  
+      
       `LOGTELEGRAM_OFF` → Bus-Telegramme werden nicht geloggt (Voreinstellung)  
+      
       `LOGTELEGRAM_ON` → alle Bus-Telegramme werden geloggt  
+      
       `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWN_ONLY` → nur unbekannte Bus-Telegramme werden geloggt  
+      
       `LOGTELEGRAM_ON + LOGTELEGRAM_BROADCAST_ONLY` → nur Broadcast-Telegramme werden geloggt  
+      
       `LOGTELEGRAM_ON + LOGTELEGRAM_UNKNOWNBROADCAST_ONLY` → nur unbekannte Broadcast-Telegramme werden geloggt  
 
     - `bool logCurrentValues = false;`  
-    Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
+      
+      Die Daten der zu loggenden Parameter werden bei Bedarf in der Datei 'datalog.txt' auf der microSD-Karte gespeichert. Dazu ist die Variable auf `true` zu setzen.  
       
     - `unsigned long log_interval = 3600;`  
-    Das gewünschte Logintervall in Sekunden.  
+       
+       Das gewünschte Logintervall in Sekunden.  
     
       | Achtung |
       |:--------|
@@ -497,14 +552,22 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---        
         
 -   **MQTT:**  
+    
     Soll MQTT zum Einsatz kommen, so sind *neben den obigen Logging-Parametern* die entspr. Variablen und Einstellungen anzupassen:    
 
     - `#define MQTT` → Das MQTT-Modul wird kompiliert (Voreinstellung)  
     
     - `byte mqtt_mode = 0;` → MQTT ist deaktiviert (Voreinstellung); folgende Optionen sind verfügbar:  
-    1 = die Nachrichten werden im einfachen Textformat gesendet  
-    2 = die Nachrichten werden im JSON-Format gesendet (Struktur der JSON-Payload: {"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})  
-    3 = die Nachrichten werden im rich JSON-Format gesendet (Struktur der rich JSON-Payload: {"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})  
+      
+      1 = die Nachrichten werden im einfachen Textformat gesendet  
+      
+      2 = die Nachrichten werden im JSON-Format gesendet 
+          Struktur der JSON-Payload: 
+          `{"MQTTDeviceID": {"status":{"log_param1":"value1","log_param2":"value2"}, ...}})`
+          
+      3 = die Nachrichten werden im rich JSON-Format gesendet 
+          Struktur der rich JSON-Payload: 
+          `{"MQTTDeviceID": {"id": one_of_logvalues, "name": "program_name_from_logvalues", "value": "query_result", "desc": "enum value description", "unit": "unit of measurement", "error", error_code}})`  
     
     - `byte mqtt_broker_ip_addr[4] = {192,168,1,20};` → IP des MQTT-Brokers.  
         *Bitte beachte die Kommata anstelle von Punkten!*  
@@ -520,13 +583,15 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     | Hinweis |
     |:--------|
-    | Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! <br> Soll nur MQTT zum Einsatz kommen und die definierten Parameter nicht noch zusätzlich auf microSD-Karte gespeichert werden, so muss das LOGGER-Definement auskommentiert werden: <br> `//#define LOGGER` |  
+    | Die zu übertragenden Parameter sowie das Übertragungsintervall für MQTT werden oben bei den zu loggenden Parametern und dem Logintervall für das Loggen auf microSD-Karte eingegeben! |  
    
 ---   
    
 -   **IPWE:**  
+    
     `#define IPWE` → Das IPWE-Modul wird kompiliert.    
     `bool enable_ipwe = false;`  
+    
     Soll die IPWE-Erweiterung (URL/ipwe.cgi) verwendet werden, ist die Variable auf 'true' zu setzen.     
   
     Die gewünschten Parameter (max. 40) sind ebenfalls einzutragen:  
@@ -540,6 +605,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---  
   
 -   **MAX! (CUNO/CUNX/modifizierter MAX!Cube):**  
+    
     Sollen optionale MAX!-Thermostate zum Einsatz kommen, müssen folgende Einstellungen angepasst werden:  
     
      - `//#define MAX_CUL` → Definement aktivieren (= `#define MAX_CUL`) (deaktiviert by default)  
@@ -562,7 +628,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---  
   
 -   **Anzahl der maximalen Wiederholungsversuche bei einer Abfrage:**    
+    
     `#define QUERY_RETRIES  3`  
+    
     Hier kann bei Bedarf eingestellt werden, wieviele maximale Wiederholungsversuche ausgeführt werden, wenn bei einer Abfrage keine entsprechende Antwort vom Heizungsregler kommt. In der Regel kann die Voreinstellung (max. 3 Versuche) beibehalten werden.  
     
 ---    
@@ -570,20 +638,25 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ***Buseinstellungen (Pins und Typ):*** 
   
 -   **RX-/TX-Pinkonfiguration:**  
+    
     `byte bus_pins[2] = {0,0};` → automatische Erkennung und Einstellung der RX-/TX-Pinbelegung (Voreinstellung); ansonsten gilt:  
+    
     - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18 (`{19,18}`)  
     - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69 (`{68,69}`)  
     
 -   **Bus-Typ/-Protokoll:**  
+    
     `uint8_t bus_type = 0;`  
+    
     Je nach Anschluss des Adapters an einen BSB/LPB/PPS-Anschluss muss der entspr. Bus-Typ definiert werden (bereits nach Booten des Arduino wirksam).     
-    Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS
-    hingegen 2:    
-    0 = BSB  
-    1 = LPB  
-    2 = PPS
+    Voreingestellt ist 0 für BSB, für LPB ist 1 einzustellen, für PPS hingegen 2:    
+    
+    - 0 = BSB  
+    - 1 = LPB  
+    - 2 = PPS
   
 -   **Buseinstellungen:**  
+    
     Abhängig vom Bus-Typ müssen unterschiedliche Einstellungen vorgenommen werden.  
     
     → **BSB:**  
@@ -595,42 +668,46 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     - `byte dest_address = 0x00;` → Zieladresse (Heizungsregler), entspricht der Segmentadresse 0 mit Geräteadresse 1  
     
     → **PPS:**  
-    - `bool pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich. Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`bool pps_write = 1;`). *Achtung: Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist!*  
+    - `bool pps_write = 0;` → in der Standardeinstellung ist nur ein lesender Zugriff auf den via PPS angeschlossenen Heizungsregler möglich.  
+      Soll Schreibzugriff ermöglicht werden, so ist eine `1` einzutragen (`bool pps_write = 1;`).  
+      
+      | Achtung |
+      |:--------|
+      | Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist! |
+      
     - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
    
 ---   
    
 -   **Geschützte GPIO-Pins:**  
+    
     Hier sind normalerweise keinerlei Anpassungen vorzunehmen. Sollten individuelle Veränderungen an der Hardware vorgenommen werden, die entspr. Berücksichtigungen hinsichtlich der geschützten GPIO-Pins erfordern, sieh bitte im entspr. Abschnitt in der Datei *BSB_LAN_config.h* nach.  
     
 ---    
     
 -   **Erkennung bzw. Festlegung des Heizungsreglertyps:**  
+    
     `static const int fixed_device_family = 0;`  
     `static const int fixed_device_variant = 0;`
     
-    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung
-    des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.   
-    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226`
-    eingetragen werden (6225 = Gerätefamilie / device family & 6226 =
-    Gerätevariante / device variant).  
-    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass
-    BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der
-    Regler erst nach dem Starten des Arduino eingeschaltet wird (da in
-    dem Fall die automatische Erkennung des angeschlossenen Reglers
-    nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
+    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.   
+    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226` eingetragen werden (6225 = Gerätefamilie / device family & 6226 =     Gerätevariante / device variant).  
+    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der     Regler erst nach dem Starten des Arduino eingeschaltet wird (da in dem Fall die automatische Erkennung des angeschlossenen Reglers nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
     
 ---    
     
 -   **Schreib-/Lesezugriff auf den Heizungsregler:**  
+    
     `#define DEFAULT_FLAG FL_SW_CTL_RONLY`  
+    
     In der Voreinstellung ist der Zugriff des Adapters auf den Heizungsregler auf Lesen beschränkt, d.h. ein Setzen bzw. Verändern von Parametern der Heizungssteuerung per Adapter ist in der Voreinstellung nicht möglich. Eine Änderung des Status auf *generellen* Schreibzugriff kann via Webinterface (Menüpunkt "Einstellungen") erfolgen.  
     
     | Hinweis für Mega-Nutzer |
     |:------------------------|
     | Die Möglichkeit der Konfiguration via Webinterface bietet sich für Nutzer des Mega 2560 nicht, da das Modul WEBCONFIG mangels Speicher nicht kompiliert und nicht genutzt werden kann. <br> In diesem Fall muss der Schreibzugriff nach wie vor durch das Flag '0' gewährt werden: <br> `#define DEFAULT_FLAG 0` |
       
-    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000 oder 710) gewünscht, muss bei dem genannten Definement nach wie vor das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in der Datei *BSB_LAN_defs.h* das `DEFAULT_FLAG` des gewünschten Parameters durch 0 (Null) ersetzt werden. *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
+    Ist der Schreibzugriff aus Sicherheitsgründen hingegen nur bei *ausgewählten* Parametern (z.B. 10000 oder 710) gewünscht, muss bei dem genannten Definement nach wie vor das genannte Flag auf `FL_SW_CTL_RONLY` (*Hinweis für Mega-Nutzer mit deaktiviertem WEBCONFIG-Modul: Hier bitte `FL_RONLY` setzen!*) gesetzt sein und dann in der Datei *BSB_LAN_defs.h* das `DEFAULT_FLAG` des gewünschten Parameters durch 0 (Null) ersetzt werden.  
+    *Beachte hierbei jedoch bitte, dass es im Falle eines Updates von BSB-LAN nötig sein kann/wird, diese Änderungen erneut vorzunehmen!* 
     
     Im folgenden Beispiel wird Parameter 700 auf diese Weise schreibbar
     gemacht:  
@@ -648,14 +725,18 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
     
 -   **Eigenen Code** aus der Datei *BSB_LAN_custom.h* einfügen:  
+    
     `//#define CUSTOM_COMMANDS`  
+    
     Fügt die Befehle aus der Datei `BSB_LAN_custom.h` hizu, die am Ende jedes 'main loops' ausgeführt werden (per default deaktiviert).  
    
 ---   
    
 -   **Überprüfen der BSB-LAN-Version:**  
+    
     `#define VERSION_CHECK`  
     `bool enable_version_check = false;`    
+    
     Diese Funktion überprüft bei jedem Aufruf der Startseite des Webinterface, ob eine neuere Version von BSB-LAN verfügbar ist; Internetzugriff nötig (deaktiviert by default). Zum Aktivieren ist die Variable auf 'true' zu setzen.  
     
     | Hinweis |
@@ -665,30 +746,38 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 ---    
        
 -   **"Externer" Webserver:**  
+    
     `//#define WEBSERVER`    
+    
     Wenn dieses Definement aktiviert ist, kann BSB-LAN als Webserver für statische Inhalte fungieren. Für weitere Informationen siehe bitte [Kapitel 6.9](kap06.html#69-verwenden-der-webserver-funktion).  
     
 ---    
     
 -   **Speichern der Konfiguration im EEPROM (nur Arduino Due und ESP32):**  
+    
     `#define CONFIG_IN_EEPROM`  
+    
     Soll die Konfiguration nicht im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32 gespeichert werden, so ist das Definement zu deaktivieren.  
     
 ---    
     
 -   **Konfiguration via Webinterface:**  
+    
     `#define WEBCONFIG`  
+    
     Ermöglicht die Konfiguration via Webinterface (bei Speicherung der Einstellungen im EEPROM des Adapters (Due-Version) bzw. im Flashspeicher des ESP32). Falls nicht gewünscht, dann ist dieses Definement zu deaktivieren.   
     
 ---  
   
 -   **Compile JSON-based configuration and EEPROM config store module extension.**  
+   
    `#define JSONCONFIG`  
    
 
 ---    
 
 -   **Variablen für eine zukünftige Verwendung, derzeit (November 2020) noch ohne Funktion:**  
+    
     `#define ROOM_UNIT` → Raumgeräteersatz  
     `byte UdpIP[4] = {0,0,0,0};` → Ziel-IP-Adresse für UDP   
     `uint16_t UdpDelay = 15;` → Sendeintervall in Sekunden für UDP  
