@@ -245,7 +245,7 @@ In diesem Fall schließe bitte den Adapter *NICHT* an und beachte das Kap. [10.2
     
 ## 15.25 Gibt es eine (W)LAN-Option für den Adapter?
 
-Ja, s. Kap. [1.2.2](kap01.md#122-due--wlan-die-esp8266-wifi-lösung) und Kap. [7.5](kap07.md#75-lan-optionen-für-das-bsb-lan-setup).  
+Ja, siehe die Kapitel [1.2.2](kap01.md#122-due--wlan-die-esp8266-wifi-lösung) und [7.5](kap07.md#75-lan-optionen-für-das-bsb-lan-setup), wenn du bereits ein Due-Setup benutzt. Solltest du noch keine Hardware angeschafft haben, so könntest du auch einen [ESP32](kap01.md#13-esp32) nutzen.  
   
 ---  
   
