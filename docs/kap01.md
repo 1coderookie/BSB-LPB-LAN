@@ -199,7 +199,7 @@ Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplati
 *Die "BSB-LAN ESP32"-Adapterplatine, bestückt.*    
   
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
-Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-OVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden. 
+Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden. 
 
 ---
   
@@ -314,10 +314,17 @@ Es sind dabei jedoch folgende Punkte zu beachten:
 
 - Bei kompletter Buchsenlänge des Adapterpinouts (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern muss um einen Pin 'nach hinten versetzt' werden. Man fängt also bei dem Pinpaar 3/4 an.  
 Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeichnete TX1-Pin auf dem RPi-Pin 8 (= GPIO 14, UART0_TXD) liegt, der RX1-Pin dann auf dem RPi-Pin 10 (= GPIO 15, UART0_RXD) etc.  
-*Achtung:*  
-Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  
 
-Die Abbildung unten zeigt für ein besseres Verständnis den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden. 
+  | Achtung |
+  |:--------|
+  | Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  |
+
+  Die Abbildung folgende Abbildung zeigt den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden.  
+  
+  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
+  
+  *Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.* 
+  
 - Bei dem Betriebssystem des RPi muss der Pin 7 (GPIO 4) vor der Verwendung  
 a) als Output-Pin definiert und dann  
 b) auf "HIGH" gesetzt werden, da hierüber die Stromversorgung des Adapters erfolgt.  
@@ -325,9 +332,7 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 `gpio -1 mode 7 output`  
 `gpio -1 write 7 1`  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
-  
-*Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.*  
+ 
    
    
 | **Achtung** |  
