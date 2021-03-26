@@ -496,7 +496,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
     
-    `int logTelegram = LOGTELEGRAM_OFF;`  
+      `int logTelegram = LOGTELEGRAM_OFF;`  
     
       Folgende Einstelloptionen sind hier verfügbar:  
       
