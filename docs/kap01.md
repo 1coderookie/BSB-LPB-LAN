@@ -319,7 +319,7 @@ Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeic
   |:--------|
   | Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  |
 
-  Die Abbildung folgende Abbildung zeigt den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden.  
+  Die folgende Abbildung zeigt den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden.  
   
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
   
