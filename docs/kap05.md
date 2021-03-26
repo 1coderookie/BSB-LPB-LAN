@@ -14,8 +14,9 @@ Programme grundsätzlich möglich.
     
 ## 5.1 URL-Befehle
   
-*Hinweis:*  
-Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Parameter ohne Klammern geschrieben werden. Beispiel: URL-Befehl `/<x>` für die einfache Abfrage von Parameter 8700 = `/8700`.  
+| Hinweis |
+|:--------|
+| Bei der folgenden Aufzählung der URL-Befehle muss der jeweilige Wert oder Parameter ohne Klammern geschrieben werden. <br> Beispiel: URL-Befehl `/<x>` für die einfache Abfrage von Parameter 8700 = `/8700`. |  
    
 
 | URL-Befehl           | Auswirkung                                                                    |
@@ -89,20 +90,27 @@ Ein Neustart über die Software (z.B. per URL-Befehl /N) setzt den Topic sofort 
   
 Neben dem (brokerseitigen) reinen Empfangen ist es auch möglich, via MQTT vom Broker aus sowohl Abfragen als auch Steuerbefehle (URL-Befehle /S und /I) an BSB-LAN zu senden. Selbstverständlich muss BSB-LAN für das Umsetzen von Steuerbefehlen Schreibzugriff auf den Regler gewährt werden.  
   
-Die Befehlssyntax lautet:  
+Die Befehlssyntax lautet:
+  
 `set <MQTT-Server> publish <Topic> <Befehl>`  
+
 - `<MQTT-Server>` = Name des MQTT-Servers  
+
 - `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_LAN_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
+
 - `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I.  
-*Achtung: Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden!*    
+
+  | Achtung |
+  |:--------|
+  | Es ist jeweils nur eine Abfrage bzw. nur ein Setzen möglich, es können also keine Parameterbereiche o.ä. abgefragt werden! |    
   
 Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>").  
   
-Beispiel:  
-Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus.  
-  
-Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700.  
-
+| Beispiel |
+|:---------|
+| Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus. |
+| Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700. | 
+   
 ---
     
 ## 5.3 JSON
@@ -167,15 +175,10 @@ Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfall
     
     
 
-*Hinweis:*  
-JSON-Befehle lassen sich auch per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“ nutzen. Bei der o.g. interaktiven API-Dokumentation können die entspr. Curl-Befehle generiert und danach zur weiteren Nutzung kopiert werden (die IP ist bei der weiteren Verwendung stets anzupassen). Dazu ist wie folgt vorzugehen:  
-1. Klicke auf die gewünschte Operation, bspw. "/JQ={parameterIds}". 
-2. Bei dem aufklappenden Fenster klicke rechts auf "Try it out".
-3. Trage den/die gewünschten Parameter ein (im unten gezeigten Beispiel: 700,8300).
-4. Klicke auf "Execute".  
-
-Im Feld "Responses" werden dann die URL- und Curl-Befehle angezeigt, die man kopieren kann.  
-**Achtung: Die Zeichenkombination `%2C` bei der Auflistung mehrerer Parameter wird von Swagger anstelle des Kommas eingefügt. Solltest du die URL-/Curl-Befehle kopieren und nutzen wollen, so ersetze bitte jedes `%2C` durch ein `,` (Komma)!**  
+| Hinweise |
+|:---------|
+| JSON-Befehle lassen sich auch per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“ nutzen. Bei der o.g. interaktiven API-Dokumentation können die entspr. Curl-Befehle generiert und danach zur weiteren Nutzung kopiert werden (die IP ist bei der weiteren Verwendung stets anzupassen). Dazu ist wie folgt vorzugehen: <br> 1. Klicke auf die gewünschte Operation, bspw. "/JQ={parameterIds}". <br> 2. Bei dem aufklappenden Fenster klicke rechts auf "Try it out". <br> 3. Trage den/die gewünschten Parameter ein (im unten gezeigten Beispiel: 700,8300). <br> 4. Klicke auf "Execute". <br>  Im Feld "Responses" werden dann die URL- und Curl-Befehle angezeigt, die man kopieren kann. | 
+| Achtung: Die Zeichenkombination `%2C` bei der Auflistung mehrerer Parameter wird von Swagger anstelle des Kommas eingefügt. Solltest du die URL-/Curl-Befehle kopieren und nutzen wollen, so ersetze bitte jedes `%2C` durch ein `,` (Komma)! |  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/curl-beispiel.png"> 
     
