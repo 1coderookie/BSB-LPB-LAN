@@ -52,6 +52,7 @@ Führe die folgenden Schritte aus:
    |:--------|
    | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
   
+  
 7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
    
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_Due.png">  
@@ -102,6 +103,7 @@ Führe die folgenden Schritte aus:
     | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist. |   
     | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
   
+  
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
 9. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
@@ -134,7 +136,7 @@ Führe die folgenden Schritte aus:
 |:---------|
 | Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen. |
 | Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei "BSB_LAN_config.h" zu aktivieren. |    
-
+  
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
 Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
   
