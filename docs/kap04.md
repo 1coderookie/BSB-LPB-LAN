@@ -34,8 +34,9 @@ BSB-LAN kann prüfen, ob eine neuere Version verfügbar ist und zeigt dieses im 
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/neue_version.png">  
 
-*Hinweis:  
-Diese Funktion muss aktiviert werden, siehe dazu bitte [Kap. 2.2](kap02.md#22-konfiguration).*  
+| Hinweis |
+|:--------|
+| Diese Funktion muss aktiviert werden, siehe dazu bitte [Kap. 2.2](kap02.md#22-konfiguration). |  
 
 ---  
    
@@ -51,8 +52,9 @@ in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
     
-*Hinweis:  
-Man kann die nicht verfügbaren Parameter ausblenden lassen, bei einer Kategorie- oder Komplettabfrage werden sie dennoch mit abgefragt. Siehe hierzu bitte [Kap. 2.2](kap02.md#22-konfiguration).*    
+| Hinweis |
+|:--------|
+| Man kann die nicht verfügbaren Parameter ausblenden lassen, bei einer Kategorie- oder Komplettabfrage werden sie dennoch mit abgefragt. Siehe hierzu bitte [Kap. 2.2](kap02.md#22-konfiguration). |    
     
 ---  
    
@@ -70,17 +72,11 @@ microSD-Karte erfolgt bei Klick auf den Button "Zeichne Logdatei". Ist die Funkt
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph.jpg">  
     
-***Hinweis:*** 
-    
-*Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen 
-keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung 
-bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird.*  
-
-*Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue
-Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett
-beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien
-oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch
-nehmen, während dieser der Adapter nicht ‚ansprechbar' ist.*
+| Hinweise |
+|:---------|
+| Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung 
+bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird. |
+| Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch nehmen, während dieser der Adapter nicht ‚ansprechbar' ist. |
 
 ---  
    
