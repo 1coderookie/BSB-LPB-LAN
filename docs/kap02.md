@@ -492,7 +492,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
     
-    `//#define ESP32_USE_SD`  
+      `//#define ESP32_USE_SD`  
     
     - Sollen 'rohe' *Bus-Datentelegramme* geloggt werden, kann die Auswahl spezifiziert werden. Die Speicherung der Telegramme erfolgt in der Datei *journal.txt* auf der microSD-Karte. In der Voreinstellung ist das Loggen von Bustelegrammen deaktiviert:  
     
