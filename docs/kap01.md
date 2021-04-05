@@ -174,8 +174,7 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
 ---  
     
 ## 1.3 ESP32
-  
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+
   
 Die BSB-LAN-Software ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen, die im [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32) beschrieben sind.  
 
@@ -185,8 +184,7 @@ Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinend
 ---
 
 ### 1.3.1 ESP32 mit spezifischem "BSB-LAN ESP32"-Adapter  
-  
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+
 
 Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
@@ -221,21 +219,16 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
   
 #### 1.3.1.2 ESP32: Olimex ESP32-EVB
   
-***ACHTUNG: Die volle Funktiosfähigkeit wird derzeit noch geprüft, eine Verwendung ist daher noch nicht zu empfehlen.***
-
-<!--
 Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden.  
-Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität u.a. einen LAN-Anschluss, einen microSD-Kartenleser sowie zwei Relais und ist daher sehr empfehlenswert.  -->
+Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität u.a. einen LAN-Anschluss, einen microSD-Kartenleser sowie zwei Relais und ist daher sehr empfehlenswert.  
   
-<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_small.jpg">  -->
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_small.jpg">  
   
-<!-- *Das Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter.*    -->
+*Das Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter.*    
 
 --- 
 
 ### 1.3.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab V3  
-  
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
   
 Der bisherige Due-kompatible Adapter (ab v3) lässt sich ebenfalls mit einem ESP32 verwenden. Das EEPROM des Adapters wird hierbei nicht benötigt/verwendet und ist dementsprechend auch bei der Verkabelung nicht zu berücksichtigen.  
 Bei der Wahl eines ESP32 ist hier keine zwingende Einschränkung auf die zuvor genannte Joy-It-boardkompatible NodeMCU-Variante gegeben, da ohnehin eine 'lose' Verkabelung oder der Eigenbau einer kleinen Adapterplatine zur stabileren Aufnahme des BSB-LAN-Adapters und des ESP32 nötig ist. Es sollte jedoch darauf geachtet werden, dass die unten angegebenen Pinnummern/-belegungen mit denen des gewählten ESP32 übereinstimmen.  
@@ -266,8 +259,7 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
 ---  
   
 ### 1.3.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter V2  
-  
-***Achtung: Wir haben zwar viel getestet, aber ALLE Funktionen etc. haben wir nicht testen können. Sollten Probleme, Inkompatibilitäten, Funktionseinschränkungen oder generelle Bugs bzgl der ESP32-Verwendung auftreten, meldet es bitte (idealerweise auf Englisch als Issue im Repo)!***   
+
     
 Der BSB-LAN-Adapter v2 kann ebenfalls an einem ESP32 betrieben werden. So kann von der Weiterentwicklung und den neuen Funktionen der BSB-LAN-Software ab v2.x profitiert werden, ohne dass ein neuer Adapter angeschafft werden muss. Dazu müssen am Adapter selbst einige Änderungen vorgenommen werden, die im Folgenden beschrieben werden.  
  
