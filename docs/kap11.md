@@ -41,6 +41,8 @@ Danke!
 
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
+-   Brötje BGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}
+
 -   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje BGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}
@@ -63,7 +65,9 @@ Danke!
 
 -   Brötje EcoCondens Kompakt BMK 20/24 RSP 160 \[LMS15\] (Gasbrenner) {BSB}
 
--   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15] (Gasbrenner + Solar) {BSB}  
+-   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15\] (Gasbrenner + Solar) {BSB}  
+
+-   Brötje Eco Therm Kompakt WMC 20/33 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner) {BSB}
 
@@ -174,7 +178,7 @@ Danke!
 
 -   Brötje WGB-U 20I \[LMS14\] (Gasbrenner) {BSB}
 
--   Brötje WMC \[LMS15\] (Gasbrenner) {BSB}  
+-   Brötje WMC 20/33 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
 
@@ -242,11 +246,11 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Extensa Duo + \[RVS21.831\] (Wärmepumpe) {BSB}  
+-   Atlantic Alféa Extensa Duo + \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Extensa + \[RVS21.831\] (Wärmepumpe) {BSB}  
+-   Atlantic Alféa Extensa + \[RVS21\] (Wärmepumpe) {BSB}  
 
--   Atlantic Alféa Extensa 6+ \[RVS21.831\] (Wärmepumpe) {BSB}  
+-   Atlantic Alféa Extensa 6+ \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
 
@@ -254,7 +258,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}  
 
--   Austria Email LWPK 8 \[RVS21.831\] (Wärmepumpe) {BSB}
+-   Austria Email LWPK 8 \[RVS21\] (Wärmepumpe) {BSB}
+
+-   Baxi Luna Duo Tec MP \[LMS14\] (Wärmepumpe) {BSB}  
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
 
