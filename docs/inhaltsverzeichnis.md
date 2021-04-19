@@ -137,6 +137,8 @@
    * [11.3 Weitere Hersteller](kap11.md#113-weitere-hersteller)  
 
 [**12. Exkurs: Arduino IDE**](kap12.md)  
+   * [12.1 Installation](kap12.md#121-installation)  
+   * [12.2 Serieller Monitor](kap12.md#122-serieller-monitor)  
 
 [**13. Etwaige Fehlermeldungen und deren mögliche Ursachen**](kap13.md)  
    * [13.1 Fehlermeldung "unknown type xxxxxxxx"](kap13.md#131-fehlermeldung-unknown-type-xxxxxxxx)  
