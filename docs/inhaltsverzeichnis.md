@@ -98,6 +98,9 @@
    * [8.12 SmartHomeNG](kap08.md#812-smarthomeng)  
    * [8.13 Node-RED](kap08.md#813-node-red)  
    * [8.14 Datenverarbeitung mittels Bash-Skript](kap08.md#814-datenverarbeitung-mittels-bash-skript)  
+   * [8.15 Volkszaehler](kap08.md#815-volkszaehler)  
+   * [8.16 Homebridge](kap08.md#816-homebridge)  
+
    
 [**9. Exkurs: Auslesen neuer Parameter-Telegramme**](kap09.md)  
 
