@@ -2344,6 +2344,20 @@ Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/
 ***Vielen Dank!***   
    
 Die Lösung von Karl-Heinz ist für diejenigen Nutzer interessant, die keine komplexe Heimautomatisierungssoftware einsetzen (wollen), um Daten unter Linux vom Heizungsregler abzurufen und graphisch darstellen zu lassen. Die Skripte stellt er freundlicherweise in [seinem GitHub-Repo](https://github.com/khfm/bsb-lan-readout) zur Verfügung.  
+    
+--- 
+  
+## 8.15 Volkszaehler  
+   
+***BSB-LAN-User Michael hat ein Script geschrieben, mit dem sich die Daten von BSB-LAN in das [Volkszaehler-Projekt](https://www.volkszaehler.org) einbinden lassen. Er stellt das Script samt einer Beschreibung in [seinem GitHub-Repo](https://github.com/lapixo/volkszaehler_bsb-lan/tree/main) zur Verfügung.***  
+***Vielen Dank!***  
+  
+--- 
+  
+## 8.16 Homebridge  
+   
+***BSB-LAN-User Michael hat ein [Plugin für Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) geschrieben, das eine einfache Einbindung von BSB-LAN ermöglicht.***  
+***Vielen Dank!***  
   
 ---  
   
