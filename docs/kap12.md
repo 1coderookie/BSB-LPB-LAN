@@ -10,6 +10,8 @@ Abschließend wird kurz die Verwendung des Seriellen Monitors (SerMo) der Arduin
 
 ---
 
+## 12.1 Installation
+
 **Installation der Arduino IDE**  
   
 Downloade und installiere die aktuelle Version der Arduino IDE von [https://www.arduino.cc/en/Main/Software](https://www.arduino.cc/en/Main/Software) für dein Betriebssystem (Windows-, Mac- und Linux-Version verfügbar).  
@@ -52,6 +54,8 @@ Nun solltest du das ESP32-Board in der Auflistung bei "Werkzeuge/Board" finden u
 
 
 ---
+
+## 12.2 Serieller Monitor
 
 **Verwenden des Seriellen Monitors**  
 
