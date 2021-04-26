@@ -176,17 +176,17 @@ Nachfolgend ein exemplarischer Mitschnitt einer SerMo-Ausgabe eines erfolgreiche
 12:25:55.983 -> Device variant: 100
 12:25:55.983 -> 
 12:25:55.983 -> Setup complete
-12:26:00.698 -> DISP->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
+12:26:00.698 -> DSP1->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
 12:26:00.698 -> DC 8A 00 0B 06 3D 0D 05 19 4F 8C 
-12:26:00.764 -> HEIZ->DISP ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
+12:26:00.764 -> HEIZ->DSP1 ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
 12:26:00.797 -> DC 80 0A 0E 07 0D 3D 05 19 00 0A 41 08 A5 
-12:26:10.889 -> DISP->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
+12:26:10.889 -> DSP1->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
 12:26:10.889 -> DC 8A 00 0B 06 3D 0D 05 19 4F 8C 
-12:26:10.989 -> HEIZ->DISP ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
+12:26:10.989 -> HEIZ->DSP1 ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
 12:26:10.989 -> DC 80 0A 0E 07 0D 3D 05 19 00 0A 41 08 A5 
-12:26:21.116 -> DISP->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
+12:26:21.116 -> DSP1->HEIZ QUR 8310 Diagnose Erzeuger - Kesseltemperatur: 
 12:26:21.116 -> DC 8A 00 0B 06 3D 0D 05 19 4F 8C 
-12:26:21.182 -> HEIZ->DISP ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
+12:26:21.182 -> HEIZ->DSP1 ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
 12:26:21.215 -> DC 80 0A 0E 07 0D 3D 05 19 00 0A 41 08 A5
 ```
 

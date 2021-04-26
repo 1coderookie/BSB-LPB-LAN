@@ -89,21 +89,21 @@ Parameter-Telegramms!
 **Beispiel:**
     
 ```
-DISP->HEIZ QUR 113D305F  
+DSP1->HEIZ QUR 113D305F  
 DC 8A 00 0B 06 3D 11 30 5F AB EC  
     
-HEIZ->DISP ANS 113D305F 00 00  
+HEIZ->DSP1 ANS 113D305F 00 00  
 DC 80 0A 0D 07 11 3D 30 5F 00 00 03 A1  
     
-**DISP->HEIZ QUR 113D3063**  
+**DSP1->HEIZ QUR 113D3063**  
 **DC 8A 00 0B 06 3D 11 30 63 5C 33**  
     
-**HEIZ->DISP ANS 113D3063 00 00 16**  
+**HEIZ->DSP1 ANS 113D3063 00 00 16**  
 **DC 80 0A 0E 07 11 3D 30 63 00 00 16 AD 0B**  
 ```
     
 Die ersten vier Zeilen in obigem Beispiel sind von dem Parameter, zu dem hingeschaltet wurde. Die letzten vier Zeilen (hier im Beispiel mit zusätzlichen `**`Sternchen`**` gekennzeichnet) stammen von dem Parameter, den du nun analysieren möchtest.  
-QUR bedeutet Anfrage, ANS die zugehörige Antwort. Anstelle von DISP wird eventuell RGT1 oder RGT2 angezeigt, dies ist abhängig vom jeweiligen Gerät, mit dem du die Eingaben am Heizungssystem tätigst (DISP = Bedieneinheit, RGTx = Raumgerät) und nicht weiter von Interesse.  
+QUR bedeutet Anfrage, ANS die zugehörige Antwort. Anstelle von DSP1 wird eventuell RGT1 oder RGT2 angezeigt, dies ist abhängig vom jeweiligen Gerät, mit dem du die Eingaben am Heizungssystem tätigst (DSP1 = Bedieneinheit, RGTx = Raumgerät) und nicht weiter von Interesse.  
 
 Hast du nun also das betreffende Telegramm entdeckt, bietet es sich an, in der Fußzeile des seriellen Monitors unten links den Haken bei „Autoscroll" durch einen Klick auf denselben zu entfernen. Somit bleibt die Auflistung des seriellen Monitors an dieser Stelle stehen und wird nicht durch weitere eintreffende Telegramme immer wieder verschoben. Nun ist es auch möglich, mit copy&paste zu arbeiten.  
 
