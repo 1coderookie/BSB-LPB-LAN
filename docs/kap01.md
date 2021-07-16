@@ -269,7 +269,7 @@ Der BSB-LAN-Adapter v2 kann ebenfalls an einem ESP32 betrieben werden. So kann v
     
 Um den Adapter v2 erfolgreich an einem ESP32 betreiben zu können, muss der Adapter auf den Betrieb mit 3,3V 'umgerüstet' werden. Dies ist für die Nutzung mit einem Raspberry Pi bereits vorgesehen. Nachfolgende Schritte müssen vorgenommen werden:  
 - Der Adapter ist *komplett* zu bestücken. Wenn der Adapter bisher nur für die Nutzung mit dem Arduino Mega 2560 bestückt ist, so müssen folgende Komponenten nachgerüstet werden:  
-    - 1x Widerstand 4,7kΩ (→ R11)
+    - 1x Widerstand 47kΩ (→ R11)
     - 2x Widerstand 10kΩ (→ R12, R13)
     - 1x Transistor BC557A (→ Q11)
     - 1x Transistor BC547A (→ Q12)
