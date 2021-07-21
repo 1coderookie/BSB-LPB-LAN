@@ -12,7 +12,10 @@ Solltest du ein eigenes, interessantes Projekt umgesetzt haben, was mit dem BSB-
 
 | ACHTUNG, wichtiger Hinweis: |
 |:----------------------------|
-| Beim Anschließen optionaler Hardware wie bspw. Sensoren, Relais etc. an den Arduino Due bzw. das spezifische ESP32-Board ist unbedingt darauf zu achten, dass **der verwendete Anschlusspin nicht anderweitig belegt ist bzw. nicht bereits boardintern verwendet wird!** Aufschluss hierüber gibt das jeweilige Pinout-Schema des spezifischen Arduino-/ESP-Boards. Bei einer Doppelbelegung kann es zu Fehlfunktionen bis hin zu Schäden an der Hardware kommen! Die in der Datei *BSB_LAN_config.h* voreingestellten Pins werden u.U. bei deinem spezifischen Board bereits anderweitig verwendet, also prüfe die Belegung vor der Aktivierung/Nutzung! |  
+| Beim Anschließen optionaler Hardware wie bspw. Sensoren, Relais etc. an den Arduino Due bzw. das spezifische ESP32-Board ist unbedingt darauf zu achten, dass **der verwendete Anschlusspin nicht anderweitig belegt ist bzw. nicht bereits boardintern verwendet wird!** *Aufschluss hierüber gibt das jeweilige Pinout-Schema des spezifischen Arduino-/ESP-Boards.*   
+Beachte auch optionale Komponenten wie bspw. das LAN-Shield, ein Relais-Shield etc.  
+Bei einer Doppelbelegung kann es zu Fehlfunktionen bis hin zu Schäden an der Hardware kommen!  
+Die in der Datei *BSB_LAN_config.h* voreingestellten Pins werden u.U. bei deinem spezifischen Board bereits anderweitig verwendet, also prüfe die Belegung vor der Aktivierung/Nutzung! |  
      
 ---
       
