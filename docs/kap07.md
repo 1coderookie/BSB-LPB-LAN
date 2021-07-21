@@ -9,6 +9,10 @@
 Das BSB-LAN Setup kann durch optionale Hardware in seinem Funktionsumfang erweitert werden. Im Folgenden werden die standardmäßigen, adapterseitig unterstützten Komponenten wie Sensoren und Relais sowie weitere Hardwarelösungen vorgestellt.  
   
 Solltest du ein eigenes, interessantes Projekt umgesetzt haben, was mit dem BSB-LAN Setup zusammenarbeitet und den Funktionsumfang erweitert und möchtest du es gerne auch anderen Usern zur Verfügung stellen, so kontaktiere mich gerne per Email (adapter (ät) quantentunnel.de)!  
+
+| ACHTUNG, wichtiger Hinweis: |
+|:----------------------------|
+| Beim Anschließen optionaler Hardware wie bspw. Sensoren, Relais etc. an den Arduino Due bzw. das spezifische ESP32-Board ist unbedingt darauf zu achten, dass der verwendete Anschlusspin **nicht anderweitig belegt ist** bzw. **nicht bereits boardintern verwendet wird!** Aufschluss hierüber gibt das jeweilige Pinout-Schema des spezifischen Boards sowie der Schaltplan der jeweiligen BSB-LAN-Adapterversion. Bei einer Doppelbelegung kann es zu Fehlfunktionen bis hin zu Schäden an der Hardware kommen. |  
      
 ---
       
@@ -48,10 +52,9 @@ Pin 4 = GND (-)
 
 Bei Anschluss des Sensors sollte ein PullUp-Widerstand zwischen VCC (Pin 1) und DATA (Pin 2) in der Größe von etwa 4,7kΩ bis 10kΩ hinzugefügt werden. Meist werden 10kΩ empfohlen, die richtige Größe muss im Zweifelsfall ermittelt werden.  
    
-***Bitte beachte:***    
-*Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden 
-DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei
-BSB\_LAN\_config.h definiert werden!*  
+| Bitte beachte: |
+|:---------------|
+| Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei *BSB_LAN_config.h* definiert werden! |  
         
 Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
    
@@ -63,8 +66,9 @@ Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (`
   
 *Darstellung der Messwerte eines DHT22 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*  
    
-*Tipp:*  
-*Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele für die Anwendung von DHT22-Sensoren.*
+| Tipp: |
+|:------|
+| Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele für die Anwendung von DHT22-Sensoren. |
         
 ---
     
@@ -84,12 +88,15 @@ Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (`
   
 *Darstellung der Messwerte von vier DS18B20 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*
   
-***Tipp:***  
-*Werden DS18B20-Sensoren verwendet, so werden in der Kategorie "One Wire, DHT & MAX! Sensors" (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx).*  
-*Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf der Sensor-Kategorie anhand der Temperaturschwankung identifiziert werden.  
-Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie in der enstpr. Kategorie angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie in der entspr. Kategorie angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen.*  
-*Hinweis:*  
-*Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden.*    
+| Tipp: | 
+|:------|
+| Werden DS18B20-Sensoren verwendet, so werden in der Kategorie "One Wire, DHT & MAX! Sensors" (und -falls aktiviert- ebenfalls unter `<URL>/ipwe.cgi`) die jeweils **spezifischen internen Hardwarekennungen (SensorID) der DS18B20-Sensoren** aufgeführt. Diese SensorID ist für eine spätere eindeutige Unterscheidung der einzelnen Sensoren notwendig und sollte bspw. bei der weitergehenden Verwendung mit externen Programmen wie FHEM berücksichtigt werden (Stichwort RegEx). |  
+| Es ist empfehlenswert, die jeweilige SensorID zu notieren und den entspr. Sensor zu beschriften. Dazu kann ein einzelner Sensor kurz erwärmt oder abgekühlt und durch einen erneuten Aufruf der Sensor-Kategorie anhand der Temperaturschwankung identifiziert werden. |  
+| Werden Sensoren ausgetauscht, hinzugefügt oder entfernt, so ändert sich meist auch die Reihenfolge, in der sie in der enstpr. Kategorie angezeit werden (da diese auf der SensorID basiert). Wird das Reading also nicht auf die individuelle SensorID ausgelegt, sondern lediglich auf die Bezeichnung "temp\[x\]" wie sie in der entspr. Kategorie angezeigt werden, so kommt es früher oder später dazu, dass die entsprechend gemachten Zuordnungen (bspw. VL, RL, Puffer) nicht mehr übereinstimmen. |
+
+| Hinweis: |
+|:---------|
+| Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden. |    
    
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
@@ -104,9 +111,10 @@ ggf. noch einen 10µF-Tantalkondensator zusätzlich) möglichst nah am
 Sensor in die Leitung zwischen GND und VCC zu positionieren, um
 einen Spannungsabfall bei der Abfrage zu kompensieren.  
    
-*Anmerkungen:*  
-- *Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig.*  
-- *Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten!*  
+| Anmerkungen: |  
+|:-------------
+| Kommen die üblichen gekapselten und bereits verkabelten Sensoren zum Einsatz, so reicht es i.d.R. aus, den Kondensator dort anzuschließen, wo auch die Kabel angeschlossen werden - ein Auftrennen des Kabels nahe des Sensors ist -zumindest bei den Versionen mit 1m und 3m Kabellängen- erfahrungsgemäß nicht nötig. |  
+| Im Gegensatz zu Keramikkondensatoren ist bei der (zusätzlichen) Verwendung von Tantalkondensatoren auf die Polarität zu achten! |  
 
 Der Wert des PullUp-Widerstandes am Adapterausgang zwischen DATA und VCC (+3,3V) ist (insbesondere bei großen Leitungslängen und/oder mehreren Sensoren) für einen problemlosen Betrieb u.U. kleiner als die üblicherweise empfohlenen 4,7kΩ zu wählen.  
   
@@ -124,8 +132,9 @@ Kommen *große* Kabellängen zum Einsatz, so ist insbesondere auf eine korrekte 
 In diesem Fall sind außerdem weitere Dinge zu beachten, wie bspw. eine empfehlenswerte Hin- und Rückleitung für den Datenkanal, der möglicherweise notwendige Einsatz von zusätzlichen Spannungsquellen, die Verwendung eines dedizidierten Busmasters etc.  
 Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und je komplexer die DS18B20-Installationen ausfallen, desto kritischer ist die vorhergehende Planung zu betrachten. 
    
-*Tipp:*  
-*Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele zum Thema 1-Wire/OneWire/DS18B20.*  
+| Tipp: | 
+|:------|
+| Im Internet finden sich zahlreiche Tutorials, Leitfäden und Anwendungsbeispiele zum Thema 1-Wire/OneWire/DS18B20. |  
    
 ***Zusammenfassung benötigter Bauteile für eine Installation:***  
 - Dreiadriges Kabel, idealerweise geschirmt (Schirmung ist dann einseitig an GND anzuschließen)  
