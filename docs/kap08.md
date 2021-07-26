@@ -2336,6 +2336,11 @@ Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/
 ***BSB-LAN-User Konrad hat ein [Modul für Node-RED](https://github.com/node-red-contrib/node-red-contrib-bsb-lan) geschrieben, das eine einfache Einbindung von BSB-LAN ermöglicht.***  
 ***Vielen Dank!***  
   
+---
+  
+***BSB-LAN-User n300 hat eine "Queuing-Flow"-Erweiterung für das o.g. Node-RED-Modul geschrieben. Hierdurch werden Timeouts und/oder Connection Refuses (ECONNECTREFUSE) weitestgehend vermieden, die durch zeitgleiche Requests entstehen, da Requests nun zeitlich geordnet nach einander abgearbeitet werden. Der Flow und eine weitergehende Beschreibung sind [hier](https://flows.nodered.org/flow/0d947f69b040b48cad3775100bc9a683) zu finden.***  
+***Vielen Dank!***  
+  
 ---  
   
 ## 8.14 Datenverarbeitung mittels Bash-Skript
