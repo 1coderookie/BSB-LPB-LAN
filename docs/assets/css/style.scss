@@ -63,7 +63,8 @@
 }
 
 
-@import "{{ site.theme }}";
+//@import "{{ site.theme }}";
+@import 'jekyll-theme-cayman';
 
 .page-header {
   color: $header-heading-color;
