@@ -116,11 +116,13 @@ Danke!
 
 -   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe) {BSB}
 
--   Brötje SensoTherm BSW-K \[RVS61.843\] (Wärmepumpe) {BSB}  
+-   Brötje SensoTherm BSW K \[RVS61.843\] (Wärmepumpe) {BSB}  
 
--   Brötje SensoTherm BSW-6A \[RVS51\] (Wärmepumpe) {BSB}  
+-   Brötje SensoTherm BSW 6 A \[RVS51\] (Wärmepumpe) {BSB}  
 
--   Brötje SensoTherm BSW-8K \[RVS61\] (Wärmepumpe) {BSB}  
+-   Brötje SensoTherm BSW 8 K \[RVS61\] (Wärmepumpe) {BSB}  
+
+-   Brötje SensoTherm BSW 13 E \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
