@@ -537,6 +537,14 @@ In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein 
    
 *Eine Bedieneinheit des Typs QAA75.91x.*  
   
+Darüber hinaus gibt es neuerdings ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinheit ist uns bisher nur bei einem Baxi-Modell (Baxi Luna Duo Tec MP) gemeldet worden. Dieses Modell weist u.a. Knöpfe für die gradweise Veränderung des TWW- und HK-Sollwertes auf, verfügt jedoch nicht mehr über einen Drehknopf.  
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS77.png">  
+   
+*Eine Bedieneinheit des Typs AVS77.xxx.*  
+  
+
+  
 ---  
   
 ## 10.5 Konventionelle Raumgeräte für die aufgeführten Reglertypen  
