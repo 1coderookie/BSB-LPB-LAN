@@ -407,7 +407,7 @@ Der **RVS65.xxx** scheint relativ identisch zum RVS63 zu sein und wurde bisher l
    
 ---
     
-## 10.2.3 Hinweis: Inkompatible Systeme von Brötje und Elco
+### 10.2.3 Hinweis: Inkompatible Systeme von Brötje und Elco
 Aus aktuellem Anlass sei an dieser Stelle darauf hingewiesen, dass die
 genannten Heizungshersteller neue Gerätemodelle auf den Markt gebracht
 haben, deren Regler NICHT mit BSB-LAN
@@ -439,7 +439,7 @@ Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
 
 ---  
   
-## 10.2.4 Hinweis: Spezialfall LMU54/LMU64-Regler  
+### 10.2.4 Hinweis: Spezialfall LMU54/LMU64-Regler  
 Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
 Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (OCI420) einen LPB nachrüsten. An diesen wiederum ist der Adapter anschließbar.  
             
@@ -457,7 +457,7 @@ Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 10
   
 ---  
   
-## 10.2.5 Hinweis: Spezialfall Weishaupt-Geräte  
+### 10.2.5 Hinweis: Spezialfall Weishaupt-Geräte  
 Einige Weishaupt-Geräte (s. Auflistung der erfolgreich getesteten Systeme: Weishaupt WTU mit Bedieneinheit WRS-CPU) haben einen Regler des Typs RVS23 verbaut. Dieser Reglertyp weist einen LPB auf, auf dem bereits die bestehende Installation dieser Weishaupt-Anlagen basiert: Raumgeräte, Bedieneinheiten und Erweiterungsmodule sind bereits miteinander via LPB verbunden.  
 An diesem LPB ist ebenfalls der Adapter anschließbar, er muss jedoch korrekt in die bestehende Installation eingebunden werden. In der Regel stellt dies mit der voreingestellten LPB-Adresse des Adapters (Segment 4, Adresse 3) kein Problem dar, sollte aber bei etwaigen Kommunikationsproblemen ggf. nochmal überprüft werden.  
 
@@ -465,7 +465,7 @@ Auch bei den Weishaupt-Geräten scheint es neben der kesselseitigen Bedieneinhei
   
 ---  
   
-#### 10.2.6 Hinweis: LPB nachrüsten mittels OCI420 ClipIn-Modul  
+### 10.2.6 Hinweis: LPB nachrüsten mittels OCI420 ClipIn-Modul  
 Soll ein OCI420 an einem LMx-Regler angeschlossen und verwendet werden, so ist die Installation und der Anschluss prinzipiell gemäß den jeweiligen Bedienungsanleitungen vorzunehmen.   
   
 Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anleitungen zu finden sind, obwohl sie für einen erfolgreichen Betrieb entscheidend sind. Dies betrifft vor allem die Einstellungen, die für die LPB-Spannungsversorgung vorzunehmen sind. Des Weiteren ist die LPB-Geräteadresse 1 mit Segmentadresse 0 einzustellen und die Einstellung als Uhrzeit-Master vorzunehmen.  
@@ -496,7 +496,7 @@ Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die gr�
       
 ---  
    
-### 10.3 Erweiterungs- und ClipIn-Module    
+## 10.3 Erweiterungs- und ClipIn-Module    
 Sollten die Anschlussmöglichkeiten und der Funktionsumfang der genannten Regler im Einzelfall nicht ausreichen, bspw. weil ein zusätzlicher Pumpenkreis nachträglich installiert wird, so lassen sich jeweils spezielle Erweiterungs-/ClipIn-Module (im Folgenden EWM) verbauen. Die EWM bieten Anschlussmöglichkeiten für einen Pumpen- bzw. Mischerkreis samt zugehöriger Sensoren.  
 Diese EWM werden am Regler mittels eines speziellen Bus-Kabels an einem dedizitieren Anschluss angeschlossen und kommunizieren intern über den BSB (eine Ausnahme scheint Weishaupt zu sein, worauf in diesem Kapitel jedoch nicht weiter eingegangen wird). Die EWM selbst weisen keinen eigenen BSB- oder LPB-Anschluss auf. Die Parametrierung erfolgt über die Bedieneinheit des Reglers.  
 Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils spezifischen Parameter im eigentlichen Regler möglich, die die Einstellungen und Funktionen des EWMs definieren und beschreiben. Da sie jedoch bspw. beim Aufruf von `ip/Q` mit aufgelistet werden, stelle ich sie im Folgenden kurz vor.  
@@ -522,7 +522,7 @@ Erweiterungsmodule für LMU-Regler werden als "ClipIn-Module" bezeichnet. Je nac
    
 ---   
    
-### 10.4 Bedieneinheiten  
+## 10.4 Bedieneinheiten  
    
 Die Bedieneinheit (am Wärmeerzeuger selbst) der Systeme der letzten Jahre (mit den Reglertypen LMU7x, LMS1x, RVS) sind üblicherweise Modelle des Typs **AVS37.xxx**. Sie sehen herstellerübergreifend recht identisch aus, können aber bei bestimmten Systeme (bspw. Wärmepumpen) zusätzliche Bedienelemente oder Funktionen aufweisen.   
 Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte vergleicht, so kann man feststellen, dass sich die beiden Geräte sehr ähneln. Die Art der Bedienung ist in dem meisten Fällen ebenso identisch. Die heizungsseitigen Bedieneinheiten stellen i.d.R. die Temperatur des Wärmeerzeugers (bspw. Kesseltemperatur) dauerhaft dar, die Raumgeräte hingegen üblicherweise die Raumtemperatur. Beide Geräte senden den jeweiligen Wert regelmäßig (etwa alle zehn Sekunden) als Broadcast (INF-Nachricht) über den BSB.   
