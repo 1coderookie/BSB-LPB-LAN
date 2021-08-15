@@ -531,20 +531,30 @@ Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte
    
 *Eine Bedieneinheit des Typs AVS37.xxx.*  
    
+---   
+   
+Als Nachfolger des Modells AVS37 gilt das **AVS74.xxx**. Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt ebenfalls als Raumgerät unter der Bezeichnung [QAA74](kap10.md#1053-qaa74) zum Einsatz.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
+  
+*Eine AVS74.xxx Bedieneinheit.*    
+   
+---   
+   
 In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein neuer Typ von Bedieneinheit verbaut, die Modellbezeichnung lautet **QAA75.91x**. Die Bedieneinheit scheint (zumindest bei bestimmten Herstellern) abnehmbar und mithilfe eines Adapters (Brötje: "ISR RGA") im Wohnraum installiert und zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente.     
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75911_kessel.jpg">  
    
 *Eine Bedieneinheit des Typs QAA75.91x.*  
   
-Darüber hinaus gibt es neuerdings ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinheit ist uns bisher nur bei einem Baxi-Modell (Baxi Luna Duo Tec MP) gemeldet worden. Dieses Modell weist u.a. Knöpfe für die gradweise Veränderung des TWW- und HK-Sollwertes auf, verfügt jedoch nicht mehr über einen Drehknopf.  
+---  
+  
+Darüber hinaus gibt es ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinheit ist uns bisher nur bei einem Baxi-Modell (Baxi Luna Duo Tec MP) gemeldet worden. Dieses Modell weist u.a. Knöpfe für die gradweise Veränderung des TWW- und HK-Sollwertes auf, verfügt jedoch nicht mehr über einen Drehknopf.  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS77.png">  
    
 *Eine Bedieneinheit des Typs AVS77.xxx.*  
-  
-
-  
+    
 ---  
   
 ## 10.5 Konventionelle Raumgeräte für die aufgeführten Reglertypen  
@@ -562,7 +572,7 @@ Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brö
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">  
    
-*Das QAA 55 Raumgerät.*
+*Das QAA55 Raumgerät.*
    
 Neben der optionalen Messung der Raumtemperatur bietet es eine Präsenztaste und die Möglichkeiten zur Umschaltung der Betriebsart sowie zur Veränderung der Raumsolltemperatur. Es verfügt lediglich über ein kleines LCD-Display, das die aktuelle Raumtemperatur anzeigt. Angeschlossen wird es über ein zweipoliges Kabel am BSB.  
    
@@ -582,9 +592,9 @@ Es wird ebenfalls per Kabel am BSB angeschlossen, wobei ein dritter Anschluss f�
   
 Das QAA78.61x ist die Funkvariante des QAA75.61x. Es ist batteriebetrieben, der Funkempfänger AVS71.390 (Frequenz 868 MHz) muss wiederum per Kabel am Anschluss X60 des Kesselreglers angeschlossen werden. Die oben genannte Bezeichnung „RGT“ wird bei Brötje um ein „F“ erweitert, also „RGTF“.  
    
-*Hinweis:*  
-An dieser Stelle muss zusätzlich erwähnt werden, dass es offenbar zwei verschiedene Ausführungen des QAA75 gibt: Das bereits erwähnte Raumgerät QAA75.61x und ein optisch nicht identisches QAA75.91x.  
-Wann immer ich in diesem Handbuch das "QAA75" erwähne, so beziehe ich mich dabei auf das bereits vorgestellte Modell QAA75.61x.  
+| Hinweis |  
+|:--------|
+| An dieser Stelle muss zusätzlich erwähnt werden, dass es offenbar zwei verschiedene Ausführungen des QAA75 gibt: Das bereits erwähnte Raumgerät QAA75.61x und ein optisch nicht identisches QAA75.91x. Wann immer ich in diesem Handbuch das "QAA75" erwähne, so beziehe ich mich dabei auf das bereits vorgestellte Modell QAA75.61x. | 
    
 Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoch nur bei bestimmten Modellreihen einiger Hersteller (bspw. Brötje WMS/WMC C, BMK B, BMR B und Baxi Luna Platinum+) zum Einsatz zu kommen. Es scheint die 'heizungsseitige' Bedieneinheit zu sein, die jedoch mittels eines Adapters (Brötje: "ISR RGA") zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente, nur mit dem Vorteil, dass man sie im Wohnbereich installieren und sich ein zusätzliches Raumgerät sparen kann.     
    
@@ -598,6 +608,8 @@ Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoc
 Das QAA74 ist ein relativ neues Raumgerät, welches das QAA75 ablösen soll/wird. Bei Brötje heißt es "ISR RGP" ("Raumgerät Premium"), bei Siemens "UI400". Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt bei einigen Modellen ebenfalls als heizungsseitige Bedieneinheit unter der Bezeichnung AVS74 zum Einsatz. 
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
+  
+*Das QAA74 Raumgerät.*  
 
    
 ---
