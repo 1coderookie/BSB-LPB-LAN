@@ -547,6 +547,10 @@ In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein 
    
 *Eine Bedieneinheit des Typs QAA75.91x.*  
   
+| Hinweis |
+|:--------|
+| Es scheint, als ob eine Änderung der Betriebsart mittels der TWW-/HK-Taste (links vom Drehknopf) bei bestimmten Betriebsarten zur Folge hat, dass eine Änderung der Betriebsart mittels BSB-LAN und den 'regulären' Parametern 1600 (TWW) und 7xx (HK) nicht mehr möglich ist, wenn eine andere Betriebsart als "beide" mittels erwähnter Taste ausgewählt wurde. Die Funktion dieser neuen Taste ist in BSB-LAN (bisher) nicht hinterlegt. Soll eine Änderung der Betriebsarten via BSB-LAN gewünscht sein, so ist darauf zu achten, dass die Betriebsart mittels erwähnter Taste auf "beide" eingestellt ist. | 
+  
 ---  
   
 Darüber hinaus gibt es ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinheit ist uns bisher nur bei einem Baxi-Modell (Baxi Luna Duo Tec MP) gemeldet worden. Dieses Modell weist u.a. Knöpfe für die gradweise Veränderung des TWW- und HK-Sollwertes auf, verfügt jedoch nicht mehr über einen Drehknopf.  
@@ -554,6 +558,10 @@ Darüber hinaus gibt es ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinh
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS77.png">  
    
 *Eine Bedieneinheit des Typs AVS77.xxx.*  
+    
+| Hinweis |
+|:--------|
+| Es scheint, als ob eine Änderung der Betriebsart mittels der TWW-/HK-Taste (in der Mitte der Bedieneinheit) bei bestimmten Betriebsarten zur Folge hat, dass eine Änderung der Betriebsart mittels BSB-LAN und den 'regulären' Parametern 1600 (TWW) und 7xx (HK) nicht mehr möglich ist, wenn eine andere Betriebsart als "beide" mittels erwähnter Taste ausgewählt wurde. Die Funktion dieser neuen Taste ist in BSB-LAN (bisher) nicht hinterlegt. Soll eine Änderung der Betriebsarten via BSB-LAN gewünscht sein, so ist darauf zu achten, dass die Betriebsart mittels erwähnter Taste auf "beide" eingestellt ist. |     
     
 ---  
   
