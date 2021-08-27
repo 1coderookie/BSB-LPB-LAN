@@ -298,6 +298,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage WSYK 160 DC 9 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
+-   Fujitsu Waterstage WSYK 160 DG 9 \[RVS21.831\] (Wärmepumpe) {BSB}  
+
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
 
 -   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
