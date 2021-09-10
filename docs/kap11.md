@@ -262,6 +262,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Austria Email LWPK 8 \[RVS21\] (Wärmepumpe) {BSB}
 
+-   Baxi Block Kondens 18 \[RVS13\] (ölbrenner) {BSB}
+-   
 -   Baxi Luna Duo Tec MP \[LMS14\] (Wärmepumpe) {BSB}  
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
