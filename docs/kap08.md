@@ -2295,12 +2295,13 @@ A5 = Verkettung von A1 bis A4
 ***BSB-LAN ist jetzt eine offizielle Home-Assistant-Integration, die von [Willem-Jan](https://github.com/liudger) betreut wird.***    
 ***Die Dokumentation der Integration ist [hier](https://www.home-assistant.io/integrations/bsblan/) zu finden.***  
 ***Vielen Dank!***  
-
   
----  
-   
 ***BSB-LAN-User Florian hat die o.g. Lösung erweitert, so dass zwei Regler mit insgesamt vier Heizkreisen bedient werden können. [Hier](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant) hat er seine Lösung zur Verfügung gestellt.***  
 ***Vielen Dank!***
+  
+| Achtung |
+|:---------|
+| Die o.g. Integration ist z.Zt. nur mit der BSB-LAN-Version 1.0 kompatibel, NICHT mit der aktuellen Version! Für die Einbindung der aktuellen BSB-LAN-Version ist es daher empfehlenswert, die im Folgenden dargestellten Einbindungsmöglichkeiten mittels MQTT oder JSON zu nutzen. |  
   
 ---  
 
@@ -2320,7 +2321,12 @@ Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht 
   icon: "mdi:thermometer-chevron-up"
 ```  
   
-Siehe: https://www.home-assistant.io/integrations/sensor.mqtt/  
+Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt/)  
+  
+---
+  
+***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON beschrieben.***
+***Vielen Dank!***  
   
 ---
   
