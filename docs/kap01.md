@@ -229,7 +229,7 @@ Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität
    
 | Achtung, wichtige Hinweise |
 |:---------------------------|
-| Die Olimex-Boards scheinen Startprobleme zu haben, wenn sie von der Stromzufuhr getrennt wurden. Nach einem Stromausfall oder dem Anstecken der Stromversorgung (Netzteil) muss die Reset-Taste gedrückt werden, um den Startvorgang zu initiieren. |
+| Die Olimex-Boards starten in der gegenwärtigen Hardware-Revision mit aufgestecktem BSB-LAN-Board nicht korrekt, wenn die Stromzufuhr unterbrochen wurde. Man muss daher nach Anschluss der Stromzufuhr einmal die Reset-Taste drücken. Bei einem Reset (ob per Hardware oder Software) besteht dieses Problem jedoch nicht. |
 | Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine exakt in der Mitte der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
    
 
