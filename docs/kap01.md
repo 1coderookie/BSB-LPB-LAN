@@ -226,6 +226,13 @@ Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_small.jpg">  
   
 *Das Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter.*    
+   
+| Achtung, wichtige Hinweise |
+|:---------------------------|
+| Die Olimex-Boards scheinen Startprobleme zu haben, wenn sie von der Stromzufuhr getrennt wurden. Nach einem Stromausfall oder dem Anstecken der Stromversorgung (Netzteil) muss die Reset-Taste gedrückt werden, um den Startvorgang zu initiieren. |
+| Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine exakt in der Mitte der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
+   
+
 
 --- 
 
