@@ -2341,7 +2341,7 @@ Aller folgender Code muss in die `configuration.yaml` eingefügt werden, wenn ni
 Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
   
 Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:
-```yaml
+```
 sensor:
   - platform: mqtt
     state_topic: "bsb-lan/8310"
@@ -2356,7 +2356,7 @@ Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-S
   
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
 
-```yaml
+```
 sensor:
   - platform: rest
     name: BSB-LAN Status
@@ -2384,7 +2384,7 @@ Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.
   
 Um die Attribute dieses Sensors wiederum als separate Sensoren verfügbar zu machen, die sich komfortabel in die Oberfläche integrieren lassen, sind weitere Definitionen notwendig. Im folgenden Beispiel anhand der Parameter 700 (Betriebsart) und 1610 (TWW Nennsollwert) gezeigt:
   
-```yaml
+```
 sensor:
   - platform: template
     sensors:
@@ -2406,7 +2406,7 @@ Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert be
 ***- Setzen von Parametern per REST***  
 Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:
   
-```yaml
+```
 rest_command:
   bsb_lan_set_parameter:
     url: http://<BSB-LAN-IP>/JS
@@ -2420,7 +2420,7 @@ Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. D
   
 Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:
   
-```yaml
+```
 switch:
   - platform: template
     switches:
@@ -2445,7 +2445,7 @@ Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingab
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
 
  `automations.yaml`:
-```yaml
+```
 - id: bsb_lan_set_tww_nennsollwert
   alias: BSB-LAN TWW Nennsollwert setzen
   trigger:
