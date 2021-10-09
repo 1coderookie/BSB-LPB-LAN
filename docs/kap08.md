@@ -2349,13 +2349,14 @@ sensor:
     unit_of_measurement: °C
     device_class: temperature
 ```
+   
 Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.
   
 ***- REST-Sensor***  
 Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen. Da das Auslesen der Werte etwas dauert, empfiehlt es sich, diese nicht einzeln, sondern in einem Rutsch auszulesen.
   
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
-
+  
 ```
 sensor:
   - platform: rest
@@ -2380,6 +2381,7 @@ sensor:
       - "1612"
       - "5400"
 ```
+  
 Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.
   
 Um die Attribute dieses Sensors wiederum als separate Sensoren verfügbar zu machen, die sich komfortabel in die Oberfläche integrieren lassen, sind weitere Definitionen notwendig. Im folgenden Beispiel anhand der Parameter 700 (Betriebsart) und 1610 (TWW Nennsollwert) gezeigt:
@@ -2401,6 +2403,7 @@ sensor:
         unit_of_measurement: °C
         device_class: temperature
 ```
+  
 Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.
    
 ***- Setzen von Parametern per REST***  
@@ -2416,6 +2419,7 @@ rest_command:
     # Parameter "type": 1 = SET (default), 0 = INF
     payload: '{"Parameter": "{{ parameter }}", "Value": "{{ value }}", "Type": "{% if type is defined %}{{ type }}{% else %}1{% endif %}"}'
 ```
+  
 Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.
   
 Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:
@@ -2438,13 +2442,15 @@ switch:
             parameter: 700
             value: 0
 ```
+  
 In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.
 
 Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen" &rarr; "Helfer" angelegt haben:
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
 
- Datei *automations.yaml*:
+Datei *automations.yaml*:  
+   
 ```
 - id: bsb_lan_set_tww_nennsollwert
   alias: BSB-LAN TWW Nennsollwert setzen
@@ -2469,6 +2475,7 @@ Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingab
         value: "{{ states('sensor.bsb_lan_tww_nennsollwert') | float }}"
       service: input_number.set_value
 ```
+  
 Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.  
     
 ---
