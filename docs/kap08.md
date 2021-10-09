@@ -2328,7 +2328,7 @@ Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt
 ***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***  
 ***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***  
 ***Vielen Dank!***  
-  
+<!---  
 Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.  
   
 Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:  
@@ -2478,7 +2478,7 @@ Datei *automations.yaml*:
 ```
   
 Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.   
-    
+-->    
 ---
   
 ## 8.12 SmartHomeNG  
