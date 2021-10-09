@@ -2335,7 +2335,7 @@ Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ha_dashboard.png">
   
-Aller folgender Code muss in die `configuration.yaml` eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine `sensors.yaml` ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
+Aller folgender Code muss in die *configuration.yaml* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine *sensors.yaml* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
 
 ***- MQTT-Sensor***  
 Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
@@ -2440,11 +2440,11 @@ switch:
 ```
 In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.
 
-Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei `automations.yaml` eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen" &rarr; "Helfer" angelegt haben:
+Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen" &rarr; "Helfer" angelegt haben:
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
 
- `automations.yaml`:
+ Datei *automations.yaml*:
 ```
 - id: bsb_lan_set_tww_nennsollwert
   alias: BSB-LAN TWW Nennsollwert setzen
