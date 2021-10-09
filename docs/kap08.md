@@ -2362,7 +2362,7 @@ Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener He
 sensor:
   - platform: rest
     name: BSB-LAN Status
-    resource: "http://<BSB-LAN-IP>/JQ=700,1600,8000,8003,6705,710,712,720,721,1610,1612,5400"
+    resource: "http://BSB-LAN-IP/JQ=700,1600,8000,8003,6705,710,712,720,721,1610,1612,5400"
     method: POST
     username: !secret bsb_lan_user
     password: !secret bsb_lan_pass
@@ -2413,7 +2413,7 @@ Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisi
 ```
 rest_command:
   bsb_lan_set_parameter:
-    url: http://<BSB-LAN-IP>/JS
+    url: http://BSB-LAN-IP/JS
     method: POST
     username: !secret bsb_lan_user
     password: !secret bsb_lan_pass
