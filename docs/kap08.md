@@ -2446,11 +2446,12 @@ switch:
   
 In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.  
 
-Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen/Helfer" angelegt haben:  
+Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an.  
+**Achtung:** Der Code muss in die YAML-Datei *automations* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen/Helfer" angelegt haben:  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
   
-Datei *automations.yaml*:  
+Datei *automations*:  
    
 ```
 - id: bsb_lan_set_tww_nennsollwert
