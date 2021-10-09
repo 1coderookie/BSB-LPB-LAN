@@ -2337,7 +2337,7 @@ Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:
   
 Aller folgender Code muss in die YAML-Datei *configuration* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine YAML-Datei *sensors* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
   
-***MQTT-Sensor***  
+**MQTT-Sensor**  
 Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
   
 Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:  
@@ -2353,7 +2353,7 @@ sensor:
    
 Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.
   
-***REST-Sensor***  
+**REST-Sensor**  
 Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen. Da das Auslesen der Werte etwas dauert, empfiehlt es sich, diese nicht einzeln, sondern in einem Rutsch auszulesen.
   
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
@@ -2407,7 +2407,7 @@ sensor:
   
 Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
    
-***Setzen von Parametern per REST***  
+**Setzen von Parametern per REST**  
 Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:  
   
 ```
