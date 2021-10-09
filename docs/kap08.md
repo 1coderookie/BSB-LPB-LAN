@@ -2329,18 +2329,19 @@ Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt
 ***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***  
 ***Vielen Dank!***  
   
-Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.
-
-Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:
-
+Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.  
+  
+Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:  
+  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ha_dashboard.png">
   
-Aller folgender Code muss in die *configuration.yaml* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine *sensors.yaml* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
-
-***- MQTT-Sensor***  
+Aller folgender Code muss in die Datei *configuration.yaml* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine Datei *sensors.yaml* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
+  
+***MQTT-Sensor***  
 Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
   
-Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:
+Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:  
+   
 ```
 sensor:
   - platform: mqtt
@@ -2352,7 +2353,7 @@ sensor:
    
 Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.
   
-***- REST-Sensor***  
+***REST-Sensor***  
 Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen. Da das Auslesen der Werte etwas dauert, empfiehlt es sich, diese nicht einzeln, sondern in einem Rutsch auszulesen.
   
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
@@ -2404,10 +2405,10 @@ sensor:
         device_class: temperature
 ```
   
-Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.
+Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
    
-***- Setzen von Parametern per REST***  
-Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:
+***Setzen von Parametern per REST***  
+Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:  
   
 ```
 rest_command:
@@ -2420,9 +2421,9 @@ rest_command:
     payload: '{"Parameter": "{{ parameter }}", "Value": "{{ value }}", "Type": "{% if type is defined %}{{ type }}{% else %}1{% endif %}"}'
 ```
   
-Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.
+Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.  
   
-Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:
+Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:  
   
 ```
 switch:
@@ -2443,12 +2444,12 @@ switch:
             value: 0
 ```
   
-In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.
+In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.  
 
-Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen" &rarr; "Helfer" angelegt haben:
-
+Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an. **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen" &rarr; "Helfer" angelegt haben:  
+  
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
-
+  
 Datei *automations.yaml*:  
    
 ```
@@ -2476,7 +2477,7 @@ Datei *automations.yaml*:
       service: input_number.set_value
 ```
   
-Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.  
+Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.   
     
 ---
   
