@@ -231,7 +231,7 @@ Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität
 |:---------------------------|
 | Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine exakt in der Mitte der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
 | Bei manchen Hardware-Revisionen der Olimex-Boards starten diese nicht korrekt, wenn bei aufgestecktem BSB-LAN-Adapter die Stromzufuhr unterbrochen wurde. Um dieses Problem zu beheben, muss ein 4.7kOhm Pull-Down Widerstand zwischen TX2 und GND eingesetzt werden. Dies ist z.B. bei der Pinreihe am Rand möglich, bei der auf der Rückseite die entsprechenden Pins beschriftet sind. Der nachfolgende Bildausschnitt zeigt die Position des Widerstandes. 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_optionaler_Widerstand.png">|
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_optionaler_Widerstand.png"> |
 
    
 
