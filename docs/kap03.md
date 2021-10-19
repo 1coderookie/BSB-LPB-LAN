@@ -220,11 +220,6 @@ Entwicklungs-Index: (parameter not supported)
 Objektverzeichnis-Version: 1.0
 Bootloader-Version: (parameter not supported)
 EEPROM-Version: 50.0
-Konfiguration - Info 2 OEM: (parameter not supported)
-Zugangscode Inbetriebnahme?: (parameter not supported)
-Zugangscode Fachmannebene ?: (parameter not supported)
-Zugangscode OEM?: (parameter not supported)
-Zugangscode OEM2?: (parameter not supported)
 Bisher unbekannte Geräteabfrage: 20
 Hersteller-ID (letzten vier Bytes): 31398
 Bisher unbekannte Geräteabfrage: 00010001F4 - unknown type
@@ -250,11 +245,6 @@ Entwicklungs-Index:
 Objektverzeichnis-Version: 1.3 
 Bootloader-Version: 
 EEPROM-Version: 
-Konfiguration - Info 2 OEM: 
-Zugangscode Inbetriebnahme?: 
-Zugangscode Fachmannebene ?: 
-Zugangscode OEM?: 
-Zugangscode OEM2?: 
 Bisher unbekannte Geräteabfrage: 20 
 Hersteller-ID (letzten vier Bytes): 58469 
 Bisher unbekannte Geräteabfrage: 
