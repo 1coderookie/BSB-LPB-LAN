@@ -2323,38 +2323,6 @@ Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht 
   
 Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt/)  
   
-***REST-Sensor***  
-Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen. Da das Auslesen der Werte etwas dauert, empfiehlt es sich, diese nicht einzeln, sondern in einem Rutsch auszulesen.
-  
-Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
-  
-```
-sensor:
-  - platform: rest
-    name: BSB-LAN Status
-    resource: "http://<BSB-LAN-IP>/JQ=700,1600,8000,8003,6705,710,712,720,721,1610,1612,5400"
-    method: POST
-    username: !secret bsb_lan_user
-    password: !secret bsb_lan_pass
-    scan_interval: 7
-    value_template: "{{ value_json['6705'].value }}"
-    json_attributes:
-      - "700"
-      - "1600"
-      - "6705"
-      - "8000"
-      - "8003"
-      - "710"
-      - "712"
-      - "720"
-      - "721"
-      - "1610"
-      - "1612"
-      - "5400"
-```
-  
-Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.  
-  
 ---
   
 ***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***  
@@ -2385,6 +2353,37 @@ sensor:
    
 Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.  
   
+***REST-Sensor***  
+Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen. Da das Auslesen der Werte etwas dauert, empfiehlt es sich, diese nicht einzeln, sondern in einem Rutsch auszulesen.
+  
+Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.). Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sieben Sekunden einen Request gegen BSB-LAN.
+  
+```
+sensor:
+  - platform: rest
+    name: BSB-LAN Status
+    resource: "http://<BSB-LAN-IP>/JQ=700,1600,8000,8003,6705,710,712,720,721,1610,1612,5400"
+    method: POST
+    username: !secret bsb_lan_user
+    password: !secret bsb_lan_pass
+    scan_interval: 7
+    value_template: "{{ value_json['6705'].value }}"
+    json_attributes:
+      - "700"
+      - "1600"
+      - "6705"
+      - "8000"
+      - "8003"
+      - "710"
+      - "712"
+      - "720"
+      - "721"
+      - "1610"
+      - "1612"
+      - "5400"
+```
+  
+Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.    
   
   
 ---
