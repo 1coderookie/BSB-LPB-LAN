@@ -2356,7 +2356,7 @@ Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemp
 ***REST-Sensor***  
 Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen.   
   
-Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.) und als Block abgefragt werden. Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle sechzig Sekunden einen Request gegen BSB-LAN.
+Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.) und als Block abgefragt werden. Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle 60 Sekunden einen Request gegen BSB-LAN.
   
 ```
 sensor:
