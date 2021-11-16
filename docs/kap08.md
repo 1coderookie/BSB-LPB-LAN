@@ -2387,6 +2387,7 @@ Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.
   
 Um die Attribute dieses Sensors wiederum als separate Sensoren verfügbar zu machen, die sich komfortabel in die Oberfläche integrieren lassen, sind weitere Definitionen notwendig. Im folgenden Beispiel anhand der Parameter 700 (Betriebsart) und 1610 (TWW Nennsollwert) gezeigt:
   
+[//]: # ({% raw %})  
 ```
 sensor:
 - platform: template
@@ -2404,6 +2405,7 @@ sensor:
       unit_of_measurement: °C
       device_class: temperature
 ```
+[//]: # ({% endraw %})  
   
 Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
      
