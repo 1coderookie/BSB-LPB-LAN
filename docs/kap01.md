@@ -355,7 +355,7 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
 **FHEM-Forumsmitglied "EPo" war so freundlich, entsprechende STL-Dateien zu erstellen und zur Verfügung zu stellen.**  
 **Vielen Dank!**  
   
-***Die STL-Dateien für den Arduino Due, den ESP32-NodeMCU sowie den Olimex32-EVB sind bereits im GitHub-Repo von BSB-LAN enthalten (Unterordner "[schematics](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/schematics)").***    
+***Die STL-Dateien für den Arduino Due, den ESP32-NodeMCU sowie den Olimex ESP32-EVB samt BSB-LAN-Platine sind bereits im GitHub-Repo von BSB-LAN enthalten (Unterordner "[schematics](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/schematics)").***    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-Gehaeuse.jpg">  
   
