@@ -88,15 +88,15 @@ Führe die folgenden Schritte aus:
     
 4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
 
-5. Entferne (oder verschiebe) die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen *nicht* im "BSB-LAN"- bzw. "src"-Ordner vorhanden sein!  
+5. Entferne (oder verschiebe) die beiden Ordner "*ArduinoMDNS*" und "*WiFiSpi*" aus dem BSB-LAN-Unterordner "*src*" - diese dürfen *nicht* im "BSB-LAN"- bzw. "src"-Ordner vorhanden sein!  
 
 6. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
 
 7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
 
-    - Für den in diesem Handbuch empfohlenen "Joy-It ESP32-NodeMCU" (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
+    - Für den in diesem Handbuch empfohlenen **"Joy-It ESP32-NodeMCU"** (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
     
-    - Für das empfohlene "Olimex ESP32-EVB" wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
+    - Für das empfohlene **"Olimex ESP32-EVB"** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
     
     | Hinweise |
     |:---------|
@@ -110,9 +110,9 @@ Führe die folgenden Schritte aus:
 
 10. Wähle bei "Partition Scheme"  
     
-    - für den empfohlenen ESP32-NodeMCU bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
+    - für den empfohlenen **ESP32-NodeMCU** bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
      
-    - für das empfohlene Olimex-Board die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
+    - für das empfohlene **Olimex-Board** die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
 
    
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_ESP32.png">  
@@ -135,7 +135,7 @@ Führe die folgenden Schritte aus:
 | Hinweise |
 |:---------|
 | Wenn der ESP32 sich nicht mit dem konfigurierten WLAN verbinden kann, richtet er seinen eigenen Accesspoint "BSB-LAN" mit dem Passwort "BSB-LPB-PPS-LAN" für 30 Minuten ein. Danach wird er neu starten und erneut versuchen, eine Verbindung zum eingerichteten WLAN-Netzwerk herzustellen. |
-| Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das Olimex-Board zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei "BSB_LAN_config.h" zu aktivieren. |    
+| Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das **Olimex-Board** zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei *BSB_LAN_config.h* zu aktivieren (Definement `#define ESP32_USE_SD`). |    
   
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
 Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
