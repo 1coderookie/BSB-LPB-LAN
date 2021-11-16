@@ -8,13 +8,18 @@
 In den folgenden Kapiteln wird die Hardware des BSB-LAN Setups vorgestellt. Dabei handelt es sich zum einen um den jeweiligen BSB-LAN Adapter und zum anderen um den jeweiligen Mikrocontroller, auf den die BSB-LAN Software geflasht wird.  
 BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf einem ESP32 samt spezifischem Adapter betrieben werden.  
   
+  
 ---
 
 ## 1.1 Adapter
 
-Der BSB-LAN Adapter ist in zwei verschiednen Versionen verfügbar. Zum einen als Arduino Due-spezifische Version mit einem EEPROM, zum anderen als eine ESP32-spezifische Version ohne EEPROM.   Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die spezifische Version auswählen, da sich der Adapter dann mit dem jeweiligen System komfortabel und sicher durch ein Aufstecken verbinden lässt.  
+Der BSB-LAN Adapter ist in zwei verschiedenen Versionen verfügbar. Zum einen als *Arduino Due-spezifische Version mit einem EEPROM*, zum anderen als eine *ESP32-spezifische Version ohne EEPROM*.  
+Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die spezifische Version auswählen, da sich der Adapter dann mit dem jeweiligen System komfortabel und sicher durch ein Aufstecken verbinden lässt.  
   
-| Hinweis | 
+***Die Adapterplatinen können bei Frederik Holst (bsb [ät] code-it.de) bestellt werden.***  
+
+  
+| Achtung | 
 |:--------|
 | Es sei bereits an dieser Stelle angemerkt, dass die ESP32-spezifische Adapterversion aufgrund des fehlenden EEPROMs *nur* mit einem ESP32 genutzt werden kann - die Due-spezifische Version hingegen kann (wenn auch nicht komfortabel aufsteckbar) auch mit einem ESP32 genutzt werden. |  
 
