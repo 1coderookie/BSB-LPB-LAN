@@ -2385,6 +2385,30 @@ sensor:
   
 Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.    
   
+Um die Attribute dieses Sensors wiederum als separate Sensoren verfügbar zu machen, die sich komfortabel in die Oberfläche integrieren lassen, sind weitere Definitionen notwendig. Im folgenden Beispiel anhand der Parameter 700 (Betriebsart) und 1610 (TWW Nennsollwert) gezeigt:
+  
+```
+sensor:
+- platform: template
+   sensors:
+     bsb_lan_betriebsart:
+      unique_id: bsb_lan_betriebsart
+      friendly_name: BSB-LAN Betriebsart
+      value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '700')['value'] }}{% else %}{{ states('sensor.bsb_lan_betriebsart') }}{% endif %}"
+      attribute_templates:
+      desc: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '8000')['desc'] }}{% else %}{{ state_attr('sensor.bsb_lan_betriebsart', 'desc') }}{% endif %}"
+     bsb_lan_tww_nennsollwert:
+      unique_id: bsb_lan_tww_nennsollwert
+      friendly_name: BSB-LAN TWW Nennsollwert
+      value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '1610')['value'] }}{% else %}{{ states('sensor.bsb_lan_tww_nennsollwert') }}{% endif %}"
+      unit_of_measurement: °C
+      device_class: temperature
+```
+  
+Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
+     
+  
+  
   
 ---
   
