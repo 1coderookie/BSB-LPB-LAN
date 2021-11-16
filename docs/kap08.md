@@ -2409,7 +2409,87 @@ sensor:
   
 Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
      
+***Setzen von Parametern per REST***  
+Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:  
   
+[//]: # ({% raw %})  
+```
+rest_command:
+  bsb_lan_set_parameter:
+    url: http://<BSB-LAN-IP>/JS
+    method: POST
+    username: !secret bsb_lan_user
+    password: !secret bsb_lan_pass
+    # Parameter "type": 1 = SET (default), 0 = INF
+    payload: '{"Parameter": "{{ parameter }}", "Value": "{{ value }}", "Type": "{% if type is defined %}{{ type }}{% else %}1{% endif %}"}'
+```
+[//]: # ({% endraw %})  
+
+  
+Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.  
+  
+Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:  
+  
+[//]: # ({% raw %})  
+```
+switch:
+- platform: template
+  switches:
+   bsb_lan_betriebsart_automatik:
+   friendly_name: BSB-LAN Betriebsart Automatik
+   value_template: "{{ is_state('sensor.bsb_lan_betriebsart', '1') }}"
+    turn_on:
+     service: rest_command.bsb_lan_set_parameter
+      data:
+       parameter: 700
+        value: 1
+    turn_off:
+     service: rest_command.bsb_lan_set_parameter
+      data:
+       parameter: 700
+        value: 0
+```
+[//]: # ({% endraw %})  
+
+  
+In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.  
+
+Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an.  
+**Achtung:** Der Code muss in die YAML-Datei *automations* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen/Helfer" angelegt haben:  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
+  
+Datei *automations*:  
+   
+[//]: # ({% raw %})  
+```
+- id: bsb_lan_set_tww_nennsollwert
+  alias: BSB-LAN TWW Nennsollwert setzen
+  trigger:
+  - platform: state
+    entity_id: input_number.bsb_lan_tww_nennsollwert
+  condition: []
+  action:
+  - data_template:
+      parameter: 1610
+      value: "{{ states('input_number.bsb_lan_tww_nennsollwert') }}"
+    service: rest_command.bsb_lan_set_parameter
+- id: bsb_lan_get_tww_nennsollwert
+  alias: BSB-LAN TWW Nennsollwert auslesen
+  trigger:
+  - platform: state
+    entity_id: sensor.bsb_lan_tww_nennsollwert
+  condition: []
+  action:
+  - data_template:
+      entity_id: input_number.bsb_lan_tww_nennsollwert
+      value: "{{ states('sensor.bsb_lan_tww_nennsollwert') | float }}"
+    service: input_number.set_value
+```
+[//]: # ({% endraw %})  
+
+  
+Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.     
   
   
 ---
