@@ -2331,7 +2331,29 @@ Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt
   
 Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.  
     
-
+Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ha_dashboard.png">
+  
+Aller folgender Code muss in die YAML-Datei *configuration* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine YAML-Datei *sensors* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
+    
+***MQTT-Sensor***  
+Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
+  
+Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:  
+   
+```
+sensor:
+  - platform: mqtt
+    state_topic: "bsb-lan/8310"
+    name: BSB-LAN Vorlauftemperatur
+    unit_of_measurement: °C
+    device_class: temperature
+```
+   
+Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.  
+  
+  
   
 ---
   
