@@ -2353,8 +2353,8 @@ sensor:
    
 Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.  
   
-***REST-Sensor***  
-Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor auslesen.   
+***REST-Sensor & JSON***  
+Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor und JSON auslesen.   
   
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.) und als Block abgefragt werden. Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle 60 Sekunden einen Request gegen BSB-LAN.
   
@@ -2409,7 +2409,7 @@ sensor:
   
 Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
      
-***Setzen von Parametern per REST***  
+***Setzen von Parametern per REST & JSON***  
 Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:  
   
 [//]: # ({% raw %})  
