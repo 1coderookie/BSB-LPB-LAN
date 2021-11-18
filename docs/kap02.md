@@ -158,15 +158,21 @@ Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Ve
 
 ## 2.2 Konfiguration  
   
-Die BSB-LAN-Software kann den individuellen Ansprüchen entsprechend konfiguriert werden. Die Konfiguration kann dabei auf zwei Arten erfolgen: Mittels Anpassen der Datei *BSB_LAN_config.h* sowie mittels Webinterface. Im Folgenden werden die Konfigurationsmöglichkeiten eingehender erklärt. Die Beschreibungen in Kap. 2.2.2 sind i.d.R. ausführlicher, daher ist es sinnvoll, beide Kapitel eingehend zu studieren.  
+Die BSB-LAN-Software kann den individuellen Ansprüchen entsprechend konfiguriert werden.  
+Die Konfiguration kann dabei auf zwei Arten erfolgen: Mittels Anpassen der Datei *BSB_LAN_config.h* sowie mittels Webinterface (aufrufbar mittels Klick auf "Einstellungen" auf der BSB-LAN-Seite oder per direktem URL-Befehl `/C`).  
+Im Folgenden werden die Konfigurationsmöglichkeiten eingehender erklärt. Die Beschreibungen in Kap. 2.2.2 sind i.d.R. ausführlicher, daher ist es sinnvoll, beide Kapitel eingehend zu studieren.  
+  
+Eine Übersicht der Einstellungen kann mit dem URL-Befehl `/CO` aufgerufen werden.  
      
 ---
     
 ### 2.2.1 Konfiguration mittels Webinterface  
 
-Die Einstellungsübersicht bzw. die Webkonfigurationsoberfläche ist zwar im Prinzip selbsterklärend, trotzdem seien die einzelnen Punkte hier nochmals mit einer kurzen Erklärung aufgeführt.  
+Die Seite der Webkonfiguration ist mittels Klick auf "Einstellungen" auf der BSB-LAN-Seite oder per direktem URL-Befehl `/C` aufrufbar. Die einzelnen Einstellungsmöglichkeiten sind zwar im Prinzip selbsterklärend, trotzdem seien die einzelnen Punkte hier nochmals mit einer kurzen Erklärung aufgeführt.  
 Für eine u.U. ausführlichere Erklärung zu den einzelnen Funktionen sieh bitte im [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh) nach.  
-
+  
+Eine reine Übersicht der Einstellungen kann mittels des URL-Befehls `/CO` angezeigt werden.    
+  
 Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
@@ -183,14 +189,20 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 
 | Funktion | (Vor-)Einstellung | Erklärung |
 |:-------------:|:-------------:|:-------------------------------------------:|
+| Advanced options | Aus | Für Zugriff aus sämtliche Einstellungsmöglichkeiten von BSB-LAN muss "Ein" ausgewählt (und anschließend unten auf "Parameter speichern" geklickt) werden. |
 | Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_LAN_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
 | Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
+| OTA Update | Aus | OTA-Updatefunktion (OTA = Over The Air) deaktiviert (Aus) / aktiviert (Ein). |
+| RX pin number | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte RX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
+| TX pin number | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte TX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
 | PPS: PPS-Modus | Passiv | Nur PPS: Benutzer, die den Adapter an der PPS-Schnittstelle verwenden, müssen zwei Einstellungen vornehmen: Zum einen muss der Modus ausgewählt werden, in dem auf den Bus zugegriffen werden soll (Passiv/Als Raumgerät). Bei Verwendung eines QAA-Raumgerätes muss hier „passiv“ ausgewählt werden. Dann werden nur die Werte, die über den Bus gehen, in der Weboberfläche angezeigt, ein Schreiben von Werten ist dann nicht möglich. <br> Wenn hier „als Raumgerät“ ausgewählt wird, können über die Weboberfläche auch Werte an die Heizung gesendet werden. Zum anderen ist dann noch der Typ des zu emulierenden Raumgerätes auszuwählen (s.u.). *Es sollte dann kein weiteres Raumgerät am Bus hängen, da sonst beide Sender ihre jeweils eigenen Werte an den Heizungsregler schicken, so dass kein konsistenter Betrieb möglich ist.* |
 | PPS: QAA Modell | QAA70 | Nur PPS: Modell des zu imitierenden Raumgerätes (QAA50/QAA70). |
+| Gerätefamilie | 0 | 0 = automatische Reglererkennung aktiv (empfohlene Einstellung). Bei einer fehlerhaften Erkennung kann die Gerätefamilie (Ausgabe von `/6225`) des angeschlossenen Reglers fest eingetragen werden. |
+| Gerätevariante | 0 | 0 = automatische Reglererkennung aktiv (empfohlene Einstellung). Bei einer fehlerhaften Erkennung kann die Gerätevariante (Ausgabe von `/6226`) des angeschlossenen Reglers fest eingetragen werden. |
 | URL Passkey | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "URL Passkey" | 
 | HTTP-Authentifizierung | -keine Voreinstellung- | Optionale Sicherheitsfunktion: "User-Pass" (Basic HTTP Auth) |	
 | DHCP verwenden | Ein | DHCP verwenden (= automatische IP-Adressvergabe durch Router) (Aus/Ein) |	
@@ -202,8 +214,8 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | MAC-Adresse | 00:80:41:19:69:90 | (Voreingestellte) MAC-Adresse des LAN-Shields oder MAC-Adresse des ESP |
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
-| WLAN SSID | -keine Voreinstellung- | SSID des WLAN bei Verwendung der WiFi-ESP-Lösung |	
-| WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN bei Verwendung der WiFi-ESP-Lösung |
+| WLAN SSID | -keine Voreinstellung- | SSID des WLAN |	
+| WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN |
 | Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
 | IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
 | Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
@@ -218,6 +230,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
 | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
+| Sensoren | 1 | Anzahl der angeschlossenen BME280-Sensoren |
 | TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
 | RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 1 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
 | RGT1 Präsenztaste: Pin | 0 | Raumgerät 1 Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
@@ -233,6 +246,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Verwenden | Serial | Debugging-Funktion verwenden (Aus/Serial/Telnet) |
 | Verbositätsmodus | Ein | Verbositätsmodus aktiviert (Aus/Ein) |
 | Monitor Modus | Aus | Monitor Modus aktiviert (Aus/Ein) |
+| Unbekannte Parameter anzeigen | Ein | Unbekannte bzw. nicht verfügbare Parameter ("error 7 - parameter not supportet") anzeigen (Ein/Aus). |
 
 
 ---  
