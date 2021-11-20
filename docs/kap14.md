@@ -22,6 +22,7 @@
 - Evtl. Adapter falsch angeschlossen (an G+ statt an CL+)
 - Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
 - Evtl. falsche Pinbelegung (Rx/Tx)
+- Evtl. Transistoren Q1/Q2 vertauscht
 - Evtl. kalte Lötstellen
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
     
@@ -61,6 +62,8 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 
 ## 14.5 Regler wird nicht korrekt erkannt
 
+- Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
+- Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
 - Regler ist ausgeschaltet
 - Regler wurde erst nach dem Arduino angeschaltet (automatische Reglererkennung funktioniert dann nicht)
 - Regler ist nicht oder falsch mit dem Adapter verbunden
