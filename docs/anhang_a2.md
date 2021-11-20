@@ -36,12 +36,12 @@ RXD = Digitalpin Empfangen
 
 | Anzahl | Komponente | Bezeichnung | Abbildung | Anmerkung | 
 |:-----------:|:-------------:|:----------:|:-----------:|:------:|  
-| 1 | LED (rot) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/led_small.jpg"> | Betriebsspannung max. 2,8V, Sperrspannung 5V <br> ***Einbauausrichtung beachten!*** |  
-| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1n4148_small.jpg"> | <br> ***Einbauausrichtung beachten!*** |  
-| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/eeprom_small.jpg"> | nicht benötigt für die ESP32-Boardvariante <br> ***Einbauausrichtung beachten!*** |  
-| 2 | Optokoppler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4n25_small.jpg"> | <br> ***Einbauausrichtung beachten!*** |    
-| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc547_small.jpg"> | <br> ***Einbauausrichtung beachten!*** |  
-| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc557_small.jpg"> | <br> ***Einbauausrichtung beachten!*** |  
+| 1 | LED (rot) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/led_small.jpg"> | Betriebsspannung max. 2,8V, Sperrspannung 5V <br> ***Ausrichtung beachten!*** |  
+| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1n4148_small.jpg"> | <br> ***Ausrichtung beachten!*** |  
+| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/eeprom_small.jpg"> | nicht benötigt für die ESP32-Boardvariante <br> ***Ausrichtung beachten!*** |  
+| 2 | Optokoppler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4n25_small.jpg"> | <br> ***Ausrichtung beachten!*** |    
+| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc547_small.jpg"> | <br> ***Ausrichtung beachten!*** |  
+| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc557_small.jpg"> | <br> ***Ausrichtung beachten!*** |  
 | 3 | Widerstand 330kΩ | R1, R4, R7 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330k_small.png"> | orange, orange, schwarz, orange, braun | 
 | 1 | Widerstand 1.5kΩ | R2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1k5_small.png"> | braun, grün, schwarz, braun, braun | 
 | 1 | Widerstand 300Ω | R3 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330_small.png"> | orange, orange, schwarz, schwarz, braun | 
