@@ -82,7 +82,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ## 14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden
 
 - Adapter ist evtl. als RGT2 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
     
 ---
     
@@ -97,14 +97,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ## 14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden
 
 - Adapter ist evtl. als RGT1 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
     
 ---
     
 
 ## 14.10 Einstellungen des Reglers können nicht via Adapter verändert werden
 
-- Zugriff des Adapters ist auf Lesen beschränkt (`FL_RONLY` in *BSB_LAN_config.h*)  
+- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
     
 ---
     
