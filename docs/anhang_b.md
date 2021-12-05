@@ -6,7 +6,7 @@
 
 # Anhang B: Arduino DUE Pinout
   
-***Das nachfolgend abgebildete 'inoffizielle' Arduino DUE Pinout-Schema stammt von [Rob Gray](www.robgray.com).  
+***Das nachfolgend abgebildete 'inoffizielle' Arduino DUE Pinout-Schema stammt von [Rob Gray](https://www.robgray.com).  
 Es ist u.a. auch direkt als [PDF](http://www.robgray.com/temp/Due-pinout.pdf) verfügbar.  
 Vielen Dank für die großartige Arbeit!***  
   
