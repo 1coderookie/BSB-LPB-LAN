@@ -236,7 +236,7 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
     
 ## 7.2 Relais und Relaisboards  
   
-Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit den Varianten des [URL-Befehls `/G`](kap05.md#51-url-befehle) auch bereits vorgesehen, dass am Arduino zusätzliche Relais oder Relaisboards angeschlossen und mit BSB-LAN gesteuert werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
+Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit den Varianten des [URL-Befehls `/G`](kap05.md#51-url-befehle) auch bereits vorgesehen, dass am Arduino/ESP32 zusätzliche Relais oder Relaisboards angeschlossen und mit BSB-LAN gesteuert werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
 ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!***
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/relaisboards.jpg">  
