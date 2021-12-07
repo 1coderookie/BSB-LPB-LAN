@@ -506,7 +506,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
-    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu akltivieren:  
+    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
     
       `//#define ESP32_USE_SD`  
     
