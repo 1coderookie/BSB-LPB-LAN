@@ -14,6 +14,9 @@
 Stecke eine (möglichst aktuelle) FAT32-formatierte microSD-Karte in den Speicherkartenplatz des Ethernet-Shields, bevor du den Arduino einschaltest.  
         
 Aktiviere vor dem Flashen das Definement `#define LOGGER` in der Datei *BSB_LAN_config.h*, füge die zu loggenden Parameter zur Variable `log_parameters` hinzu und bestimme das Logintervall mit der Variable `log_interval`. Bitte beachte auch die entsprechenden Punkte in Kap. [2.2](kap02.md#22-konfiguration).  
+  
+Kommt ein Olimex ESP32-EVB zum Einsatz (oder wird ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet) und sollen die geloggten Werte auf die microSD-Karte anstatt in den Flash-Speicher geschrieben werden (was sehr zu empfehlen ist!), dann muss das folgende Definement in der Datei *BSB_LAN_config.h* aktiviert werden: `#define ESP32_USE_SD`.  
+  
 Später können während der Laufzeit sowohl das Intervall als auch die Logging-Parameter mittels des Befehls `"/L=[Intervall],[Parameter1],...,[Parameter20]"` geändert werden.  
 
 Sämtliche Daten werden auf der Karte in der Datei *datalog.txt* im CSV-Format gespeichert und können somit leicht in Excel oder OpenOffice Calc importiert werden.  
