@@ -53,7 +53,7 @@ Der Anschluss des Adapters erfolgt an den beschriebenen Pins des BSB mit 'Plus a
 Adapter-"CL+" an Regler-"CL+" sowie  
 Adapter-"CL-" an Regler-"CL-".  
   
-Der zusätzliche Anschluss „G+“ beim BSB führt 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
+Der zusätzliche Anschluss „G+“ beim BSB führt konstante 12V und ist für die Hintergrundbeleuchtung der entsprechenden Raumgeräte vorgesehen. Dieser ist für den Anschluss des Adapters NICHT zu verwenden!  
 (Sollte der Adapter irrtümlicherweise an G+ statt an CL+ angeschlossen werden, so leuchtet zwar die LED, allerdings ist keinerlei Funktion gegeben.)  
   
 ---  
