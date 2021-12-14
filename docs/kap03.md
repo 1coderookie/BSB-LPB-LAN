@@ -113,7 +113,14 @@ des Adapters anzuschließen ist.
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
 
-*BSB am "X86"-Anschluss eines RVS21-Reglers (Achtung, nur bestimmte Pins!).* 
+*BSB am "X86"-Anschluss eines RVS21-Reglers.* 
+   
+---   
+   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Baxi_Luna_BSB.png">      
+
+*BSB am "M2"-Anschlussblock (hinter der Kunststoffabdeckung links im Bild) einer Baxi Luna Platinum.*  
+*User "olympia" hat freundlicherweise eine Anleitung für das Anschließen für die Baxi Luna Platinum geschrieben und auf [seinem GitHub-Account](https://github.com/olympia/BaxiPlatinum_BSB_LAN/blob/main/LunaPlatinum-BSBLAN.pdf) zur Verfügung gestellt. Vielen Dank dafür!* 
    
 ---   
    
