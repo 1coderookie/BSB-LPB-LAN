@@ -33,19 +33,19 @@ Nun solltest du den Due in der Auflistung bei "Werkzeuge/Board" finden und ausw�
   
 ***ESP32***  
 1. Starte die Arduino IDE und klicke auf "Datei/Voreinstellungen" (Shortcut: Strg+Komma).  
-2. Bei dem sich nun öffnenden Dialogfenster füge unten im Eingabefeld bei "Zusätzliche Boardverwalter-URLs:" folgenden Link ein: `https://dl.espressif.com/dl/package_esp32_index.json`. Sollte in dem Feld bereits eine oder mehrere URLs stehen, so kann der zusätzliche Eintrag einfach durch ein Komma getrennt zu den bestehenden Einträgen hinzugefügt werden.  
+2. Bei dem sich nun öffnenden Dialogfenster füge unten im Eingabefeld bei "Zusätzliche Boardverwalter-URLs:" folgenden Link ein: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`. Sollte in dem Feld bereits eine oder mehrere URLs stehen, so kann der zusätzliche Eintrag einfach durch ein Komma getrennt zu den bestehenden Einträgen hinzugefügt werden.  
 3. Klicke dann auf "OK".  
    
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/boardverwalter_URL.png">  
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/boardverwalter_URL_202.png">  
 
    *Das Dialogfenster "Voreinstellungen" mit dem hinzugefügten Link in der Zeile "Zusätzliche Boardverwalter-URLs".*  
 
 4. Als nächstes öffne den "Boardverwalter" unter "Werkzeuge/Board".  
 5. In dem sich nun öffnenden Dialogfenster gib oben in der Suchzeile "ESP32" ein.  
 6. Suche dann den Eintrag "esp32 by Espressif Systems".  
-7. Klicke auf den Eintrag, *wähle Version 1.0.5 aus* (oder höher, falls verfügbar) und klicke dann auf die Schaltfläche "Installieren".  
+7. Klicke auf den Eintrag, *wähle Version 2.0.2 aus* (oder höher, falls verfügbar) und klicke dann auf die Schaltfläche "Installieren". **Sollte eine Version kleiner als 2.0.2 installiert sein, führe bitte ein Update auf 2.0.2 (oder höher) aus.**  
 
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/boardverwalter_esp32-lib.png">  
+   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/boardverwalter_esp32-lib_202.png">  
 
    *Das korrekt installierte ESP32-Framework im Boardverwalter.*  
 
