@@ -100,7 +100,7 @@ Führe die folgenden Schritte aus:
     
     | Hinweise |
     |:---------|
-    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 1.0.5 (oder höher, falls verfügbar) installiert ist. |   
+    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 2.0.2 (oder höher, falls verfügbar) installiert ist. |   
     | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
   
   
