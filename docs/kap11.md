@@ -291,6 +291,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Bösch SWP8-RX33 \[RVS43\] (Wärmepumpe) {BSB}
 
+-   Chappée Klista + HTE C 24 \[LMS14\] (Gasbrenner) {BSB}
+
 -   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   CTA Optiheat 1-18es \[RVS61\] (Wärmepumpe) {BSB}  
