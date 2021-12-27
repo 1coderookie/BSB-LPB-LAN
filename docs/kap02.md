@@ -189,13 +189,13 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 
 | Funktion | (Vor-)Einstellung | Erklärung |
 |:-------------:|:-------------:|:-------------------------------------------:|
-| Advanced options | Aus | Anzeige der erweiterten Einstellungen von BSB-LAN (Aus/Ein). Für Zugriff auf sämtliche Einstellungsmöglichkeiten von BSB-LAN muss "Ein" ausgewählt (und anschließend unten auf "Parameter speichern" geklickt) werden. |
+| Erweiterte Einstellungen anzeigen | Aus | Anzeige der erweiterten Einstellungen von BSB-LAN (Aus/Ein). Für Zugriff auf sämtliche Einstellungsmöglichkeiten von BSB-LAN muss "Ein" ausgewählt (und anschließend unten auf "Parameter speichern" geklickt) werden. |
 | Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_LAN_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
 | Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
 | OTA Update | Aus | OTA-Updatefunktion (OTA = Over The Air) deaktiviert (Aus) / aktiviert (Ein). |
-| RX pin number | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte RX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
-| TX pin number | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte TX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
+| RX Pin Nummer | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte RX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
+| TX Pin Nummer | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte TX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
 | Eigene Adresse | 66 | Eigene Adresse des Adapters |
 | Zieladresse | 0 | Zieladresse für die Abfragen |	
@@ -224,10 +224,10 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
 | Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
 | Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
-| Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
-| Auf SD Karte | Aus | Zu loggende Werte auf der microSD-Karte speichern (Aus/Ein) |	
+| Logging aktiv | Aus | Logging aktiviert (auch nötig für MQTT!) und zu loggende Werte ggf. auf der microSD-Karte speichern (Aus/Ein) |	
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
+| Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
 | Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
 | Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
 | Sensoren | 1 | Anzahl der angeschlossenen BME280-Sensoren |
