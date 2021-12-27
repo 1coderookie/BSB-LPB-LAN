@@ -272,7 +272,7 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Austria Email LWPK 8 \[RVS21\] (Wärmepumpe) {BSB}
 
 -   Baxi Block Kondens 18 \[RVS13\] (ölbrenner) {BSB}
--   
+   
 -   Baxi Luna Duo Tec MP \[LMS14\] (Wärmepumpe) {BSB}  
 
 -   Baxi Luna Platinum 1.18 \[LMS15\] (Gasbrenner) {BSB}
@@ -340,8 +340,6 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Olymp SHS 730 \[RVS63\] (Ölbrenner) {BSB}  
 
 -   Olymp WHS 500 \[RVS61\] (Wärmepumpe) {BSB}  
-
--   Samsung AE090JXEDEH/EU \[RVS43.345\] (Wärmepumpe) {BSB}  
 
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner) {PPS}  
 
