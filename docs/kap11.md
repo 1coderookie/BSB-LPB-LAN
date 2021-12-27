@@ -126,6 +126,8 @@ Danke!
 
 -   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje TrioCondens BGB 15-38E \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
@@ -166,13 +168,15 @@ Danke!
 
 -   Brötje WGB EVO 38I \[LMS15\] (Gasbrenner) {BSB}
 
+-   Brötje WGB-K EVO 20/28I \[LMS15\] (Gasbrenner) {BSB}   
+
 -   Brötje WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner) {BSB}
 
--   Brötje WGB S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
+-   Brötje WGB-S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje WGB-U 15H \[LMS14\] (Gasbrenner) {BSB}
 
@@ -183,6 +187,9 @@ Danke!
 -   Brötje WMC 20/33 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje WMS 12B \[LMS15\] (Gasbrenner) {BSB}
+
+-   Brötje WMS 12C \[LMS15\] (Gasbrenner) {BSB}
+
 
 ***ACHTUNG:***  
 ***Die neuen Modellreihen Brötje WLS/WLC und
@@ -250,6 +257,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Extensa Duo + \[RVS21\] (Wärmepumpe) {BSB}  
 
+-   Atlantic Alféa Extensa Duo AI 32 \[RVS21\] (Wärmepumpe) {BSB}
+
 -   Atlantic Alféa Extensa + \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa 6+ \[RVS21\] (Wärmepumpe) {BSB}  
@@ -270,11 +279,17 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Baxi Luna Platinum+ \[LMS15\] (Gasbrenner) {BSB}
 
--   Baxi Luna Platinum+ 1.126A \[LMS15\] (Gasbrenner) {BSB}  
+-   Baxi Luna Platinum+ 1.12GA \[LMS15\] (Gasbrenner) {BSB}  
+
+-   Baxi Luna Platinum+ 1.32GA \[LMS15\] (Gasbrenner) {BSB}
 
 -   Baxi Luna Platinum+ 24 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Bösch (unbekanntes Modell) \[RVS63\] (Wärmepumpe] {BSB}  
+
+-   Bösch SLS10 \[RVS43\] (Wärmepumpe] {BSB}  
+
+-   Bösch SWP8-RX33 \[RVS43\] (Wärmepumpe) {BSB}
 
 -   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
 
@@ -294,6 +309,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
+-   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
+
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
 
 -   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
@@ -311,6 +328,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   HANSA SND 30TK \[RVS13\] (Ölbrenner) {BSB}  
 
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (Gasbrenner) {BSB}  
+
+-   MAN MHG Ecostar 200 \[RVS53\] (Ölbrenner) {BSB}  
 
 -   MHG Ecostar 200 \[RVS53\] (Ölbrenner) {BSB}  
 
