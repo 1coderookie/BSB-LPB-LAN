@@ -204,6 +204,8 @@ Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp
 
 `http://<IP-Adresse>/Q`  
 
+*Achtung: Diese Abfrage dauert eine Weile - bitte warte, bis der ganze 'complete dump' abgeschlossen ist!*  
+  
 Diese Funktion geht alle Command IDs durch, die in der Datei *BSB_LAN_defs.h* hinterlegt sind und schickt diejenigen, die nicht für den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR, 0x06) an den Regler.  
 Das passiert bei Parametern, bei denen bisher nur eine Command ID bekannt ist, ständig und erzeugt die bekannten „error 7 (parameter not supported)"-Fehlermeldungen.  
 
@@ -218,64 +220,118 @@ Da es aber auch genauso gut umgekehrt sein kann, dass die "neue" Command ID der 
 Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben sind, sieht die auf `http://<IP-Adresse>/Q` folgende Webausgabe exemplarisch so aus:
     
 ```
+Version: 2.0.108-20211114123620
+Scanne nach Geräten...
+Geräteadresse gefunden: 0
+Geräteadresse gefunden: 3
 Teste Geräteadresse 0...
-Gerätefamilie: 96
-Gerätevariante: 100
-Geräte-Identifikation: RVS43.222/100
-Software-Version: 1.3
-Entwicklungs-Index: (parameter not supported)
-Objektverzeichnis-Version: 1.0
-Bootloader-Version: (parameter not supported)
-EEPROM-Version: 50.0
+Gerätefamilie: 134
+Gerätevariante: 146
+Geräte-Identifikation: RVS43.345/146
+Software-Version: 4.1
+Entwicklungs-Index:  000002 - decoding error
+Objektverzeichnis-Version: 301.1
+Bootloader-Version:  (parameter not supported)
+EEPROM-Version: ---
+Konfiguration - Info 2 OEM:  (parameter not supported)
+Parameterversion:  000001 - unknown type
+Parametersatznummer:  000001 - unknown type
+Kesseltypnummer OEM:  (parameter not supported)
+Parametersatzgruppe OEM:  (parameter not supported)
 Bisher unbekannte Geräteabfrage: 20
-Hersteller-ID (letzten vier Bytes): 31398
-Bisher unbekannte Geräteabfrage: 00010001F4 - unknown type
-Außentemperatur (10003): 5.9 °C
-Außentemperatur (10004): 5.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-96;100;RVS43.222/100;1.3;;1.0;50.0;;;;;;20;31398;00010001F4;
-
+Parametersatznummer OEM:  (parameter not supported)
+Info 3 OEM:  (parameter not supported)
+Info 4 OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
+Hersteller-ID (letzten vier Bytes): 34979
+Außentemperatur (10003): 3.9 °C
+Außentemperatur (10004): 3.9 °C
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
+134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
 
 Starte Test...
 
 Test beendet.  
+
+Complete dump:
+DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
+DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
+DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
+DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
+[...]
+Fertig.
 ```
     
 Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern (siehe die aufgeführten Parameter mit dem Hinweis "error 7 (parameter not supported)" zwischen "Starte Test..." und "Test beendet.") für den spezifischen Regler hingegen sieht exemplarisch so aus:
     
 ```
-Gerätefamilie: 92 
-Gerätevariante: 100 
-Geräte-Identifikation: AVS37.294/100 
-Software-Version: 2.0 
-Entwicklungs-Index: 
-Objektverzeichnis-Version: 1.3 
-Bootloader-Version: 
-EEPROM-Version: 
-Bisher unbekannte Geräteabfrage: 20 
-Hersteller-ID (letzten vier Bytes): 58469 
-Bisher unbekannte Geräteabfrage: 
-Außentemperatur (10003): 
-Außentemperatur (10004): 
-
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6237;
-92;100;AVS37.294/100;2.0;;1.3;;;;;;;20;58469;;
-
+Version: 2.0.108-20211114123620
+Scanne nach Geräten...
+Geräteadresse gefunden: 0
+Geräteadresse gefunden: 3
+Teste Geräteadresse 0...
+Gerätefamilie: 134
+Gerätevariante: 146
+Geräte-Identifikation: RVS43.345/146
+Software-Version: 4.1
+Entwicklungs-Index:  000002 - decoding error
+Objektverzeichnis-Version: 301.1
+Bootloader-Version:  (parameter not supported)
+EEPROM-Version: ---
+Konfiguration - Info 2 OEM:  (parameter not supported)
+Parameterversion:  000001 - unknown type
+Parametersatznummer:  000001 - unknown type
+Kesseltypnummer OEM:  (parameter not supported)
+Parametersatzgruppe OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage: 20
+Parametersatznummer OEM:  (parameter not supported)
+Info 3 OEM:  (parameter not supported)
+Info 4 OEM:  (parameter not supported)
+Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
+Hersteller-ID (letzten vier Bytes): 34979
+Außentemperatur (10003): 3.9 °C
+Außentemperatur (10004): 3.9 °C
+6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
+134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
 
 Starte Test...
 
-5
-5 Uhrzeit und Datum - Sommerzeitbeginn Tag/Monat: error 7 (parameter not supported) 
-DC C2 0A 0B 06 3D 05 04 B3 DA F8 
-DC 8A 42 14 07 05 3D 04 B3 00 FF 03 19 FF FF FF FF 16 C4 C8 
-6
-6 Uhrzeit und Datum - Sommerzeitende Tag/Monat: error 7 (parameter not supported) 
-DC C2 0A 0B 06 3D 05 04 B2 CA D9 
-DC 8A 42 14 07 05 3D 04 B2 00 FF 0A 19 FF FF FF FF 16 80 41 
+5450 - Trinkwasser Durchlauferhitzer - Schwelle zum Beenden einer BW-Zapfung bei DLH
+0x313D10B5
+DC C2 00 0B 06 3D 31 10 B5 9F A2
+DC 80 42 0D 07 31 3D 10 B5 00 10 02 00
+
+5451 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei DLH in Komfort
+0x313D10B6
+DC C2 00 0B 06 3D 31 10 B6 AF C1
+DC 80 42 0D 07 31 3D 10 B6 00 C0 90 2D
+
+5452 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei Dlh in Heizbetrieb
+0x313D10B7
+DC C2 00 0B 06 3D 31 10 B7 BF E0
+DC 80 42 0D 07 31 3D 10 B7 00 C0 A7 1D
+
+5455 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 40°C (°K)
+0x313D10B8
+DC C2 00 0B 06 3D 31 10 B8 4E 0F
+DC 80 42 0D 07 31 3D 10 B8 00 00 52 60
+
+5456 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 60°C (°K)
+0x313D10B9
+DC C2 00 0B 06 3D 31 10 B9 5E 2E
+DC 80 42 0D 07 31 3D 10 B9 00 00 65 50 
 
 Test beendet.
 
 Fertig.  
+
+Complete dump:
+DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
+DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
+DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
+DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
+[...]
+Fertig.
 ```  
     
 In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik (bsb (ät) code-it.de) gemeldet werden, damit eine entsprechende Anpassung vorgenommen werden kann.  
