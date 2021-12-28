@@ -184,8 +184,11 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
   
 Die BSB-LAN-Software ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen, die im [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32) beschrieben sind.  
 
-Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinendesigns wird jedoch die Verwendung des [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) oder des [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) empfohlen.  
-  
+Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinendesigns wird jedoch die Verwendung des [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) oder des [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) (beide nutzen das ESP32-**WROOM32**-Modul) empfohlen.  
+
+| Achtung, wichtiger Hinweis |
+|:--------------------------|
+| Aufgrund des Platinendesigns des Adapters und der für die Buskommunikation genutzten RX/TX-Pins (16/17) ist es ausdrücklich empfohlen, immer einen ESP32-**WROOM32**-Modultyp zu wählen, falls ein anderes ESP32-Board als die von uns empfohlenen Boards eingesetzt werden soll. Solltest du dennoch ein *WROVER*-Modul einsetzen wollen oder müssen, so müssen entweder andere Pins anstelle von 16/17 für RX/TX genutzt werden (da WROVER-Module diese beiden Pins intern für das SPI-PSRAM-Modul verwenden), oder es muss im BSB-LAN-Code die Verwendung des PSRAM deaktiviert werden. Aus diesen Gründen empfehlen wir eindringlich, nur Boards mit dem Modultyp WROOM32 zu verwenden. | 
   
 ---
 
