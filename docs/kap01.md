@@ -188,7 +188,8 @@ Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinend
 
 | Achtung, wichtiger Hinweis |
 |:--------------------------|
-| Aufgrund des Platinendesigns des Adapters und der für die Buskommunikation genutzten RX/TX-Pins (16/17) ist es ausdrücklich empfohlen, immer einen ESP32-**WROOM32**-Modultyp zu wählen, falls ein anderes ESP32-Board als die von uns empfohlenen Boards eingesetzt werden soll! <br> Solltest du dennoch ein *WROVER*-Modul einsetzen wollen oder müssen, so müssen entweder andere Pins anstelle von 16/17 für RX/TX genutzt werden (da WROVER-Module diese beiden Pins intern für das SPI-PSRAM-Modul verwenden), oder es muss im BSB-LAN-Code die Verwendung des PSRAM deaktiviert werden. Aus diesen Gründen empfehlen wir eindringlich, nur Boards mit dem Modultyp WROOM32 zu verwenden. | 
+| Aufgrund des Platinendesigns des Adapters und der für die Buskommunikation genutzten RX/TX-Pins (16/17) ist es ausdrücklich empfohlen, immer einen ESP32-**WROOM32**-Modultyp zu wählen, falls ein anderes ESP32-Board als die von uns empfohlenen Boards eingesetzt werden soll! <br> Solltest du dennoch ein *WROVER*-Modul einsetzen wollen oder müssen, so müssen entweder andere Pins anstelle von 16/17 für RX/TX genutzt werden (da WROVER-Module diese beiden Pins intern für das SPI-PSRAM-Modul verwenden), oder es muss im BSB-LAN-Code die Verwendung des PSRAM deaktiviert werden. <br> Aus diesen Gründen empfehlen wir eindringlich, nur Boards mit dem Modultyp WROOM32 zu verwenden. |
+| Beachte bitte außerdem, dass die Autodetect-Funktion von BSB-LAN für den angeschlossenen Regler nur mit den von uns empfohlenen Boardtypen funktioniert! |
   
 ---
 
