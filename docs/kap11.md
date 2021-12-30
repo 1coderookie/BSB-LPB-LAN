@@ -130,6 +130,8 @@ Danke!
 
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje TrioCondens BGB 28E \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
