@@ -176,6 +176,8 @@ Danke!
 
 -   Brötje WGB-M EVO 20I \[LMS15\] (Gasbrenner) {BSB}  
 
+-   Brötje WGB Pro EVO 15C \[LMU75\] (Gasbrenner) {BSB}
+
 -   Brötje WGB Pro EVO 20C \[LMU75\] (Gasbrenner) {BSB}
 
 -   Brötje WGB-S 17/20E EcoTherm Plus \[LMS14\] (Gasbrenner) {BSB}
