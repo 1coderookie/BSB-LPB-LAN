@@ -98,10 +98,9 @@ Führe die folgenden Schritte aus:
     
     - Für das empfohlene **[Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb)** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
     
-    | Hinweise |
+    | Achtung, wichtiger Hinweis |
     |:---------|
-    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. |   
-    | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
+    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
   
   
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
