@@ -411,11 +411,11 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32nodeMCU-Gehaeuse.jpg">  
   
-*3D-Druckmodell des Gehäuses für den empfohlenen ESP32 NodeMCU inkl. LAN-Shield und Adapter.*  
+*3D-Druckmodell des Gehäuses für den empfohlenen ESP32 NodeMCU inkl. Adapter.*  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32Olimex-Gehaeuse.jpg">  
   
-*3D-Druckmodell des Gehäuses für den empfohlenen Olimex inkl. LAN-Shield und Adapter.*  
+*3D-Druckmodell des Gehäuses für den empfohlenen Olimex inkl. Adapter.*  
 
 ---
 
