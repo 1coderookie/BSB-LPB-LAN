@@ -231,7 +231,10 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige NodeMCUs - diese passen *nicht*!  
 2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
   
-
+| Achtung, wichtiger Hinweis |
+|:---------------------------|
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
+  
 ---
   
 #### 1.3.1.2 ESP32: Olimex ESP32-EVB
@@ -245,6 +248,7 @@ Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität
    
 | Achtung, wichtige Hinweise |
 |:---------------------------|
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |
 | *Achtung, beim Olimex ESP32-EVB ist der Anschluss weiterer Hardware aufgrund der wenigen freien/ungenutzten Pins nur sehr eingeschränkt und evtl. mit erhöhtem Aufwand möglich!* <br> Sollen zusätzliche Sensoren (bspw. OneWire, DHT22) oder andere Hardware an das Setup angeschlossen und mit BSB-LAN genutzt werden, so sollte in Betracht gezogen werden, den erwähnten [Joy-It NodeMCU ESP32 (*WLAN-Anbindung*)](kap01.md#1311-esp32-nodemcu-joy-it) oder einen [Arduino Due + LAN-Shield (*LAN-Anbindung*)](kap01.md#121-due--lan-das-lan-shield) zu verwenden, da bei diesen Boards mehr freie Pins vorhanden sind. <br> Als Alternative zum Olimex ESP32-EVB kann auch der Olimex ESP32-PoE genutzt werden, welcher im Vergleich zum EVB mehr freie Pins aufweist. Hier passt der Adapter ebenfalls auf den UEXT-Stecker des Olimex-Boards, allerdings passt das [Gehäuse](kap01.md#15-gehäuse) des EVB nicht, für das eine STL-Datei im Repo zu finden ist. |
 | Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine exakt in der Mitte der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
 | Bei Adapterboards, die an Olimex-Boards am UEXT Anschluss verwendet werden *und* eine BSB-LAN-Board-Revision bis einschließlich 4.1 haben (und *nur* in dieser Kombination) starten diese nicht korrekt, wenn bei aufgestecktem BSB-LAN-Adapter die Stromzufuhr unterbrochen wurde. Es muss dann zusätzlich nach dem Einschalten einmal der Reset-Button gedrückt werden. <br> Um dieses Problem zu beheben, muss mit einem spitzen und scharfen Gegenstand (bspw. Rasierklinge/Teppichmesser/Skalpell) die vom Widerstand R6 in Richtung des UEXT-Steckers abgehende Leiterbahn (rot markiert) auf der Platine durchtrennt werden (gelb markiert). Am besten ist dies mit einem Multimeter vorher und nachher zu überprüfen, ob zwischen dem Ende von R6 und Pin 3 des UEXT-Anschlusses (k)eine Verbindung (mehr) besteht. Stattdessen muss dann eine leitende Verbindung mittels eines dünnen Drahtes zwischen diesem Ende des R6 zu Pin 10 des UEXT-Anschlusses (unterhalb des „U“ von „UEXT“) hergestellt werden (grün markiert). <br> <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_fix_R6.jpg"> <br> **BSB-LAN Boards ab der Board-Revision 4.2 sind von diesem Problem nicht mehr betroffen.** |
@@ -281,6 +285,10 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
 | Hinweis |
 |:--------|
 | Das abgebildete ESP32 "D1 R32 Entwicklerboard" kann ich persönlich ausdrücklich NICHT empfehlen, da es offenbar deutlich schlechtere Empfangseigenschaften aufweist als andere ESP32-Boards. Obwohl der Router nur wenige Meter entfernt stand, war es mir nicht möglich, eine stabile WLAN-Verbindung aufzubauen. Auf Nachfrage beim Anbieter wurde mir dieser Eindruck bestätigt, die "Ursache dafür ist in der Bauform begründet". |    
+  
+| Achtung, wichtiger Hinweis |
+|:---------------------------|
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |
 
 ---  
   
@@ -319,6 +327,10 @@ Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X"
 *Der umgerüstete Adapter v2 für die Nutzung mit einem ESP32.*  
   
 Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu bestücken und sich eine kleine Adapterplatine aus einer Lochrasterplatine und Pinheadern aufzubauen, auf der der Adapter und das ESP32-Board aufgesteckt werden könnnen, um einen stabilen Aufbau und eine sichere Verbindung zu gewährleisten.     
+  
+| Achtung, wichtiger Hinweis |
+|:---------------------------|
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |
     
 ---  
    
