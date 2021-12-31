@@ -138,6 +138,8 @@
 
 [**12. Exkurs: Arduino IDE**](kap12.md)  
    * [12.1 Installation](kap12.md#121-installation)  
+      * [12.1.1 Arduino Due](kap12.md#1211-arduino-due)  
+      * [12.1.2 ESP32](kap12.md#1212-esp32)  
    * [12.2 Serieller Monitor](kap12.md#122-serieller-monitor)  
 
 [**13. Etwaige Fehlermeldungen und deren mögliche Ursachen**](kap13.md)  
