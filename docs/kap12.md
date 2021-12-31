@@ -18,9 +18,10 @@ Downloade und installiere die aktuelle Version der Arduino IDE von [https://www.
 
 ---
 
+### 12.1.1 Arduino Due  
+  
 **Installation der spezifischen Boardbibliotheken**  
   
-***Arduino Due***  
 1. Starte die Arduino IDE und öffne den "Boardverwalter" unter "Werkzeuge/Board".  
 2. In dem sich nun öffnenden Dialogfenster gib oben in der Suchzeile "Arduino SAM Boards" ein, wo der Due enthalten ist.  
 3. Klicke auf den Eintrag "Arduino SAM Boards (32-bits ARM Cortex-M3) by Arduino" und dann auf die Schaltfläche "Installieren".  
@@ -31,7 +32,12 @@ Downloade und installiere die aktuelle Version der Arduino IDE von [https://www.
 
 Nun solltest du den Due in der Auflistung bei "Werkzeuge/Board" finden und auswählen können.
   
-***ESP32***  
+---  
+  
+### 12.2.2 ESP32  
+  
+**Installation der spezifischen Boardbibliotheken**    
+  
 1. Starte die Arduino IDE und klicke auf "Datei/Voreinstellungen" (Shortcut: Strg+Komma).  
 2. Bei dem sich nun öffnenden Dialogfenster füge unten im Eingabefeld bei "Zusätzliche Boardverwalter-URLs:" folgenden Link ein: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`. Sollte in dem Feld bereits eine oder mehrere URLs stehen, so kann der zusätzliche Eintrag einfach durch ein Komma getrennt zu den bestehenden Einträgen hinzugefügt werden.  
 3. Klicke dann auf "OK".  
