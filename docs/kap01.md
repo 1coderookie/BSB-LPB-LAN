@@ -183,11 +183,15 @@ Zur Verwendung muss das Definement `#define WIFI` in der Datei *BSB_lan_config.h
 
   
 Die BSB-LAN-Software ist auch auf einem ESP32 lauffähig. Es sind allerdings zwingend bestimmte Anpassungen vorzunehmen, die im [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32) beschrieben sind.  
+  
+| Achtung, wichtiger Hinweis |
+|:---------------------------|
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |
 
 Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinendesigns wird jedoch die Verwendung des [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) oder des [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) (beide nutzen das ESP32-**WROOM32**-Modul) empfohlen.  
 
 | Achtung, wichtige Hinweise |
-|:--------------------------|
+|:---------------------------|
 | Falls du ein anderes als die empfohlenen Boards verwenden möchtest, prüfe immer das spezifische Datenblatt und versichere dich, dass du Pins für RX/TX auswählst, die nicht anderweitig verwendet werden. Diese müssen dann in der Datei *BSB_LAN_config.h* bei dem entspr. Definement eingetragen werden! |
 | Beachte bitte außerdem, dass die Autodetect-Funktion von BSB-LAN für den angeschlossenen Regler nur mit den von uns empfohlenen Boardtypen funktioniert! |
 | Es ist ausdrücklich empfohlen, immer einen ESP32-**WROOM32**-Modultyp zu wählen, falls ein anderes ESP32-Board als die von uns empfohlenen Boards eingesetzt werden soll! <br> Solltest du dennoch ein *WROVER*-Modul einsetzen wollen oder müssen, so müssen entweder andere Pins anstelle von 16/17 für RX/TX genutzt werden, da WROVER-Module diese beiden Pins intern für das SPI-PSRAM-Modul verwenden, oder es muss im BSB-LAN-Code die Verwendung des PSRAM deaktiviert werden. |
