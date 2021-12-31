@@ -29,9 +29,9 @@ Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die
   
 Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem die Einstellungen der BSB-LAN-Software (ab v2.0) gespeichert werden. Der Adapter lässt sich komfortabel und sicher auf den Due aufstecken. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt-front.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v4-unbestueckt-front.jpg">  
 
-*Die BSB-LAN-Adapterplatine v3, Oberseite, unbestückt.*  
+*Die BSB-LAN-Adapterplatine, Due-Version, v4.1, Oberseite, unbestückt.*  
     
 | Hinweis |
 |:--------|
@@ -43,17 +43,22 @@ Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem di
 
 Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, unbestückt.*  
-  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB_assembled.jpeg">  
-
-*Die "BSB-LAN ESP32"-Adapterplatine, bestückt.*    
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
   
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
-Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden. 
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
 
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
+    
+Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden.  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen Olimex.*   
+  
 Die ESP32-spezifische Version des BSB-LAN-Adapters weist kein EEPROM auf, Einstellungen werden im Flashspeicher des ESP32 gespeichert. 
 
 | Hinweis |
@@ -204,18 +209,24 @@ Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinend
 
 Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, unbestückt.*  
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB_assembled.jpeg">  
-
-*Die "BSB-LAN ESP32"-Adapterplatine, bestückt.*    
-  
+    
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
   
-Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
 
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
+  
+Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
+  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen Olimex.*   
+  
 ---
   
 #### 1.3.1.1 ESP32: NodeMCU "Joy-It"  
@@ -223,7 +234,11 @@ Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www
 Die ESP32-Variante der BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt. Es ist in Deutschland u.a. bei [Reichelt](https://www.reichelt.de/nodemcu-esp32-wifi-und-bluetooth-modul-debo-jt-esp32-p219897.html) erhältlich.  
 Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-2021-06-29.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">  
   
 *Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
   
@@ -242,7 +257,11 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt werden. In diesem Fall wird anstelle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
 Diese Olimex-Boardvariante bietet neben der ESP32-basierten WLAN-Funktionalität u.a. einen LAN-Anschluss, einen microSD-Kartenleser sowie zwei Relais und ist daher sehr empfehlenswert.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_small.jpg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
+
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen Olimex.*    
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">  
   
 *Das Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter.*    
    
@@ -390,7 +409,13 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
   
 *3D-Druckmodell des Gehäuses für den Arduino Due inkl. LAN-Shield und Adapter.*  
   
-
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32nodeMCU-Gehaeuse.jpg">  
+  
+*3D-Druckmodell des Gehäuses für den empfohlenen ESP32 NodeMCU inkl. LAN-Shield und Adapter.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32Olimex-Gehaeuse.jpg">  
+  
+*3D-Druckmodell des Gehäuses für den empfohlenen Olimex inkl. LAN-Shield und Adapter.*  
 
 ---
 
