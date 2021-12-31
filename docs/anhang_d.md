@@ -41,17 +41,17 @@ dann kannst du das alte Setup natürlich weiterhin verwenden.
     Vorgehensweise zur Erstellung einer reglerspezifischen defs-Datei:  
     - Parameter 6225 "Gerätefamilie" via BSB-LAN abrufen und den Wert notieren.  
     - Datei *selected_defs.pl* bzw. *selected_defs.exe* vor dem Ausführen in den gleichen Ordner kopieren, in dem auch die Datei *BSB_LAN_defs.h* liegt.  
-    - Öffne ein Terminal, wechsle in den entspr. Ordner und erstelle die reduzierte Datei namens *BSB_lan_defs_filtered.h* mit Hilfe des Perlscripts bzw. des Windows-Executables, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl  
-    `./selected_defs.pl 162 > BSB_lan_defs_filtered.h` bzw.  
-    `selected_defs.exe 162 > BSB_lan_defs_filtered.h`.  
+    - Öffne ein Terminal, wechsle in den entspr. Ordner und erstelle die reduzierte Datei namens *BSB_LAN_defs_filtered.h* mit Hilfe des Perlscripts bzw. des Windows-Executables, die nur die für die spezifische  Gerätefamilie(n) relevanten Parameter enthält. Bei nur einem angeschlossenen Regler, bspw. mit der Gerätefamilie 162, lautet der Befehl  
+    `./selected_defs.pl 162 > BSB_LAN_defs_filtered.h` bzw.  
+    `selected_defs.exe 162 > BSB_LAN_defs_filtered.h`.  
     Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man den Befehl um den zweiten Wert erweitern:  
-    `./selected_defs.pl 162 90 > BSB_lan_defs_filtered.h` bzw.  
-    `selected_defs.exe 162 90 > BSB_lan_defs_filtered.h`.    
+    `./selected_defs.pl 162 90 > BSB_LAN_defs_filtered.h` bzw.  
+    `selected_defs.exe 162 90 > BSB_LAN_defs_filtered.h`.    
     - Verschiebe die originale Datei *BSB_LAN_defs.h* aus dem "BSB_LAN"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan" (falls du die Datei nicht bereits im Ordner "BSB_LAN" erstellt hast).  
     - *Wichtig: Die neu erzeugte Datei nun in "BSB_LAN_defs.h" umbenennen!*  
        
 - ***Gibt es bzgl. der zu verwendenden Pineinstellungen etwas zu beachten?***  
-    Ja! Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei BSB_lan_config.h.default verwendest und entsprechend anpasst:  
+    Ja! Solltest du eine neuere Version als v0.44 auf dem Mega testen wollen, so achte darauf, dass du die zur jeweiligen Version zugehörige Datei BSB_LAN_config.h.default verwendest und entsprechend anpasst:  
     - Bei BSB-LAN-Versionen **vor v2.x** ist die Anpassung der Zeile `BSB bus(19,18);` zwingend notwendig: Der DUE verwendet (im Gegensatz zum Mega) die HardwareSerial-Schnittstelle und andere RX-/TX-Pins als der Mega, was hier bereits voreingestellt ist. Bei Verwendung mit dem Mega muss die Zeile daher in `BSB bus(68,69);` geändert werden!  
     - Bei BSB-LAN-Versionen **ab v2.x** ist in der Datei *BSB_LAN_config.h* eine automatische Erkennung der verwendeten Pins voreingestellt. Somit wird automatisch erkannt, ob ein Mega (= software serial) oder ein Due (= hardware serial) zum Einsatz kommt.    
    
