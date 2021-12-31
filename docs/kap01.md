@@ -238,6 +238,8 @@ Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*  
   
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">  
   
 *Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
