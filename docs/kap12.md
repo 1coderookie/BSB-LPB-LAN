@@ -34,7 +34,7 @@ Nun solltest du den Due in der Auflistung bei "Werkzeuge/Board" finden und ausw√
   
 ---  
   
-### 12.2.2 ESP32  
+### 12.1.2 ESP32  
   
 **Installation der spezifischen Boardbibliotheken**    
   
