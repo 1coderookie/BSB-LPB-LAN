@@ -35,7 +35,7 @@ dann kannst du das alte Setup natürlich weiterhin verwenden.
     2.) In der Datei *BSB_LAN_config.h* finden sich im unteren Abschnitt verschiedene Definements für Mega-User, die bei bestimmten Einsatzszenarien aktiviert werden können, um nochmals Speicher zu sparen. Hinweise diesbzgl. findest du in der Datei selbst.  
     
     3.) Erstellung einer reglerspezifischen *BSB_LAN_defs.h*:  
-    Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executable namens *selected_defs.exe*, das die Datei *BSB_lan_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
+    Im Repo liegt ein Perlscript namens *selected_defs.pl* sowie ein Windows-Executable namens *selected_defs.exe*, das die Datei *BSB_LAN_defs.h* nach ausgewählten Gerätefamilien filtert und eine spezifische Datei für den eigenen Reglertyp erstellt. Die Ersparnis beträgt im Schnitt etwa 20 bis 25 kB Flash-Speicher, den man dann für die (Re-)Aktivierung von anderen Funktionen nutzen kann. Im Falle eines Reglerwechsels (= andere Gerätefamilie) muss die Datei natürlich entsprechend neu generiert werden.  
     Das Script läuft unter Perl, was auf Mac- und Linux-Rechnern standardmäßig installiert ist, lässt sich aber auch auf Windows nachinstallieren.       
     
     Vorgehensweise zur Erstellung einer reglerspezifischen defs-Datei:  
@@ -47,7 +47,7 @@ dann kannst du das alte Setup natürlich weiterhin verwenden.
     Wenn man bspw. zwei Geräte am Bus mit den Gerätefamilien 162 und 90 hat, kann man den Befehl um den zweiten Wert erweitern:  
     `./selected_defs.pl 162 90 > BSB_LAN_defs_filtered.h` bzw.  
     `selected_defs.exe 162 90 > BSB_LAN_defs_filtered.h`.    
-    - Verschiebe die originale Datei *BSB_LAN_defs.h* aus dem "BSB_LAN"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_lan_defs_filtered.h* in das Verzeichnis "BSB_lan" (falls du die Datei nicht bereits im Ordner "BSB_LAN" erstellt hast).  
+    - Verschiebe die originale Datei *BSB_LAN_defs.h* aus dem "BSB_LAN"-Verzeichnis an einen beliebigen Ort. Verschiebe dann die neu erzeugte Datei *BSB_LAN_defs_filtered.h* in das Verzeichnis "BSB_LAN" (falls du die Datei nicht bereits im Ordner "BSB_LAN" erstellt hast).  
     - *Wichtig: Die neu erzeugte Datei nun in "BSB_LAN_defs.h" umbenennen!*  
        
 - ***Gibt es bzgl. der zu verwendenden Pineinstellungen etwas zu beachten?***  
