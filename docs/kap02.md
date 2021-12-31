@@ -50,7 +50,7 @@ Führe die folgenden Schritte aus:
 
    | Hinweis |
    |:--------|
-   | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
+   | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.1](kap12.md#1211-arduino-due). |  
   
   
 7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
@@ -94,14 +94,14 @@ Führe die folgenden Schritte aus:
 
 7. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
 
-    - Für den in diesem Handbuch empfohlenen **"Joy-It ESP32-NodeMCU"** (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
+    - Für den in diesem Handbuch empfohlenen **[Joy-It ESP32-NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it)** (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
     
-    - Für das empfohlene **"Olimex ESP32-EVB"** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
+    - Für das empfohlene **[Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb)** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
     
     | Hinweise |
     |:---------|
-    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die Version 2.0.2 (oder höher, falls verfügbar) installiert ist. |   
-    | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12](kap12.md). |  
+    | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. |   
+    | Sollte das Board nicht aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
   
   
 8. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
@@ -162,7 +162,7 @@ Die BSB-LAN-Software kann den individuellen Ansprüchen entsprechend konfigurier
 Die Konfiguration kann dabei auf zwei Arten erfolgen: Mittels Anpassen der Datei *BSB_LAN_config.h* sowie mittels Webinterface (aufrufbar mittels Klick auf "Einstellungen" auf der BSB-LAN-Seite oder per direktem URL-Befehl `/C`).  
 Im Folgenden werden die Konfigurationsmöglichkeiten eingehender erklärt. Die Beschreibungen in Kap. 2.2.2 sind i.d.R. ausführlicher, daher ist es sinnvoll, beide Kapitel eingehend zu studieren.  
   
-Eine Übersicht der Einstellungen kann mit dem URL-Befehl `/CO` aufgerufen werden.  
+Eine Übersicht der BSB-LAN-Einstellungen kann mit dem URL-Befehl `/CO` aufgerufen werden.  
      
 ---
     
