@@ -9,13 +9,31 @@
   
 Version 2.0
 - ATTENTION: LOTS of new functionalities, some of which break compatibility with previous versions, so be careful and read all the docs if you make the upgrade!
-- Webinterface allows for configuration of most settings without the need to re-flash
-- Added better WiFi option through Jiri Bilek's WiFiSpi library, using an ESP8266-based microcontroller like Wemos D1 mini or LoLin NodeMCU. Older WiFi-via-Serial approach no longer supported.
+- ATTENTION: Added and reorganized PPS parameters, almost all parameter numbers have changed!
+- ATTENTION: Change of EEPROM layout will lead to loading of default values from BSB_LAN_config.h! You need to write settings to EEPROM in configuration menu again!
+- ATTENTION: Folder locations and filenames have been adjusted for easier installation! If you update your installation, please take note that the configuration is now in BSB_LAN_config.h (LAN in caps), and no longer in BSB_lan_config.h (lower-caps "lan")
+- ATTENTION: HTTP-Authentication configuration has changed and now uses plain text instead of Base64 encoded strings!
+- Thanks to GitHub user do13, this code now also compiles on a ESP32, tested on NodeMCU-ESP32, Olimex ESP32-POE and Olimex ESP32-EVB boards. ESP32 code uses SDK version 2.0.2, please take note when configuring Arduino IDE!
+- OTA Updates now possible for ESP32-based devices
+- Support for special PPS devices (based on DC225/Honeywell MCBA) added
+- Webinterface allows for configuration of most settings without the need to re-flash, also split into basic and extended configuration
+- Added better WiFi option for Arduinos through Jiri Bilek's WiFiSpi library, using an ESP8266-based microcontroller like Wemos D1 mini or LoLin NodeMCU. Older WiFi-via-Serial approach no longer supported.
+- Added MDNS_SUPPORT definement in config so that BSB-LAN can be discovered through mDNS
+- If BSB-LAN cannot connect to WiFi on ESP32, it will set up its own access point "BSB-LAN" with password "BSB-LPB-PPS-LAN" for 30 minutes. After that, it will reboot and try to connect again.
+- New MQTT functions, including allowing any parameter to be set by an MQTT message and actively query any parameter once by sending an MQTT message
+- Added support for BME280 sensors
 - Setting a temporary destination address for querying parameters by adding !x (where x is the destination id), e.g. /6224!10 to query the identification of the display unit
-- URL command /T has been removed as all sensors can now be accessed via parameter numbers 20000 and above.
+- URL commands /A, /B, /T and /JA have been removed as all sensors can now be accessed via parameter numbers 20000 and above as well as (currently) under new category K49.
 - New categories added, subsequent categories have been shifted up
+- HTTP Authentification now uses clear text username and password in configuration
+- PPS users can now send time and day of week to heater
 - Lots of new parameters added
 - URL command /JR allows for querying the standard (reset) value of a parameter in JSON format
+- URL command /JB allows for backing up parameters to JSON file
+- New library for DHT22 should provide more reliable results
+- Consolidated data and value types: New data types VT_YEAR, VT_DAYMONTH, VT_TIME as subsets of VT_DATETIME for parameters 1-3, replacing VT_SUMMERPERIOD and adjusting VT_VACATIONPROG. New value types DT_THMS for time consisting of hour:minutes:seconds
+- MQTT: Use MQTTDeviceID as a client ID for the broker, still defaults to BSB-LAN. ATTENTION: Check your config if you're broker relies on the client ID in any way for authorization etc.
+
   
 Version 1.1
 - ATTENTION: DHW Push ("Trinkwasser Push") parameter had to be moved from 1601 to 1603 because 1601 has a different "official" meaning on some heaters. Please check and change your configuration if necessary
