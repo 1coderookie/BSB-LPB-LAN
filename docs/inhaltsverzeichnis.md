@@ -206,7 +206,7 @@
    * [A2.2 Teileliste](anhang_a2.md#a22-teileliste)  
    * [A2.3 Generelle Hinweise](anhang_a2.md#a23-generelle-hinweise)  
    
-[**Anhang B: Arduino DUE Pinout**](anhang_b.md)  
+[**Anhang B: Pinouts**](anhang_b.md)  
 
 [**Anhang C: Changelog BSB-LAN-Software**](anhang_c.md)  
 
