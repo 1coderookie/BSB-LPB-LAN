@@ -315,6 +315,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage Comfort 10 \[RVS21.827\] (Wärmepumpe) {BSB}  
 
+-   Fujitsu Waterstage Comfort WCC10-300a \[RVS21.831\] (Wärmepumpe) {BSB}  
+
 -   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
 
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
