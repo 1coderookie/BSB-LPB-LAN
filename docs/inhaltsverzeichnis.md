@@ -207,7 +207,10 @@
    * [A2.3 Generelle Hinweise](anhang_a2.md#a23-generelle-hinweise)  
    
 [**Anhang B: Pinouts**](anhang_b.md)  
-
+   * [B1 Arduino DUE](anhang_b.md#b1-arduino-due)  
+   * [B2 Joy-It ESP32 NodeMCU](anhang_b.md#b2-joy-it-esp32-nodemcu)  
+   * [B3 Olimex ESP32-EVB](anhang_b.md#b3-olimex-esp32-evb)  
+  
 [**Anhang C: Changelog BSB-LAN-Software**](anhang_c.md)  
 
 [**Anhang D: Hinweise für Nutzer des veralteten Setups Adapter v2 + Arduino Mega 2560**](anhang_d.md)  
