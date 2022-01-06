@@ -21,7 +21,7 @@ Vielen Dank für die großartige Arbeit!***
     
 **Das 'offizielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.**    
    
-[Hier](https://docs.arduino.cc/hacking/hardware/PinMappingSAM3X) sind die entspr. GPIO-Nummern im Vergleich mit den Bezeichnungen auf dem Due aufgeführt.     
+[Hier](https://docs.arduino.cc/hacking/hardware/PinMappingSAM3X) sind die entspr. GPIO-Nummern im Vergleich mit den Pin-Bezeichnungen auf dem Due aufgeführt.     
    
 ---       
      
