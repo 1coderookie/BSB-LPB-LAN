@@ -227,9 +227,9 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
-| Pins | 7 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) |	
-| Pins | 2,3 | Verwendete(r) Pin(s) für DHT22-Sensoren |
-| Sensoren | 1 | Anzahl der angeschlossenen BME280-Sensoren |
+| Pins | 0 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) (0 = deaktiviert) |	
+| Pins | 0 | Verwendete(r) Pin(s) für DHT22-Sensoren (0 = deaktiviert) |
+| Sensoren | 0 | Anzahl der angeschlossenen BME280-Sensoren (0 = deaktiviert) |
 | TWW-Push Taste: Pin | 0 | Raumgerät-Emulation: Verwendeter Pin für den TWW-Push Taster. |
 | RGT1 Temperatursensor Parameter | -keine Voreinstellung- | Raumgerät 1 Emulation: Trage hier die spezifische(n) Parameternummer(n) für den (die) Raumtemperatur-Sensor(en) ein. Bis zu fünf Sensoren können verwendet werden, die Aufzählung der Parameternummern ist lediglich durch ein Komma zu separieren. Wenn mehr als ein Sensor verwendet werden, wird automatisch der Mittelwert gebildet. |
 | RGT1 Präsenztaste: Pin | 0 | Raumgerät 1 Emulation: Verwendeter Pin für die HK1-Präsenztaste. |
@@ -369,7 +369,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 -   **Nutzung von Multicast DNS:**  
     
-    `#define MDNS_HOSTNAME "BSB-LAN"`  
+    `#define MDNS_SUPPORT`
+    `char mDNS_hostname[32] = "BSB-LAN";`
     
     Per default ist die Nutzung von Multicast DNS mit dem Hostnamen "BSB-LAN" aktiviert, so dass das Adaptersetup im Netzwerk unter diesem Namen zu finden ist.  
     
@@ -448,26 +449,26 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 -   **OneWire-Temperatursensoren (DS18B20):**  
     
     `#define ONE_WIRE_BUS`  
-    `bool enableOneWireBus = false;`  
-    `byte One_Wire_Pin = 7;`  
+    `byte One_Wire_Pin = 0;`  
     
-    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein, die Variable auf *true* gesetzt sowie die entsprechende Pinbelegung (DATA-Anschluss des Sensors am Adapterboard) definiert werden.  
-    Voreingestellt ist das Modul aktiviert, die Variable auf *false* gesetzt (= keine Verwendung) und Pin 7 eingestellt.  
+    Sollen OneWire-Temperatursensoren (DS18B20) verwendet werden, muss das Definement aktiviert sein sowie die entsprechende GPIO-Pinbelegung definiert werden.  
+    Voreingestellt ist das Modul aktiviert und Pin 0 eingestellt (0 = OneWire-Verwendung deaktiviert).  
               
 -   **DHT22-Sensoren:**  
     
     `#define DHT_BUS`  
-    `byte DHT_Pins[10] = {5};`  
+    `uint8_t DHT_Pins[10] = {0};`  
     
-    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit; max. Anzahl: 20) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende Pinbelegung (DATA-Anschluss des Sensors am Adapterboard) definiert werden (beachte, dass du pro Sensor einen DATA-Pin nutzen musst!).  
-    Voreingestellt ist das Modul samt Verwendung des Pins 5 aktiv.  
+    Sollen DHT22-Sensoren (Temperatur & Feuchtigkeit; max. Anzahl: 10) verwendet werden, muss das entsprechende Definement aktiviert sein und die entsprechende GPIO-Pinbelegung definiert werden.  
+    Voreingestellt ist das Modul aktiviert und Pin 0 eingestellt (0 = DHT-Verwendung deaktiviert).  
    
   
 -  **BME280 Sensoren:**  
    
-   `//#define BME280 1`  
+   `#define BME280`
+   `byte BME_Sensors = 0;`
       
-   Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 1, maximal 2!). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
+   Wenn BME280 Sensoren zur Anwendung kommen sollen, so muss das Definement aktiviert und die Anzahl der angeschlossenen Sensoren angegeben werden (Voreinstellung 0 = deaktiviert, maximal 2). Die Sensoren müssen am I2C-Bus angeschlossen werden. Die Adresse des ersten Sensors muss 0x76 lauten, die des zweiten Sensors 0x77.  
     
 ---
 
@@ -505,7 +506,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
-    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
+    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte (empfohlen!) anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
     
       `//#define ESP32_USE_SD`  
     
@@ -531,7 +532,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     - `unsigned long log_interval = 3600;`  
        
-       Das gewünschte Logintervall in Sekunden.  
+       Das gewünschte Logintervall in *Sekunden*.  
     
       | Achtung |
       |:--------|
@@ -656,7 +657,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     `byte bus_pins[2] = {0,0};` → automatische Erkennung und Einstellung der RX-/TX-Pinbelegung (Voreinstellung); ansonsten gilt:  
     
-    - Hardware-Serial (ab Adapter v3 & Arduino Due): RX-Pin = 19, TX-Pin = 18 (`{19,18}`)  
+    - Hardware-Serial (ab Adapter v3) Arduino Due: RX-Pin = 19, TX-Pin = 18 (`{19,18}`); NodeMCU: 16,17; Olimex EVB 36,17.  
     - Software-Serial (bis einschließlich Adapter v2 & Arduino Mega 2560): RX-Pin = 68, TX-Pin = 69 (`{68,69}`)  
     
 -   **Bus-Typ/-Protokoll:**  
@@ -690,7 +691,12 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       |:--------|
       | Schreibzugriff NUR einstellen, wenn KEIN originales QAA50/QAA70-Raumgerät vorhanden ist! |
       
-    - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes einstellen: 0x53 = QAA70, 0x52 = QAA50    
+    - `byte QAA_TYPE = 0x53;` → Typ des zu imitierenden Raumgerätes:  
+    0x53 = QAA70 (Voreinstellung) 
+    0x52 = QAA50  
+    0x37 = QAA95  
+    0x66 = BMU  
+    0xEA = MCBA/DC225
    
 ---   
     
@@ -700,9 +706,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `static const int fixed_device_family = 0;`  
     `static const int fixed_device_variant = 0;`
     
-    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.   
-    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226` eingetragen werden (6225 = Gerätefamilie / device family & 6226 =     Gerätevariante / device variant).  
-    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der     Regler erst nach dem Starten des Arduino eingeschaltet wird (da in dem Fall die automatische Erkennung des angeschlossenen Reglers nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
+    Wenn die Werte auf 0 gesetzt sind, ist die automatische Erkennung des angeschlossenen Reglers beim Starten des Arduino aktiviert (Voreinstellung). Dies kann i.d.R. so belassen werden.    
+    Alternativ kann hier die Ausgabe von `http://<IP-Adresse>/6225/6226` eingetragen werden (6225 = Gerätefamilie / device family & 6226 = Gerätevariante / device variant).  
+    Ein fest eingestellter Wert (laut Ausgabe von 6225&6226) stellt sicher, dass BSB-LAN auch dann noch korrekt arbeitet, wenn die Heizung bzw. der Regler erst nach dem Starten des Arduino/ESP eingeschaltet wird (da in dem Fall die automatische Erkennung des angeschlossenen Reglers nicht funktionieren kann, da ja keine Rückmeldung vom Regler kommt).  
     
 ---    
     
@@ -754,6 +760,15 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | Hierbei ist es unvermeidlich, dass die IP-Adresse an den Server übertragen wird. Wir erwähnen dies hier dennoch, da es sich hierbei um "persönliche Daten" handelt und diese Funktion daher standardmäßig deaktiviert ist. Mit der Aktivierung dieser Funktion erklärst Du Dich damit einverstanden, dass Deine IP-Adresse an den BSB-LAN-Server übermittelt wird, wo sie bis zu zwei Wochen in den Log-Dateien des Servers gespeichert wird, um sowohl technische als auch Missbrauchsanalysen zu ermöglichen. Wie Du dem Quellcode entnehmen kannst, werden bei diesem Vorgang keine weiteren Daten (z.B. alles, was mit Deiner Heizungsanlage zu tun hat) übertragen. |  
    
 ---    
+   
+-   **OTA-Updatefunktion (nur ESP32):**  
+    
+    `#define ENABLE_ESP32_OTA`  
+    `boolean enable_ota_update = false;`    
+    
+    OTA-Updatefunktion (OTA = OverTheAir) für ESP32-basierte Boards, derzeit noch nicht nutzbar (Voreinstellung: deaktivert).  
+  
+---
        
 -   **"Externer" Webserver:**  
     
@@ -783,10 +798,22 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
    `#define JSONCONFIG`  
    
+---
+  
+#define RGT_EMULATOR
+int rgte_sensorid[3][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; //Temperature sensor program IDs for RGT1 - RGT3. If zero then RGT will not be emulated. If more than one program set per RGT then average will be calculated and used.
+
+//Enable presence buttons and TWW/DHW push on selected pins.
+// Pins on Mega can be (Digital) 2, 3, 18, 19, 20, 21
+// On Due any Digital pins can be selected excluding 12, 16-21, 31, 33, 53.
+// Make sure you aren't using pins which are already in use for sensors (default: 2, 3, 7) or change them accordingly.
+#define BUTTONS
+uint8_t button_on_pin[4] = {0, 0, 0, 0}; //Order: TWW push, presence ROOM1, presence ROOM2, presence ROOM3
+  
 
 ---    
 
--   **Variablen für eine zukünftige Verwendung, derzeit (November 2020) noch ohne Funktion:**  
+-   **Variablen für eine zukünftige Verwendung, derzeit noch ohne Funktion:**  
     
     `#define ROOM_UNIT` → Raumgeräteersatz  
     `byte UdpIP[4] = {0,0,0,0};` → Ziel-IP-Adresse für UDP   
