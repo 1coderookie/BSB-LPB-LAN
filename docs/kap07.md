@@ -8,12 +8,12 @@
    
 Das BSB-LAN Setup kann durch optionale Hardware in seinem Funktionsumfang erweitert werden. Im Folgenden werden einige Komponenten wie Sensoren und Relais sowie weitere Hardwarelösungen vorgestellt.  
   
-Solltest du ein eigenes, interessantes Projekt umgesetzt haben, was mit dem BSB-LAN Setup zusammenarbeitet und den Funktionsumfang erweitert und möchtest du es gerne auch anderen Usern zur Verfügung stellen, so kontaktiere mich gerne per Email (adapter (ät) quantentunnel.de)!  
+*Solltest du ein eigenes, interessantes Projekt umgesetzt haben, was mit dem BSB-LAN Setup zusammenarbeitet und den Funktionsumfang erweitert und möchtest du es gerne auch anderen Usern zur Verfügung stellen, so kontaktiere mich (Ulf) gerne per Email (adapter (ät) quantentunnel.de)!*  
 
 | ACHTUNG, wichtiger Hinweis: |
 |:----------------------------|
 | Beim Anschließen optionaler Hardware wie bspw. Sensoren, Relais etc. an den Arduino Due bzw. das spezifische ESP32-Board ist unbedingt darauf zu achten, dass **der verwendete Anschlusspin nicht anderweitig belegt ist bzw. nicht bereits boardintern verwendet wird!** Aufschluss hierüber gibt das jeweilige Pinout-Schema des spezifischen Arduino-/ESP-Boards. *Beachte auch die seriellen Pins des Adapters und etwaige weitere Komponenten wie bspw. das LAN-Shield, ein Relais-Shield etc.* | 
-| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" eingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
+| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
      
 ---
       
