@@ -800,6 +800,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 ---
   
+```  
 #define RGT_EMULATOR
 int rgte_sensorid[3][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; //Temperature sensor program IDs for RGT1 - RGT3. If zero then RGT will not be emulated. If more than one program set per RGT then average will be calculated and used.
 
@@ -809,7 +810,7 @@ int rgte_sensorid[3][5] = {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}; /
 // Make sure you aren't using pins which are already in use for sensors (default: 2, 3, 7) or change them accordingly.
 #define BUTTONS
 uint8_t button_on_pin[4] = {0, 0, 0, 0}; //Order: TWW push, presence ROOM1, presence ROOM2, presence ROOM3
-  
+```  
 
 ---    
 
