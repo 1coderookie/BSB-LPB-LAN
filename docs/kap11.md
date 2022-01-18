@@ -132,6 +132,8 @@ Danke!
 
 -   Brötje TrioCondens BGB 28E \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje WBC 22/24 \[LMU64 + OCI420\] (Gasbrenner) {LPB via OCI420}
+
 -   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
 
 -   Brötje WBS 14D \[LMU74\] (Gasbrenner) {BSB}
@@ -150,7 +152,11 @@ Danke!
 
 -   Brötje WGB 20E \[LMS14\] (Gasbrenner) {BSB}  
 
+-   Brötje WGB 20I \[LMS15\] (Gasbrenner) {BSB}  
+
 -   Brötje WGB 28E \[LMS14\] (Gasbrenner) {BSB}  
+
+-   Brötje WGB 70E \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner) {BSB}
 
@@ -215,6 +221,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop S08 \[RVS61.843\] (Wärmepumpe) {BSB}  
 
+-   Elco Aquatop S14 \[RVS61.843\] (Wärmepumpe) {BSB}  
+
 -   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
@@ -236,6 +244,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Elco Thision S Plus 24 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Elco Thision S Plus 24 Compact \[?\] (Gasbrenner) {BSB}  
+
+-   Elco Thision S Plus Combi 24 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Elco Thision S9.1 \[LMU7\] (Gasbrenner) {BSB}
 
@@ -341,9 +351,13 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   MHG Ecostar 200 \[RVS53\] (Ölbrenner) {BSB}  
 
+-   MHG Ecostar 755 \[RVS63\] (Ölbrenner) {BSB}  
+
 -   MHG Procon E25 \[LMS14\] (Gasbrenner) {BSB}  
 
 -   MHG Procon E 25 HS \[LMS14\] (Gasbrenner) {BSB}  
+
+-   Oilon SHx 11 \[RVS61\] (Wärmepumpe) {BSB}
 
 -   Olymp SHS 730 \[RVS63\] (Ölbrenner) {BSB}  
 
@@ -363,6 +377,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Viessmann Vitotwin 300-W {BSB}  
     
+-   Wamak DB 11 \[RVS21.826F\] (Wärmepumpe) {BSB}
+
 -   Weishaupt WTU 15 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
 
 -   Weishaupt WTU 25 G \[WRS-CPU B2/E = RVS23\] (Ölbrenner) {LPB}  
