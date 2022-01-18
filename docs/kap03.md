@@ -200,7 +200,13 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
 
 ## 3.3 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs
 
-Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung) alle verfügbaren Parameter freigegeben sind, klicke nun auf den Button "Prüfe auf neue Parameter" oder führe folgenden URL-Befehl aus:  
+| Hinweis |
+|:--------|
+| Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/Q` bei PPS-Reglern nicht verfügbar ist. Dort erscheint lediglich folgende Ausgabe: <br> 
+`Scanne nach Geräten...` <br> `Complete dump:` <br> `Not supported by this device. No problem.` <br> `Fertig.` |   
+| Einschränkungen gibt es ebenfalls bei Reglern, die über einen LPB angeschlossen sind, der durch die Nachrüstung mittels OCI420 verfügbar geworden ist (also LMU54/64 Regler). Hier sollten anfangs zwar die entspr. Gerätedaten aufgeführt werden, der "complete dump" ist jedoch ebenfall nicht verfügbar. |   
+  
+Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung), der via BSB oder LPB angeschlossen ist, alle verfügbaren Parameter freigegeben sind, klicke nun auf den Button "Prüfe auf neue Parameter" oder führe folgenden URL-Befehl aus:  
 
 `http://<IP-Adresse>/Q`  
 
