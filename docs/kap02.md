@@ -143,8 +143,10 @@ Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/od
 
 ### 2.1.3 Updates
 
-Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Version ([Download als ZIP-File](https://github.com/fredlcore/BSB-LAN/archive/master.zip), per git o.ä.), wie es in den vorherigen Installationskapiteln beschrieben ist.  
-
+Ein Updaten der BSB-LAN-Software erfolgt durch das gewohnte Flashen der neuen Version ([Download als ZIP-File](https://github.com/fredlcore/BSB-LAN/archive/master.zip), per git o.ä.), wie es in den vorherigen Installationskapiteln beschrieben ist. Bitte beachte die folgenden Hinweise!  
+  
+Für ESP32-basierte Boards (Olimex, NodeMCU) kann alternativ auch ein OTA-Update ("OverTheAir"-Update) erfolgen (diese Funktion ist NICHT mit dem Arduino DUE nutzbar!). Hierzu muss in der Webkonfig oder der Datei *BSB_LAN_config.h* die entspr. OTA-Funktion aktiviert werden. Eine fertige Firmware-Datei kann man in der Arduino IDE unter "Sketch / Kompilierte Binärdatei exportieren…" erstellen lassen. Der Upload der Datei erfolgt dann auf Port 8080 der BSB-LAN-IP.    
+  
 | Hinweise |
 |:---------|
 | Solltest du in der Datei *BSB_LAN_config.h* bestimmte Änderungen bei der neu zu flashenden Version vorgenommen haben, wie bspw. die Zugangsdaten für dein WLAN oder eine fest vergebene IP, die dann nach dem Flashen offenbar nicht übernommen wurden, so liegt dies i.d.R. daran, dass die alten Einstellungen aus dem EEPROM gelesen wurden. <br> Um die neuen Einstellungen wirksam werden zu lassen, stelle in der [Webkonfiguration](kap02.md#221-konfiguration-mittels-webinterface) die Einstellung "Konfiguration aus EEPROM lesen" einmal auf "Aus", speichere die Änderung und flashe nochmal neu. <br> Danach sollten die neuen Einstellungen wirksam geworden sein, weil BSB-LAN diese nun aus der Datei *BSB_LAN_config.h* und nicht aus dem EEPROM eingelesen hat. <br> Nach erfolgreicher Überprüfung stelle "Konfiguration aus EEPROM lesen" wieder auf "Ein". | 
@@ -192,7 +194,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Konfiguration aus EEPROM lesen | Ein | Liest die gespeicherte Konfiguration aus dem EEPROM beim Start des Due aus (Aus/Ein). <br> Diese Einstellungen können von den Voreinstellungen abweichen, die in der Datei *BSB_LAN_config.h* hinterglegt wurden. <br> *Sollen die im EEPROM gespeicherten Einstellungen bspw. bei einem Update überschrieben werden, so ist vor dem Flashen auf "Aus" zu stellen und die Einstellung zu speichern!* <br> Wenn die Einstellung auf „Aus“ ist, werden Änderungen nur bis zum Neustart des Due aktiv bleiben. |
 | Schreibzugriff (Ebene) | Aus | Schreibzugriff des Adapters auf den Heizungsregler (Aus/Standard/Komplett). <br> **Soll Schreibzugriff auf den Heizungsregler gewährt werden, so ist es empfehlenswert, die Einstellung 'Standard' zu wählen, hierbei sind nahezu alle verfügbaren Parameter schreibbar.** Im Unterschied zu 'Komplett' sind jedoch einige funktionskritische Parameter nicht veränderbar, die reglerintern nochmals geschützt vorliegen. <br> *Die Einstellung 'Komplett' sollte daher nur in Ausnahmefällen und mit Bedacht sowie einem sehr guten Kenntnisstand über die Reglerfunktionalität gewählt werden!* |
 | Auf Updates überprüfen | Aus | Automatisches Überprüfen auf Updates von BSB-LAN (Aus/Ein) |
-| OTA Update | Aus | OTA-Updatefunktion (OTA = Over The Air) deaktiviert (Aus) / aktiviert (Ein). |
+| OTA Update | Aus | OTA-Updatefunktion für ESP32-basierte Boards (OTA = Over The Air) deaktiviert (Aus) / aktiviert (Ein). Zur weiteren Vorgehensweise für OTA-Updates lies bitte [Kap. 2.1.3 Updates](kap02.md#213-updates). |
 | RX Pin Nummer | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte RX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
 | TX Pin Nummer | 0 | 0 = Autoselect. Falls ein anderer Pin als der voreingestellte TX-Pin (s. Datei *BSB_LAN_config.h*) genutzt wird, ist dieser hier einzutragen.  |
 | Typ | BSB | Verwendeter Bustyp (BSB/LPB/PPS) |
@@ -766,7 +768,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `#define ENABLE_ESP32_OTA`  
     `boolean enable_ota_update = false;`    
     
-    OTA-Updatefunktion (OTA = OverTheAir) für ESP32-basierte Boards, derzeit noch nicht nutzbar (Voreinstellung: deaktivert).  
+    OTA-Updatefunktion (OTA = OverTheAir) für ESP32-basierte Boards (Voreinstellung: deaktiviert). Zum Aktivieren der Funktion muss `boolean enable_ota_update = true;` eingestellt werden. Eine fertige Firmware-Datei kann man in der Arduino IDE unter "Sketch / Kompilierte Binärdatei exportieren…" erstellen lassen. Der Upload der Datei erfolgt dann auf Port 8080 der BSB-LAN-IP.  
   
 ---
        
