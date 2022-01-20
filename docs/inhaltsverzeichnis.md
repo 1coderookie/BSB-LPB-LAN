@@ -11,6 +11,10 @@
     
 [**Einleitung**](index2.md)  
 
+[**Schnellstartanleitung für den Arduino Due](SSA_DUE.md)  
+
+[**Schnellstartanleitung für ESP32-Boards](SSA_ESP32.md)  
+
 [**1. BSB-LAN: Die Hardware**](kap01.md)  
    * [1.1 Adapter](kap01.md#11-adapter)  
       * [1.1.1 Due-Version](kap01.md#111-due-version)  
