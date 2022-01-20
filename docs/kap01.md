@@ -1,5 +1,4 @@
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
-[Zurück zur Einleitung](index2.md)  
     
 ---
 
