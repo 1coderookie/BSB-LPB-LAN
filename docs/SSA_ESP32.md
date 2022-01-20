@@ -29,12 +29,13 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 4. Entpacke die heruntergeladene Datei "BSB_LAN-master.zip" und wechsle in den Ordner.  
 
 5. Wechsle in den Ordner "BSB_LAN". Benenne die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
-*Wichtig: Die nachfolgenden Schritte müssen* ***zwingend*** *vollzogen werden!*  
+*Wichtig:  
+Die nachfolgenden Schritte müssen* ***zwingend*** *vollzogen werden!*  
 - Entferne oder verschiebe die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht im "BSB-LAN"- oder "src"-Ordner vorhanden sein!  
 - Öffne die Datei "BSB_LAN_config.h" und aktiviere das Definement `#define WIFI`.
 - Trage die Zugangsdaten für dein WLAN-Netzwerk bei den Einträgen `char wifi_ssid[32] = "YourWiFiNetwork";` sowie `char wifi_pass[64] = "YourWiFiPassword";` ein.
 
-6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
+6. Starte die Arduino IDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
 Überprüfe den korrekten seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter "Werkzeuge/Port".  
 Wähle nun den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
 - Für den in diesem Handbuch empfohlenen [Joy-It ESP32-NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it) (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module". Wähle dann bei "Partition Scheme" die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
@@ -42,8 +43,10 @@ Wähle nun den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus
 Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein.  
 *Sollten bis hier Probleme auftreten (bspw., dass das Board nicht erkannt wird), lies bitte die ausführliche Beschreibung in [Kapitel 2.1.2](kap02.md#212-installation-auf-dem-esp32)!*  
 
-7. *Wichtig:* Passe die weiteren Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an. Dies gilt insbesondere für Einstellungen hinsichtlich der Nutzung von DHCP, einer ggf. abweichenden IP-Adresse sowie der optionalen Sicherheitsfunktionen.  
-*Hinweis:* Zusätzlich zur Anpassung der Datei "BSB_LAN_config.h" kann die Anpassung der Konfiguration von BSB-LAN auch später per Webinterface erfolgen.  
+7. *Wichtig:*  
+Passe die weiteren Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an. Dies gilt insbesondere für Einstellungen hinsichtlich der Nutzung von DHCP, einer ggf. abweichenden IP-Adresse sowie der optionalen Sicherheitsfunktionen.   
+*Hinweis:*  
+Zusätzlich zur Anpassung der Datei "BSB_LAN_config.h" kann die Anpassung der Konfiguration von BSB-LAN auch später per Webinterface erfolgen.  
 *Weitere Hinweise sowie eine Beschreibung sämtlicher Konfigurationsmöglichkeiten findest du in [Kapitel 2.2 Konfiguration](kap02.md#22-konfiguration)!*  
 Wenn alle Einstellungen angepasst wurden, starte den Flashvorgang mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen".  
   
