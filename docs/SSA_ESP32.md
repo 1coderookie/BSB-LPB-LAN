@@ -8,18 +8,17 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
    
 1. *Achtung: Berücksichtige bei der folgenden Anleitung deinen ESP32-Boardtyp!*   
 
-- ***Joy-It ESP32 NodeMCU***: Stecke den NodeMCU auf den BSB-LAN-Adapter und verbinde den NodeMCU mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den NodeMCU nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
+  - ***Joy-It ESP32 NodeMCU***: Stecke den NodeMCU auf den BSB-LAN-Adapter und verbinde den NodeMCU mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den NodeMCU nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
+    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
     
-*Das komplette Setup (Joy-It ESP32 NodeMCU + BSB-LAN-Adapter).*  
+    *Das komplette Setup (Joy-It ESP32 NodeMCU + BSB-LAN-Adapter).*  
 
+  - ***Olimex ESP32-EVB***: Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den Olimex nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
 
-- ***Olimex ESP32-EVB***: Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den Olimex nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
-
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
+    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
     
-*Das komplette Setup (Olimex ESP32-EVB + BSB-LAN-Adapter).*  
+    *Das komplette Setup (Olimex ESP32-EVB + BSB-LAN-Adapter).*  
   
 2. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
    
@@ -28,7 +27,7 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 4. Entpacke die heruntergeladene Datei "BSB_LAN-master.zip" und wechsle in den Ordner.  
 
 5. Wechsle in den Ordner "BSB_LAN". Benenne die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
-*Wichtig: Die nachfolgenden Schritte müssen* ***zwingend*** *vollzogen werden:*  
+*Wichtig: Die nachfolgenden Schritte müssen* ***zwingend*** *vollzogen werden!*  
 - Entferne oder verschiebe die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht im "BSB-LAN"- oder "src"-Ordner vorhanden sein!  
 - Öffne die Datei "BSB_LAN_config.h" und aktiviere das Definement `#define WIFI`.
 - Trage die Zugangsdaten für dein WLAN-Netzwerk bei den Einträgen `char wifi_ssid[32] = "YourWiFiNetwork";` sowie `char wifi_pass[64] = "YourWiFiPassword";` ein.
