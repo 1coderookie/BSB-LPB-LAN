@@ -20,13 +20,15 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
 
 5. Wechsle in den Ordner "BSB_LAN". Benenne die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
 
-6. Starte die ArduinoIDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
+6. Starte die Arduino IDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
 Überprüfe den korrekten seriellen Port, an dem der Arduino Due am Rechner angeschlossen ist, unter "Werkzeuge/Port".  
 Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein.  
 *Sollten bis hier Probleme auftreten (bspw., dass das Board nicht erkannt wird), lies bitte die ausführliche Beschreibung in [Kapitel 2.1.1](kap02.md#211-installation-auf-dem-due)!*  
 
-7. *Wichtig:* Passe die Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an. Dies gilt insbesondere für Einstellungen hinsichtlich der Nutzung von DHCP, einer ggf. abweichenden IP-Adresse sowie der optionalen Sicherheitsfunktionen.  
-*Hinweis:* Zusätzlich zur Anpassung der Datei "BSB_LAN_config.h" kann die Anpassung der Konfiguration von BSB-LAN auch später per Webinterface erfolgen.  
+7. *Wichtig:*  
+Passe die Einstellungen in der Datei "BSB_LAN_config.h" deinen Wünschen und Gegebenheiten entsprechend an. Dies gilt insbesondere für Einstellungen hinsichtlich der Nutzung von DHCP, einer ggf. abweichenden IP-Adresse sowie der optionalen Sicherheitsfunktionen.  
+*Hinweis:*  
+Zusätzlich zur Anpassung der Datei "BSB_LAN_config.h" kann die Anpassung der Konfiguration von BSB-LAN auch später per Webinterface erfolgen.  
 *Weitere Hinweise sowie eine Beschreibung sämtlicher Konfigurationsmöglichkeiten findest du in [Kapitel 2.2 Konfiguration](kap02.md#22-konfiguration)!*  
 Wenn alle Einstellungen angepasst wurden, starte den Flashvorgang mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen".  
 
