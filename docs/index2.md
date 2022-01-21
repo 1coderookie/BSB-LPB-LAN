@@ -16,8 +16,10 @@ Das Copyright des Handbuchs liegt bei dem Autor Ulf Dieckmann.
     
 #### Zum Ausdrucken besser geeignet: [Die PDF-Version des Handbuchs](https://github.com/1coderookie/BSB-LPB-LAN/raw/master/Handbuch_BSB-LPB-LAN-Adapter.pdf).  
   
-
-
+#### Schnellstartanleitungen für die Installation und Inbetriebnahme des BSB-LAN-Setups sind hier verfügbar:  
+#### [Schnellstartanleitung für den Arduino Due](SSA_DUE.md)  
+#### [Schnellstartanleitung für ESP32-Boards](SSA_ESP32.md)  
+  
 ---  
 
 ***ACHTUNG:  
