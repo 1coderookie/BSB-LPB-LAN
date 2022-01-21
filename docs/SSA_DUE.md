@@ -54,4 +54,4 @@ Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)
 ---
    
      
-[Weiter zur Schnellstartanleitung ESP32-Boards](SSA_ESP32.md)      
+[Weiter zur Schnellstartanleitung für ESP32-Boards](SSA_ESP32.md)      
