@@ -62,7 +62,7 @@ Nach Beenden des Startvorgangs kannst du die Stromversorgung des ESP32-Boards un
 
 11. Starte einen Internetbrowser und rufe die Seite des BSB-LAN-Webinterfaces auf. Diese findest du unter der IP-Adresse, die du zuvor bei Schritt 6 eingestellt hast (voreingestellt ist "192.168.178.88"). Solltest du DHCP verwenden, so kann die vergebene IP während der Startsequenz des Arduino mittels des [Seriellen Monitors der Arduino IDE](kap12.md#122-serieller-monitor) ausgelesen werden.   
 
-Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte neben den bereits genannten Kapiteln auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md).  
+    Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte neben den bereits genannten Kapiteln auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md).  
   
 12. Bitte führe nun die [Überprüfung auf neue Parameter (URL-Befehl /Q)](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids) aus (solltest du einen Regler via PPS angeschlossen haben, kann dieser Punkt übersprungen werden) und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
 
