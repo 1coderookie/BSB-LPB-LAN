@@ -8,14 +8,14 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
    
 1. *Achtung: Berücksichtige bei der folgenden Anleitung deinen ESP32-Boardtyp!*   
 
-  - ***Joy-It ESP32 NodeMCU***:  
+  - ***[Joy-It ESP32 NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it)***:  
   Stecke den NodeMCU auf den BSB-LAN-Adapter und verbinde den NodeMCU mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den NodeMCU nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
 
     <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
     
     *Das komplette Setup (Joy-It ESP32 NodeMCU + BSB-LAN-Adapter).*  
 
-  - ***Olimex ESP32-EVB***:  
+  - ***[Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb)***:  
   Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer. Sollte dein Rechner den Olimex nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
 
     <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
@@ -37,7 +37,7 @@ Die nachfolgenden Schritte müssen* ***zwingend*** *vollzogen werden!*
 
 6. Starte die Arduino IDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
 Überprüfe den korrekten seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter "Werkzeuge/Port".  
-Wähle nun den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
+*Wähle nun den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:*  
 - Für den in diesem Handbuch empfohlenen [Joy-It ESP32-NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it) (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module". Wähle dann bei "Partition Scheme" die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus.  
 - Für das empfohlene [Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb) wähle bitte den gleichnamigen Eintrag aus der Liste aus. Wähle dann bei "Partition Scheme" die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
 Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein.  
@@ -64,7 +64,7 @@ Nach Beenden des Startvorgangs kannst du die Stromversorgung des ESP32-Boards un
 
 Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte neben den bereits genannten Kapiteln auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md).  
   
-Bitte führe nun die [Überprüfung auf neue Parameter (URL-Befehl /Q)](kap03.md#33-%C3%BCberpr%C3%BCfen-auf-nicht-freigegebene-reglerspezifische-command-ids) aus und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
+Bitte führe nun die [Überprüfung auf neue Parameter (URL-Befehl /Q)](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids) aus (solltest du einen Regler via PPS angeschlossen haben, kann dieser Punkt übersprungen werden) und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
 
 Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
     
