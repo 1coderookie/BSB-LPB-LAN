@@ -11,6 +11,8 @@ Bereite das Setup vor, indem du das LAN-Shield und den BSB-LAN-Adapter auf den A
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
     
 *Das komplette Setup (Arduino Due + LAN-Shield + BSB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
+
+Führe nun die folgenden Schritte aus:  
   
 1. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
    
