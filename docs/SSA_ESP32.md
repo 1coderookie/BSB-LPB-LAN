@@ -22,6 +22,8 @@ Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entspreche
     
   *Das komplette Setup (Olimex ESP32-EVB + BSB-LAN-Adapter).*  
   
+Führe nun die folgenden Schritte aus:  
+  
 1. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
    
 2. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
