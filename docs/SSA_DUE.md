@@ -2,11 +2,11 @@
     
 ---
     
-# Schnellstartanleitung Arduino Due
+# Schnellstartanleitung für den [Arduino Due](kap01.md#12-arduino-due)
 ***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!  
 Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
    
-1. Stecke das LAN-Shield und den BSB-LAN-Adapter auf den [Arduino Due](kap01.md#12-arduino-due), schließe ein LAN-Kabel an und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sollte dein Rechner den Due nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
+1. Stecke das LAN-Shield und den BSB-LAN-Adapter auf den Arduino Due, schließe ein LAN-Kabel an und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist. Sollte dein Rechner den Due nicht automatisch erkennen, ist ein entspr. Treiber für dein Betriebssystem zu installieren.  
 
     <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
     
