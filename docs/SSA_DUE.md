@@ -7,7 +7,6 @@
 Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
    
 Bereite das Setup vor, indem du das LAN-Shield und den BSB-LAN-Adapter auf den Arduino Due steckst. Schließe ein LAN-Kabel an und verbinde das Arduino-Setup mit einem USB-Kabel mit deinem Computer. Nutze dabei den 'Programming Port' des Due, das ist der 'mittlere' USB-Port, der neben der Netzteilbuchse platziert ist.  
-  
 Sollte dein Rechner den Due nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
