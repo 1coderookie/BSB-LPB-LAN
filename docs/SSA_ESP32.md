@@ -3,8 +3,8 @@
 ---
     
 # Schnellstartanleitung für [ESP32-Boards](kap01.md#13-esp32)
-***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!  
-Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
+***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!***    
+***Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
    
 *Achtung: Berücksichtige bei der folgenden Anleitung deinen ESP32-Boardtyp!*   
 
