@@ -28,7 +28,7 @@ anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind bereit
 | Hinweise |
 |:---------|
 | In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
-| Solltest du ein ESP32-Board einsetzen, so besteht außerdem die Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. ](). |  
+| Solltest du ein ESP32-Board einsetzen, so besteht außerdem die Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. 7.1.4](kap07.md#714-xiaomi-mijia-ble-sensoren-lywsd03mmc). |  
   
 Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino (ggf. unter zusätzlicher Verwendung der fühlerspezifischen PullUp-Widerstände!) stattfinden.
 
@@ -259,7 +259,7 @@ Diese Lösung wurde mit Xiaomi Mijia BLE Sensoren des Typs LYWSD03MMC getestet.
   
 *Bitte beachte, dass die oben verlinkte spezielle Version von BSB-LAN keine 'offizielle' Version ist und wir daher keinerlei Support hierfür anbieten können! Sollten jedoch Fragen oder Probleme bzgl. der Verwendung auftauchen, so kannst du sie jedoch [in diesem Diskussionsthread]() (bitte möglichst auf Englisch) stellen.*      
   
-At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
+Derzeit werden nur unverschlüsselte Nachrichten unterstützt, man muss für die jeweiligen Sensoren also eine alternative Firmware verwenden. Für die erwähnten Xiaomi Mijia BLE Sensoren des Typs LYWSD03MMC kannst du ein solche Firmware [hier](https://github.com/pvvx/ATC_MiThermometer) finden.  
   
 Die Einschränkungen bei dieser Lösung bestehen derzeit darin, dass bspw. die OTA-Funktionalität nicht funktioniert, weil die BLE-Implementierung zu viel Speicherplatz benötigt.   
   
