@@ -72,6 +72,7 @@
       * [7.1.1 Hinweise zu DHT22-Temperatur-/Feuchtigkeitssensoren](kap07.md#711-hinweise-zu-dht22-temperatur-feuchtigkeitssensoren)  
       * [7.1.2 Hinweise zu DS18B20-Temperatursensoren](kap07.md#712-hinweise-zu-ds18b20-temperatursensoren)  
       * [7.1.3 Hinweise zu BME280-Sensoren](kap07.md#713-hinweise-zu-bme280-sensoren)  
+      * [7.1.4 Xiaomi Mijia BLE Sensoren LYWSD03MMC](kap07.md#714-xiaomi-mijia-ble-sensoren-lywsd03mmc)  
    * [7.2 Relais und Relaisboards](kap07.md#72-relais-und-relaisboards)  
    * [7.3 MAX!-Komponenten](kap07.md#73-max-komponenten)  
    * [7.4 Eigene Hardwarelösungen](kap07.md#74-eigene-hardwarelösungen)  
