@@ -249,6 +249,7 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
   
 | Achtung |
 |:--------|
+| ***Die im Folgenden vorgestellte Lösung ist keine 'offizielle' BSB-LAN-Version!*** <br> *Daher sind bestimmte Funktionen nicht verfügbar und wir können keinen Support dafür bieten! <br> Sollten jedoch Fragen oder Probleme bzgl. der Verwendung auftauchen, so kannst du sie jedoch [in diesem Diskussionsthread](https://github.com/fredlcore/BSB-LAN/discussions/440) (bitte möglichst auf Englisch) stellen.* |
 | Die nachfolgend beschriebene Möglichkeit, Xiaomi Bluetooth-Sensoren einzubinden, betrifft **ausschließlich** Nutzer von ESP32-Boards! |  
     
 ***User DukeSS hat die Unterstützung für BLE (bluetooth low energy) Sensoren entwickelt und stellt dies in einer speziellen BSB-LAN-Version in [seinem GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors) zur Verfügung.***  
@@ -256,9 +257,7 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
   
 Wenn du ein ESP32-Board verwendest, kannst du eine [alternative Version von BSB-LAN](https://github.com/dukess/BSB-LAN/tree/BLE-sensors) nutzen, welche Unterstützung für BLE-Sensoren beitet. Mit dieser speziellen Version ist es möglich, verschiedene BLE-Sensoren in BSB-LAN einzubinden. [Hier](https://github.com/pvvx/ble_monitor) findest du eine Liste der unterstützten Sensoren.  
 Diese Lösung wurde mit Xiaomi Mijia BLE Sensoren des Typs LYWSD03MMC getestet.   
-  
-*Bitte beachte, dass die oben verlinkte spezielle Version von BSB-LAN keine 'offizielle' Version ist und wir daher keinerlei Support hierfür anbieten können! Sollten jedoch Fragen oder Probleme bzgl. der Verwendung auftauchen, so kannst du sie jedoch [in diesem Diskussionsthread]() (bitte möglichst auf Englisch) stellen.*      
-  
+    
 Derzeit werden nur unverschlüsselte Nachrichten unterstützt, man muss für die jeweiligen Sensoren also eine alternative Firmware verwenden. Für die erwähnten Xiaomi Mijia BLE Sensoren des Typs LYWSD03MMC kannst du ein solche Firmware [hier](https://github.com/pvvx/ATC_MiThermometer) finden.  
   
 Die Einschränkungen bei dieser Lösung bestehen derzeit darin, dass bspw. die OTA-Funktionalität nicht funktioniert, weil die BLE-Implementierung zu viel Speicherplatz benötigt.   
