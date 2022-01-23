@@ -250,7 +250,7 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
 | Achtung |
 |:--------|
 | ***Die im Folgenden vorgestellte Lösung ist keine 'offizielle' BSB-LAN-Version!*** <br> *Daher sind bestimmte Funktionen nicht verfügbar und wir können keinen Support dafür bieten! <br> Sollten jedoch Fragen oder Probleme bzgl. der Verwendung auftauchen, so kannst du sie jedoch [in diesem Diskussionsthread](https://github.com/fredlcore/BSB-LAN/discussions/440) (bitte möglichst auf Englisch) stellen.* |
-| Die nachfolgend beschriebene Möglichkeit, Xiaomi Bluetooth-Sensoren einzubinden, betrifft **ausschließlich** die Nutzung von ESP32-Boards! |  
+| Die nachfolgend beschriebene Möglichkeit, Xiaomi Bluetooth-Sensoren einzubinden, betrifft **ausschließlich die Verwendung von ESP32-Boards!** |  
     
 ***User DukeSS hat die Unterstützung für BLE (bluetooth low energy) Sensoren entwickelt und stellt dies in einer speziellen BSB-LAN-Version in [seinem GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors) zur Verfügung.***  
 ***Vielen Dank!***  
