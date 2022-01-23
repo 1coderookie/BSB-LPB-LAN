@@ -13,7 +13,7 @@ Das BSB-LAN Setup kann durch optionale Hardware in seinem Funktionsumfang erweit
 | ACHTUNG, wichtiger Hinweis: |
 |:----------------------------|
 | Beim Anschließen optionaler Hardware wie bspw. Sensoren, Relais etc. an den Arduino Due bzw. das spezifische ESP32-Board ist unbedingt darauf zu achten, dass **der verwendete Anschlusspin nicht anderweitig belegt ist bzw. nicht bereits boardintern verwendet wird!** Aufschluss hierüber gibt das jeweilige Pinout-Schema des spezifischen Arduino-/ESP-Boards. *Beachte auch die seriellen Pins des Adapters und etwaige weitere Komponenten wie bspw. das LAN-Shield, ein Relais-Shield etc.* | 
-| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
+
      
 ---
       
@@ -24,7 +24,12 @@ Es besteht die Möglichkeit, zusätzliche Sensoren des Typs
 - DS18B20 (OneWire-Sensor: Temperatur; Parameternummern 20300-20399) sowie 
 - BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck; Parameternummern 20200-20299) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind bereits im Softwarepaket des Adapters integriert.
-
+  
+| Hinweise |
+|:---------|
+| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
+| Solltest du ein ESP32-Board einsetzen, so besteht außerdem die Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. ](). |  
+  
 Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino (ggf. unter zusätzlicher Verwendung der fühlerspezifischen PullUp-Widerstände!) stattfinden.
 
 Zur Nutzung dieser Sensoren muss lediglich die *Konfiguration in der Datei BSB_LAN_config.h entsprechend angepasst werden*: Es sind die jeweiligen Definements zu aktivieren und die für DATA genutzten Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [2.2](kap02.md#22-konfiguration)).
@@ -179,15 +184,21 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
 ### 7.1.3 Hinweise zu BME280-Sensoren
   
 Sensoren des Typs BME280 bieten drei (bzw. fünf) Messgrößen: Temperatur, Luftfeuchtigkeit (zzgl. der errechneten absoluten Luftfeuchtigkeit) sowie Luftdruck (zzgl. der errechneten Höhe). Sie sind klein, i.d.R. unkompliziert anzuschließen und bieten (ausreichend) exakte Messergebnisse.  
-**Am I2C-Bus des Arduino Due (ebenfalls am Mega 2560) können bis zu zwei Sensoren des Typs BME280 angeschlossen werden.** Zur Verwendung muss das entspr. Definement in der Datei *BSB_LAN_config.h* aktiviert und die Anzahl der angeschlossenen Sensoren festgelegt werden ([s. Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh).  
-*Hinweis: Prinzipiell können BME280 auch an einem SPI angeschlossen werden, jedoch* ***nicht*** *am Arduino unseres BSB-LAN-Setups!*  
+**Am I2C-Bus des Arduino Due (ebenfalls am Mega 2560) können bis zu zwei Sensoren des Typs BME280 angeschlossen werden.**  
+Zur Verwendung muss das entspr. Definement in der Datei *BSB_LAN_config.h* oder via Webconfig aktiviert und die Anzahl der angeschlossenen Sensoren festgelegt werden ([s. Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh).  
+
+| Hinweise |
+|:---------|
+| Prinzipiell können BME280 auch an einem SPI angeschlossen werden, jedoch **nicht** am Arduino unseres BSB-LAN-Setups! |   
+| Wenn mehr als zwei BME280-Sensoren benötigt werden, können diese mittels eines I2C-Multiplexers TCA9548A angeschlossen werden. |
+| Die Verwendung eines BMP280 ist ebenfalls möglich, dieser bietet allerdings keine Feuchtigkeitsmessung. Daher ist der Einsatz eines BME280 zu empfehlen. |   
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BME280_double.jpg">  
     
 *Ein BME280-Sensor auf einem typischen Breakout-Board (Clone); links = Vorderseite, rechts = Rückseite.*  
   
 Folgende Punkte sind dabei zu beachten:  
-- Stelle sicher, dass es sich um einen Sensor des Typs BME280 handelt (und nicht um bspw. einen BMP280, BMP180 o.ä.).  
+- Stelle sicher, dass es sich um einen Sensor des Typs BME280 handelt (und nicht um bspw. einen BMP180 o.ä.).  
 - Stelle sicher, dass du möglichst eine Variante verwendest, die auf dem Breakout-Board bereits PullUp-Widerstände verbaut hat (wie auf dem oben gezeigten Bild). Sollte deine Variante *keine* PullUp-Widerstände verbaut haben, so musst du diese beim Anschluss an den Arduino noch hinzufügen (ca. 10kOhm, zwischen SDA und 3,3V sowie zwischen SCL und 3,3V anschließen)!  
 - Stelle sicher, dass der erste Sensor die I2C-Adresse 0x76 hat! Dies ist bei dem oben gezeigten Modul üblicherweise der Fall.  
 - Der zweite Sensor muss die Adresse 0x77 erhalten. Wie dies bei dem oben gezeigten Modul zu erreichen ist, wird nachfolgend beschrieben.  
@@ -232,6 +243,33 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
     
 *Darstellung der Messwerte eines BME280 im Webinterface (Kategorie "One Wire, DHT & MAX! Sensors").*  
     
+---  
+  
+### 7.1.4 Xiaomi Mijia BLE Sensoren LYWSD03MMC  
+  
+| Achtung |
+|:--------|
+| Die nachfolgend beschriebene Möglichkeit, Xiaomi Bluetooth-Sensoren einzubinden, betrifft **ausschließlich** Nutzer von ESP32-Boards! |  
+    
+***User DukeSS hat die Unterstützung für BLE (bluetooth low energy) Sensoren entwickelt und stellt dies in einer speziellen BSB-LAN-Version in [seinem GitHub repository](https://github.com/dukess/BSB-LAN/tree/BLE-sensors) zur Verfügung.***  
+***Vielen Dank!***  
+  
+Wenn du ein ESP32-Board verwendest, kannst du eine [alternative Version von BSB-LAN](https://github.com/dukess/BSB-LAN/tree/BLE-sensors) nutzen, welche Unterstützung für BLE-Sensoren beitet. Mit dieser speziellen Version ist es möglich, verschiedene BLE-Sensoren in BSB-LAN einzubinden. [Hier](https://github.com/pvvx/ble_monitor) findest du eine Liste der unterstützten Sensoren.  
+Diese Lösung wurde mit Xiaomi Mijia BLE Sensoren des Typs LYWSD03MMC getestet.   
+  
+*Bitte beachte, dass die oben verlinkte spezielle Version von BSB-LAN keine 'offizielle' Version ist und wir daher keinerlei Support hierfür anbieten können! Sollten jedoch Fragen oder Probleme bzgl. der Verwendung auftauchen, so kannst du sie jedoch [in diesem Diskussionsthread]() (bitte möglichst auf Englisch) stellen.*      
+  
+At this point only unencrypted messages are supported, so you have to use an alternative firmware for the sensors. For the mentioned Xiaomi Mijia BLE sensors of the type LYWSD03MMC you can find it [here](https://github.com/pvvx/ATC_MiThermometer).  
+  
+Die Einschränkungen bei dieser Lösung bestehen derzeit darin, dass bspw. die OTA-Funktionalität nicht funktioniert, weil die BLE-Implementierung zu viel Speicherplatz benötigt.   
+  
+Um die Funktion zu nutzen, müssen zwei Einstellungen in dieser speziellen BSB-LAN-Version angepasst werden:  
+- Aktiviere `EnableBLE` um den BLE-Scan zu aktvieren.  
+- Füge die MAC-Adressen der gewünschten BLE-Sensoren bei `BLE_sensors_macs` hinzu.  
+  Geräte, die hier nicht aufgeführt sind, werden ignoriert. Die Reihenfolge in der Auflistung beeinflusst die spätere Reihenfolge in der Kategoriedarstellung.    
+  Derzeit können bis zu 40 Sensoren gelistet werden (Parameternummern: NN20900-20199).  
+  Eine Auflistung aller gefundenen Sensoren cann mittels des URL-Befehls `/CO` erfolgen (wenn `EnableBLE` aktiviert ist).   
+  
 ---
     
 ## 7.2 Relais und Relaisboards  
