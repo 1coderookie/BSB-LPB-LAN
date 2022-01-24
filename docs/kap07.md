@@ -25,10 +25,11 @@ Es besteht die Möglichkeit, zusätzliche Sensoren des Typs
 - BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck; Parameternummern 20200-20299) direkt an bestimmte Pins des Adapters bzw. Arduino
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind bereits im Softwarepaket des Adapters integriert.
   
+*Solltest du ein ESP32-Board einsetzen, so besteht außerdem die (inoffizielle) Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. 7.4.4](kap07.md#744-xiaomi-mijia-ble-sensoren).*    
+  
 | Hinweise |
 |:---------|
-| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |  
-| Solltest du ein ESP32-Board einsetzen, so besteht außerdem die Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. 7.4.4](kap07.md#744-xiaomi-mijia-ble-sensoren). |  
+| In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |    
   
 Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino (ggf. unter zusätzlicher Verwendung der fühlerspezifischen PullUp-Widerstände!) stattfinden.
 
