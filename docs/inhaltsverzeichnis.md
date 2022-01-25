@@ -27,7 +27,7 @@
          * [1.3.1.1 ESP32: NodeMCU "Joy-It"](kap01.md#1311-esp32-nodemcu-joy-it)  
          * [1.3.1.2 ESP32: Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb)  
       * [1.3.2 ESP32 mit Due-kompatiblem BSB-LAN-Adapter ab V3](kap01.md#132-esp32-mit-due-kompatiblem-bsb-lan-adapter-ab-v3)  
-      * [1.3.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter V2](kap01.md#133-esp32-mit-due-kompatiblem-bsb-lan-adapter-v2)  
+      * [1.3.3 ESP32 mit veraltetem BSB-LAN-Adapter V2](kap01.md#133-esp32-mit-veraltetem-bsb-lan-adapter-v2)  
    * [1.4 Raspberry Pi](kap01.md#14-raspberry-pi)  
    * [1.5 Gehäuse](kap01.md#15-gehäuse)  
 
