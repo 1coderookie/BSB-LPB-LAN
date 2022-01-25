@@ -312,10 +312,10 @@ Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip)
 
 ---  
   
-### 1.3.3 ESP32 mit Due-kompatiblem BSB-LAN-Adapter V2  
+### 1.3.3 ESP32 mit veraltetem BSB-LAN-Adapter V2  
 
     
-Der BSB-LAN-Adapter v2 kann ebenfalls an einem ESP32 betrieben werden. So kann von der Weiterentwicklung und den neuen Funktionen der BSB-LAN-Software ab v2.x profitiert werden, ohne dass ein neuer Adapter angeschafft werden muss. Dazu müssen am Adapter selbst einige Änderungen vorgenommen werden, die im Folgenden beschrieben werden.  
+Der (inzwischen veraltete) BSB-LAN-Adapter v2, der mit einem Arduino Mega2560 verwendet wurde, kann ebenfalls an einem ESP32 betrieben werden. So kann von der Weiterentwicklung und den neuen Funktionen der BSB-LAN-Software ab v2.x profitiert werden, ohne dass ein neuer Adapter angeschafft werden muss. Dazu müssen am Adapter selbst einige Änderungen vorgenommen werden, die im Folgenden beschrieben werden.  
  
 | Achtung |
 |:--------|
