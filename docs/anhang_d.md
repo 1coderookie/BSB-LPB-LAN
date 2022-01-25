@@ -7,7 +7,7 @@
 
 Für Nutzer des veralteten Setups sind im Folgenden einige Fragen und Punkte aufgeführt, die evtl. der Klärung bedürfen oder die es zu beachten gilt. Etwaige weitere Fragen diesbzgl. stelle bitte im entspr. [Thread des FHEM Forums](https://forum.fhem.de/index.php/topic,29762.0.html).  
 Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die sich bspw. darauf beziehen, sich nach der erfolgten Umstellung auf den Adapter v3/v4 jetzt noch einen Adapter v2 zu bauen.  
-**PCBs v2 sind nicht mehr verfügbar, Stand der Technik ist die Kombination Adapter v3/v4 + Due.**    
+**PCBs v2 sind nicht mehr verfügbar, Stand der Technik ist die Kombination Adapter v4.x + Due/ESP32.**    
   
 ---  
   
