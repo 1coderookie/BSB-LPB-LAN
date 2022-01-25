@@ -12,7 +12,7 @@ Bitte habe jedoch Verständnis, dass wir nicht auf Fragen eingehen werden, die s
 ---  
   
 ***Hinweis:  
-Es ist möglich, den Adapter v2 durch eine Vollbestückung und kleinere Anpassungen mit einem ESP32 zu verwenden. Auf diese Weise könnte die aktuelle BSB-LAN-Version genutzt werden, ohne auf den aktuellen Adapter wechseln zu müssen. Für weitere Informationen lies bitte das [Kap. 1.3.3](kap01.md#133-esp32-mit-due-kompatiblem-bsb-lan-adapter-v2).***
+Es ist möglich, den Adapter v2 durch eine Vollbestückung und kleinere Anpassungen mit einem ESP32 zu verwenden. Auf diese Weise könnte die aktuelle BSB-LAN-Version genutzt werden, ohne auf den aktuellen Adapter wechseln zu müssen. Für weitere Informationen lies bitte das [Kap. 1.3.3](kap01.md#133-esp32-mit-veraltetem-bsb-lan-adapter-v2).***
   
 ---  
   
