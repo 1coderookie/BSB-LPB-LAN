@@ -38,8 +38,8 @@ Das Projekt besteht aus zwei spezifischen Komponenten:
 - der [BSB-LAN Software](kap02.md), die auf einen kompatiblen Mikrocontroller geflasht werden muss.  
     
 Der [BSB-LAN-Adapter](kap01.md#11-adapter) wandelt die 12V-Bussignale der Heizung in ein geeignetes 3,3V-Signal für den benötigten Mikrocontroller um.  
-Der Adapter wird an den [kompatiblen Controller](kap10.md) der Heizungsanlage angeschlossen und muss in Verbindung mit einem kompatiblen Mikrocontroller ([Arduino Due](kap01.md#12-arduino-due) oder [ESP32](kap01.md#13-esp32)) verwendet werden.  
-Der Mikrocontroller selbst wird dann in das Heimnetzwerk eingebunden (je nach gewähltem Mikrocontroller entweder über LAN oder WiFi).   
+Der Adapter wird an den [kompatiblen Regler](kap10.md) des Wärmeerzeugers angeschlossen und muss in Verbindung mit einem kompatiblen Mikrocontroller ([Arduino Due](kap01.md#12-arduino-due) oder [ESP32](kap01.md#13-esp32)) verwendet werden.  
+Der Mikrocontroller selbst wird dann in das Heimnetzwerk eingebunden (je nach gewähltem Mikrocontroller entweder über LAN oder WWLAN).   
 Die Steuerung der Heizungsanlage muss mit einem ["Boiler-System-Bus" (BSB)](kap10.md#1011-bsb), einem ["Local-Process-Bus (LPB)](kap10.md#1012-lpb) oder einer ["Punkt-zu-Punkt-Schnittstelle" (PPS)](kap10.md#1013-pps-schnittstelle) ausgestattet sein. Dies sind in i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
 
 Die [BSB-LAN-Software](kap02.md) setzt dann die Logikpegel in spezifische 'Bustelegramme' um. Sie ermöglicht im Wesentlichen den Zugriff auf den Regler der Heizungsanlage. Sie bietet verschiedene Funktionen wie die Überwachung der Werte und des Zustands von Parametern, die Protokollierung und (falls gewünscht) die Steuerung und Änderung von Einstellungen über ein [Webinterface](kap04.md).  
