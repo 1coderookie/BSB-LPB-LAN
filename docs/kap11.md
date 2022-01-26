@@ -51,6 +51,8 @@ Danke!
 
 -   Brötje BSK 20 \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje EcoCondens BBS 2N (LMU64 + OCI420) (Gasbrenner) {LPB via OCI420}  
+
 -   Brötje EcoCondens BBS 15E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje EcoCondens BBS 20E \[LMS14\] (Gasbrenner) {BSB}
@@ -67,7 +69,9 @@ Danke!
 
 -   Brötje EcoSolar Kompakt BMR 20/24 \[LMS15\] (Gasbrenner + Solar) {BSB}  
 
--   Brötje Eco Therm Kompakt WMC 20/33 \[LMS15\] (Gasbrenner) {BSB}  
+-   Brötje EcoTherm Kompakt WBC 22/24 \[LMU64 + OCI420\] (Gasbrenner) {LPB via OCI420}
+
+-   Brötje EcoTherm Kompakt WMC 20/33 \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje EcoTherm Kompakt WMS 12 \[LMS 15\] (Gasbrenner) {BSB}
 
@@ -78,6 +82,8 @@ Danke!
 -   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}
 
 -   Brötje EcoTherm Plus WGB 15-38H \[LMS14\] (Gasbrenner) {BSB}  
+
+-   Brötje EcoTherm Plus WGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
 
 -   Brötje EcoTherm Plus WGB-M EVO 20H \[LMS15\] (Gasbrenner) {BSB}  
 
@@ -112,6 +118,8 @@ Danke!
 
 -   Brötje SensoTherm BLW Split B \[RVS21\] (Wärmepumpe) {BSB}  
 
+-   Brötje SensoTherm BLW Split 16 B \[RVS21\] (Wärmepumpe) {BSB}  
+
 -   Brötje SensoTherm BLW 12B \[RVS21.825\] (Wärmepumpe) {BSB}
 
 -   Brötje SensoTherm BLW 15B \[RVS21.825\] (Wärmepumpe) {BSB}
@@ -131,8 +139,6 @@ Danke!
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje TrioCondens BGB 28E \[LMS14\] (Gasbrenner) {BSB}
-
--   Brötje WBC 22/24 \[LMU64 + OCI420\] (Gasbrenner) {LPB via OCI420}
 
 -   Brötje WBC 22/24 \[RVS43.345\] (Gasbrenner) {BSB}
 
@@ -262,6 +268,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 ## 11.3 Weitere Hersteller
 
 -   ATAG Q38CR \[LMS14\] (Gasbrenner) {BSB}
+
+-   Atlantic Alféa Evolution \[RVS21\] (Wärmepumpe) {BSB}
 
 -   Atlantic Alféa Evolution 2 \[RVS21\] (Wärmepumpe) {BSB}
 
