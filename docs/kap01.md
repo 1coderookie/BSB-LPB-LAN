@@ -12,16 +12,18 @@ BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf
 
 ## 1.1 Adapter
 
-Der BSB-LAN Adapter ist in zwei verschiedenen Versionen verfügbar. Zum einen als *Arduino Due-spezifische Version mit einem EEPROM*, zum anderen als eine *ESP32-spezifische Version ohne EEPROM*.  
-Abhängig davon, welchen Mikrocontroller du einsetzen möchtest, solltest du die spezifische Version auswählen, da sich der Adapter dann mit dem jeweiligen System komfortabel und sicher durch ein Aufstecken verbinden lässt.  
-  
-***Die Adapterplatinen können bei Frederik Holst (bsb [ät] code-it.de) bestellt werden.***  
-
+Der BSB-LAN-Adapter ist im Prinzip ein Pegelwandler, der die 12V Bussignale in 3,3V Signale für den benötigten Mikrocontroller umsetzt. Die Busanschlüsse des Adapters sind von der eigentlichen elektronischen Schaltungstechnik galvanisch getrennt.  
+Der BSB-LAN Adapter ist grundsätzlich in zwei verschiedenen Versionen verfügbar. Zum einen als *Arduino Due-spezifische Version mit einem EEPROM*, zum anderen als eine *ESP32-spezifische Version ohne EEPROM*.  
   
 | Achtung | 
 |:--------|
 | Es sei bereits an dieser Stelle angemerkt, dass die ESP32-spezifische Adapterversion aufgrund des fehlenden EEPROMs *nur* mit einem ESP32 genutzt werden kann - die Due-spezifische Version hingegen kann (wenn auch nicht komfortabel aufsteckbar) auch mit einem ESP32 genutzt werden. |  
-
+  
+Der Adapter kann von versierten Usern selbst gebaut werden, einen entspr. Schaltplan für die Due-kompatible Version samt EEPROM findet sich in [Anhang A1](anhang_a1.md) - bei der ESP32-kompatiblen Version entfällt lediglich das EEPROM, der Rest der Schaltung ist identisch.   
+  
+***Neben dem kompletten Eigenbau besteht die Möglichkeit, fertige Adapterplatinen bei Frederik Holst (bsb [ät] code-it.de) zu erwerben.***  
+Die bei Frederik erhältlichen PCBs können auf die im Folgenden vorgestellten kompatiblen Mikrocontroller (Arduino Due / Joy-It ESP32-NodeMCU / Olimex ESP32-EVB) passgenau aufgesteckt werden, so dass man bereits im Vorfeld gründlich überlegen sollte, welchen Mikrocontroller man für das Setup im weiteren Verlauf einsetzen möchte.   
+    
 ---
 
 ### 1.1.1 Due-Version  
