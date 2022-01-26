@@ -31,24 +31,37 @@ Keiner der Mitwirkenden oder Autoren kann für etwaige Schäden jeglicher Art ha
   
 ### BSB-LPB-LAN - ein kurzer Überblick   
 
-"BSB-LPB-LAN" ist ein gemeinschaftliches Hard- und Softwareprojekt, welches ursprünglich zum Ziel hatte, mittels PC / Laptop / Tablet / Smartphone Zugriff auf die Steuerungen bzw. Regler von verschiedenen Wärmeerzeugern (Öl- und Gasheizungen, Wärmepumpen, Solarthermie etc.) bestimmter Hersteller (initial hauptsächlich Brötje und Elco) zu erlangen.  
-Im weiteren Verlauf sollte es dann möglich sein, Daten auszulesen, sie weiter zu verarbeiten (z.B. loggen und grafisch darstellen) oder gar Einfluss auf die Steuerung/Regelung nehmen zu können und das System in bestehende SmartHome-Systeme einzubinden.  
+"BSB-LPB-LAN" ist ein gemeinschaftliches Hard- und Softwareprojekt, das den Zugriff auf die Steuerungen verschiedener Wärmeerzeuger bestimmter Hersteller über PC / Laptop / Tablet / Smartphone ermöglicht.  
+  
+Das Projekt besteht aus zwei spezifischen Komponenten:  
+- der [Hardware](kap01.md), bei der es sich im Wesentlichen um einen Pegelwandler handelt und die im Folgenden "BSB-LAN-Adapter" genannt wird und  
+- der [BSB-LAN Software](kap02.md), die auf einen kompatiblen Mikrocontroller geflasht werden muss.  
     
-All dies ist mittlerweile umgesetzt worden:  
-Mittels eines eigenbaufähigen Adapters, eines Arduino Due und eines LAN-Shields oder eines ESP32 kann nun ein entsprechender Wärmeerzeuger mit einem ["Boiler-System-Bus" (BSB)](kap10.md#1011-bsb), einem ["Local-Process-Bus (LPB)](kap10.md#1012-lpb) oder einer ["Punkt-zu-Punkt-Schnittstelle" (PPS)](kap10.md#1013-pps-schnittstelle) kostengünstig ins heimische Netzwerk eingebunden werden. Dies sind in diesem Fall i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
+Der [BSB-LAN-Adapter](kap01.md#11-adapter) wandelt die 12V-Bussignale der Heizung in ein geeignetes 3,3V-Signal für den benötigten Mikrocontroller um.  
+Der Adapter wird an den [kompatiblen Controller](kap10.md) der Heizungsanlage angeschlossen und muss in Verbindung mit einem kompatiblen Mikrocontroller ([Arduino Due](kap01.md#12-arduino-due) oder [ESP32](kap01.md#13-esp32)) verwendet werden.  
+Der Mikrocontroller selbst wird dann in das Heimnetzwerk eingebunden (je nach gewähltem Mikrocontroller entweder über LAN oder WiFi).   
+Die Steuerung der Heizungsanlage muss mit einem ["Boiler-System-Bus" (BSB)](kap10.md#1011-bsb), einem ["Local-Process-Bus (LPB)](kap10.md#1012-lpb) oder einer ["Punkt-zu-Punkt-Schnittstelle" (PPS)](kap10.md#1013-pps-schnittstelle) ausgestattet sein. Dies sind in i.d.R. Systeme, bei denen ein (gebrandeter) SIEMENS-Regler zum Einsatz kommt.
 
-Mit Hilfe des Adapters und der BSB-LAN-Software können nun unkompliziert verschiedene Funktionen, Werte und Parameter beobachtet, geloggt und bei Bedarf web-basiert gesteuert und geändert werden.
-Eine optionale Einbindung in bestehende Smart-Home-Systeme wie bspw. [FHEM](kap08.md#81-fhem), [openHAB](kap08.md#82-openhab), [HomeMatic](kap08.md#83-homematic-eq3), [ioBroker](kap08.md#84-iobroker), [Loxone](kap08.md#85-loxone), [IP-Symcon](kap08.md#86-ip-symcon), [EDOMI](kap08.md#810-edomi), [Home Assistant](kap08.md#811-home-assistant), [SmartHomeNG](kap08.md#812-smarthomeng) oder [Node-RED](kap08.md#813-node-red) kann mittels [HTTPMOD](kap08.md#812-einbindung-mittels-httpmod-modul), [MQTT](kap05.md#52-mqtt) oder [JSON](kap05.md#53-json) erfolgen. 
-Darüber hinaus ist der Einsatz des Adapters als [Standalone-Logger](kap06.md#61-loggen-von-daten) ohne LAN- oder Internetanbindung bei Verwendung einer microSD-Karte ebenfalls möglich.  
-Zusätzlich können [Temperatur- und Feuchtigkeitssensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und deren Daten ebenso geloggt und ausgewertet werden. Durch die Verwendung eines Arduino und die Möglichkeit, [eigenen Code in die BSB-LAN-Software zu integrieren](kap06.md#68-eigenen-code-in-bsb-lan-einbinden), bietet sich darüber hinaus ein weites Spektrum an Erweiterungsmöglichkeiten.  
-
-    
-Als erste grobe Orientierung, ob das eigene Heizungssystem komaptibel ist oder nicht, kann in der Bedienungsanleitung der Heizung nach einer Anschlussmöglichkeit für optionale Raumgeräte gesucht werden. Sind dort Raumgeräte des Typs QAA55/QAA75 als kompatibel aufgeführt (bei Brötje werden diese u.a. auch als "RGB Basic" und "RGT B Top" bezeichnet), so ist erfahrungsgemäß der Anschluss des Adapters via BSB möglich und der volle Funktionsumfang von BSB-LAN gegeben. Dies ist bei den meisten Öl-, Gas- und Wärmepumpensystemen der letzten Jahre der Fall.  
+Die [BSB-LAN-Software](kap02.md) setzt dann die Logikpegel in spezifische 'Bustelegramme' um. Sie ermöglicht im Wesentlichen den Zugriff auf den Regler der Heizungsanlage. Sie bietet verschiedene Funktionen wie die Überwachung der Werte und des Zustands von Parametern, die Protokollierung und (falls gewünscht) die Steuerung und Änderung von Einstellungen über ein [Webinterface](kap04.md).  
+Eine optionale Einbindung in ein bestehendes SmartHome-System ist ebenfalls möglich. Eine Integration in Systeme wie [FHEM](kap08.md#81-fhem), [openHAB](kap08.md#82-openhab), [HomeMatic](kap08.md#83-homematic-eq3), [ioBroker](kap08.md#84-iobroker), [Loxone](kap08.md#85-loxone), [IP-Symcon](kap08.md#86-ip-symcon), [EDOMI](kap08.md#810-edomi), [Home Assistant](kap08.md#811-home-assistant), [SmartHomeNG](kap08.md#812-smarthomeng) oder [Node-RED](kap08.md#813-node-red) kann mittels [HTTPMOD](kap08.md#812-einbindung-mittels-httpmod-modul), [MQTT](kap05.md#52-mqtt) oder [JSON](kap05.md#53-json) erfolgen. 
+Darüber hinaus ist der Einsatz des Adapters als [Standalone-Logger](kap06.md#61-loggen-von-daten) ohne LAN-/WLAN- oder Internetanbindung bei Verwendung einer microSD-Karte ebenfalls möglich.  
+Zusätzlich können [Temperatur- und Feuchtigkeitssensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und deren Daten ebenso geloggt und ausgewertet werden.  
+Außerdem besteht die Möglichkeit, [eigenen Code in die BSB-LAN-Software zu integrieren](kap06.md#68-eigenen-code-in-bsb-lan-einbinden), was darüber hinaus ein weites Spektrum an Erweiterungsmöglichkeiten bietet.  
+  
+---  
+  
+Als erste grobe Orientierung, ob das eigene Heizungssystem komaptibel ist oder nicht, kann in der Bedienungsanleitung der Heizung nach einer Anschlussmöglichkeit für optionale Raumgeräte gesucht werden.  
+Sind dort Raumgeräte des Typs QAA55/QAA75 als kompatibel aufgeführt (bei Brötje werden diese u.a. auch als "RGB Basic" und "RGT B Top" bezeichnet), so ist erfahrungsgemäß der Anschluss des Adapters via BSB möglich und der volle Funktionsumfang von BSB-LAN gegeben. Dies ist bei den meisten Öl-, Gas- und Wärmepumpensystemen der letzten Jahre der Fall.  
 Sollten andere Raumgeräte aufgeführt sein, so kann im Kapitel "[Raumgeräte](kap10.md#105-konventionelle-raumgeräte-für-die-aufgeführten-reglertypen)" nachgesehen werden.  
 Genauen Aufschluss bietet letztlich aber immer nur die eigentliche Reglerbezeichnung.  
-   
+      
 Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je nach Typ des Wärmeerzeugers (Öl, Gas, WP etc.) normalerweise verbaut sind (bzw. waren) und die mittels BSB-LAN bedient werden können. Gewisse Einzel- und Spezialfälle (wie bspw. ein RVS-Regler bei einem Gasgerät) sind hier nicht berücksichtigt. Für genauere Informationen bzgl der [Reglertypen](kap10.md#102-detaillierte-beschreibung-der-kompatiblen-regler) und der zu verwendenden [Anschlüsse](kap03.md#31-anschluss-des-adapters) lies bitte die entsprechenden Kapitel.
-
+  
+**Um eine detailliertere Übersicht der gemeldeten Systeme einzusehen, die bisher erfolgreich mit BSB-LAN genutzt werden, folge bitte dem entsprechenden Link:**  
+- **[Brötje](kap11.md#111-brötje)**
+- **[Elco](kap11.md#112-elco)**
+- **[weitere Hersteller (z.B. Fujitsu, Atlantic, Weishaupt)](ap11.md#113-weitere-hersteller)**       
+  
 **Gasregler:**  
 - [LMU74/LMU75](kap10.md#10211-lmu-regler) und (aktuelle Generation) [LMS14/LMS15](kap10.md#10212-lms-regler), Anschluss via BSB  
 - [LMU54/LMU64](kap10.md#10211-lmu-regler), Anschluss via PPS   
@@ -63,13 +76,8 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 **Weishaupt (Modell WTU):**  
 - [RVS23](kap10.md#10222-rvs-regler), Anschluss via LPB    
    
-   
-**Um eine detailliertere Übersicht der gemeldeten Systeme einzusehen, die bisher erfolgreich mit BSB-LAN genutzt werden, folge bitte dem entsprechenden Link:**  
-- **[Brötje](kap11.md#111-brötje)**
-- **[Elco](kap11.md#112-elco)**
-- **[weitere Hersteller (z.B. Fujitsu, Atlantic, Weishaupt)](ap11.md#113-weitere-hersteller)**      
-   
-  
+---
+     
 ### Die Software ist [hier](https://github.com/fredlcore/BSB-LAN) verfügbar.  
 
 ---  
