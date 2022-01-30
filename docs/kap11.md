@@ -315,6 +315,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Chappée Klista + HTE C 24 \[LMS14\] (Gasbrenner) {BSB}
 
+-   Chappée Luna Platinum Duo 3.24 HTE \[LMS15\] (Gasbrenner) {BSB}
+
 -   CTA Optiheat 1-5es \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   CTA Optiheat 1-18es \[RVS61\] (Wärmepumpe) {BSB}  
