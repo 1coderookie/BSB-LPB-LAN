@@ -86,7 +86,7 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 
 -   Software, Schaltplan v1, urspr. Dokumentation EN, Ideenfindung, Support  
     bis v0.16:  
-    *Gero Schumacher (gero.schumacher \[ät\] gmail.com)*
+    *Gero Schumacher*
 
 -   Software, Platinenlayout v1 & v2, urspr. Dokumentation EN, Ideenfindung, Support  
     ab v0.17:  
