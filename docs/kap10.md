@@ -5,7 +5,7 @@
 
 # 10. Exkurs: Heizungsregler und Zubehör
 
-In den folgenden Kapiteln werden die verschiedenen Heizungsregler sowie deren Bussysteme und Zubehör vorgestellt. Es ist empfehlenswert, zumindest die Kapitel über die Bussysteme und den spezifischen regler des Wärmeerzeugers zu lesen, an den das BSB-LAN Setup angeschlossen werden soll. 
+In den folgenden Kapiteln werden die verschiedenen Heizungsregler sowie deren Bussysteme und Zubehör vorgestellt. Es ist empfehlenswert, zumindest die Kapitel über die Bussysteme und den spezifischen Regler des Wärmeerzeugers zu lesen, an den das BSB-LAN Setup angeschlossen werden soll. 
 
 Prinzipiell unterstützt BSB-LAN von der Firma SIEMENS hergestellte
 (Heizungs-)Regler, die einen BSB und/oder LPB aufweisen. Diese werden
