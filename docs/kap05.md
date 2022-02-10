@@ -84,6 +84,10 @@ Um MQTT bei BSB-LAN zu nutzen, muss zwingend das Definement "#define LOGGER" in 
 Die zu sendenden (von BSB-LAN abgefragten) Parameter, das Sendeintervall (nur eines für alle Parameter möglich!) sowie die weiteren MQTT-spezifischen Einstellungen (Broker, Topic etc.) sind entweder via Webkonfiguration oder direkt in der Datei *BSB_LAN_config.h* einzustellen. Beachte hierzu bitte die Erklärungen in den entspr. Unterkapiteln von [Kap. 5](kap05.md).  
   
 Beispiele für eine Einbindung von BSB-LAN findest du in den entspr. Unterkapiteln von [Kap. 11](kap11.md). 
+
+| Hinweis |
+|:--------|
+| Wenn du die MQTT-Funktion per fest eingestellter Loggingparameter und -intervall nutzt, achte darauf, dass du das Logintervall (= MQTT-Sendeintervall) anpasst! <br> Per default ist hier 3600 eingestellt, was bedeutet, dass die Parameter alle 3600 *Sekunden*, also alle 60 *Minuten* und somit *stündlich* gesendet werden! Wenn du also MQTT bei deinem Broker konfiguriert hast und dich wundern solltest, warum keine Werte ankommen, überprüfe zuerst das Logintervall! |    
   
 BSB-LAN sendet über den Subtopic "status" unter dem definierten "MQTTTopicPrefix" jederzeit seinen Online-Status. Dies ist in der Voreinstellung also "BSB-LAN/status". Über diesen Topic kann so jederzeit festgestellt werden, ob der BSB-LAN derzeit Werte sendet und Kommandos empfangen kann.  
 Ist BSB-LAN verfügbar, ist im Topic die Nachricht "online" zu sehen, ansonsten wird "offline" gesetzt. Die Nachricht ist per Retain-Flag dauerhaft verfügbar, der Subscriber muss also nicht zum Zeitpunkt des BSB-LAN Starts bereits den Topic abonniert haben.  
