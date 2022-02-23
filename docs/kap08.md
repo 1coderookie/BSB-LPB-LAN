@@ -2304,7 +2304,7 @@ A5 = Verkettung von A1 bis A4
 | Die o.g. Integration ist z.Zt. nur mit der BSB-LAN-Version 1.0 kompatibel, NICHT mit der aktuellen Version! Für die Einbindung der aktuellen BSB-LAN-Version ist es daher empfehlenswert, die im Folgenden dargestellten Einbindungsmöglichkeiten mittels MQTT oder JSON zu nutzen. |  
   
 ---  
-
+<!---
 ***BSB-LAN-User Torben hat den Adapter via MQTT in Home Assistant eingebunden und stellt hier ein Beispiel zur Verfügung.***  
 ***Vielen Dank!***  
   
@@ -2323,7 +2323,7 @@ Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht 
   
 Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt/)  
   
----
+--->
   
 ***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***  
 ***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***  
