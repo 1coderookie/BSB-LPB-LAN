@@ -441,19 +441,238 @@ Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
   
 ### 10.2.4 Hinweis: Spezialfall LMU54/LMU64-Regler  
 Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
-Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (OCI420) einen LPB nachrüsten. An diesen wiederum ist der Adapter anschließbar.  
+Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (Typ OCI420) einen LPB nachrüsten. An diesem wiederum ist der Adapter anschließbar.  
             
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
    
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
-Der Funktionsumfang ist bei diesem Regler (auch bei der Nutzung von BSB-LAN) jedoch relativ eingeschränkt und außerdem in gewissem Ausmaß von der Softwareversion des Reglers abhängig (getestet mit LMU64, SW v2.08 vs. SW v3.0): Regler mit SW ab v3.0 scheinen mehr (via BSB-LAN steuerbare) Funktionen aufzuweisen als Regler mit SW <v3.0. Insbesondere seien hier die beiden Sollwert-Temperaturparameter 709 und 711 genannt, anhand derer das Brennerverhalten in gewissem Umfang bestimmt werden könnte – diese können nur mit SW ab v3.0 genutzt bzw. verändert werden. (Hinweis: Derzeit läuft noch ein Versuch, ob das Brennerverhalten zufriedenstellend via Relais an einem anderen Kontakt beeinflusst werden kann.)  
+Der Funktionsumfang ist bei diesem Regler (auch bei der Nutzung von BSB-LAN) jedoch relativ eingeschränkt und außerdem in gewissem Ausmaß von der Softwareversion des Reglers abhängig (getestet mit LMU64, SW v2.08 vs. SW v3.0 vs. SW v3.03): Regler mit SW ab v3.0 scheinen mehr (via BSB-LAN steuerbare) Funktionen aufzuweisen als Regler mit SW <v3.0. Insbesondere seien hier die beiden Sollwert-Temperaturparameter 709 und 711 genannt, anhand derer das Brennerverhalten in gewissem Umfang bestimmt werden könnte – diese können nur mit SW ab v3.0 genutzt bzw. verändert werden. (Hinweis: Derzeit läuft noch ein Versuch, ob das Brennerverhalten zufriedenstellend via Relais an einem anderen Kontakt beeinflusst werden kann.)  
   
-Auf Parameter wie Außentemperatur, Kesseltemperatur, TWW-Temperatur, Vorlauftemperatur etc. kann jedoch nach bisherigem Kenntnisstand bei beiden erwähnten Softwareversionen zugegriffen werden.  
+Auf Parameter wie Außentemperatur, Kesseltemperatur, TWW-Temperatur, Vorlauftemperatur etc. kann jedoch nach bisherigem Kenntnisstand bei allen erwähnten Softwareversionen zugegriffen werden.  
   
-Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, der für den Kauf eines LPB-ClipIn-Moduls des Typs OCI420 zusätzlich geleistet werden muss, u.U. nicht ‚lohnt‘. Dies ist jedoch abhängig vom verfolgten Ziel. Will man nur Temperaturen loggen um einen groben Überblick über den Ist-Zustand des Heizungssystems zu erhalten, so ist u.U. eine günstigere Lösung mit einer entsprechenden DS18B20-Temperatursensoren-Installation ausreichend.  
+Fairerweise muss man an dieser Stelle sagen, dass sich der finanzielle Aufwand, der für den Kauf eines LPB-ClipIn-Moduls des Typs OCI420 zusätzlich geleistet werden muss, u.U. nicht ‚lohnt‘. Dies ist jedoch abhängig vom verfolgten Ziel. Will man nur Temperaturen loggen um einen groben Überblick über den Ist-Zustand des Heizungssystems zu erhalten, so ist u.U. eine günstigere Lösung mit einer entsprechenden DS18B20-Temperatursensoren-Installation ausreichend. Will man hingegen auch bspw. Fehlereinträge aus der Ferne abrufen können, so lässt sich dies nur über die Lösung OCI420+BSB-LAN-Setup erreichen.  
+Es sei an dieser Stelle aber nochmals ausdrücklich darauf hingewiesen, dass eine Beeinflussung des Brennerverhaltens (wenn überhaupt) nur in sehr eingeschränktem Umfang möglich ist! 
   
 Hinweise zum Anschluss und der Konfiguration des OCI420-ClipIns sind im [Kap. 10.2.6](kap10.md#1026-lpb-nachr%C3%BCsten-mittels-oci420-clipin-modul) zu finden.  
+  
+Im Folgenden wird exemplarisch eine Komplettabfrage einer LMU64 mit SW v3.03 (also der 'aktuellsten' Version, bei der am meisten Parameter verfügbar sind) dargestellt - so bekommt man einen Eindruck, was bestenfalls via BSB-LAN abrufbar ist.  
+  
+```
+1 Uhrzeit und Datum - Uhrzeit: 12:30:55	
+2 Uhrzeit und Datum - Tag/Monat: 24.01.	
+3 Uhrzeit und Datum - Jahr: 2022	
+70 Bedieneinheit - Geräte-Version Bedienteil: 30.3	
+701 Heizkreis 1 - Präsenztaste (temporäre Abwesenheit):	---
+709 Heizkreis 1 - Komfortsollwert Minimum: 10.0 °C	
+711 Heizkreis 1 - Komfortsollwert Maximum: 30.0 °C	
+720 Heizkreis 1 - Kennlinie Steilheit: 18	
+721 Heizkreis 1 - Kennlinie Verschiebung: 0.0 °C	
+730 Heizkreis 1 - Sommer-/ Winterheizgrenze: 21 °C	
+734 Heizkreis 1 - Raumsollabsenkung mit Schaltuhr: 10.0 °C	
+781 Heizkreis 1 - Schnellabsenkung Faktor: 4	
+850 Heizkreis 1 - Estrichfunktion: 0 - Aus	
+884 Heizkreis 1 - Drehzahlstufe Auslegungspunkt: 17	
+885 Heizkreis 1 - Pumpe-PWM Minimum: 41 %	
+886 Heizkreis 1 - Norm Außentemperatur: -20 °C	
+887 Heizkreis 1 - Vorlaufsoll Norm Außentemperatur: 72.0 °C	
+888 Heizkreis 1 - dt Überhöhungsfaktor: 25.0 %	
+889 Heizkreis 1 - Filterzeitkonstant Drehzahlregler: 99 %	
+891 Heizkreis 1 - dT Vorhaltezeit Tv: 0 s	
+892 Heizkreis 1 - dT Nachstellzeit Tv: 50 s	
+893 Heizkreis 1 - dT Abtastfaktor: 10	
+894 Heizkreis 1 - dT Spreizung Norm Außentemperatur: 20.0 °C	
+895 Heizkreis 1 - dT Spreizung Maximum: 20.0 °C	
+1001 Heizkreis 2 - Präsenztaste (temporäre Abwesenheit): ---
+1020 Heizkreis 2 - Kennlinie Steilheit: 14	
+1021 Heizkreis 2 - Kennlinie Verschiebung: 0.0 °C	
+1130 Heizkreis 2 - Mischerüberhöhung: 10.0 °C	
+1134 Heizkreis 2 - Antrieb Laufzeit: 150 s	
+1150 Heizkreis 2 - Estrichfunktion: 0 - Aus	
+1301 Heizkreis 3/P - Präsenztaste (temporäre Abwesenheit: ---
+1603 Trinkwasser - Manueller TWW-Push: Aus
+1614 Trinkwasser - TWW Nennsollwert Maximum: 2.2 °C	
+1615 Trinkwasser - TWW Reduziertsollwert Minimum: 0.3 °C	
+2210 Kessel - Sollwert Minimum: 20.0 °C	
+2212 Kessel - Sollwert Maximum: °C 000084 - decoding error	
+2215 Kessel - Max. Regeldifferenz ohne Abbruch der Mindestpause (°K): 60.0 °C	
+2250 Kessel - Pumpennachlaufzeit: 10 min	
+2440 Kessel - Gebläse-PWM Hz Maximum: 70 %	
+2441 Kessel - Gebläsedrehzahl Hz Maximum: 5400 U/min	
+2442 Kessel - Gebläse-PWM Reglerverzögerung: 19 %	
+2443 Kessel - Gebläse-PWM Startwert DLH: 40 %	
+2444 Kessel - Leistung Minimum: 4.0 kW	
+2445 Kessel - Nennleistung Kessel: 15.0 kW	
+2451 Kessel - Brennerpausenzeit Minimum: 120 s	
+2452 Kessel - Schaltdifferenz Brennerpause: 30.0 °C	
+2453 Kessel - Reglerverzögerung Dauer: 60 s	
+2454 Kessel - Schaltdifferenz ein HK: 4.0 °C	
+2455 Kessel - Schaltdifferenz aus Min HK: 5.0 °C	
+2456 Kessel - Schaltdifferenz aus Max HK: 7.0 °C	
+2458 Kessel - Einschwingzeit TWW Max: 3 min	
+2459 Kessel - Sperrzeit dynamische Schaltdifferenz: 0 s	
+2471 Kessel - Pumpennachlaufzeit HK: 10 min	
+2472 Kessel - Pumpennachlauftemperatur TWW: 72.0 °C	
+2473 Kessel - Abgastemperatur Leistungsreduktion: 80 °C	
+2521 Kessel - Frostschutz Einschalttemperatur: 5.0 °C	
+2522 Kessel - Frostschutz Ausschalttemperatur: 10.0 °C	
+2547 Kessel - Abtastintervall DLH: 0.2 s	
+2730 Sitherm Pro - Ionisationsstrom: 131.80 µA	
+2792 Wärmepumpe - Pumpendrehzahl Minimum: 41 %	
+3810 Solar - Temperaturdifferenz ein: 8.0 °C	
+3811 Solar - Temperaturdifferenz aus: 4.0 °C	
+3812 Solar - Ladetemperatur Min TWW-Speicher: 30.0 °C	
+3831 Solar - Mindestlaufzeit Kollektorpumpe: 60 s	
+3840 Solar - Kollektortemperatur Frostschutz: 0.0 °C	
+3850 Solar - Kollektorüberhitzschutz: 120.0 °C	
+5019 Trinkwasserspeicher - TWW Nachladeüberhöhung Schichtenspeicher: 5.0 °C	
+5020 Trinkwasserspeicher - TWW Vorlaufsollwertüberhöhung: 18.0 °C	
+5050 Trinkwasserspeicher - TWW Ladetemperatur Maximum: 80.0 °C	
+5055 Trinkwasserspeicher - TWW Rückkühltemperatur: 80.0 °C	
+5100 Trinkwasserspeicher - TWW Pumpe-PWM Durchladung: 18 %	
+5126 Trinkwasserspeicher - Mischer Nachstellzeit Tn: 100 s	
+5400 Trinkwasser Durchlauferhitzer - Komfortsollwert: 45.0 °C	
+5420 Trinkwasser Durchlauferhitzer - Vorlauf-Sollwertüberhöhung: °C 0024 - decoding error	
+5430 Trinkwasser Durchlauferhitzer - Einschaltdifferenz im BW-Betrieb (Fühler 1): 4.0 °C	
+5431 Trinkwasser Durchlauferhitzer - Min. Ausschaltdifferenz im BW-Betrieb (Fühler 1): 2.0 °C	
+5450 Trinkwasser Durchlauferhitzer - Schwelle zum Beenden einer BW-Zapfung bei DLH: 0.20313 K/s	
+5451 Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei DLH in Komfort: -0.20313 K/s	
+5452 Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei Dlh in Heizbetrieb: -0.29688 K/s	
+5453 Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Komfortregelung mit 40°C (°K): 0.0 °C	
+5454 Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Komfortregelung mit 60°C (°K): 0.0 °C	
+5455 Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 40°C (°K): 0.0 °C	
+5456 Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 60°C (°K): 0.0 °C	
+5480 Trinkwasser Durchlauferhitzer - Komfortzeit ohne Hz-Anforderung: min 000000 - unknown type	
+5481 Trinkwasser Durchlauferhitzer - Komfortzeit mit Hz-Anforderung: 0 min	
+5482 Trinkwasser Durchlauferhitzer - Zeit TWW-FlowSwitch geschlossen: 0 s	
+5483 Trinkwasser Durchlauferhitzer - Zeit TWW-Komfort FlowSwitch geschlossen: 0 s	
+5486 Trinkwasser Durchlauferhitzer - Reglerverzögerung bei Takten in DLH Auslaufbetrieb: 0 s	
+5487 Trinkwasser Durchlauferhitzer - Pumpennachlauf Komfort in Minuten: 255 min	
+5488 Trinkwasser Durchlauferhitzer - Pumpennachlauf Komfort in Sekunden: s 0000000000 - decoding error	
+5701 Konfiguration - Hydraulisches Schema: 58	
+5732 Konfiguration - TWW Pumpenpause Umsch UV: 4 s	
+5733 Konfiguration - TWW Pumpenpause Verzögerung: 1 s	
+5761 Konfiguration - Zubringerpumpe Q8 Bit 0-3: 00000000	Zonen mit ZubringerpumpeHK1 mit ZubringerpumpeHK2 mit ZubringerpumpeTWW mit Zubringerpumpe	
+5920 Konfiguration - Programmierbarer Ausgang K2: 0 - Default, Keine Funktion	
+5922 Konfiguration - Relaisausgang 1 RelCl: 0 - Default, Keine Funktion	
+5923 Konfiguration - Relaisausgang 2 RelCl: 0 - Default, Keine Funktion	
+5924 Konfiguration - Relaisausgang 3 RelCl: 0 - Default, Keine Funktion	
+5926 Konfiguration - Relaisausgang 1 SolCl: 0 - Default, Keine Funktion	
+5927 Konfiguration - Relaisausgang 2 SolCl: 0 - Default, Keine Funktion	
+5928 Konfiguration - Relaisausgang 3 SolCl: 0 - Default, Keine Funktion	
+5950 Konfiguration - Funktion Eingang H1: 0 - Default	
+5973 Konfiguration - Funktion Eingang RelCl: 0 - Keine Funktion	
+5975 Konfiguration - Externer Vorlaufsollwert Maximum: 100.0 °C	
+5976 Konfiguration - Externe Leistungsvorgabe Schwelle: 5 %	
+5978 Konfiguration - Funktion Eingang SolCl: 0 - kein	
+6089 Konfiguration - Mod Pumpe Drehzahlstufen: 30	
+6092 Konfiguration - Mod Pumpe PWM: 3 %	
+6093 Konfiguration - Mod Pumpe PWM Max: 85 %	
+6127 Konfiguration - Pumpen/Ventilkick Dauer: 5 s	
+6140 Konfiguration - Wasserdruck Maximum: 2.5 bar	
+6141 Konfiguration - Wasserdruck Minimum: 0.7 bar	
+6143 Konfiguration - Wasserdruckschwelle für Kessel und Pumpe aus: 0.5 bar	
+6144 Konfiguration - Schaltdifferenz Wasserdruck: 0.3 bar	
+6146 Konfiguration - Druckwert 3.5V: 0.0 bar	
+6220 Konfiguration - Software-Version: 30.3	
+6222 Konfiguration - Gerätebetriebsstunden: 19042 h	
+6223 Konfiguration - Bisher unbekannte Geräteabfrage: 003A - decoding error	
+6224 Konfiguration - Geräte-Identifikation: LMU54/64	
+6225 Konfiguration - Gerätefamilie: 64	
+6226 Konfiguration - Gerätevariante: 100	
+6227 Konfiguration - Objektverzeichnis-Version: 202.0	
+6229 Konfiguration - EEPROM-Version: 15.0	
+6230 Konfiguration - KonfigRg0 Bit 0-7: 00100011	Fühlerunterbruch Rücklauffühler unterdrückenFühlerunterbruch Rücklauffühler ausgebenFühlerunterbruch Trinkwasserfühler unterdrückenFühlerunterbruch Trinkwasserfühler ausgebenFühlerunterbruch Abgastemperaturfühler unterdrückenFühlerunterbruch Abgastemperaturfühler ausgebenFühlerunterbruch Außentemperaturfühler unterdrückenFühlerunterbruch Außentemperaturfühler ausgebenFühlerunterbruch Wasserdruckfühler unterdrückenFühlerunterbruch Wasserdruckfühler ausgebenFühlerunterbruch Vorlauffühler unterdrückenFühlerunterbruch Vorlauffühler ausgebenFühlerunterbruch Fühler am ClipIn unterdrückenFühlerunterbruch Fühler am ClipIn ausgeben	
+6240 Konfiguration - KonfigRg1 Bit 0-7: 00110100	Vorrang Trinkwasser: absolutVorrang Trinkwasser: gleitendVorrang Trinkwasser: keinKlemmenbelegung X10-02: RTKlemmenbelegung X10-02: SchaltuhrKlemmenbelegung X10-01: RTKlemmenbelegung X10-01: SchaltuhrAnlagenfrostschutz ausAnlagenfrostschutz einWirkung Schaltuhr an X10-01: HeizkreisWirkung Schaltuhr an X10-01: TWWBetriebsart des Heizkreises bei Modemfunktion: StandbyBetriebsart des Heizkreises bei Modemfunktion: Reduziert	
+6250 Konfiguration - KonfigRg2 Bit 0-7: 10000000	Pumpennachlauf TWW in den HeizkreisPumpennachlauf TWW in den TWW-WärmetauscherKomforttemperaturniveau wie AuslauftemperaturKomforttemperaturniveau wie BereitschaftstemperaturKomfort PID Regelungsfühler: KesselvorlaufKomfort PID Regelungsfühler: TWW-FühlerKomfort PID Regelungsfühler: KesselrücklaufFühleranordnung Schichtenspeicher SSP: KVFFühleranordnung Schichtenspeicher SSP: KRF, nicht bei SSPFühleranordnung Schichtenspeicher SSP: KRF, nur SSP	
+6270 Konfiguration - KonfigRg4 Bit 0-7: 01000000	Zubringerfunktion Q8: ausZubringerfunktion Q8: einGebäudebauweise: leichtGebäudebauweise: schwerAnschlussklemme TW-Thermostat: Fühler an X10/TWFAnschlussklemme TW-Thermostat: Thermostat an X10/TWFKonfiguration 3-Wege-Ventil: keinKonfiguration 3-Wege-Ventil: MagnetventilKonfiguration 3-Wege-Ventil: MotorventilKonfiguration 3-Wege-Ventil: Motorventil invers	
+6280 Konfiguration - KonfigRg5 Bit 0-7: 00000111	Wassermangelsicherung Strömungswächter->StörstellungWassermangelsicherung Strömungswächter->StartverhinderungWassermangelsicherung Wasserdruckwächter->StörstellungWassermangelsicherung Wasserdruckwächter->StartverhinderungWassermangelsicherung Drehzahlbegrenzung ausWassermangelsicherung Drehzahlbegrenzung einBits 3-7: Grundeinstellung; nicht verändern!	
+6290 Konfiguration - KonfigRg6 Bit 0-7: 11100000	Initialisierung ISR: Sofortige Übernahme der Stellgröße nach FreigabeInitialisierung ISR: Stoßfreier Übergang nach FreigabeVerriegelung Fremd-Room Units: ausVerriegelung Fremd-Room Units: einQuelle BW-Sollwert: RUQuelle BW-Sollwert: HMISperrsignalberechnung deaktiviertSperrsignalberechnung aktiviertSchnelle Wechsel der Drehzahlgrenzen: Normale AbarbeitungSchnelle Wechsel der Drehzahlgrenzen: BeschleunigtInitialisierung ISR: Nur bei BetriebsartwechselInitialisierung ISR: Immer bei BrennerstartPWM-Gebläserampen: ausPWM-Gebläserampen: ein	
+6300 Konfiguration - KonfigRg7 Bit 0-7: 00001111	Heizkreispumpe: stufigHeizkreispumpe: modulierendDelta-T-Begrenzung: ausDelta-T-Begrenzung: einDelta-T-Überwachung: ausDelta-T-Überwachung: einAnlagenvolumen: kleinAnlagenvolumen: mittelAnlagenvolumen: großDelta-T-Überwachung im Reduziert-Betrieb: ausDelta-T-Überwachung im Reduziert-Betrieb: einReglerverzögerung: nur im Heizbetrieb aktivReglerverzögerung: in allen Betriebsarten aktivPumpe Q1 Modulation in Systemen 51,54,55,67,70,71: ausPumpe Q1 Modulation in Systemen 51,54,55,67,70,71: ein	
+6310 Konfiguration - KonfigRg8 Bit 0-7: 00000000	Sekundärtauscher: PlattenwärmetauscherSekundärtauscher: Wendelwärmetauscher primärseitigSekundärtauscher: Wendelwärmetauscher sekundärseitig1. Maximum Durchlauferhitzer-Regelung: auswerten1. Maximum Durchlauferhitzer-Regelung: ignorierenDurchlauferhitzer Anfrage über DLH1 Sensor oder Flow-SwitchDurchlauferhitzer Anfrage nur über Flow-SwitchPosition von Verteilventil nach Durchlauferhitzer: LetztePosition von Verteilventil nach Durchlauferhitzer: Heizposition	
+6330 Konfiguration - KonfigRg10 Bit 0-7: 00000000	Kesselpumpe bei Brennersperre: keine AbschaltungKesselpumpe bei Brennersperre: AbschaltungBrennersperre nur bei HeizanforderungBrennersperre nur bei Heiz- und TWW-AnforderungDurchlauferhitzertaktschutz durch Temperaturerhöhung: ausDurchlauferhitzertaktschutz durch Temperaturerhöhung: einPosition des TWW-Speichers: vor hydraulischer WeichePosition des TWW-Speichers: nach hydraulischer WeicheZubringerpumpe bei Brennersperre: keine AbschaltungZubringerpumpe bei Brennersperre: AbschaltungGebläseabschaltung bei Heizanforderung: FreigabeGebläseabschaltung bei Heizanforderung: keine FreigabePumpennachlauf TWW bei weiteren Wärmeanforderungen: UnterdrückenPumpennachlauf TWW bei weiteren Wärmeanforderungen: Durchführen	
+6343 Konfiguration - Bisher unbekannte Geräteabfrage: 0001260096 - unknown type	
+6344 Konfiguration - Hersteller-ID (letzten vier Bytes): 1012140155	
+1012140155
+6600 LPB-System - Geräteadresse: 00.01	
+6604 LPB-System - Busspeisung Funktion: 1 - Automatisch	
+6605 LPB-System - Busspeisung Status: 255 - Ein	
+6610 LPB-System - Anzeige Systemmeldungen: 255 - Ja	
+6625 LPB-System - Trinkwasserzuordnung: 0 - Lokale Heizkreise	
+6640 LPB-System - Uhrbetrieb: 2 - Slave mit Fernverstellung	
+6650 LPB-System - Außentemperatur Lieferant: 00.01	
+6699 LPB-System - Software Version Einschub: 0.7	
+6701 Fehler - Unknown command: 0000 - unknown type	
+6705 Fehler - SW Diagnosecode: 0 - not found	
+6800 Fehler - Historie 1: 5	
+6803 Fehler - Historie 1 Fehlermeldung: 153 - Entriegelungstaste wurde betätigt	
+6805 Fehler - SW Diagnosecode 1: 259	
+6806 Fehler - FA Phase 1: 0 - Standby	
+6810 Fehler - Historie 2: 4	
+6813 Fehler - Historie 2: 133 - Keine Flammenbildung nach Ablauf der Sicherheitszeit	
+6815 Fehler - SW Diagnosecode 2: 102 - Uhrzeitmaster ohne Gangreserve (LPB)	
+6816 Fehler - FA Phase 2: 14 - not found	
+6820 Fehler - Historie 3: 0	
+6823 Fehler - Historie 3 Fehlermeldung: 0 - kein Fehler	
+6825 Fehler - SW Diagnosecode 3: 0 - not found	
+6826 Fehler - FA Phase 3: 0 - Standby	
+6830 Fehler - Historie 4: 0	
+6833 Fehler - Historie 4 Fehlermeldung: 0 - kein Fehler	
+6835 Fehler - SW Diagnosecode 4: 0 - not found	
+6836 Fehler - FA Phase 4: 0 - Standby	
+6840 Fehler - Historie 5: 0	
+6843 Fehler - Historie 5 Fehlermeldung: 0 - kein Fehler	
+6845 Fehler - SW Diagnosecode 5: 0 - not found	
+6846 Fehler - FA Phase 5: 0 - Standby	
+7001 Wartung/Sonderbetrieb - Meldung: 0	
+7010 Wartung/Sonderbetrieb - Quittierung Meldung: 1 - Ein	
+7011 Wartung/Sonderbetrieb - Repetitionszeit Meldung: 14 Tage	
+7040 Wartung/Sonderbetrieb - Repetitionszeit Meldung: h 0001499700 - decoding error	
+7041 Wartung/Sonderbetrieb - Brennerstunden seit Wartung: h 0002255100 - decoding error	
+7042 Wartung/Sonderbetrieb - Brennerstarts Intervall: 0	
+7043 Wartung/Sonderbetrieb - Brennerstarts seit Wartung: 400	
+7044 Wartung/Sonderbetrieb - Wartungsintervall: 6000 h	
+7045 Wartung/Sonderbetrieb - Zeit seit Wartung: 0 Monate	
+7050 Wartung/Sonderbetrieb - Gebläsedrehzahl Ion Strom: 4000 U/min	
+7051 Wartung/Sonderbetrieb - Meldung Ion Strom: 0	
+7700 Ein-/Ausgangstest - Relaistest: 0 - Kein Test	
+8310 Diagnose Erzeuger - Kesseltemperatur: 76.0 °C	
+8311 Diagnose Erzeuger - Kesselsollwert: 2.3 °C	
+8314 Diagnose Erzeuger - Kesselrücklauftemperatur Ist: 57.5 °C	
+8321 Diagnose Erzeuger - Aktuelle Regeldifferenz: 4.4 °C	
+8324 Diagnose Erzeuger - Brennergebläsesollwert: 0 U/min	
+8325 Diagnose Erzeuger - PWM Drehzahlregler (Proz): 0 %	
+8326 Diagnose Erzeuger - Brennermodulation: 0 %	
+8329 Diagnose Erzeuger - Ionisationsstrom: 0.00 µA	
+8336 Diagnose Erzeuger - Betriebsstunden Brenner: 19042 h	
+8337 Diagnose Erzeuger - Startzähler Brenner: 3467	
+8338 Diagnose Erzeuger - Betriebsstunden Heizbetrieb: 57508 h	
+8339 Diagnose Erzeuger - Betriebsstunden TWW: 2680 h	
+8340 Diagnose Erzeuger - Betriebsstunden externe Wärmeanforderung: 0 h	
+8530 Diagnose Erzeuger - Betriebsstunden Solarertrag: 0 h	
+8700 Diagnose Verbraucher - Außentemperatur: 6.5 °C	
+8705 Diagnose Verbraucher - Außentemperatur LPB: --- °C	
+8741 Diagnose Verbraucher - Raumsollwert 1: 30.0 °C	
+8750 Diagnose Verbraucher - Mod Pumpe Sollwert: 60 %	
+8773 Diagnose Verbraucher - Vorlauftemperatur 2: 36.0 °C	
+8830 Diagnose Verbraucher - Trinkwassertemperatur 1: --- °C	
+8831 Diagnose Verbraucher - Trinkwassersollwert: 55.0 °C	
+8832 Diagnose Verbraucher - Trinkwassertemperatur 2: 52.0 °C	
+8950 Diagnose Verbraucher - Schienenvorlauftemperatur: 77.5 °C	
+8952 Diagnose Verbraucher - Schienenrücklauftemperatur: 58.0 °C	
+9500 Feuerungsautomat - Vorlüftzeit: 3.0 s	
+9502 Feuerungsautomat - Gebläseansteuerung Vorlüftung: 40 %	
+9504 Feuerungsautomat - Solldrehzahl Vorlüftung: 3500 U/min	
+9510 Feuerungsautomat - Gebläseansteuerung Zündung: 40 %	
+9512 Feuerungsautomat - Solldrehzahl Zündung: 3500 U/min	
+9520 Feuerungsautomat - Gebläseansteuerung Betrieb. Min: 14 %	
+9522 Feuerungsautomat - Gebläseansteuerung Betrieb. Max: 70 %	
+9524 Feuerungsautomat - Solldrehzahl Betrieb Min: 1450 U/min	
+9527 Feuerungsautomat - Solldrehzahl Betrieb Max: 5400 U/min	
+9540 Feuerungsautomat - Nachlüftzeit: 2.0 s	
+9560 Feuerungsautomat - Gebläseansteuerung Durchladung: 24.0 %	
+9563 Feuerungsautomat - Solldrehzahl Durchladung: 3950 U/min	
+```
   
 ---  
   
