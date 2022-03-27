@@ -187,17 +187,23 @@ attr EthRelais timeout 5
 
 ## 8.2 openHAB
   
-Es existiert derzeit kein komplettes Binding fuer BSB-LAN. Mit dem HTTP
-Binding und der Javascript Transformation ist es allerdings
-durchaus möglich, Werte auszulesen und auch zu schreiben.
-
-Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die
-Visualisierung mit Grafana.   
+Für openHAB ab v2.5.4 kann BSB-LAN mittels Binding eingebunden werden - für ältere openHAB-Versionen existiert kein Binding. Mit dem HTTP-Binding und der Javascript Transformation ist es allerdings durchaus möglich, Werte auszulesen und auch zu schreiben.  
+Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die Visualisierung mit Grafana.   
   
 ---  
+   
+### 8.2.1 openHAB-Binding
+   
+***BSB-LAN-User „hypetsch“ hat ein [Binding für openHAB](https://www.openhab.org/addons/bindings/bsblan/) entwickelt, das offiziell Teil von openHAB ab v2.5.4 ist!***  
+***Vielen Dank!***
+   
+   
+---
   
-### 8.2.1 openHAB mit Javascript Transformation
-
+### 8.2.2 openHAB mit Javascript Transformation
+  
+*Für openHAB-Versionen <v2.5.4 muss die Einbindung manuell erfolgen, ein Binding existiert für diese alte openHAB-Version nicht.*    
+    
 ***Die openHAB-Beispielscripte stammen vom FHEM-Forumsmitglied
 „acfischer42", zwei Korrekturen/Änderungsvorschläge sowie das Skript zum Anzeigen der Werte in einer Sitemap von „sihui".  
 Vielen Dank!***
@@ -293,7 +299,7 @@ sitemap demo label="Mein BSB LAN" {
     
 ---
     
-### 8.2.2 openHAB mit Javascript Transformation, MQTT, Network und Expire
+### 8.2.3 openHAB mit Javascript Transformation, MQTT, Network und Expire
   
 ***Basierend auf dem vorhergehenden Beispiel hat FHEM-Forumsmitglied „sihui" (GitHub: [sihui62](https://github.com/sihui62)) ein erweitertes Beispiel erstellt.  
 Vielen Dank!***  
@@ -555,14 +561,7 @@ Frame	{
 ```  
   
 ---
-   
-### 8.2.3 openHAB2-Binding
-   
-***BSB-LAN-User „hypetsch“ hat ein [Binding für openHAB2](https://www.openhab.org/addons/bindings/bsblan/) entwickelt, das offiziell Teil von openHAB2 ab v2.5.4 ist!***  
-***Vielen Dank!***
-   
-   
----
+
    
     
 ## 8.3 HomeMatic (EQ3)
