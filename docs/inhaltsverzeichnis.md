@@ -91,7 +91,7 @@
       * [8.2.1 openHAB-Binding](kap08.md#823-openhab-binding)  
       * [8.2.2 openHAB mit Javascript Transformation](kap08.md#821-openhab-mit-javascript-transformation)  
       * [8.2.3 openHAB mit Javascript Transformation, MQTT, Network und Expire](kap08.md#822-openhab-mit-javascript-transformation-mqtt-network-und-expire)  
-    * [8.3 HomeMatic (EQ3)](kap08.md#83-homematic-eq3)  
+   * [8.3 HomeMatic (EQ3)](kap08.md#83-homematic-eq3)  
    * [8.4 ioBroker](kap08.md#84-iobroker)  
    * [8.5 Loxone](kap08.md#85-loxone)  
    * [8.6 IP-Symcon](kap08.md#86-ip-symcon)   
