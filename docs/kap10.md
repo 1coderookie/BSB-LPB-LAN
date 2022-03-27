@@ -896,9 +896,9 @@ Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt w
 | Die nachfolgende Auflistung ersetzt *nicht* die Auflistung und spezifische Beschreibung der verwendeten anlagenspezifischen Fühlertypen! Sie dient lediglich der Veranschaulichung und soll aufzeigen, dass u.U. bspw. auch die Verwendung von kostengünstigeren, universellen Anlegesensoren als Vor- oder Rücklauffühler möglich ist! <br> Bei einem Austausch von Fühlern oder einer Erweiterung des Systems mit zusätzlichen Fühlern muss daher *immer* in der spezifischen Anlagendokumentation nachgesehen werden, welche Fühler anlagenspezifisch zum Einsatz kommen! |  
   
 Bei den aktuellen Reglerserien kommen i.d.R. nur zwei verschiedene Fühlertypen zum Einsatz, die man grob wie folgt unterscheiden kann:  
-- der Außentemperaturfühler **QAC34** ist ein Fühler des Typs **NTC 1kOhm** (1000 Ohm Widerstand bei 25°C, Widerstandskennlinie sinkend mit ca. 4%/K, Messbereich -50...70°C, Toleranz +/- 1K),
-- die anderen Fühler **QAD36, QAL36, QAK36, QAR34, QAZ36** sind Fühler des Typs **NTC 10kOhm** (10kOhm Widerstand bei 25°C).  
-Die letztgenannten Fühlertypen unterscheiden sich jedoch u.a. in ihrer Bauform und ihrem Messbereich, so dass ein Ersatz durch universelle NTC 10kOhm-Fühler nicht immer möglich ist.   
+- der Außentemperaturfühler **QAC34** ist ein Fühler des Typs **NTC 1k Ohm** (1000 Ohm Widerstand bei 25°C, Widerstandskennlinie sinkend mit ca. 4%/K, Messbereich -50...70°C, Toleranz +/- 1K),
+- die anderen Fühler **QAD36, QAL36, QAK36, QAR34, QAZ36** sind Fühler des Typs **NTC 10k Ohm** (10k Ohm Widerstand bei 25°C).  
+Die letztgenannten Fühlertypen unterscheiden sich jedoch u.a. in ihrer Bauform und ihrem Messbereich, so dass ein Ersatz durch universelle und kostengünstigere Fühler des Typs NTC 10k Ohm nicht immer möglich ist.   
   
 | Achtung |
 |:--------|
