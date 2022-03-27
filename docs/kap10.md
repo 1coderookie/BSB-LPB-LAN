@@ -902,7 +902,7 @@ Die letztgenannten Fühlertypen unterscheiden sich jedoch u.a. in ihrer Bauform 
   
 | Achtung |
 |:--------|
-| Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QA**C21**" und "QA**C31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation. |    
+| Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QAC**21**" und "QAC**31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation. |    
   
       
 ---
