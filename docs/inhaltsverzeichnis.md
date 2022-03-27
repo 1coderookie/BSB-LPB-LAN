@@ -135,6 +135,7 @@
       * [10.5.5 QAA53 / QAA73](kap10.md#1055-qaa53--qaa73)  
       * [10.5.6 QAA50 / QAA70](kap10.md#1056-qaa50--qaa70)  
    * [10.6 Sonderzubehör: Webserver OZW672 und Servicetool OCI700](kap10.md#106-sonderzubehör-webserver-ozw672-und-servicetool-oci700)  
+   * [10.7 Fühlertypen](kap10.md#107-fühlertypen)  
 
 [**11. Exkurs: Erfolgreich getestete Heizungssysteme**](kap11.md#111-erfolgreich-getestete-heizungssysteme)  
    * [11.1 Brötje](kap11.md#111-brötje)  
