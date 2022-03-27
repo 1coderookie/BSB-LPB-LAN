@@ -187,7 +187,7 @@ attr EthRelais timeout 5
 
 ## 8.2 openHAB
   
-Für openHAB ab v2.5.4 kann BSB-LAN mittels Binding eingebunden werden - für ältere openHAB-Versionen existiert kein Binding. Mit dem HTTP-Binding und der Javascript Transformation ist es allerdings durchaus möglich, Werte auszulesen und auch zu schreiben.  
+Bei Verwendung von openHAB >v2.5.4 kann BSB-LAN mittels Binding eingebunden werden - für ältere openHAB-Versionen existiert kein Binding. Mit dem HTTP-Binding und der Javascript Transformation ist es allerdings durchaus möglich, Werte auszulesen und auch zu schreiben.  
 Ein Loggen der Daten kann bspw. mit InfluxDB erfolgen, die Visualisierung mit Grafana.   
   
 ---  
