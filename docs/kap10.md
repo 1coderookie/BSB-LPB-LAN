@@ -887,7 +887,24 @@ Der Webserver OZW672 (Brötje: "ISR OZW") wird per Busleitung an den Regler ange
    
 Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt wird. Es wird lokal mit einem Rechner verbunden, auf dem eine spezielle Software installiert ist und ermöglicht einen Überblick über die Einstellungen des Reglers.  
    
+---
 
+## 10.7 Fühlertypen
+  
+| Hinweis |
+|:--------|
+| Die nachfolgende Auflistung ersetzt *nicht* die Auflistung und spezifische Beschreibung der verwendeten anlagenspezifischen Fühlertypen! Sie dient lediglich der Veranschaulichung und soll aufzeigen, dass u.U. bspw. auch die Verwendung von kostengünstigeren, universellen Anlegesensoren als Vor- oder Rücklauffühler möglich ist! <br> Bei einem Austausch von Fühlern oder einer Erweiterung des Systems mit zusätzlichen Fühlern muss daher *immer* in der spezifischen Anlagendokumentation nachgesehen werden, welche Fühler anlagenspezifisch zum Einsatz kommen! |  
+  
+Bei den aktuellen Reglerserien kommen i.d.R. nur zwei verschiedene Fühlertypen zum Einsatz, die man grob wie folgt unterscheiden kann:  
+- der Außentemperaturfühler **QAC34** ist ein Fühler des Typs **NTC 1kOhm** (1000 Ohm Widerstand bei 25°C, Widerstandskennlinie sinkend mit ca. 4%/K, Messbereich -50...70°C, Toleranz +/- 1K),
+- die anderen Fühler **QAD36, QAL36, QAK36, QAR34, QAZ36** sind Fühler des Typs **NTC 10kOhm** (10kOhm Widerstand bei 25°C).  
+Die letztgenannten Fühlertypen unterscheiden sich jedoch u.a. in ihrer Bauform und ihrem Messbereich, so dass ein Ersatz durch universelle NTC 10kOhm-Fühler nicht immer möglich ist.   
+  
+| Achtung |
+|:--------|
+| Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QA**C21**" und "QA**C31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation. |    
+  
+      
 ---
          
 [Weiter zu Kapitel 11](kap11.md)      
