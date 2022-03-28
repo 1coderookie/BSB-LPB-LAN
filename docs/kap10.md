@@ -907,10 +907,10 @@ Der QAD36 ist ein sogenannter "Anlegefühler" (Brötje: "Universalanlegefühler 
   
 *Der Siemens QAD36-Anlegefühler, bei Brötje "Universalanlegefühler UAF6C" genannt.*    
   
-Als kostengünstige Alternative zu diesem Fühler kann ein universeller NTC 10 kOhm (bei 25°C) Rohranlegefühler verwendet werden. Diese Standardfühler sind in Grunde gekapselte Tauchfühler, an dessen Metallkapsel ein kurzes, gebogenes Stück Metall zusätzlich angebracht ist. Auf diese Weise wird das Anbringen des Fühlers an einem Rohr erleichtert und die wärmeübertragende Fläche vergrößert. Es ist empfehlenswert, den Biegeradius des Metallstreifens dem Rohrumfang vorsichtig anzupassen und für die Kontaktfläche eine entspr. Wärmeleitpaste zu verwenden. Zur Sicherung gegen ein Verrutschen ist eine Fixierung mittels Kabelbinder oder Schlauchschelle anzuraten.    
+Als kostengünstige Alternative zu diesem Fühler kann ein universeller NTC 10 kOhm (bei 25°C) Rohranlegefühler verwendet werden. Diese Standardfühler sind in Grunde Tauchfühler, an dessen Metallkapsel zusätzlich ein kurzes, gebogenes Stück Metall angebracht ist. Auf diese Weise wird das Anbringen des Fühlers an einem Rohr erleichtert und die wärmeübertragende Fläche vergrößert. Es ist empfehlenswert, den Biegeradius des Metallstreifens dem Rohrumfang vorsichtig anzupassen und für die Kontaktfläche eine entspr. Wärmeleitpaste zu verwenden. Zur Sicherung gegen ein Verrutschen ist eine Fixierung mittels Kabelbinder oder Schlauchschelle anzuraten.    
   
 **Siemens QAZ36 / Brötje KF ISR**  
-Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektorfühler / KF ISR") ist ein Tauchfühler mit einem ca. 1,5m langen *Silikonkabel*. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von -30...200°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz.  
+Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektorfühler / KF ISR") ist ein Tauchfühler mit einem ca. 1,5m langen *Silikonkabel*. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von -30...200°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm. 
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAZ36.jpg">  
   
@@ -919,7 +919,7 @@ Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektor
 Aufgrund der höheren Umgebungstemperaturen ist bei der Verwendung eines kostengünstigeren NTC 10kOhm (bei 25°C) Standardfühlers unbedingt auf den höheren Messbereich und das *Silikonkabel* zu achten - PVC-Kabeltypen sind nicht geeignet! 
   
 **Siemens QAZ36 / Brötje UF6C**  
-Der QAZ36 in der Ausführung als Tauchfühler mit *PVC-Kabel* (Brötje: "Universaltauchfühler UF6C" mit 6m langem PVC-Kabel) kommt bspw. bei Puffer- oder Brauchwasserspeichern zum Einsatz. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von 0...95°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz.  
+Der QAZ36 in der Ausführung als Tauchfühler mit *PVC-Kabel* (Brötje: "Universaltauchfühler UF6C" mit 6m langem PVC-Kabel) kommt bspw. bei Puffer- oder Brauchwasserspeichern zum Einsatz. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von 0...95°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/UF6C.jpg">  
   
@@ -930,7 +930,8 @@ Dieser Fühler kann ebenfalls durch einen entspr. kostengünstigeren Standardfü
   
 | Achtung |
 |:--------|
-| Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QAC**21**" und "QAC**31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation. |    
+| Die o.g. 'Tauchfühler' sind *nicht* für das direkte Eintauchen in flüssige Medien geeignet! Der Name bezieht sich auf den Einsatz in sog. 'Tauchhülsen', wie sie bspw. bei Puffer- oder Brauchwasserspeichern vorzufinden sind. | 
+| *Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QAC**21**" und "QAC**31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation.* |    
   
       
 ---
