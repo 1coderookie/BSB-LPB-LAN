@@ -898,29 +898,29 @@ Das OCI700 ist das Servicetool, das überwiegend vom Fachhandwerker eingesetzt w
 Bei den aktuellen Reglerserien kommen (gelabelte) Siemens-Fühler zum Einsatz, die man wie folgt grob in zwei unterschiedliche Fühlertypen unterscheiden kann:  
 - der Außentemperaturfühler **QAC34** ist ein Fühler des Typs **NTC 1k Ohm** (NTC 1000 Ohm Widerstand bei 25°C, Widerstandskennlinie sinkend mit ca. 4%/K bei steigender Temperatur, Messbereich -50...70°C, Toleranz +/- 1K),
 - die anderen Fühler **QAD36, QAL36, QAK36, QAR34, QAZ36** sind Fühler des Typs **NTC 10k Ohm** (NTC 10k Ohm Widerstand bei 25°C; Widerstandskennlinie sinkend bei steigender Temperatur).  
-Diese Fühler unterscheiden sich jedoch u.a. in ihrer Bauform und dem Messbereich des eingesetzten Fühlerelements, sogar innerhalb einer Produktkategorie (bspw. QAD36 in der Ausführung als BMU- oder Kollektorfühler), so dass ein Ersatz durch universelle und kostengünstigere Standardfühler des Typs NTC 10k Ohm (bei 25°C) nicht immer möglich ist. Speziell bei zwei bzw. drei Fühlertypen/Einsatzbereichen ist jedoch grundsätzlich der Einsatz von kostengünstigeren Standardfühlern des Typs NTC 10 kOhm (bei 25°C) möglich, daher werden diese im Folgenden kurz dargestellt.    
+Diese Fühler unterscheiden sich jedoch u.a. in ihrer Bauform und dem Messbereich des eingesetzten Fühlerelements, sogar innerhalb einer Produktkategorie (bspw. QAD36 in der Ausführung als BMU- oder Kollektorfühler), so dass ein Ersatz durch universelle und kostengünstigere Standardfühler des Typs NTC 10k Ohm (bei 25°C) nicht immer möglich ist. Speziell bei zwei bzw. drei Fühlertypen/Einsatzbereichen ist jedoch grundsätzlich der Einsatz von kostengünstigeren Standardfühlern des Typs NTC 10k Ohm (bei 25°C) möglich, daher werden diese im Folgenden kurz dargestellt.    
 
 **Siemens QAD36 / Brötje UAF6C**  
-Der QAD36 ist ein sogenannter "Anlegefühler" (Brötje: "Universalanlegefühler UAF6C") und kann zur nachträglichen Erweiterung als Vor- und Rücklauffühler eingesetzt werden. Der Fühler ist in einem Gehäuse untergebracht, das auf das entspr. Rohr (bspw. Vorlauf) montiert wird und die Temperatur des Mediums indirekt über die Temperatur der Rohrwand misst. Als Messelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von -30...125°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von 6s zum Einsatz.    
+Der QAD36 ist ein sogenannter "Anlegefühler" (Brötje: "Universalanlegefühler UAF6C") und kann zur nachträglichen Erweiterung als Vor- und Rücklauffühler eingesetzt werden. Der Fühler ist in einem Gehäuse untergebracht, das auf das entspr. Rohr (bspw. Vorlauf) montiert wird und die Temperatur des Mediums indirekt über die Temperatur der Rohrwand misst. Als Messelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von -30...125°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von 6s zum Einsatz.    
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAD36.png">
   
 *Der Siemens QAD36-Anlegefühler, bei Brötje "Universalanlegefühler UAF6C" genannt.*    
   
-Als kostengünstige Alternative zu diesem Fühler kann ein universeller NTC 10 kOhm (bei 25°C) Rohranlegefühler verwendet werden. Diese Standardfühler gibt es in verschiedenen Ausführungen, die alle eine einseitige konkave Wölbung der Metallhülse aufweisen, wodurch das Anbringen des Fühlers an einem Rohr erleichtert und die wärmeübertragende Fläche vergrößert wird. Empfehlenswert ist hier m.E. die Variante mit Messinghülse und einem zusätzlichen, leicht gebogenen Messingstreifen, da diese Ausführung aufgrund der schlanken Bauform gut unter eine Rohrisolierung geschoben, der Biegeradius des Messingstreifens etwas an das Rohr angepasst werden kann und das Messing die Wärme gut leitet.  
+Als kostengünstige Alternative zu diesem Fühler kann ein universeller NTC 10k Ohm (bei 25°C) Rohranlegefühler verwendet werden. Diese Standardfühler gibt es in verschiedenen Ausführungen, die alle eine einseitige konkave Wölbung der Metallhülse aufweisen, wodurch das Anbringen des Fühlers an einem Rohr erleichtert und die wärmeübertragende Fläche vergrößert wird. Empfehlenswert ist hier m.E. die Variante mit Messinghülse und einem zusätzlichen, leicht gebogenen Messingstreifen, da diese Ausführung aufgrund der schlanken Bauform gut unter eine Rohrisolierung geschoben, der Biegeradius des Messingstreifens etwas an das Rohr angepasst werden kann und das Messing die Wärme gut leitet.  
 Es ist empfehlenswert, für die Kontaktfläche eine entspr. Wärmeleitpaste zu verwenden. Zur Sicherung gegen ein Verrutschen ist eine Fixierung mittels Kabelbinder oder Schlauchschelle anzuraten.    
   
 **Siemens QAZ36 / Brötje KF ISR**  
-Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektorfühler / KF ISR") ist ein Tauchfühler mit einem ca. 1,5m langen *Silikonkabel*. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von -30...200°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm. 
+Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektorfühler / KF ISR") ist ein Tauchfühler mit einem ca. 1,5m langen *Silikonkabel*. Als Fühlerelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von -30...200°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm. 
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAZ36.jpg">  
   
 *Ein Siemens QAZ36-Kollektorfühler, bei Brötje "ISR Kollektorfühler / KF ISR" genannt.*  
   
-Aufgrund der höheren Umgebungstemperaturen ist bei der Verwendung eines kostengünstigeren NTC 10kOhm (bei 25°C) Standardfühlers unbedingt auf den höheren Messbereich und das *Silikonkabel* zu achten - PVC-Kabeltypen sind nicht geeignet! 
+Aufgrund der höheren Umgebungstemperaturen ist bei der Verwendung eines kostengünstigeren NTC 10k Ohm (bei 25°C) Standardfühlers unbedingt auf den höheren Messbereich und das *Silikonkabel* zu achten - PVC-Kabeltypen sind nicht geeignet! 
   
 **Siemens QAZ36 / Brötje UF6C**  
-Der QAZ36 in der Ausführung als Tauchfühler mit *PVC-Kabel* (Brötje: "Universaltauchfühler UF6C" mit 6m langem PVC-Kabel) kommt bspw. bei Puffer- oder Brauchwasserspeichern zum Einsatz. Als Fühlerelement kommt ein NTC 10 kOhm (bei 25°C) mit einem Messbereich von 0...95°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm.  
+Der QAZ36 in der Ausführung als Tauchfühler mit *PVC-Kabel* (Brötje: "Universaltauchfühler UF6C" mit 6m langem PVC-Kabel) kommt bspw. bei Puffer- oder Brauchwasserspeichern zum Einsatz. Als Fühlerelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von 0...95°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/UF6C.jpg">  
   
