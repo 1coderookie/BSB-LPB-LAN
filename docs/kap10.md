@@ -691,7 +691,7 @@ Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anle
   
 *Die folgenden Angaben sind wie immer ohne Gewähr – darauf sei an dieser Stelle nochmal explizit hingewiesen.*  
   
-Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinlich der Fehler 81 auftreten, welcher „Kurzschluss im LPB Bus oder fehlende Speisung“ bedeutet. Sofern man das OCI420 korrekt angeschlossen hat, muss in dem Fall die LPB-Busspeisung aktiviert werden. Der Parameter dazu ist „LPBKonfig0“.  
+Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinlich der Fehler 81 auftreten, welcher „Kurzschluss im LPB Bus oder *fehlende LPB-Busspeisung*“ bedeutet. Sofern man das OCI420 korrekt angeschlossen hat, muss in dem Fall die LPB-Busspeisung aktiviert werden. Der Parameter dazu ist „LPBKonfig0“.  
   
 Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch.  
 Bei der LMU64 hat der betreffende Parameter die Nummer 604 (bei LMU74: Parameternummer 6006). Hier sind acht Bits (604.0 bis 604.7) verfügbar, die wie folgt einzustellen sind (dabei bedeutet „0“=AUS und „1“=EIN):  
@@ -711,7 +711,8 @@ Des Weiteren sind folgende Einstellungen vorzunehmen:
 605 LPB-Geräteadresse = 1  
 606 LPB-Segmentadresse = 0  
   
-Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die grüne LED am OCI420 in regelmäßigen Abständen blinken.  
+Nach erfolgreicher Einstellung sollte kein Fehlercode mehr auftreten und die rote LED am OCI420 in regelmäßigen Abständen blinken.  
+Sollte hingegen Fehler 82 angezeigt werden, so müssen die LPB-Adressen überprüft werden, da in dem Fall eine LPB-Adresskollision vorliegt (was aber bei den o.g. Einstellungen und der Standardadresse von BSB-LAN nicht auftreten sollte).  
       
 ---  
    
