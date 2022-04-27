@@ -102,7 +102,7 @@ Der URL-Befehl für den HK1, um eine Raumtemperatur von 19.5°C zu übermitteln,
 | Tipp |
 |:--------|
 | Wird nur ein Temperaturwert als Einflussfaktor gemessen und übermittelt, ist die Temperaturmessung in einem Führungs- / Referenzraum zu empfehlen, in dem sich keinerlei weitere Wärmequelle (bspw. Kaminofen, große Fenster in Südlage etc.) befindet. |  
-| Werden die Raumtemperaturen von mehreren Räumen erfasst (bspw. mittels entspr. HK-Thermostate oder Raumtemperaturfühler und einer SmartHome-Software), kann es vorteilhaft sein, daraus eine gemittelte Ist- und Soll-Temperatur zu errechnen und an den Wärmeerzeuger zu übermitteln. Ein Beispiel hierfür hat FHEM-Forumsuser "freetz" in folgendem Thread zur Verfügung gestellt: (https://forum.fhem.de/index.php/topic,60900.0.html) - vielen Dank dafür! |    
+| Werden die Raumtemperaturen von mehreren Räumen erfasst (bspw. mittels entspr. HK-Thermostate oder Raumtemperaturfühler und einer SmartHome-Software), kann es vorteilhaft sein, daraus eine gemittelte Ist- und Soll-Temperatur zu errechnen und an den Wärmeerzeuger zu übermitteln. Ein Beispiel hierfür hat FHEM-Forumsuser "freetz" in [diesem Thread](https://forum.fhem.de/index.php/topic,60900.0.html) zur Verfügung gestellt - vielen Dank dafür! |    
     
 **Exkurs: Erklärung zum „Raumeinfluss“ bei Berücksichtigung der Raumtemperatur**    
 *FHEM-Forumsuser „freetz“ hat die Funktionsweise bzw. das Modell hinter dem „Raumeinfluss“ (Parameter 750) entschlüsselt, so dass die Auswirkungen auf die Vorlauftemperatur verständlicher geworden sind. Vielen Dank dafür!*  
