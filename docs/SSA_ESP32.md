@@ -26,7 +26,8 @@
   
 Führe nun die folgenden Schritte aus:  
   
-1. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).   
+1. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).  
+   Füge dann das ESP32-SDK per Boardverwalter-URL hinzu (*Achtung: SDK 2.0.2 verwenden!*) und installiere dann die ESP32-Boardbibliotheken im Boardverwalter. [Hier](kap12.md#1212-esp32) findest du eine ausführliche Schritt-für-Schritt-Anleitung dazu.    
    
 2. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
