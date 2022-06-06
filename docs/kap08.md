@@ -2324,40 +2324,45 @@ Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt
   
 --->
   
-***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***  
-***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***  
-***Vielen Dank!***  
-  
-Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.  
-    
-Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:  
-  
+***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***
+***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***
+***Vielen Dank!***
+
+Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell in Home Assistant einzubinden, indem man Sensor- und Schalter-Entitäten selber definiert. Wie immer wenn es um Home Assistant geht, gilt auch hier: Viele Wege führen zum Ziel, es gibt nicht die "eine" beste Lösung. Deshalb sind alle Beispiele als Anregung zum selber Weiterentwickeln zu sehen.
+
+Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ha_dashboard.png">
-  
-Aller folgender Code muss in die YAML-Datei *configuration* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine YAML-Datei *sensors* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
-    
-***MQTT-Sensor***  
+
+Aller folgender Code muss in die YAML-Datei *configuration.yaml* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine Datei *sensors.yaml* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
+
+***MQTT-Sensor***
+
 Das Auslesen von Daten per MQTT empfiehlt sich für alle Werte, die sich laufend ändern, wie z.B. Temperaturwerte. Voraussetzung dafür ist natürlich, dass man einen MQTT Broker einsetzt und die auszulesenden Werte auch per MQTT gepublisht werden.
-  
-Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:  
-   
+
+Beispiel für einen Sensor, der die Vorlauftemperatur des HK ausliest:
+
+[//]: # ({% raw %})
+```yaml
+mqtt:
+  sensor:
+    - state_topic: "bsb-lan/8310"
+      name: BSB-LAN Vorlauftemperatur
+      unit_of_measurement: °C
+      device_class: temperature
 ```
-sensor:
-  - platform: mqtt
-    state_topic: "bsb-lan/8310"
-    name: BSB-LAN Vorlauftemperatur
-    unit_of_measurement: °C
-    device_class: temperature
-```
-   
-Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.  
-  
-***REST-Sensor & JSON***  
-Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor und JSON auslesen.   
-  
+[//]: # ({% endraw %})
+
+Dieser Sensor wird in Home Assistant unter dem Namen *sensor.bsb_lan_vorlauftemperatur* erscheinen.
+
+***REST-Sensor & JSON***
+
+Wenn man MQTT nicht nutzen will oder kann, lassen sich Werte auch mittels REST-Sensor und JSON auslesen.
+
 Die folgende Sensordefinition erzeugt einen Sensor zum Auslesen verschiedener Heizungsparameter, welche sich selten oder fast nie ändern (Betriebsart, Komfortsollwert etc.) und als Block abgefragt werden. Der Zustand (Wert) des Sensors enthält in diesem Beispiel den "SW Diagnosecode", alle weiteren Werte werden als Attribute des Sensors gesetzt. Der Sensor macht alle 60 Sekunden einen Request gegen BSB-LAN.
-  
-```
+
+[//]: # ({% raw %})
+```yaml
 sensor:
   - platform: rest
     name: BSB-LAN Status
@@ -2381,38 +2386,40 @@ sensor:
       - "1612"
       - "5400"
 ```
-  
-Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.    
-  
+[//]: # ({% endraw %})
+
+Der Sensor taucht in Home Assistant unter dem Namen *sensor.bsb_lan_status* auf.
+
 Um die Attribute dieses Sensors wiederum als separate Sensoren verfügbar zu machen, die sich komfortabel in die Oberfläche integrieren lassen, sind weitere Definitionen notwendig. Im folgenden Beispiel anhand der Parameter 700 (Betriebsart) und 1610 (TWW Nennsollwert) gezeigt:
-  
-[//]: # ({% raw %})  
-```
+
+[//]: # ({% raw %})
+```yaml
 sensor:
-- platform: template
-   sensors:
-     bsb_lan_betriebsart:
-      unique_id: bsb_lan_betriebsart
-      friendly_name: BSB-LAN Betriebsart
-      value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '700')['value'] }}{% else %}{{ states('sensor.bsb_lan_betriebsart') }}{% endif %}"
-      attribute_templates:
-      desc: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '8000')['desc'] }}{% else %}{{ state_attr('sensor.bsb_lan_betriebsart', 'desc') }}{% endif %}"
-     bsb_lan_tww_nennsollwert:
-      unique_id: bsb_lan_tww_nennsollwert
-      friendly_name: BSB-LAN TWW Nennsollwert
-      value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '1610')['value'] }}{% else %}{{ states('sensor.bsb_lan_tww_nennsollwert') }}{% endif %}"
-      unit_of_measurement: °C
-      device_class: temperature
+  - platform: template
+    sensors:
+      bsb_lan_betriebsart:
+        unique_id: bsb_lan_betriebsart
+        friendly_name: BSB-LAN Betriebsart
+        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '700')['value'] }}{% else %}{{ states('sensor.bsb_lan_betriebsart') }}{% endif %}"
+        attribute_templates:
+          desc: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '8000')['desc'] }}{% else %}{{ state_attr('sensor.bsb_lan_betriebsart', 'desc') }}{% endif %}"
+      bsb_lan_tww_nennsollwert:
+        unique_id: bsb_lan_tww_nennsollwert
+        friendly_name: BSB-LAN TWW Nennsollwert
+        value_template: "{% if states('sensor.bsb_lan_status') is defined and states('sensor.bsb_lan_status') != 'unavailable' %}{{ state_attr('sensor.bsb_lan_status', '1610')['value'] }}{% else %}{{ states('sensor.bsb_lan_tww_nennsollwert') }}{% endif %}"
+        unit_of_measurement: °C
+        device_class: temperature
 ```
-[//]: # ({% endraw %})  
-  
-Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.  
-     
-***Setzen von Parametern per REST & JSON***  
-Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:  
-  
-[//]: # ({% raw %})  
-```
+[//]: # ({% endraw %})
+
+Die *if* Abfragen im Code sorgen dafür, dass die Sensoren ihren vorigen Wert behalten, auch wenn der "BSB-LAN Status" Sensor einmal kurzzeitig nicht verfügbar ist (z.B. beim Neustart von HA). Obiges Beispiel würde in Home Assistant die Sensoren *sensor.bsb_lan_betriebsart* und *sensor.bsb_lan_tww_nennsollwert* erzeugen.
+
+***Setzen von Parametern per REST & JSON***
+
+Für das Setzen von Werten empfiehlt es sich, zuerst ein allgemeines parametrisierbares RESTful Command zu definieren:
+
+[//]: # ({% raw %})
+```yaml
 rest_command:
   bsb_lan_set_parameter:
     url: http://<BSB-LAN-IP>/JS
@@ -2422,73 +2429,86 @@ rest_command:
     # Parameter "type": 1 = SET (default), 0 = INF
     payload: '{"Parameter": "{{ parameter }}", "Value": "{{ value }}", "Type": "{% if type is defined %}{{ type }}{% else %}1{% endif %}"}'
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
-  
-Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.  
-  
-Folgendes Beispiel erzeugt einen Schalter, mit man die Automatik-Betriebsart der Heizung an- und ausschalten kann:  
-  
-[//]: # ({% raw %})  
-```
+Dies erzeugt einen Service mit dem Namen *rest_command.bsb_lan_set_parameter*. Dieser Service lässt sich nun zum Setzen beliebiger Parameter nutzen.
+
+Folgendes Beispiel erzeugt einen Schalter, mit dem man die Automatik-Betriebsart der Heizung an- und ausschalten kann:
+
+[//]: # ({% raw %})
+```yaml
 switch:
-- platform: template
-  switches:
-   bsb_lan_betriebsart_automatik:
-   friendly_name: BSB-LAN Betriebsart Automatik
-   value_template: "{{ is_state('sensor.bsb_lan_betriebsart', '1') }}"
-    turn_on:
-     service: rest_command.bsb_lan_set_parameter
-      data:
-       parameter: 700
-        value: 1
-    turn_off:
-     service: rest_command.bsb_lan_set_parameter
-      data:
-       parameter: 700
-        value: 0
+  - platform: template
+    switches:
+    bsb_lan_betriebsart_automatik:
+    friendly_name: BSB-LAN Betriebsart Automatik
+    value_template: "{{ is_state('sensor.bsb_lan_betriebsart', '1') }}"
+      turn_on:
+      service: rest_command.bsb_lan_set_parameter
+        data:
+        parameter: 700
+          value: 1
+      turn_off:
+      service: rest_command.bsb_lan_set_parameter
+        data:
+        parameter: 700
+          value: 0
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
-  
-In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.  
+In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automatik* nutzbar. Wird er aktiviert, wird für den Parameter 700 der Wert 1 ("Automatik") gesetzt. Deaktivieren setzt den Wert 0 ("Schutzbetrieb"). Wie man sieht, nutzt der Switch den weiter oben definierten Sensor *sensor.bsb_lan_betriebsart*, um seinen aktuellen Zustand (an/aus) zu ermitteln.
 
-Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an.  
-**Achtung:** Der Code muss in die YAML-Datei *automations* eingefügt werden! Das Eingabefeld muss man zuvor manuell in der Oberfläche unter "Einstellungen/Helfer" angelegt haben:  
-  
+Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an.
+**Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor per YAML definiert oder manuell in der Oberfläche unter "Einstellungen/Geräte & Dienste/Helfer" angelegt haben:
+
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
-  
-Datei *automations*:  
-   
-[//]: # ({% raw %})  
+
+Alternativ das gleiche als YAML:
+
+[//]: # ({% raw %})
+```yaml
+input_number:
+  bsb_lan_tww_nennsollwert:
+    name: BSB-LAN TWW Nennsollwert Input
+    icon: mdi:thermometer
+    mode: box
+    min: 20
+    max: 65
+    step: 0.5
+    unit_of_measurement: °C
 ```
+[//]: # ({% endraw %})
+
+Datei *automations.yaml*:
+
+[//]: # ({% raw %})
+```yaml
 - id: bsb_lan_set_tww_nennsollwert
   alias: BSB-LAN TWW Nennsollwert setzen
   trigger:
-  - platform: state
-    entity_id: input_number.bsb_lan_tww_nennsollwert
+    - platform: state
+      entity_id: input_number.bsb_lan_tww_nennsollwert
   condition: []
   action:
-  - data_template:
-      parameter: 1610
-      value: "{{ states('input_number.bsb_lan_tww_nennsollwert') }}"
-    service: rest_command.bsb_lan_set_parameter
+    - data_template:
+        parameter: 1610
+        value: "{{ states('input_number.bsb_lan_tww_nennsollwert') }}"
+      service: rest_command.bsb_lan_set_parameter
 - id: bsb_lan_get_tww_nennsollwert
   alias: BSB-LAN TWW Nennsollwert auslesen
   trigger:
-  - platform: state
-    entity_id: sensor.bsb_lan_tww_nennsollwert
-  condition: []
+    - platform: state
+      entity_id: sensor.bsb_lan_tww_nennsollwert
+    condition: []
   action:
-  - data_template:
-      entity_id: input_number.bsb_lan_tww_nennsollwert
-      value: "{{ states('sensor.bsb_lan_tww_nennsollwert') | float }}"
-    service: input_number.set_value
+    - data_template:
+        entity_id: input_number.bsb_lan_tww_nennsollwert
+        value: "{{ states('sensor.bsb_lan_tww_nennsollwert') | float(0) }}"
+      service: input_number.set_value
 ```
-[//]: # ({% endraw %})  
+[//]: # ({% endraw %})
 
-  
-Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.     
+Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.
   
   
 ---
