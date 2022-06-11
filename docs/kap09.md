@@ -11,7 +11,7 @@ Beschreibung für Einsteiger, eine kurzgefasste Beschreibung für
 erfahrene Nutzer sowie eine Beschreibung des Implementierens neuer
 Command IDs für Nutzer mit Programmierkenntnissen aufgegliedert.
 
-Damit dein Einsatz von erfolg gelrönt ist und verwertbare Daten liefert, beachte bitte das Folgende: 
+Damit dein Einsatz von Erfolg gekrönt ist und verwertbare Daten liefert, beachte bitte das Folgende: 
 Sollte ein Parameter mehrere Einstellungsoptionen bieten, so wären
 idealerweise alle Optionen durchzugehen und die einzelnen Telegramme mit
 der eindeutigen Bezeichnung der jeweiligen Option zu notieren.
