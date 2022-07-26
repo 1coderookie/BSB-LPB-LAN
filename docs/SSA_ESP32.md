@@ -71,7 +71,7 @@ Führe nun die folgenden Schritte aus:
    | Zusätzlich zur Anpassung der Datei "BSB_LAN_config.h" kann die Anpassung der Konfiguration von BSB-LAN auch später per Webinterface erfolgen. | 
    | Weitere Hinweise sowie eine Beschreibung sämtlicher Konfigurationsmöglichkeiten findest du in [Kapitel 2.2 Konfiguration](kap02.md#22-konfiguration)! |   
   
-7. Nach Beenden des Flashvorgangs starte den [Seriellen Monitors der Arduino IDE](kap12.md#122-serieller-monitor) und beobachte die Ausgaben, die beim Start des ESP32 erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.  
+7. Nach Beenden des Flashvorgangs starte den [Seriellen Monitor der Arduino IDE](kap12.md#122-serieller-monitor) und beobachte die Ausgaben, die beim Start des ESP32 erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.  
 
    Nach Beenden des Startvorgangs kannst du die Stromversorgung des ESP32-Boards unterbrechen, also das Board vom USB-Port deines Rechners entfernen. Dies ist nicht zwingend nötig, aus Sicherheitsgründen jedoch zu empfehlen.  
 

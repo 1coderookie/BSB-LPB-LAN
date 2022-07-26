@@ -44,7 +44,7 @@ Sollte dein Rechner den Due nicht automatisch erkennen, ist der entspr. Treiber 
    | Weitere Hinweise sowie eine Beschreibung sämtlicher Konfigurationsmöglichkeiten findest du in [Kapitel 2.2 Konfiguration](kap02.md#22-konfiguration)! | 
 
 
-7. Nach Beenden des Flashvorgangs starte den [Seriellen Monitors der Arduino IDE](kap12.md#122-serieller-monitor) und beobachte die Ausgaben, die beim Start des Arduino erfolgen.  
+7. Nach Beenden des Flashvorgangs starte den [Seriellen Monitor der Arduino IDE](kap12.md#122-serieller-monitor) und beobachte die Ausgaben, die beim Start des Arduino erfolgen.  
    Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.  
    
    Nach Beenden des Startvorgangs kannst du die Stromversorgung des Arduino unterbrechen, also das Board vom USB-Port deines Rechners entfernen. Dies ist nicht zwingend nötig, aus Sicherheitsgründen jedoch zu empfehlen.  
