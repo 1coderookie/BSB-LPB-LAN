@@ -83,7 +83,7 @@ Der BSB (Boiler System Bus) ist im Grunde ein ‚lokaler' Bus. Mit 'lokal' meine
   
 An den BSB werden bspw. die Bedieneinheit, Raumgeräte und Erweiterungsmodule angeschlossen. Diese Geräte haben dann 'lokal' Zugriff auf den Regler. Schließt man das BSB-LAN Setup an den BSB an, so hat man aufgrund der eindeutigen Adressierung Zugriff auf alle Busteilnehmer dieses Reglers.  
   
-Der BSB ist bei den im Folgenden vorgestellten Reglern des Typs RVS, LMS1x sowie LMU7x vorhanden. Sollte dein Regler einen BSB- *und* einen LPB-Anschluss aufweisen und kein weiterer Regler via LPB (bspw. eines weiteren Wärmeerzeugers bei einer Kaskadenschaltung, ein Solaranlagenregler o.ä.) angeschlossen sein und möchtest du nur Zugriff auf diesen einen Regler, dann ist der Anschluss des BSB-LAN Setups an den BSB-Anschluss empfehlenswert.  
+Der BSB ist bei den im Folgenden vorgestellten Reglern des Typs RVS, LMS1x sowie LMU7x vorhanden. Sollte dein Regler einen BSB- *und* einen LPB-Anschluss aufweisen und kein weiterer Regler via LPB angeschlossen sein (bspw. eines weiteren Wärmeerzeugers bei einer Kaskadenschaltung, ein Solaranlagenregler o.ä.) und möchtest du nur Zugriff auf diesen einen Regler, dann ist der Anschluss des BSB-LAN Setups an den BSB-Anschluss empfehlenswert.  
   
 **Adressierung beim BSB**  
 Beim BSB wird aufgrund des Bussystems jedem Teilnehmer eine spezifische Adresse zugeteilt. Folgende Adressen sind bereits festgelegt:  
