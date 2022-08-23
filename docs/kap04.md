@@ -74,8 +74,7 @@ microSD-Karte erfolgt bei Klick auf den Button "Zeichne Logdatei". Ist die Funkt
     
 | Hinweise |
 |:---------|
-| Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung 
-bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird. |
+| Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird. |
 | Bitte beachte, dass der Arduino nicht multitaskingfähig ist. Eine neue Abfrage kann erst erfolgen, nachdem die vorhergehende Abfrage komplett beendet ist. Speziell die Abfrage mehrerer Parameter, ganzer Kategorien oder auch des Logfiles der microSD-Karte kann u.U. eine längere Zeit in Anspruch nehmen, während dieser der Adapter nicht ‚ansprechbar' ist. |
 
 ---  
