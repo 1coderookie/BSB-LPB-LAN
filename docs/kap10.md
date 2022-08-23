@@ -38,7 +38,7 @@ Bei BSB (Boiler System Bus), LPB (Local Process Bus) und PPS (Point-to-Point Sch
 verschiedene "echte" Bussysteme, die sich vereinfacht in zwei Nutzungsklassen
 unterscheiden lassen:
 - Der BSB ist im Grunde ein 'Regler-lokaler' Bus, er kommt bei einem Regler und 'direktem' Zubehör wie bspw. Bedieneinheit, Raumgerät, Erweiterungsmodul zum Einsatz.
-- Der LPB ist im Grunde ein 'Regler-übergreifender' Bus, er kommt zum Einsatz, wenn mehrere Regler mit einander verbunden werden sollen (bspw. bei einer Koppelung vo mehreren Wärmeerzeugern, um eine Kaskadenschaltung zu realisieren).
+- Der LPB ist im Grunde ein 'Regler-übergreifender' Bus, er kommt zum Einsatz, wenn mehrere Regler miteinander verbunden werden sollen (bspw. bei einer Koppelung von mehreren Wärmeerzeugern, um eine Kaskadenschaltung zu realisieren).
 
 *Beispiel:*  
 Vorhanden sind eine Öl- oder Gasheizung, ein nachgerüsteter
