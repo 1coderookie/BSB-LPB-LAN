@@ -67,7 +67,8 @@ Wenn optionale Sensoren (DS18B20, DHT22, BME280, MAX!) angeschlossen und korrekt
    
 **Ausgabe/Zeichne Logdatei (URL-Befehle /D und /DG):**  
 
-Eine grafische Darstellung des optional erstellbaren Logfiles (Datei *datalog.txt*) erfolgt bei Klick auf den Button "Zeichne Logdatei". Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schrift angezeigt und die Bezeichnung lautet "Ausgabe Logdatei".
+Ist die Funktion des [Loggens auf microSD-Karte](kap06.md#61-loggen-von-daten) aktiviert, erfolgt eine grafische Darstellung des Logfiles (Datei *datalog.txt*) bei Klick auf den Button "Zeichne Logdatei".  
+Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schrift angezeigt und die Bezeichnung lautet "Ausgabe Logdatei".
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph_de.png">  
     
