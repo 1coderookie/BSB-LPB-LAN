@@ -362,7 +362,7 @@ FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante
   
 #### 7.4.3.2 UDP mit ESP32  
   
-BSB-LAN-User *"Christian"* hat die o.g. Variante von *"fabulous"* erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Es ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung.  
+BSB-LAN-User *"Christian"* hat die o.g. Variante von User "fabulous" erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Es ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung.  
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSBmonCR_box.jpg">  
   
