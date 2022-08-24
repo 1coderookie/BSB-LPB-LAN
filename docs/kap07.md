@@ -354,9 +354,25 @@ Eine genauere Beschreibung des Projekts „Raumfühler mit OLED" ist [hier](http
   
 ---  
   
-### 7.4.3 Raumgeräteersatz mit UDP-Kommunikation (LAN-Anbindung)
+### 7.4.3 Raumgeräteersatz mit UDP-Kommunikation
   
+#### 7.4.3.1 UDP mit Arduino Uno + LAN-Shield  
+   
 FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante von User "Andreas29" einen Raumgeräteersatz realisiert, der mit dem BSB-LAN-Adapter via UDP kommuniziert. Zur Verwendung kommen dabei ein Arduino Uno samt LAN-Shield, ein 20x4 LCD sowie ein Taster. Eine genaue Beschreibung sowie der entspr. Code ist [hier](https://forum.fhem.de/index.php/topic,110599.0.html) zu finden.  
+  
+#### 7.4.3.2 UDP mit ESP32  
+  
+BSB-LAN-User *"Christian"* hat die o.g. Variante von *"fabulous"* erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Es ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung.  
+
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSBmonCR_box.jpg">  
+  
+*Das fertige Setup samt Gehäuse.*  
+  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSBmonCR.gif">  
+  
+*Grafische Darstellung von drei Parametern im zeitlichen Verlauf.*  
+  
+Die ausführliche Beschreibung ist in seinem GitHub-Repository [https://github.com/DE-cr/BSBmonCR](https://github.com/DE-cr/BSBmonCR) zu finden.    
   
 ---  
   
