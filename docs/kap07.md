@@ -372,7 +372,7 @@ BSB-LAN-User *"Christian"* hat die o.g. Variante von User "fabulous" erweitert u
   
 *Grafische Darstellung von drei Parametern im zeitlichen Verlauf.*  
   
-Die ausführliche Beschreibung ist in seinem GitHub-Repository [https://github.com/DE-cr/BSBmonCR](https://github.com/DE-cr/BSBmonCR) zu finden.    
+Die ausführliche Beschreibung ist in [seinem GitHub-Repository](https://github.com/DE-cr/BSBmonCR) zu finden.    
   
 ---  
   
