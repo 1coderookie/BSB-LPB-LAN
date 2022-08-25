@@ -76,7 +76,7 @@ Mouseover-, Klick- und Mausradaktionen innerhalb der grafischen Darstellung biet
 - verbesserte Lesbarkeit von Wertzahlen bei nahe beieinander liegenden Plotlinien (mouseover auf Plot)
 - interaktives Hervorheben von Plotlinien zur besseren Übersicht (Mouseover auf Legendeneinträge)
 - interaktives Ausschalten von Plotlinien zur besseren Übersicht und vertikalen Skalierung (Klick auf Legendeneinträge)
-- zusätzliche Zoom- (Mausrad/Druck auf Plot) und Pan-Funktionen (Ziehen des gezoomten Plots)
+- zusätzliche Zoom- (Mausrad/Pinch auf Plot) und Pan-Funktionen (Ziehen des gezoomten Plots)
   
   
 | Hinweise |
