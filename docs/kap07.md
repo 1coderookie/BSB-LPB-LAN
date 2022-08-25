@@ -258,7 +258,8 @@ Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit den Var
 Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Daher ist die zusätzliche Verwendung von entsprechend dimensionierten Koppelrelais oder Solid-State-Relais überlegenswert. Sollten diese jedoch ausschließlich zum Einsatz kommen und mit ihnen Schaltvorgänge ausgelöst werden, so ist ggf. darauf zu achten, dass Strom- und Spannungsstärke des Arduino ausreichend sind, um den Schaltvorgang des Relais auszulösen.  
    
 ***ACHTUNG:***  
-***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!*** *Es ist empfehlenswert, einen Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.*  
+- ***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!*** *Es ist empfehlenswert, einen Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.*  
+- ***Vor der Verwendung eines Relais/Relaisboards sollte sichergestellt werden, dass es für die gewünschte Aufgabe geeignet ist!*** *Bei den schaltbaren multifunktionalen Eingängen der Heizungsregler wird bspw. häufig gefordert, dass das Relais "kleinspannungsgeeignet" ist - dieses Kriterium erfüllen nicht alle Relais!*  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/koppelrelais.jpg">  
    
@@ -362,7 +363,7 @@ FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante
   
 #### 7.4.3.2 UDP mit ESP32  
   
-BSB-LAN-User *"Christian"* hat die o.g. Variante von User "fabulous" erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Es ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung.  
+BSB-LAN-User *"-cr"* hat die o.g. Variante von User "fabulous" erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Sein Projekt [BSBmonCR](https://github.com/DE-cr/BSBmonCR) ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung. Darüber hinaus kann sogar auf ein Display verzichtet werden, da die grafische Darstellung auch über http abrufbar ist und außerdem das Loggen in einen Dropbox-Account möglich ist.    
 
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSBmonCR_box.jpg">  
   
