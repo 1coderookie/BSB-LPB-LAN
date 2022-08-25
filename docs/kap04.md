@@ -72,6 +72,13 @@ Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schri
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph_de.png">  
     
+Mouseover-, Klick- und Mausradaktionen innerhalb der grafischen Darstellung bieten diverse Steuerungsmöglichkeiten:    
+- verbesserte Lesbarkeit von Wertzahlen bei nahe beieinander liegenden Plotlinien (mouseover auf Plot)
+- interaktives Hervorheben von Plotlinien zur besseren Übersicht (Mouseover auf Legendeneinträge)
+- interaktives Ausschalten von Plotlinien zur besseren Übersicht und vertikalen Skalierung (Klick auf Legendeneinträge)
+- zusätzliche Zoom- (Mausrad/Druck auf Plot) und Pan-Funktionen (Ziehen des gezoomten Plots)
+  
+  
 | Hinweise |
 |:---------|
 | Für die grafische Anzeige der Logdatei wie im obigen Beispiel dürfen keine JavaScript-Blocker aktiv sein und es muss eine aktive Internetverbindung bestehen, da das JavaScript-Framework zur Darstellung von d3js.org geladen wird. |
