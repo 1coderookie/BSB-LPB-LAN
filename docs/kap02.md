@@ -499,7 +499,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
 ---
 
--   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT:**  
+-   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT/UDP:**  
     
     `#define LOGGER` → Das Logging-Modul wird kompiliert.  
     
@@ -509,9 +509,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
-    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte (empfohlen!) anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
+    - Logdaten via UDP broadcast senden:  
+     
+      `#define UDP_LOG_PORT 6502` → Logdaten werden zusätzlich per UDP broadcast an den Port 6502 (default) gesendet. Der gewünschte Port kann hier eingestellt werden.  
     
-    `#define UDP_LOG_PORT 6502` → Logdaten werden zusätzlich per UDP an den Port 6502 (default) gesendet. Der Port kann hier frei gewählt werden.  
+    - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte (empfohlen!) anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
     
       `//#define ESP32_USE_SD`  
     
