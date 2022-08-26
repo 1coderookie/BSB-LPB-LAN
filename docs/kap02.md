@@ -5,7 +5,7 @@
     
 # 2. BSB-LAN: Die Software
 
-In den folgenden Kapiteln wird auf die Installation und die Konfiguration der BSB-LAN-Software eingegangen. Eine Beschreibung des Webinterface findest du hingegen in [Kap. 4](kap04.md), eine Beschreibung der Abfrage- und Steuermöglichkeiten in [Kap 5](kap05.md) und eine Beschreibung der Spezialfunktionen in [Kap. 6](kap06.md).  
+In den folgenden Kapiteln wird auf die Installation und die Konfiguration der BSB-LAN-Software eingegangen. Eine Beschreibung des Webinterface findest du hingegen in [Kap. 4](kap04.md), eine Beschreibung der Abfrage- und Steuermöglichkeiten in [Kap. 5](kap05.md) und eine Beschreibung der Spezialfunktionen in [Kap. 6](kap06.md).  
 
 --- 
 
