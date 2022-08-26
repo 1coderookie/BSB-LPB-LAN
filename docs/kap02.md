@@ -346,7 +346,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
 ---    
    
--   **WiFi per zusätzlichem ESP8266:**  
+-   **WiFi:**  
     
     `//#define WIFI`  
     
@@ -510,6 +510,8 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
     - Wenn ein microSD-Kartenadapter an einem ESP32-basierten Board verwendet wird und das Loggen auf Karte (empfohlen!) anstatt des SPIFF-Flashspeichers erfolgen soll, so ist das folgende Definement zu aktivieren:  
+    
+    `#define UDP_LOG_PORT 6502` → Logdaten werden zusätzlich per UDP an den Port 6502 (default) gesendet. Der Port kann hier frei gewählt werden.  
     
       `//#define ESP32_USE_SD`  
     
