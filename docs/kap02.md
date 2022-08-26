@@ -505,7 +505,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     | Achtung |
     |:--------|
-    | Das genannte *aktivierte* Definement ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT (s.u.)! |     
+    | Das genannte *aktivierte* Definement ist sowohl Voraussetzung für das Loggen auf eine microSD-Karte als auch für die Verwendung von MQTT und UDP (s.u.)! |     
       
     Nachfolgend können/sollten verschiedene Einstellungen vorgenommen werden:  
     
