@@ -170,8 +170,9 @@ Rohrisolierung empfehlenswert, um Messwertverfälschungen durch bspw. Raum- oder
 
 - Im Allgemeinen sollten die Fühler etwa ein bis zwei Meter von einer zusätzlichen Wärmequelle (wie bspw. Heizkessel, Pufferspeicher o.ä.) entfernt montiert werden.
 
-***Bitte beachte:***  
-***Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, Pufferspeichern etc.), die an einen Heizungs- oder Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte deren Installation oder der Kontakt mit dem zu messenden Element durch eine zusätzliche Montage von DS18B20-Sensoren leiden!***  
+| ***Bitte beachte:*** |
+|:---------------------|
+| ***Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, Pufferspeichern etc.), die an einen Heizungs- oder Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte deren Installation oder der Kontakt mit dem zu messenden Element durch eine zusätzliche Montage von DS18B20-Sensoren leiden!*** |   
         
 ***Bauvorschlag:***  
 Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Arduino geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
@@ -249,24 +250,26 @@ Der nachfolgende Screenshot zeigt die entspr. Darstellung eines BME280 innerhalb
 ## 7.2 Relais und Relaisboards  
   
 Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit den Varianten des [URL-Befehls `/G`](kap05.md#51-url-befehle) auch bereits vorgesehen, dass am Arduino/ESP32 zusätzliche Relais oder Relaisboards angeschlossen und mit BSB-LAN gesteuert werden können. Auf diese Weise können nicht nur Verbraucher geschaltet, sondern auch Zustände angeschlossener Verbraucher abgefragt werden.  
-***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!***
-   
+      
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/relaisboards.jpg">  
 
 *Ein einzelnes und ein 4-Kanal Relaismodul für den Einsatz an einem Arduino.*  
        
 Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Daher ist die zusätzliche Verwendung von entsprechend dimensionierten Koppelrelais oder Solid-State-Relais überlegenswert. Sollten diese jedoch ausschließlich zum Einsatz kommen und mit ihnen Schaltvorgänge ausgelöst werden, so ist ggf. darauf zu achten, dass Strom- und Spannungsstärke des Arduino ausreichend sind, um den Schaltvorgang des Relais auszulösen.  
    
-***ACHTUNG:***  
-- ***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!*** *Es ist empfehlenswert, einen Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.*  
-- ***Vor der Verwendung eines Relais/Relaisboards sollte sichergestellt werden, dass es für die gewünschte Aufgabe geeignet ist!*** *Bei den schaltbaren multifunktionalen Eingängen der Heizungsregler wird bspw. häufig gefordert, dass das Relais "kleinspannungsgeeignet" ist - dieses Kriterium erfüllen nicht alle Relais!*  
+| ***ACHTUNG*** |
+|:--------------|
+| ***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!*** *Es ist empfehlenswert, einen Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.* | 
+| ***Vor der Verwendung eines Relais/Relaisboards sollte sichergestellt werden, dass es für die gewünschte Aufgabe geeignet ist!*** *Bei den schaltbaren multifunktionalen Eingängen der Heizungsregler wird bspw. häufig gefordert, dass das Relais "kleinspannungsgeeignet" ist - dieses Kriterium erfüllen nicht alle Relais!* |
+| ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!*** |  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/koppelrelais.jpg">  
    
 *Ein übliches Koppelrelais. Die entsprechenden Pins am Arduino werden bei diesem Modell an "14" und "13" angeschlossen.*  
    
-*Beispiel:*  
-Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen Koppelrelais (sofern deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist), wäre es bspw. möglich, den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) und somit den Betriebsstatus der Pumpe abzufragen.  
+| Beispiel |
+|:---------|
+| Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen Koppelrelais (sofern deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist), wäre es bspw. möglich, den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) und somit den Betriebsstatus der Pumpe abzufragen. |   
     
 
 ---
