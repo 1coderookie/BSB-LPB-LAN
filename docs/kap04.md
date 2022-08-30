@@ -58,7 +58,7 @@ in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter
     
 ---  
    
-**Sensoren (URL-Befehl: /K49):**  
+**Sensoren (URL-Befehl: /K48):**  
 Wenn [optionale Sensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
 <!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png"> -->
