@@ -693,7 +693,8 @@ Es gibt jedoch ein paar wichtige Punkte, die i.d.R. nicht in den jeweiligen Anle
   
 Schließt man das OCI420 den Anleitungen folgend an, so wird höchstwahrscheinlich der Fehler 81 an der Bedieneinheit angezeigt werden, welcher „Kurzschluss im LPB Bus oder *fehlende LPB-Busspeisung*“ bedeutet. Sofern man das OCI420 korrekt angeschlossen hat, muss in dem Fall die LPB-Busspeisung des Reglers via Bedieneinheit aktiviert werden. Der Parameter dazu ist „LPBKonfig0“.  
   
-Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch. Die Einstellungen müssen an der Bedieneinheit des Reglers (also _nicht_ bei BSB-LAN) vorgenommen werden.
+Die folgenden Einstellungen sind für Regler des Typs LMU64 beschrieben, bis auf die Parameternummer sind die Einstellungen der Bits bei anderen LMx-Reglern identisch.  
+Die Einstellungen müssen an der Bedieneinheit des Reglers vorgenommen werden.  
 Bei der LMU64 hat der betreffende Parameter die Nummer 604 (bei LMU74: Parameternummer 6006). Hier sind acht Bits (604.0 bis 604.7) verfügbar, die wie folgt einzustellen sind (dabei bedeutet „0“=AUS und „1“=EIN):  
   
 604.0 = 0 → Uhrzeitmaster  
