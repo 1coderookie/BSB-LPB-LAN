@@ -258,7 +258,7 @@ Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, 
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
 Genauere Hinweise bezüglich dieses Reglertyps sind in [Kap. 10.2.4](kap10.md#1024-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
-Weitere Hinweise zum Nachrüsten eines LPB mittels ClipIn (OCI420) sind in [Kap. 10.2.6.](kap10.html#1026-hinweis-lpb-nachrüsten-mittels-oci420-clipin-modul) zu finden.  
+Weitere Hinweise zum Nachrüsten eines LPB mittels ClipIn (OCI420) sind in [Kap. 10.2.6.](kap10.md#1026-hinweis-lpb-nachrüsten-mittels-oci420-clipin-modul) zu finden.  
    
 ---
    
