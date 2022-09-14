@@ -250,14 +250,15 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 ---
    
 #### 10.2.1.1 LMU-Regler  
-Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Diese Regler weisen erfahrungsgemäß weder einen BSB, noch einen LPB auf, lediglich eine PPS-Schnittstelle ist hier verfügbar. LPB kann (manchmal) mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
+Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Diese Regler basieren auf dem OpenTherm Protokoll, welches inkompatibel mit dem BSB-LAN Projekt ist. BSB/LPB/PPS ist bei diesem Reglertyp nicht vorhanden, LPB kann jedoch mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 
          
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
    
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
-Genauere Hinweise diesbezüglich sind in [Kap. 10.2.4](kap10.md#1024-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
+Genauere Hinweise bezüglich dieses Reglertyps sind in [Kap. 10.2.4](kap10.md#1024-hinweis-spezialfall-lmu54lmu64-regler) zu finden.  
+Weitere Hinweise zum Nachrüsten eines LPB mittels ClipIn (OCI420) sind in [Kap. 10.2.6.](kap10.html#1026-hinweis-lpb-nachrüsten-mittels-oci420-clipin-modul) zu finden.  
    
 ---
    
