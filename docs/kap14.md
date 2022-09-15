@@ -7,7 +7,7 @@
 ---
    
 ## 14.1 Arduino IDE stoppt beim Kompilieren  
-Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehlermeldung abbricht, bspw. falscher Boardtyp/Anschluss/Geschwindigkeit ausgewählt. Es gibt jedoch drei Typen von Fehlermeldungen, die beim Kompilieren für *ESP32* basierte Boards auftreten können, die hier kurz erwähnt werden sollten:  
+Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehlermeldung abbricht, bspw. weil ein falscher Boardtyp, Anschluss oder eine falsche Geschwindigkeit ausgewählt wurde. Es gibt jedoch drei Typen von Fehlermeldungen, die beim Kompilieren für *ESP32* basierte Boards auftreten können, die hier kurz erwähnt werden sollten:  
 - Die Fehlermeldung erwähnt etwas bzgl. "WiFiSPI"?  
 → Wenn auf ESP32, entferne den `WiFiSPI`-Ordner aus dem Ordner `src` - s. Schritt 5 in [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32).
 - Die Fehlermeldung erwähnt etwas bzgl. "ArduinoMDNS"?  
