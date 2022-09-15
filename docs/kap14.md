@@ -5,9 +5,19 @@
     
 # 14. Etwaige Probleme und deren mögliche Ursachen
 ---
-    
-
-## 14.1 Die rote LED des Adapters leuchtet nicht
+   
+## 14.1 Arduino IDE stoppt beim Kompilieren  
+Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehlermeldung abbricht, bspw. falscher Boardtyp/Anschluss/Geschwindigkeit ausgewählt. Es gibt jedoch drei Typen von Fehlermeldungen, die beim Kompilieren für *ESP32* basierte Boards auftreten können, die hier kurz erwähnt werden sollten:  
+- Die Fehlermeldung erwähnt etwas bzgl. "WiFiSPI"?  
+→ Wenn auf ESP32, entferne den `WiFiSPI`-Ordner aus dem Ordner `src` - s. Schritt 5 in [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32).
+- Die Fehlermeldung erwähnt etwas bzgl. "ArduinoMDNS"?  
+→ Wenn auf ESP32, entferne den `ArduinoMDNS`-Ordner aus dem Ordner `src` - s. Schritt 5 in [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32).
+- Die Fehlermeldung erwähnt etwas bzgl. "EEPROMClass"?  
+→ Stelle sicher, dass du das korrekte ESP32 framework installiert hast (1.0.6 ist zu alt) - s. [Kap. 12.1.2](kap12.md#1212-esp32).  
+  
+---
+  
+## 14.2 Die rote LED des Adapters leuchtet nicht
 
 - Regler ist ausgeschaltet
 - Adapter ist nicht mit dem Regler via BSB oder LPB verbunden
@@ -17,7 +27,7 @@
     
 ---
     
-## 14.2 Die rote LED leuchtet, aber es ist keine Abfrage möglich
+## 14.3 Die rote LED leuchtet, aber es ist keine Abfrage möglich
 
 - Evtl. Adapter falsch angeschlossen (an G+ statt an CL+)
 - Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
@@ -29,7 +39,7 @@
 ---
     
 
-## 14.3 Zugriff auf das Webinterface nicht möglich
+## 14.4 Zugriff auf das Webinterface nicht möglich
 - Adapter hat keine, keine ausreichende oder eine unzuverlässige Stromversorgung 
 (→ eine Stromversorgung über ein externes Netzteil ist zu empfehlen, 9V-Steckernetzteile 
 haben sich hier bewährt; eine Stromversorgung via USB *kann* u.U. zu Problemen führen) 
@@ -48,7 +58,7 @@ Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test
 ---
     
 
-## 14.4 Keine Parameterabfrage möglich
+## 14.5 Keine Parameterabfrage möglich
 
 - Siehe Punkt [„Die rote LED des Adapters leuchtet nicht"](kap14.md#141-die-rote-led-des-adapters-leuchtet-nicht)
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
@@ -60,7 +70,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 14.5 Regler wird nicht korrekt erkannt
+## 14.6 Regler wird nicht korrekt erkannt
 
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
@@ -72,14 +82,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 14.6 HK1 kann nicht bedient werden
+## 14.7 HK1 kann nicht bedient werden
 
 - Adapter ist evtl. als RGT2 konfiguriert  
     
 ---
     
 
-## 14.7 Es kann keine Raumtemperatur an einen HK1 gesendet werden
+## 14.8 Es kann keine Raumtemperatur an einen HK1 gesendet werden
 
 - Adapter ist evtl. als RGT2 konfiguriert
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
@@ -87,14 +97,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 14.8 HK2 kann nicht bedient werden
+## 14.9 HK2 kann nicht bedient werden
 
 - Adapter ist evtl. als RGT1 konfiguriert  
     
 ---
     
 
-## 14.9 Es kann keine Raumtemperatur an einen HK2 gesendet werden
+## 14.10 Es kann keine Raumtemperatur an einen HK2 gesendet werden
 
 - Adapter ist evtl. als RGT1 konfiguriert
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
@@ -102,14 +112,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 14.10 Einstellungen des Reglers können nicht via Adapter verändert werden
+## 14.11 Einstellungen des Reglers können nicht via Adapter verändert werden
 
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
     
 ---
     
 
-## 14.11 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
+## 14.12 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
 
 - Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
 auch die Darstellung des Logfiles dauern u.U. recht lange)  
@@ -117,7 +127,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 14.12 Bei der Abfrage der Logdatei passiert ‚nichts'
+## 14.13 Bei der Abfrage der Logdatei passiert ‚nichts'
 
 - Es ist keine microSD-Karte eingelegt
 - Das Loggen auf microSD-Karte war oder ist deaktiviert
@@ -127,7 +137,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 14.13 Es werden keine 24h-Durchschnittswerte angezeigt
+## 14.14 Es werden keine 24h-Durchschnittswerte angezeigt
 
 - Das entsprechende Definement ist nicht aktiviert
 - Es sind keine zu berechnenden Parameter angegeben  
@@ -135,7 +145,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 14.14 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
+## 14.15 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
 
 - Es sind keine Sensoren angeschlossen
 - Die entsprechenden Definements sind nicht aktiviert
@@ -145,7 +155,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 14.15 Die DS18B20-Sensoren zeigen falsche Werte an
+## 14.16 Die DS18B20-Sensoren zeigen falsche Werte an
 
 - Die Stromversorgung und Installation prüfen (Größe des PullUp-Widerstands prüfen,
 Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)  
@@ -153,7 +163,7 @@ Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)
 ---
     
 
-## 14.16 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
+## 14.17 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
 
 - Der Adapter ist nicht zusätzlich via USB angeschlossen
 - Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
