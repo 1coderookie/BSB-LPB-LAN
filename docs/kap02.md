@@ -479,12 +479,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
     `#define AVERAGES`  
     
-    Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet werden, so ist das Definement zu aktivieren (Voreinstellung).  
-    
-    `bool logAverageValues = false;`  
-    
-    Sollen diese Durchschnittswerte zusätzlich in der Datei *averages.txt* auf einer microSD-Karte geloggt werden, so ist die Variable auf `true` einzustellen.  
-    Ist ein Loggen dieser Werte nicht gewünscht, muss die Variable auf `false` belassen werden (Voreinstellung).  
+    Sollen 24h-Durchschnittswerte von bestimmten Parametern berechnet werden, so ist das Definement zu aktivieren (Voreinstellung: aktiviert).  
     
     Des Weiteren müssen die gewünschten Parameter (max. 40) bei der entsprechenden Variable eingetragen
     werden, bspw.:  
@@ -496,7 +491,10 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     };
     ```  
       
-
+    Die 24h-Durchschnittswerte dieser Parameter werden dann in eine separate Sicherungsdatei `averages.txt` auf die microSD-Karte geschrieben, damit bei einem Neustart die Durchschnittswerte weitergeführt werden können. Der Inhalt dieser Datei `avergaes.txt` kann nicht dargestellt werden.  
+    
+    Sollen die Durchschnittswerte der oben eingestellten Parameter zursätzlich bspw. in ein Logfile geschrieben und via URL-Befehl `/DG` angezeigt oder per MQTT verschickt werden, so sind sie als *Spezialparameter* mit den Nummern 20050-20099 bei den *zu loggenden Parametern* (s.u.) aufzuführen! Für diese gelten dann wiederum die entsprechenden Loggingeinstellungen (s.u.), wie bspw. das Logintervall.   
+  
 ---
 
 -   **Logging (auch auf microSD-Karte) und/oder Verwendung von MQTT/UDP:**  
@@ -553,7 +551,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       };
       ```
         
-      Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die enstpr. spezifischen Parameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
+      Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die spezifischen Spezialparameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
       ```
       20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
       20303,  
@@ -561,7 +559,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       ```
       loggt die Messwerte der DS18B20-Sensoren 1-3.
 
-      Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei BSB_LAN_config.h). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden.  
+      Zum Loggen der Brennerstarts und -laufzeiten müssen die Spezialparameter 20000 und 20001 aufgeführt werden (siehe auch die Beschreibung in der Datei `BSB_LAN_config.h`). Bei einem zweistufiger Ölbrenner, dessen Regler die entsprechenden Broadcasts schickt und bei dem eine Differenzierung der Brennerstufen möglich ist (derzeit nur RVS43.325), müssen hier zusätzlich 20002 und 20003 mit aufgeführt werden.  
     
       Weitere gängige Spezialparameter lauten:   
       * TWW-Laufzeit und TWW-Takte: 20004 und 20005,  
