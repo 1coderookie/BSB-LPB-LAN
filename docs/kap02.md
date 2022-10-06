@@ -40,11 +40,11 @@ Führe die folgenden Schritte aus:
 
 2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
   
-3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Datei *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
+3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Dateien *BSB_LAN_custom_defs.h.default* in ***BSB_LAN_custom_defs.h*** sowie  *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
     
 4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
 
-5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h* und *BSB_LAN_defs.h* werden automatisch mit geladen.  
+5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
 
 6. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
 
