@@ -491,9 +491,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     };
     ```  
       
-    Die 24h-Durchschnittswerte dieser Parameter werden dann in eine separate Sicherungsdatei `averages.txt` auf die microSD-Karte geschrieben, damit bei einem Neustart die Durchschnittswerte weitergeführt werden können. Der Inhalt dieser Datei `averages.txt` kann nicht dargestellt werden.  
+    Beim Vorhandensein einer SD-Karte werden die jeweils aktuellen Werte dort regelmäßig gesichert, um nach einem Neustart die Berechnung lückenlos fortsetzen zu können.    
     
-    Sollen die Durchschnittswerte der oben eingestellten Parameter zursätzlich bspw. in ein Logfile geschrieben und via URL-Befehl `/DG` angezeigt oder per MQTT verschickt werden, so sind sie als *Spezialparameter* mit den Nummern 20050-20099 bei den *zu loggenden Parametern* (s.u.) aufzuführen! Für diese gelten dann wiederum die entsprechenden Loggingeinstellungen (s.u.), wie bspw. das Logintervall.   
+    Sollen die Durchschnittswerte der oben eingestellten Parameter *zusätzlich* bspw. in ein Logfile geschrieben und via URL-Befehl `/DG` angezeigt oder per MQTT verschickt werden, so sind sie als *Spezialparameter* mit den Nummern 20050-20099 bei den *zu loggenden Parametern* (s.u.) aufzuführen! Für diese gelten dann wiederum die entsprechenden Loggingeinstellungen (s.u.), wie bspw. das Logintervall.   
   
 ---
 
