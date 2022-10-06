@@ -21,7 +21,7 @@ Sollte dein Rechner den Due nicht automatisch erkennen, ist der entspr. Treiber 
 
 3. Entpacke die heruntergeladene Datei "BSB_LAN-master.zip" und wechsle in den Ordner.  
 
-4. Wechsle in den Ordner "BSB_LAN" und benenne die dortige Datei "BSB_LAN_config.h.default" in "BSB_LAN_config.h" um.  
+4. Wechsle in den Ordner "BSB_LAN" und benenne die dortige Dateien "BSB_LAN_custom_defs.h.default" in "*BSB_LAN_custom_defs.h*" sowie  "BSB_LAN_config.h.default" in "*BSB_LAN_config.h*" um.  
 
 5. Starte die Arduino IDE mit einem Doppelklick auf die Datei "BSB_LAN.ino" im BSB_LAN-Ordner.  
 
