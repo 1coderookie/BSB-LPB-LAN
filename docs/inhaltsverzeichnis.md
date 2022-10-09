@@ -43,7 +43,7 @@
 [**3. BSB-LAN Setup: Anschluss und Inbetriebnahme**](kap03.md)  
    * [3.1 Anschluss des Adapters](kap03.md#31-anschluss-des-adapters)   
    * [3.2 Funktionsüberprüfung und erste Nutzung](kap03.md#32-funktionsüberprüfung-und-erste-nutzung)  
-   * [3.3 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)  
+   * [3.3 Reglerspezifische Parameterliste erstellen](kap03.md#33-reglerspezifische-parameterliste-erstellen)  
    * [3.4 Debugging und Fehlersuche](kap03.md#34-debugging-und-fehlersuche)  
 
 [**4. BSB-LAN: Das Webinterface**](kap04.md)  
