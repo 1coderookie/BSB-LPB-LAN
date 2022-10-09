@@ -198,151 +198,29 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
    
 ---
 
-## 3.3 Überprüfen auf nicht-freigegebene reglerspezifische Command IDs
+## 3.3 Reglerspezifische Parameterliste erzeugen  
 
 | Hinweis |
 |:--------|
-| Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/Q` bei PPS-Reglern nicht verfügbar ist. Dort erscheint lediglich folgende Ausgabe: <br> 
-`Scanne nach Geräten...` <br> `Complete dump:` <br> `Not supported by this device. No problem.` <br> `Fertig.` |   
+| Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/QD` bei PPS-Reglern nicht verfügbar und das Erstellen einer spezifischen Datei `BSB_LAN_custom_defs.h` nicht notwendig ist! |   
 | Einschränkungen gibt es ebenfalls bei Reglern, die über einen LPB angeschlossen sind, der durch die Nachrüstung mittels OCI420 verfügbar geworden ist (also LMU54/64 Regler). Hier sollten anfangs zwar die entspr. Gerätedaten aufgeführt werden, der "complete dump" ist jedoch ebenfall nicht verfügbar. |   
   
-Als ersten Funktionstest und als Überprüfung ob für den spezfischen Reglertyp (bei erfolgreicher Erkennung), der via BSB oder LPB angeschlossen ist, alle verfügbaren Parameter freigegeben sind, klicke nun auf den Button "Prüfe auf neue Parameter" oder führe folgenden URL-Befehl aus:  
-
-`http://<IP-Adresse>/Q`  
-
-*Achtung: Diese Abfrage dauert eine Weile - bitte warte, bis der ganze 'complete dump' abgeschlossen ist!*  
+**In der Grundversion von BSB-LAN werden nur reglerübergreifende Parameter unterstützt, die bei allen Reglerserien und -modellen identisch sind. Um jedoch kompletten Zugriff auf deinen spezifischen Regler zu erhalten, muss hierfür erst eine passende Datei `BSB_LAN_custom_defs.h` erstellt werden, die genau die Parameter enthält, die dein Regler aufweist!**  
   
-Diese Funktion geht alle Command IDs durch, die in der Datei *BSB_LAN_defs.h* hinterlegt sind und schickt diejenigen, die nicht für den eigenen Reglertyp hinterlegt sind, als Anfrage-Parameter (Typ QUR, 0x06) an den Regler.  
-Das passiert bei Parametern, bei denen bisher nur eine Command ID bekannt ist, ständig und erzeugt die bekannten „error 7 (parameter not supported)"-Fehlermeldungen.  
+Für die Generierung der Textdatei, die zur Erstellung der Datei `BSB_LAN_custom_defs.h` erforderlich ist, klicke oben im Webinterface auf den Button "Reglerspezische Parameterliste" und dann unten auf "Download" oder führe folgenden URL-Befehl aus:  
 
-Sobald aber mehr als eine Command ID bekannt ist, bleibt die bisherige Command ID i.d.R. auf "DEV_ALL", ist also für alle Regler der Standard, und die neue Command ID wird erst einmal nur für die Therme freigeschaltet, die diese Command ID gemeldet hat.  
+`http://<IP-Adresse>/QD`  
 
-Da es aber auch genauso gut umgekehrt sein kann, dass die "neue" Command ID der Standard ist, und die "alte" Command ID der Sonderfall, geht /Q nun die Command IDs durch, die nicht dem eigenen Regler zugewiesen sind. Häufig können dort noch eine Reihe "neuer" Parameter freigeschaltet werden.  
+*Achtung: Diese Abfrage dauert eine Weile - bitte warte, bis der ganze 'complete dump' bzw. der Download der Textdatei abgeschlossen ist!*  
+  
+Diese Funktion fragt nun alle verfügbaren Parameter des angeschlossenen Reglers ab und speichert das Ergebnis in einer Textdatei.  
+**Diese Textdatei muss im Anschluss an Frederik (bsb(ät)code-it.de) geschickt werden, woraus dann die gerätespezifische Datei `BSB_LAN_custom_defs.h` für den angeschlossenen Regler erzeugt wird. Nachdem du diese Datei von Frederik erhalten hast, musst du die bisherige `BSB_LAN_custom_defs.h` mit dieser ersetzen und BSB-LAN einmal neu flashen. Erst danach hast du kompletten Zugriff auf alle Funktionen deines Reglers!**  
 
 | Hinweis |
 |:--------|
-| Es wird hierbei immer nur eine Anfrage mit einer Command ID an den Regler geschickt! <br> Der Regler beantwortet diese entweder mit einer Fehlermeldung (Typ ERR, 0x08) oder einer Antwort mit einem Datenpaket (Typ ANS, 0x07). <br> *In keinem Fall werden dabei Werte gesetzt oder Reglereinstellungen verändert! Dafür müsste ein ganz anderer Telegramm-Typ gesetzt werden (entweder Typ SET, 0x03 oder Typ INF, 0x02) - das macht /Q explizit nicht!* | 
+| Es wird hierbei nur der Datensatz des Reglers abgefragt - in keinem Fall werden dabei Werte gesetzt oder Reglereinstellungen verändert! | 
 
-Wenn bereits alle Parameter für den Reglertyp bekannt und freigegeben sind, sieht die auf `http://<IP-Adresse>/Q` folgende Webausgabe exemplarisch so aus:
-    
-```
-Version: 2.0.108-20211114123620
-Scanne nach Geräten...
-Geräteadresse gefunden: 0
-Geräteadresse gefunden: 3
-Teste Geräteadresse 0...
-Gerätefamilie: 134
-Gerätevariante: 146
-Geräte-Identifikation: RVS43.345/146
-Software-Version: 4.1
-Entwicklungs-Index:  000002 - decoding error
-Objektverzeichnis-Version: 301.1
-Bootloader-Version:  (parameter not supported)
-EEPROM-Version: ---
-Konfiguration - Info 2 OEM:  (parameter not supported)
-Parameterversion:  000001 - unknown type
-Parametersatznummer:  000001 - unknown type
-Kesseltypnummer OEM:  (parameter not supported)
-Parametersatzgruppe OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage: 20
-Parametersatznummer OEM:  (parameter not supported)
-Info 3 OEM:  (parameter not supported)
-Info 4 OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
-Hersteller-ID (letzten vier Bytes): 34979
-Außentemperatur (10003): 3.9 °C
-Außentemperatur (10004): 3.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
-134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
-
-Starte Test...
-
-Test beendet.  
-
-Complete dump:
-DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
-DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
-DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
-DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
-[...]
-Fertig.
-```
-    
-Eine entsprechende Webausgabe bei bisher nicht-freigegebenen Parametern (siehe die aufgeführten Parameter mit dem Hinweis "error 7 (parameter not supported)" zwischen "Starte Test..." und "Test beendet.") für den spezifischen Regler hingegen sieht exemplarisch so aus:
-    
-```
-Version: 2.0.108-20211114123620
-Scanne nach Geräten...
-Geräteadresse gefunden: 0
-Geräteadresse gefunden: 3
-Teste Geräteadresse 0...
-Gerätefamilie: 134
-Gerätevariante: 146
-Geräte-Identifikation: RVS43.345/146
-Software-Version: 4.1
-Entwicklungs-Index:  000002 - decoding error
-Objektverzeichnis-Version: 301.1
-Bootloader-Version:  (parameter not supported)
-EEPROM-Version: ---
-Konfiguration - Info 2 OEM:  (parameter not supported)
-Parameterversion:  000001 - unknown type
-Parametersatznummer:  000001 - unknown type
-Kesseltypnummer OEM:  (parameter not supported)
-Parametersatzgruppe OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage: 20
-Parametersatznummer OEM:  (parameter not supported)
-Info 3 OEM:  (parameter not supported)
-Info 4 OEM:  (parameter not supported)
-Bisher unbekannte Geräteabfrage:  04016301F4 - unknown type
-Hersteller-ID (letzten vier Bytes): 34979
-Außentemperatur (10003): 3.9 °C
-Außentemperatur (10004): 3.9 °C
-6225;6226;6224;6220;6221;6227;6229;6231;6232;6233;6234;6235;6223;6236;6258;6259;6343;6344;
-134;146;RVS43.345/146;4.1;;301.1;---;;000001;000001;;;20;;;;04016301F4;34979;
-
-Starte Test...
-
-5450 - Trinkwasser Durchlauferhitzer - Schwelle zum Beenden einer BW-Zapfung bei DLH
-0x313D10B5
-DC C2 00 0B 06 3D 31 10 B5 9F A2
-DC 80 42 0D 07 31 3D 10 B5 00 10 02 00
-
-5451 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei DLH in Komfort
-0x313D10B6
-DC C2 00 0B 06 3D 31 10 B6 AF C1
-DC 80 42 0D 07 31 3D 10 B6 00 C0 90 2D
-
-5452 - Trinkwasser Durchlauferhitzer - Schwelle für Bw-Zapfung bei Dlh in Heizbetrieb
-0x313D10B7
-DC C2 00 0B 06 3D 31 10 B7 BF E0
-DC 80 42 0D 07 31 3D 10 B7 00 C0 A7 1D
-
-5455 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 40°C (°K)
-0x313D10B8
-DC C2 00 0B 06 3D 31 10 B8 4E 0F
-DC 80 42 0D 07 31 3D 10 B8 00 00 52 60
-
-5456 - Trinkwasser Durchlauferhitzer - Sollwertkorrektur bei Auslaufregelung mit 60°C (°K)
-0x313D10B9
-DC C2 00 0B 06 3D 31 10 B9 5E 2E
-DC 80 42 0D 07 31 3D 10 B9 00 00 65 50 
-
-Test beendet.
-
-Fertig.  
-
-Complete dump:
-DC 80 42 17 13 00 01 11 05 0A 8C 01 F5 11 03 08 8A 00 99 19 03 BD 9B
-DC 80 42 15 13 00 02 01 05 05 B2 02 04 11 00 0D 4F 00 7A 2A D4
-DC 80 42 17 13 00 03 11 06 0A 8C 02 09 11 03 08 8A 00 99 19 03 2F 51
-DC 80 42 15 13 00 04 01 06 05 B2 02 18 11 00 0D 4F 00 7A B8 55
-[...]
-Fertig.
-```  
-    
-In diesem Fall sollte die Webausgabe bitte kopiert und im [FHEM-Forum](http://forum.fhem.de/index.php/topic,29762.0.html) oder via Email an Frederik (bsb (ät) code-it.de) gemeldet werden, damit eine entsprechende Anpassung vorgenommen werden kann.  
-        
-Wenn die Q-Abfrage erfolgreich beendet wurde, ist das BSB-LAN-Setup korrekt installiert und verwendungsfähig.  
+  
 
 ---
 
