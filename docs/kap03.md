@@ -207,9 +207,7 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
   
 **In der Grundversion von BSB-LAN werden nur reglerübergreifende Parameter unterstützt, die bei allen Reglerserien und -modellen identisch sind. Um jedoch kompletten Zugriff auf deinen spezifischen Regler zu erhalten, muss hierfür erst eine passende Datei `BSB_LAN_custom_defs.h` erstellt werden, die genau die Parameter enthält, die dein Regler aufweist!**  
   
-Für die Generierung der Textdatei, die zur Erstellung der Datei `BSB_LAN_custom_defs.h` erforderlich ist, klicke oben im Webinterface auf den Button "Reglerspezische Parameterliste" und dann unten auf "Download" oder führe folgenden URL-Befehl aus:  
-
-`http://<IP-Adresse>/QD`  
+Für die Generierung der Textdatei, die zur Erstellung der Datei `BSB_LAN_custom_defs.h` erforderlich ist, klicke oben im Webinterface auf den Button "Reglerspezische Parameterliste" und dann unten auf "Download".  
 
 *Achtung: Diese Abfrage dauert eine Weile - bitte warte, bis der ganze 'complete dump' bzw. der Download der Textdatei abgeschlossen ist!*  
   
