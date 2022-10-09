@@ -86,8 +86,8 @@ Mouseover-, Klick- und Mausradaktionen innerhalb der grafischen Darstellung biet
 
 ---  
    
-**Reglerspezifische Parameterliste (URL-Befehl /QD):**  
-Nach einem Klick auf "Download" am Ende des angezeigten Textes fragt diese Funktion alle Parameter des angeschlossenen Reglers ab und erzeugt die dazugehörige Textdatei mit der spezifischen Ausgabe. Diese Datei muss an Frederik (bsb(ät)code-it.de) geschickt werden, um die entsprechende Datei `BSB_LAN_custom_defs.h` für dieses Reglermodell erstellen zu lassen. Nachdem du diese Datei von Frederik erhalten hast, muss du die bestehende Datei durch diese Version ersetzen und BSB-LAN neu flashen, um vollen Zugriff auf deinen Regler zu erhalten. Für weitere Informationen siehe [Kap. 3.3](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids).  
+**Reglerspezifische Parameterliste (URL-Befehl /Q):**  
+Nach einem Klick auf "Download" am Ende des angezeigten Textes fragt diese Funktion alle Parameter des angeschlossenen Reglers ab und erzeugt die dazugehörige Textdatei mit der spezifischen Ausgabe. Diese Datei muss an Frederik (bsb(ät)code-it.de) geschickt werden, um die entsprechende Datei `BSB_LAN_custom_defs.h` für dieses Reglermodell erstellen zu lassen. Nachdem du diese Datei von Frederik erhalten hast, muss du die bestehende Datei durch diese Version ersetzen und BSB-LAN neu flashen, um vollen Zugriff auf deinen Regler zu erhalten. Für weitere Informationen siehe [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen).  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QD_de.png">  
    
