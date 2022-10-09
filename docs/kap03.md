@@ -198,7 +198,7 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
    
 ---
 
-## 3.3 Reglerspezifische Parameterliste erzeugen  
+## 3.3 Reglerspezifische Parameterliste erstellen  
 
 | Hinweis |
 |:--------|
