@@ -202,7 +202,7 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
 
 | Hinweis |
 |:--------|
-| Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/QD` bei PPS-Reglern nicht verfügbar und das Erstellen einer spezifischen Datei `BSB_LAN_custom_defs.h` nicht notwendig ist! |   
+| Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/Q` bei PPS-Reglern nicht verfügbar und das Erstellen einer spezifischen Datei `BSB_LAN_custom_defs.h` nicht notwendig ist! |   
 | Einschränkungen gibt es ebenfalls bei Reglern, die über einen LPB angeschlossen sind, der durch die Nachrüstung mittels OCI420 verfügbar geworden ist (also LMU54/64 Regler). Hier sollten anfangs zwar die entspr. Gerätedaten aufgeführt werden, der "complete dump" ist jedoch ebenfall nicht verfügbar. |   
   
 **In der Grundversion von BSB-LAN werden nur reglerübergreifende Parameter unterstützt, die bei allen Reglerserien und -modellen identisch sind. Um jedoch kompletten Zugriff auf deinen spezifischen Regler zu erhalten, muss hierfür erst eine passende Datei `BSB_LAN_custom_defs.h` erstellt werden, die genau die Parameter enthält, die dein Regler aufweist!**  
