@@ -203,9 +203,9 @@ Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapit
 | Hinweis |
 |:--------|
 | Das nachfolgend beschriebene Procedere betrifft Regler, die per BSB oder LPB an das BSB-LAN-Setup angeschlossen sind. Solltest du einen Regler per PPS angeschlossen haben, so erübrigt sich das nachfolgend Geschriebene, da die Funktion `/Q` bei PPS-Reglern nicht verfügbar und das Erstellen einer spezifischen Datei `BSB_LAN_custom_defs.h` nicht notwendig ist! |   
-| Einschränkungen gibt es ebenfalls bei Reglern, die über einen LPB angeschlossen sind, der durch die Nachrüstung mittels OCI420 verfügbar geworden ist (also LMU54/64 Regler). Hier sollten anfangs zwar die entspr. Gerätedaten aufgeführt werden, der "complete dump" ist jedoch ebenfall nicht verfügbar. |   
+| Einschränkungen gibt es ebenfalls bei Reglern, die über einen LPB angeschlossen sind, der durch die Nachrüstung mittels OCI420 Busmodul ClipIn verfügbar geworden ist (also LMU54/64 und LMU74/75 Regler). Hier sollten anfangs zwar die entspr. Gerätedaten aufgeführt werden, der "complete dump" ist jedoch ebenfall nicht verfügbar. Ob dies auch bei LMS14/15 Reglern mit dem neueren OCI345 Busmodul der Fall ist, ist noch nicht bekannt. |   
   
-**In der Grundversion von BSB-LAN werden nur reglerübergreifende Parameter unterstützt, die bei allen Reglerserien und -modellen identisch sind. Um jedoch kompletten Zugriff auf deinen spezifischen Regler zu erhalten, muss hierfür erst eine passende Datei `BSB_LAN_custom_defs.h` erstellt werden, die genau die Parameter enthält, die dein Regler aufweist!**  
+**In der Grundversion werden nur sehr wenige ausgewählte Parameter unterstützt, die von allen Reglern unterstützt werden (z.B. Uhrzeit, Geräteidentifikation, Komforttemperatur Heizkreis 1, Außentemperatur). Um jedoch kompletten Zugriff auf deinen spezifischen Regler zu erhalten, muss hierfür erst eine passende Datei `BSB_LAN_custom_defs.h` erstellt werden, die genau die Parameter enthält, die dein Regler aufweist!**  
   
 Für die Generierung der Textdatei, die zur Erstellung der Datei `BSB_LAN_custom_defs.h` erforderlich ist, klicke oben im Webinterface auf den Button "Reglerspezische Parameterliste" und dann unten auf "Download".  
 
@@ -216,7 +216,8 @@ Diese Funktion fragt nun alle verfügbaren Parameter des angeschlossenen Reglers
 
 | Hinweis |
 |:--------|
-| Es wird hierbei nur der Datensatz des Reglers abgefragt - in keinem Fall werden dabei Werte gesetzt oder Reglereinstellungen verändert! | 
+| Es werden hierbei nur die Parameterdefinitionen des Reglers abgefragt, in keinem Fall werden dabei Konfigurationseinstellungen ausgelesen, gesetzt oder verändert! | 
+| Alternativ kann die Datei `BSB_LAN_custom_defs.h`, die in den vorherigen Versionen verwendet wurde, als Teil der Release-Version 2.1 heruntergeladen werden. Den früheren allgemeinen Parameterlisten fehlen jedoch Hunderte von Parametern - insbesondere von neueren Reglern. Darüber hinaus beinhalten sie eine Vielzahl von Ungenauigkeiten und teilweise auch Fehlern, weswegen wir den Einsatz dieser früheren Parameterliste ausdrücklich *nicht mehr empfehlen*! |  
 
   
 
