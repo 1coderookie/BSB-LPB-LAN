@@ -94,13 +94,13 @@ Führe nun die folgenden Schritte aus:
     Diese findest du unter der IP-Adresse, die du zuvor bei Schritt 6 eingestellt hast (voreingestellt ist "192.168.178.88").  
     Solltest du DHCP verwenden, so kann die vergebene IP während der Startsequenz des Arduino mittels des [Seriellen Monitors der Arduino IDE](kap12.md#122-serieller-monitor) ausgelesen werden.   
 
-    Wenn alles fehlerfrei und korrekt installiert ist, hast du nun Zugriff auf deinen Heizungsregler. 
+    *Wenn alles fehlerfrei und korrekt installiert ist, hast du nun (eingeschränkten) Zugriff auf deinen Heizungsregler. Um Zugriff auf alle verfügbaren Parameter deines Reglers zu erhalten, beachte bitte Schritt 12!* 
     
     | Hinweis |
     |:--------|
     | Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte *zusätzlich zu den bereits genannten Kapiteln* auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md)! |  
   
-12. Bitte führe nun die [Überprüfung auf neue Parameter (URL-Befehl /Q)](kap03.md#33-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids) aus (solltest du einen Regler via PPS angeschlossen haben, kann dieser Punkt übersprungen werden) und teile uns die Webausgabe unter Angabe des Herstellers und der genauen Modellbezeichnung deines Wärmeerzeugers mit.  
+12. *Um nun kompletten Zugriff auf deinen Regler zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*   
 
 Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
     
