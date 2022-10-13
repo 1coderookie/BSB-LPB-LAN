@@ -226,18 +226,19 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | Vertrauenswürdige IP-Adresse | 0.0.0.0 | Optionale Sicherheitsfunktion: "Trusted IP", Zugriff nur von dieser IP möglich | 
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN |	
 | WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN |
-| Verwenden | Aus | MQTT-Funktion verwenden (Aus/Ein) |	
-| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers |	
-| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
-| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
-| Geräte ID | MyHeater | Gerätename (Header in JSON-Payload) |
-| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
-| Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
-| Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |	
-| Logging aktiv | Aus | Logging aktiviert (auch nötig für MQTT!) und zu loggende Werte ggf. auf der microSD-Karte speichern (Aus/Ein) |	
+| mDNS Hostname | BSB-LAN | Einstellbarer Hostname |
+| Log-Modus | keine Option ausgewählt | Auswählbare Optionen für die Loggingfunktion (Mehrfachauswahl möglich): Auf SD-Karte schreiben / 24-Stunden-Durchschnittswerte berechnen / An MQTT-Broker senden / Als UDP-Nachrichten senden |	
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
+| Parameter | 8700,8326 | Parameter für die 24h-Durchschnittswertberechnung |
+| Verwenden | Plain Text | MQTT-Übertragung in Plain Text / JSON / Rich JSON |	
+| IP-Adresse Broker | 192.168.178.20 | IP-Adresse des MQTT-Brokers | 
+| Username | User | MQTT: Username bei Verwendung von Username/Passwort |	
+| Passwort | Pass | MQTT: Passwort bei Verwendung von Username/Passwort |
+| Geräte ID | BSB-LAN | Gerätename (Header in JSON-Payload) |
+| Topic prefix |	BSB-LAN | Topic prefix der MQTT-Nachrichten |
+| Berechnung | Aus | Berechnung von 24h-Durchschnittswerten ausgewählter Parameter (Aus/Ein) |	
 | Pins | 0 | Verwendete(r) Pin(s) für OneWire-Sensoren (DS18B20) (0 = deaktiviert) |	
 | Pins | 0 | Verwendete(r) Pin(s) für DHT22-Sensoren (0 = deaktiviert) |
 | Sensoren | 0 | Anzahl der angeschlossenen BME280-Sensoren (0 = deaktiviert) |
