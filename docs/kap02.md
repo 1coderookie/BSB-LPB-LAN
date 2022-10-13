@@ -227,7 +227,7 @@ Im Folgenden nun die tabellarische Übersicht der Funktionen mit den (Vor-)Einst
 | WLAN SSID | -keine Voreinstellung- | SSID des WLAN |	
 | WLAN Passwort | -keine Voreinstellung- | Passwort des WLAN |
 | mDNS Hostname | BSB-LAN | Einstellbarer Hostname |
-| Log-Modus | keine Option ausgewählt | Auswählbare Optionen für die Loggingfunktion (Mehrfachauswahl möglich): Auf SD-Karte schreiben / 24-Stunden-Durchschnittswerte berechnen / An MQTT-Broker senden / Als UDP-Nachrichten senden |	
+| Log-Modus | -keine Voreinstellung- | Auswählbare Optionen für die Loggingfunktion (Mehrfachauswahl möglich): Auf SD-Karte schreiben / 24-Stunden-Durchschnittswerte berechnen / An MQTT-Broker senden / Als UDP-Nachrichten senden |	
 | Logintervall (Sekunden) | 3600 | Logintervall in Sekunden | 
 | Parameter | 8700,8743,8314 | Zu loggende Parameter | 
 | Bustelegramme | Aus | Loggen von Bustelegrammen aktivieren (Aus/-diverse Optionen-), die gewünschte Einstellung ist der jeweiligen Optionsbeschreibung entspr. vorzunehmen. |	
