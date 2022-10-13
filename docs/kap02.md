@@ -70,7 +70,7 @@ Fahre nun mit der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration
   
 | **Wichtiger Hinweis** |
 |:--------|
-| **Um später kompletten Zugriff auf den Regler zu haben, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |  
+| **Um kompletten Zugriff auf alle Parameter deines Reglers zu erhalten, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |  
 
 ---
 
@@ -145,7 +145,7 @@ Fahre nun mit der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration
   
 | **Wichtiger Hinweis** |
 |:--------|
-| **Um später kompletten Zugriff auf den Regler zu haben, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |   
+| **Um kompletten Zugriff auf alle Parameter deines Reglers zu erhalten, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |   
   
 ---
 
