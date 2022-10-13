@@ -100,7 +100,7 @@ Führe nun die folgenden Schritte aus:
     |:--------|
     | Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte *zusätzlich zu den bereits genannten Kapiteln* auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md)! |  
   
-12. *Um nun kompletten Zugriff auf deinen Regler zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*   
+12. *Um nun Zugriff auf sämtliche Parameter deines Reglers zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*   
 
 Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
     
