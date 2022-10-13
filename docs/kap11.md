@@ -49,6 +49,8 @@ Danke!
 
 -   Brötje BMR 20/24 \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje BSK 15 \[LMS14\] (Gasbrenner) {BSB}
+
 -   Brötje BSK 20 \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje EcoCondens BBS 2N (LMU64 + OCI420) (Gasbrenner) {LPB via OCI420}  
@@ -134,6 +136,8 @@ Danke!
 
 -   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
+-   Brötje SPK 14 B \[RVS43\] (Pellet) {BSB}
+
 -   Brötje TrioCondens BGB 15-38E \[LMS14\] (Gasbrenner) {BSB}
 
 -   Brötje TrioCondens BGB 20E \[LMS14\] (Gasbrenner) {BSB}
@@ -163,6 +167,8 @@ Danke!
 -   Brötje WGB 28E \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB 70E \[LMS14\] (Gasbrenner) {BSB}  
+
+-   Brötje WGB 50H \[LMS14\] (Gasbrenner) {BSB}  
 
 -   Brötje WGB-C 20/24H \[LMS14\] (Gasbrenner) {BSB}
 
@@ -229,6 +235,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop S14 \[RVS61.843\] (Wärmepumpe) {BSB}  
 
+-   Elco Aquatop T06C \[RVS61.843\] (Wärmepumpe) {BSB}  
+
 -   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}  
 
 -   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
@@ -262,6 +270,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Elco Thision S17.1 \[RVS63.283\] (Gasbrenner) {BSB}
 
 -   Elco Thision S25.1 \[RSV63.283\] (Gasbrenner) + MM \[AVS75.390\] {BSB}
+
+-   Elco Trigon S Plus 19 \[LMS14\] (Gasbrenner) {BSB}
     
 ---
     
@@ -277,6 +287,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa Excellia Duo \[RVS21\] (Wärmepumpe) {BSB}  
 
+-   Atlantic Alféa Extensa Duo R32 \[RVS21\] (Wärmepumpe) {BSB}
+
 -   Atlantic Alféa Extensa Duo + \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa Duo AI 32 \[RVS21\] (Wärmepumpe) {BSB}
@@ -288,6 +300,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Atlantic Alféa Extensa AOYA 18 LALL / AOYA 30 LBTL \[RVS21\] (Wärmepumpe) {BSB}  
 
 -   Atlantic Alféa Extensa Duo \[RVS21\] (Wärmepumpe) {BSB}  
+
+-   Atlantic Alféa S \[RVS41\] (Wärmepumpe) {BSB}
 
 -   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}  
 
@@ -311,9 +325,13 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Bösch SLS10 \[RVS43\] (Wärmepumpe] {BSB}  
 
+-   Bösch SLS14-RA21E \[RVS43\] (Wärmepumpe) {BSB}
+
 -   Bösch SWP8-RX33 \[RVS43\] (Wärmepumpe) {BSB}
 
 -   Chappée Klista + HTE C 24 \[LMS14\] (Gasbrenner) {BSB}
+
+-   Chappée Luna Platinum + 1.24 \[LMS15\] (Gasbrenner) {BSB}
 
 -   Chappée Luna Platinum Duo 3.24 HTE \[LMS15\] (Gasbrenner) {BSB}
 
@@ -339,6 +357,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Fujitsu Waterstage DUO WGYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
 
+-   Fujitsu Waterstage WOHA060 LFCA \[RVS21\] (Wärmepumpe) {BSB}
+
 -   Fujitsu Waterstage WSHA 050 DA \[RVS41.813\] (Wärmepumpe) {BSB}  
 
 -   Fujitsu Waterstage WSYA 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
@@ -350,6 +370,10 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Fujitsu Waterstage WSYP 100 DG 6 \[RVS21.831\] (Wärmepumpe) {BSB}
 
 -   Geminox Thrs 19 \[LMS14\] (Gasbrenner) {BSB}
+
+-   General Waterstage (aka Fujitsu Waterstage) WC13F / WOC13RIYF \[RVS21\] (Wärmepumpe) {BSB}
+
+-   General WGHA 100DG \[RVS21\] (Wärmepumpe) {BSB}
 
 -   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
 
@@ -378,6 +402,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (Wärmepumpe) {BSB}  
 
 -   Sixmadun TG11 BE \[RVA63\] (?) {PPS/LPB}  
+
+-   SSP Proburner 25 \[RVS43\] (Holz) {BSB}
 
 -   Termomax Termo ÖV Color 35/E \[RVA63.2424\] (Ölbrenner) {LPB}  
 
