@@ -41,7 +41,7 @@ Führe die folgenden Schritte aus:
 2. Downloade die [aktuelle BSB-LAN-Version](https://github.com/fredlcore/BSB-LAN/archive/master.zip) und entpacke die heruntergeladene Datei *BSB-LAN-master.zip*.  
   
 3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Dateien *BSB_LAN_custom_defs.h.default* in ***BSB_LAN_custom_defs.h*** sowie  *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
-    
+      
 4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
 
 5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
@@ -66,7 +66,11 @@ Führe die folgenden Schritte aus:
 10. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des Arduino Due erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
 
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
-Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+Fahre nun mit der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) und danach mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) fort.  
+  
+| **Wichtiger Hinweis** |
+|:--------|
+| **Um später kompletten Zugriff auf den Regler zu haben, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |  
 
 ---
 
@@ -137,7 +141,11 @@ Führe die folgenden Schritte aus:
 | Obwohl die Logging-Funktion auch mit dem ESP32 funktioniert, ist es nicht empfehlenswert, diese Funktion aufgrund des Verschleißes des Flash-Speichers übermäßig zu nutzen. Sollte das **Olimex-Board** zum Einsatz kommen, so kann anstelle des SPIFF-Flashspeichers eine microSD-Karte genutzt werden. Die Verwendung ist in der Datei *BSB_LAN_config.h* zu aktivieren (Definement `#define ESP32_USE_SD`). |    
   
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
-Fahre nun mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) und/oder der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) fort.  
+Fahre nun mit der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) und danach mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) fort.  
+  
+| **Wichtiger Hinweis** |
+|:--------|
+| **Um später kompletten Zugriff auf den Regler zu haben, muss nach Abschluss aller hier genannten Schritte und dem erfolgreichen Flashen eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt und im Anschluss BSB-LAN mit dieser Datei neu installiert werden! Bitte beachte daher** ***zwingend*** **das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen) und führe die dort genannten Schritte aus!** |   
   
 ---
 
