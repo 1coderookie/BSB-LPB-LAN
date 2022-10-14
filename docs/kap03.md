@@ -212,7 +212,8 @@ Für die Generierung der Textdatei, die zur Erstellung der Datei `BSB_LAN_custom
 *Achtung: Diese Abfrage dauert eine Weile - bitte warte, bis der ganze 'complete dump' bzw. der Download der Textdatei abgeschlossen ist!*  
   
 Diese Funktion fragt nun alle verfügbaren Parameter des angeschlossenen Reglers ab und speichert das Ergebnis in einer Textdatei.  
-**Diese Textdatei muss im Anschluss an Frederik (bsb(ät)code-it.de) geschickt werden, woraus dann die gerätespezifische Datei `BSB_LAN_custom_defs.h` für den angeschlossenen Regler erzeugt wird. Nachdem du diese Datei von Frederik erhalten hast, musst du die bisherige `BSB_LAN_custom_defs.h` mit dieser ersetzen und BSB-LAN einmal neu flashen. Erst danach hast du kompletten Zugriff auf alle Funktionen deines Reglers!**  
+**Diese Textdatei muss im Anschluss an Frederik (bsb(ät)code-it.de) geschickt werden, woraus dann die gerätespezifische Datei `BSB_LAN_custom_defs.h` für den angeschlossenen Regler erzeugt wird. Gib hierbei bitte außerdem die gewünschte Sprachversion an, die du später für BSB-LAN benutzen möchtest (also Deutsch, Englisch o.ä.).  
+Nachdem du diese Datei von Frederik erhalten hast, musst du die bisherige `BSB_LAN_custom_defs.h` mit dieser ersetzen und BSB-LAN einmal neu flashen. Erst danach hast du kompletten Zugriff auf alle Funktionen deines Reglers!**  
 
 | Hinweis |
 |:--------|
