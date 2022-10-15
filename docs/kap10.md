@@ -237,10 +237,11 @@ weiter eingegangen.
   
 Mittels BSB-LAN steht i.d.R. der gesamte Funktionsumfang der jeweiligen Reglertypen zur Verfügung. Dieser ist jedoch hinsichtlich der verfügbaren Parameter naturgemäß unterschiedlich: Ein Regler der neusten Generation weist mehr Parameter und Einstelloptionen als ein Regler der ältesten Generation auf. Die Heizungsanlage wird dadurch jedoch nicht zwingend ineffizienter oder ist per se 'veraltet' und unbrauchbar! Dank BSB-LAN können auch die ältesten unterstützten Regler noch etwas 'smarter' gemacht und in die Hausautomatisierung mit eingebunden werden.  
   
-*Hinweis:*  
-Bei besonders 'neuen' (Software-)Versionen der aktuellen Reglerserien (Typ LMS&RVS) kann es u.U. vorkommen, dass vom Hersteller neu hinzugefügte Reglerparameter mangels entsprechender Regler-Hardware bei BSB-LAN noch nicht implementiert sind. Sollte ein solcher Regler in deinem Heizungssystem verbaut sein, so kannst du das Projekt durch Dekodieren dieser neuen Parameter unterstützen (s. hierzu [Kapitel 9](kap09.md)).
+| Hinweis |
+|:---------|
+| Im Folgenden werden die grundsätzlichen Reglerserien wie bspw. LMU, LMS, RVS grob vorgestellt. Dies soll lediglich dem grundsätzlichen Verständnis und Überblick über die unteschiedlichen Reglerserien dienen. <br> Als weitere Unterteilung erfolgt dazu i.d.R. ebenfalls die Nennung der beiden Ziffern nach der Buchstabenkombination, also bspw. "RVS43.xxx". Auf eine weitere, genauere Unterteilung der jeweiligen Reglerserien mit Nennung der *kompletten* Reglerbezeichnung wie bspw. "RVS43.222/xyz" oder "RVS43.325/xyz" und deren spezifischer Unterschiede zu einander wird jedoch weitestgehend verzichtet, um den Umfang dieses Kapitels in einem überschaubaren Ausmaß zu halten. <br> Sollten tiefergehende, reglerspezifische Informationen zum jeweiligen Reglertyp benötigt werden, so sind die entspr. Anleitungen des Heizungsherstellers heranzuziehen. Sollten diese nicht verfügbar oder inhaltlich nicht umfassend genug sein, so empfiehlt es sich, unter Angabe der vollständigen Reglerkennung nach Anleitungen des Reglerherstellers "Siemens Albatros" zu suchen. |  
 
-   
+
 ---
     
 ### 10.2.1 LMx-Regler
@@ -276,6 +277,8 @@ Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).
   
 Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
     
+Der Feuerungsautomat befindet sich bei diesen Reglern auf der Platine selbst.      
+    
 ---  
    
 #### 10.2.1.2 LMS-Regler   
@@ -296,6 +299,10 @@ Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
   
 Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
+       
+Der Feuerungsautomat befindet sich bei diesen Reglern auf der Platine selbst.  
+  
+Service-/Ersatzplatinen des LMS1x-Reglers sind im Falle eines Defekts erhältlich, diese müssen jedoch mittels eines speziellen USB-Sticks gerätespezifisch geflasht werden.         
        
 ---
     
@@ -328,20 +335,19 @@ weisen lediglich eine PPS-Schnittstelle auf.
 ---
     
 #### 10.2.2.2 RVS-Regler
-Regler des Typs **RVS** scheinen die ‚aktuelle' Reglergeneration
-darzustellen. Sie weisen meist sowohl einen LPB-, als auch mehrere BSB-Anschlüsse
-auf.  
+Regler des Typs **RVS** scheinen die ‚aktuelle' Reglergeneration darzustellen. Sie weisen i.d.R. sowohl einen LPB-, als auch mehrere BSB-Anschlüsse auf.  
      
 Ausnahmen scheinen die Regler der Reihen RVS21, RVS41, RVS51, RVS61 und RVS23 zu sein:  
 - RVSx1-Regler kommen bei Wärmepumpen zum Einsatz, der RVS21 scheint nur einen BSB aufzuweisen.       
 - RVS23-Regler kommen bei einer bestimmten Weishaupt-Modellreihe (WTU) zum Einsatz und scheinen nur einen LPB aufzuweisen. Bei Weishaupt scheinen diese Regler als "WRS-CPU-Bx" bezeichnet zu werden. Weitere Hinweise zu diesem Reglermodell finden sich in [Kap. 10.2.5](kap10.md#1025-hinweis-spezialfall-weishaupt-geräte).  
      
-Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294
-zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
+Als Bedieneinheit kommt hier i.d.R. eine Variante des Siemens AVS37.294 zum Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
   
 Als Fühler kommen i.d.R. NTC10k (QAD36, QAZ36) und NTC1k (QAC34 = Außentemperaturfühler) zum Einsatz.  
   
-Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.  
+Der Feuerungsautomat befindet sich bei diesen Reglern nicht auf der Platine, sondern ist als zusätzliches Bauteil im System verbaut.    
+  
+Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede auf.    
     
 ---    
     
@@ -352,7 +358,7 @@ Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet ei
    
 *Ein RVS21 Regler.*  
    
-LPB ist bei einem RVS21 im Bedarfsfall via OCI345 nachzurüsten (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).
+LPB ist bei einem RVS21 im Bedarfsfall via OCI345 nachzurüsten (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig, da ein BSB-Anschluss vorhanden ist).
    
 ---    
     
@@ -362,11 +368,15 @@ Der RVS41 ist ebenfalls ein Reglertyp, der in Wärmepumpen Verwendung findet. Er
 ---
     
 **RVS43.xxx**  
-Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen zum Einsatz kommt. Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
-      
+Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen, dem Brötje Pelletkessel SPK, bei dem Brötje Kaskadenregler BCA sowie dem Brötje Heizungssystemmanager HSM zum Einsatz kommt, bei vereinzelten Herstellern (bspw. Bösch) kommt dieser Reglertyp auch in Wärmepumpen vor. Abhängig vom jeweiligen Wärmeerzeuger bzw. Gerät (bspw. BCA, HSM) gibt es jedoch modellspezifische Unterschiede hinsichtlich der Anschlüsse und des Funktionsumfangs. 
+Regler der Serie RVS43 sind i.d.R. mit (mindestens) einem BSB- und einem LPB-Anschluss ausgestattet.  
+Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
+       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
    
-*Ein Regler des Typs RVS43.*  
+*Ein Regler des Typs RVS43.222.*
+  
+Das Modell RVS43.325 wird von Brötje als Ersatzregler ausgewiesen und ist u.a. für Ölbrennwertanlagen der Serien BOB, SOB, WOB und den Pelleter SPK einsetzbar. Dieser Regler verfügt bspw. im direkten Vergleich zum oben abgebildeten RVS43.222 aus einem Brötje SOB C über zusätzliche Anschlüsse und muss je nach Heizungsmodell bei einem Austausch entspr. parametriert werden.  
    
 ---   
    
