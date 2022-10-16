@@ -368,7 +368,7 @@ Der RVS41 ist ebenfalls ein Reglertyp, der in Wärmepumpen Verwendung findet. Er
 ---
     
 **RVS43.xxx**  
-Der RVS43 ist die Variante, die bspw. in Ölbrennwertanlagen, dem Brötje Pelletkessel SPK, bei dem Brötje Kaskadenregler BCA sowie dem Brötje Heizungssystemmanager HSM zum Einsatz kommt, bei vereinzelten Herstellern (bspw. Bösch) kommt dieser Reglertyp auch in Wärmepumpen vor. Abhängig vom jeweiligen Wärmeerzeuger bzw. Gerät (bspw. BCA, HSM) gibt es jedoch modellspezifische Unterschiede hinsichtlich der Anschlüsse und des Funktionsumfangs. 
+Der RVS43 ist die Serie, die bspw. in Ölbrennwertanlagen, dem Brötje Pelletkessel SPK, bei dem Brötje Kaskadenregler "ISR-BCA" sowie dem Brötje Heizungssystemmanager "ISR-HSM" zum Einsatz kommt, bei vereinzelten Herstellern (bspw. Bösch) kommt dieser Reglertyp auch in Wärmepumpen vor. Abhängig vom jeweiligen Wärmeerzeuger bzw. Gerät (bspw. BCA, HSM) gibt es jedoch modellspezifische Unterschiede hinsichtlich der Anschlüsse und des Funktionsumfangs.  
 Regler der Serie RVS43 sind i.d.R. mit (mindestens) einem BSB- und einem LPB-Anschluss ausgestattet.  
 Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
        
@@ -376,7 +376,7 @@ Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75
    
 *Ein Regler des Typs RVS43.222.*
   
-Das Modell RVS43.325 wird von Brötje als Ersatzregler ausgewiesen und ist u.a. für Ölbrennwertanlagen der Serien BOB, SOB, WOB und den Pelleter SPK einsetzbar. Dieser Regler verfügt bspw. im direkten Vergleich zum oben abgebildeten RVS43.222 aus einem Brötje SOB C über zusätzliche Anschlüsse und muss je nach Heizungsmodell bei einem Austausch entspr. parametriert werden.  
+Das Modell RVS43.325 wird von Brötje als Ersatzregler ausgewiesen und ist u.a. für Ölbrennwertanlagen der Serien BOB, SOB, WOB und den Pelleter SPK einsetzbar. Dieser Regler verfügt bspw. im direkten Vergleich zum oben abgebildeten RVS43.222 aus einem Brötje SOB C u.a. über zusätzliche Anschlüsse. Bei einem Einsatz als Ersatzregler muss er je nach Heizungsmodell bei einem Austausch entspr. parametriert werden. Genauere Informationen hierzu finden sich in der entspr. Montageanleitung dieses Ersatzreglers.  
    
 ---   
    
