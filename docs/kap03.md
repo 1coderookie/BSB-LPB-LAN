@@ -218,7 +218,7 @@ Nachdem du diese Datei von Frederik erhalten hast, musst du die bisherige `BSB_L
 | Hinweis |
 |:--------|
 | Es werden hierbei nur die Parameterdefinitionen des Reglers abgefragt, in keinem Fall werden dabei Konfigurationseinstellungen ausgelesen, gesetzt oder verändert! | 
-| Alternativ kann die Datei `BSB_LAN_custom_defs.h`, die in den vorherigen Versionen verwendet wurde, als Teil der Release-Version 2.1 heruntergeladen werden. Den früheren allgemeinen Parameterlisten fehlen jedoch Hunderte von Parametern - insbesondere von neueren Reglern. Darüber hinaus beinhalten sie eine Vielzahl von Ungenauigkeiten und teilweise auch Fehlern, weswegen wir den Einsatz dieser früheren Parameterliste ausdrücklich *nicht mehr empfehlen*! |  
+| Alternativ kann die Datei `BSB_LAN_custom_defs.h`, die in den vorherigen Versionen verwendet wurde, als Teil der Release-Version 2.2 heruntergeladen werden. Den früheren allgemeinen Parameterlisten fehlen jedoch Hunderte von Parametern - insbesondere von neueren Reglern. Darüber hinaus beinhalten sie eine Vielzahl von Ungenauigkeiten und teilweise auch Fehlern, weswegen wir den Einsatz dieser früheren Parameterliste ausdrücklich *nicht mehr empfehlen*! |  
 
   
 
