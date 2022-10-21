@@ -58,7 +58,7 @@ in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter
     
 ---  
    
-**Sensoren (URL-Befehl: /K48):**  
+**Sensoren:**  
 Wenn [optionale Sensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
 
 <!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png"> -->
@@ -97,7 +97,8 @@ Nach einem Klick auf "Download" am Ende des angezeigten Textes fragt diese Funkt
 Hier wird eine Übersicht der Konfiguration dargestellt.  
 Im oberen Bereich ist das [Webinterface zur Konfiguration](kap02.md#221-konfiguration-mittels-webinterface) verfügbar, im unteren Bereich werden nochmals bestimmte Einstellungen (u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc.) aufgelistet.
    
-<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_konfig.png">  --> 
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
+
    
 
 ---  
