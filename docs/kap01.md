@@ -4,9 +4,30 @@
 
 # 1. BSB-LAN: Die Hardware
 
-In den folgenden Kapiteln wird die Hardware des BSB-LAN Setups vorgestellt. Dabei handelt es sich zum einen um den jeweiligen BSB-LAN Adapter und zum anderen um den jeweiligen Mikrocontroller, auf den die BSB-LAN Software geflasht wird.  
-BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf einem ESP32 samt spezifischem Adapter betrieben werden.  
+In den folgenden Kapiteln wird die Hardware des BSB-LAN Setups vorgestellt.  
+Dabei handelt es sich zum einen um den jeweiligen plattformspezifischen BSB-LAN Adapter und zum anderen um den jeweiligen Mikrocontroller, auf den die BSB-LAN Software geflasht wird.  
   
+BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf einem ESP32 samt spezifischem Adapter betrieben werden. Der plattformspezifische Adapter erlaubt dabei ein einfaches Aufstecken auf den jeweiligen Mikrocontroller.  
+Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex ESP32 EVB) jedoch plattform- und designspezifische Unterschiede gibt, die es bei bestimmten Einsatzzwecken zu beachten gilt, werden die relevantesten Unterschiede im Folgen kurz als tabellarische Übersicht dargestellt.  
+Eine etwaige mögliche Nachrüstung einzelner Komponenten (wie bspw. eines microSD-Kartenlesers bei einem NodeMCU) wird hierbei nicht berücksichtigt!  
+  
+| Funktion | Arduino Due + LAN-Shield | ESP32 NodeMCU | Olimex ESP32 EVB |
+|:---|:---|:---|:---|
+| LAN onboard | Ja | Nein | Ja |
+| WLAN onboard | Nein | Ja | Nein |
+| OTA-Update | Nein | Ja | Ja (via WLAN) |
+| microSD-Kartenleser onboard | Ja | Nein | Ja |
+| Freie Pins | sehr viele | viele | sehr wenige |
+| Relais onboard | Nein | Nein | 2 |
+| Due-spezifischer Adapter verwendbar | Ja | Ja | Ja |
+| ESP-spezifischer Adapter verwendbar | Nein | Ja | Ja |
+  
+*Anmerkungen: <br> Insbesondere die wenigen freien Pins bei einem Olimex ESP32 EVB, die problemlos für den Anschluss weiterer Hardware wie bspw. Sensoren, Relais, Taster genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! <br> Soll die interne Loggingfunktion von BSB-LAN auf microSD-Karte genutzt werden, so ist wiederum vom NodeMCU abzuraten, da die u.U. häufigen Schreibzyklen beim Speichern der Daten auf dem EEPROM-Chip des ESP32 zu einem frühzeitigen Ausfall ("wear out") führen können. <br> Vor der Entscheidung für einen der genannten Mikrocontroller ist es daher ratsam, den späteren Einsatzzweck und etwaige Erweiterungen auf Hardwarebasis gründlich zu überdenken. Hierfür empfiehlt es sich, das Handbuch im Vorfeld aufmerksam zu lesen.*
+  
+| Hinweis bzgl. Verwendung eines Raspberry Pi |
+|:---|
+| Wie bereits in [Kap. 1.4](kap01.md#14-raspberry-pi) beschrieben, ist der Anschluss des Adapters an einen Raspberry Pi zwar grundsätzlich möglich, der Einsatz der BSB-LAN-Software hingegen nicht. Davon abgesehen können wir den Einsatz eines RPi als Mikrocontroller für diesen Einsatzzweck nicht empfehlen. Als Hauptargumente sprechen unserer Ansicht nach insbesondere die Faktoren Preis, Stromverbrauch sowie das zu wartende Betriebssystem dagegen. |
+   
   
 ---
 
