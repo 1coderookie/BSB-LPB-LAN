@@ -5,28 +5,33 @@
 # 1. BSB-LAN: Die Hardware
 
 In den folgenden Kapiteln wird die Hardware des BSB-LAN Setups vorgestellt.  
-Dabei handelt es sich zum einen um den jeweiligen plattformspezifischen BSB-LAN Adapter und zum anderen um den jeweiligen Mikrocontroller, auf den die BSB-LAN Software geflasht wird.  
+Dabei handelt es sich zum einen um den jeweiligen plattformspezifischen BSB-LAN [Adapter](kap01.md#11-adapter) und zum anderen um den jeweiligen Mikrocontroller, auf den die BSB-LAN Software geflasht wird.  
   
-BSB-LAN kann sowohl mit einem Arduino Due samt spezifischem Adapter als auch auf einem ESP32 samt spezifischem Adapter betrieben werden. Der plattformspezifische Adapter erlaubt dabei ein einfaches Aufstecken auf den jeweiligen Mikrocontroller.  
-Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex ESP32 EVB) jedoch plattform- und designspezifische Unterschiede gibt, die es bei bestimmten Einsatzzwecken zu beachten gilt, werden die relevantesten Unterschiede im Folgen kurz als tabellarische Übersicht dargestellt.  
-Eine etwaige mögliche Nachrüstung einzelner Komponenten (wie bspw. eines microSD-Kartenlesers bei einem NodeMCU) wird hierbei nicht berücksichtigt!  
+BSB-LAN kann sowohl mit einem [Arduino Due](kap01.md#12-arduino-due) samt spezifischem Adapter als auch auf einem [ESP32](kap01.md#13-esp32) samt spezifischem Adapter betrieben werden. Der jeweilige plattformspezifische Adapter erlaubt dabei ein einfaches und passgenaues Aufstecken auf den entspr.  Mikrocontroller. In einigen Fällen kann ein plattformspezifischer Adapter auch mit den anderen Mikrocontrollern verwendet werden, in dem Fall ist jedoch kein passgenaues Aufstecken möglich. Weitere Hinweise diesbzgl. sind in den jeweioigen Hinweiskästen im entspr. Kapitel zu finden.   
+Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex ESP32-EVB) jedoch plattform- und designspezifische Unterschiede gibt, die es bei bestimmten Einsatzzwecken zu beachten gilt (bspw. wenn weitere Hardware angeschlossen werden soll), werden die relevantesten Unterschiede im Folgen kurz als tabellarische Übersicht dargestellt.  
+*Eine etwaige mögliche Nachrüstung einzelner Komponenten (wie bspw. eines microSD-Kartenlesers bei einem NodeMCU) wird hierbei nicht berücksichtigt!*  
   
-| Funktion | Arduino Due + LAN-Shield | ESP32 NodeMCU | Olimex ESP32 EVB |
+| Funktion | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB |
 |:---|:---|:---|:---|
 | LAN onboard | Ja | Nein | Ja |
 | WLAN onboard | Nein | Ja | Nein |
-| OTA-Update | Nein | Ja | Ja (via WLAN) |
+| OTA-Update | Nein | Ja | Ja |
 | microSD-Kartenleser onboard | Ja | Nein | Ja |
 | Freie Pins | sehr viele | viele | sehr wenige |
-| Relais onboard | Nein | Nein | 2 |
+| Relais onboard | Nein | Nein | Ja (2) |
+| Bluetooth onboard | Nein | Ja | Ja |
 | Due-spezifischer Adapter verwendbar | Ja | Ja | Ja |
 | ESP-spezifischer Adapter verwendbar | Nein | Ja | Ja |
   
-*Anmerkungen: <br> Insbesondere die wenigen freien Pins bei einem Olimex ESP32 EVB, die problemlos für den Anschluss weiterer Hardware wie bspw. Sensoren, Relais, Taster genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! <br> Soll die interne Loggingfunktion von BSB-LAN auf microSD-Karte genutzt werden, so ist wiederum vom NodeMCU abzuraten, da die u.U. häufigen Schreibzyklen beim Speichern der Daten auf dem EEPROM-Chip des ESP32 zu einem frühzeitigen Ausfall ("wear out") führen können. <br> Vor der Entscheidung für einen der genannten Mikrocontroller ist es daher ratsam, den späteren Einsatzzweck und etwaige Erweiterungen auf Hardwarebasis gründlich zu überdenken. Hierfür empfiehlt es sich, das Handbuch im Vorfeld aufmerksam zu lesen.*
+| Anmerkungen |
+|:------------|
+| Insbesondere die wenigen freien Pins bei einem Olimex ESP32-EVB, die problemlos für den Anschluss weiterer Hardware wie bspw. Sensoren, Relais, Taster genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! |
+| Soll die interne Loggingfunktion von BSB-LAN auf microSD-Karte genutzt werden, so ist wiederum vom NodeMCU abzuraten, da die u.U. häufigen Schreibzyklen beim Speichern der Daten auf dem EEPROM-Chip des ESP32 zu einem frühzeitigen Ausfall ("wear out") führen können. |
+| *Vor der Entscheidung für einen der genannten Mikrocontroller ist es daher ratsam, den späteren Einsatzzweck und etwaige Erweiterungen auf Hardwarebasis gründlich zu überdenken. Hierfür empfiehlt es sich, das Handbuch im Vorfeld aufmerksam zu lesen.* |
   
 | Hinweis bzgl. Verwendung eines Raspberry Pi |
 |:---|
-| Wie bereits in [Kap. 1.4](kap01.md#14-raspberry-pi) beschrieben, ist der Anschluss des Adapters an einen Raspberry Pi zwar grundsätzlich möglich, der Einsatz der BSB-LAN-Software hingegen nicht. Davon abgesehen können wir den Einsatz eines RPi als Mikrocontroller für diesen Einsatzzweck nicht empfehlen. Als Hauptargumente sprechen unserer Ansicht nach insbesondere die Faktoren Preis, Stromverbrauch sowie das zu wartende Betriebssystem dagegen. |
+| Wie in [Kap. 1.4](kap01.md#14-raspberry-pi) beschrieben, ist der Anschluss des Adapters an einen Raspberry Pi zwar grundsätzlich möglich, der Einsatz der BSB-LAN-Software hingegen nicht. Davon abgesehen können wir den Einsatz eines RPi als Mikrocontroller für diesen Einsatzzweck nicht empfehlen. Als Hauptargumente sprechen unserer Ansicht nach insbesondere die Faktoren Preis, Stromverbrauch sowie das zu wartende Betriebssystem dagegen. |
    
   
 ---
@@ -57,7 +62,7 @@ Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem di
     
 | Hinweis |
 |:--------|
-| Die Verwendung des Due-spezifischen Adapters an einem ESP32 ist trotz des EEPROMs prinzipiell möglich, der Adapter kann jedoch nicht wie bei einem Due problemlos auf ein ESP32-Board aufgesteckt werden. Sollte der Adapter trotzdem mit einem ESP32-Board genutzt werden, so ist darauf zu achten, dass die Verbindungen zwischen Adapter und ESP32 korrekt und zuverlässig hergestellt werden. |  
+| Die Verwendung des Due-spezifischen Adapters an einem ESP32 ist trotz des EEPROMs prinzipiell möglich, der Adapter kann jedoch nicht wie bei einem Due problemlos auf ein ESP32-Board aufgesteckt werden. Sollte der Adapter trotzdem mit einem ESP32-Board genutzt werden, so ist darauf zu achten, dass die Verbindungen zwischen Adapter und ESP32 korrekt und zuverlässig hergestellt (also bestenfalls gelötet) werden. |  
 
 ---
 
