@@ -25,7 +25,7 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
   
 | Anmerkungen |
 |:------------|
-| Insbesondere die wenigen freien Pins bei einem Olimex ESP32-EVB, die problemlos für den Anschluss weiterer Hardware wie bspw. Sensoren, Relais, Taster genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! |
+| Insbesondere die wenigen freien Pins bei einem Olimex ESP32-EVB, die problemlos für den Anschluss weiterer Hardware (wie bspw. Sensoren, Relais, Taster) genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! |
 | Soll die interne Loggingfunktion von BSB-LAN auf microSD-Karte genutzt werden, so ist wiederum vom NodeMCU abzuraten, da die u.U. häufigen Schreibzyklen beim Speichern der Daten auf dem EEPROM-Chip des ESP32 zu einem frühzeitigen Ausfall ("wear out") führen können. |
 | *Vor der Entscheidung für einen der genannten Mikrocontroller ist es daher ratsam, den späteren Einsatzzweck und etwaige Erweiterungen auf Hardwarebasis gründlich zu überdenken. Hierfür empfiehlt es sich, das Handbuch im Vorfeld aufmerksam zu lesen.* |
   
