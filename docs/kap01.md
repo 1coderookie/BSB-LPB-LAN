@@ -14,7 +14,7 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
 | Funktion | Arduino Due + LAN-Shield | ESP32 NodeMCU "JoyIt" | Olimex ESP32-EVB |
 |:---|:---|:---|:---|
 | LAN onboard | Ja | Nein | Ja |
-| WLAN onboard | Nein | Ja | Nein |
+| WLAN onboard | Nein | Ja | Ja |
 | OTA-Update | Nein | Ja | Ja |
 | microSD-Kartenleser onboard | Ja | Nein | Ja |
 | Freie Pins | sehr viele | viele | sehr wenige |
