@@ -826,45 +826,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     `uint32_t destinationDelay = 84600;` → Sendeintervall in Sekunden  
     
 ---    
-***Für Nutzer des veralteten Setups auf Basis des Arduino Mega 2560:***  
-*Nachfolgende Einstellmöglichkeiten dienen der Möglichkeit, Speicher einzusparen, so dass auch auf einen Mega 2560 geflasht werden kann.*    
 
--   **Deaktivieren bestimmter Funktionen:**  
-  
-    If you use CONFIG_IN_EEPROM and WEBCONFIG modules then you can enable I_DO_NOT_WANT_URL_CONFIG for saving flash memory (~1.2Kb). This will disable configuration through URL commands (/A, /L, /P).  
-    `#define I_DO_NOT_WANT_URL_CONFIG`
-  
-    Enable I_WILL_USE_EXTERNAL_INTERFACE for saving flash memory (~6,8Kb). /DG command will be disabled.  
-    `#define I_WILL_USE_EXTERNAL_INTERFACE`  
-   
-    Enabling I_DO_NOT_NEED_NATIVE_WEB_INTERFACE will eliminate native web interface and save up to 13 Kb of flash memory.  /N[E] and /Q command still work. You can use this if you are using third-party software for BSB-LAN management. Do not forget to enable other required modules (JSONCONFIG, MQTT, WEBSERVER).  
-    `#define I_DO_NOT_NEED_NATIVE_WEB_INTERFACE`  
-      
--   **Deaktivieren bestimmter Module:**  
-       
-    Wird anstelle des Due/ESP32 noch das veraltete Setup mit dem Arduino Mega 2560 genutzt (*Bitte beachte in diesem Fall auch den [Anhang D](#anhang_d.md)!*), so können hier die aufgeführten Module zentral deaktiviert und vom Kompilieren ausgeschlossen werden. Das Deaktivieren einiger Module ist aufgrund des geringeren Speichers des Mega 2560 nötig. Welche Module individuell zu nutzen und zu deaktivieren sind, muss selbst getestet werden, da das Mega-Setup in dieser Hinsicht 'veraltet' ist und eine problemlose Lauffähigkeit von BSB-LAN nicht in jedem Konfigurationsfall garantiert werden kann.  
-    Die Einstellungen an dieser Stelle überschreiben die entsprechenden, zuvor aufgeführten und getätigten Einstellungen.      
-    
-    ```
-    #if defined(__AVR__)
-    //#undef CONFIG_IN_EEPROM
-    //#undef WEBCONFIG
-    #undef JSONCONFIG
-    //#undef WEBSERVER
-    #undef AVERAGES
-    #undef DEBUG
-    #undef IPWE
-    #undef MQTT
-    #undef MDNS_HOSTNAME
-    #undef OFF_SITE_LOGGER
-    #undef ROOM_UNIT
-    #undef VERSION_CHECK
-    #undef MAX_CUL
-    #undef BME280
-    #endif
-    ```  
-   
----  
 
      
 [Weiter zu Kapitel 3](kap03.md)      
