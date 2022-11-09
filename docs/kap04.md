@@ -60,8 +60,9 @@ in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter
    
 **Sensoren:**  
 Wenn [optionale Sensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
-
-<!-- <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_sensoren.png"> -->
+  
+Die folgende Abbildung zeigt beispielhaft die Ausgabe der Messwerte eines angeschlossenen BME280 sowie fünf DS18B20-Sensoren.
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/sensoren.png"> 
 
 ---  
    
