@@ -79,6 +79,8 @@ Danke!
 
 -   Brötje EcoTherm Kompakt WMS 24 \[LMS 15\] (Gasbrenner) {BSB}  
 
+-   Brötje EcoTherm Plus WGB20 \[LGM11.34C2590\] (Gasbrenner) {PPS}
+
 -   Brötje EcoTherm Plus BBS2N.28 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}  
 
 -   Brötje EcoTherm Plus WGB2N.20 \[LMU 64\] (Gasbrenner) {+ OCI420 via LPB}
