@@ -5,7 +5,7 @@
 
 # 12. Exkurs: Arduino IDE
 
-Im Folgenden wird kurz auf die Verwendung der Arduino IDE sowie die Installation der benötigten Boardbibliotheken für den Arduino Due und den ESP32 eingegangen.  
+Im Folgenden wird kurz auf die Verwendung der Arduino IDE v1.x sowie die Installation der benötigten Boardbibliotheken für den Arduino Due und den ESP32 eingegangen.   
 Abschließend wird kurz die Verwendung des Seriellen Monitors (SerMo) der Arduino IDE vorgestellt, mit dem man u.a. das Startverhalten des Arduino Due/ESP32 beobachten und etwaige Fehler leichter identifizieren kann.  
 
 ---
