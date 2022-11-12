@@ -104,7 +104,7 @@ Die Befehlssyntax lautet:
 
 - `<Topic>` = In der Voreinstellung "BSB-LAN", ansonsten das in der Datei *BSB_LAN_config.h* entspr. definierte "MQTTTopicPrefix". Sollte kein Topic definiert sein (nicht ratsam), so muss als Topic "FromBroker" genommen werden.  
 
-- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl /S oder /I.  
+- `<Befehl>` = Die abzufragende Parameternummer oder der entspr. parameterspezifische URL-Befehl `S` oder `I`.  
 
   | Achtung |
   |:--------|
@@ -114,8 +114,13 @@ Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>")
   
 | Beispiel |
 |:---------|
-| Der Befehl `set mqtt2Server publish BSB-LAN /S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus. |
-| Der Befehl `set mqtt2Server publish BSB-LAN /700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "/700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700. | 
+| Der Befehl `set mqtt2Server publish BSB-LAN S700=1` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "S700=1" mit dem Topic "BSB-LAN" und bewirkt eine Betriebsartumschaltung in den Automatikmodus. |
+| Der Befehl `set mqtt2Server publish BSB-LAN 700` sendet vom MQTT-Broker namens "mqtt2Server" den Befehl "700" mit dem Topic "BSB-LAN" und bewirkt eine Abfrage von Parameter 700. | 
+   
+| Beispiel für *Mosquitto* |
+|:-------------------------|
+| Befehl zum Abrufen von Parameter 1010: `mosquitto_pub -h 192.168.178.35 -u USER -m "1010" -t BSB-LAN -d` |
+| Befehl zum Setzen von Parmeter 1610 auf 41° (inkl. Passwort): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
    
 ---
     
