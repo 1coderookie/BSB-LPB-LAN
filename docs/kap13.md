@@ -18,7 +18,7 @@ Um den Fehler zu beheben, sollte das jeweilige Telegramm / die Command
 ID des betreffenden Parameters sowie der zugehörige Wert ausgelesen und
 gemeldet werden. Sollten mehrere Einstellungsoptionen für einen
 Parameter verfügbar sein, muss zusätzlich jede Option ausgelesen werden,
-damit eine eindeutige Zuordnung stattfinden kann.  
+damit eine eindeutige Zuordnung stattfinden kann. Siehe hierzu auch das [Kap. 9](kap09.md).   
     
 ---
     
@@ -40,7 +40,7 @@ HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
 Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
 wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den URL-Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)). Sollten bei dieser Abfrage 'error 7'-Meldungen angezeigt werden, melde sie bitte unter Angabe des kompletten Outputs von /Q.  
     
-Sollte ein Parameter an der heizungsseitigen Bedieneinheit jedoch definitiv verfügbar sein und dennoch bei der /Q-Abfrage nicht als 'error 7'-Parameter aufgelistet werden, so sollte der entspr. Parameter gemäß der Beschreibung in Kap. [10](kap10.md) decodiert und gemeldet werden.  
+Sollte ein Parameter an der heizungsseitigen Bedieneinheit jedoch definitiv verfügbar sein und dennoch bei der /Q-Abfrage nicht als 'error 7'-Parameter aufgelistet werden, so sollte der entspr. Parameter gemäß der Beschreibung in [Kap. 9](kap09.md) decodiert und gemeldet werden.  
   
 ---
     
@@ -62,11 +62,8 @@ Reglers).
 
 Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
 übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
-während der Zugriff des Adapters nur auf Lesen beschränkt ist
-(`FL_RONLY`).  
-Der gewünschte Parameter (oder auch generell alle Parameter) muss in
-diesem Fall als schreibbar definiert werden. Die hierfür notwendige
-Vorgehensweise ist in [Kap. 5](kap05.md) (vorletzter Punkt) ausführlich beschrieben.
+während der Zugriff des Adapters nur auf Lesen beschränkt ist.  
+Sollte es sich nicht um einen Parameter handeln, der per se nur lesbar ist, muss BSB-LAN Schreibzugriff gewährt werden.
      
     
 ---
@@ -75,7 +72,7 @@ Vorgehensweise ist in [Kap. 5](kap05.md) (vorletzter Punkt) ausführlich beschri
   
 Die Fehlermeldung "decoding error" bedeutet, dass der Parameter und die Command ID bekannt sind bzw. passen, aber dass das Datenpaket nicht der bisher bekannten Dekodierung entspricht. Das kann eine andere Länge oder eine andere Einheit als Grund haben.  
   
-Um das für die entsprechende Heizung zu aktualisieren, wird das zu dem Fehler ausgegebene Datenpaket und der exakt zu diesem Moment angezeigte Wert an der Therme und die Einheit benötigt. Siehe hierzu auch das [Kap. 10](kap10.md).  
+Um das für die entsprechende Heizung zu aktualisieren, wird das zu dem Fehler ausgegebene Datenpaket und der exakt zu diesem Moment angezeigte Wert an der Therme und die Einheit benötigt. Siehe hierzu auch das [Kap. 9](kap09.md).  
   
 ---
      
