@@ -35,8 +35,6 @@ Führe nun die folgenden Schritte aus:
 
 4. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Dateien *BSB_LAN_custom_defs.h.default* in ***BSB_LAN_custom_defs.h*** sowie  *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!    
 
-   - Entferne oder verschiebe nun die beiden Ordner "ArduinoMDNS" und "WiFiSpi" aus dem BSB-LAN-Unterordner "src" - diese dürfen nicht im "BSB-LAN"- oder "src"-Ordner vorhanden sein!  
-   
    - Öffne die Datei "BSB_LAN_config.h" und aktiviere das Definement `#define WIFI`.  
     
    - Trage die Zugangsdaten für dein WLAN-Netzwerk bei den Einträgen  
