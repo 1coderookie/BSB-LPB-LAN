@@ -2324,6 +2324,11 @@ Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt
   
 --->
   
+***BSB-LAN-User Yann hat eine ausführliche Beschreibung für die Einbindung in HomeAssistant in Verbindung mit Mosquitto erstellt (Englisch), sie ist [hier](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md) zu finden.***  
+***Vielen Dank!***  
+  
+---  
+  
 ***BSB-LAN-User tiger42 hat im [HomeAssistant-Forum](https://community.home-assistant.io/t/bsb-lan-integration/113501) eine Einbindungsmöglichkeit mittels JSON und MQTT beschrieben.***
 ***Darüber hinaus hat er ein Einbindungsbeispiel für dieses Handbuch geschrieben, das im Folgenden dargestellt wird.***
 ***Vielen Dank!***
@@ -2510,6 +2515,7 @@ Datei *automations.yaml*:
 
 Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.
   
+
   
 ---
   
