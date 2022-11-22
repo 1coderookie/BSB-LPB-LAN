@@ -224,6 +224,24 @@ Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfall
     *Achtung:* Zur Nutzung dieser Funktion muss das Modul "JSONCONFIG" (s. Datei *BSB_lan_config.h*) kompiliert sein!  -->
     
 ---
+   
+## 5.4 Spezialparameter  
+  
+Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den Nummern 10000 aufwärst implementiert werden. Die folgende Suflistung zeigt dies Spezialparameter samt Parameternummer und Funktion. Abhängig vom Typ muss das Schreiben entweder per SET- oder der INF-Befehl erfolgen (Schreibzugriff muss gewährt sein). Für weitere Informationen zu den einzelnen Befehlen lies bitte die entspr. Kapitel.   
+  
+| Parameternummer | Funktion | Befehlstyp |
+|:-----------------|:---------|:-------------|
+| 10000 | Raumtemperatur HK1 | INF - [s. Kap. 6.3](kap06.md#63-raumtemperatur-übermitteln) |
+| 10001 | Raumtemperatur HK2 | INF - [s. Kap. 6.3](kap06.md#63-raumtemperatur-übermitteln) |
+| 10002 | Raumtemperatur HK3 | INF - [s. Kap. 6.3](kap06.md#63-raumtemperatur-übermitteln) |
+| 10019 | Manueller TWW-Push | SET - [s. Kap. 6.5](kap06.md#65-manuellen-tww-push-ausführen) |
+| 10100 | Präsenztaste HK1 | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren)  |
+| 10101 | Präsenztaste HK2 | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren) |  
+  
+  
+   
+   
+---   
      
 [Weiter zu Kapitel 6](kap06.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
