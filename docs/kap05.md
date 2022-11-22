@@ -119,8 +119,8 @@ Nachfolgend schickt BSB-LAN eine Empfangsbestätigung zurück ("ACK_\<Befehl\>")
    
 | Beispiel für *Mosquitto* |
 |:-------------------------|
-| Befehl zum Abrufen von Parameter 1010: `mosquitto_pub -h 192.168.178.35 -u USER -m "1010" -t BSB-LAN -d` |
-| Befehl zum Setzen von Parmeter 1610 auf 41° (inkl. Passwort): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
+| Befehl zum Abrufen von Parameter 1010 (inkl. Username & Passwort): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "1010" -t BSB-LAN -d` |
+| Befehl zum Setzen von Parmeter 1610 auf 41° (inkl. Username & Passwort): `mosquitto_pub -h 192.168.178.35 -u USER -P PASSWORD -m "S1610=41" -t BSB-LAN -d ` |  
    
 ---
     
