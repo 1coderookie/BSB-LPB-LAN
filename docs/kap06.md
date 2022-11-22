@@ -82,8 +82,7 @@ Wenn DS18B20-Sensoren zum Einsatz kommen, werden außerdem die spezifischen Sens
 ---
     
 ## 6.3 Raumtemperatur übermitteln
-Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler gesendet werden, um einen Raumeinfluss bei der Berechnung der VL-Temperatur geltend zu machen. Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im Regler aktiviert und der Einflussfaktor prozentual festgelegt werden
-(bspw. Parameter 750 für HK1, Parameter 1050 für HK2).  
+Mittels einer INF-Nachricht kann eine Raumtemperatur an den Regler gesendet werden, um einen Raumeinfluss bei der Berechnung der VL-Temperatur geltend zu machen. Um diese Funktion zu nutzen, muss die Funktion ‚Raumeinfluss' vorher im Regler aktiviert und der Einflussfaktor prozentual festgelegt werden (bspw. Parameter 750 für HK1, Parameter 1050 für HK2).  
 BSB-LAN muss Schreibzugriff gewährt werden (s. [Kap. 2.2](kap02.md#22-konfiguration)).  
 Die Raumtemperatur muss regelmäßig in relativ kurzen Intervallen übermittelt werden, bspw. alle ein oder zwei Minuten.  
 
@@ -134,9 +133,8 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
     
 ## 6.4 Präsenztaste simulieren
 Die Funktion der Präsenztaste ist mit den Spezialparametern 
-- 701 = Heizkreis 1, 
-- 1001 = Heizkreis 2 sowie 
-- 1301 = Heizkreis 3/P 
+- 10100 = Heizkreis 1 
+- 10101 = Heizkreis 2 
 implementiert, der Befehl ist als SET-Befehl auszuführen.  
   
 Bei *aktivem Automatikbetrieb* ist dabei  
@@ -144,12 +142,12 @@ Bei *aktivem Automatikbetrieb* ist dabei
 `http://<IP-Adresse>/S<Parameter>=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
   
 Beispiel:  
-Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
+Der Befehl `<URL>/S10100=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
 
 | Hinweise |
 |:--------|
 | Die genannten Parameter müssen schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)). | 
-| Diese Spezialparameter (701, 1001, 1301) sind NICHT abrufbar. |
+| Diese Spezialparameter (10100, 10101) sind NICHT abrufbar. |
 | Die Präsenztaste ist nur im Automatikbetrieb wirksam! |
 | Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig. |
 
@@ -159,8 +157,8 @@ Der Befehl `<URL>/S701=2` schaltet innerhalb des Automatikbetriebs den HK1 in de
 ## 6.5 Manuellen TWW-Push ausführen
 Bei einigen Reglern ist die (nahezu undokumentierte) Funktion eines manuellen Trinkwasser-Pushs verfügbar. Um einen manuellen TWW-Push auszulösen, muss dazu die TWW-Taste an der ISR-Bedieneinheit gedrückt und für etwa drei Sekunden gehalten werden, bis im Display eine entsprechende Meldung erscheint.
 
-Bei entsprechenden Reglern kann diese Funktion mittels eines SET-Befehls erfolgen: `http://<IP-Adresse>/S1603=1` 
-Der Spezialparameter 1603 muss dazu schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)).
+Bei entsprechenden Reglern kann diese Funktion mittels eines SET-Befehls erfolgen: `http://<IP-Adresse>/S10019=1` 
+Der Spezialparameter 10019 muss dazu schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)).
     
 --- 
     
