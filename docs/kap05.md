@@ -227,7 +227,7 @@ Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfall
    
 ## 5.4 Spezialparameter  
   
-Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den Nummern 10000 aufwärst implementiert werden. Die folgende Suflistung zeigt dies Spezialparameter samt Parameternummer und Funktion. Abhängig vom Typ muss das Schreiben entweder per SET- oder der INF-Befehl erfolgen (Schreibzugriff muss gewährt sein). Für weitere Informationen zu den einzelnen Befehlen lies bitte die entspr. Kapitel.   
+Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den Nummern 10000 aufwärst implementiert werden. Die folgende Auflistung zeigt diese Spezialparameter samt Parameternummer und Funktion. Abhängig vom Typ muss das Schreiben entweder per SET- oder der INF-Befehl erfolgen (Schreibzugriff muss gewährt sein). Für weitere Informationen zu den einzelnen Befehlen lies bitte die entspr. Kapitel.   
   
 | Parameternummer | Funktion | Befehlstyp |
 |:-----------------|:---------|:-------------|
