@@ -836,7 +836,7 @@ Es ist aber weiterhin möglich, ausgewählte Parameter aus der Parameterliste de
 | Wir empfehlen ausdrücklich, diese nicht offiziell vom Hersteller des Reglers unterstützten Parameter nur nach eingehender Prüfung hinzuzufügen, insbesondere, wenn diese Werte auch geschrieben werden sollen! |
 | Als sicheren Nummernbereich, in dem Parameter wie im Folgenden beschrieben hinzugefügt werden können, empfehlen wir 10600 und aufwärst. |  
   
-Im ersten Schritt lädt man sich dazu die [Release-Version 2.2](https://github.com/fredlcore/BSB-LAN/archive/refs/tags/v2.2.zip) unter https://github.com/fredlcore/BSB-LAN/releases herunter.  
+Im ersten Schritt lädt man sich dazu die [Release-Version 2.2 unter https://github.com/fredlcore/BSB-LAN/releases](https://github.com/fredlcore/BSB-LAN/archive/refs/tags/v2.2.zip)  herunter.  
 Nachdem man die Datei entpackt hat, findet man in dem Unterverzeichnis *BSB_LAN* die Datei *BSB_LAN_custom_defs.h.default*. Diese öffnet man mit einem Texteditor wie z.B. Notepad unter Windows oder TextEdit unter MacOS.  
 Parallel dazu öffnet man außerdem die Datei *BSB_LAN_custom_defs.h* aus der aktuellen BSB-LAN Version, die man benutzen möchte, in der Arduino IDE.  
 Wenn beide Dateien geöffnet sind, sucht man in der *BSB_LAN_custom_defs.h.default* der Version 2.2 nach der Parameternummer des Parameters, den man hinzufügen möchte.  
