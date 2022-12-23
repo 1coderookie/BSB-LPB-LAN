@@ -859,7 +859,7 @@ const char STR701[] PROGMEM = STR701_TEXT;
 #define STR702 STR701
 ```  
     
-Alle weiteren Einträge, wo die Parameternummer ggf. in der Position des referenzierten Parameters in `#define`-Zeilen steht (wie z.B. `#define STR1301 STR701`) können ignoriert werden – es sei denn, man will in diesem Fall die Parameternummer 1301 (ehemals Präsenztaste HK2) ebenfalls hinzufügen.  
+Alle weiteren Einträge, wo die Parameternummer ggf. in der Position des referenzierten Parameters in `#define`-Zeilen steht (wie z.B. `#define STR1301 STR701`) können ignoriert werden – es sei denn, man will in diesem Fall die Parameternummer 1301 ebenfalls hinzufügen.  
   
 Da es sich bei dem Parameter 701 um einen Parameter mit Auswahloptionen handelt, finden sich auch noch Zeilen, die mit `#define ENUM701_...` beginnen. Diese Zeilen sind ebenfalls in die aktuelle *BSB_LAN_custom_defs.h* zu kopieren.  
 In diesem Zusammenhang taucht dann noch ein Eintrag auf, der mit `const char ENUM701[]` beginnt. Diese und die nachfolgenden Zeilen sind bis zur schließenden geschweiften Klammer ebenfalls in die aktuelle *BSB_LAN_custom_defs.h* zu kopieren:  
@@ -875,6 +875,12 @@ Bei rein numerischen Parametern, die kein Auswahlmenü haben, sondern z.B. nur e
 Schlussendlich findet man den eigentlichen Tabelleneintrag für Parameter 701, der folgendermaßen aussieht:  
 `{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
 Die entsprechende Tabelle findet sich in der aktuellen *BSB_LAN_custom_defs.h* Datei am Ende der Datei. In der dritten Spalte sieht man dabei immer die Parameternummer. Nun geht man in dieser Datei soweit nach oben, dass der Parameter an der richtigen Stelle eingefügt wird. In unserem Beispiel wäre das nach der Zeile für Parameter 700.  
+  
+Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10601 hinzufügen, würden die entspr. Zeilen so aussehen:  
+`#define STR1001 STR701`  
+sowie diese Zeile an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
+`{0x2E3E0572,  VT_ENUM,          1001,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
+
 
 | Achtung |
 |:--------|
@@ -904,11 +910,13 @@ Möchte man in dem Zuge gleich die in diesem Fall etwas irreführende Parameterb
 in  
 `const char STR701[] PROGMEM = “Temporärer Betriebsartwechsel”;`  
 ändern müssen und dann erneut flashen. Da alle diese Änderungen in der *BSB_LAN_custom_defs.h* erfolgen, bleiben Sie auch bei einem Update der BSB-LAN-Software erhalten.  
+
+
   
 | Parameter, die von Interesse sein könnten und die dafür zu kopierenden Zeilen |
 |:------------------------------------------------------------------------------|
-| 1602 – Status Trinkwasserbereitung <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
-| 10100 – Status Brenner <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
+| 1602 – Status Trinkwasserbereitung <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> Außerdem an der entspr. Stelle in der cmdtbl-Struktur: <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
+| 10100 – Status Brenner <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> Außerdem an der entspr. Stelle in der cmdtbl-Struktur: <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
 | 10102 – Info HK1 <br> `{0x2D000211,  VT_UNKNOWN,       10102, STR10102, 0,                    NULL,        DEFAULT_FLAG, DEV_ALL}, // INFO HK1` |
 | 10103 – Info HK2 <br> `{0x2E000211,  VT_UNKNOWN,       10103, STR10103, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK2` |
 | 10104 – Info HK3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |  
