@@ -876,12 +876,6 @@ Schlussendlich findet man den eigentlichen Tabelleneintrag für Parameter 701, d
 `{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
 Die entsprechende Tabelle findet sich in der aktuellen *BSB_LAN_custom_defs.h* Datei am Ende der Datei. In der dritten Spalte sieht man dabei immer die Parameternummer. Nun geht man in dieser Datei soweit nach oben, dass der Parameter an der richtigen Stelle eingefügt wird. In unserem Beispiel wäre das nach der Zeile für Parameter 700.  
   
-Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10601 hinzufügen, würden die entspr. Zeilen so aussehen:  
-`#define STR1001 STR701`  
-sowie diese Zeile an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
-`{0x2E3E0572,  VT_ENUM,          1001,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***`  
-
-
 | Achtung |
 |:--------|
 | Es ist unbedingt wichtig, darauf zu achten, dass der Parameter an der richtigen Stelle eingefügt wird (und nicht z.B. vor der Zeile für Parameter 700 oder irgendwo danach), weil sonst die Parameter in der Kategorienübersicht nicht mehr vollständig aufgelistet werden! |  
@@ -899,9 +893,10 @@ const char ENUM701[] PROGMEM_LATEST = {
 "\x00 " ENUM701_00_TEXT "\0"
 "\x01 " ENUM701_01_TEXT "\0"
 "\x02 " ENUM701_02_TEXT
-};
-{0x2D3D0572,  VT_ENUM,          10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},
-```  
+}; 
+```
+Außerdem an der entspr. korrekten Stelle in der cmdtbl-Struktur:
+`{0x2D3D0572,  VT_ENUM,          10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
   
 Danach kann BSB-LAN erneut auf den Microcontroller geflasht werden und der neue Befehl ist einsatzbereit.  
   
@@ -910,7 +905,11 @@ Möchte man in dem Zuge gleich die in diesem Fall etwas irreführende Parameterb
 in  
 `const char STR701[] PROGMEM = “Temporärer Betriebsartwechsel”;`  
 ändern müssen und dann erneut flashen. Da alle diese Änderungen in der *BSB_LAN_custom_defs.h* erfolgen, bleiben Sie auch bei einem Update der BSB-LAN-Software erhalten.  
-
+  
+Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10601 hinzufügen, würden die entspr. Zeilen so aussehen:  
+`#define STR1001 STR701`  
+sowie diese Zeile an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
+`{0x2E3E0572,  VT_ENUM,   10601,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***` 
 
   
 | Parameter, die von Interesse sein könnten und die dafür zu kopierenden Zeilen |
