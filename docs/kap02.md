@@ -878,7 +878,7 @@ Die entsprechende Tabelle findet sich in der aktuellen *BSB_LAN_custom_defs.h* D
   
 | Achtung |
 |:--------|
-| Es ist unbedingt wichtig, darauf zu achten, dass der Parameter an der richtigen Stelle eingefügt wird (und nicht z.B. vor der Zeile für Parameter 700 oder irgendwo danach), weil sonst die Parameter in der Kategorienübersicht nicht mehr vollständig aufgelistet werden! |  
+| Es ist unbedingt wichtig, darauf zu achten, dass der Parameter in dieser Tabelle / cmdtbl-Struktur an der richtigen Stelle eingefügt wird (und nicht z.B. vor der Zeile für Parameter 700 oder irgendwo danach), weil sonst die Parameter in der Kategorienübersicht nicht mehr vollständig aufgelistet werden! |  
   
 Bei einigen Reglern wird jedoch der Parameter 701 schon von einer anderen Funktion belegt sein. Neuere LMS-Regler haben dort z.B. die Funktion für „temporär wärmer/kälter“ abgelegt. Das Verlegen des neu hinzuzufügenden Parameters ist jedoch einfach: Man wählt eine freie Parameternummer (wir empfehlen dafür die Parameternummern 10600 und aufwärts) und fügt die Zeile  
 `{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
@@ -895,7 +895,7 @@ const char ENUM701[] PROGMEM_LATEST = {
 "\x02 " ENUM701_02_TEXT
 }; 
 ```
-Außerdem an der entspr. korrekten Stelle in der cmdtbl-Struktur:
+Außerdem an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
 `{0x2D3D0572,  VT_ENUM,          10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
   
 Danach kann BSB-LAN erneut auf den Microcontroller geflasht werden und der neue Befehl ist einsatzbereit.  
