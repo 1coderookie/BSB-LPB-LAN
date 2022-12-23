@@ -826,7 +826,95 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     
 ---    
 
+## 2.3 Manuelles Hinzufügen von Parametern aus v2.2 
+  
+Im Vergleich zu früheren Versionen von BSB-LAN mag auffallen, dass einige Parameter nun in der gerätespezifischen Parameterliste nicht mehr auftauchen, auch wenn diese grundsätzlich funktioniert haben.  
+Es ist aber weiterhin möglich, ausgewählte Parameter aus der Parameterliste der Version 2.2 in die aktuelle Version aufzunehmen.  
+  
+| Hinweis |
+|:--------|
+| Wir empfehlen ausdrücklich, diese nicht offiziell vom Hersteller des Reglers unterstützten Parameter nur nach eingehender Prüfung hinzuzufügen, insbesondere, wenn diese Werte auch geschrieben werden sollen! |
+| Als sicheren Nummernbereich, in dem Parameter wie im Folgenden beschrieben hinzugefügt werden können, empfehlen wir 10600 und aufwärst. |  
+  
+Im ersten Schritt lädt man sich dazu die [Release-Version 2.2](https://github.com/fredlcore/BSB-LAN/archive/refs/tags/v2.2.zip) unter https://github.com/fredlcore/BSB-LAN/releases herunter.  
+Nachdem man die Datei entpackt hat, findet man in dem Unterverzeichnis *BSB_LAN* die Datei *BSB_LAN_custom_defs.h.default*. Diese öffnet man mit einem Texteditor wie z.B. Notepad unter Windows oder TextEdit unter MacOS.  
+Parallel dazu öffnet man außerdem die Datei *BSB_LAN_custom_defs.h* aus der aktuellen BSB-LAN Version, die man benutzen möchte, in der Arduino IDE.  
+Wenn beide Dateien geöffnet sind, sucht man in der *BSB_LAN_custom_defs.h.default* der Version 2.2 nach der Parameternummer des Parameters, den man hinzufügen möchte.  
+  
+**Die weiteren Schritte werden anhand des Beispiels des früheren Parameters 701 – „Präsenztaste (temporäre Abwesenheit)“ erläutert:**  
+  
+Die Suche nach „701“ ergibt zuerst diesen Eintrag:  
+`const char STR701[] PROGMEM = STR701_TEXT;`  
+Diese Zeile kopiert man in die Zwischenablage.  
+In der Datei *BSB_LAN_custom.defs.h* der aktuellen BSB-LAN Version sucht man nun nach dem Text `const char S` und findet dann eine Reihe solcher Einträge. Dort fügt man die oben ausgewählte Zeile an eine beliebige Stelle ein.  
+  
+Findet sich für einen Parameter kein Eintrag, der mit `const char` beginnt, sondern ein Eintrag, der dem Muster `#define STR<gesuchte Parameternummer> STR<referenzierte Parameternummer>` entspricht, sind zwei Schritte nötig:  
+Man kopiert zuerst die Zeile `#define STR…` in die aktuelle *BSB_LAN_custom_defs.h* Datei und sucht dann in der *BSB_LAN_custom_defs.h.default* nach der referenzierten Parameternumer, bis man für diese Nummer die Zeile findet, die mit `const char S` beginnt.  
+Am Beispiel der Parameternummer 702 würde man daher diese Zeile zuerst finden: `#define STR702 STR701`.  
+Daraufhin sucht man dann erneut nach der referenzierten Parameternummer (in diesem Falle 701), so dass man bei einer erneuten Suche nach dieser Parameternummer dann die Zeile `const char STR701[] PROGMEM = STR701_TEXT;` finden würde, die man dann ebenfalls kopieren würde.  
+*Wichtig ist, dass die `#define`-Zeile unter der `const char S…`-Zeile stehen muss!*  
+Das Ergebnis sähe also für Parameter 702 so aus:  
+```
+const char STR701[] PROGMEM = STR701_TEXT;
+#define STR702 STR701
+```  
+    
+Alle weiteren Einträge, wo die Parameternummer ggf. in der Position des referenzierten Parameters in `#define`-Zeilen steht (wie z.B. `#define STR1301 STR701`) können ignoriert werden – es sei denn, man will in diesem Fall die Parameternummer 1301 (ehemals Präsenztaste HK2) ebenfalls hinzufügen.  
+  
+Da es sich bei dem Parameter 701 um einen Parameter mit Auswahloptionen handelt, finden sich auch noch Zeilen, die mit `#define ENUM701_...` beginnen. Diese Zeilen sind ebenfalls in die aktuelle *BSB_LAN_custom_defs.h* zu kopieren.  
+In diesem Zusammenhang taucht dann noch ein Eintrag auf, der mit `const char ENUM701[]` beginnt. Diese und die nachfolgenden Zeilen sind bis zur schließenden geschweiften Klammer ebenfalls in die aktuelle *BSB_LAN_custom_defs.h* zu kopieren:  
+```
+const char ENUM701[] PROGMEM_LATEST = {
+"\x00 " ENUM701_00_TEXT "\0"
+"\x01 " ENUM701_01_TEXT "\0"
+"\x02 " ENUM701_02_TEXT
+};
+```
+Bei rein numerischen Parametern, die kein Auswahlmenü haben, sondern z.B. nur einen Temperaturwert anzeigen, entfällt dieser Schritt, weil es dazu dann keinen `const char ENUM…`-Eintrag gibt.  
+  
+Schlussendlich findet man den eigentlichen Tabelleneintrag für Parameter 701, der folgendermaßen aussieht:  
+`{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+Die entsprechende Tabelle findet sich in der aktuellen *BSB_LAN_custom_defs.h* Datei am Ende der Datei. In der dritten Spalte sieht man dabei immer die Parameternummer. Nun geht man in dieser Datei soweit nach oben, dass der Parameter an der richtigen Stelle eingefügt wird. In unserem Beispiel wäre das nach der Zeile für Parameter 700.  
 
+| Achtung |
+|:--------|
+| Es ist unbedingt wichtig, darauf zu achten, dass der Parameter an der richtigen Stelle eingefügt wird (und nicht z.B. vor der Zeile für Parameter 700 oder irgendwo danach), weil sonst die Parameter in der Kategorienübersicht nicht mehr vollständig aufgelistet werden! |  
+  
+Bei einigen Reglern wird jedoch der Parameter 701 schon von einer anderen Funktion belegt sein. Neuere LMS-Regler haben dort z.B. die Funktion für „temporär wärmer/kälter“ abgelegt. Das Verlegen des neu hinzuzufügenden Parameters ist jedoch einfach: Man wählt eine freie Parameternummer (wir empfehlen dafür die Parameternummern 10600 und aufwärts) und fügt die Zeile  
+`{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+an der entsprechenden Stelle in der Datei ein. Dann braucht man lediglich die Parameternummer in der dritten Spalte zu ändern, z.B. auf 10600. Die Parameternummern, die bei `STR…` oder `ENUM…` eingetragen sind, können jedoch so bleiben, da sie so gewählt wurden, dass sie nicht mit den neuen Parametern kollidieren.  
+Die neue, finale Zeile sähe dann so aus:  
+`{0x2D3D0572,  VT_ENUM,        10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+
+*Zusammengefasst noch einmal die Zeilen, die für die Funktion „Präsenztaste (temporäre Abwesenheit)“ kopiert werden müssten, um sie in die aktuelle Version als Parameternummer 10600 einzufügen:*  
+```
+const char STR701[] PROGMEM = STR701_TEXT;
+const char ENUM701[] PROGMEM_LATEST = {
+"\x00 " ENUM701_00_TEXT "\0"
+"\x01 " ENUM701_01_TEXT "\0"
+"\x02 " ENUM701_02_TEXT
+};
+{0x2D3D0572,  VT_ENUM,          10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},
+```  
+  
+Danach kann BSB-LAN erneut auf den Microcontroller geflasht werden und der neue Befehl ist einsatzbereit.  
+  
+Möchte man in dem Zuge gleich die in diesem Fall etwas irreführende Parameterbezeichnung „Präsenztaste (temporäre Abwesenheit)“ auf z.B. die zutreffendere Bezeichnung „Temporärer Betriebsartwechsel“ ändern, kann man dies in dem Schritt auch gleich machen. Dazu würde man einfach nur die Zeile  
+`const char STR701[] PROGMEM = STR701_TEXT;`  
+in  
+`const char STR701[] PROGMEM = “Temporärer Betriebsartwechsel”;`  
+ändern müssen und dann erneut flashen. Da alle diese Änderungen in der *BSB_LAN_custom_defs.h* erfolgen, bleiben Sie auch bei einem Update der BSB-LAN-Software erhalten.  
+  
+| Parameter, die von Interesse sein könnten und die dafür zu kopierenden Zeilen |
+|:------------------------------------------------------------------------------|
+| 1602 – Status Trinkwasserbereitung <br> `const char STR1602[] PROGMEM = STR1602_TEXT;` <br> `const char ENUM1602[] PROGMEM_LATEST = {` <br> `"\x00\x02 " ENUM1602_00_02_TEXT "\0"` <br> `"\x02\x02 " ENUM1602_02_02_TEXT "\0"` <br> `"\x00\x04 " ENUM1602_00_04_TEXT "\0"` <br> `"\x04\x04 " ENUM1602_04_04_TEXT "\0"` <br> `"\x00\x08 " ENUM1602_00_08_TEXT "\0"` <br> `"\x08\x08 " ENUM1602_08_08_TEXT <br> };` <br> `{0x31000212,  VT_BIT,           1602,  STR1602,  sizeof(ENUM1602),     ENUM1602,     DEFAULT_FLAG, DEV_ALL}, // Status Trinkwasserbereitung` |
+| 10100 – Status Brenner <br> `#define ENUM10100_01_TEXT ENUM_CAT_34_TEXT` <br> `const char ENUM10100[] PROGMEM_LATEST = {` <br> `"\x00" // index for payload byte` <br> `"\x01\x01 " ENUM10100_01_TEXT "\0"` <br> `"\x02\x02 " ENUM10100_02_TEXT "\0"` <br> `"\x04\x04 " ENUM10100_04_TEXT "\0"` <br> `"\x08\x08 " ENUM10100_08_TEXT "\0"` <br> `"\x10\x10 " ENUM10100_10_TEXT "\0"` <br> `"\x20\x20 " ENUM10100_20_TEXT "\0"` <br> `"\x40\x40 " ENUM10100_40_TEXT "\0"` <br> `"\x80\x80 " ENUM10100_80_TEXT` <br> `};` <br> `{0x053D0213,  VT_CUSTOM_BIT,    10100, STR10100, sizeof(ENUM10100),    ENUM10100,    FL_RONLY, DEV_ALL}, // INFO Brenner` |
+| 10102 – Info HK1 <br> `{0x2D000211,  VT_UNKNOWN,       10102, STR10102, 0,                    NULL,        DEFAULT_FLAG, DEV_ALL}, // INFO HK1` |
+| 10103 – Info HK2 <br> `{0x2E000211,  VT_UNKNOWN,       10103, STR10103, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK2` |
+| 10104 – Info HK3/P <br> `{0x2F000211,  VT_UNKNOWN,       10104, STR10104, 0,                    NULL,         DEFAULT_FLAG, DEV_ALL}, // INFO HK3/P` |  
+  
+
+---
      
 [Weiter zu Kapitel 3](kap03.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
