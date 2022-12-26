@@ -841,7 +841,7 @@ Nachdem man die Datei entpackt hat, findet man in dem Unterverzeichnis *BSB_LAN*
 Parallel dazu öffnet man außerdem die Datei *BSB_LAN_custom_defs.h* aus der aktuellen BSB-LAN Version, die man benutzen möchte, in der Arduino IDE.  
 Wenn beide Dateien geöffnet sind, sucht man in der *BSB_LAN_custom_defs.h.default* der Version 2.2 nach der Parameternummer des Parameters, den man hinzufügen möchte.  
   
-**Die weiteren Schritte werden anhand des Beispiels des früheren Parameters 701 – „Präsenztaste (temporäre Abwesenheit)“ erläutert:**  
+**Die weiteren Schritte werden anhand des Beispiels des früheren Parameters 701 – „Präsenztaste“ erläutert.** Dieser Parameter ist bei der gerätespezifisch erstellten Datei *BSB_LAN_custom_defs.h* mittlerweile per default enthalten, lediglich bei den ersten erstellten Dateien (in der damaligen Umstellphase auf die BSB-LAN-Version 3.x) fehlt dieser noch.    
   
 Die Suche nach „701“ ergibt zuerst diesen Eintrag:  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
@@ -880,13 +880,13 @@ Die entsprechende Tabelle findet sich in der aktuellen *BSB_LAN_custom_defs.h* D
 |:--------|
 | Es ist unbedingt wichtig, darauf zu achten, dass der Parameter in dieser Tabelle / cmdtbl-Struktur an der richtigen Stelle eingefügt wird (und nicht z.B. vor der Zeile für Parameter 700 oder irgendwo danach), weil sonst die Parameter in der Kategorienübersicht nicht mehr vollständig aufgelistet werden! |  
   
-Bei einigen Reglern wird jedoch der Parameter 701 schon von einer anderen Funktion belegt sein. Neuere LMS-Regler haben dort z.B. die Funktion für „temporär wärmer/kälter“ abgelegt. Das Verlegen des neu hinzuzufügenden Parameters ist jedoch einfach: Man wählt eine freie Parameternummer (wir empfehlen dafür die Parameternummern 10600 und aufwärts) und fügt die Zeile  
+Bei einigen Reglern wird jedoch der Parameter 701 schon von einer anderen Funktion belegt sein. Neuere LMS-Regler haben dort z.B. die Funktion für „temporär wärmer/kälter“ abgelegt. Das Verlegen des neu hinzuzufügenden Parameters ist jedoch einfach: Man wählt eine freie Parameternummer (abgesehen von der hier erwähnten Funktion "Präsenztaste" empfehlen wir dafür die Parameternummern 10600 und aufwärts) und fügt die Zeile  
 `{0x2D3D0572,  VT_ENUM,          701,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
-an der entsprechenden Stelle in der Datei ein. Dann braucht man lediglich die Parameternummer in der dritten Spalte zu ändern, z.B. auf 10600. Die Parameternummern, die bei `STR…` oder `ENUM…` eingetragen sind, können jedoch so bleiben, da sie so gewählt wurden, dass sie nicht mit den neuen Parametern kollidieren.  
+an der entsprechenden Stelle in der Datei ein. Dann braucht man lediglich die Parameternummer in der dritten Spalte zu ändern, in diesem Fall auf 10110. Die Parameternummern, die bei `STR…` oder `ENUM…` eingetragen sind, können jedoch so bleiben, da sie so gewählt wurden, dass sie nicht mit den neuen Parametern kollidieren.  
 Die neue, finale Zeile sähe dann so aus:  
-`{0x2D3D0572,  VT_ENUM,        10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+`{0x2D3D0572,  VT_ENUM,        10110,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
 
-*Zusammengefasst noch einmal die Zeilen, die für die Funktion „Präsenztaste (temporäre Abwesenheit)“ kopiert werden müssten, um sie in die aktuelle Version als Parameternummer 10600 einzufügen:*  
+*Zusammengefasst noch einmal die Zeilen, die für die Funktion „Präsenztaste“ kopiert werden müssten, um sie in die Datei BSB_LAN_custom_defs.h als Parameternummer 10110 einzufügen:*  
 ```
 const char STR701[] PROGMEM = STR701_TEXT;
 const char ENUM701[] PROGMEM_LATEST = {
@@ -896,20 +896,20 @@ const char ENUM701[] PROGMEM_LATEST = {
 }; 
 ```
 Außerdem an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
-`{0x2D3D0572,  VT_ENUM,          10600,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
+`{0x2D3D0572,  VT_ENUM,     10110,   STR701,   sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL},`  
   
 Danach kann BSB-LAN erneut auf den Microcontroller geflasht werden und der neue Befehl ist einsatzbereit.  
   
-Möchte man in dem Zuge gleich die in diesem Fall etwas irreführende Parameterbezeichnung „Präsenztaste (temporäre Abwesenheit)“ auf z.B. die zutreffendere Bezeichnung „Temporärer Betriebsartwechsel“ ändern, kann man dies in dem Schritt auch gleich machen. Dazu würde man einfach nur die Zeile  
+Möchte man in dem Zuge gleich die in diesem Fall evtl. uneindeutige Parameterbezeichnung „Präsenztaste“ auf z.B. die zutreffendere Bezeichnung „Temporärer Heizbetriebwechsel“ ändern, kann man dies in dem Schritt auch gleich machen. Dazu würde man einfach nur die Zeile  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
 in  
-`const char STR701[] PROGMEM = “Temporärer Betriebsartwechsel”;`  
+`const char STR701[] PROGMEM = “Temporärer Heizbetriebwechsel”;`  
 ändern müssen und dann erneut flashen. Da alle diese Änderungen in der *BSB_LAN_custom_defs.h* erfolgen, bleiben Sie auch bei einem Update der BSB-LAN-Software erhalten.  
   
-Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10601 hinzufügen, würden die entspr. Zeilen so aussehen:  
+Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10111 hinzufügen, würden die entspr. Zeilen so aussehen:  
 `#define STR1001 STR701`  
 sowie diese Zeile an der entspr. korrekten Stelle in der cmdtbl-Struktur:  
-`{0x2E3E0572,  VT_ENUM,   10601,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste (Absenkmodus bis zum nächsten BA-Wechsel laut Zeitplan) ***(virtuelle Zeile)***` 
+`{0x2E3E0572,  VT_ENUM,   10111,  STR1001,  sizeof(ENUM701),      ENUM701,      DEFAULT_FLAG+FL_WONLY, DEV_ALL}, // [-] - Heizkreis 2 - Präsenztaste ***(virtuelle Zeile)***` 
 
   
 | Parameter, die von Interesse sein könnten und die dafür zu kopierenden Zeilen |
