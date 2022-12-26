@@ -132,25 +132,27 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
 ---
     
 ## 6.4 Präsenztaste simulieren
-Die Funktion der Präsenztaste ist mit den Spezialparametern 
-- 10100 = Heizkreis 1 
-- 10101 = Heizkreis 2 
-implementiert, der Befehl ist als SET-Befehl auszuführen.  
+Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist mit den Spezialparametern 
+- 10110 = Heizkreis 1 
+- 10111 = Heizkreis 2
+- 10112 = Heizkreis 3 
+in der reglerspezifischen Datei *BSB_LAN_custom_defs.h* implementiert, der Befehl ist als SET-Befehl auszuführen. 
+Mit dieser Funktion kann im *Automatikbetrieb* zwischen den Modi Komfort- und Reduziertheizen umgeschaltet werden. Die jeweilige Umschaltung ist dabei so lange gültig, bis gemäß Zeitprogramm (oder durch eine erneute Benutzung der Präsenztaste) die nächste Umschaltung erfolgt. 
   
 Bei *aktivem Automatikbetrieb* ist dabei  
 `http://<IP-Adresse>/S<Parameter>=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
 `http://<IP-Adresse>/S<Parameter>=2` für den Wechsel auf ‚Betriebsart Komfort' zu setzen.  
   
 Beispiel:  
-Der Befehl `<URL>/S10100=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Komfortmodus.  
-
+Der Befehl `<URL>/S10110=2` schaltet innerhalb des Automatikbetriebs den HK1 in den Modus Komfortheizen, mit `<URL>/S10110=1` schaltet man in den Modus Reduziertheizen.  
+  
 | Hinweise |
 |:--------|
 | Die genannten Parameter müssen schreibbar sein (s. Kap. [2.2](kap02.md#22-konfiguration)). | 
-| Diese Spezialparameter (10100, 10101) sind NICHT abrufbar. |
+| Diese Spezialparameter (10110, 10111, 10112) sind NICHT abrufbar. |
 | Die Präsenztaste ist nur im Automatikbetrieb wirksam! |
 | Der jeweilige Wechsel ist bis zur nächsten Betriebsart-Umschaltung laut Zeitprogramm gültig. |
-
+| Bei Usern der BSB-LAN-Version v3.x, in deren reglerspezifischen Datei *BSB_LAN_custom_defs.h* dieser Befehl noch nicht implementiert ist, kann er selbst nachträglich manuell hinzugefügt werden. Eine entspr. Beschreibung der notwendigen Schritte findet sich in [Kap. 2.3](kap02.md#23-manuelles-hinzufügen-von-parametern-aus-v22). |
     
 ---
     
