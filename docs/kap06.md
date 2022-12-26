@@ -137,6 +137,7 @@ Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist als 
 - 10111 = Heizkreis 2
 - 10112 = Heizkreis 3 
 in der reglerspezifischen Datei *BSB_LAN_custom_defs.h* implementiert, der Befehl ist als SET-Befehl auszuführen.  
+  
 Mit dieser Funktion kann im *Automatikbetrieb* zwischen den Modi Komfort- und Reduziertheizen umgeschaltet werden. Die jeweilige Umschaltung ist dabei so lange gültig, bis gemäß Zeitprogramm (oder durch eine erneute Benutzung der Präsenztaste) die nächste Umschaltung erfolgt. 
   
 Bei *aktivem Automatikbetrieb* ist dabei  
