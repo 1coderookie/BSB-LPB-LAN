@@ -841,7 +841,7 @@ Nachdem man die Datei entpackt hat, findet man in dem Unterverzeichnis *BSB_LAN*
 Parallel dazu öffnet man außerdem die Datei *BSB_LAN_custom_defs.h* aus der aktuellen BSB-LAN Version, die man benutzen möchte, in der Arduino IDE.  
 Wenn beide Dateien geöffnet sind, sucht man in der *BSB_LAN_custom_defs.h.default* der Version 2.2 nach der Parameternummer des Parameters, den man hinzufügen möchte.  
   
-**Die weiteren Schritte werden anhand des Beispiels des früheren Parameters 701 – „Präsenztaste“ erläutert.** Dieser Parameter ist bei der gerätespezifisch erstellten Datei *BSB_LAN_custom_defs.h* mittlerweile per default enthalten, lediglich bei den ersten erstellten Dateien (in der damaligen Umstellphase auf die BSB-LAN-Version 3.x) fehlt dieser noch.    
+**Die weiteren Schritte werden anhand des Beispiels des früheren Parameters 701 – „Präsenztaste (temporäre Abwesenheit)“ erläutert.** Dieser Parameter ist bei der gerätespezifisch erstellten Datei *BSB_LAN_custom_defs.h* mittlerweile per default enthalten, lediglich bei den ersten erstellten Dateien (in der damaligen Umstellphase auf die BSB-LAN-Version 3.x) fehlt dieser noch.    
   
 Die Suche nach „701“ ergibt zuerst diesen Eintrag:  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
@@ -900,10 +900,10 @@ Außerdem an der entspr. korrekten Stelle in der cmdtbl-Struktur:
   
 Danach kann BSB-LAN erneut auf den Microcontroller geflasht werden und der neue Befehl ist einsatzbereit.  
   
-Möchte man in dem Zuge gleich die in diesem Fall evtl. uneindeutige Parameterbezeichnung „Präsenztaste“ auf z.B. die zutreffendere Bezeichnung „Temporärer Heizbetriebwechsel“ ändern, kann man dies in dem Schritt auch gleich machen. Dazu würde man einfach nur die Zeile  
+Möchte man in dem Zuge gleich die in diesem Fall evtl. uneindeutige Parameterbezeichnung „Präsenztaste“ auf z.B. die zutreffendere Bezeichnung „Zeitprogramm (temporär)“ ändern, kann man dies in dem Schritt auch gleich machen. Dazu würde man einfach nur die Zeile  
 `const char STR701[] PROGMEM = STR701_TEXT;`  
 in  
-`const char STR701[] PROGMEM = “Temporärer Heizbetriebwechsel”;`  
+`const char STR701[] PROGMEM = “Zeitprogramm (temporär)”;`  
 ändern müssen und dann erneut flashen. Da alle diese Änderungen in der *BSB_LAN_custom_defs.h* erfolgen, bleiben Sie auch bei einem Update der BSB-LAN-Software erhalten.  
   
 Möchte man bei der Gelegenheit auch gleich noch die Präsenztastenfunktion für HK2 (Parameter 1001 in v2.2) als Parameter 10111 hinzufügen, würden die entspr. Zeilen so aussehen:  
