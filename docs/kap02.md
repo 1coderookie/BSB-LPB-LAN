@@ -834,7 +834,7 @@ Es ist aber weiterhin möglich, ausgewählte Parameter aus der Parameterliste de
 | Hinweis |
 |:--------|
 | Wir empfehlen ausdrücklich, diese nicht offiziell vom Hersteller des Reglers unterstützten Parameter nur nach eingehender Prüfung hinzuzufügen, insbesondere, wenn diese Werte auch geschrieben werden sollen! |
-| Als sicheren Nummernbereich, in dem Parameter wie im Folgenden beschrieben hinzugefügt werden können, empfehlen wir 10600 und aufwärst. |  
+| Als sicheren Nummernbereich, in dem Parameter wie im Folgenden beschrieben hinzugefügt werden können, empfehlen wir 10600 und aufwärts. |  
   
 Im ersten Schritt lädt man sich dazu die [Release-Version 2.2 unter https://github.com/fredlcore/BSB-LAN/releases](https://github.com/fredlcore/BSB-LAN/archive/refs/tags/v2.2.zip)  herunter.  
 Nachdem man die Datei entpackt hat, findet man in dem Unterverzeichnis *BSB_LAN* die Datei *BSB_LAN_custom_defs.h.default*. Diese öffnet man mit einem Texteditor wie z.B. Notepad unter Windows oder TextEdit unter MacOS.  
