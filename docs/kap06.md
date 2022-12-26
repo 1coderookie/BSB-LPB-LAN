@@ -132,7 +132,7 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
 ---
     
 ## 6.4 Präsenztaste simulieren
-Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist mit den Spezialparametern 
+Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist als "Zeitprogramm (temporär)" mit den Spezialparametern 
 - 10110 = Heizkreis 1 
 - 10111 = Heizkreis 2
 - 10112 = Heizkreis 3 
