@@ -53,7 +53,7 @@
    * [5.1 URL-Befehle](kap05.md#51-url-befehle)  
    * [5.2 MQTT](kap05.md#52-mqtt)  
    * [5.3 JSON](kap05.md#53-json)  
-   * [5.4 Spezialparameter](kap05.md#54-spezialparameter)  
+   * [5.4 Spezialparameter](kap05.md#54-spezialparameter--nummernbereiche)  
 
 [**6. BSB-LAN: Spezialfunktionen**](kap06.md)  
    * [6.1 Loggen von Daten](kap06.md#61-loggen-von-daten)  
