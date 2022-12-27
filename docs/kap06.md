@@ -132,13 +132,13 @@ Bei 4 °C Abweichung (z.B. nach Ende der Nachtabsenkung) wäre man dann schon be
 ---
     
 ## 6.4 Präsenztaste simulieren
-Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist als "Zeitprogramm (temporär)" mit den Spezialparametern 
+Die Funktion der Präsenztaste, die bei den Raumgeräten vorhanden ist, ist als "Heizbetrieb (temporär)" mit den Spezialparametern 
 - 10110 = Heizkreis 1 
 - 10111 = Heizkreis 2
 - 10112 = Heizkreis 3 
 in der reglerspezifischen Datei *BSB_LAN_custom_defs.h* implementiert, der Befehl ist als SET-Befehl auszuführen.  
   
-Mit dieser Funktion kann im *Automatikbetrieb* zwischen den Modi Komfort- und Reduziertheizen umgeschaltet werden. Die jeweilige Umschaltung ist dabei so lange gültig, bis gemäß Zeitprogramm (oder durch eine erneute Benutzung der Präsenztaste) die nächste Umschaltung erfolgt. 
+Mit dieser Funktion kann im *Automatikbetrieb* zwischen den Modi Komfort- und Reduziertheizen im Zeitprogramm umgeschaltet werden. Die jeweilige Umschaltung ist dabei so lange gültig, bis gemäß Zeitprogramm (oder durch eine erneute Benutzung der Präsenztaste) die nächste Umschaltung erfolgt. 
   
 Bei *aktivem Automatikbetrieb* ist dabei  
 `http://<IP-Adresse>/S<Parameter>=1` für den Wechsel auf ‚Betriebsart Reduziert' und  
