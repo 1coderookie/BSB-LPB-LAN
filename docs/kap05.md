@@ -225,9 +225,11 @@ Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfall
     
 ---
    
-## 5.4 Spezialparameter  
+## 5.4 Spezialparameter & Nummernbereiche  
   
-Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den Nummern 10000 aufwärst implementiert werden. Die folgende Suflistung zeigt dies Spezialparameter samt Parameternummer und Funktion. Abhängig vom Typ muss das Schreiben entweder per SET- oder der INF-Befehl erfolgen (Schreibzugriff muss gewährt sein). Für weitere Informationen zu den einzelnen Befehlen lies bitte die entspr. Kapitel.   
+**Spezialparameter**  
+  
+Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den Nummern 10000 aufwärst implementiert werden. Die folgende Auflistung zeigt diese Spezialparameter samt Parameternummer und Funktion. Abhängig vom Typ muss das Schreiben entweder per SET- oder der INF-Befehl erfolgen (Schreibzugriff muss gewährt sein). Für weitere Informationen zu den einzelnen Befehlen lies bitte die entspr. Kapitel.   
   
 | Parameternummer | Funktion | Befehlstyp |
 |:-----------------|:---------|:-------------|
@@ -235,11 +237,28 @@ Ab BSB-LAN-Version 3.x mussten bestimmte Funktionen als Spezialparameter mit den
 | 10001 | Raumtemperatur HK2 | INF - [s. Kap. 6.3](kap06.md#63-raumtemperatur-übermitteln) |
 | 10002 | Raumtemperatur HK3 | INF - [s. Kap. 6.3](kap06.md#63-raumtemperatur-übermitteln) |
 | 10019 | Manueller TWW-Push | SET - [s. Kap. 6.5](kap06.md#65-manuellen-tww-push-ausführen) |
-| 10100 | Präsenztaste HK1 | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren)  |
-| 10101 | Präsenztaste HK2 | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren) |  
+| 10110 | Präsenztaste HK1 (temporärer Heizbetriebswechsel) | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren)  |
+| 10111 | Präsenztaste HK2 (temporärer Heizbetriebswechsel) | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren) |  
+| 10112 | Präsenztaste HK3 (temporärer Heizbetriebswechsel) | SET - [s. Kap. 6.4](kap06.md#64-präsenztaste-simulieren) |  
   
+---
+
+**Nummernbereiche**  
   
-   
+Die folgende Übersicht zeigt, wie die Nummernbereiche aufgeteilt bzw. vergeben sind.   
+  
+| Nummernbereich | Verwendung |
+|:---------------|:-----------|
+| 0-9999 | Parameter des Reglers |
+| 10000-10019 | Raumgerätefunktionen (Raumtemperatur & TWW-Push) |
+| 10020-10099 | Ursprünglich nummernlose Parameter des Reglers |
+| 10100-10109 | Broadcast-Parameter |
+| 10110-10129 | Präsenztaste (temporärer Heizbetriebswechsel) |
+| 10200-10999 | Bereich für manuell hinzugefügte Parameter |
+| 20100-20199 | Sensoren: DHT22 |
+| 20200-20299 | Sensoren: BME280 |
+| 20300-20499 | Sensoren: DS18B20 |
+| 20500-20699 | MAX!-Sensoren/Komponenten |
    
 ---   
      
