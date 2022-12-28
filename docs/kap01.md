@@ -403,32 +403,32 @@ Es ist empfehlenswert, die vier Kontakte auf dem Adapter mit einer Pinleiste zu 
 ---  
    
 ## 1.4 Raspberry Pi
-Der aktuelle Due-spezifische Adapter (v4) kann auch an einem Raspberry Pi genutzt werden.  
+Der aktuelle ESP32-spezifische Adapter (v4.4) kann auch an einem Raspberry Pi genutzt werden.  
 Es sind dabei jedoch folgende Punkte zu beachten:  
 
 - **Eine Verwendung der BSB-LAN-Software ist NICHT möglich (s. unten stehende Hinweise)!**  
-
-- Es muss nur eine doppelreihige Buchsenleiste (anstelle der Pinleisten wie für die Arduino-Verwendung nötig) verwendet werden. 
-
-- Bei kompletter Buchsenlänge des Adapterpinouts (6 Pins 'lang', insgesamt also 12 Pins) darf das erste Pinpaar des Adapters NICHT auf das erste Pinpaar (1/2) des RPi gesteckt werden, sondern muss um einen Pin 'nach hinten versetzt' werden. Man fängt also bei dem Pinpaar 3/4 an.  
-Anders formuliert: Man muss beachten, dass der auf der Adapterplatine gekennzeichnete TX1-Pin auf dem RPi-Pin 8 (= GPIO 14, UART0_TXD) liegt, der RX1-Pin dann auf dem RPi-Pin 10 (= GPIO 15, UART0_RXD) etc.  
-
-  | Achtung |
-  |:--------|
-  | Diese Zählweise bezieht sich auf das offizielle RPi-Pin-Layout und die dortige Bezeichnung.  |
-
-  Die folgende Abbildung zeigt den unbestückten Adapter *neben* den entspr. RPi-Pins, damit soll lediglich die versetzte Positionierung verdeutlicht werden.  
-  
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v3_ausrichtung.jpg">  
-  
-  *Exemplarische Ausrichtung des Adapters entlang der Längsachse der RPi-Pins.* 
-  
+- Es sollte eine entspr. lange doppelreihige Buchsenleiste verwendet werden. 
+- Der Adapter muss auf die *äußere* Pinreihe des RPi aufgesteckt werden (siehe Foto unten).  
 - Bei dem Betriebssystem des RPi muss der Pin 7 (GPIO 4) vor der Verwendung  
 a) als Output-Pin definiert und dann  
 b) auf "HIGH" gesetzt werden, da hierüber die Stromversorgung des Adapters erfolgt.  
 Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehendem 'sudo'):   
 `gpio -1 mode 7 output`  
 `gpio -1 write 7 1`  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_adapter_small.JPG">  
+  
+*Der ESP32-Adapter v4.4 mit der entspr. Buchsenleiste für einen RPi.*  
+    
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_komplett_small.JPG">  
+  
+*Der aufgesteckte ESP32-Adapter v4.4 auf einem RPi3.*  
+      
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_montage_small.JPG">  
+  
+*Der Adapter muss auf die äußere Pinreihe des RPi gesteckt werden.*  
+  
+
    
  
    
@@ -437,7 +437,7 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
 |:------------------|
 | **Für die Verwendung des Adapters an einem RPi muss eine gänzlich andere Software genutzt werden: ["bsb_gateway"](https://github.com/loehnertj/bsbgateway) von J. Loehnert!** <br> Für jeglichen Support in Zusammenhang mit der bsb_gateway-Software kontaktiere bitte direkt den Autor von bsb_gateway! |  
 | **Dieses Handbuch bezieht sich nur auf die BSB-LAN Hard- & Software!** <br> Es kann und wird von uns *keinerlei Support* bzgl. einer RPi-Nutzung erfolgen! | 
-| Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 2 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen. |  
+| Von unserer Seite her wurde die Verwendung des Adapters mit der zuvor genannten Software lediglich auf einem RPi 3 getestet. Ob eine einwandfreie Funktion mit aktuelleren RPi-Versionen gegeben ist, können wir nicht beurteilen. |  
 | Für die Nutzung des Adapters mit einem RPi an der PPS-Schnittstelle kann das Python-Script [PPS-monitor](https://github.com/dspinellis/PPS-monitor) von D. Spinellis genutzt werden. |  
   
   
