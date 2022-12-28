@@ -102,7 +102,7 @@ Sollten dann bestimmte Parameter noch immer nicht erscheinen, so sollte bitte ei
 ## 15.10 Warum ist kein Zugriff auf angeschlossene Sensoren möglich?
 
 Wenn du DHT22, BME280 und/oder DS18B20-Sensoren korrekt am angeschlossen hast, sie allerdings keine Werte liefern, hast du vermutlich die betreffenden Einträge in der Datei *BSB_LAN_config.h* oder in der Konfiguration via Webinterface nicht entsprechend angepasst.  
-Siehe hierzu auch die Kapitel [2](kap02.md#22-konfiguration) und [7.1](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280).  
+Siehe hierzu auch die Kapitel [2.2](kap02.md#22-konfiguration) und [7.1](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280).  
     
 ---
     
@@ -267,7 +267,20 @@ BSB_lan:802:27: error: 'pgm_read_byte_far' was not declared in this scope
                        ^~~~~~~~~~~~~~~~~
 ```  
   
-## 15.28 Ich habe weitere Fragen, an wen kann ich mich wenden?
+---
+  
+## 15.28 Es kann keine Verbindung zum WLAN-Netzwerk hergestellt werden  
+  
+Wenn beim Starten eines ESP32-basierten Microcontrollers, bei dem man WiFi verwenden möchte, die folgenden zwei Fehlermeldungen auftreten
+```
+E (1593) esp.emac: emac_esp32_init(349): reset timeout 
+E (1594) esp_eth: esp_eth_driver_install(214): init mac failed
+```
+dann wurde das Definement `#define WIFI` in der Datei *BSB_LAN_config.h* nicht aktiviert. Um es zu aktivieren, müssen die beiden Schrägstriche `//` davor entfernt und BSB-LAN erneut geflasht werden (siehe auch Kap. [2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)).  
+    
+---
+  
+## 15.29 Ich habe weitere Fragen, an wen kann ich mich wenden?
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum ([https://forum.fhem.de/](https://forum.fhem.de/)) anmelden würdest, da dort speziell für diesen Adapter ein eigener Thread existiert und sich dort eine nette und hilfsbereite Community findet. Hier findet ein reger Austausch über die Hard- und Software statt,
 Fragen werden meist zügig beantwortet und auf Updates wird hingewiesen.
