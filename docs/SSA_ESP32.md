@@ -16,7 +16,7 @@
     
   *Das komplette Setup: Joy-It ESP32 NodeMCU samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
 
-- ***[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb-esp32-poe)***  
+- ***[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb--esp32-poe)***  
   Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer.  
   Sollte dein Rechner den Olimex nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
