@@ -69,7 +69,7 @@ Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem di
 
 ### 1.1.2 ESP32-Version
 
-Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
+Für bestimmte ESP32-Boardvarianten gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
