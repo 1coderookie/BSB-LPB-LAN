@@ -206,7 +206,8 @@
    * [15.25 Gibt es eine (W)LAN-Option für den Adapter?](kap15.md#1525-gibt-es-eine-wlan-option-für-den-adapter)  
    * [15.26 Ich nutze das veraltete Setup Adapter v2 + Arduino Mega 2560 - muss ich irgendetwas beachten?](kap15.md#1526-ich-nutze-das-veraltete-setup-adapter-v2--arduino-mega-2560---muss-ich-irgendetwas-beachten)  
    * [15.27 Ich bekomme Fehlermeldungen von der Arduino IDE, was kann ich tun?](kap15.md#1527-ich-bekomme-fehlermeldungen-von-der-arduino-ide-was-kann-ich-tun)  
-   * [15.28 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1528-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
+   * [15.28 Es kann keine Verbindung zum WLAN-Netzwerk hergestellt werden](kap15.md#1528-es-kann-keine-verbindung-zum-wlan-netzwerk-hergestellt-werden)
+   * [15.29 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap15.md#1529-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
    
 [**16. Weiterführende Informationen und Quellen**](kap16.md)  
 
