@@ -98,7 +98,7 @@ Führe die folgenden Schritte aus:
 
     - Für den in diesem Handbuch empfohlenen **[Joy-It ESP32-NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it)** (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
     
-    - Für das empfohlene **[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb-esp32-poe)** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
+    - Für das empfohlene **[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb--esp32-poe)** wähle bitte den gleichnamigen Eintrag aus der Liste aus.     
     
     | Achtung, wichtiger Hinweis |
     |:---------|
