@@ -408,13 +408,6 @@ Es sind dabei jedoch folgende Punkte zu beachten:
 
 - **Eine Verwendung der BSB-LAN-Software ist NICHT möglich (s. unten stehende Hinweise)!**  
 - Es sollte eine entspr. lange doppelreihige Buchsenleiste verwendet werden. 
-- Der Adapter muss auf die *äußere* Pinreihe des RPi aufgesteckt werden (siehe Foto unten).  
-- Bei dem Betriebssystem des RPi muss der Pin 7 (GPIO 4) vor der Verwendung  
-a) als Output-Pin definiert und dann  
-b) auf "HIGH" gesetzt werden, da hierüber die Stromversorgung des Adapters erfolgt.  
-Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehendem 'sudo'):   
-`gpio -1 mode 7 output`  
-`gpio -1 write 7 1`  
     
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_adapter_small.JPG">  
   
@@ -424,14 +417,6 @@ Dafür sind folgende zwei Befehle im Terminal auszuführen (ggf. mit vorangehend
   
 *Der aufgesteckte ESP32-Adapter v4.4 auf einem RPi3.*  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_montage_small.JPG">  
-  
-*Der Adapter muss auf die äußere Pinreihe des RPi gesteckt werden.*  
-  
-
-   
- 
-   
    
 | **Achtung** |  
 |:------------------|
