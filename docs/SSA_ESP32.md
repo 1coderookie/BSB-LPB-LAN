@@ -14,20 +14,24 @@
 
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
     
-  *Das komplette Setup (Joy-It ESP32 NodeMCU + BSB-LAN-Adapter).*  
+  *Das komplette Setup: Joy-It ESP32 NodeMCU samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
 
-- ***[Olimex ESP32-EVB](kap01.md#1312-esp32-olimex-esp32-evb)***:  
+- ***[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb-esp32-poe)***:  
   Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer.  
   Sollte dein Rechner den Olimex nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
     
-  *Das komplette Setup (Olimex ESP32-EVB + BSB-LAN-Adapter).*  
+  *Das komplette Setup: Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
+  
+  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+  
+  *Das komplette Setup: Olimex ESP32-PoE samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.4.*
   
 Führe nun die folgenden Schritte aus:  
   
 1. Downloade und installiere die aktuelle Version der [Arduino IDE](https://www.arduino.cc/en/Main/Software).  
-   Füge dann das ESP32-SDK per Boardverwalter-URL hinzu (*Achtung: SDK 2.0.2 verwenden!*) und installiere dann die ESP32-Boardbibliotheken im Boardverwalter. [Hier](kap12.md#1212-esp32) findest du eine ausführliche Schritt-für-Schritt-Anleitung dazu.    
+   Füge dann das ESP32-SDK per Boardverwalter-URL hinzu (*Achtung: SDK 2.0.2 oder höher verwenden!*) und installiere dann die ESP32-Boardbibliotheken im Boardverwalter. [Hier](kap12.md#1212-esp32) findest du eine ausführliche Schritt-für-Schritt-Anleitung dazu.    
    
 2. Downloade die [aktuelle Version von BSB-LAN](https://github.com/fredlcore/bsb_lan/archive/master.zip).  
 
