@@ -73,7 +73,7 @@ Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplati
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.4, unbestückt.*  
   
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
   
@@ -81,11 +81,12 @@ Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Jo
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
     
-Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden.  
+Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) sowie einem [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware) 
+genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v44.JPG">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen Olimex ESP32-EVB.*   
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für dOlimex-Boards.*   
   
 Die ESP32-spezifische Version des BSB-LAN-Adapters weist kein EEPROM auf, Einstellungen werden im Flashspeicher des ESP32 gespeichert. 
 
@@ -225,7 +226,7 @@ Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinend
 - [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) 
 - [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) 
 - [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware)  
-- 
+   
 Die genannten ESP32-Boards nutzen das ESP32-**WROOM32**-Modul.    
   
 | Achtung, wichtige Hinweise |
@@ -253,12 +254,13 @@ Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Jo
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
   
-Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
+Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) und einem [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware)  
+genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
   
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_Olimex.jpeg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen Olimex.*   
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den Olimex ESp32-EVB.*   
   
 ---
   
