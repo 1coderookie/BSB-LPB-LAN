@@ -271,7 +271,9 @@ BSB_lan:802:27: error: 'pgm_read_byte_far' was not declared in this scope
   
 ## 15.28 Es kann keine Verbindung zum WLAN-Netzwerk hergestellt werden  
   
-Wenn beim Starten eines ESP32-basierten Microcontrollers, bei dem man WiFi verwenden möchte, die folgenden zwei Fehlermeldungen auftreten
+In diesem Fall sind grundsätzlich die WLAN-Zugangsdaten, die in der Datei *BSB_LAN_config.h* eingetragen werden, zu überprüfen. Ebenso die weiteren Netzwerkeinstellungen.  
+Ggf. ist auch die Routerkonfiguration zu überprüfen, ob sich neue WLAN-Geräte anmelden dürfen.  
+Wenn beim Starten eines ESP32-basierten Microcontrollers, bei dem man WiFi verwenden möchte, allerdings die folgenden zwei Fehlermeldungen auftreten
 ```
 E (1593) esp.emac: emac_esp32_init(349): reset timeout 
 E (1594) esp_eth: esp_eth_driver_install(214): init mac failed
