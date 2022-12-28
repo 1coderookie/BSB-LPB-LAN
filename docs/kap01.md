@@ -225,7 +225,8 @@ Im Grunde kann jeder ESP32 verwendet werden, aufgrund des spezifischen Platinend
 - [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) 
 - [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) 
 - [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware)  
-Die genannten Varianten nutzen das ESP32-**WROOM32**-Modul.    
+- 
+Die genannten ESP32-Boards nutzen das ESP32-**WROOM32**-Modul.    
   
 | Achtung, wichtige Hinweise |
 |:---------------------------|
