@@ -21,8 +21,8 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
 | Relais onboard | Nein | Nein | Ja (2) | Nein |
 | Bluetooth onboard | Nein | Ja | Ja | Ja |
 | Power-over-Ethernet | Nein | Nein | Nein | Ja |
-| Due-spezifischer Adapter verwendbar | Ja | Ja | Ja |
-| ESP-spezifischer Adapter verwendbar | Nein | Ja | Ja |
+| Due-spezifischer Adapter verwendbar | Ja | Ja | Ja | Ja |
+| ESP-spezifischer Adapter verwendbar | Nein | Ja | Ja | Ja |
   
 | Anmerkungen |
 |:------------|
