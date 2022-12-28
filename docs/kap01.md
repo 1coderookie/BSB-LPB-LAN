@@ -73,7 +73,7 @@ Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplati
   
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
 
-*Die "BSB-LAN ESP32"-Adapterplatine, v4.4, unbestückt.*  
+*Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
   
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
   
