@@ -109,16 +109,16 @@ Führe die folgenden Schritte aus:
 
 8. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
 
-9. Wähle bei "Partition Scheme"  
+9. "Partition Scheme": Je nach gewähltem ESP32-Board sind hier entspr. Einstellungen vorzunehmen.   
     
-    - für den empfohlenen **ESP32-NodeMCU** bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)",  
-     
-    - für die empfohlenen **Olimex-Boards** die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
-
-   
+    - Für den empfohlenen **ESP32-NodeMCU** wähle bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus. <br> Der folgende Screenshot zeigt die gesamten Einstellungen für den **ESP32-NodeMCU**.  
+       
       <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_ESP32.png">  
    
-      *Die Einstellungen für den ESP32-***NodeMCU*** *in der Arduino IDE.*   
+      *Die Einstellungen für den* ***ESP32-NodeMCU*** *in der Arduino IDE.*
+     
+    - Für die empfohlenen **Olimex-Boards** wähle bitte die Variante "Minimal SPIFFS (Large APPS with OTA)" aus.  
+   
    
   
 10. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
