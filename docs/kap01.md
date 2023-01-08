@@ -283,14 +283,13 @@ Sollte das Joy-It-Board nicht erhältlich sein und ein anderes NodeMCU-ESP32-Boa
 1. Das Board *muss* ein **30 poliger** ESP32-NodeMCU sein! Es gibt auch 38 polige NodeMCUs - diese passen *nicht*!  
 2. Das Pinout-Schema *muss identisch* mit dem des Joy-It-Boards sein.  
   
-| Hinweise |
-|:--------|
-| Die Stromversorgung des NodeMCU erfolgt über die microUSB-Buchse. Das Netzteil sollte 5V(DC)/1A liefern. |  
-| Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb auftauchen, probiere zunächst ein anderes USB-Kabel. Es gibt Kabel, die reine Ladekabel sind und keine Datenleitung aufweisen und es gibt außerdem Kabel, die nur sehr dünne Litzen verbaut haben und aufgrund dessen im Betrieb Probleme hinsichtlich der Strom- & Spannungsversorgung bereiten können. |  
-  
 | Achtung, wichtiger Hinweis |
 |:---------------------------|
 | Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
+  
+**Stromversorgung:**  
+Die Stromversorgung des NodeMCU erfolgt über die microUSB-Buchse. Das Netzteil sollte mindestens 5V(DC)/1A liefern.    
+Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb auftauchen, probiere zunächst ein anderes USB-Kabel. Es gibt Kabel, die reine Ladekabel sind und keine Datenleitung aufweisen und es gibt außerdem Kabel, die nur sehr dünne Litzen verbaut haben und aufgrund dessen im Betrieb Probleme hinsichtlich der Strom- & Spannungsversorgung bereiten können.     
   
 ---
   
