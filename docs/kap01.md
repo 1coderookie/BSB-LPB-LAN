@@ -17,7 +17,7 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
 | WLAN onboard | Nein | Ja | Ja | Ja |
 | OTA-Update | Nein | Ja | Ja | Ja |
 | microSD-Kartenleser onboard | Ja | Nein | Ja | Ja |
-| Freie Pins | sehr viele | viele | sehr wenige | viele |
+| Freie Pins | sehr viele | viele | 2 (GPIO 13 & 16) | viele |
 | Relais onboard | Nein | Nein | Ja (2) | Nein |
 | Bluetooth onboard | Nein | Ja | Ja | Ja |
 | Power-over-Ethernet | Nein | Nein | Nein | Ja |
