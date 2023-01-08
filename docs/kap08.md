@@ -47,7 +47,7 @@ zur Anbindung des Adapters freuen! Sende es mir einfach als
     
 ## 8.1 FHEM
     
----
+<!---
     
 ### 8.1.1 Einbindung mittels BSB-LAN-Modul
 
@@ -63,8 +63,8 @@ und problemloser Betrieb kann jedoch noch nicht garantiert werden!
 ---
     
 ### 8.1.2 Einbindung mittels HTTPMOD-Modul
-
-***Die FHEM-Beispielscripte stammen vom FHEM-Forumsmitglied „freetz".  
+--->
+***Die FHEM-Beispielscripte zur Einbindung mittels HTTPMOD stammen vom FHEM-Forumsmitglied „freetz".  
 Vielen Dank!***
 
 Um auf die Webschnittstelle des Adapters zuzugreifen, kann das Modul
