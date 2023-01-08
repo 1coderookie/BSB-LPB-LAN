@@ -17,7 +17,7 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
 | WLAN onboard | Nein | Ja | Ja | Ja |
 | OTA-Update | Nein | Ja | Ja | Ja |
 | microSD-Kartenleser onboard | Ja | Nein | Ja | Ja |
-| Freie Pins | sehr viele | viele | 2 (GPIO 13 & 16) | viele |
+| Freie Pins | sehr viele | viele | 2 (GPIO 13&16) | viele |
 | Relais onboard | Nein | Nein | Ja (2) | Nein |
 | Bluetooth onboard | Nein | Ja | Ja | Ja |
 | Power-over-Ethernet | Nein | Nein | Nein | Ja |
@@ -26,7 +26,7 @@ Da es bei den kompatiblen Mikrocontrollern (Arduino Due / ESP32 NodeMCU / Olimex
   
 | Anmerkungen |
 |:------------|
-| Insbesondere die wenigen freien Pins bei einem Olimex ESP32-EVB, die problemlos für den Anschluss weiterer Hardware (wie bspw. Sensoren, Relais, Taster) genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! |
+| Insbesondere die nur *zwei* freien Pins bei einem Olimex ESP32-EVB (GPIO 13/I2C-SDA & GPIO 16/I2C-SCL), die problemlos für den Anschluss weiterer Hardware (wie bspw. Sensoren, Relais, Taster) genutzt werden können, sind u.U. ein Ausschlusskriterium, das es zu beachten gilt! |
 | Soll die interne Loggingfunktion von BSB-LAN auf microSD-Karte genutzt werden, so ist wiederum vom NodeMCU abzuraten, da die u.U. häufigen Schreibzyklen beim Speichern der Daten auf dem EEPROM-Chip des ESP32 zu einem frühzeitigen Ausfall ("wear out") führen können. |
 | *Vor der Entscheidung für einen der genannten Mikrocontroller ist es daher ratsam, den späteren Einsatzzweck und etwaige Erweiterungen auf Hardwarebasis gründlich zu überdenken. Hierfür empfiehlt es sich, das Handbuch im Vorfeld aufmerksam zu lesen.* |
   
@@ -310,20 +310,23 @@ Diese Olimex-Boardvarianten bieten neben der ESP32-basierten WLAN-Funktionalitä
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
   
 *Der Olimex ESP32-PoE samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.4.*
-   
-| Hinweise |
-|:---------|
-| Die Stromversorgung der Olimex-Boards kann auf zwei Arten erfolgen: Via Hohlsteckerbuchse oder via microUSB-Buchse. In beiden Fällen sollte das Netzteil 5V(DC)/1A liefern. Das Netzteil für den Betrieb via Hohlsteckerbuchse sollte einen 5.5/2.1mm (Pluspol innen) Hohlstecker aufweisen (die entspr. Produktbezeichungen auf der Olimex-Webseite lauten "SY0605E" bzw. "SY0605E-CHINA"). <br> In Ausnahmefällen hat sich herausgestellt, dass die 1A des Netzteils nicht ausreichend waren, einen stabilen Betrieb des Boards zu gewährleisten. |  
-| Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb via microUSB-Anschluss auftauchen, probiere zunächst ein anderes USB-Kabel. Es gibt Kabel, die reine Ladekabel sind und keine Datenleitung aufweisen und es gibt außerdem Kabel, die nur sehr dünne Litzen verbaut haben und aufgrund dessen im Betrieb Probleme hinsichtlich der Strom- & Spannungsversorgung bereiten können. |  
   
 | Achtung, wichtige Hinweise |
 |:---------------------------|
-| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |
-| *Achtung, beim Olimex ESP32-EVB ist der Anschluss weiterer Hardware aufgrund der wenigen freien/ungenutzten Pins nur sehr eingeschränkt und evtl. mit erhöhtem Aufwand möglich!* <br> Die GPIO-Pins 13 (I2C-SDA) und 16 (I2C-SCL) scheinen nutzbar zu sein. Sollen deutlich mehr zusätzliche Sensoren (beachte bitte die entspr. Hinweise bzgl. der unterschiedlichen Sensoren im entspr. Kapitel) oder andere Hardware an das Setup angeschlossen und mit BSB-LAN genutzt werden, so sollte in Betracht gezogen werden, den erwähnten [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware), den [Joy-It NodeMCU ESP32 (*WLAN-Anbindung*)](kap01.md#1311-esp32-nodemcu-joy-it) oder einen [Arduino Due + LAN-Shield (*LAN-Anbindung*)](kap01.md#121-due--lan-das-lan-shield) zu verwenden, da bei diesen Boards mehr freie Pins vorhanden sind. |
-| Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine exakt in der Mitte der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
-| Bei Adapterboards, die an Olimex-Boards am UEXT Anschluss verwendet werden *und* eine BSB-LAN-Board-Revision bis einschließlich 4.1 haben (und *nur* in dieser Kombination) starten diese nicht korrekt, wenn bei aufgestecktem BSB-LAN-Adapter die Stromzufuhr unterbrochen wurde. Es muss dann zusätzlich nach dem Einschalten einmal der Reset-Button gedrückt werden. <br> Um dieses Problem zu beheben, muss mit einem spitzen und scharfen Gegenstand (bspw. Rasierklinge/Teppichmesser/Skalpell) die vom Widerstand R6 in Richtung des UEXT-Steckers abgehende Leiterbahn (rot markiert) auf der Platine durchtrennt werden (gelb markiert). Am besten ist dies mit einem Multimeter vorher und nachher zu überprüfen, ob zwischen dem Ende von R6 und Pin 3 des UEXT-Anschlusses (k)eine Verbindung (mehr) besteht. Stattdessen muss dann eine leitende Verbindung mittels eines dünnen Drahtes zwischen diesem Ende des R6 zu Pin 10 des UEXT-Anschlusses (unterhalb des „U“ von „UEXT“) hergestellt werden (grün markiert). <br> <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_fix_R6.jpg"> <br> **BSB-LAN Boards ab der Board-Revision 4.2 sind von diesem Problem nicht mehr betroffen.** |
-
-   
+| Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine *exakt in der Mitte* der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben! Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. |
+| Beim Olimex ESP32-EVB ist der Anschluss weiterer Hardware lediglich an den beiden GPIO-Pins 13 (I2C-SDA) und 16 (I2C-SCL) möglich. |
+| Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
+    
+**Stromversorgung:**  
+Die Stromversorgung der Olimex-Boards kann auf zwei Arten erfolgen: Via Hohlsteckerbuchse oder via microUSB-Buchse. In beiden Fällen sollte das Netzteil *mindestens* 5V(DC)/1A liefern. Das Netzteil für den Betrieb via Hohlsteckerbuchse sollte einen 5.5/2.1mm (Pluspol innen) Hohlstecker aufweisen (die entspr. Produktbezeichungen auf der Olimex-Webseite lauten "SY0605E" bzw. "SY0605E-CHINA").  
+*Achtung: In Ausnahmefällen hat sich herausgestellt, dass die 1A des Netzteils nicht ausreichend waren, einen stabilen Betrieb des Boards zu gewährleisten!*    
+Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb via microUSB-Anschluss auftauchen, probiere zunächst ein anderes USB-Kabel. Es gibt Kabel, die reine Ladekabel sind und keine Datenleitung aufweisen und es gibt außerdem Kabel, die nur sehr dünne Litzen verbaut haben und aufgrund dessen im Betrieb Probleme hinsichtlich der Strom- & Spannungsversorgung bereiten können.    
+  
+**ESP32-Adaptervariante v4.1 am Olimex nutzen:**  
+Bei Adapterboards, die an Olimex-Boards am UEXT Anschluss verwendet werden *und* eine BSB-LAN-Board-Revision bis einschließlich 4.1 haben (und *nur* in dieser Kombination) starten diese nicht korrekt, wenn bei aufgestecktem BSB-LAN-Adapter die Stromzufuhr unterbrochen wurde. Es muss dann zusätzlich nach dem Einschalten einmal der Reset-Button gedrückt werden.  
+Um dieses Problem zu beheben, muss mit einem spitzen und scharfen Gegenstand (bspw. Rasierklinge/Teppichmesser/Skalpell) die vom Widerstand R6 in Richtung des UEXT-Steckers abgehende Leiterbahn (rot markiert) auf der Platine durchtrennt werden (gelb markiert). Am besten ist dies mit einem Multimeter vorher und nachher zu überprüfen, ob zwischen dem Ende von R6 und Pin 3 des UEXT-Anschlusses (k)eine Verbindung (mehr) besteht. Stattdessen muss dann eine leitende Verbindung mittels eines dünnen Drahtes zwischen diesem Ende des R6 zu Pin 10 des UEXT-Anschlusses (unterhalb des „U“ von „UEXT“) hergestellt werden (grün markiert). 
+<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_fix_R6.jpg">  
+**BSB-LAN Boards ab der Board-Revision 4.2 sind von diesem Problem nicht mehr betroffen.** 
 
 
 --- 
