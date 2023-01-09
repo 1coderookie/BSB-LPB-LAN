@@ -41,8 +41,6 @@ Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehl
 
 ## 15.4 Zugriff auf das Webinterface nicht möglich
 - Adapter hat keine, keine ausreichende oder eine unzuverlässige Stromversorgung 
-(→ eine Stromversorgung über ein externes Netzteil ist zu empfehlen, 9V-Steckernetzteile 
-haben sich hier bewährt; eine Stromversorgung via USB *kann* u.U. zu Problemen führen) 
 - Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden 
 - IP- und/oder MAC-Adresse des Adapters ist nicht korrekt 
 - Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
