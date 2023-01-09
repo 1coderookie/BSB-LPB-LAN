@@ -89,10 +89,6 @@
 
 [**8. BSB-LAN: Einbindung mittels zusätzlicher Software**](kap08.md)  
    * [8.1 FHEM](kap08.md#81-fhem)  
-   <!---
-      * [8.1.1 Einbindung mittels BSB-LAN-Modul](kap08.md#811-einbindung-mittels-bsb-lan-modul)  
-      * [8.1.2 Einbindung mittels HTTPMOD-Modul](kap08.md#812-einbindung-mittels-httpmod-modul)
-   --->
    * [8.2 openHAB](kap08.md#82-openhab)  
       * [8.2.1 openHAB-Binding](kap08.md#821-openhab-binding)  
       * [8.2.2 openHAB mit Javascript Transformation](kap08.md#822-openhab-mit-javascript-transformation)  
