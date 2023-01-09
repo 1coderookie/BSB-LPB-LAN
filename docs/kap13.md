@@ -3,80 +3,32 @@
     
 ---
     
-# 13. Etwaige Fehlermeldungen und deren mögliche Ursachen
+# 13. Exkurs: BSB-LAN sicher aus dem Internet heraus erreichen
     
----
-    
-
-## 13.1 Fehlermeldung "unknown type \<xxxxxxxx\>"
-
-Dieser Fehler sagt aus, dass für diesen Parameter keine
-Umrechnungsanweisung vorliegt, um die Rohdaten in eine entsprechende
-Einheit (Zeit, Temperatur, Prozent, Druck etc.) umzuwandeln.
-
-Um den Fehler zu beheben, sollte das jeweilige Telegramm / die Command
-ID des betreffenden Parameters sowie der zugehörige Wert ausgelesen und
-gemeldet werden. Sollten mehrere Einstellungsoptionen für einen
-Parameter verfügbar sein, muss zusätzlich jede Option ausgelesen werden,
-damit eine eindeutige Zuordnung stattfinden kann. Siehe hierzu auch das [Kap. 9](kap09.md).   
-    
----
-    
-
-## 13.2 Fehlermeldung "error 7 (parameter not supported)"
-
-Die zugehörige Command ID wird nicht erkannt oder der entsprechende
-Parameter wird vom Regler nicht unterstützt (bspw. spezifische
-Parameter, die eine Gasheizung betreffen und bei einer Ölheizung
-dementsprechend nicht verfügbar sind).
-
-Fehlermeldungen dieses Typs werden seit v0.41 der Übersichtlichkeit
-halber per default ausgeblendet (die entsprechenden Parameter bspw. bei
-einer Komplettabfrage aber dennoch abgefragt). Möchtest du sie dennoch
-angezeigt bekommen, so ist das entsprechende Definement `#define
-HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
-(`//#define HIDE_UNKNOWN`).
-
-Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
-wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den URL-Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)). Sollten bei dieser Abfrage 'error 7'-Meldungen angezeigt werden, melde sie bitte unter Angabe des kompletten Outputs von /Q.  
-    
-Sollte ein Parameter an der heizungsseitigen Bedieneinheit jedoch definitiv verfügbar sein und dennoch bei der /Q-Abfrage nicht als 'error 7'-Parameter aufgelistet werden, so sollte der entspr. Parameter gemäß der Beschreibung in [Kap. 9](kap09.md) decodiert und gemeldet werden.  
+In diesem Abschnitt werden die grundsätzlichen Möglichkeiten für eine sichere Erreichbarkeit von BSB-LAN aus dem Internet beschrieben. Aufgrund der Vielzahl von erhältlichen Routern können hier nur die wichtigsten Schritte beschrieben werden, für weitere Details ist das Handbuch des jeweiligen Routers hinzuzuziehen. Wir können für die Einrichtung dieser Schritte auch keinen Support bieten, bitte dafür in passenden Internet-Foren um Rat fragen.  
   
----
-    
-
-## 13.3 Fehlermeldung "query failed"
-
-Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
-(sinnvolle) Antwort des Reglers kommt.
-
-Mögliche Ursachen sind meist hardwareseitig zu suchen (bspw. fehlerhafte
-RX- und/oder TX-Verbindung, falsch verbaute Komponenten oder auch ein
-timeout aufgrund eines ausgeschalteten oder nicht angeschlossenen
-Reglers).  
-    
----
-    
-
-## 13.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
-
-Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
-übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
-während der Zugriff des Adapters nur auf Lesen beschränkt ist.  
-Sollte es sich nicht um einen Parameter handeln, der per se nur lesbar ist, muss BSB-LAN Schreibzugriff gewährt werden.
-     
-    
----
-        
-## 13.5 Fehlermeldung "decoding error"  
+**Grundvoraussetzung: (Sub-)Domain mit dynamischem DNS einrichten**  
+Um den externen Zugriff zu ermöglichen, benötigt man eine eigene (Sub-)Domain, die man über einen dynamischen DNS-Dienst vom Internet aus erreichen kann. Manche Router- oder NAS-Anbieter wie AVM oder Synology bieten solch einen Service direkt für ihre Kunden an, ansonsten muss man eine eigene Domain (z.B. `mein-zuhause.de`) besitzen, bei der man sich dann eine Subdomain einrichtet (hier im Beispiel `bsb-lan.mein-zuhause.de`), die dann zusammen mit dem dynamischen DNS-Anbieter entsprechend konfiguriert werden muss.  
   
-Die Fehlermeldung "decoding error" bedeutet, dass der Parameter und die Command ID bekannt sind bzw. passen, aber dass das Datenpaket nicht der bisher bekannten Dekodierung entspricht. Das kann eine andere Länge oder eine andere Einheit als Grund haben.  
+**Variante 1: Virtuelles Privates Netzwerk (VPN)**  
+Viele Router stellen von Haus aus einen Server für ein Virtuelles Privates Netzwerk (VPN) bereit. Dies ist die sicherste Variante, weil auf diese Weise der anderweitige Zugang zum Heimnetz generell gesperrt ist. Ist so ein VPN Server z.B. auf dem Router eingerichtet und aktiviert, kann man mit einem ebenfalls VPN-fähigen Gerät auf BSB-LAN so zugreifen, wie man es auch sonst tun würde, also ganz normal über die heimatliche IP-Adresse.  
+Der Nachteil liegt allerdings darin, dass es ohne ein VPN-fähiges Endgerät nicht möglich ist, auf BSB-LAN zuzugreifen. Ebenso kann der Internetzugang, mit dem man unterwegs aus das Internet nutzt, so konfiguriert sein, dass VPN nicht möglich ist. In diesen Fällen gibt es dann keine Möglichkeit auf die heimischen Ressourcen zuzugreifen.  
   
-Um das für die entsprechende Heizung zu aktualisieren, wird das zu dem Fehler ausgegebene Datenpaket und der exakt zu diesem Moment angezeigte Wert an der Therme und die Einheit benötigt. Siehe hierzu auch das [Kap. 9](kap09.md).  
+**Variante 2: Reverse Proxy**  
+Ein Reverse Proxy bietet u.a. die Möglichkeit, mehrere Geräte im Heimatnetz über ein einziges, von außen sichtbares Gerät, auf dem ein Reverse Proxy Server läuft, zu erreichen. Hierfür sind die folgenden Schritte nötig:  
   
+1. Portweiterleitung einrichten  
+Für das Gerät, auf dem der Reverse Proxy läuft, muss im lokalen Netzwerk eine Portfreigabe eingerichtet werden. Damit dieser Zugriff über SSL/TLS abgesichert werden kann, ist hierfür Port 443 zu verwenden. Hierbei ist aufzupassen, dass dann ggf. nicht mehr über Port 443 auf den eigentlchen Router zugegriffen werden kann. Bei einigen Routern lässt sich aber der SSL-Port verändern, so dass das kein grundsätzliches Problem sein muss. Für die Nutzung von SSL/TLS / Port 443 muss natürlich auf dem Gerät dann auch ein entsprechendes (ggf. selbstsigniertes) Zertifikat installiert sein. Viele Router- oder NAS-Hersteller bieten dafür aber schon von Werk aus die Einrichtung von kostenlosen Let’s Encrypt-Zertifikaten an.  
+
+2. Reverse Proxy installieren und einrichten  
+Das Gerät, auf dem der Reverse Proxy läuft, kann irgendein Rechner sein, der dauerhaft erreichbar ist, z.B. ein File-Server/NAS. Auf diesem wird der ReverseProxy-Server installiert und eingerichtet. Nutzt man hierfür eine Synology NAS, so ist hier ab DSM 7 bereits solch eine Funktion mit eingebaut (siehe Systemsteuerung / Anwendungsportal / Erweitert).  
+Man konfiguriert den Reverse Proxy nun so, dass er die Anfragen für die gewählte (Sub-)Domain über *HTTPS*(!) auf Port 443 annimmt und diese dann über *HTTP*(!) auf Port 80 des BSB-LAN Adapters weiterleitet. Der Weg zurück erfolgt dann genau umgekehrt: Von BSB-LAN über ungesichertes HTTP zum Reverse Proxy und von dort aus über HTTPS wieder raus ins Internet.  
+Nun ist BSB-LAN über den HTTPS-Aufruf der (Sub-)Domain direkt erreichbar. Es empfiehlt sich nun auf jeden Fall die HTTP-Authentifizierung in BSB-LAN zu aktivieren, da ansonsten jeder Zugriff auf BSB-LAN hätte.  
+   
 ---
      
 [Weiter zu Kapitel 14](kap14.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
+
 

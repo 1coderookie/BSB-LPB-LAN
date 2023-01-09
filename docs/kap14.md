@@ -3,178 +3,81 @@
     
 ---
     
-# 14. Etwaige Probleme und deren mögliche Ursachen
+# 14. Etwaige Fehlermeldungen und deren mögliche Ursachen
+    
 ---
-   
-## 14.1 Arduino IDE stoppt beim Kompilieren  
-Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehlermeldung abbricht, bspw. weil ein falscher Boardtyp, Anschluss oder eine falsche Geschwindigkeit ausgewählt wurde. Es gibt jedoch drei Typen von Fehlermeldungen, die beim Kompilieren für *ESP32* basierte Boards auftreten können, die hier kurz erwähnt werden sollten:  
-- Die Fehlermeldung erwähnt etwas bzgl. "WiFiSPI"?  
-→ Wenn auf ESP32, entferne den `WiFiSPI`-Ordner aus dem Ordner `src` - s. Schritt 5 in [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32).
-- Die Fehlermeldung erwähnt etwas bzgl. "ArduinoMDNS"?  
-→ Wenn auf ESP32, entferne den `ArduinoMDNS`-Ordner aus dem Ordner `src` - s. Schritt 5 in [Kap. 2.1.2](kap02.md#212-installation-auf-dem-esp32).
-- Die Fehlermeldung erwähnt etwas bzgl. "EEPROMClass"?  
-→ Stelle sicher, dass du das korrekte ESP32 framework installiert hast (1.0.6 ist zu alt) - s. [Kap. 12.1.2](kap12.md#1212-esp32).  
+    
+
+## 14.1 Fehlermeldung "unknown type \<xxxxxxxx\>"
+
+Dieser Fehler sagt aus, dass für diesen Parameter keine
+Umrechnungsanweisung vorliegt, um die Rohdaten in eine entsprechende
+Einheit (Zeit, Temperatur, Prozent, Druck etc.) umzuwandeln.
+
+Um den Fehler zu beheben, sollte das jeweilige Telegramm / die Command
+ID des betreffenden Parameters sowie der zugehörige Wert ausgelesen und
+gemeldet werden. Sollten mehrere Einstellungsoptionen für einen
+Parameter verfügbar sein, muss zusätzlich jede Option ausgelesen werden,
+damit eine eindeutige Zuordnung stattfinden kann. Siehe hierzu auch das [Kap. 9](kap09.md).   
+    
+---
+    
+
+## 14.2 Fehlermeldung "error 7 (parameter not supported)"
+
+Die zugehörige Command ID wird nicht erkannt oder der entsprechende
+Parameter wird vom Regler nicht unterstützt (bspw. spezifische
+Parameter, die eine Gasheizung betreffen und bei einer Ölheizung
+dementsprechend nicht verfügbar sind).
+
+Fehlermeldungen dieses Typs werden seit v0.41 der Übersichtlichkeit
+halber per default ausgeblendet (die entsprechenden Parameter bspw. bei
+einer Komplettabfrage aber dennoch abgefragt). Möchtest du sie dennoch
+angezeigt bekommen, so ist das entsprechende Definement `#define
+HIDE_UNKNOWN` in der Datei *BSB\_lan\_config.h* auszukommentieren
+(`//#define HIDE_UNKNOWN`).
+
+Zur Überprüfung, ob die CommandID vom Regler prinzipiell unterstützt
+wird, jedoch für diese Gerätefamilie nicht freigegeben ist, führe bitte den URL-Befehl /Q aus (s. hierzu auch Kap. [8.2.5](kap08.md#825-überprüfen-auf-nicht-freigegebene-reglerspezifische-command-ids)). Sollten bei dieser Abfrage 'error 7'-Meldungen angezeigt werden, melde sie bitte unter Angabe des kompletten Outputs von /Q.  
+    
+Sollte ein Parameter an der heizungsseitigen Bedieneinheit jedoch definitiv verfügbar sein und dennoch bei der /Q-Abfrage nicht als 'error 7'-Parameter aufgelistet werden, so sollte der entspr. Parameter gemäß der Beschreibung in [Kap. 9](kap09.md) decodiert und gemeldet werden.  
   
 ---
-  
-## 14.2 Die rote LED des Adapters leuchtet nicht
-
-- Regler ist ausgeschaltet
-- Adapter ist nicht mit dem Regler via BSB oder LPB verbunden
-- Adapter ist falsch mit dem Regler verbunden (CL+/CL- bzw. DB/MB vertauscht)
-- Evtl. Hardwarefehler des Adapters (bspw. defektes Bauteil, Fehler im Aufbau)
-- Evtl. Wackelkontakt beim Bus-Anschluss (Rx/Tx oder CL+/CL-)  
     
----
-    
-## 14.3 Die rote LED leuchtet, aber es ist keine Abfrage möglich
 
-- Evtl. Adapter falsch angeschlossen (an G+ statt an CL+)
-- Evtl. Wackelkontakt beim Busanschluss (Rx/Tx oder CL+/CL-)
-- Evtl. falsche Pinbelegung (Rx/Tx)
-- Evtl. Transistoren Q1/Q2 vertauscht
-- Evtl. kalte Lötstellen
-- Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
+## 14.3 Fehlermeldung "query failed"
+
+Diese Meldung erscheint, wenn auf die Anfrage des Adapters keine
+(sinnvolle) Antwort des Reglers kommt.
+
+Mögliche Ursachen sind meist hardwareseitig zu suchen (bspw. fehlerhafte
+RX- und/oder TX-Verbindung, falsch verbaute Komponenten oder auch ein
+timeout aufgrund eines ausgeschalteten oder nicht angeschlossenen
+Reglers).  
     
 ---
     
 
-## 14.4 Zugriff auf das Webinterface nicht möglich
-- Adapter hat keine, keine ausreichende oder eine unzuverlässige Stromversorgung 
-(→ eine Stromversorgung über ein externes Netzteil ist zu empfehlen, 9V-Steckernetzteile 
-haben sich hier bewährt; eine Stromversorgung via USB *kann* u.U. zu Problemen führen) 
-- Adapter bzw. LAN-Shield ist nicht mit dem LAN verbunden 
-- IP- und/oder MAC-Adresse des Adapters ist nicht korrekt 
-- Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
-aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
-- Router- und/oder Firewall-Einstellungen überprüfen 
-- Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
-- Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
-evtl. andere/kleinere Karte testen → s. Kap. [6.1](kap06.md#61-loggen-von-daten) 
-- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
-Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
+## 14.4 Fehlermeldung "FEHLER: Setzen fehlgeschlagen! - Parameter ist nur lesbar"
 
-    
----
-    
-
-## 14.5 Keine Parameterabfrage möglich
-
-- Siehe Punkt [„Die rote LED des Adapters leuchtet nicht"](kap14.md#141-die-rote-led-des-adapters-leuchtet-nicht)
-- Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
-- Siehe Punkt [„Zugriff auf das Webinterface nicht möglich"](kap14.md#143-zugriff-auf-das-webinterface-nicht-möglich)
-- Rx- und/oder Tx-Belegung nicht korrekt, Pinbelegung und/oder Adapteranschluss
-stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
-- Falscher Bus-Typ (BSB/LPB)  
-    
----
-    
-
-## 14.6 Regler wird nicht korrekt erkannt
-
-- Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap14.md#142-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
-- Siehe Punkt [„Keine Parameterabfrage möglich"](kap14.md#144-keine-parameterabfrage-möglich)  
-- Regler ist ausgeschaltet
-- Regler wurde erst nach dem Arduino angeschaltet (automatische Reglererkennung funktioniert dann nicht)
-- Regler ist nicht oder falsch mit dem Adapter verbunden
-- Gerätefamilie und -variante (`http://<IP-Adresse>/6225/6226`) des Reglers unbekannt  
-    
----
-    
-
-## 14.7 HK1 kann nicht bedient werden
-
-- Adapter ist evtl. als RGT2 konfiguriert  
-    
----
-    
-
-## 14.8 Es kann keine Raumtemperatur an einen HK1 gesendet werden
-
-- Adapter ist evtl. als RGT2 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
-    
----
-    
-
-## 14.9 HK2 kann nicht bedient werden
-
-- Adapter ist evtl. als RGT1 konfiguriert  
-    
----
-    
-
-## 14.10 Es kann keine Raumtemperatur an einen HK2 gesendet werden
-
-- Adapter ist evtl. als RGT1 konfiguriert
-- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
-    
----
-    
-
-## 14.11 Einstellungen des Reglers können nicht via Adapter verändert werden
-
-- Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
-    
----
-    
-
-## 14.12 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
-
-- Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
-auch die Darstellung des Logfiles dauern u.U. recht lange)  
-    
----
-    
-
-## 14.13 Bei der Abfrage der Logdatei passiert ‚nichts'
-
-- Es ist keine microSD-Karte eingelegt
-- Das Loggen auf microSD-Karte war oder ist deaktiviert
-- Die Logdatei ist sehr groß, jegliche Darstellung dauert entsprechend länger  
-- Die grafische Darstellung (`http://<IP-Adresse>/DG`) der Logdatei kann aufgrund von JavaScript-Blockern nicht erfolgen  
-    
----
-    
-
-## 14.14 Es werden keine 24h-Durchschnittswerte angezeigt
-
-- Das entsprechende Definement ist nicht aktiviert
-- Es sind keine zu berechnenden Parameter angegeben  
-    
----
-    
-
-## 14.15 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
-
-- Es sind keine Sensoren angeschlossen
-- Die entsprechenden Definements sind nicht aktiviert
-- Die Pinbelegung ist nicht korrekt eingestellt
-- Die Sensoren sind fehlerhaft installiert oder defekt  
-    
----
-    
-
-## 14.16 Die DS18B20-Sensoren zeigen falsche Werte an
-
-- Die Stromversorgung und Installation prüfen (Größe des PullUp-Widerstands prüfen,
-Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)  
-    
----
-    
-
-## 14.17 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
-
-- Der Adapter ist nicht zusätzlich via USB angeschlossen
-- Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
-- Falsche Baudrate eingestellt → auf 115200 Baud einstellen
-- Adapter nicht am Regler angeschlossen, Regler ist ausgeschaltet → siehe o.g. Punkte  
-    
----
-    
+Diese Meldung erscheint bei dem Versuch, Werte zu schreiben bzw. zu
+übermitteln (bspw. die Raumtemperatur) oder Parameter zu verändern,
+während der Zugriff des Adapters nur auf Lesen beschränkt ist.  
+Sollte es sich nicht um einen Parameter handeln, der per se nur lesbar ist, muss BSB-LAN Schreibzugriff gewährt werden.
      
+    
+---
+        
+## 14.5 Fehlermeldung "decoding error"  
+  
+Die Fehlermeldung "decoding error" bedeutet, dass der Parameter und die Command ID bekannt sind bzw. passen, aber dass das Datenpaket nicht der bisher bekannten Dekodierung entspricht. Das kann eine andere Länge oder eine andere Einheit als Grund haben.  
+  
+Um das für die entsprechende Heizung zu aktualisieren, wird das zu dem Fehler ausgegebene Datenpaket und der exakt zu diesem Moment angezeigte Wert an der Therme und die Einheit benötigt. Siehe hierzu auch das [Kap. 9](kap09.md).  
+  
+---
      
 [Weiter zu Kapitel 15](kap15.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)   
     
+
 
