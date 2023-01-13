@@ -60,7 +60,7 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 **Um eine detailliertere Übersicht der gemeldeten Systeme einzusehen, die bisher erfolgreich mit BSB-LAN genutzt werden, folge bitte dem entsprechenden Link:**  
 - **[Brötje](kap11.md#111-brötje)**
 - **[Elco](kap11.md#112-elco)**
-- **[weitere Hersteller (z.B. Fujitsu, Atlantic, Weishaupt)](ap11.md#113-weitere-hersteller)**       
+- **[weitere Hersteller (z.B. Fujitsu, Atlantic, Weishaupt)](kap11.md#113-weitere-hersteller)**       
   
 **Gasregler:**  
 - [LMU74/LMU75](kap10.md#10211-lmu-regler) und (aktuelle Generation) [LMS14/LMS15](kap10.md#10212-lms-regler), Anschluss via BSB  
