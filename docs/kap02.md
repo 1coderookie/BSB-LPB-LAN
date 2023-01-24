@@ -123,9 +123,11 @@ Führe die folgenden Schritte aus:
   
 10. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
 
-    - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*!  
+    - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*, wenn du WiFi verwenden willst. Solltest du ein Olimex-Board verwenden und den LAN-Anschluss nutzen wollen, lasse das Definement bitte auskommentiert: `//#define WIFI`.   
 
-    - Trage die Zugangsdaten für dein WLAN ein (SSID und Passwort)!  
+    - Trage bei der Verwendung von WLAN die Zugangsdaten für dein WLAN-Netzwerk bei den Einträgen  
+    `char wifi_ssid[32] = "YourWiFiNetwork";` sowie  
+    `char wifi_pass[64] = "YourWiFiPassword";` ein.    
   
 11. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
 
