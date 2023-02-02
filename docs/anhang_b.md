@@ -14,7 +14,7 @@ Vielen Dank für die großartige Arbeit!***
   
 *Hinweis: Bitte beachte, dass das Pinout bei einigen günstigen Clones vom originalen Pinout abweichen kann!*    
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due-pinout-WEB.png">
+![DUE pinout](assets/images/Due-pinout-WEB.png)
 
 
 ---
@@ -29,7 +29,7 @@ Vielen Dank für die großartige Arbeit!***
 
 Das Pinout-Schema für den [Joy-It ESP32 NodeMCU](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) ist in der [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-2021-06-29.pdf) des Herstellers abgebildet.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/nodeMCU_pinout.png">
+![NodeMCU pinout](assets/images/nodeMCU_pinout.png)
   
   
 ---
@@ -38,7 +38,7 @@ Das Pinout-Schema für den [Joy-It ESP32 NodeMCU](https://joy-it.net/de/products
   
 Das Pinout für den [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) ist im [Schaltplan](https://github.com/OLIMEX/ESP32-EVB/raw/master/HARDWARE/REV-I/ESP32-EVB_Rev_I.pdf) einsehbar. Die nachfolgende Abbildung zeigt den entspr. Ausschnitt daraus und bezieht sich auf die 40 polige Stiftleiste.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_pinout.png">
+![Olimex pinout](assets/images/Olimex_pinout.png)
   
 *Pinout der 40 poligen Pinleiste des Olimex ESP32-EVB.*  
   
