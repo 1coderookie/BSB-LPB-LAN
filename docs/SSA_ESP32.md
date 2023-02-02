@@ -12,7 +12,7 @@
   Stecke den NodeMCU auf den BSB-LAN-Adapter und verbinde den NodeMCU mit einem USB-Kabel mit deinem Computer.  
   Sollte dein Rechner den NodeMCU nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">
+  ![Setup](assets/images/ESP32nodeMCU+Adapter.jpeg)
     
   *Das komplette Setup: Joy-It ESP32 NodeMCU samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
 
@@ -20,11 +20,11 @@
   Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer.  
   Sollte dein Rechner den Olimex nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">
+  ![Setup](assets/images/OlimexESP32EVB_v42_small.jpg)
     
   *Das komplette Setup: Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
   
-  <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+  ![Setup](assets/images/OlimexESP32PoE_v44_small.jpg)  
   
   *Das komplette Setup: Olimex ESP32-PoE samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.4.*
   
@@ -102,9 +102,7 @@ Führe nun die folgenden Schritte aus:
     |:--------|
     | Sollten wider Erwarten Fehler oder Probleme auftauchen, so lies bitte *zusätzlich zu den bereits genannten Kapiteln* auch die Kapitel [13](kap13.md), [14](kap14.md) und [15](kap15.md)! |  
   
-12. *Um nun Zugriff auf sämtliche Parameter deines Reglers zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*   
-
-Viel Spaß mit BSB-LAN wünschen dir Frederik und Ulf! :)  
+12. *Um nun Zugriff auf sämtliche Parameter deines Reglers zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*     
     
 
 ---
