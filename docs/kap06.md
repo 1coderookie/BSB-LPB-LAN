@@ -344,12 +344,18 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 Grundsätzlich kann das EEPROM via Webinterface mit dem Befehl /NE gelöscht werden. Es kann aber in bestimmten Situationen (bspw. wenn kein Zugriff auf das Webinterface möglich ist) nötig sein, das EEPROM auch ohne Nutzung des URL-Befehls zu löschen.   
   
 Hierfür müssen  
-- beim Due die Pins 31 und 33 und 
-- beim ESP32 die Pins 18 und GND  
-
+- beim Due die Pins 31 und 33,  
+- beim ESP32 die Pins 18 und GND,  
+- beim Olimex die Pins 34 und GND  
+  
 beim Start oder Reboot kurzzeitig miteinander verbunden werden.    
 Nach erfolgreichem Löschen blinkt die Arduino-/ESP32-LED vier Sekunden lang.  
 Beim erneuten Start werden dann die (Vor-)Einstellungen aus der Datei *BSB_LAN_config.h* übernommen, eine Anpassung kann danach wie gewohnt bspw. via Webinterface erfolgen.  
+
+Die o.g. Pins zum Löschen können bei Bedarf auch individuell in der Datei *BSB_LAN_config.h* über das Definement `#define EEPROM_ERASING_PIN XX` gesetzt werden.  
+  
+Alternativ kann der Microcontroller aber auch über die serielle Schnittstelle angeschlossen werden und über den Serial Monitor die Zeichenkette `/NE` gesendet werden, ggf. mit vorangestelltem Passkey (also dann z.B. /1234/NE ). Dann wird ebenfalls das EEPROM gelöscht.    
+ESP32-Nutzer können außerdem in der ArduinoIDE vor einem erneuten Flashen unter "Werkzeuge" den Eintrag "Erase All Flash Before Sketch Upload" auf "Enabled" stellen, dann wird vor dem Upload der gesamte Flashbereich einmal gelöscht.  
 
 
 ---
