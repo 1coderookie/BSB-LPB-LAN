@@ -57,7 +57,7 @@ Die bei Frederik erhältlichen PCBs können auf die im Folgenden vorgestellten k
   
 Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem die Einstellungen der BSB-LAN-Software (ab v2.0) gespeichert werden. Der Adapter lässt sich komfortabel und sicher auf den Due aufstecken. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v4-unbestueckt-front.jpg">  
+![Adapter v4 plain front](assets/images/bsb-adapter-v4-unbestueckt-front.jpg)  
 
 *Die BSB-LAN-Adapterplatine, Due-Version, v4.1, Oberseite, unbestückt.*  
     
@@ -71,20 +71,20 @@ Die Due-spezifische Version des BSB-LAN-Adapters weist ein EEPROM auf, in dem di
 
 Für bestimmte ESP32-Boardvarianten gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
+![ESP32 PCB](assets/images/ESP32-PCB-v42.jpg)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
   
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![ESP32 PCB assembled](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
     
 Darüber hinaus kann der Adapter außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) sowie einem [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware) 
 genutzt und durch Hinzufügen einer doppelreihigen fünfpoligen Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v44.JPG">  
+![ESP32 PCB v44](assets/images/ESP32-PCB-v44.JPG)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.4, bestückt für die empfohlenen Olimex-Boards.*   
   
@@ -104,7 +104,7 @@ Erfahrungsgemäß können jedoch auch günstige Nachbauten des Arduino Due verwe
   
 *Ein Pinout-Schema des Arduino Due ist im [Anhang B](anhang_b.md) abgebildet.*     
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_pp.jpg">  
+![DUE clone](assets/images/due_clone_pp.jpg)  
    
 *Ein kompatibler Clone des Arduino Due.*  
 
@@ -130,7 +130,7 @@ Die LAN-Shields gibt (bzw. gab) es in zwei verschiedenen Ausführungen. Zum eine
 Die Verwendung des aktuellen v2-Shields (W5500) wird empfohlen, es ist u.a. im offiziellen [Arduino-Store](https://store.arduino.cc/arduino-ethernet-shield-2) und bei [Reichelt](https://www.reichelt.de/arduino-shield-ethernet-shield-2-ohne-poe-arduino-shd-eth2-p159410.html) erhältlich.  
 Erfahrungsgemäß können jedoch auch günstige Nachbauten dieser Shields verwendet werden, der Einsatz dieser Clones ist normalerweise problemlos möglich. Allerdings sollte beim Kauf darauf geachtet werden, ob in den Produktbeschreibungen auf ein verändertes Platinenlayout, geänderte Pinbelegungen o.ä. hingewiesen wird. Sollte dies der Fall sein, so sind ggf. in der Datei *BSB_LAN_config.h* diesbezügliche Anpassungen vorzunehmen.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/lanshield_clone.jpg">  
+![LAN shield clone](assets/images/lanshield_clone.jpg)  
    
 *Ein kompatibler Clone eines LAN-Shields mit einem W5100-Chip.*  
        
@@ -165,7 +165,7 @@ Es wird jedoch berichtet, dass das zusätzliche Bestücken mit zwei 100 Ohm Wide
 Das Due-Setup lässt sich mittels eines ESP8266 (NodeMCU oder Wemos D1) anstelle des LAN-Shields auch in WLAN-Netzwerke integrieren.  
 Hierfür ist der ESP8266 mit dem sechspoligen SPI-Anschluss des Arduino Due zu verbinden und wird dabei vom Due mit Strom versorgt (+5V). Der ESP8266 muss dafür mit einer speziellen Firmware geflasht werden, Näheres dazu erfährst du weiter unten in diesem Kapitel. Die BSB-LAN-Software wird weiterhin auf dem Due installiert.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/due_clone_SPI.jpg">  
+![DUE clone SPI](assets/images/due_clone_SPI.jpg)  
   
 *Der zu verwendende sechspolige SPI-Anschluss des Arduino Due.*  
    
@@ -183,13 +183,13 @@ Die Anschlüsse sind wie folgt zu verbinden:
 Kommt keine weitere per SPI angeschlossene Komponente (bspw. LAN-Shield, Kartenleser) zum Einsatz, so kann auf den Anschluss von "SS" (SlaveSelect, DUE Pin 12 = D08 beim ESP8266) verzichtet werden.  
 Im Falle der Verwendung von SS kann der Anschluss auch an einem anderen Pin als Pin 12 erfolgen, der entspr. Pin muss in der Datei *BSB_lan_config.h* entspr. definiert werden. In diesem Fall ist jedoch darauf zu achten, dass der zu verwendende Pin nicht zu den geschützten Pins zählt und nicht anderweitig verwendet wird. Es wird daher empfohlen, es bei der Voreinstellung (Pin 12) zu belassen.     
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Wemos_SPI.jpg">  
+![Wemos SPI](assets/images/Wemos_SPI.jpg)  
   
 *Die korrespondierenden Anschlüsse beim Wemos D1.*  
      
 Es bietet sich an, das LAN-Shield zu entfernen, eine unbestückte Lochrasterplatine passend auf dem Due zu platzieren und mit den entspr. Anschlüssen zu versehen. So kann der Wemos D1 / NodeMCU stabil auf dem Due platziert werden. Je nach Gehäuse ist hier u.U. auf die Bauhöhe zu achten.   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Due_WiFi.jpg">  
+![Due WiFi](assets/images/Due_WiFi.jpg)  
   
 *Wemos D1 auf einer Lochrasterplatine auf dem Arduino Due.*
    
@@ -243,14 +243,14 @@ Die genannten ESP32-Boards nutzen das ESP32-**WROOM32**-Modul.
 
 Für eine bestimmte ESP32-Boardvariante gibt es eine eigene BSB-LAN-Adapterplatine: "BSB-LAN ESP32".  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42.jpg">  
+![ESP32 PCB](assets/images/ESP32-PCB-v42.jpg)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, unbestückt.*  
   
     
 Diese BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![ESP32 NodeMCU assembled](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*    
   
@@ -258,7 +258,7 @@ Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www
 genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
   
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v44.JPG">  
+![ESP32 v4.4 Olimex](assets/images/ESP32-PCB-v44.JPG)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.4, bestückt für die Olimex-Boards.*   
   
@@ -269,13 +269,13 @@ genutzt werden. In diesem Fall wird anstellle der beiden 15poligen Pinheader ein
 Die ESP32-Variante der BSB-LAN-Adapterplatine ist auf das *30 polige* [ESP32-NodeMCU-Board von Joy-It](https://joy-it.net/de/products/SBC-NodeMCU-ESP32) (WROOM32-Chip) ausgelegt. Es ist in Deutschland u.a. bei [Reichelt](https://www.reichelt.de/nodemcu-esp32-wifi-und-bluetooth-modul-debo-jt-esp32-p219897.html) erhältlich.  
 Für das Board ist beim Hersteller eine [Bedienungsanleitung](https://joy-it.net/files/files/Produkte/SBC-NodeMCU-ESP32/SBC-NodeMCU-ESP32-Anleitung-2021-06-29.pdf) verfügbar. Dort sind sowohl das boardspezifische Pinoutschema als auch eine generelle Anleitung zur Verwendung von ESP32-Boards mit der Arduino IDE enthalten!  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v42_assembled_nodeMCU.jpeg">  
+![v42 NodeMCU](assets/images/ESP32-PCB-v42_assembled_nodeMCU.jpeg)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.2, bestückt für den empfohlenen NodeMCU.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32+Adapter.jpeg">  
+![ESP32 + Adapter](assets/images/ESP32+Adapter.jpeg)  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32nodeMCU+Adapter.jpeg">  
+![NodeMCU + Adapter](assets/images/ESP32nodeMCU+Adapter.jpeg)  
   
 *Der Joy-It ESP32-NodeMCU auf dem "BSB-LAN ESP32"-Adapter.*  
   
@@ -298,15 +298,15 @@ Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb 
 Die ESP32-Adapterversion kann außerdem mit einem [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32/ESP32-EVB/open-source-hardware) und einem [Olimex ESP32-PoE](https://www.olimex.com/Products/IoT/ESP32/ESP32-POE/open-source-hardware) genutzt werden. In diesem Fall wird anstelle der beiden 15poligen Pinheader eine doppelreihige fünfpolige Pinbuchse (2x5 polig, RM 2,54mm) auf der Platinenunterseite verbaut, so dass der Adapter direkt auf den zehnpoligen UEXT-Stecker von Olimex-Boards aufgesteckt werden kann.  
 Diese Olimex-Boardvarianten bieten neben der ESP32-basierten WLAN-Funktionalität u.a. einen LAN-Anschluss und einen microSD-Kartenleser und sind daher sehr empfehlenswert.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB-v44.JPG">  
+![v4.4 Olimex](assets/images/ESP32-PCB-v44.JPG)  
 
 *Die "BSB-LAN ESP32"-Adapterplatine, v4.4, bestückt für die empfohlenen Olimex-Boards.*    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32EVB_v42_small.jpg">  
+![Olimex + v4.2](assets/images/OlimexESP32EVB_v42_small.jpg)  
   
 *Der Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*    
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexESP32PoE_v44_small.jpg">  
+![Olimex PoE + Adapter](assets/images/OlimexESP32PoE_v44_small.jpg)  
   
 *Der Olimex ESP32-PoE samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.4.*
   
@@ -323,8 +323,8 @@ Sollten Probleme hinsichtlich des Datentransfers oder auch später beim Betrieb 
   
 **ESP32-Adaptervariante v4.1 am Olimex nutzen:**  
 Bei Adapterboards, die an Olimex-Boards am UEXT Anschluss verwendet werden *und* eine BSB-LAN-Board-Revision bis einschließlich 4.1 haben (und *nur* in dieser Kombination) starten diese nicht korrekt, wenn bei aufgestecktem BSB-LAN-Adapter die Stromzufuhr unterbrochen wurde. Es muss dann zusätzlich nach dem Einschalten einmal der Reset-Button gedrückt werden.  
-Um dieses Problem zu beheben, muss mit einem spitzen und scharfen Gegenstand (bspw. Rasierklinge/Teppichmesser/Skalpell) die vom Widerstand R6 in Richtung des UEXT-Steckers abgehende Leiterbahn (rot markiert) auf der Platine durchtrennt werden (gelb markiert). Am besten ist dies mit einem Multimeter vorher und nachher zu überprüfen, ob zwischen dem Ende von R6 und Pin 3 des UEXT-Anschlusses (k)eine Verbindung (mehr) besteht. Stattdessen muss dann eine leitende Verbindung mittels eines dünnen Drahtes zwischen diesem Ende des R6 zu Pin 10 des UEXT-Anschlusses (unterhalb des „U“ von „UEXT“) hergestellt werden (grün markiert). 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Olimex_fix_R6.jpg">  
+Um dieses Problem zu beheben, muss mit einem spitzen und scharfen Gegenstand (bspw. Rasierklinge/Teppichmesser/Skalpell) die vom Widerstand R6 in Richtung des UEXT-Steckers abgehende Leiterbahn (rot markiert) auf der Platine durchtrennt werden (gelb markiert). Am besten ist dies mit einem Multimeter vorher und nachher zu überprüfen, ob zwischen dem Ende von R6 und Pin 3 des UEXT-Anschlusses (k)eine Verbindung (mehr) besteht. Stattdessen muss dann eine leitende Verbindung mittels eines dünnen Drahtes zwischen diesem Ende des R6 zu Pin 10 des UEXT-Anschlusses (unterhalb des „U“ von „UEXT“) hergestellt werden (grün markiert).  
+![Olimex fix R6](assets/images/Olimex_fix_R6.jpg)  
 **BSB-LAN Boards ab der Board-Revision 4.2 sind von diesem Problem nicht mehr betroffen.** 
 
 
@@ -346,11 +346,11 @@ Die Verbindungen sind wie folgt vorzunehmen:
   
 Beispielhaft wird im Folgenden ein "ESP32 D1 R32 Entwicklerboard" (WROOM32-Chip) in der Größe eines Arduino Uno mit einer selbstgebastelten Adapterplatine (Uno-kompatible Prototyping-Platine) für die Aufnahme des BSB-LAN-Adapters v3 (Due-Version) gezeigt. Selbstverständlich sind auch andere Varianten, wie bspw. mit einem ESP32-NodeMCU und einer entsprechend angepassten Lochrasterplatine möglich!  
  
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32-Due_adapter.jpg">  
+![D1R32](assets/images/D1R32-Due_adapter.jpg)  
   
 *Links das "ESP32 D1 R32"-Board, rechts die entsprechende aufsteckbare Platine zur Aufnahme des BSB-LAN-Adapters v3 (Due-Version).*  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/D1R32+Due-adapter.jpg">  
+![D1R32 complete](assets/images/D1R32+Due-adapter.jpg)  
   
 *Der komplette Aufbau.*  
   
@@ -394,7 +394,7 @@ Zum Anschluss an den ESP muss nun die "RasPi"-Kontaktreihe genutzt und wie folgt
 
 Die folgende Abbildung zeigt einen entspr. bestückten Adapter v2. Das gelbe "X" bei SJ1 markiert die *entfernte* Lötbrücke (den nicht-geschlossenen Kontakt), die beiden gelben Umrandungen bei SJ2 und SJ3 markieren die *zu schließenden* Lötbrücken.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/adapter_v2-ESP.jpeg">  
+![v2 mod](assets/images/adapter_v2-ESP.jpeg)  
   
 *Der umgerüstete Adapter v2 für die Nutzung mit einem ESP32.*  
   
@@ -413,11 +413,11 @@ Es sind dabei jedoch folgende Punkte zu beachten:
 - **Eine Verwendung der BSB-LAN-Software ist NICHT möglich (s. unten stehende Hinweise)!**  
 - Es sollte eine entspr. lange doppelreihige Buchsenleiste verwendet werden. 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_adapter_small.JPG">  
+![RPi v4.4](assets/images/rpi_v44_adapter_small.JPG)  
   
 *Der ESP32-Adapter v4.4 mit der entspr. Buchsenleiste für einen RPi.*  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/rpi_v44_komplett_small.JPG">  
+![RPi v4.4 complete](assets/images/rpi_v44_komplett_small.JPG)  
   
 *Der aufgesteckte ESP32-Adapter v4.4 auf einem RPi3.*  
       
@@ -443,19 +443,19 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
   
 ***Die STL-Dateien für den Arduino Due, den ESP32-NodeMCU sowie den Olimex ESP32-EVB samt BSB-LAN-Platine sind bereits im GitHub-Repo von BSB-LAN enthalten (Unterordner "[schematics](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/schematics)").***    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-Gehaeuse.jpg">  
+![DUE housing](assets/images/BSB-Gehaeuse.jpg)  
   
 *3D-Druckmodell des Gehäuses für den Arduino Due inkl. LAN-Shield und Adapter.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32nodeMCU-Gehaeuse.jpg">  
+![NodeMCU housing](assets/images/BSB-ESP32nodeMCU-Gehaeuse.jpg)  
   
 *3D-Druckmodell des Gehäuses für den empfohlenen ESP32 NodeMCU inkl. Adapter.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-ESP32Olimex-Gehaeuse.jpg">  
+![Olimex EVB housing](assets/images/BSB-ESP32Olimex-Gehaeuse.jpg)  
   
 *3D-Druckmodell des Gehäuses für den empfohlenen Olimex ESP32-EVB inkl. Adapter.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/OlimexPoE_housing_small.png">  
+![Olimex PoE housing](assets/images/OlimexPoE_housing_small.png)  
   
 *3D-Druckmodell des Gehäuses für den empfohlenen Olimex ESP32-PoE inkl. Adapter.*  
 
