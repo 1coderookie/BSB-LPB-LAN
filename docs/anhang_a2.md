@@ -36,17 +36,17 @@ RXD = Digitalpin Empfangen
 
 | Anzahl | Komponente | Bezeichnung | Abbildung | Anmerkung | 
 |:-----------:|:-------------:|:----------:|:-----------:|:------:|  
-| 1 | LED (rot) | D1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/led_small.jpg"> | Betriebsspannung max. 2,8V, Sperrspannung 5V <br> ***Ausrichtung beachten!*** |  
-| 1 | Diode 1N4148 | D2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1n4148_small.jpg"> | ***Ausrichtung beachten!*** |  
-| 1 | EEPROM 24LC32A-I/P | EEPROM | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/eeprom_small.jpg"> | nicht benötigt für die ESP32-Boardvariante <br> ***Ausrichtung beachten!*** |  
-| 2 | Optokoppler 4N25 | OK1, OK2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4n25_small.jpg"> | ***Ausrichtung beachten!*** |    
-| 1 | Transistor BC547 | Q1 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc547_small.jpg"> | ***Achtung: Nicht mit Q2 verwechseln!*** <br> ***Ausrichtung beachten!*** |  
-| 1 | Transistor BC557 | Q2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bc557_small.jpg"> | ***Achtung: Nicht mit Q1 verwechseln!*** <br> ***Ausrichtung beachten!*** |  
-| 3 | Widerstand 330kΩ | R1, R4, R7 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330k_small.png"> | orange, orange, schwarz, orange, braun | 
-| 1 | Widerstand 1.5kΩ | R2 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/1k5_small.png"> | braun, grün, schwarz, braun, braun | 
-| 1 | Widerstand 300Ω | R3 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/330_small.png"> | orange, orange, schwarz, schwarz, braun | 
-| 2 | Widerstand 4.7kΩ | R5, R6 | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/4k7_small.png"> | gelb, violett, schwarz, braun, braun |  
-| 1 | Anschlussklemme | CL+/CL | <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/klemme_small.jpg"> | RM 5,08mm |
+| 1 | LED (rot) | D1 | ![LED](assets/images/led_small.jpg) | Betriebsspannung max. 2,8V, Sperrspannung 5V <br> ***Ausrichtung beachten!*** |  
+| 1 | Diode 1N4148 | D2 | ![1n4148](assets/images/1n4148_small.jpg) | ***Ausrichtung beachten!*** |  
+| 1 | EEPROM 24LC32A-I/P | EEPROM | ![EEPROM](assets/images/eeprom_small.jpg) | nicht benötigt für die ESP32-Boardvariante <br> ***Ausrichtung beachten!*** |  
+| 2 | Optokoppler 4N25 | OK1, OK2 | ![4n25](assets/images/4n25_small.jpg) | ***Ausrichtung beachten!*** |    
+| 1 | Transistor BC547 | Q1 | ![bc547](assets/images/bc547_small.jpg) | ***Achtung: Nicht mit Q2 verwechseln!*** <br> ***Ausrichtung beachten!*** |  
+| 1 | Transistor BC557 | Q2 | ![bc557](assets/images/bc557_small.jpg) | ***Achtung: Nicht mit Q1 verwechseln!*** <br> ***Ausrichtung beachten!*** |  
+| 3 | Widerstand 330kΩ | R1, R4, R7 | ![330k](assets/images/330k_small.png) | orange, orange, schwarz, orange, braun | 
+| 1 | Widerstand 1.5kΩ | R2 | ![1k5](assets/images/1k5_small.png) | braun, grün, schwarz, braun, braun | 
+| 1 | Widerstand 300Ω | R3 | ![330](assets/images/330_small.png) | orange, orange, schwarz, schwarz, braun | 
+| 2 | Widerstand 4.7kΩ | R5, R6 | ![4k7](assets/images/4k7_small.png) | gelb, violett, schwarz, braun, braun |  
+| 1 | Anschlussklemme | CL+/CL | ![Klemme](assets/images/klemme_small.jpg) | RM 5,08mm |
     
 
 ***Arduino Due:***  
@@ -54,7 +54,7 @@ RXD = Digitalpin Empfangen
   
 Für den Einsatz des Adapters v4 an einem *Arduino Due* werden letztlich lediglich die Pins RX1, TX1, SDA, SCL, GND sowie Pin 53 benötigt und müssen daher zwingend mit entspr. Pinleisten bestückt werden. Die anderen Pins können optional zur Verbesserung der Stabilität bestückt und/oder anderweitig genutzt werden.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v4-unbestueckt_pins.jpg">  
+![Adapter v4 plain](assets/images/bsb-adapter-v4-unbestueckt_pins.jpg)  
   
 *Zwingend zu bestückende Pins für die Verwendung mit dem Arduino Due.*  
   
@@ -68,7 +68,7 @@ Für den Einsatz des Adapters v4 an einem *Raspberry Pi* sind andere Dinge zu be
   
 Für den Einsatz des ESP32-spezifischen Adapters v4 an dem empfohlenen *ESP32 NodeMCU von Joy-It* werden letztlich lediglich die Pins RX2, TX2,  GND sowie 3,3V benötigt und müssen daher zwingend mit entspr. Pinheadern bestückt werden. Aus Stabilitätsgründen ist es jedoch empfehlenswert, beide Seiten komplett mit je einer Reihe Pinheadern zu bestücken.   
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ESP32-PCB.jpeg">  
+![ESP32 PCB](assets/images/ESP32-PCB.jpeg)  
   
 *Die unbestückte ESP32-spezifische Adapterplatine.*  
         
