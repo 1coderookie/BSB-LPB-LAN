@@ -9,7 +9,7 @@
   
 **Hinweis: Der Schaltplan für die ESP32-Variante des Adapters ist prinzipiell identisch, lediglich das EEPROM entfällt!**  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/circuit_diagram_adapter_v4.png">  
+![Schaltplan](assets/images/circuit_diagram_adapter_v4.png)  
  
        
     
