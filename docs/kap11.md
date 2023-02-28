@@ -399,6 +399,8 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Olymp WHS 500 \[RVS61\] (Wärmepumpe) {BSB}  
 
+-   Palazzetti Choro Sistema Calore \[RVS63\] {BSB}
+
 -   Sieger TG11 \[RVP54.100\] (Ölbrenner) {PPS}  
 
 -   Šildymo Technologijų Centras ŠTC STC9 \[RVS51\] (Wärmepumpe) {BSB}  
