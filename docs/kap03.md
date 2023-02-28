@@ -139,7 +139,7 @@ des Adapters anzuschließen ist.
      
 | **Hinweise zum Kabel** | 
 |:-----------------------|
-| **LPB:** Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß der Siemens LPB-Projektierungsgrundlagen "CE1N2032D Local Process Bus LPB Projektierungsgrundlagen" einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m). *Wo* bzw. *wie* die Schirmung anzuschließen ist, wird jedoch nicht erwähnt. |
+| **LPB:** Um vor Störeinflüssen möglichst geschützt zu sein, sollten die Anschlusskabel für den LPB-Anschluss gemäß des Siemens Dokuments "CE1N2032D Local Process Bus LPB Projektierungsgrundlagen" einen Querschnitt von 1,5mm² aufweisen, zweiadrig verdrillt und geschirmt sein (Leitungslänge max. 250m pro Busteilnehmer, max. Gesamtlänge 1000m). *Wo* bzw. *wie* die Schirmung anzuschließen ist, wird jedoch nicht erwähnt. |
 | **BSB:** Für den BSB-Anschluss sind Cu-Leitungen mit mindestens 0,8mm² (bis 20m) Querschnitt zu wählen, bspw. LIYY oder LiYCY 2 x 0,8. Bei Leitungslängen bis 80m sollte 1mm², bis 120m sollten 1,5mm² Querschnitt gewählt werden. | 
 | Generell ist eine parallele Verlegung mit Netzleitungen zu vermeiden (Störsignale). |  
 | Entgegen der offiziellen Empfehlungen berichteten verschiedene Nutzer von einem problemlosen Betrieb mit Telefon-Verlegekabeln, 0.5-0.75mm Lautsprecherkabeln, Netzerkkabeln (bei denen dann zwei oder drei Adern pro Busleitung zusammen angschlossen wurden) etc. Bevor also ein Kauf neuer Kabel getätigt wird, kann auch bereits vorhandenes Kabel getestet werden. | 
