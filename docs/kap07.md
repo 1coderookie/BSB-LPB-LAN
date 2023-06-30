@@ -22,7 +22,7 @@ Das BSB-LAN Setup kann durch optionale Hardware in seinem Funktionsumfang erweit
 Es besteht die Möglichkeit, zusätzliche Sensoren des Typs 
 - DHT22 (Temperatur, Luftfeuchtigkeit; Parameternummern 20100-20199),  
 - DS18B20 (OneWire-Sensor: Temperatur; Parameternummern 20300-20399) sowie 
-- BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck; Parameternummern 20200-20299) direkt an bestimmte Pins des Adapters bzw. Arduino
+- BME280 (Temperatur, Luftfeuchtigkeit, Luftdruck; Parameternummern 20200-20299) direkt an bestimmte Pins des Adapters bzw. Mikrocontrollers
 anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind bereits im Softwarepaket des Adapters integriert.
   
 *Solltest du ein ESP32-Board einsetzen, so besteht außerdem die (inoffizielle) Möglichkeit, Xiaomi Bluetooth-Sensoren zu nutzen. Für weitere Informationen diesbzgl. lies bitte [Kap. 7.4.4](kap07.md#744-xiaomi-mijia-ble-sensoren).*    
@@ -31,7 +31,7 @@ anzuschließen. Die entsprechenden Bibliotheken für die Arduino IDE sind bereit
 |:---------|
 | In der Konfiguration von BSB-LAN ist bei allen Sensoren "Pin 0" voreingestellt. Dies entspricht programmintern der Deaktivierung dieser Funktion und bezeichnet *nicht* den Pin GPIO0! Nach Anschluss eines Sensors muss in der Konfiguration von BSB-LAN der enstpr. Pin eingestellt werden - hierfür ist die *GPIO-Pinnummer* einzutragen (bspw. `7` für den Anschluss eines Sensors an GPIO7). Die Lokalisationen und Bezeichungen der Pins sind dem boardspezifischen Pinout-Schema zu entnehmen. |    
   
-Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Arduino (ggf. unter zusätzlicher Verwendung der fühlerspezifischen PullUp-Widerstände!) stattfinden.
+Der Anschluss der Sensoren kann i.d.R. an GND und +3,3V des Adapters / Mikrocontrollers (ggf. unter zusätzlicher Verwendung der fühlerspezifischen PullUp-Widerstände!) stattfinden.
 
 Zur Nutzung dieser Sensoren muss lediglich die *Konfiguration in der Datei BSB_LAN_config.h entsprechend angepasst werden*: Es sind die jeweiligen Definements zu aktivieren und die für DATA genutzten Digitaleingänge bzw. Pins festzulegen (s. hierzu auch Kap. [2.2](kap02.md#22-konfiguration)).
 
@@ -61,7 +61,7 @@ Bei Anschluss des Sensors sollte ein PullUp-Widerstand zwischen VCC (Pin 1) und 
    
 | Bitte beachte: |
 |:---------------|
-| Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden DATA-Anschluss ein eigener Pin am Arduino genutzt und in der Datei *BSB_LAN_config.h* definiert werden! |  
+| Kommen mehrere DHT22-Sensoren zum Einsatz, so muss für jeden DATA-Anschluss ein eigener Pin am Mikrocontroller genutzt und in der Datei *BSB_LAN_config.h* definiert werden! |  
         
 Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
    
@@ -103,7 +103,7 @@ Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (`
 
 | Hinweis: |
 |:---------|
-| Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Arduino neu gestartet werden, damit die Sensoren initial neu eingelesen werden. |    
+| Werden Änderungen an der Sensorinstallation vorgenommen (Austausch, Hinzufügen, Entfernen), so muss der Mikrocontroller neu gestartet werden, damit die Sensoren initial neu eingelesen werden. |    
    
 ***Tipps für die elektrische Installation:***  
 Die einzelnen Sensoren weisen i.d.R. drei Pins auf: VCC, DATA und GND.  
@@ -130,10 +130,8 @@ Darüber hinaus scheint es bei komplexeren bzw. größeren Installationen in Ein
 
 Von der Verwendung des sogenannten ‚parasitären Modus' ist abzuraten.  
 Die Verwendung einer geschirmten Steuerleitung ist zu empfehlen. Die Schirmung sollte dabei einseitig an Masse (GND) angeschlossen werden.  
-Um etwaige von der Versorgungsspannung des Arduino-Netzteils ausgehende
-Störeinflüsse zu minimieren, kann die Zuleitung der Stromversorgung
-arduinoseitig etwa vier bis fünfmal durch einen Ferritring geführt
-werden.
+Um etwaige von der Versorgungsspannung des Mikrocontroller-Netzteils ausgehende Störeinflüsse zu minimieren, kann die Zuleitung der Stromversorgung
+mikrocontrollerseitig etwa vier bis fünfmal durch einen Ferritring geführt werden.
    
 Kommen *große* Kabellängen zum Einsatz, so ist insbesondere auf eine korrekte Netzwerktopologie zu achten. Hier ist die Lektüre des vom Hersteller herausgegebenen Tutorials "[Guidelines for Reliable Long Line 1-Wire Networks](https://www.maximintegrated.com/en/design/technical-documents/tutorials/1/148.html)" zu empfehlen.  
 In diesem Fall sind außerdem weitere Dinge zu beachten, wie bspw. eine empfehlenswerte Hin- und Rückleitung für den Datenkanal, der möglicherweise notwendige Einsatz von zusätzlichen Spannungsquellen, die Verwendung eines dedizidierten Busmasters etc.  
@@ -145,7 +143,7 @@ Als vereinfachte Faustregel kann man sagen, je größer die Leitungslängen und 
    
 ***Zusammenfassung benötigter Bauteile für eine Installation:***  
 - Dreiadriges Kabel, idealerweise geschirmt (Schirmung ist dann einseitig an GND anzuschließen)  
-- PullUp-Widerstand 4,7kΩ oder ggf. kleiner, nur einer notwendig, adapter-/arduinoseitig zwischen VCC und DATA positionieren   
+- PullUp-Widerstand 4,7kΩ oder ggf. kleiner, nur einer notwendig, adapter-/mikrocontrollerseitig zwischen VCC und DATA positionieren   
 - Keramikkondensator 100nF, pro Sensor einer, zwischen VCC und GND nahe am Sensor positionieren  
 - optional: Tantalkondensator 10µF, pro Sensor einer (zusätzlich zum Keramikkondensator!), zwischen VCC und GND nahe am Sensor positionieren (bei Tantalkondensatoren bitte die Polarität beachten!)  
 - optional: Schraublemmen o.ä., Streifen-/Lochrasterplatine, Gehäuse, ...   
@@ -175,7 +173,7 @@ Rohrisolierung empfehlenswert, um Messwertverfälschungen durch bspw. Raum- oder
 | ***Bereits installierte Fühler (bspw. in Tauchülsen von Mischern, Pufferspeichern etc.), die an einen Heizungs- oder Solarregler angeschlossen sind, haben immer Vorrang! Keinesfalls sollte deren Installation oder der Kontakt mit dem zu messenden Element durch eine zusätzliche Montage von DS18B20-Sensoren leiden!*** |   
         
 ***Bauvorschlag:***  
-Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Arduino geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
+Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kabellängen kann man sich einen kleinen 'Verteilerkasten' bauen. Dazu kann man die gekapselten Sensoren nacheinander samt vorgeschalteter Kondensatoren auf einer Streifenplatine anschließen. Lötet man die Kabel der Sensoren nicht an, sondern verwendet statt dessen kleine Schraubklemmen, so kann man im Bedarfsfall problemlos einzelne Sensoren austauschen oder auch das System erweitern. Am Anfang dieser Verteilerplatine wird das Kabel angeschlossen, was zum BSB-LAN-Adapter bzw. zum Mikrocontroller geführt wird. Wenn die Optik nicht stört, kann das gesamte Konstrukt kostengünstig in einer Feuchtraum-AP-Verteilerdose untergebracht werden.   
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Verteiler_klein.jpg">  
    
@@ -186,12 +184,12 @@ Bei kleineren DS18B20-Installationen im Heizungsbereich mit übersichtlichen Kab
 ### 7.1.3 Hinweise zu BME280-Sensoren
   
 Sensoren des Typs BME280 bieten drei (bzw. fünf) Messgrößen: Temperatur, Luftfeuchtigkeit (zzgl. der errechneten absoluten Luftfeuchtigkeit) sowie Luftdruck (zzgl. der errechneten Höhe). Sie sind klein, i.d.R. unkompliziert anzuschließen und bieten (ausreichend) exakte Messergebnisse.  
-**Am I2C-Bus des Arduino Due (ebenfalls am Mega 2560) können bis zu zwei Sensoren des Typs BME280 angeschlossen werden.**  
+**Am I2C-Bus des Mikrocontrollers (ebenfalls am veralteten Arduino Mega 2560) können bis zu zwei Sensoren des Typs BME280 angeschlossen werden.**  
 Zur Verwendung muss das entspr. Definement in der Datei *BSB_LAN_config.h* oder via Webconfig aktiviert und die Anzahl der angeschlossenen Sensoren festgelegt werden ([s. Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh).  
 
 | Hinweise |
 |:---------|
-| Prinzipiell können BME280 auch an einem SPI angeschlossen werden, jedoch **nicht** am Arduino unseres BSB-LAN-Setups! |   
+| Prinzipiell können BME280 auch an einem SPI angeschlossen werden, jedoch **nicht** am Mikrocontroller unseres BSB-LAN-Setups! |   
 | Wenn mehr als zwei BME280-Sensoren benötigt werden, können diese mittels eines I2C-Multiplexers TCA9548A angeschlossen werden. |
 | Die Verwendung eines BMP280 ist ebenfalls möglich, dieser bietet allerdings keine Feuchtigkeitsmessung. Daher ist der Einsatz eines BME280 zu empfehlen. |   
   
@@ -201,10 +199,10 @@ Zur Verwendung muss das entspr. Definement in der Datei *BSB_LAN_config.h* oder 
   
 Folgende Punkte sind dabei zu beachten:  
 - Stelle sicher, dass es sich um einen Sensor des Typs BME280 handelt (und nicht um bspw. einen BMP180 o.ä.).  
-- Stelle sicher, dass du möglichst eine Variante verwendest, die auf dem Breakout-Board bereits PullUp-Widerstände verbaut hat (wie auf dem oben gezeigten Bild). Sollte deine Variante *keine* PullUp-Widerstände verbaut haben, so musst du diese beim Anschluss an den Arduino noch hinzufügen (ca. 10kOhm, zwischen SDA und 3,3V sowie zwischen SCL und 3,3V anschließen)!  
+- Stelle sicher, dass du möglichst eine Variante verwendest, die auf dem Breakout-Board bereits PullUp-Widerstände verbaut hat (wie auf dem oben gezeigten Bild). Sollte deine Variante *keine* PullUp-Widerstände verbaut haben, so musst du diese beim Anschluss an den Mikrocontroller noch hinzufügen (ca. 10kOhm, zwischen SDA und 3,3V sowie zwischen SCL und 3,3V anschließen)!  
 - Stelle sicher, dass der erste Sensor die I2C-Adresse 0x76 hat! Dies ist bei dem oben gezeigten Modul üblicherweise der Fall.  
 - Der zweite Sensor muss die Adresse 0x77 erhalten. Wie dies bei dem oben gezeigten Modul zu erreichen ist, wird nachfolgend beschrieben.  
-- Stelle sicher, dass du den Sensor an den 3,3V-Pin des Arduino anschließt! Das oben gezeigte Modul hat zwar einen Spannungsregler und Levelshifter verbaut, so dass in dem Fall prinzipiell auch ein Anschluss an 5V erfolgen *könnte* - um aber sicherzustellen, dass keinesfalls 5V an SDA/SCL anliegen, solltest du stets den Anschluss an 3,3V vorziehen.  
+- Stelle sicher, dass du den Sensor an den 3,3V-Pin des Mikrocontrollers anschließt! Das oben gezeigte Modul hat zwar einen Spannungsregler und Levelshifter verbaut, so dass in dem Fall prinzipiell auch ein Anschluss an 5V erfolgen *könnte* - um aber sicherzustellen, dass keinesfalls 5V an SDA/SCL anliegen, solltest du stets den Anschluss an 3,3V vorziehen.  
   
 **Anschluss**  
   
@@ -253,23 +251,23 @@ Prinzipiell ist es möglich und in der BSB-LAN-Software als Funktion mit den Var
       
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/relaisboards.jpg">  
 
-*Ein einzelnes und ein 4-Kanal Relaismodul für den Einsatz an einem Arduino.*  
+*Ein einzelnes und ein 4-Kanal Relaismodul für den Einsatz an einem Mikrocontroller.*  
        
-Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Daher ist die zusätzliche Verwendung von entsprechend dimensionierten Koppelrelais oder Solid-State-Relais überlegenswert. Sollten diese jedoch ausschließlich zum Einsatz kommen und mit ihnen Schaltvorgänge ausgelöst werden, so ist ggf. darauf zu achten, dass Strom- und Spannungsstärke des Arduino ausreichend sind, um den Schaltvorgang des Relais auszulösen.  
+Die oftmals günstig erhältlichen Relaisboards sind dabei bereits mit Relais bestückt, die 230V-Verbraucher direkt schalten können. Leider kann es aufgrund mangelhafter Qualität oder Überlastung zu diversen Schäden und damit einhergehenden größeren Risiken wie bspw. Bränden kommen. Daher ist die zusätzliche Verwendung von entsprechend dimensionierten Koppelrelais oder Solid-State-Relais überlegenswert. Sollten diese jedoch ausschließlich zum Einsatz kommen und mit ihnen Schaltvorgänge ausgelöst werden, so ist ggf. darauf zu achten, dass Strom- und Spannungsstärke des Mikrocontrollers ausreichend sind, um den Schaltvorgang des Relais auszulösen.  
    
 | ***ACHTUNG*** |
 |:--------------|
 | ***Es sollte beachtet werden, dass jegliche Installationen und Arbeiten am 230V-Netz nur von zugelassenen Elektrikern vorgenommen werden dürfen! 230V können tödlich sein!*** *Es ist empfehlenswert, einen Elektriker bereits bei der Planung des Vorhabens mit einzubeziehen.* | 
 | ***Vor der Verwendung eines Relais/Relaisboards sollte sichergestellt werden, dass es für die gewünschte Aufgabe geeignet ist!*** *Bei den schaltbaren multifunktionalen Eingängen der Heizungsregler wird bspw. häufig gefordert, dass das Relais "kleinspannungsgeeignet" ist - dieses Kriterium erfüllen nicht alle Relais!* |
-| ***Es ist NICHT möglich, den Arduino direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!*** |  
+| ***Es ist NICHT möglich, den Mikrocontroller direkt an die multifunktionalen Eingänge des Heizungsreglers anzuschließen!*** |  
    
 <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/koppelrelais.jpg">  
    
-*Ein übliches Koppelrelais. Die entsprechenden Pins am Arduino werden bei diesem Modell an "14" und "13" angeschlossen.*  
+*Ein übliches Koppelrelais. Die entsprechenden Pins am Mikrocontroller werden bei diesem Modell an "14" und "13" angeschlossen.*  
    
 | Beispiel |
 |:---------|
-| Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen Koppelrelais (sofern deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist), wäre es bspw. möglich, den Zustand des arduinoseitigen Kontaktes (offen/geschlossen) und somit den Betriebsstatus der Pumpe abzufragen. |   
+| Mittels eines parallel zur Umwälzpumpe einer Solarthermieanlage angeschlossenen Koppelrelais (sofern deren Regelung nicht mit dem Heizungsregler verbunden oder bei diesem integriert ist), wäre es bspw. möglich, den Zustand des mikrocontrollerseitigen Kontaktes (offen/geschlossen) und somit den Betriebsstatus der Pumpe abzufragen. |   
     
 
 ---
@@ -424,7 +422,7 @@ Außerdem müssen sich die Powerline-Adapter bzw. die verwendeten Steckdosen an 
 ### 7.5.2 WLAN: Nutzung eines extra Routers
 Eine Möglichkeit für eine WLAN-Anbindung ist, den Adapter via LAN an einen ausgemusterten Router (bspw. eine alte FritzBox) anzuschließen, welcher sich wiederum als Client im bestehenden WLAN-Netz anmeldet. Die Übertragungsraten und Latenzen sind normalerweise für die Nutzung von BSB-LAN absolut ausreichend. Sollte das WLAN-Signal am Aufstellort grenzwertig sein, so könnte der Router mit stärkeren Antennen ausgerüstet werden.  
 
-Neben dem Einsatz eines 'normalen' Routers können auch kleine Geräte genutzt werden, die einen WLAN-Client- bzw. einen WLAN-Client-Bridge-Modus anbieten. Diese Geräte stellen (wie die zuvor beschriebene FritzBox-Lösung) per WLAN eine Verbindung zum Netzwerk her und bieten mit einem zusätzlich verbauten LAN-Port die Möglichkeit, den Arduino per LAN-Kabel anzuschließen. Geräte dieser Art sind häufig sehr klein und wie ein Steckernetzteil eine Steckdose, so dass die Installation der Hardware i.d.R. recht unkompliziert stattfinden kann.    
+Neben dem Einsatz eines 'normalen' Routers können auch kleine Geräte genutzt werden, die einen WLAN-Client- bzw. einen WLAN-Client-Bridge-Modus anbieten. Diese Geräte stellen (wie die zuvor beschriebene FritzBox-Lösung) per WLAN eine Verbindung zum Netzwerk her und bieten mit einem zusätzlich verbauten LAN-Port die Möglichkeit, den Arduino Due per LAN-Kabel anzuschließen. Geräte dieser Art sind häufig sehr klein und wie ein Steckernetzteil eine Steckdose, so dass die Installation der Hardware i.d.R. recht unkompliziert stattfinden kann.    
 
 In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden - insbesondere dann, wenn via FHEM o.ä. Logdateien erstellt oder mit zusätzlicher Hardware (HK-Thermostate o.ä.) der Wärmeerzeuger gesteuert oder dessen Verhalten beeinflusst werden soll.  
     
