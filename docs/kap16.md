@@ -63,7 +63,7 @@ Entsprechende Relais findest du im Internet, bei Unsicherheiten solltest du dein
 ---
     
 
-## 16.5 Ist zusätzlich ein Relaisboard am Arduino anschließ- und steuerbar?
+## 16.5 Ist zusätzlich ein Relaisboard am Mikrocontroller anschließ- und steuerbar?
 
 Ja. Siehe diesbezüglich den entsprechenden Punkt in Kap. [5.1](kap05.md#51-url-befehle) sowie Kap. [7.2](kap07.md#72-relais-und-relaisboards).  
     
