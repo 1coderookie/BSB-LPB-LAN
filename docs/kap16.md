@@ -16,7 +16,7 @@ Der Adapter kann mit einem Raspberry Pi verwendet werden, wenn andere
 Pinheader genutzt werden (weibliche statt männliche). Siehe hierzu bitte die folgenden Kapitel: [Kap. 1.4](kap01.md#14-raspberry-pi) sowie [Anhang A2.2](anhang_a2.md#a22-teileliste).
 
 **Die BSB-LAN-Software kann NICHT mit einem RPi verwendet werden, sie ist
-ausschließlich auf dem hier vorgestellten Arduino-System lauffähig!**  
+ausschließlich auf dem hier vorgestellten Mikrocontrollersystem lauffähig!**  
 Zur Nutzung des Adapters mit einem RPi muss eine vollkommen andere
 Software genutzt werden. Weitere Informationen diesbezüglich sind in [1.4](kap01.md#14-raspberry-pi) zu finden.  
     
@@ -28,7 +28,7 @@ Software genutzt werden. Weitere Informationen diesbezüglich sind in [1.4](kap0
 Nein, das geht leider nicht.
 
 Derzeit benötigt man für jeden Regler einen Adapter bzw. ein komplettes
-Hardware-Setup (Arduino, Ethernet-Shield, Adapter), um die jeweiligen
+Hardware-Setup (Mikrocontroller + Adapter), um die jeweiligen
 reglerspezifischen Parameter via BSB abrufen zu können.  
 Sollten jedoch mehrere Regler vorhanden und bereits miteinander via LPB
 verbunden sein, beachte bitte die folgende FAQ.  
@@ -56,7 +56,7 @@ Die multifunktionalen Eingänge der Regler (bspw. H1, H2, H3 etc.) sind nicht di
 
 Soll bspw. eine Betriebsartumschaltung oder Erzeugersperre mittels H1 als Arbeitskontakt realisiert werden, so muss der jeweilige Eingang den Herstellerangaben entsprechend parametriert und belegt werden. Eine Steuerung dieser Art muss mittels eines anzuschließenden Relais erfolgen, dessen reglerseitiger Ausgang unbedingt potentialfrei sein muss, d.h. es darf keinerlei Fremdspannung anliegen! Das Relais hat in dem Fall lediglich die Aufgabe, den Kontakt zu schließen (oder zu öffnen).
 
-Das Relais wiederum kann jedoch unter bestimmten Umständen vom Arduino gesteuert werden (bspw. mittels eines Relaisboards). Siehe hierzu auch Kap. [7.2](kap07.md#72-relais-und-relaisboards).
+Das Relais wiederum kann jedoch unter bestimmten Umständen vom Mikrocontroller gesteuert werden (bspw. mittels eines Relaisboards). Siehe hierzu auch Kap. [7.2](kap07.md#72-relais-und-relaisboards).
 
 Entsprechende Relais findest du im Internet, bei Unsicherheiten solltest du deinen Elektriker und/oder Heizungsinstallateur zu Rate ziehen. Eine falsche Belegung und/oder Parametrierung kann den Regler u.U. zerstören!  
     
@@ -209,8 +209,8 @@ Siehe auch die jeweiligen Punkte in den Kapiteln [2.2](kap02.md#22-konfiguration
 ## 16.21 Warum ist der Adapter nach einem Stromausfall nicht mehr erreichbar?
 
 Dieses Verhalten wurde des Öfteren bei den günstigen LAN-Shield-Clones beobachtet, mit einem originalen Arduino-LAN-Shield scheint dieses Problem nicht aufzutreten. Eine konkrete Erklärung hierfür gibt es bisher nicht.  
-Ein weiterer Grund kann sein, dass der Due nach einem Stromausfall nicht korrekt gestartet ist.  
-Abhilfe: Nach Drücken des Reset-Knopfes am Arduino ist der Adapter wieder wie gewohnt erreichbar. Generelle Abhilfe könnte eine kleine USV für den Arduino schaffen, so dass der Arduino nicht stromlos wird. Andere Lösungen sind bisher nicht bekannt.  
+Ein weiterer Grund kann sein, dass der Mikrocontroller nach einem Stromausfall nicht korrekt gestartet ist.  
+Abhilfe: Nach Drücken des Reset-Knopfes am Mikrocontroller ist der Adapter wieder wie gewohnt erreichbar. Generelle Abhilfe könnte eine kleine USV für den Mikrocontroller schaffen, so dass der Mikrocontroller nicht stromlos wird. Andere Lösungen sind bisher nicht bekannt.  
     
 ---
     
@@ -228,7 +228,7 @@ Laut Mitschnitt des Seriellen Monitors lief der BSB-LAN-Sketch ohne Probleme wei
 
 ## 16.23 Warum kommen beim Senden manchmal ‚query failed'-Meldungen?
 
-Wenn Befehle, die in der Regel problemlos gesendet werden können, plötzlich ‚query failed'-Fehlermeldungen auslösen, könnte dies in der eingesetzten Hardware begründet sein. Es scheint, als wenn einige günstige Arduino-Clones zeitweise unzuverlässig arbeiten und diffuse Probleme verursachen. Abhilfe könnte ein Austausch des Arduino schaffen, der Einsatz eines originalen Arduino ist selbstverständlich eine weitere Option.
+Wenn Befehle, die in der Regel problemlos gesendet werden können, plötzlich ‚query failed'-Fehlermeldungen auslösen, könnte dies in der eingesetzten Hardware begründet sein. Es scheint, als wenn einige günstige Mikrocontroller zeitweise unzuverlässig arbeiten und diffuse Probleme verursachen. Abhilfe könnte ein Austausch des Mikrocontrollers schaffen, der Einsatz eines originalen Mikrocontrollers ist selbstverständlich eine weitere Option.
 
 Ein Nutzer berichtete von erfolgreichen Änderungen an der Adapter-Hardware selbst, die er zur Eingrenzung des Problems vornahm.
 
