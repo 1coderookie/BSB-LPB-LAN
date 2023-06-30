@@ -44,17 +44,17 @@ Vielen Dank für deine Unterstützung!
 ***Auslesen***  
 
 Um die entsprechenden Telegramme neuer Parameter auszulesen, muss das
-Hardware-Setup (Arduino, LAN-Shield, Adapter und die Verbindung mit dem
+Hardware-Setup (Mikrocontroller, Adapter und die Verbindung mit dem
 Heizungsregler) sowie die Installation der BSB-LAN-Software
 abgeschlossen und verwendungsfähig sein. Der Zugriff auf das
 Webinterface von BSB-LAN muss ebenfalls gegeben sein.
 
-Zusätzlich zur bestehenden Verkabelung muss nun der Arduino/ESP32 mit deinem
+Zusätzlich zur bestehenden Verkabelung muss nun der Mikrocontroller mit deinem
 Laptop/PC via USB verbunden werden.  
 
 Starte dann die Arduino IDE und wähle unter „Menü Werkzeuge → Port" den
 korrekten USB-Anschluss aus.  
-Überprüfe außerdem, ob unter „Menü Werkzeuge → Board → Due (Programming Port)" ausgewählt
+Falls du einen Arduino Due nutzt, überprüfe außerdem, ob unter „Menü Werkzeuge → Board → Due (Programming Port)" ausgewählt
 ist.
 
 Starte nun den seriellen Monitor unter „Menü Werkzeuge → Serieller
@@ -141,7 +141,7 @@ Anschluss: BSB
 6228 Konfiguration - Bisher unbekannte Geräteabfrage: unknown type 000014  
     
 Parameter 2270 Kessel -- Rücklaufsollwert Minimum °C  
-→ wird vom Arduino/BSB bei Abfrage mit 60°C angezeigt,
+→ wird vom Mikrocontroller/BSB bei Abfrage mit 60°C angezeigt,
 angezeigter Ist-Wert laut RGT-Bedieneinheit: 8°C  
 RGT1->HEIZ QUR 053D0908  
 DC 86 00 0B 06 3D 05 09 08 B0 E7  
