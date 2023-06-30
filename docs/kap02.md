@@ -495,9 +495,9 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     werden, bspw.:  
     
     ```
-    int avg_parameters[40] = {  
-    8700, // Außentemperatur  
-    8740 // Raumtemperatur-Ist  
+    parameter avg_parameters[40] = {
+      {8700, -1},                         // Außentemperatur
+      {8326, -1}                          // Brenner-Modulation
     };
     ```  
       
@@ -553,19 +553,20 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
       |:--------|
       | Dieses Intervall ist auch für die Nutzung von MQTT (s.u.) einzustellen, selbst wenn kein Loggen stattfinden soll! |  
   
-    - Die zu loggenden Parameter (max. 40) müssen dann bei der entsprechenden Variable eingetragen werden, bspw.:
+    - Die zu loggenden Parameter (max. 40) müssen dann zusammen mit der Ziel-Bus-Adresse (s.u.; -1 ist die default Zieladresse) bei der entsprechenden Variable eingetragen werden, bspw.:
       ```
-      int log_parameters[40] = {  
-      8700, // Außentemperatur  
-      8740 // Raumtemperatur-Ist  
+      parameter log_parameters[40] = {  
+        {8700, -1}, // Außentemperatur  
+        {8743, -1}, // Vorlauftemperatur
+        {8314, -1}, // Rücklauftemperatur
       };
       ```
         
-      Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die spezifischen Spezialparameternummern bei den Log-Parametern entsprechend einzeln untereinander aufgeführt werden, bspw.:  
+      Wenn bspw. die Messwerte mehrerer DS18B20- oder DHT22-Sensoren geloggt werden sollen, müssen die spezifischen Spezialparameternummern bei den Log-Parametern ebenfalls entsprechend aufgeführt werden, bspw.:  
       ```
-      20301, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
-      20303,  
-      20305, 
+        {20301, -1}, // Spezialparameter 20300-20499: DS18B20-Sensoren 1-100   
+        {20303, -1},    
+        {20305, -1}, 
       ```
       loggt die Messwerte der DS18B20-Sensoren 1-3.
 
@@ -627,10 +628,11 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
   
     Die gewünschten Parameter (max. 40) sind ebenfalls einzutragen:  
     ```  
-    int ipwe_parameters[40] = {  
-    8700,                   // Außentemperatur  
-    8830                   // Warmwassertemperatur  
-    };  
+    parameter ipwe_parameters[40] = {  
+      {8700, -1}, // Außentemperatur  
+      {8743, -1}, // Vorlauftemperatur
+      {8314, -1}, // Rücklauftemperatur
+    };
     ```
   
 ---  
