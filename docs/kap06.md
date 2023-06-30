@@ -11,7 +11,7 @@
     
 **Verwendung des Adapters als Standalone-Logger mittels BSB-LAN**
 
-Stecke eine (möglichst aktuelle) FAT32-formatierte microSD-Karte in den Speicherkartenplatz des Ethernet-Shields, bevor du den Arduino einschaltest.  
+Stecke eine (möglichst aktuelle) FAT32-formatierte microSD-Karte in den Speicherkartenplatz des Ethernet-Shields, bevor du den Mikrocontroller einschaltest.  
         
 Aktiviere vor dem Flashen das Definement `#define LOGGER` in der Datei *BSB_LAN_config.h*, füge die zu loggenden Parameter zur Variable `log_parameters` hinzu und bestimme das Logintervall mit der Variable `log_interval`. Bitte beachte auch die entsprechenden Punkte in Kap. [2.2](kap02.md#22-konfiguration).  
   
@@ -31,7 +31,7 @@ Um die Datei *datalog.txt* zu löschen und neu zu erstellen, benutze den Befehl 
 | Hinweise |
 |:---------|
 | Vereinzelt kann es vorkommen, dass bestimmte microSD-Karten nicht problemlos vom LAN-Shield erkannt werden. In diesem Fall wird eine entspr. Fehlermeldung von BSB-LAN ausgegeben. Sollte bei dir dieser Fall eintreten, so probiere es mit einer anderen, möglichst aktuellen microSD-Karte. |  
-| Bitte beachte, dass der Arduino keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute betragen. Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Arduino-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen. |  
+| Bitte beachte, dass der Mikrocontroller keine exakte Uhr ist. Auch wenn du bspw. das Intervall auf 60 Sekunden eingestellt hast, weicht die in der Datei dargestellte Zeit (welche von der Heizungssteuerung empfangen wird) möglicherweise davon ab - dies kann bis zu einer Sekunde pro Minute betragen. Sollte eine exakte Logzeit unbedingt erforderlich sein, kannst du die durchschnittliche Zeitabweichung zwischen der Mikrocontroller-Zeit und der wirklichen Zeit ermitteln, das Log-Intervall entsprechend anpassen und bspw. 59 Sekunden anstatt 60 Sekunden einstellen. |  
      
 **Verwendung des Adapters als Remote-Logger**
 
@@ -65,7 +65,7 @@ Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger) stellt eine Möglichkeit
   
 *Beispiel einer IPWE-Ausgabe.*   
    
-Um die Funktion der IPWE-Erweiterung zu nutzen, müssen vor dem Flashen des Arduino zwei Einstellungen in der Datei `BSB_lan_config.h` vorgenommen werden:  
+Um die Funktion der IPWE-Erweiterung zu nutzen, müssen vor dem Flashen des Mikrocontroller zwei Einstellungen in der Datei `BSB_lan_config.h` vorgenommen werden:  
 - Das Definement `#define IPWE` muss aktiviert werden.  
 - Die gewünschten Parameter die dargestellt werden sollen, müssen aufgelistet werden.  
   
@@ -325,9 +325,9 @@ Nachfolgend einige Hinweise für die jeweiligen Funktionen.
 - Die verwendeten GPIO-Pins für den Anschluss der Taster (pro Taster ein Pin) sind in der Konfiguration einzustellen.  
 - Es müssen DIGITALpins genutzt werden!  
 - Bitte achte darauf, dass du keine anderweitig verwendeten Pins nutzt (bspw. die von angeschlossenen Sensoren)! Für Due-User gilt: explizit *nicht* verwendet werden dürfen die Pins 12, 16-21, 31, 33, 53!  
-- Die Taster sind arduino-typisch für HIGH anzuschließen, d.h. du musst zusätzlich zum Taster noch einen PullDown-Widerstand (ca. 100kOhm) für den jeweiligen Pin anschließen.  
+- Die Taster sind mikrocontroller-typisch für HIGH anzuschließen, d.h. du musst zusätzlich zum Taster noch einen PullDown-Widerstand (ca. 100kOhm) für den jeweiligen Pin anschließen.  
 - Ein Pinout-Diagramm des Due findest du in [Anhang B](anhang_b.md).  
-- Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Arduino für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
+- Solltest du dir nicht sicher sein, wie ein Taster generell bei einem Mikrocontroller für HIGH angeschlossen wird, so sieh bitte zusätzlich im Internet nach, dort finden sich unzählige Beispiele.  
     Trotzdem sei an dieser Stelle kurz erwähnt, wie vorzugehen ist:  
     - Der Taster mit den beiden Anschlüssen A und B wird an einem Anschluss (A) mit dem gewünschten GPIO-Digitalpin des Due verbunden.  
     - Zusätzlich wird am selben Anschluss des Tasters (A) der PullDown-Widerstand angeschlossen, welcher wiederum mit GND des Due verbunden wird.   
