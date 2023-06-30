@@ -46,10 +46,10 @@ Es gibt viele Gründe, dass die Arduino IDE beim Kompiliervorgang mit einer Fehl
 - Sicherheitsfunktionen [`Passkey`](kap05.md), [`TRUSTED_IP`](kap05.md) und/oder [`USER_PASS_B64`](kap05.md)
 aktiviert/deaktiviert → URL nicht angepasst, Zugriff von falscher IP etc.
 - Router- und/oder Firewall-Einstellungen überprüfen 
-- Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Arduino bzw. LAN-Shields drücken
+- Zugriff nach Stromausfall und/oder Neustart nicht möglich → Reset-Knopf des Mikrocontrollers drücken
 - Wird eine microSD-Karte zum Loggen verwendet? → FAT32-formatieren, URL-Befehl `/D0` ausführen, 
 evtl. andere/kleinere Karte testen → s. Kap. [6.1](kap06.md#61-loggen-von-daten) 
-- (Adapter,) LAN-Shield und/oder Arduino fehlerhaft (→ vereinzelt kam es zu diffusen
+- (Adapter,) LAN-Shield und/oder Arduino/Mikrocontroller fehlerhaft (→ vereinzelt kam es zu diffusen
 Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test mit einem anderen LAN-Shield zu empfehlen)  
 
     
@@ -73,7 +73,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap15.md#152-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap15.md#154-keine-parameterabfrage-möglich)  
 - Regler ist ausgeschaltet
-- Regler wurde erst nach dem Arduino angeschaltet (automatische Reglererkennung funktioniert dann nicht)
+- Regler wurde erst nach dem Mikrocontroller angeschaltet (automatische Reglererkennung funktioniert dann nicht)
 - Regler ist nicht oder falsch mit dem Adapter verbunden
 - Gerätefamilie und -variante (`http://<IP-Adresse>/6225/6226`) des Reglers unbekannt  
     
@@ -119,7 +119,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 
 ## 15.12 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
 
-- Der Arduino ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
+- Der Mikrocontroller ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
 auch die Darstellung des Logfiles dauern u.U. recht lange)  
     
 ---
