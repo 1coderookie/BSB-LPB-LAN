@@ -2296,38 +2296,876 @@ A5 = Verkettung von A1 bis A4
 
 ## 8.11 Home Assistant
   
-***BSB-LAN ist jetzt eine offizielle Home-Assistant-Integration, die von [Willem-Jan](https://github.com/liudger) betreut wird.***    
-***Die Dokumentation der Integration ist [hier](https://www.home-assistant.io/integrations/bsblan/) zu finden.***  
-***Vielen Dank!***  
-  
-***BSB-LAN-User Florian hat die o.g. Lösung erweitert, so dass zwei Regler mit insgesamt vier Heizkreisen bedient werden können. [Hier](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant) hat er seine Lösung zur Verfügung gestellt.***  
-***Vielen Dank!***
-  
-| Achtung |
-|:---------|
-| Die o.g. Integration ist z.Zt. nur mit der BSB-LAN-Version 1.0 kompatibel, NICHT mit der aktuellen Version! Für die Einbindung der aktuellen BSB-LAN-Version ist es daher empfehlenswert, die im Folgenden dargestellten Einbindungsmöglichkeiten mittels MQTT oder JSON zu nutzen. |  
-  
----  
-<!---
-***BSB-LAN-User Torben hat den Adapter via MQTT in Home Assistant eingebunden und stellt hier ein Beispiel zur Verfügung.***  
-***Vielen Dank!***  
-  
-Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht die Abfrage des Komfortsollwerts (BSB-Parameter 710). Das Beispiel geht davon aus, dass dieser Parameter in den log_parameters enthalten ist und so per MQTT auch publiziert wird.  
-  
-```  
-- platform: mqtt
-  name: "BSB Komfortsollwert"
-  state_topic: "BSB-LAN/710"
-  unique_id: "bsb710"
-  unit_of_measurement: '°C'
-  device_class: temperature
-  availability_topic: "BSB-LAN/status"
-  icon: "mdi:thermometer-chevron-up"
-```  
-  
-Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt/)  
-  
---->
+
+***BSB-LAN-User herr.vorragend hat eine ausführliche Beschreibung für die Einbindung in HomeAssistant via MQTT erstellt.***  
+***Vielen Dank dafür!***  
+
+Die folgende Beschreibung zeigt auf, wie BSB-LAN via MQTT und ohne zusätzliche Automatisierungs-Workarounds in Home Assistant eingebunden werden kann. Diese Verfahren benötigen keine REST-API und schreibt Konfigurationsänderungen unmittelbar mit den verfügbaren Bordmitteln in den Heizungsregler.  
+
+Es is ratsam, an dieser Stelle mit [Packages](https://www.home-assistant.io/docs/configuration/packages/) zu arbeiten. Somit können sämtliche Konfigurationen aller Domänen in einer YAML-Datei verwaltet und bearbeitet werden.  
+
+Es lassen sich wie folgt viele verschiedene Einzelwerte in einer Climate-Entität zusammenfassen.  
+Man erkennt somit auf Anhieb die aktuelle Betriebsart, die aktuelle Soll- wie auch Ist-Temperatur. Zudem lassen sich die Werte auch direkt über die grafische Oberfläche in die Therme zurückschreiben.  
+
+[//]: # ({% raw %})
+```yaml
+mqtt:
+  climate:
+    - name: "BSB-LAN Heizungstherme"
+      unique_id: bsb_lan_climate_heizungstherme
+      availability_topic: "BSB/status"
+      payload_on: 1
+      payload_off: 0
+      modes:
+        - auto
+        - heat
+        - cool
+        - "off"
+      mode_state_topic: "BSB/700"
+      mode_state_template: >-
+        {% set values = { '0 - Schutzbetrieb':'off', '1 - Automatik':'auto', '2 - Reduziert':'cool', '3 - Komfort':'heat'} %}
+        {{ values[value] if value in values.keys() else 'off' }}
+      mode_command_topic: "BSB"
+      mode_command_template: >-
+        {% set values = { 'off':'S700=0', 'auto':'S700=1', 'cool':'S700=2', 'heat':'S700=3'} %}
+        {{ values[value] if value in values.keys() else '0' }}
+      current_temperature_topic: "BSB/8740"
+      current_temperature_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      min_temp: 17
+      max_temp: 24
+      temp_step: 0.1
+      temperature_state_topic: "BSB/710"
+      temperature_command_topic: "BSB"
+      temperature_command_template: "{{'S710='+ (value| string)}}"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+Für den manuellen Trinkwasserpush gibt es mehrere Möglichkeiten. Entweder über die Switch-Domain oder auch nur ein Button, der den TWW-Push auslöst. Da es von der Therme keine Rückmeldung gibt, dürfte der Button vermutlich die bessere Lösung sein. Der Schalter wird nie wissen, in welchem Status sich der Trinkwasserpush aktuell befindet.   
+
+[//]: # ({% raw %})
+```yaml
+  switch:
+    - name: "BSB-LAN Manueller TWW-Push"
+      unique_id: bsb_lan_switch_manueller_tww_push
+      state_topic: "BSB/10019"
+      command_topic: "BSB"
+      payload_on: "S10019=1"
+      payload_off: "S10019=0"
+      state_on: "1 - Ein"
+      state_off: "0 - Aus"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+  button:
+    - name: BSB-LAN Trinkwasserpush #war in v2.x noch 1603
+      unique_id: bsb_lan_button_trinkwasserpush
+      command_topic: "BSB"
+      payload_press: "S10019=1"
+      qos: 0
+      retain: false
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+Möchte man nicht nur die Climate-Entität nutzen, sondern auch Select-Entitäten für die Betriebsart, so geht das wie folgt:  
+
+[//]: # ({% raw %})
+```yaml
+  select:
+    - name: BSB-LAN Betriebsart # Heizkreis 1
+      unique_id: bsb_lan_select_betriebsart
+      state_topic: "BSB/700"
+      command_topic: "BSB"
+      value_template: >
+        {% set mapping = {0: 'Schutzbetrieb', 1: 'Automatik', 2: 'Reduziert', 3: 'Komfort'} %}
+        {% set idx = value.split() | first | int %}
+        {{ mapping[idx] }}
+      command_template: >
+        {% set mapping = {'Schutzbetrieb': 0, 'Automatik': 1, 'Reduziert': 2, 'Komfort': 3} %}
+        S700={{ mapping[value] }}
+      options:
+        - Schutzbetrieb
+        - Automatik
+        - Reduziert
+        - Komfort
+      icon: mdi:list-box
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+Zustände lassen sich sehr gut über binäre Sensoren anzeigen:  
+
+[//]: # ({% raw %})
+```yaml
+  binary_sensor:
+    - name: BSB-LAN Kesselpumpe Q1
+      state_topic: "BSB/8304"
+      payload_on: "255 - Ein"
+      payload_off: "---"
+      unique_id: bsb_lan_kesselpumpe_q1
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Zustand Trinkwasserpumpe
+      state_topic: "BSB/8820"
+      payload_on: "255 - Ein"
+      payload_off: "0 - Aus"
+      unique_id: bsb_lan_zustand_trinkwasserpumpe
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+Die Number-Domains ist ausgesprochen hilfreich, wenn man numerische Werte über MQTT direkt in the Therme zurückschreiben möchte:  
+
+[//]: # ({% raw %})
+```yaml
+  number:
+    - name: BSB-LAN Heizkreis Komfortsollwert # Heizkreis 1 - Komfortsollwert
+      unique_id: bsb_lan_heizkreis_komfortsollwert
+      state_topic: "BSB/710"
+      command_topic: "BSB"
+      command_template: "S710={{ value }}"
+      mode: slider
+      min: 12
+      max: 26
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkreis Reduziertsollwert # Heizkreis 1 - Raumtemperatur-Reduziertsollwert
+      unique_id: bsb_lan_heizkreis_reduziertsollwert
+      state_topic: "BSB/712"
+      command_topic: "BSB"
+      command_template: "S712={{ value }}"
+      mode: slider
+      min: 12
+      max: 26
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Nennsollwert # Trinkwassertemperatur-Nennsollwert
+      unique_id: bsb_lan_tww_nennsollwert
+      state_topic: "BSB/1610"
+      command_topic: "BSB"
+      command_template: "S1610={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Reduziertsollwert # Trinkwassertemperatur-Reduziertsollwert
+      unique_id: bsb_lan_tww_reduziertsollwert
+      state_topic: "BSB/1612"
+      command_topic: "BSB"
+      command_template: "S1612={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN TWW Nennsollwertmaximum # Trinkwassertemperatur-Nennsollwertmaximum
+      unique_id: bsb_lan_tww_nennsollwertmaximum
+      state_topic: "BSB/1614"
+      command_topic: "BSB"
+      command_template: "S1614={{ value }}"
+      mode: slider
+      min: 40
+      max: 65
+      step: 0.5
+      unit_of_measurement: °C
+      device_class: temperature
+      icon: mdi:temperature-celsius
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkennlinien-Steilheit
+      unique_id: bsb_lan_heizkennlinien_steilheit
+      state_topic: "BSB/720"
+      command_topic: "BSB"
+      command_template: "S720={{ value }}"
+      mode: slider
+      min: 0.1
+      max: 2.0
+      step: 0.01
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Heizkennlinien-Parallelverschiebung
+      unique_id: bsb_lan_heizkennlinien-parallelverschiebung
+      state_topic: "BSB/721"
+      command_topic: "BSB"
+      command_template: "S721={{ value }}"
+      mode: slider
+      min: 0
+      max: 2
+      step: 0.1
+      unit_of_measurement: °C
+      device_class: temperature
+      availability_topic: "BSB/status"
+      entity_category: "config"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+```
+[//]: # ({% endraw %})  
+
+
+Hinzufügen der üblichen Sensoren:  
+
+[//]: # ({% raw %})
+```yaml
+  sensor:
+    - name: "BSB-LAN Aussentemperatur"
+      state_topic: "BSB/8700"
+      unique_id: bsb_lan_aussentemperatur
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: "BSB-LAN Aussentemperatur gedaempft"
+      state_topic: "BSB/8703"
+      unique_id: bsb_lan_aussentemperatur_gedaempft
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: "BSB-LAN Außentemperatur gemischt"
+      state_topic: "BSB/8704"
+      unique_id: bsb_lan_aussentemperatur_gemischt
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesseltemperatur-Istwert
+      state_topic: "BSB/8310"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesseltemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesseltemperatur-Sollwert
+      state_topic: "BSB/8311"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesseltemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Kesselschaltpunkt
+      state_topic: "BSB/8312"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_kesselschaltpunkt
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Ruecklauftemperatur-Istwert # Kesselrücklauftemperatur
+      state_topic: "BSB/8314"
+      unique_id: bsb_lan_ruecklauftemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Trinkwassertemperatur-Istwert Oben #B3
+      state_topic: "BSB/8830"
+      unique_id: bsb_lan_trinkwassertemperatur_istwert_oben
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Trinkwassertemperatur-Sollwert
+      state_topic: "BSB/8831"
+      unique_id: bsb_lan_trinkwassertemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Geblaesedrehzahl
+      state_topic: "BSB/8323"
+      unique_id: bsb_lan_geblaesedrehzahl
+      state_class: measurement
+      unit_of_measurement: "rpm"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennergeblaesesollwert
+      state_topic: "BSB/8324"
+      unit_of_measurement: "rpm"
+      unique_id: bsb_lan_brennergeblaesesollwert
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Aktuelle Geblaeseansteuerung
+      state_topic: "BSB/8325"
+      unique_id: bsb_lan_aktuelle_geblaeseansteuerung
+      unit_of_measurement: "%"
+      icon: "mdi:fire"
+      state_class: measurement
+      device_class: power_factor
+      availability_topic: "BSB/status"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennermodulation
+      state_topic: "BSB/8326"
+      unique_id: bsb_lan_brennermodulation
+      unit_of_measurement: "%"
+      icon: "mdi:fire"
+      state_class: measurement
+      device_class: power_factor
+      availability_topic: "BSB/status"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur-Istwert
+      state_topic: "BSB/8740"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur-Sollwert
+      state_topic: "BSB/8741"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_solltwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Raumtemperatur Modell
+      state_topic: "BSB/8742"
+      value_template: >-
+        {% if value == '---' %}
+            {{ 'None' }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_raumtemperatur_modell
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Vorlauftemperatur-Sollwert
+      state_topic: "BSB/8744"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_vorlauftemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Schienenvorlauftemperatur-Istwert
+      state_topic: "BSB/8950"
+      unique_id: bsb_lan_schienenvorlauftemperatur_istwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Schienenvorlauftemperatur-Sollwert
+      state_topic: "BSB/8951"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_schienenvorlauftemperatur_sollwert
+      unit_of_measurement: °C
+      device_class: temperature
+      state_class: measurement
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Heizkreis
+      state_topic: "BSB/8000"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_heizkreis
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Trinkwasserbetrieb
+      state_topic: "BSB/8003"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_trinkwasserbetrieb
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Kessel
+      state_topic: "BSB/8005"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_kessel
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Status Brenner
+      state_topic: "BSB/8009"
+      value_template: "{{value | regex_findall_index('-[ \t]+(.*)')}}"
+      unique_id: bsb_lan_status_brenner
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Drehzahl Kesselpumpe
+      state_topic: "BSB/8308"
+      value_template: >-
+        {% if value == '---' %}
+            {{ '0.0' | float }}
+        {% else %}
+            {{ value }}
+        {% endif %}
+      unique_id: bsb_lan_drehzahl_kesselpumpe
+      state_class: measurement
+      unit_of_measurement: "%"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    # ================================
+    # FEHLERHISTORIE 1
+    # ================================
+
+    - name: BSB-LAN Historie01 DatumZeit
+      state_topic: "BSB/6800"
+      unique_id: bsb_lan_historie01_datumzeit
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 Fehlercode
+      state_topic: "BSB/6803"
+      unique_id: bsb_lan_historie01_fehlercode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 SW Diagnosecode
+      state_topic: "BSB/6805"
+      unique_id: bsb_lan_historie01_sw_diagnosecode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Historie01 FA Phase
+      state_topic: "BSB/6806"
+      unique_id: bsb_lan_historie01_faphase
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+
+    - name: BSB-LAN SW Diagnosecode
+      state_topic: "BSB/6705"
+      unique_id: bsb_lan_sw_diagnosecode
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+    - name: BSB-LAN Brennerstarts Stufe 1 # Startzähler 1.Stufe
+      unique_id: bsb_lan_brennerstarts_stufe1
+      state_topic: "BSB/8331"
+      availability_topic: "BSB/status"
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+
+```
+[//]: # ({% endraw %})  
+
+Neben den obigen MQTT-Sensoren könnte man noch die Spreizung über einen Template-Sensor berechnen:  
+
+[//]: # ({% raw %})
+```yaml
+template:
+  - sensor:
+      - name: bsb_lan_temperaturspreizung
+        unique_id: bsb_lan_temperaturspreizung
+        state: "{{ (states('sensor.bsb_lan_kesseltemperatur_istwert') | float(0) - states('sensor.bsb_lan_ruecklauftemperatur_istwert') | float(0) ) | round(1) }}"
+        unit_of_measurement: °C
+        device_class: temperature
+
+```
+[//]: # ({% endraw %})  
+
+Hinweis am Rande:  
+Bei allen Konfigurationen wurde hier folgende Zeilen ergänzt. Das sieht ungewöhnlich aus und verursacht nur viele redunanten Code-Zeilen. Es hat aber den Vorteil, dass sämtliche Entitäten in Home Assistant zu einem Device zusammengeführt werden.  
+
+[//]: # ({% raw %})
+```yaml
+      device:
+        {
+          identifiers: ["00000002"],
+          name: "BSB-LAN",
+          model: "Arduino Due",
+          manufacturer: "Github",
+        }
+```
+[//]: # ({% endraw %})  
+
+Man kann es also löschen, aber dann gibt es nur viele Einzelentitäten.  
+Die folgenden Screenshots zeigen die Darstellung in HomeAssistant.  
+
+![Screenshot1](assets/images/Screenshot1.jpg)  
+![Screenshot2Climate](assets/images/Screenshot2Climate.jpg)  
+![Screenshot3Tiles](assets/images/Screenshot3Tiles.jpg)  
+![Screenshot4Logbook-Card](assets/images/Screenshot4Logbook-Card.jpg)  
+![Screenshot5Historie](assets/images/Screenshot5Historie.jpg)  
+![Screenshot6Konfiguration](assets/images/Screenshot6Konfiguration.jpg)  
+![Screenshot7Temperaturen](assets/images/Screenshot7Temperaturen.jpg)  
+![Screenshot8TWW](assets/images/Screenshot8TWW.jpg)  
+
+---
   
 ***BSB-LAN-User Yann hat eine ausführliche Beschreibung für die Einbindung in HomeAssistant in Verbindung mit Mosquitto erstellt (Englisch), sie ist [hier](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md) zu finden.***  
 ***Vielen Dank!***  
@@ -2520,7 +3358,39 @@ Datei *automations.yaml*:
 
 Der erste Trigger reagiert auf eine Änderung des Eingabefeldes und setzt entsprechend den Heizungsparamater mit Hilfe des oben definierten REST Commands. Der zweite Trigger reagiert auf eine Änderung des Parameters seitens der Heizung und aktualisiert entsprechend den Inhalt des Eingabefeldes.
   
+---
 
+***BSB-LAN ist jetzt eine offizielle Home-Assistant-Integration, die von [Willem-Jan](https://github.com/liudger) betreut wird.***    
+***Die Dokumentation der Integration ist [hier](https://www.home-assistant.io/integrations/bsblan/) zu finden.***  
+***Vielen Dank!***  
+  
+***BSB-LAN-User Florian hat die o.g. Lösung erweitert, so dass zwei Regler mit insgesamt vier Heizkreisen bedient werden können. [Hier](https://github.com/florianrenner/BSB-LAN-Component-for-Home-Assistant) hat er seine Lösung zur Verfügung gestellt.***  
+***Vielen Dank!***
+  
+| Achtung |
+|:---------|
+| Die o.g. Integration ist z.Zt. nur mit der BSB-LAN-Version 1.0 kompatibel, NICHT mit der aktuellen Version! Für die Einbindung der aktuellen BSB-LAN-Version ist es daher empfehlenswert, die im Folgenden dargestellten Einbindungsmöglichkeiten mittels MQTT oder JSON zu nutzen. |  
+   
+<!---
+***BSB-LAN-User Torben hat den Adapter via MQTT in Home Assistant eingebunden und stellt hier ein Beispiel zur Verfügung.***  
+***Vielen Dank!***  
+  
+Die folgende beispielhafte Sensor-Konfiguration für Home Assistant ermöglicht die Abfrage des Komfortsollwerts (BSB-Parameter 710). Das Beispiel geht davon aus, dass dieser Parameter in den log_parameters enthalten ist und so per MQTT auch publiziert wird.  
+  
+```  
+- platform: mqtt
+  name: "BSB Komfortsollwert"
+  state_topic: "BSB-LAN/710"
+  unique_id: "bsb710"
+  unit_of_measurement: '°C'
+  device_class: temperature
+  availability_topic: "BSB-LAN/status"
+  icon: "mdi:thermometer-chevron-up"
+```  
+  
+Siehe: [Sensoreinbindung](https://www.home-assistant.io/integrations/sensor.mqtt/)  
+  
+--->
   
 ---
   
