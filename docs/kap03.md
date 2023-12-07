@@ -251,6 +251,10 @@ Meist liegt der Grund hierfür dann in einem Problem des Hardware-Setups oder de
 
 Weitere Gründe für Fehlfunktionen sind in den Kapiteln [13](kap13.md), [14](kap14.md) und [15](kap15.md) aufgeführt.  
 
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 
 ---
