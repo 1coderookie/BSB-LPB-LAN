@@ -47,7 +47,11 @@ Bei Problemen mit einer umfangreicheren OneWire-Installation sei ein
 Blick auf die technischen Anforderungen von OneWire (speziell
 hinsichtlich der Bus-Typologie und der Leitungslängen) und auf die
 Hinweise im entsprechenden Kapitel empfohlen.    
-    
+       
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+ 
 ---
          
      
