@@ -42,7 +42,12 @@ Das Pinout für den [Olimex ESP32-EVB](https://www.olimex.com/Products/IoT/ESP32
   
 *Pinout der 40 poligen Pinleiste des Olimex ESP32-EVB.*  
   
-     
+         
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
+---
      
 [Weiter zu Anhang C](anhang_c.md)      
 [Zurück zum Inhaltsverzeichnis](inhaltsverzeichnis.md)  
