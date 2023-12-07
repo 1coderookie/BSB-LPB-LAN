@@ -195,6 +195,10 @@ Nachfolgend ein exemplarischer Mitschnitt einer SerMo-Ausgabe eines erfolgreiche
 12:26:21.182 -> HEIZ->DSP1 ANS 8310 Diagnose Erzeuger - Kesseltemperatur: 41.0 &deg;C
 12:26:21.215 -> DC 80 0A 0E 07 0D 3D 05 19 00 0A 41 08 A5
 ```
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---
          
