@@ -24,7 +24,11 @@ Für das Gerät, auf dem der Reverse Proxy läuft, muss im lokalen Netzwerk eine
 Das Gerät, auf dem der Reverse Proxy läuft, kann irgendein Rechner sein, der dauerhaft erreichbar ist, z.B. ein File-Server/NAS. Auf diesem wird der ReverseProxy-Server installiert und eingerichtet. Nutzt man hierfür eine Synology NAS, so ist hier ab DSM 7 bereits solch eine Funktion mit eingebaut (siehe Systemsteuerung / Anmeldeportal / Erweitert).  
 Man konfiguriert den Reverse Proxy nun so, dass er die Anfragen für die gewählte (Sub-)Domain über *HTTPS*(!) auf Port 443 annimmt und diese dann über *HTTP*(!) auf Port 80 des BSB-LAN Adapters weiterleitet. Der Weg zurück erfolgt dann genau umgekehrt: Von BSB-LAN über ungesichertes HTTP zum Reverse Proxy und von dort aus über HTTPS wieder raus ins Internet.  
 Nun ist BSB-LAN über den HTTPS-Aufruf der (Sub-)Domain direkt erreichbar. Es empfiehlt sich nun auf jeden Fall die HTTP-Authentifizierung in BSB-LAN zu aktivieren, da ansonsten jeder Zugriff auf BSB-LAN hätte.  
-   
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+ 
 ---
      
 [Weiter zu Kapitel 14](kap14.md)      
