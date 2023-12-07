@@ -426,7 +426,11 @@ Neben dem Einsatz eines 'normalen' Routers können auch kleine Geräte genutzt w
 
 In jedem Fall sollte eine möglichst stabile WLAN-Verbindung angestrebt werden - insbesondere dann, wenn via FHEM o.ä. Logdateien erstellt oder mit zusätzlicher Hardware (HK-Thermostate o.ä.) der Wärmeerzeuger gesteuert oder dessen Verhalten beeinflusst werden soll.  
     
-   
+       
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
          
 [Weiter zu Kapitel 8](kap08.md)      
