@@ -428,7 +428,11 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 -   Weishaupt WTU 25 S \[WRS-CPU-B3 = RVS23\] (Ölbrenner) {LPB}  
     
 -   Weishaupt WTU 30 S \[WRS-CPU-B1 = RVS23\] (Ölbrenner) {LPB}  
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
 
 [Weiter zu Kapitel 12](kap12.md)      
