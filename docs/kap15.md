@@ -167,7 +167,11 @@ Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)
 - Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
 - Falsche Baudrate eingestellt → auf 115200 Baud einstellen
 - Adapter nicht am Regler angeschlossen, Regler ist ausgeschaltet → siehe o.g. Punkte  
-    
+       
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+   
 ---
     
      
