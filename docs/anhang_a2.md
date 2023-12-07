@@ -106,7 +106,11 @@ können ein unerklärliches und schwer zu diagnostizierendes Fehlverhalten
 des Adpaters bis hin zu einem eventuellen Reglerdefekt nach sich ziehen!
 
 Viel Erfolg!  
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
          
      
