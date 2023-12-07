@@ -77,6 +77,9 @@ Sollte dein Rechner den Due nicht automatisch erkennen, ist der entspr. Treiber 
   
 12. *Um nun Zugriff auf sämtliche Parameter deines Reglers zu erhalten, muss eine reglerspezifische Datei `BSB_LAN_custom_defs.h` erstellt werden. Bitte lies hierfür das [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen)!*     
     
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)  
 
 ---
    
