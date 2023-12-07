@@ -11,6 +11,10 @@
   
 ![Schaltplan](assets/images/circuit_diagram_adapter_v4.png)  
  
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
        
     
 ---
