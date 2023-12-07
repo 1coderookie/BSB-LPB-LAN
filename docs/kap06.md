@@ -357,6 +357,10 @@ Die o.g. Pins zum Löschen können bei Bedarf auch individuell in der Datei *BSB
 Alternativ kann der Microcontroller aber auch über die serielle Schnittstelle angeschlossen werden und über den Serial Monitor die Zeichenkette `/NE` gesendet werden, ggf. mit vorangestelltem Passkey (also dann z.B. /1234/NE ). Dann wird ebenfalls das EEPROM gelöscht.    
 ESP32-Nutzer können außerdem in der ArduinoIDE vor einem erneuten Flashen unter "Werkzeuge" den Eintrag "Erase All Flash Before Sketch Upload" auf "Enabled" stellen, dann wird vor dem Upload der gesamte Flashbereich einmal gelöscht.  
 
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---
      
