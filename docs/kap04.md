@@ -116,9 +116,13 @@ Der Button ist mit dem [Inhaltsverzeichnis](inhaltsverzeichnis.md) dieses Handbu
    
 **FAQ:**  
 Der Button ist mit dem Kapitel [FAQ](kap15.md) dieses Handbuchs verlinkt. Internetzugriff wird benötigt.
+
     
 ---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
     
+---
 
      
 [Weiter zu Kapitel 5](kap05.md)      
