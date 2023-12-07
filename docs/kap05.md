@@ -263,7 +263,11 @@ Die folgende Übersicht zeigt, wie die Nummernbereiche aufgeteilt bzw. vergeben 
 | 20200-20299 | Sensoren: BME280 |
 | 20300-20499 | Sensoren: DS18B20 |
 | 20500-20699 | MAX!-Sensoren/Komponenten |
-   
+       
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---   
      
 [Weiter zu Kapitel 6](kap06.md)      
