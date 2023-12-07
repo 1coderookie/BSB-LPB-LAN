@@ -491,7 +491,11 @@ Version 0.5 -- 02.02.2015
 
 Version 0.1 -- 21.01.2015 -- initial version
       
-    
+        
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---
         
 [Weiter zu Anhang D](anhang_d.md)          
