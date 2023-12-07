@@ -458,6 +458,10 @@ Neben kommerziellen Produkten und kreativen Selbstbau- und Bastellösungen biete
 ![Olimex PoE housing](assets/images/OlimexPoE_housing_small.png)  
   
 *3D-Druckmodell des Gehäuses für den empfohlenen Olimex ESP32-PoE inkl. Adapter.*  
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
 
 ---
 
