@@ -1,4 +1,4 @@
-<h2><b><a href="https://1coderookie.github.io/BSB-LPB-LAN_EN">English language version of this manual now available!</a></b></h2>  
+<h2><b><a href="https://1coderookie.github.io/BSB-LPB-LAN_EN">English language version of this manual available!</a></b></h2>  
    
 ## Einleitung  
 
@@ -99,6 +99,10 @@ Die folgende Auflistung gibt eine grobe Übersicht über die Reglertypen, die je
 *Basierend auf dem Code und der Mitarbeit von vielen anderen
 Entwicklern! Vielen Dank!*  
       
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
     
     
 
