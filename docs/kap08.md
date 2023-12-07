@@ -3433,7 +3433,11 @@ Die Lösung von Karl-Heinz ist für diejenigen Nutzer interessant, die keine kom
    
 ***BSB-LAN-User Michael hat ein [Plugin für Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) geschrieben, das eine einfache Einbindung von BSB-LAN ermöglicht.***  
 ***Vielen Dank!***  
-  
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+
 ---  
   
 [Weiter zu Kapitel 9](kap09.md)      
