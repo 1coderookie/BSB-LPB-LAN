@@ -947,6 +947,10 @@ Dieser Fühler kann ebenfalls durch einen entspr. kostengünstigeren Standardfü
 | Die o.g. 'Tauchfühler' sind *nicht* für das direkte Eintauchen in flüssige Medien geeignet! Der Name bezieht sich auf den Einsatz in sog. 'Tauchhülsen', wie sie bspw. bei Puffer- oder Brauchwasserspeichern vorzufinden sind. | 
 | *Bei älteren Reglertypen kommen u.U. andere Fühlertypen zum Einsatz, erkennbar an der Produktbezeichnung (bei den Außentemperaturfühlern lauten diese bspw. "QAC**21**" und "QAC**31**") - diese Fühler weisen andere Widerstandswerte und -kennlinien auf und dürfen nicht mit den o.g. Fühlertypen verwechselt werden! <br> Informationen zu den verwendeten Fühlertypen finden sich in der spezifischen Anlangendokumentation.* |    
   
+    
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
       
 ---
          
