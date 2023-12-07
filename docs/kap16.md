@@ -299,7 +299,11 @@ Prinzipiell kann man sagen: Lieber erst einmal zu viele Informationen, als zu we
 
 Fragen, deren Antworten sich aus dem gründlichen Lesen dieses Handbuchs ergeben, werden ab einem gewissen Punkt lediglich mit einem Verweis hierauf beantwortet.  
 Bitte bedenke, dass dies für jeden von uns nur ein Hobby-Projekt ist.  
-    
+      
+---
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
+  
 ---
          
      
