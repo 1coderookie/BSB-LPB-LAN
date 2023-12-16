@@ -42,28 +42,26 @@ Führe die folgenden Schritte aus:
   
 3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Dateien *BSB_LAN_custom_defs.h.default* in ***BSB_LAN_custom_defs.h*** sowie  *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
       
-4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!  
+4. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
 
-5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
-
-6. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
+5. Wähle "Arduino Due (Programming Port)" unter Tools/Board bzw. Werkzeuge/Board.  
 
    | Hinweis |
    |:--------|
    | Sollte das Board nicht aufgeführt sein, so muss der Atmel SAM Core hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.1](kap12.md#1211-arduino-due). |  
   
   
-7. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+6. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
    
    <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_Due.png">  
    
    *Die Einstellungen für den Due in der Arduino IDE.*  
 
-8. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
+7. Solltest du BSB-LAN mittels Anpassung der Datei *BSB_LAN_config.h* konfigurieren wollen (s. [Kap. 2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)), so tue dies bitte jetzt.   
 
-9. Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino Due.  
+8. Starte den Flashvorgang und lade den Sketch mittels Klick auf "Sketch/Upload" bzw. "Sketch/Hochladen" auf den Arduino Due.  
 
-10. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des Arduino Due erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
+9. Nach Beenden des Flashvorgangs starte den Seriellen Monitor der Arduino IDE und beobachte die Ausgaben, die beim Start des Arduino Due erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.    
 
 ***Herzlichen Glückwunsch - du hast BSB-LAN installiert!***  
 Fahre nun mit der [Konfiguration der BSB-LAN-Software](kap02.md#22-konfiguration) und danach mit [dem Anschluss und der Inbetriebnahme des Setups](kap03.md) fort.  
@@ -90,11 +88,9 @@ Führe die folgenden Schritte aus:
   
 3. Wechsle in den Ordner "BSB-LAN-master"/"BSB_LAN" und benenne die Dateien *BSB_LAN_custom_defs.h.default* in ***BSB_LAN_custom_defs.h*** sowie  *BSB_LAN_config.h.default* in ***BSB_LAN_config.h*** um!  
     
-4. Wenn du eigenen Code implementieren willst, benenne die Datei *BSB_LAN_custom.h.default* in ***BSB_LAN_custom.h*** um!   
+4. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
 
-5. Öffne den BSB_LAN-Sketch mittels eines Doppelklicks auf die Datei *BSB_LAN.ino* im BSB_LAN-Ordner. Die dazugehörigen Dateien *BSB_LAN_config.h*, *BSB_LAN_defs.h* sowie *BSB_LAN_custom_defs.h* werden automatisch mit geladen.  
-
-6. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
+5. Wähle den entspr. ESP32-Boardtyp unter Tools/Board bzw. Werkzeuge/Board aus:  
 
     - Für den in diesem Handbuch empfohlenen **[Joy-It ESP32-NodeMCU](kap01.md#1311-esp32-nodemcu-joy-it)** (oder identische Clones mit einem "ESP32-WROOM"-Chip) lautet der passende Boardtyp "ESP32 Dev Module".  
     
@@ -105,11 +101,11 @@ Führe die folgenden Schritte aus:
     | Falls das ESP32-Framework bereits installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
   
   
-7. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
+6. Wähle den korrekten Seriellen Port, an dem das ESP32-Board am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
 
-8. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
+7. Stelle die Übertragungsgeschwindigkeit/Baudrate auf 115200 ein (Achtung: In der Arduino IDE ist bei ESP32-Boards i.d.R. 921600 voreingestellt!).  
 
-9. "Partition Scheme": Je nach gewähltem ESP32-Board sind hier entspr. Einstellungen vorzunehmen.   
+8. "Partition Scheme": Je nach gewähltem ESP32-Board sind hier entspr. Einstellungen vorzunehmen.   
     
     - Für den empfohlenen **ESP32-NodeMCU** wähle bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus. <br> Der folgende Screenshot zeigt die gesamten Einstellungen für den **ESP32-NodeMCU**.  
        
@@ -121,7 +117,7 @@ Führe die folgenden Schritte aus:
    
    
   
-10. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
+9. Klicke nun auf den Reiter für die Datei *BSB_LAN_config.h* und passe *zwingend* die folgenden Einstellungen an:  
 
     - Aktiviere das Definement `#define WIFI` in der Datei *BSB_LAN_config.h*, wenn du WiFi verwenden willst. Solltest du ein Olimex-Board verwenden und den LAN-Anschluss nutzen wollen, lasse das Definement bitte auskommentiert: `//#define WIFI`.   
 
