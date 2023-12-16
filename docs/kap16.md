@@ -281,8 +281,33 @@ E (1594) esp_eth: esp_eth_driver_install(214): init mac failed
 dann wurde das Definement `#define WIFI` in der Datei *BSB_LAN_config.h* nicht aktiviert. Um es zu aktivieren, müssen die beiden Schrägstriche `//` davor entfernt und BSB-LAN erneut geflasht werden (siehe auch Kap. [2.2.2](kap02.md#222-konfiguration-durch-anpassen-der-datei-bsb_lan_configh)).  
     
 ---
+
+## 16.29 BSB-LAN stürzt häufig ab oder die WLAN-Verbindung ist instabil.  
+
+Probleme mit Abstürzen oder instabilem WLAN sind häufig (auch) auf nicht ausreichende Stromversorgung zurückzuführen. Bei den Olimex Boards ist dies hin
+und wieder auch bei Stromversorgung über die DC-Buchse aufgefallen, eine Stromversorgung über die USB-Schnittstelle war in den Fällen stabiler.
+
+---
+
+## 16.30 Ich finde die Einstellung zum Schreiben der Parameter nicht / Es fehlt der „set“ Button
+
+In der webbasierten Konfiguration muss der Schreibmodus erlaubt werden, dafür müssen zuvor die erweiterten Einstellungen im Webinterface aktiviert werden.
+
+---
+
+## 16.31 Warum finde ich nirgendwo den Parameter XYZ?
+
+BSB-LAN kann nur die Parameter anzeigen, die auch als solche am Heizungsregler vorhanden sind. Bitte also nur dann eine Support-Anfrage stellen, wenn eine Parameternummer am Regler angezeigt wird, aber diese nicht in BSB-LAN auftaucht.  
+
+---
+
+## 16.32 Die LED flackert, aber es kommt keine Verbindung zur Heizung zustande.
+
+Insbesondere beim Olimex noch einmal die richtige Orientierung der Platine und deren mittigen Sitz überprüfen.
+
+---
   
-## 16.29 Ich habe weitere Fragen, an wen kann ich mich wenden?
+## 16.33 Ich habe weitere Fragen, an wen kann ich mich wenden?
 
 Das Beste wäre, wenn du dich dafür im FHEM-Forum ([https://forum.fhem.de/](https://forum.fhem.de/)) anmelden würdest, da dort speziell für diesen Adapter ein eigener Thread existiert und sich dort eine nette und hilfsbereite Community findet. Hier findet ein reger Austausch über die Hard- und Software statt,
 Fragen werden meist zügig beantwortet und auf Updates wird hingewiesen.
