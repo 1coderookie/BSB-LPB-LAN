@@ -107,6 +107,7 @@
    * [8.14 Datenverarbeitung mittels Bash-Skript](kap08.md#814-datenverarbeitung-mittels-bash-skript)  
    * [8.15 Volkszaehler](kap08.md#815-volkszaehler)  
    * [8.16 Homebridge](kap08.md#816-homebridge)  
+   * [8.17 Jeedom](kap08.md#817-jeedom)  
 
    
 [**9. Exkurs: Auslesen neuer Parameter-Telegramme**](kap09.md)  
@@ -207,7 +208,11 @@
    * [16.26 Ich nutze das veraltete Setup Adapter v2 + Arduino Mega 2560 - muss ich irgendetwas beachten?](kap16.md#1626-ich-nutze-das-veraltete-setup-adapter-v2--arduino-mega-2560---muss-ich-irgendetwas-beachten)  
    * [16.27 Ich bekomme Fehlermeldungen von der Arduino IDE, was kann ich tun?](kap16.md#1627-ich-bekomme-fehlermeldungen-von-der-arduino-ide-was-kann-ich-tun)  
    * [16.28 Es kann keine Verbindung zum WLAN-Netzwerk hergestellt werden](kap16.md#1628-es-kann-keine-verbindung-zum-wlan-netzwerk-hergestellt-werden)
-   * [16.29 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap16.md#1629-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
+   * [16.29 BSB-LAN stürzt häufig ab oder die WLAN-Verbindung ist instabil.](kap16.md#1629-bsb-lan-st%C3%BCrzt-h%C3%A4ufig-ab-oder-die-wlan-verbindung-ist-instabil)
+   * [16.30 Ich finde die Einstellung zum Schreiben der Parameter nicht / Es fehlt der „set“ Button](kap16.md#1630-ich-finde-die-einstellung-zum-schreiben-der-parameter-nicht--es-fehlt-der-set-button)
+   * [16.31 Warum finde ich nirgendwo den Parameter XYZ?](kap16.md#1631-warum-finde-ich-nirgendwo-den-parameter-xyz)
+   * [16.32 Die LED flackert, aber es kommt keine Verbindung zur Heizung zustande.](kap16.md#1632-die-led-flackert-aber-es-kommt-keine-verbindung-zur-heizung-zustande)  
+   * [16.33 Ich habe weitere Fragen, an wen kann ich mich wenden?](kap16.md#1633-ich-habe-weitere-fragen-an-wen-kann-ich-mich-wenden)  
    
 [**17. Weiterführende Informationen und Quellen**](kap17.md)  
 
