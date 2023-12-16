@@ -215,8 +215,10 @@ Mit `<ip>/I10003=16.4` wird dem Heizungsregler die AT von 16.4°C mitgeteilt; `<
   
 ## 6.8 Eigenen Code in BSB-LAN einbinden
   
-BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden. Dazu muss das entspr. Definement in der Datei `BSB_LAN_config.h` aktiviert und der Code entspr. in den Dateien `BSB_LAN_custom.h.default`, `BSB_LAN_custom_global.h` sowie `BSB_LAN_custom_setup.h` hinzugefügt werden. Die Datei `BSB_LAN_custom.h.default` muss zur Verwendung in `BSB_LAN_custom.h` umbenannt werden.  
-Ein Beispiel und entspr. Hinweise sind in den jeweiligen Dateien zu finden.  
+BSB-LAN bietet die Möglichkeit, eigenen Code einzubinden.  
+Dazu muss das entspr. Definement in der Datei `BSB_LAN_config.h` aktiviert und der Code entspr. in den Dateien `BSB_LAN_custom.h`, `BSB_LAN_custom_global.h` sowie `BSB_LAN_custom_setup.h` hinzugefügt werden.  
+**Im Ordner ["custom_functions"](https://github.com/fredlcore/BSB-LAN/tree/master/BSB_LAN/custom_functions) sind Beispiele zu finden.**   
+*Bitte lies das entspr. [Readme](https://github.com/fredlcore/BSB-LAN/blob/master/BSB_LAN/custom_functions/README.md) für weitere Informationen.*  
   
 *FHEM-Forumuser "Scherheinz" hat ein anderes Verwendungsbeispiel zur Verfügung gestellt (siehe [Forumsbeitrag](https://forum.fhem.de/index.php/topic,29762.msg1046673.html#msg1046673)).*  
 *Vielen Dank dafür!*  
