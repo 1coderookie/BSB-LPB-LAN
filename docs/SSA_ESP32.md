@@ -17,7 +17,9 @@
   *Das komplette Setup: Joy-It ESP32 NodeMCU samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
 
 - ***[Olimex ESP32-EVB & ESP32-PoE](kap01.md#1312-esp32-olimex-esp32-evb--esp32-poe)***  
-  Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer.  
+  Stecke den BSB-LAN-Adapter auf den Olimex und verbinde den Olimex mit einem USB-Kabel mit deinem Computer.
+  **Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine ***exakt in der Mitte*** der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben!** Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. **Ebenso ist auf die korrekte Ausrichtung der Platine zu achten (s. Foto)!**
+  
   Sollte dein Rechner den Olimex nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
   ![Setup](assets/images/OlimexESP32EVB_v42_small.jpg)
