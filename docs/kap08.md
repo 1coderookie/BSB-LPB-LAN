@@ -3168,6 +3168,7 @@ Die folgenden Screenshots zeigen die Darstellung in HomeAssistant.
 ---
   
 ***BSB-LAN-User Yann hat eine ausführliche Beschreibung für die Einbindung in HomeAssistant in Verbindung mit Mosquitto erstellt (Englisch), sie ist [hier](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN%20English.md) zu finden.***  
+***Dies Beschreibung ist ebenfalls [in Französisch](https://github.com/ryann72/Home-assistant-tutoriel/blob/main/BSB-LAN/tutoriel%20BSB-LAN.md) verfügbar.***  
 ***Vielen Dank!***  
   
 ---  
@@ -3434,6 +3435,13 @@ Die Lösung von Karl-Heinz ist für diejenigen Nutzer interessant, die keine kom
 ***BSB-LAN-User Michael hat ein [Plugin für Homebridge](https://www.npmjs.com/package/@bsblan/homebridge-bsblan-thermostat) geschrieben, das eine einfache Einbindung von BSB-LAN ermöglicht.***  
 ***Vielen Dank!***  
       
+---
+
+## 8.17 Jeedom  
+
+***BSB-LAN-User [bernard-dandrea](https://github.com/bernard-dandrea) hat ein [Plugin für Jeedom](https://bernard-dandrea.github.io/jeedom-BSBLAN/fr_FR/) geschrieben (Beschreibung auf Französisch), das eine einfache Einbindung von BSB-LAN ermöglicht.***  
+***Vielen Dank!***  
+
 ---
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U5NPB51)    
