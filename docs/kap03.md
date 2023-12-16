@@ -217,6 +217,9 @@ Nachdem du diese Datei von Frederik erhalten hast, musst du die bisherige `BSB_L
 
 | Hinweis |
 |:--------|
+| **Die gerätespezifische Parameterliste sollte nur über das Bussystem abgerufen werden, das auch später verwendet wird!** <br> Wenn es also einen LPB-Verbund gibt, muss die gerätespezifische Liste auch zwingend über LPB abgerufen werden, da sonst nicht alle Parameter aller Regler übermittelt werden. |
+| Eine einmal erstellte Liste behält auch bei Updates von BSB-LAN ihren Funktionsumfang. Ein erneutes Erstellen ist daher nicht nötig, solange keine Regler ausgetauscht oder hinzugefügt wurden. |
+| Bei einem LPB-Verbund wird die Kategorienliste vom Hauptgerät übernommen. Parameter von weiteren Reglern im Verbund können aber über die Adressierung über das Ausrufezeichen (siehe URL-Kommandos) direkt abgerufen werden, auch wenn sie in der Kategorienauflistung nicht auftauchen. |
 | Es werden hierbei nur die Parameterdefinitionen des Reglers abgefragt, in keinem Fall werden dabei Konfigurationseinstellungen ausgelesen, gesetzt oder verändert! | 
 | Alternativ kann die Datei `BSB_LAN_custom_defs.h`, die in den vorherigen Versionen verwendet wurde, als Teil der Release-Version 2.2 heruntergeladen werden. Den früheren allgemeinen Parameterlisten fehlen jedoch Hunderte von Parametern - insbesondere von neueren Reglern. Darüber hinaus beinhalten sie eine Vielzahl von Ungenauigkeiten und teilweise auch Fehlern, weswegen wir den Einsatz dieser früheren Parameterliste ausdrücklich *nicht mehr empfehlen*! |  
 
