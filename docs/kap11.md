@@ -41,6 +41,8 @@ Danke!
 
 -   Brötje BBS Pro Evo 15C \[LMU74\] (Gasbrenner) {BSB}
 
+-   Brötje BGB 50 H \[LMS14\]  
+
 -   Brötje BGB EVO 15H \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje BGB EVO 20H \[LMS15\] (Gasbrenner) {BSB}
@@ -48,6 +50,8 @@ Danke!
 -   Brötje BGB EVO 20I \[LMS15\] (Gasbrenner) {BSB}
 
 -   Brötje BMR 20/24 \[LMS14\] (Gasbrenner) {BSB}
+
+-   Brötje BMR 220 SSP (LMS15)
 
 -   Brötje BSK 15 \[LMS14\] (Gasbrenner) {BSB}
 
@@ -93,6 +97,8 @@ Danke!
 
 -   Brötje EuroCondens BBS EVO 15H \[LMS15\] (Gasbrenner) {BSB}  
 
+-   Brötje Eurocontrol KM (RVA63) (LPB/PPS)
+
 -   Brötje ISR-SSR \[RVS63.283\] (Solarsystemregler) {BSB}
 
 -   Brötje ISR-ZR1, ZR2 \[RVS46.530\] (Zonenregler) {BSB}
@@ -100,6 +106,8 @@ Danke!
 -   Brötje LogoBloc Unit L-UB 17C \[RVS43.122\] (Ölbrenner) {BSB} 
 
 -   Brötje LogoBloc Unit L-UB 25C \[RVS43.122\] (Ölbrenner) {BSB}
+
+-   Brötje LOGOBLOC-Unit L-UG (RVA53) (PPS)  
 
 -   Brötje NovoCondens BOB 20 \[RVS43.325\] (Ölbrenner) {BSB}
 
@@ -135,6 +143,10 @@ Danke!
 -   Brötje SensoTherm BSW 8 K \[RVS61\] (Wärmepumpe) {BSB}  
 
 -   Brötje SensoTherm BSW 13 E \[RVS61\] (Wärmepumpe) {BSB}  
+
+-   Brötje SGB 170E
+
+-   Brötie SGB 215E
 
 -   Brötje SGB 260H \[LMS14\] (Gasbrenner) {BSB}
 
@@ -239,7 +251,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Elco Aquatop T06C \[RVS61.843\] (Wärmepumpe) {BSB}  
 
--   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}  
+-   Elco Aquatop T10C \[RVS61.843\] (Wärmepumpe) {BSB}
+
+-   Elco Rendamax R601 (LMS14)
 
 -   Elco Straton 17 \[RVS63\] (Ölbrenner) {BSB}  
 
@@ -305,7 +319,17 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Atlantic Alféa S \[RVS41\] (Wärmepumpe) {BSB}
 
--   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}  
+-   Atlantic Axeo Condens 5025 (RVS13)  
+
+-   Atlantic Hynea hybrid duo gaz (RVS21)
+
+-   Atlantic Perfinox condens Duo 5024 \[LMS14\] (Gasbrenner) {BSB}
+
+-   Atlantic Varmax
+
+-   Austria Email LWP AI 8 (RVS21)
+
+-   Austria Email LWP 11 HT Eco (RVS21)  
 
 -   Austria Email LWPK 8 \[RVS21\] (Wärmepumpe) {BSB}
 
@@ -379,7 +403,9 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Grünenwald GREENHEAT GH10 ZP 41 E \[RVA63\] (Wärmepumpe) \[+ RVA46\] {PPS/LPB}  
 
--   HANSA SND 30TK \[RVS13\] (Ölbrenner) {BSB}  
+-   HANSA SND 30TK \[RVS13\] (Ölbrenner) {BSB}
+
+-   Herz Commotherm 5 DeLuxe (RVS61)
 
 -   Interdomo Domostar GBK 25 H/SH \[LMS15\] (Gasbrenner) {BSB}  
 
@@ -415,7 +441,25 @@ BOK sind NICHT mit BSB-LAN kompatibel!***
 
 -   Thermital TBox Clima TOP \[RVS63\] (Gasbrenner + Solar + Pelletofen) {BSB/LPB}  
 
+-   Tifell Biofell 30 BV (RVS63)
+
+-   Tifell Biofell 30 M (RVS63)
+
+-   Tifell Biofell 30 TI (RVS63)
+
+-   Tifell Biofell SUN 30 TI (RVS63)
+
+-   Tifell Biofell 50 S (RVS63)
+
+-   Tifell Biofell 50 BV (RVS63)
+
+-   Tifell Biofell 50 TI (RVS63)
+
+-   Tifell Biofell 50 SUN TI (RVS63)
+
 -   Viessmann Vitotwin 300-W {BSB}  
+
+-   WAMAK AiWa 8 Outdoor (RVS21)
     
 -   Wamak DB 11 \[RVS21.826F\] (Wärmepumpe) {BSB}
 
