@@ -177,6 +177,11 @@ Mit dieser Funktion ist es möglich, die Uhrzeit- und Datumseinstellungen bspw. 
 **Zeitprogramme verändern**  
 Der folgende Befehl setzt das Zeitprogramm für *Mittwoch* beim Heizkreis 1 (Parameter 502) auf 05:00-22:00 Uhr:  
 `/S502=05:00-22:00_xx:xx-xx:xx_xx:xx-xx:xx`  
+
+**Zeitprogramm löschen**  
+Um ein Zeitprogramm zu löschen muss man als Uhrzeit „128:00“ eingeben.  
+Wenn also bspw. für Dienstag drei Zeitprogramme gesetzt wurden, und nun nur das erste von 5-22h behalten möchte, muss folgender Befehl genutzt werden:  
+`/S502=05:00-22:00_128:00-128:00_128:00-128:00`  
      
 ---  
    
