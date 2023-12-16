@@ -312,7 +312,7 @@ Diese Olimex-Boardvarianten bieten neben der ESP32-basierten WLAN-Funktionalitä
   
 | Achtung, wichtige Hinweise |
 |:---------------------------|
-| **Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine ***exakt in der Mitte*** der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben!** <br> Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. <br> **Ebenso ist auf die korrekte Ausrichtung der Platine zu achten (s. Foto)!** |
+| **Achte beim Aufstecken des Adapterboards penibel darauf, dass die UEXT1-Buchse der Platine ***exakt in der Mitte*** der Olimex-Buchse aufgesteckt wird und alle Pins des Olimex Kontakt haben!** Ansonsten leuchtet beim korrekten Anschluss des Adapters an den Heizungsregler zwar die LED des Adapters, es ist aber kein Zugriff auf den Regler möglich. <br> **Ebenso ist auf die korrekte Ausrichtung der Platine zu achten (s. Foto)!** |
 | Beim Olimex ESP32-EVB ist der Anschluss weiterer Hardware lediglich an den beiden GPIO-Pins 13 (I2C-SDA) und 16 (I2C-SCL) möglich. |
 | Falls das ESP32-Framework bereits in der Arduino IDE installiert ist und dir die verschiedenen ESP32-Boardvarianten angezeigt werden, überprüfe bitte im "Boardverwalter" unter "Werkzeuge/Boards", dass die **Version 2.0.2** (oder höher, falls verfügbar) installiert ist. <br> Sollte das Board *nicht* aufgeführt sein, so muss die ESP32-Plattform in der Arduino IDE hinzugefügt werden. Informationen hierzu findest du in [Kap. 12.1.2](kap12.md#1212-esp32). |  
     
