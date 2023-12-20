@@ -388,6 +388,32 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
     | mDNS ist nur bei einer LAN-Anbindung verfügbar, bei der [WiFi-Lösung mittels ESP8266](kap1.md#122-wlan-verwendung-eines-zusätzlichen-esp8266) hingegen nicht! |
    
 ---    
+
+-    **Zeitabfrage via NTP-Server:**
+
+     `#define USE_NTP       // Disable this in case you don't want to use NTP`  
+     `const char ntp_server[20] = "pool.ntp.org";`  
+     `const char local_timezone[30] = "CET-1CEST,M3.5.0,M10.5.0/3";`
+
+     Per default ist die Zeitabfrage via NTP aktiviert. 
+
+     | Hinweis |
+     |:--------|
+     | Die Zeitabfrage via NTP ist derzeit nur mit ESP32 boards möglich! |  
+
+     ```
+     * NTP settings to acquire exact date and time via network.
+     * Attention: This only works with ESP32 microcontrollers so far!
+     * Use pool.ntp.org if your BSB-LAN installation can access the internet.
+     * Otherwise you may also use your router's address if it can act as a NTP server.
+     * The default timezone "CET-1CEST,M3.5.0,M10.5.0/3" covers most Central European countries (GMT+1) and takes care of daylight saving.
+     * Use "EET-2EEST,M3.5.0/3,M10.5.0/4" for Eastern European countries (GMT+2), or 
+     * use "WET0WEST,M3.5.0/1,M10.5.0" for Western European countries (GMT+0).
+     * See here for a full list of timezones for places all over the world:
+     * https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
+     ```
+        
+---
     
 -   **Debugging und entspr. Einstellungen:**  
     
