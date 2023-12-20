@@ -389,7 +389,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
    
 ---    
 
--    **Zeitabfrage via NTP-Server:**
+-    **Zeit- und Datumsabfrage via NTP-Server:**
 
      `#define USE_NTP       // Disable this in case you don't want to use NTP`  
      `const char ntp_server[20] = "pool.ntp.org";`  
@@ -399,7 +399,7 @@ Vorhanden sind momentan: Tschechisch (CZ), Deutsch (DE), Dänisch (DK), Englisch
 
      | Hinweis |
      |:--------|
-     | Die Zeitabfrage via NTP ist derzeit nur mit ESP32 boards möglich! |  
+     | Die Zeitabfrage via NTP ist nur mit ESP32-Boards möglich! |  
 
      ```
      * NTP settings to acquire exact date and time via network.
