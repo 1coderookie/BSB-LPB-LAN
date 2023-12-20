@@ -425,7 +425,8 @@ haben, deren Regler NICHT mit BSB-LAN
 kompatibel sind.
 
 Bei Brötje scheint es sich hierbei um die Modellreihen 
-- WLS/WLC (Gas), 
+- WGB-K, WGB 14.1/22.1/28.1/38.1 (Gas),
+- WHC, WHS, WLC, WLS (Gas), 
 - BOK (Öl) sowie 
 - BLW Split-P, BLW Split C und BLW Split-K C (Wärmepumpen) zu handeln.  
 
