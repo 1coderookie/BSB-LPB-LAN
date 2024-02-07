@@ -8,8 +8,11 @@
 ----  
   
 ## 3.1 Anschluss des Adapters  
+
+***Warnung: Elektrostatische Aufladungen können irreparable Schäden verursachen - erde dich vor Beginn der Arbeiten!***
   
-**Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte. Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.**  
+Prinzipiell erfolgt der Anschluss des Adapters analog zu dem Anschluss optionaler Raumgeräte.  
+*Die jeweiligen Kontakte sind den herstellerspezifischen Unterlagen zum Heizungssystem zu entnehmen.*  
   
 Ist nur ein BSB-Anschluss verfügbar (bspw. bei Wärmepumpen mit einem RVS21-Regler) und/oder bereits ein Raumgerät vorhanden, so kann der Adapter parallel zu einem bereits installierten Raumgerät an die gleichen Anschlüsse angeschlossen werden.  
   
@@ -34,15 +37,15 @@ Sollte man bereits die entspr. Anschlüsse ausfindig gemacht haben, so lässt si
 **Adapterplatine:**  
 Bei der Adapterplatine sind die Anschlüsse mit CL+/DB und CL-/MB gekennzeichnet. Bei einem Nachbau ist der Schaltplan zu beachten.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-unbestueckt_anschluss.jpeg">
+![PCB unbestückt](assets/images/bsb-adapter-v3-unbestueckt_anschluss.jpeg)
   
 *Die unbestückte Platine.*  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-adapter-v3-bestueckt_anschluss.jpeg">
+![PCB bestückt](assets/images/bsb-adapter-v3-bestueckt_anschluss.jpeg)
   
 *Die bestückte Platine.*    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HW-Setup.jpg">
+![Komplettes Setup](assets/images/HW-Setup.jpg)
     
 *Das komplette Setup (Arduino Due + LAN-Shield + BSB-LPB-LAN-Adapter v3) inklusive der entsprechenden Kabel.*  
   
@@ -93,38 +96,38 @@ des Adapters anzuschließen ist.
    
 **Die folgenden Abbildungen zeigen exemplarisch die Anschlüsse bei verschiedenen Reglermodellen:**    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss.jpg">
+![BSB RVS43](assets/images/bsb-lpb-anschluss.jpg)
 
 *BSB (FB mit CL+ & CL-) und LPB (DB & MB) bei einem Brötje ISR-RVS43.222-Regler.*  
     
 ---    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-lpb-anschluss-2.jpg">
+![BSB RVS63](assets/images/bsb-lpb-anschluss-2.jpg)  
     
 *Anschlüsse b = BSB (CL+ & CL-) und a = LPB (DB & MB) bei einem Siemens RVS63.283-Regler.*  
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-LMS.jpg">  
+![BSB LMS1x](assets/images/BSB-LMS.jpg)  
 
 *BSB am "FB"-Anschluss bei einem LMS1x-Regler.*  
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/BSB-X86-RVS21.jpg">      
+![BSB RVS21](assets/images/BSB-X86-RVS21.jpg)      
 
 *BSB am "X86"-Anschluss eines RVS21-Reglers.* 
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/Baxi_Luna_BSB.png">      
+![BSB M2](assets/images/Baxi_Luna_BSB.png)      
 
 *BSB am "M2"-Anschlussblock (hinter der Kunststoffabdeckung links im Bild) einer Baxi Luna Platinum.*  
 *User "olympia" hat freundlicherweise eine Anleitung für das Anschließen für die Baxi Luna Platinum geschrieben und auf [seinem GitHub-Account](https://github.com/olympia/BaxiPlatinum_BSB_LAN/blob/main/LunaPlatinum-BSBLAN.pdf) zur Verfügung gestellt. Vielen Dank dafür!* 
    
 ---   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/bsb-servicebuchse.jpg">
+![BSB Servicebuchse](assets/images/bsb-servicebuchse.jpg)
     
 *BSB (CL+ & CL-) an der vierpoligen Servicebuchse vorne in der Bedieneinheit eines ISR Plus. Die (dauerhafte) Verwendung dieses Anschlusses ist aufgrund einer mangelnden Zugentlastung jedoch nicht zu empfehlen.*  
    
@@ -180,7 +183,7 @@ Der Adapter ist im folgenden Beispiel mit der Standardeinstellung als "LAN" konf
 Die darauf folgenden Zeilen sind bereits empfangene Telegramme.  
 Die Anzeige des kesselseitigen Steuerungsdisplays (hier: Kesseltemperatur) erscheint regelmäßig als sog. Broadcast (BC) vom Heizungsregler (Kennung "HEIZ").  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/SerMo_start_DE.png">
+![SerMo Start](assets/images/SerMo_start_DE.png)
         
 | Hinweis |
 |:--------|
@@ -191,7 +194,7 @@ Die Anzeige des kesselseitigen Steuerungsdisplays (hier: Kesseltemperatur) ersch
 
 Als ersten Funktionstest, ob der BSB-LAN-Server erreichbar ist, gib nun die spezifische URL deines Setups ein (bei der Verwendung von DHCP erscheint die IP beim Startvorgang im SerMo). Du solltest nun auf die Startseite des BSB-LAN-Servers gelangen:  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite_neu.png">
+![Webinterface Startseite](assets/images/webinterface_startseite_neu.png)
 
 Zur weiteren Funktionsüberprüfung fahre nun mit dem Schritt im nächsten Kapitel fort. Sollte wider Erwarten bereits jetzt klar sein, dass eine Fehlfunktion vorliegt (was bspw. dadurch zu erkennen ist, dass bei der o.g. Ausgabe von "Device family" und "Device variant" jeweils eine "0" steht), fahre mit [Kap. 3.4](kap03.md#34-debugging-und-fehlersuche) fort.   
 
