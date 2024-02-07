@@ -15,7 +15,7 @@ Passkey-Verwendung bspw.:
 
 *Bitte den Slash hinter dem Passkey nicht vergessen!*
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_startseite_neu.png">
+![Webinterface Startseite](assets/images/webinterface_startseite_neu.png)
     
 Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen einfachen und schnellen Zugriff auf bestimmte Funktionen bieten:  
 - Heizungsfunktionen  
@@ -32,7 +32,7 @@ Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Lo
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
 BSB-LAN kann prüfen, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann:  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/neue_version.png">  
+![Webinterface neue Version](assets/images/neue_version.png)  
 
 | Hinweis |
 |:--------|
@@ -45,12 +45,12 @@ Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den im Displa
 
 Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorien.png">
+![Webinterface Kategorien](assets/images/webinterface_kategorien.png)
     
 Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
 in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter, die vom spezifischen Reglermodell nicht unterstützt werden), werden in grauer Schrift mit dem Hinweis "(parameter not supported)" angezeigt:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_kategorie-HK1.png">
+![Kategorie HK1](assets/images/webinterface_kategorie-HK1.png)
     
 | Hinweis |
 |:--------|
@@ -62,7 +62,7 @@ in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter
 Wenn [optionale Sensoren](kap07.md#71-verwendung-optionaler-sensoren-dht22-ds18b20-bme280) angeschlossen und korrekt konfiguriert sind, dann werden diese hier angezeigt.  
   
 Die folgende Abbildung zeigt beispielhaft die Ausgabe der Messwerte eines angeschlossenen BME280 sowie fünf DS18B20-Sensoren.
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/sensoren.png"> 
+![Sensoren](assets/images/sensoren.png) 
 
 ---  
    
@@ -71,7 +71,7 @@ Die folgende Abbildung zeigt beispielhaft die Ausgabe der Messwerte eines angesc
 Ist die Funktion des [Loggens auf microSD-Karte](kap06.md#61-loggen-von-daten) aktiviert, erfolgt eine grafische Darstellung des Logfiles (Datei *datalog.txt*) bei Klick auf den Button "Zeichne Logdatei".  
 Ist die Funktion deaktiviert, so wird der deaktivierte Button in schwarzer Schrift angezeigt und die Bezeichnung lautet "Ausgabe Logdatei".
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webinterface_log_graph_de.png">  
+![Graph](assets/images/webinterface_log_graph_de.png)  
     
 Mouseover-, Klick- und Mausradaktionen innerhalb der grafischen Darstellung bieten diverse Steuerungsmöglichkeiten:    
 - verbesserte Lesbarkeit von Wertzahlen bei nahe beieinander liegenden Plotlinien (mouseover auf Plot)
@@ -90,7 +90,7 @@ Mouseover-, Klick- und Mausradaktionen innerhalb der grafischen Darstellung biet
 **Reglerspezifische Parameterliste (URL-Befehl /Q):**  
 Nach einem Klick auf "Download" am Ende des angezeigten Textes fragt diese Funktion alle Parameter des angeschlossenen Reglers ab und erzeugt die dazugehörige Textdatei mit der spezifischen Ausgabe. Diese Datei muss an Frederik (bsb(ät)code-it.de) geschickt werden, um die entsprechende Datei `BSB_LAN_custom_defs.h` für dieses Reglermodell erstellen zu lassen. Nachdem du diese Datei von Frederik erhalten hast, muss du die bestehende Datei durch diese Version ersetzen und BSB-LAN neu flashen, um vollen Zugriff auf deinen Regler zu erhalten. Für weitere Informationen siehe [Kap. 3.3](kap03.md#33-reglerspezifische-parameterliste-erstellen).  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QD_de.png">  
+![QD](assets/images/QD_de.png)  
    
 ---  
    
@@ -98,7 +98,7 @@ Nach einem Klick auf "Download" am Ende des angezeigten Textes fragt diese Funkt
 Hier wird eine Übersicht der Konfiguration dargestellt.  
 Im oberen Bereich ist das [Webinterface zur Konfiguration](kap02.md#221-konfiguration-mittels-webinterface) verfügbar, im unteren Bereich werden nochmals bestimmte Einstellungen (u.a. die genutzte Version von BSB-LAN, die Uptime, der Bustyp, möglicher Schreib- oder Lesezugriff, die definierten Pins für optional angeschlossene Sensoren, die zu loggenden Parameter etc.) aufgelistet.
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
+![Einstellungen](assets/images/webconfig_settings_screenshot_de.png)
 
    
 
