@@ -53,7 +53,7 @@ Führe die folgenden Schritte aus:
   
 6. Wähle den korrekten Seriellen Port, an dem der Due am Rechner angeschlossen ist, unter Werkzeuge/Port aus.  
    
-   <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_Due.png">  
+   ![Einstellungen](assets/images/IDE_Due.png)  
    
    *Die Einstellungen für den Due in der Arduino IDE.*  
 
@@ -109,7 +109,7 @@ Führe die folgenden Schritte aus:
     
     - Für den empfohlenen **ESP32-NodeMCU** wähle bitte die Variante "Default 4MB with spiffs (1.2BM APP/1.5MB SPIFFS)" aus. <br> Der folgende Screenshot zeigt die gesamten Einstellungen für den **ESP32-NodeMCU**.  
        
-      <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IDE_ESP32.png">  
+      ![Einstellungen ESP32](assets/images/IDE_ESP32.png)  
    
       *Die Einstellungen für den* ***ESP32-NodeMCU*** *in der Arduino IDE.*
      
@@ -182,7 +182,7 @@ Eine reine Übersicht der Einstellungen kann mittels des URL-Befehls `/CO` angez
   
 Die Übersicht der Webkonfiguration gliedert sich in drei Spalten:  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/webconfig_settings_screenshot_de.png">
+![Webconfig](assets/images/webconfig_settings_screenshot_de.png)
 
 - In der linken Spalte wird der Übersichtlichkeit halber eine grobe Kategorie angezeigt (bspw. "Generell", "Bus" etc.), so dass bereits auf den ersten Blick die Zuordnung des jeweiligen Eintrages ersichtlich ist.
 - In der mittleren Spalte wird die Funktion genannt.
