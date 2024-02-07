@@ -3,7 +3,6 @@
     
 ---
     
-
     
 # Anhang A2: Anmerkungen zum Schaltplan
     
