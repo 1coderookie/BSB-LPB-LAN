@@ -84,9 +84,9 @@ Führe nun die folgenden Schritte aus:
   
 7. Nach Beenden des Flashvorgangs starte den [Seriellen Monitor der Arduino IDE](kap12.md#122-serieller-monitor) und beobachte die Ausgaben, die beim Start des ESP32 erfolgen. Dort wird u.a. auch die IP ausgegeben, die dem Setup bei Verwendung von DHCP zugeteilt wird.  
 
-   Nach Beenden des Startvorgangs kannst du die Stromversorgung des ESP32-Boards unterbrechen, also das Board vom USB-Port deines Rechners entfernen. Dies ist nicht zwingend nötig, aus Sicherheitsgründen jedoch zu empfehlen.  
+   **Nach erfolgreichem Beenden des Startvorgangs ist es empfehlenswert, die Stromversorgung des Arduino zu unterbrechen**, also das Board vom USB-Port deines Rechners entfernen. Dies ist nicht zwingend nötig, aus Sicherheitsgründen jedoch zu empfehlen.  
 
-8. Schalte deine Heizung aus, damit der Heizungsregler stromlos ist.  
+8. **Schalte deine Heizung aus, damit der Heizungsregler stromlos ist.**  
   
    Schließe nun den Adapter des Arduino-Setups an den Regler an. Verbinde dazu die reglerseitigen Anschlüsse "CL+" und "CL-" (bei BSB-Verwendung) bzw. "DB" und "MB" (bei LPB-Verwendung) mit den gleichnamigen Anschlüssen des Adapters.  
    Achte auf die korrekte Verbindung: Die verbundenen Anschlüsse müssen *namensgleich* sein, also bspw. "CL+" an "CL+" und "CL-" an "CL-"!   
