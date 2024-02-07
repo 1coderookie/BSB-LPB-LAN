@@ -65,7 +65,7 @@ Bei Anschluss des Sensors sollte ein PullUp-Widerstand zwischen VCC (Pin 1) und 
         
 Neben den 'nackten' Sensoren gibt es auch noch Ausführungen, die bereits auf einer kleinen Platine angebracht und bei der die drei notwendigen Anschlusspins abgeführt und beschriftet sind. Die folgende Abbildung zeigt ein solches Modell des baugleichen Sensors AM2302.  
    
-![AM2302](assets/images/AM2302.jpg)  
+![AM2302](assets/images/AM2302.jpg)    
    
 Die Abfrage der Sensoren/Messwerte kann entweder via direktem Parameteraufruf (`URL/20100-20199`) oder durch den Aufruf der entspr. Kategorie erfolgen. Der folgende Screenshot zeigt die Webausgabe eines angeschlossenen DHT22-Sensors.  
   
@@ -330,11 +330,11 @@ Vielen Dank!
 FHEM-Forumsmitglied *„Andreas29"* hat basierend auf einem Arduino Uno einen Raumgeräteersatz realisiert. Der jeweilige Betriebs- und Fehlerstatus des Wärmeerzeugers sowie die aktuellen Daten eines DHT22-Sensors werden auf einem 4x20-LCD dargestellt. Mittels eines Tasters wird die Funktion der Präsenztaste eines echten Raumgerätes nachgebildet.
     
     
-![RGT innen](assets/images/Raumgerät_light_innen.jpg)
+![RGT innen](assets/images/Raumgerät_light_innen.jpg)  
     
 *Das Innenleben des Raumgeräteersatzes.*  
     
-![RGT Display](assets/images/Raumgerät_light_Display.jpg)
+![RGT Display](assets/images/Raumgerät_light_Display.jpg)  
     
 *Das Display des Raumgeräteersatzes.*  
     
@@ -365,11 +365,11 @@ FHEM-Forumsmitglied *"fabulous"* hat in Anlehnung auf die oben genannte Variante
   
 BSB-LAN-User *"-cr"* hat die o.g. Variante von User "fabulous" erweitert und auf einen ESP32 samt ssd1306-Display angepasst. Sein Projekt [BSBmonCR](https://github.com/DE-cr/BSBmonCR) ermöglicht u.a. eine grafische Darstellung ausgewählter Parameter im zeitlichen Verlauf sowie eine Präsenzerkennung. Darüber hinaus kann sogar auf ein Display verzichtet werden, da die grafische Darstellung auch über http abrufbar ist und außerdem das Loggen in einen Dropbox-Account möglich ist.    
 
-![BSBmon Box](assets/images/BSBmonCR_box.jpg)  
+![BSBmon Box](assets/images/BSBmonCR_box.jpg)   
   
 *Das fertige Setup samt Gehäuse.*  
   
-![BSBmon setup](assets/images/BSBmonCR.gif)  
+![BSBmon setup](assets/images/BSBmonCR.gif)   
   
 *Grafische Darstellung von drei Parametern im zeitlichen Verlauf.*  
   
