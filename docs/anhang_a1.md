@@ -3,7 +3,6 @@
     
 ---
     
-
     
 # Anhang A1: Schaltplan BSB-LPB-LAN-Adapter v4 (Due-Version)
   
