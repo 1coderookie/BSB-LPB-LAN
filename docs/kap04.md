@@ -15,7 +15,7 @@ Passkey-Verwendung bspw.:
 
 *Bitte den Slash hinter dem Passkey nicht vergessen!*
     
-![Webinterface Startseite](assets/images/webinterface_startseite_neu.png)
+![Webinterface Startseite](assets/images/webinterface_startseite_neu.png)  
     
 Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen einfachen und schnellen Zugriff auf bestimmte Funktionen bieten:  
 - Heizungsfunktionen  
@@ -30,7 +30,7 @@ Im oberen Bereich des Webinterface sind einige Buttons angeordnet, die einen ein
 Der Button "Ausgabe Logdatei" wird in schwarzer Schrift dargestellt, wenn die Loggingfunktion nicht aktiviert ist (wie im obigen Screenshot zu sehen). Ist die Logging-Funktion aktiviert, so heißt die Bezeichnung des Buttons "Zeichne Logdatei".
   
 Unter dem Headerbereich wird die BSB-LAN-Version angezeigt, die derzeit verwendet wird.  
-BSB-LAN kann prüfen, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann:  
+BSB-LAN kann prüfen, ob eine neuere Version verfügbar ist und zeigt dieses im unteren Bereich der Seite an. Im Falle eines verfügbaren Updates führt der Link zum ZIP-File des Repos, so dass man direkt vom Webinterface heraus die Datei speichern kann.    
 
 ![Webinterface neue Version](assets/images/neue_version.png)  
 
@@ -45,7 +45,7 @@ Prinzipiell sind alle Parameter in Kategorien zusammengefasst, die den im Displa
 
 Ein Klick auf den Menüpunkt „Heizungsfunktionen" zeigt eine vollständige Übersicht der Kategorien, die wiederum ebenfalls anwählbar sind:
     
-![Webinterface Kategorien](assets/images/webinterface_kategorien.png)
+![Webinterface Kategorien](assets/images/webinterface_kategorien.png) 
     
 Ein Klick auf eine der gezeigten Kategorien (bspw. Heizkreis 1) startet eine Komplettabfrage der jeweiligen Kategorie, also aller Parameter, die
 in dieser Kategorie verfügbar sind. Nicht verfügbare Parameter (also Parameter, die vom spezifischen Reglermodell nicht unterstützt werden), werden in grauer Schrift mit dem Hinweis "(parameter not supported)" angezeigt:  
