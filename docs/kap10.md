@@ -156,7 +156,7 @@ können. An demjenigen Anschluss wird analog zum QAA auch der Adapter
 angeschlossen. Die Anschlüsse sind dem jeweiligen Handbuch zu entnehmen, 
 häufig sind dies jedoch die Pins "A6" und "MD" (oder auch "M") (in dem Fall dann "A6" → CL+ und "M"/"MD" → CL-).  
        
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">
+![RVA53 back](assets/images/RVA53_back.jpg)  
     
 *Die Anschlüsse "A6" und "MD" bei einem Siemens RVA53 Regler.*  
 
@@ -254,7 +254,7 @@ sind erfahrungsgemäß bei Gasheizungen/-thermen verbaut.
 Regler der Serie **LMU54/LMU64** sind in älteren Heizungssystemen vorzufinden, in aktuellen Modellen werden sie nicht mehr verbaut. Diese Regler basieren auf dem OpenTherm Protokoll, welches inkompatibel mit dem BSB-LAN Projekt ist. BSB/LPB/PPS ist bei diesem Reglertyp nicht vorhanden, LPB kann jedoch mittels eines ClipIn-Moduls (OCI420) nachgerüstet werden.  
 
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
+![LMU64](assets/images/LMU64.jpg)    
    
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
@@ -265,8 +265,9 @@ Weitere Hinweise zum Nachrüsten eines LPB mittels ClipIn (OCI420) sind in [Kap.
    
 Regler der Serie **LMU74/LMU75** scheinen die Nachfolger der LMU54/LMU64-Reglerserie zu sein und werden ebenfalls nicht mehr verbaut.     
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU7.jpg">  
-   
+
+![LMU7x](assets/images/LMU7.jpg)  
+
 *Ein Regler des Typs LMU7x.*  
       
 Der LMU7x-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
@@ -293,7 +294,7 @@ aufweisen.
 Der LMS-Reglertyp weist i.d.R. nur einen BSB-Anschluss auf, an dem der Adapter angeschlossen wird. LPB muss bei
 Bedarf mittels eines ClipIn-Moduls (OCI345) nachgerüstet werden (für die Nutzung von BSB-LAN ist dies jedoch nicht notwendig).  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMS15.jpeg">  
+![LMS15](assets/images/LMS15.jpeg)    
    
 Als Bedieneinheit kommt i.d.R. eine Variante des Siemens AVS37.294 zum
 Einsatz (Bezeichnung bspw. „ISR Plus" bei Brötje).  
@@ -320,11 +321,11 @@ Als (integrierte) Bedieneinheit ist meist eine Variante der "Eurocontrol"
 (Brötje) verbaut.  
   
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_back.jpg">  
+![RVA53 back](assets/images/RVA53_back.jpg)    
    
 *Ein Regler des Typs RVA53.*  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVA53_front.jpg">  
+![RVA53 front](assets/images/RVA53_front.jpg)    
    
 *Vorderansicht: Bedieneinheit eines Reglers des Typs RVA53.*  
    
@@ -354,7 +355,7 @@ Die folgende grobe Darstellung der Gerätefamilie zeigt wesentliche Unterschiede
 **RVS21.xxx**  
 Der RVS21 ist der Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet einen BSB und Anschlüsse für ein optionales Raumgerät.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS21.jpeg">  
+![RVS21](assets/images/RVS21.jpeg)    
    
 *Ein RVS21 Regler.*  
    
@@ -372,8 +373,8 @@ Der RVS43 ist die Serie, die bspw. in Ölbrennwertanlagen, dem Brötje Pelletkes
 Regler der Serie RVS43 sind i.d.R. mit (mindestens) einem BSB- und einem LPB-Anschluss ausgestattet.  
 Die Anzahl der Anschlüsse und Funktionen kann mit einem Erweiterungsmodul AVS75.xxx vergrößert werden.  
        
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS43.jpg">  
-   
+![RVS43](assets/images/RVS43.jpg)     
+
 *Ein Regler des Typs RVS43.222.*
   
 Das Modell RVS43.325 wird von Brötje als Ersatzregler ausgewiesen und ist u.a. für Ölbrennwertanlagen der Serien BOB, SOB, WOB und den Pelleter SPK einsetzbar. Dieser Regler verfügt bspw. im direkten Vergleich zum oben abgebildeten RVS43.222 aus einem Brötje SOB C u.a. über zusätzliche Anschlüsse. Bei einem Einsatz als Ersatzregler muss er je nach Heizungsmodell bei einem Austausch entspr. parametriert werden. Genauere Informationen hierzu finden sich in der entspr. Montageanleitung dieses Ersatzreglers.  
@@ -383,7 +384,7 @@ Das Modell RVS43.325 wird von Brötje als Ersatzregler ausgewiesen und ist u.a. 
 **RVS46.xxx**  
 Der RVS46 ist ein kleiner Zonenregler, der je nach Ausführung (ZR1 / ZR2) Anschlüsse für ein oder zwei Pumpen- / Mischerkreise hat. Er kann einzelne Zonen eigenständig oder auch als Erweiterung eines vorhandenen Reglers im LPB-Verbund eingesetzt zu werden. Er bietet sowohl eine BSB- als auch einen LPB-Anschluss.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS46_zr1.jpeg">
+![ZR1](assets/images/RVS46_zr1.jpeg)  
     
 *Der kleine Zonenregler ZR1.*     
     
@@ -394,7 +395,7 @@ Der ZR1 ist nicht dafür gedacht oder geeignet, bspw. den Verbrennungsprozess ei
 **RVS51.xxx**  
 Der RVS51 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er bietet BSB und LPB und scheint (zumindest äußerlich betrachtet) dem RVS63 recht ähnlich zu sein.    
             
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS51843.jpeg">  
+![RVS51](assets/images/RVS51843.jpeg)    
    
 *Ein Regler des Typs RVS51.843.*  
    
@@ -408,7 +409,7 @@ Der RVS61 ist der 'große' Reglertyp, der in Wärmepumpen Verwendung findet. Er 
 **RVS63.xxx**  
 Der RVS63 ist der größte Regler mit den meisten Anschlüssen und kann aufgrund seines Funktionsumfanges vielfältig eingesetzt werden. Er ist in erster Linie dafür vorgesehen, komplexere Anlagen mit einer zusätzlichen Solarthermieanlage zu steuern. Bei Brötje wird er daher auch als "Solar System Regler" bezeichnet. Er ist sowohl als optionaler Nachrüstregler in einem Wandgehäuse erhältlich, wird aber auch als bereits in den Wärmerzeuger eingebauter interner Regler verwendet.  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/RVS63.jpg">  
+![RVS63](assets/images/RVS63.jpg)    
    
 *Ein Regler des Typs RVS63.*  
     
@@ -437,7 +438,7 @@ Bei diesen Modellen sind scheinbar ‚IWR CAN'-basierte Regler verbaut (gerätes
 Das folgende Bild einer WLC24-Platine zeigt die dort vorhandenen
 Anschlüsse.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/regler-wlc24.jpg">
+![WLC](assets/images/regler-wlc24.jpg)  
     
 *Anschlüsse des neuen Reglertyps einer Brötje WLC24 - dieser Regler ist inkompatibel mit BSB-LAN!*     
     
@@ -455,8 +456,8 @@ Am ‚R-Bus' (Raumgeräte-Bus) kann bei Bedarf entweder ein Raumthermostat
 Regler des Typs LMU54/LMU64 basieren auf OpenTherm, das andere Bus-Spezifikationen und auch ein anderes Kommunikationsprotokoll aufweist. Daher ist OpenTherm nicht kompatibel mit BSB-LAN.  
 Es gibt jedoch eine Möglichkeit, diesen Reglertyp trotzdem anzubinden: Wie auch bei den BSB-Reglern LMU7x und LMS1x kann man mittels eines sog. ClipIn-Moduls (Typ OCI420) einen LPB nachrüsten. An diesem wiederum ist der Adapter anschließbar.  
             
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/LMU64.jpg">  
-   
+![LMU64](assets/images/LMU64.jpg)     
+
 *Ein Regler des Typs LMU64 samt installiertem OCI420 ClipIn-Modul.*  
   
 Der Funktionsumfang ist bei diesem Regler (auch bei der Nutzung von BSB-LAN) jedoch relativ eingeschränkt und außerdem in gewissem Ausmaß von der Softwareversion des Reglers abhängig (getestet mit LMU64, SW v2.08 vs. SW v3.0 vs. SW v3.03): Regler mit SW ab v3.0 scheinen mehr (via BSB-LAN steuerbare) Funktionen aufzuweisen als Regler mit SW <v3.0. Insbesondere seien hier die beiden Sollwert-Temperaturparameter 709 und 711 genannt, anhand derer das Brennerverhalten in gewissem Umfang bestimmt werden könnte – diese können nur mit SW ab v3.0 genutzt bzw. verändert werden. (Hinweis: Derzeit läuft noch ein Versuch, ob das Brennerverhalten zufriedenstellend via Relais an einem anderen Kontakt beeinflusst werden kann.)  
@@ -741,15 +742,15 @@ Der Zugriff auf ein EWM ist somit nur indirekt über die jeweils spezifischen Pa
    
 Erweiterungsmodule des Typs **AVS75.xxx** kommen bei den Reglerserien des Typs RVS und LMS zum Einsatz. Die Busanbindung erfolgt i.d.R. über den Anschluss "Bus-EM".     
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS75.jpg">  
-   
+![AVS75](assets/images/AVS75.jpg)     
+
 *Erweiterungsmodul des Typs AVS75.390.*  
    
 ---  
    
 Erweiterungsmodule für LMU-Regler werden als "ClipIn-Module" bezeichnet. Je nach Verwendungszweck scheint es unterschiedliche Ausführungen zu geben (bspw. Relaismodul, Solarmodul). Generell scheinen sie jedoch die Typenbezeichnung **AGU2.5x** zu tragen (das "x" scheint dann die jeweilige Ausführung zu kennzeichnen), die Busanbindung erfolgt i.d.R. über den Anschluss "X50".   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AGU255.JPG">  
+![AGU2.5.5](assets/images/AGU255.JPG)    
    
 *ClipIn-Modul des Typs AGU2.55.*  
    
@@ -760,7 +761,8 @@ Erweiterungsmodule für LMU-Regler werden als "ClipIn-Module" bezeichnet. Je nac
 Die Bedieneinheit (am Wärmeerzeuger selbst) der Systeme der letzten Jahre (mit den Reglertypen LMU7x, LMS1x, RVS) sind üblicherweise Modelle des Typs **AVS37.xxx**. Sie sehen herstellerübergreifend recht identisch aus, können aber bei bestimmten Systeme (bspw. Wärmepumpen) zusätzliche Bedienelemente oder Funktionen aufweisen.   
 Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte vergleicht, so kann man feststellen, dass sich die beiden Geräte sehr ähneln. Die Art der Bedienung ist in dem meisten Fällen ebenso identisch. Die heizungsseitigen Bedieneinheiten stellen i.d.R. die Temperatur des Wärmeerzeugers (bspw. Kesseltemperatur) dauerhaft dar, die Raumgeräte hingegen üblicherweise die Raumtemperatur. Beide Geräte senden den jeweiligen Wert regelmäßig (etwa alle zehn Sekunden) als Broadcast (INF-Nachricht) über den BSB.   
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS37.jpg">  
+
+![AVS37](assets/images/AVS37.jpg)    
    
 *Eine Bedieneinheit des Typs AVS37.xxx.*  
    
@@ -768,7 +770,8 @@ Wenn man das Aussehen dieser AVS37-Bedieneinheiten und der QAA75.61x-Raumgeräte
    
 Als Nachfolger des Modells AVS37 gilt das **AVS74.xxx**. Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt ebenfalls als Raumgerät unter der Bezeichnung [QAA74](kap10.md#1053-qaa74) zum Einsatz.  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
+
+![AVS74](assets/images/QAA74.jpg)    
   
 *Eine AVS74.xxx Bedieneinheit.*    
    
@@ -776,7 +779,7 @@ Als Nachfolger des Modells AVS37 gilt das **AVS74.xxx**. Es ist mit einem 3,8" L
    
 In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein neuer Typ von Bedieneinheit verbaut, die Modellbezeichnung lautet **QAA75.91x**. Die Bedieneinheit scheint (zumindest bei bestimmten Herstellern) abnehmbar und mithilfe eines Adapters (Brötje: "ISR RGA") im Wohnraum installiert und zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente.     
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75911_kessel.jpg">  
+![QAA75.911](assets/images/QAA75911_kessel.jpg)    
    
 *Eine Bedieneinheit des Typs QAA75.91x.*  
   
@@ -785,7 +788,8 @@ In jüngerer Zeit wird von einigen Herstellern bei bestimmten Geräteserien ein 
   
 Darüber hinaus gibt es ein weiteres Modell, das **AVS77.xxx**. Diese Bedieneinheit ist uns bisher nur bei einem Baxi-Modell (Baxi Luna Duo Tec MP) gemeldet worden. Dieses Modell weist u.a. Knöpfe für die gradweise Veränderung des TWW- und HK-Sollwertes auf, verfügt jedoch nicht mehr über einen Drehknopf.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/AVS77.png">  
+
+![AVS77](assets/images/AVS77.png)    
    
 *Eine Bedieneinheit des Typs AVS77.xxx.*  
     
@@ -808,7 +812,7 @@ Anmerkung: Es scheint, als wenn das Produktportfolio um neue Raumgeräte und wei
 ### 10.5.1 QAA55 / QAA58  
 Das QAA55 ist das ‚kleinste‘ und günstigste ISR-Raumgerätemodell. Bei Brötje wird es als „RGB B“ geführt, manchmal ist es auch als „Raumgerät Basic“, „ISR RGB“ o.ä. zu finden. Es ist im Funktionsumfang recht eingeschränkt und ist im Grunde mehr als Raumtemperaturfühler mit einigen wenigen zusätzlichen Bedienoptionen anzusehen.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA55.jpg">  
+![QAA55](assets/images/QAA55.jpg)    
    
 *Das QAA55 Raumgerät.*
    
@@ -821,7 +825,8 @@ Das QAA58 ist die Funkvariante des QAA55. Es ist batteriebetrieben, der Funkempf
 ### 10.5.2 QAA75 / QAA78  
 Das QAA75.61x ist das ‚große‘ ISR-Raumgerät. Es weist neben dem integrierten Temperaturfühler den vollen Funktionsumfang der kesselseitigen Bedieneinheit auf. Zusätzlich ist eine Präsenztaste vorhanden, ein manueller TWW-Push kann bei Bedarf i.d.R. durch längeres Drücken der TWW-Betriebsarttaste ausgelöst werden.  
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA75.jpg">  
+
+![QAA75](assets/images/QAA75.jpg)    
    
 *Das QAA75.61x Raumgerät.*  
    
@@ -836,7 +841,7 @@ Das QAA78.61x ist die Funkvariante des QAA75.61x. Es ist batteriebetrieben, der 
    
 Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoch nur bei bestimmten Modellreihen einiger Hersteller (bspw. Brötje WMS/WMC C, BMK B, BMR B und Baxi Luna Platinum+) zum Einsatz zu kommen. Es scheint die 'heizungsseitige' Bedieneinheit zu sein, die jedoch mittels eines Adapters (Brötje: "ISR RGA") zusätzlich als Raumgerät genutzt werden kann. Die Bedienung des Wärmeerzeugers erfolgt in dem Fall weiterhin über diese Komponente, nur mit dem Vorteil, dass man sie im Wohnbereich installieren und sich ein zusätzliches Raumgerät sparen kann.     
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/qaa75911.jpg">  
+![QAA75.911](assets/images/qaa75911.jpg)    
    
 *Eine QAA75.91x Bedieneinheit, mit Zubehör optional nutzbar als Raumgerät.*  
    
@@ -845,7 +850,7 @@ Das QAA75.91x scheint im Bedienungsumfang identisch zum QAA75.61x zu sein, jedoc
 ### 10.5.3 QAA74  
 Das QAA74 ist ein relativ neues Raumgerät, welches das QAA75 ablösen soll/wird. Bei Brötje heißt es "ISR RGP" ("Raumgerät Premium"), bei Siemens "UI400". Es ist mit einem 3,8" LCD-Display und einem Dreh-/Drückknopf ausgestattet, mit dem sämtliche Einstellungen vorgenommen werden. Es kommt bei einigen Modellen ebenfalls als heizungsseitige Bedieneinheit unter der Bezeichnung AVS74 zum Einsatz. 
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA74.jpg">  
+![QAA74](assets/images/QAA74.jpg)    
   
 *Das QAA74 Raumgerät.*  
 
@@ -885,7 +890,8 @@ Weitere Informationen zu diesen Raumgeräten sind bitte den entsprechenden Anlei
 ### 10.5.6 QAA50 / QAA70  
 Auch beim QAA50 und QAA70 besteht prinzipiell der Unterschied im Funktionsumfang. Diese Raumgeräte kommen bei den alten Reglergenrationen zum Einsatz, die lediglich eine PPS-Schnittstelle aufweisen und somit prinzipiell kompatibel mit dem BSB-LPB-LAN-Adapter sind. Der Einsatz von BSB-LAN parallel zu einem vorhandenen Raumgerät ist in diesem Fall nur lesend möglich, Werte und Einstellungen des Heizungsreglers können also nicht via BSB-LAN verändert werden.  
       
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAA70.jpg">  
+
+![QAA70](assets/images/QAA70.jpg)    
    
 *Ein QAA70 Raumgerät.*  
    
@@ -917,7 +923,7 @@ Diese Fühler unterscheiden sich jedoch u.a. in ihrer Bauform und dem Messbereic
 **Siemens QAD36 / Brötje UAF6C**  
 Der QAD36 ist ein sogenannter "Anlegefühler" (Brötje: "Universalanlegefühler UAF6C") und kann zur nachträglichen Erweiterung als Vor- und Rücklauffühler eingesetzt werden. Der Fühler ist in einem Gehäuse untergebracht, das auf das entspr. Rohr (bspw. Vorlauf) montiert wird und die Temperatur des Mediums indirekt über die Temperatur der Rohrwand misst. Als Messelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von -30...125°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von 6s zum Einsatz.    
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAD36.png">
+![QAD36](assets/images/QAD36.png)  
   
 *Der Siemens QAD36-Anlegefühler, bei Brötje "Universalanlegefühler UAF6C" genannt.*    
   
@@ -927,7 +933,8 @@ Es ist empfehlenswert, für die Kontaktfläche eine entspr. Wärmeleitpaste zu v
 **Siemens QAZ36 / Brötje KF ISR**  
 Der QAZ36 in der Ausführung als Sonnenkollektorfühler (Brötje: "ISR Kollektorfühler / KF ISR") ist ein Tauchfühler mit einem ca. 1,5m langen *Silikonkabel*. Als Fühlerelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von -30...200°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm. 
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/QAZ36.jpg">  
+
+![QAZ36](assets/images/QAZ36.jpg)    
   
 *Ein Siemens QAZ36-Kollektorfühler, bei Brötje "ISR Kollektorfühler / KF ISR" genannt.*  
   
@@ -936,7 +943,7 @@ Aufgrund der höheren Umgebungstemperaturen ist bei der Verwendung eines kosteng
 **Siemens QAZ36 / Brötje UF6C**  
 Der QAZ36 in der Ausführung als Tauchfühler mit *PVC-Kabel* (Brötje: "Universaltauchfühler UF6C" mit 6m langem PVC-Kabel) kommt bspw. bei Puffer- oder Brauchwasserspeichern zum Einsatz. Als Fühlerelement kommt ein NTC 10k Ohm (bei 25°C) mit einem Messbereich von 0...95°C, einer Toleranz von +/- 0,5K und einer Zeitkonstante von ca. 30s zum Einsatz. Der Durchmesser der Hülse beträgt 6mm, die Länge 40,5mm.  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/UF6C.jpg">  
+![UF6C](assets/images/UF6C.jpg)    
   
 *Ein Siemens QAZ36-Tauchfühler, bei Brötje "Universaltauchfühler UF6C" genannt.*  
   
