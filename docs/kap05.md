@@ -182,12 +182,12 @@ Vielen Dank!***
 |:-----------------------|
 | Die API lässt sich mittels [Postman](https://www.postman.com) am eigenen System testen. Dazu muss man die URL https://raw.githubusercontent.com/fredlcore/bsb_lan/master/openapi.yaml in File/Import/Link hinzufügen und ggf. die spezifischen Angaben wie bspw. Adresse und Zugangsdaten anpassen. |   
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu.png">  
+![Swagger](assets/images/swagger_api-docu.png)  
     
 
 Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfalls sämtliche Informationen zu den Typen, Formaten, möglichen Werten etc. aufgeführt. 
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/swagger_api-docu_schemes.png">  
+![Schemes](assets/images/swagger_api-docu_schemes.png)  
     
     
 
@@ -196,7 +196,7 @@ Neben den Beschreibungen samt Beispielen zu den einzelnen Befehlen sind ebenfall
 | JSON-Befehle lassen sich auch per Linux-Kommandozeile oder „[Curl for Windows](https://curl.haxx.se/windows/)“ nutzen. Bei der o.g. interaktiven API-Dokumentation können die entspr. Curl-Befehle generiert und danach zur weiteren Nutzung kopiert werden (die IP ist bei der weiteren Verwendung stets anzupassen). Dazu ist wie folgt vorzugehen: <br> 1. Klicke auf die gewünschte Operation, bspw. "/JQ={parameterIds}". <br> 2. Bei dem aufklappenden Fenster klicke rechts auf "Try it out". <br> 3. Trage den/die gewünschten Parameter ein (im unten gezeigten Beispiel: 700,8300). <br> 4. Klicke auf "Execute". <br>  Im Feld "Responses" werden dann die URL- und Curl-Befehle angezeigt, die man kopieren kann. | 
 | Achtung: Die Zeichenkombination `%2C` bei der Auflistung mehrerer Parameter wird von Swagger anstelle des Kommas eingefügt. Solltest du die URL-/Curl-Befehle kopieren und nutzen wollen, so ersetze bitte jedes `%2C` durch ein `,` (Komma)! |  
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/curl-beispiel.png"> 
+![Curl](assets/images/curl-beispiel.png) 
     
 *Die Ausgabe des URL-/Curl-Befehls.*  
   
