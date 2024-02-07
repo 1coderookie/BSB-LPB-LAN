@@ -16,7 +16,6 @@ Vielen Dank für die großartige Arbeit!***
    
 ![DUE pinout](assets/images/Due-pinout-WEB.png)
 
-
 ---
     
 **Das 'offizielle' Pinout-Schema von [Arduino.cc](https://store.arduino.cc/arduino-due) kann kann ebenfalls als [PDF](https://content.arduino.cc/assets/Pinout-Due_latest.pdf) heruntergeladen werden.**    
