@@ -56,7 +56,19 @@ Problemen bei der Verwendung von günstigen Clones; im Zweifelsfall ist ein Test
 ---
     
 
-## 15.5 Keine Parameterabfrage möglich
+## 15.5 Keine Verbindung zum WLAN möglich
+
+Bitte überprüfe, ob das Definement `#define WIFI` aktiviert ist, also dass die führenden Schrägstriche entfernt wurden. Ein Hinweis darauf, dass das Definement nicht aktiviert wurde, sind u.a. diese Fehlermeldungen im Seriellen Monitor direkt nach dem Neustart:  
+```
+E (1229) esp.emac: emac_esp32_init(349): reset timeout
+E (1229) esp_eth: esp_eth_driver_install(214): init mac failed
+```  
+BSB-LAN kann sich darüber hinaus nicht mit versteckten WLAN-Netzwerken verbinden. Dies geht nur, wenn man die BSSID des WLAN-Netzwerks in der Datei `BSB_LAN_config.h` fest in die Variable `bssid` einträgt.  
+
+
+---
+
+## 15.6 Keine Parameterabfrage möglich
 
 - Siehe Punkt [„Die rote LED des Adapters leuchtet nicht"](kap15.md#151-die-rote-led-des-adapters-leuchtet-nicht)
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap15.md#152-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
@@ -68,7 +80,7 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 15.6 Regler wird nicht korrekt erkannt
+## 15.7 Regler wird nicht korrekt erkannt
 
 - Siehe Punkt [„Die rote LED leuchtet, aber es ist keine Abfrage möglich"](kap15.md#152-die-rote-led-leuchtet-aber-es-ist-keine-abfrage-möglich)
 - Siehe Punkt [„Keine Parameterabfrage möglich"](kap15.md#154-keine-parameterabfrage-möglich)  
@@ -80,14 +92,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 15.7 HK1 kann nicht bedient werden
+## 15.8 HK1 kann nicht bedient werden
 
 - Adapter ist evtl. als RGT2 konfiguriert  
     
 ---
     
 
-## 15.8 Es kann keine Raumtemperatur an einen HK1 gesendet werden
+## 15.9 Es kann keine Raumtemperatur an einen HK1 gesendet werden
 
 - Adapter ist evtl. als RGT2 konfiguriert
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
@@ -95,14 +107,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 15.9 HK2 kann nicht bedient werden
+## 15.10 HK2 kann nicht bedient werden
 
 - Adapter ist evtl. als RGT1 konfiguriert  
     
 ---
     
 
-## 15.10 Es kann keine Raumtemperatur an einen HK2 gesendet werden
+## 15.11 Es kann keine Raumtemperatur an einen HK2 gesendet werden
 
 - Adapter ist evtl. als RGT1 konfiguriert
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
@@ -110,14 +122,14 @@ stimmt nicht mit der Angabe in der Datei *BSB_LAN_config.h* überein
 ---
     
 
-## 15.11 Einstellungen des Reglers können nicht via Adapter verändert werden
+## 15.12 Einstellungen des Reglers können nicht via Adapter verändert werden
 
 - Zugriff des Adapters ist auf Lesen beschränkt → Screibzugriff muss gewährt werden (Webconfig `/C`: "Schreibzugriff" auf "Standard" oder "Komplett" stellen)  
     
 ---
     
 
-## 15.12 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
+## 15.13 Der Adapter reagiert manchmal nicht auf Abfragen oder SET-Befehle
 
 - Der Mikrocontroller ist nicht multitaskingfähig - warte, bis eine Abfrage abgeschlossen ist (insbesondere umfangreichere Abfragen wie bspw. ganze Kategorien oder
 auch die Darstellung des Logfiles dauern u.U. recht lange)  
@@ -125,7 +137,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 15.13 Bei der Abfrage der Logdatei passiert ‚nichts'
+## 15.14 Bei der Abfrage der Logdatei passiert ‚nichts'
 
 - Es ist keine microSD-Karte eingelegt
 - Das Loggen auf microSD-Karte war oder ist deaktiviert
@@ -135,7 +147,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 15.14 Es werden keine 24h-Durchschnittswerte angezeigt
+## 15.15 Es werden keine 24h-Durchschnittswerte angezeigt
 
 - Das entsprechende Definement ist nicht aktiviert
 - Es sind keine zu berechnenden Parameter angegeben  
@@ -143,7 +155,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 15.15 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
+## 15.16 Bei der Abfrage der Daten von DS18B20-/DHT22-Sensoren passiert ‚nichts'
 
 - Es sind keine Sensoren angeschlossen
 - Die entsprechenden Definements sind nicht aktiviert
@@ -153,7 +165,7 @@ auch die Darstellung des Logfiles dauern u.U. recht lange)
 ---
     
 
-## 15.16 Die DS18B20-Sensoren zeigen falsche Werte an
+## 15.17 Die DS18B20-Sensoren zeigen falsche Werte an
 
 - Die Stromversorgung und Installation prüfen (Größe des PullUp-Widerstands prüfen,
 Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)  
@@ -161,7 +173,7 @@ Kondensatoren verbauen, Verkabelung prüfen, richtige Topologie verwenden etc.)
 ---
     
 
-## 15.17 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
+## 15.18 Der ‚Serielle Monitor' der Arduino IDE liefert keine Daten
 
 - Der Adapter ist nicht zusätzlich via USB angeschlossen
 - Falscher Anschluss (COM-Port) oder falsches Board in der Arduino IDE ausgewählt
