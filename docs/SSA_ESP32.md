@@ -5,6 +5,12 @@
 # Schnellstartanleitung für [ESP32-Boards](kap01.md#13-esp32)
 ***Die folgende Kurzanleitung ersetzt nicht das Lesen des ausführlichen Handbuchs!***    
 ***Bitte lies ebenso die jeweiligen detaillierteren Ausführungen in den entsprechenden Kapiteln.*** 
+
+---
+
+***Warnung: Elektrostatische Aufladungen können irreparable Schäden verursachen - erde dich vor Beginn der Arbeiten!***
+
+---  
    
 *Achtung: Berücksichtige bei der folgenden Anleitung deinen ESP32-Boardtyp!*   
 
@@ -23,11 +29,11 @@
   
   Sollte dein Rechner den Olimex nicht automatisch erkennen, ist der entspr. Treiber für dein Betriebssystem zu installieren.  
 
-  ![Setup](assets/images/OlimexESP32EVB_v42_small.jpg)
+  ![Setup v4.2](assets/images/OlimexESP32EVB_v42_small.jpg)
     
   *Das komplette Setup: Olimex ESP32-EVB samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.2.*  
   
-  ![Setup](assets/images/OlimexESP32PoE_v44_small.jpg)  
+  ![Setup v4.4](assets/images/OlimexESP32PoE_v44_small.jpg)  
   
   *Das komplette Setup: Olimex ESP32-PoE samt aufgestecktem "BSB-LAN ESP32"-Adapter v4.4.*
   
