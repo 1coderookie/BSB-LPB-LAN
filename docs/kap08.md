@@ -318,7 +318,7 @@ MAX!-Komponenten können selbstverständlich ebenfalls nur genutzt werden, wenn 
   
 ***Das folgende Beispiel wird als Sitemap in BasicUI wie in folgendem Screenshot angezeigt:***
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/openHAB_sitemap.jpg">  
+![OpenHab sitemap](assets/images/openHAB_sitemap.jpg)  
   
   
 ***Beispiel einer Item-Konfiguration (/items/bsblan.items):***  
@@ -1929,16 +1929,16 @@ Vielen Dank!***
 ***Werte abrufen und anzeigen (exemplarisch ‚Warmwasser
 Solltemperatur'):***  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro1.jpg">
+![ioBroker1](assets/images/ioBro1.jpg)  
         
 Unter ‚ioBroker Admin → Adapter' eine ‚Parser'-Instanz hinzufügen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro2.jpg">
+![ioBroker2](assets/images/ioBro2.jpg)  
     
 Danach unter ‚ioBroker Admin → Instanzen' die hinzugefügten
 Adapterinstanz ‚parser.0' zum Konfigurieren öffnen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro3.jpg">
+![ioBroker3](assets/images/ioBro3.jpg)  
     
     
 Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
@@ -1946,14 +1946,14 @@ Dort auf das ‚+' klicken, danach unter ‚Namen' den Namen
 BSB-LAN-Adapters samt Parameternummer angeben. Anschließend auf das
 ‚Bearbeiten'-Icon klicken.
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro4.jpg">
+![ioBroker4](assets/images/ioBro4.jpg)  
     
 Es öffnet sich die Eingabemaske, in der unter ‚RegEx' folgende
 Zeichenfolge eingegeben werden muß:
 
 `asser\s+-\s+TWW Nennsollwert\:\s+(\d{2}.\d)`
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro5.jpg">
+![ioBroker5](assets/images/ioBro5.jpg)  
     
     
 Danach kann die Eingabemaske mit ‚Speichern' geschlossen werden.
@@ -1967,14 +1967,14 @@ und die unter der Instanz ‚parser.0' angelegten Datennamen und deren
 Werte:
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro6.jpg">
+![ioBroker6](assets/images/ioBro6.jpg)   
     
 
 Die Werte können unter VIS mittels eines ‚Basic-Number'-Widgets mit
 folgenden Einstellungen angezeigt werden:
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro7.jpg">
+![ioBroker7](assets/images/ioBro7.jpg)  
     
 
 Widgetcode zum Importieren:
@@ -1987,19 +1987,19 @@ Widgetcode zum Importieren:
 ***Schalter anlegen (exemplarisch ‚Heizung Automatik (AN)'-Schalter):***
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro8.jpg">
+![ioBroker8](assets/images/ioBro8.jpg)  
     
 
 Zunächst ein leeres Script ‚Heizung Automatik Schalter' anlegen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro9.jpg">
+![ioBroker9](assets/images/ioBro9.jpg)  
     
 
 Dann ein Blocky-Script ‚Heizung Automatik script' mit folgendem Inhalt
 anlegen (der nachfolgende Code kann in Blocky importiert werden):
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro10.jpg">
+![ioBroker10](assets/images/ioBro10.jpg)  
     
     
 ```
@@ -2017,28 +2017,23 @@ on({id: "javascript.0.scriptEnabled.Heizung_Automatik_Schalter", change: "ne"}, 
     
 Dann ein ‚jqui -- Button State'-Widget in VIS anlegen:
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro11.jpg">
+![ioBroker11](assets/images/ioBro11.jpg)  
     
 In den Eigenschaften unter ‚Schalter' das anfangs angelegte leere Script
 angeben:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro12.jpg">
+![ioBroker12](assets/images/ioBro12.jpg)  
     
 Damit lässt sich die Betriebsart ‚Heizung Automatik' einschalten.
 
-Damit der Schalterzustand durch <img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_green.jpg">
- oder 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro_button_red.jpg">
- entsprechend visualisiert wird, müssen
-noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die
-Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
+Damit der Schalterzustand durch ![Button green](assets/images/ioBro_button_green.jpg) oder ![Button red](assets/images/ioBro_button_red.jpg) entsprechend visualisiert wird, müssen noch folgende Signalbilder in dem Widget hinzugefügt werden, wobei die Bilder „on.png" und „off.png" in dem genannten Verzeichnispfad
 abgespeichert werden müssen.
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro13.jpg">
+![ioBroker13](assets/images/ioBro13.jpg)  
     
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro14.jpg">
+![ioBroker14](assets/images/ioBro14.jpg)  
     
 
 Widgetcode zum Importieren:
@@ -2058,7 +2053,7 @@ Bei der Adapterkonfiguration für ‚parser.0' eine Regel mit der
 Bezeichung ‚Betriebsart' erstellen, dann die IP (samt Parameternummer)
 des BSB-LAN-Adapters angeben und zum Bearbeiten öffnen.
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro15.jpg">
+![ioBroker15](assets/images/ioBro15.jpg)  
     
 
 Unter ‚RegEx' folgende Syntax angeben:
@@ -2066,7 +2061,7 @@ Unter ‚RegEx' folgende Syntax angeben:
 `(\w+:\s+\d\s+-\s+\w+)`
 
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ioBro16.jpg">
+![ioBroker16](assets/images/ioBro16.jpg)  
     
   
     
@@ -2087,17 +2082,17 @@ Das folgende Beispiel zeigt die Einrichtung anhand des Parameters "8700 Außente
 
 Zum Hinzufügen eines virtuellen HTTP Eingangs muss zunächst im Fenster "Peripherie" die Zeile "Virtuelle Eingänge" markiert werden. Nun klickt man auf die oben erschienene Schaltfläche "Virtueller HTTP Eingang":  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Eingang_icon.JPG">
+![HTTP Eingang](assets/images/HTTP-Eingang_icon.JPG)  
      
 Bei den Eigenschaften trägt man die Bezeichnung und die entsprechenden Werte ein (beim Abfragezyklus sollte ein entsprechend sinnvoller Wert gewählt werden), die URL des BSB-LAN-Adapters ist hierbei um den Befehl  
 `/JQ=8700`  
 für die Abfrage der Außentemperatur zu erweitern:    
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang.JPG">
+![vHTTP Eingang](assets/images/vHTTP-Eingang.JPG)  
      
 Anschließend fügt man dem vituellen HTTP Eingang noch einen virtuellen HTTP Eingang Befehl hinzu:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/HTTP-Befehl_icon.JPG">
+![HTTP Befehl](assets/images/HTTP-Befehl_icon.JPG)  
      
 Hier definiert man, was aus dem JSON-Export ausgelesen werden soll. Der JSON-Export ist wie folgt aufgebaut:  
     
@@ -2116,13 +2111,13 @@ Mittels Loxone-Befehlserkennung
 `value": "\v`  
 wird der Wert bei "value" des JSON-Exports ausgelesen:  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/vHTTP-Eingang-Befehl.JPG">
+![vHTTP Befehl](assets/images/vHTTP-Eingang-Befehl.JPG)  
      
 Unter "Visualisierung" bei den Eigenschaften sollte bei "Kategorie" und "Raum" jeweils eine Bezeichnung eingetragen werden, damit die spätere Darstellung in der Loxone-App entsprechend funktioniert (hier: Außenbereich, Wetter). Die nun ausgelesenen Werte des Außentemperaturfühlers können dann in der Loxone-App angezeigt und die Statistik per Graph visualisiert werden.  
     
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_raeume.jpg">
+![Screenshot Räume](assets/images/screenshot_loxone_raeume.jpg)  
          
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/screenshot_loxone_logAT.jpg">
+![Screenshot Log AT](assets/images/screenshot_loxone_logAT.jpg)  
      
 *Hinweis:  
 Das Setzen von Parametern/Werten könnte analog zu obigem Beispiel mit der Funktion "virtueller Ausgang" und dem URL-Befehl `/JS` (JSON) oder via regulärem URL-Befehl `/S<x>=<y>` möglich sein (s. entspr. Kapitel), wurde allerdings noch nicht gestestet.*
@@ -2288,7 +2283,7 @@ A3 = Einheit des Parameters z.B. "°C"
 A4 = Beschreibung von A2, wenn als Code ausgegeben.  
 A5 = Verkettung von A1 bis A4   
    
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/edomi.png">
+![EDOMI](assets/images/edomi.png)  
   
 *Die Werte A1 bis A5 können dann über andere Bausteine weiterverarbeitet werden.  In diesem Beispiel wird die Außentemperatur in ein internes Kommunikationsobjekt geschrieben, um den Inhalt z.B. in der Visu auszugeben oder die Werte für die Betriebszeit in ein Datenarchiv gespeichert, um daraus später Laufzeiten der Heizung zu ermitteln.*   
   
@@ -3185,7 +3180,7 @@ Die folgenden Beispiele sollen zeigen wie es möglich ist, BSB-LAN individuell i
 
 Ein umfangreiches BSB-LAN Dashboard in Home Assistant könnte z.B. so aussehen:
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/ha_dashboard.png">
+![HA dashboard](assets/images/ha_dashboard.png)  
 
 Aller folgender Code muss in die YAML-Datei *configuration.yaml* eingefügt werden, wenn nicht anders angegeben. Hat man seine Konfiguration aufgesplittet und z.B. die Sensordefinitionen in eine Datei *sensors.yaml* ausgelagert, sind die Anpassungen natürlich entsprechend dort vorzunehmen.
 
@@ -3314,7 +3309,7 @@ In Home Assistant ist dieser Schalter nun als *switch.bsb_lan_betriebsart_automa
 Folgender Code erzeugt zwei Automatisierungen, die man als Basis für ein Eingabefeld für den TWW Nennsollwert nutzen kann. Das Eingabefeld zeigt natürlich auch den aktuell eingestellten Wert an.
 **Achtung:** Der Code muss in die Datei *automations.yaml* eingefügt werden! Das Eingabefeld muss man zuvor per YAML definiert oder manuell in der Oberfläche unter "Einstellungen/Geräte & Dienste/Helfer" angelegt haben:
 
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/tww_nennsollwert_input.png">
+![TWW Nennsoll](assets/images/tww_nennsollwert_input.png)
 
 Alternativ das gleiche als YAML:
 
