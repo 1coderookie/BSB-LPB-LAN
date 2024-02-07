@@ -61,7 +61,7 @@ Die IPWE-Erweiterung (IPWE = IP-Wetterdaten-Empfänger) stellt eine Möglichkeit
 |:--------|
 | Sollte die optionale Sicherheitsfunktion des Passkeys verwendet werden, so ist der Passkey in diesem Fall ausnahmsweise NICHT der URL hinzuzufügen!|  
   
-<img src="https://raw.githubusercontent.com/1coderookie/BSB-LPB-LAN/master/docs/pics/IPWE_example.png">  
+![IPWE](assets/images/IPWE_example.png)  
   
 *Beispiel einer IPWE-Ausgabe.*   
    
